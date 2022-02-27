@@ -10,7 +10,36 @@ const help = ["rgantzos", "lisa_wolfgang", "--Explosion--", "GarboMuffin", "Xanc
 if (help.includes(document.querySelector('#profile-data > div.box-head > div > h2').textContent)) {
 document.querySelector('#profile-data > div.box-head > div > p > span.group').textContent = `${document.querySelector('#profile-data > div.box-head > div > p > span.group').textContent} | ScratchTools`
 document.querySelector('#profile-data > div.box-head > div > h2').textContent = `*${document.querySelector('#profile-data > div.box-head > div > h2').textContent}`
+setTimeout(() => { replacealllinks() }, 2000);
 }
+// replace links in comments
+function replacealllinks() {
+const highlightedItems = document.querySelectorAll("a");
+
+highlightedItems.forEach(function(item) {
+  if (item.href.includes('https://scratch.mit.edu/projects/')) {
+if (item.parentNode.className === 'content') {
+replacelinks(item)
+}
+  }
+});
+
+async function replacelinks(item) {
+    
+    // Storing response
+    const response = await fetch(`https://api.${item.href.replace('https://', '')}`);
+    
+    // Storing data in form of JSON
+    var data = await response.json();
+    console.log(data);
+if(data.hasOwnProperty('title')){
+    var stuff = data["title"]
+item.textContent = stuff
+}
+    }
+  }
+    // done replacing
+
 var apple = str.split('https://scratch.mit.edu/users/')[1];
   var apple2 = apple.split('/')[0];
   getapi3(`https://api.scratch.mit.edu/users/${apple2}/`, apple2);
