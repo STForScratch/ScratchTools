@@ -40,3 +40,6 @@ Show your password upon sign in to Scratch
 ## Fun Facts About ScratchTools
 ### ScratchTools v1.0 was approved on 2/22/22
 While ScratchTools was published later during a livestream, it was approved for the Chrome Webstore by the Google Team very late at night on 2/22/22!
+
+## In the Future for v1.2
+So far, we've added a feature that will replace project links in profile comments with the name of the project, but the hyperlink will stay.
