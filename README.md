@@ -42,4 +42,4 @@ Show your password upon sign in to Scratch
 While ScratchTools was published later during a livestream, it was approved for the Chrome Webstore by the Google Team very late at night on 2/22/22!
 
 ## In the Future for v1.2
-So far, we've added a feature that will replace project links in profile comments with the name of the project, but the hyperlink will stay.
+So far, we've added a feature that will replace project links in profile comments with the name of the project, but the hyperlink will stay. We've also added a feature so that a popup with a link to the GitHub repository will appear after opening Scratch for the first time after v1.2 of ScratchTools has been installed.
