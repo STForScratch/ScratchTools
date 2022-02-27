@@ -1,0 +1,92 @@
+{
+    "name": "ScratchTools Chrome Extension",
+    "short_name": "ScratchTools",
+    "manifest_version": 3,
+    "version": "1.1",
+    "description": "Great tools to make Scratching easier!",
+    "author": "rgantzos",
+    "action": {
+        "default_icon": "icon128.png",
+        "default_popup": "popup.html",
+        "default_title": "ScratchTools"
+    },
+    "icons": { "16": "icon16.png",
+            "48": "icon48.png",
+            "128": "icon128.png" },
+
+    "content_scripts":
+    [
+        {
+            "matches": ["https://scratch.mit.edu/projects/*/editor/"],
+            "all_frames": true,
+            "js": ["editor.js"],
+            "run_at": "document_end"
+        },
+        {
+            "matches": ["https://scratch.mit.edu/projects/*/editor"],
+            "all_frames": true,
+            "js": ["editor.js"],
+            "run_at": "document_end"
+        },
+        {
+            "matches": ["https://scratch.mit.edu/editor/"],
+            "all_frames": true,
+            "js": ["editor.js"],
+            "run_at": "document_end"
+        },
+        {
+            "matches": ["https://scratch.mit.edu/projects/*/"],
+            "all_frames": true,
+            "js": ["project.js"],
+            "run_at": "document_end"
+        },
+        {
+            "matches": ["https://scratch.mit.edu/users/*"],
+            "all_frames": true,
+            "js": ["profile.js"],
+            "run_at": "document_end"
+        },
+        {
+            "matches": ["https://scratch.mit.edu/"],
+            "all_frames": true,
+            "js": ["home.js"],
+            "run_at": "document_end"
+        },
+        {
+            "matches": ["https://scratch.mit.edu/ideas"],
+            "all_frames": true,
+            "js": ["ideas.js"],
+            "run_at":"document_end"
+        },
+        {
+            "matches": ["https://scratch.mit.edu/studios/28715018/comments"],
+            "all_frames": true,
+            "js": ["propose.js"],
+            "run_at":"document_end"
+        },
+        {
+            "matches": ["https://scratch.mit.edu/accounts/*"],
+            "all_frames": true,
+            "js": ["settings.js"],
+            "run_at": "document_end"
+        },
+        {
+            "matches": ["https://scratch.mit.edu/join"],
+            "all_frames": true,
+            "js": ["join.js"],
+            "run_at": "document_end"
+        },
+        {
+            "matches": ["https://scratch.mit.edu/mystuff/*"],
+            "all_frames": true,
+            "js": ["statistics.js"],
+            "run_at": "document_end"
+        },
+        {
+            "matches": ["https://*/*"],
+            "all_frames": true,
+            "js": ["blank.js"],
+            "run_at": "document_end"
+        }
+    ]
+}

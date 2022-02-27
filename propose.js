@@ -1,0 +1,1 @@
+setTimeout(() => { document.querySelector('#frc-compose-comment-3392903').placeholder = 'Remember! You cannot propose your own projects to be featured!' }, 2000);
