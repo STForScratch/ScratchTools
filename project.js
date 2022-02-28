@@ -34,7 +34,7 @@ async function getapistuff(url) {
     var url = window.location.href;
     var stuff = data["author"]["username"]
     if (stuff === document.querySelector('#navigation > div > ul > li.link.right.account-nav > div > a > span').textContent) {
-        abc()
+        // when done set to abc()
     } else {
         xyz()
     }
