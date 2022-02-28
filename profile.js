@@ -11,9 +11,11 @@ if (help.includes(document.querySelector('#profile-data > div.box-head > div > h
 document.querySelector('#profile-data > div.box-head > div > p > span.group').textContent = `${document.querySelector('#profile-data > div.box-head > div > p > span.group').textContent} | ScratchTools`
 document.querySelector('#profile-data > div.box-head > div > h2').textContent = `*${document.querySelector('#profile-data > div.box-head > div > h2').textContent}`
 setTimeout(() => { replacealllinks() }, 2000);
+setTimeout(() => { addOnClick() }, 2000);
 }
 // replace links in comments
 function replacealllinks() {
+addOnClick()
 const highlightedItems = document.querySelectorAll("a");
 
 highlightedItems.forEach(function(item) {
@@ -36,6 +38,12 @@ if(data.hasOwnProperty('title')){
     var stuff = data["title"]
 item.textContent = stuff
 }
+    }
+  }
+  function addOnClick() {
+    var thebutton = document.querySelector('#comments > div:nth-child(3) > ul > div')
+    thebutton.onclick = function() {
+      setTimeout(() => { replacealllinks() }, 2000);
     }
   }
     // done replacing
