@@ -1,3 +1,5 @@
+setTimeout(() => { replacealllinks() }, 2000);
+setTimeout(() => { addOnClick() }, 2000);
 about()
 str = window.location.href
 document.querySelector('#profile-avatar > div > a > img').style.borderRadius = "10%";
@@ -41,7 +43,12 @@ item.textContent = stuff
     }
   }
   function addOnClick() {
+    var elementExists = document.querySelector('#comments > div:nth-child(3) > ul > div')
+if (elementExists !== null) {
     var thebutton = document.querySelector('#comments > div:nth-child(3) > ul > div')
+    } else {
+      var thebutton = document.querySelector('#comments > div:nth-child(2) > ul > div')
+    }
     thebutton.onclick = function() {
       setTimeout(() => { replacealllinks() }, 2000);
     }
