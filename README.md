@@ -55,6 +55,9 @@ Show your password upon sign in to Scratch
 Project links in profile comments are replaced with their titles
 ```
 
+# v1.3
+This new update has all the features from v1.2, but the project links on profile comments being replaced with their titles becomes possible on all profiles, not just yours!
+
 ## Fun Facts About ScratchTools
 ### ScratchTools v1.0 was approved on 2/22/22
 While ScratchTools was published later during a livestream, it was approved for the Chrome Webstore by the Google Team very late at night on 2/22/22!
