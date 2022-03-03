@@ -1,5 +1,5 @@
 # ScratchTools
-An extension that makes Scratching much easier!
+An extension that makes Scratching much easier! [Official Discord](https://discord.gg/5AkUsCbEsy).
 
 ## v1.0
 ScratchTools Version 1.0 had multiple bugs, making it impossible to download from the Chrome Webstore.
