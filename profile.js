@@ -8,7 +8,7 @@ var elementExists = document.querySelector('#featured-project > img')
 if (elementExists !== null) {
 document.querySelector('#featured-project > img').style.borderRadius = "20px";
 }
-const help = ["rgantzos", "lisa_wolfgang", "--Explosion--", "GarboMuffin", "Xancan", "-Jensen-", "-Intensify-", "-OutroCoder-"];
+const help = ["rgantzos", "lisa_wolfgang", "--Explosion--", "GarboMuffin", "Xancan", "-Jensen-", "-Intensify-", "-OutroCoder-", "JoePotatoScratch"];
 if (help.includes(document.querySelector('#profile-data > div.box-head > div > h2').textContent)) {
 document.querySelector('#profile-data > div.box-head > div > p > span.group').textContent = `${document.querySelector('#profile-data > div.box-head > div > p > span.group').textContent} | ScratchTools`
 document.querySelector('#profile-data > div.box-head > div > h2').textContent = `*${document.querySelector('#profile-data > div.box-head > div > h2').textContent}`
