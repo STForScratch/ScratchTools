@@ -4,8 +4,8 @@ function getCookie(name) {
     if (parts.length === 2) return parts.pop().split(';').shift();
   }
   function checkversion() {
-if (getCookie('ScratchToolsVersion') !== '1.3') {
-    document.cookie = "ScratchToolsVersion=1.3; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/";
+if (getCookie('ScratchToolsVersion') !== '1.4') {
+    document.cookie = "ScratchToolsVersion=1.4; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/";
     createExplanation()
 }
   }
@@ -47,7 +47,7 @@ element.appendChild(h1)
 var stuff = document.createElement('br')
 element.appendChild(stuff)
 var el2 = document.createElement('p')
-el2.textContent = 'This is v1.3 of ScratchTools! This new version mainly fixes bugs with the feature that replaces project links in profile comments with the name of the project!'
+el2.textContent = "This is ScratchTools v1.4! We have a few new features, so we hope you're excited!"
 el2.style.color = 'black'
 el2.style.padding = '20px'
 element.appendChild(el2)
