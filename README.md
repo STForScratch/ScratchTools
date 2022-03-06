@@ -63,6 +63,14 @@ This update has a very big feature, a suggestion added on our [Official Discord]
 
 Other than that, this has all the features of v1.3- but get ready! v2.0 will be a BIG update!
 
+# v1.5
+This brand new update that brings some new features to the table, and fixes some unifficient code and other bugs!
+
+### What we did:
+- The "TurboWarp Editor" button now shows as soon as the editor is opened up, rather than a few seconds after
+- The current sprite's costume watermark in the top right corner of the block editor has now been hidden
+- A badge has been put on the profiles of Official ScratchTools [Bug Bounty](https://discord.gg/5AkUsCbEsy) members
+
 ## Fun Facts About ScratchTools
 ### ScratchTools v1.0 was approved on 2/22/22
 While ScratchTools was published later during a livestream, it was approved for the Chrome Webstore by the Google Team very late at night on 2/22/22!
