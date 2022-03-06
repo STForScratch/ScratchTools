@@ -9,6 +9,16 @@ if (elementExists !== null) {
 document.querySelector('#featured-project > img').style.borderRadius = "20px";
 }
 const help = ["rgantzos", "lisa_wolfgang", "--Explosion--", "GarboMuffin", "Xancan", "-Jensen-", "-Intensify-", "-OutroCoder-", "JoePotatoScratch"];
+const bb = ["abc"]
+if (bb.includes(document.querySelector('#profile-data > div.box-head > div > h2').textContent)) {
+var logo = document.createElement('img')
+logo.src = 'https://scratchtools-bug-bounty.rgantzos.repl.co/transparent%20logo.png'
+logo.style.marginTop = '15px'
+logo.style.width = '125px'
+logo.style.float = 'right'
+logo.title = 'This user is part of the ScratchTools Bug Bounty.'
+document.querySelector('#profile-data > div.box-head').prepend(logo)
+}
 if (help.includes(document.querySelector('#profile-data > div.box-head > div > h2').textContent)) {
 document.querySelector('#profile-data > div.box-head > div > p > span.group').textContent = `${document.querySelector('#profile-data > div.box-head > div > p > span.group').textContent} | ScratchTools`
 document.querySelector('#profile-data > div.box-head > div > h2').textContent = `*${document.querySelector('#profile-data > div.box-head > div > h2').textContent}`
