@@ -4,8 +4,8 @@ function getCookie(name) {
     if (parts.length === 2) return parts.pop().split(';').shift();
   }
   function checkversion() {
-if (getCookie('ScratchToolsVersion') !== '1.5') {
-    document.cookie = "ScratchToolsVersion=1.5; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/";
+if (getCookie('ScratchToolsVersion') !== '1.6') {
+    document.cookie = "ScratchToolsVersion=1.6; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/";
     createExplanation()
 }
   }
@@ -30,14 +30,14 @@ el4.style.marginRight = 'auto'
 el5.style.marginRight = 'auto'
 el6.style.marginRight = 'auto'
 element.style.marginRight = 'auto'
-el4.href = 'https://github.com/rgantzosonscratch/ScratchTools'
+el4.href = 'https://youtu.be/561uYWaaM50'
 element.style.backgroundColor = 'white'
 element.style.color = 'Orange'
 element.className = 'box'
 element.style.borderColor = 'black'
 element.style.borderRadius = '20px'
 element.style.height = 'auto'
-el4.textContent = 'GitHub Repository'
+el4.textContent = 'Official Video'
 parentstuff.appendChild(element)
 parentstuff.prepend(el3)
 var h1 = document.createElement('h1')
@@ -47,7 +47,7 @@ element.appendChild(h1)
 var stuff = document.createElement('br')
 element.appendChild(stuff)
 var el2 = document.createElement('p')
-el2.textContent = "Welcome to ScratchTools v1.5! We have added a lot of new features, so take a look around!"
+el2.textContent = "This is ScratchTools v1.6, and there are some very awesome new features."
 el2.style.color = 'black'
 el2.style.padding = '20px'
 element.appendChild(el2)
