@@ -8,10 +8,13 @@ var elementExists = document.querySelector('#featured-project > img')
 if (elementExists !== null) {
 document.querySelector('#featured-project > img').style.borderRadius = "20px";
 }
+
+// check if special
 const help = ["rgantzos", "lisa_wolfgang", "--Explosion--", "GarboMuffin", "Xancan", "-Jensen-", "-Intensify-", "-OutroCoder-", "JoePotatoScratch"];
-const bb = ["abc"]
+const bb = ["JoePotatoScratch"]
 if (bb.includes(document.querySelector('#profile-data > div.box-head > div > h2').textContent)) {
 var logo = document.createElement('img')
+logo.style.marginRight = '200px'
 logo.src = 'https://scratchtools-bug-bounty.rgantzos.repl.co/transparent%20logo.png'
 logo.style.marginTop = '15px'
 logo.style.width = '125px'
@@ -113,3 +116,32 @@ function about() {
 function feature() {
 
 }
+
+// add full title to profile projects
+
+replacealllinks2()
+function replacealllinks2() {
+const highlightedItems2 = document.querySelectorAll("a");
+
+highlightedItems2.forEach(function(item) {
+  if (item.href.includes('https://scratch.mit.edu/projects/')) {
+if (item.parentNode.className === 'title') {
+    console.log('hi')
+replacelinks2(item)
+}
+  }
+})
+                         }
+    async function replacelinks2(item) {
+    
+    // Storing response
+    const response = await fetch(`https://api.${item.href.replace('https://', '')}`);
+    
+    // Storing data in form of JSON
+    var data = await response.json();
+    console.log(data);
+if(data.hasOwnProperty('title')){
+    var stuff = data["title"]
+item.title = stuff
+}
+    }
