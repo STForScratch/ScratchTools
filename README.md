@@ -71,6 +71,15 @@ This brand new update that brings some new features to the table, and fixes some
 - The current sprite's costume watermark in the top right corner of the block editor has now been hidden
 - A badge has been put on the profiles of Official ScratchTools [Bug Bounty](https://discord.gg/5AkUsCbEsy) members
 
+# v1.6
+This update adds some **HUGE** new features, and fixes some bugs.
+
+### What we did:
+- On profiles, you can hover over a project's title to display the entire title
+- Added the `*` next to the usernames of Scratch Team members in the forum
+- Fixed a bug where the statistics button went to the wrong website for users with long usernames (thanks to [JoePotatoScratch](https://scratch.mit.edu/users/JoePotatoScratch/) for reporting it)
+- Fixed a bug with the TurboWarp button where it wasn't displaying
+
 ## Fun Facts About ScratchTools
 ### ScratchTools v1.0 was approved on 2/22/22
 While ScratchTools was published later during a livestream, it was approved for the Chrome Webstore by the Google Team very late at night on 2/22/22!
