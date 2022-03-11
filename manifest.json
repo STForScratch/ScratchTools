@@ -5,6 +5,9 @@
     "version": "1.5",
     "description": "Great tools to make Scratching easier!",
     "author": "rgantzos",
+    "background": {
+        "service_worker": "background.js"
+    },
     "action": {
         "default_icon": "icon128.png",
         "default_popup": "popup.html",
@@ -15,6 +18,12 @@
             "128": "icon128.png" },   
     "content_scripts":
     [
+        {
+            "matches": ["https://scratch.mit.edu/discuss/*"],
+            "all_frames": true,
+            "js": ["discuss.js"],
+            "run_at": "document_end"
+        },
         {
             "matches": ["https://scratch.mit.edu/projects/*/editor/"],
             "all_frames": true,
