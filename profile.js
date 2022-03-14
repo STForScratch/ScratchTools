@@ -34,11 +34,12 @@ addOnClick()
 const highlightedItems = document.querySelectorAll("a");
 
 highlightedItems.forEach(function(item) {
-  if (item.href.includes('https://scratch.mit.edu/projects/')) {
 if (item.parentNode.className === 'content') {
 replacelinks(item)
 }
-  }
+if (item.parentNode.className === 'name') {
+  replaceuserlinks(item)
+}
 });
 
 async function replacelinks(item) {
@@ -54,6 +55,20 @@ if(data.hasOwnProperty('title')){
 item.textContent = stuff
 }
     }
+
+    async function replaceuserlinks(item) {
+    
+      // Storing response
+      const response5 = await fetch(`https://api.${item.href.replace('https://', '')}`);
+      
+      // Storing data in form of JSON
+      var data = await response5.json();
+      console.log(data);
+  if(data.hasOwnProperty('profile')){
+      var stuff = data["profile"]["bio"]
+  item.title = stuff
+  }
+      }
   }
   function addOnClick() {
     var elementExists = document.querySelector('#comments > div:nth-child(3) > ul > div')
@@ -86,6 +101,7 @@ async function getapi3(url, user) {
     var country = data["profile"]["country"]
     console.log(country)
     getapi2(`https://api.scratch.mit.edu/users/${user}/messages/count/`, country);
+    getapi20(`https://api.scratch.mit.edu/users/${user}/`)
 }
 // Calling that async function
 
@@ -99,6 +115,17 @@ async function getapi2(url, a) {
     console.log(data);
     var stuff = data["count"]
     document.querySelector(".location").textContent = `${a} | ${stuff} Messages`;
+}
+
+async function getapi20(url) {
+  const response = await fetch(url)
+  var data = await response.json()
+  console.log(data)
+  var stuff = data['history']['joined']
+  var year = stuff.split('-')[0]
+  var month = stuff.split('-')[1].split('-')[0]
+  var day = stuff.split('-')[2].split('T')[0]
+  document.querySelector('#profile-data > div.box-head > div > p > span:nth-child(2)').title = `${month}/${day}/${year}`
 }
 // Calling that async function
 
