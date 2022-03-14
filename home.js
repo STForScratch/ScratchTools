@@ -1,11 +1,28 @@
+// set patrick's day start
+const d = new Date();
+console.log(d.getDate())
+if (d.getDate() === 17) {
+document.querySelector('#navigation').style.backgroundColor = '#009a49'
+
+const highlightedItems5 = document.querySelectorAll("a");
+
+highlightedItems5.forEach(function(item) {
+    if (item.parentNode.parentNode.parentNode.parentNode.id !== 'navigation') {
+        if (item.className !== 'ignore-react-onclickoutside user-info') {
+item.style.color = '#009a49'
+        }
+    }
+})
+}
+// st patrick's day end
 function getCookie(name) {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
     if (parts.length === 2) return parts.pop().split(';').shift();
   }
   function checkversion() {
-if (getCookie('ScratchToolsVersion') !== '1.6') {
-    document.cookie = "ScratchToolsVersion=1.6; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/";
+if (getCookie('ScratchToolsVersion') !== '1.7') {
+    document.cookie = "ScratchToolsVersion=1.7; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/";
     createExplanation()
 }
   }
@@ -30,14 +47,14 @@ el4.style.marginRight = 'auto'
 el5.style.marginRight = 'auto'
 el6.style.marginRight = 'auto'
 element.style.marginRight = 'auto'
-el4.href = 'https://youtu.be/561uYWaaM50'
+el4.href = 'https://github.com/rgantzosonscratch/ScratchTools'
 element.style.backgroundColor = 'white'
 element.style.color = 'Orange'
 element.className = 'box'
 element.style.borderColor = 'black'
 element.style.borderRadius = '20px'
 element.style.height = 'auto'
-el4.textContent = 'Official Video'
+el4.textContent = 'Official Repository'
 parentstuff.appendChild(element)
 parentstuff.prepend(el3)
 var h1 = document.createElement('h1')
@@ -47,7 +64,7 @@ element.appendChild(h1)
 var stuff = document.createElement('br')
 element.appendChild(stuff)
 var el2 = document.createElement('p')
-el2.textContent = "This is ScratchTools v1.6, and there are some very awesome new features."
+el2.textContent = "We have some awesome new features, including some special holiday ones!"
 el2.style.color = 'black'
 el2.style.padding = '20px'
 element.appendChild(el2)
