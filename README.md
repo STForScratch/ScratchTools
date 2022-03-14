@@ -80,6 +80,14 @@ This update adds some **HUGE** new features, and fixes some bugs.
 - Fixed a bug where the statistics button went to the wrong website for users with long usernames (thanks to [JoePotatoScratch](https://scratch.mit.edu/users/JoePotatoScratch/) for reporting it)
 - Fixed a bug with the TurboWarp button where it wasn't displaying
 
+# v1.7
+We added some **super** fun new features, and also some helpful ones!
+
+### What we did:
+- On profiles, you can hover over any username in the comments to display their bio
+- We added a St. Patrick's Day feature
+- We added a *very* secret April Fool's Day feature
+
 ## Fun Facts About ScratchTools
 ### ScratchTools v1.0 was approved on 2/22/22
 While ScratchTools was published later during a livestream, it was approved for the Chrome Webstore by the Google Team very late at night on 2/22/22!
