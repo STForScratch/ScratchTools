@@ -1,3 +1,24 @@
+// april fool's day (start)
+const d = new Date();
+console.log(d.getDate())
+if (d.getDate() === 1) {
+checkapril();
+function checkapril() {
+    if(document.querySelector('#view > div > div.inner > div:nth-child(2) > div.guiPlayer > div > div:nth-child(1) > div > div > div.controls_controls-container_2xinB > img.stop-all_stop-all_1Y8P9') === null) {
+        window.setTimeout(checkapril, 100)
+    } else {
+        foolsstart()
+    }
+}
+function foolsstart() {
+var start = document.querySelector('#view > div > div.inner > div:nth-child(2) > div.guiPlayer > div > div:nth-child(1) > div > div > div.controls_controls-container_2xinB > img.green-flag_green-flag_1kiAo')
+var stop = document.querySelector('#view > div > div.inner > div:nth-child(2) > div.guiPlayer > div > div:nth-child(1) > div > div > div.controls_controls-container_2xinB > img.stop-all_stop-all_1Y8P9')
+document.querySelector('#view > div > div.inner > div:nth-child(2) > div.guiPlayer > div > div:nth-child(1) > div > div > div.controls_controls-container_2xinB').prepend(stop)
+start.src = '/static/assets/36fcc7dbca20720abcab01e49d4955f9.svg'
+stop.src = '/static/assets/2e0c4790f8f9cf28e3c346b9cef0fcb6.svg'
+}
+}
+// april fool's day (end)
 if (window.location.href.includes('editor')) {
 } else {
 str = window.location.href
