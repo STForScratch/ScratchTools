@@ -1,4 +1,12 @@
+// get cookie
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+// get cookie
 function replacealllinks() {
+  if (getCookie('ST Features').includes('forum-asterisk')) {
 const highlightedItems2 = document.querySelectorAll("a");
 
 highlightedItems2.forEach(function(item) {
@@ -23,5 +31,6 @@ if(data.hasOwnProperty('scratchteam')){
 item.textContent = `${item.textContent}*`
 }
     }
+}
 }
 replacealllinks()
