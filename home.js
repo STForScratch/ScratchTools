@@ -15,14 +15,23 @@ item.style.color = '#009a49'
 })
 }
 // st patrick's day end
+// settings button
+var centered = document.createElement('center')
+var a = document.createElement('a')
+a.textContent = 'ScratchTools Settings'
+centered.style.marginTop = '20px'
+a.href = "https://scratch.mit.edu/ScratchTools/"
+centered.appendChild(a)
+document.querySelector('#view').prepend(centered)
+// end settings button
 function getCookie(name) {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
     if (parts.length === 2) return parts.pop().split(';').shift();
   }
   function checkversion() {
-if (getCookie('ScratchToolsVersion') !== '1.7') {
-    document.cookie = "ScratchToolsVersion=1.7; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/";
+if (getCookie('ScratchToolsVersion') !== '1.8') {
+    document.cookie = "ScratchToolsVersion=1.8; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/";
     createExplanation()
 }
   }
@@ -64,7 +73,7 @@ element.appendChild(h1)
 var stuff = document.createElement('br')
 element.appendChild(stuff)
 var el2 = document.createElement('p')
-el2.textContent = "We have some awesome new features, including some special holiday ones!"
+el2.textContent = "This is a HUGE release, and we have a lot to show you. We didn't really add any new Scratch features, but we did add one thing: A SETTINGS PAGE!!! You can now control which features you do and don't see, and you can do so at any time! You can always find the settings button on the home page!"
 el2.style.color = 'black'
 el2.style.padding = '20px'
 element.appendChild(el2)
