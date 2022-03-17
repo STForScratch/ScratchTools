@@ -1,3 +1,7 @@
+if (getCookie('ST Features') === undefined) {
+    document.cookie = `ST Features=${getCookie('ST Features') + 'ST '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+}
+
 document.querySelector('#page-404 > div.box-content').remove()
 document.querySelector('title').textContent = 'ScratchTools'
 
