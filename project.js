@@ -1,3 +1,10 @@
+// get cookie
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
+// get cookie
 // april fool's day (start)
 const d = new Date();
 console.log(d.getDate())
@@ -62,6 +69,7 @@ async function getapistuff(url) {
 }
 
 async function getapi3(url, abc) {
+    if (getCookie('ST Features').includes('follower-count')) {
     
     // Storing response
     const response = await fetch('https://scratchdb.lefty.one/v3/user/info/' +url);
@@ -73,6 +81,7 @@ async function getapi3(url, abc) {
     var stuff = data["statistics"]["followers"]
     document.querySelector('#view > div > div.inner > div.flex-row.preview-row.force-row > div.flex-row.project-header > div > a').textContent = `${abc} - ${stuff} Followers (Credit to ScratchDB by DatOneLefty)`
 }
+    }
 }
 
 function propose() {
@@ -95,6 +104,7 @@ function abc() {
     }
 
     function xyz() {
+        if (getCookie('ST Features').includes('pptbf')) {
 getapi3(document.querySelector('#view > div > div.inner > div.flex-row.preview-row.force-row > div.flex-row.project-header > div > a').textContent, document.querySelector('#view > div > div.inner > div.flex-row.preview-row.force-row > div.flex-row.project-header > div > a').textContent)
 
 var elem = document.createElement('button');
@@ -105,6 +115,7 @@ el.href = 'https://scratch.mit.edu/studios/28715018/comments/'
 document.querySelector('#view > div > div.inner > div:nth-child(3) > div.flex-row.subactions > div.flex-row.action-buttons').appendChild(el);
 document.querySelector('#view > div > div.inner > div:nth-child(3) > div.flex-row.subactions > div.flex-row.action-buttons > a').appendChild(elem);
 }
+    }
 
 function stuff() {
     str = window.location.href
