@@ -1,12 +1,26 @@
+// get cookie
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+// get cookie
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
 setTimeout(() => { replacealllinks() }, 2000);
 setTimeout(() => { addOnClick() }, 2000);
 about()
 str = window.location.href
+if (getCookie('ST Features').includes('round')) {
 document.querySelector('#profile-avatar > div > a > img').style.borderRadius = "10%";
 document.querySelector('#profile-avatar > div > a > img').style.border = "0px";
 var elementExists = document.querySelector('#featured-project > img')
 if (elementExists !== null) {
 document.querySelector('#featured-project > img').style.borderRadius = "20px";
+}
 }
 
 // check if special
@@ -25,8 +39,6 @@ document.querySelector('#profile-data > div.box-head').prepend(logo)
 if (help.includes(document.querySelector('#profile-data > div.box-head > div > h2').textContent)) {
 document.querySelector('#profile-data > div.box-head > div > p > span.group').textContent = `${document.querySelector('#profile-data > div.box-head > div > p > span.group').textContent} | ScratchTools`
 document.querySelector('#profile-data > div.box-head > div > h2').textContent = `*${document.querySelector('#profile-data > div.box-head > div > h2').textContent}`
-setTimeout(() => { replacealllinks() }, 2000);
-setTimeout(() => { addOnClick() }, 2000);
 }
 // replace links in comments
 function replacealllinks() {
@@ -35,10 +47,15 @@ const highlightedItems = document.querySelectorAll("a");
 
 highlightedItems.forEach(function(item) {
 if (item.parentNode.className === 'content') {
+  if (getCookie('ST Features').includes('show-profile-titles')) {
 replacelinks(item)
+  }
 }
+
 if (item.parentNode.className === 'name') {
+  if (getCookie('ST Features').includes('hover-over-user')) {
   replaceuserlinks(item)
+  }
 }
 });
 
@@ -106,7 +123,7 @@ async function getapi3(url, user) {
 // Calling that async function
 
 async function getapi2(url, a) {
-    
+  if (getCookie('ST Features').includes('message-count')) {
     // Storing response
     const response = await fetch(url);
     
@@ -115,6 +132,7 @@ async function getapi2(url, a) {
     console.log(data);
     var stuff = data["count"]
     document.querySelector(".location").textContent = `${a} | ${stuff} Messages`;
+  }
 }
 
 async function getapi20(url) {
@@ -148,6 +166,7 @@ function feature() {
 
 replacealllinks2()
 function replacealllinks2() {
+  if (getCookie('ST Features').includes('full-title')) {
 const highlightedItems2 = document.querySelectorAll("a");
 
 highlightedItems2.forEach(function(item) {
@@ -159,6 +178,7 @@ replacelinks2(item)
   }
 })
                          }
+                        }
     async function replacelinks2(item) {
     
     // Storing response
