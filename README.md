@@ -88,6 +88,9 @@ We added some **super** fun new features, and also some helpful ones!
 - We added a St. Patrick's Day feature
 - We added a *very* secret April Fool's Day feature
 
+# v1.8
+This was a **HUGE** update, because we added in a settings page, where you can choose which features to see in action. Other than that, not much happened, other than us removing one feature. But, we believe that both of these changes helped ScratchTools and all of its users.
+
 ## Fun Facts About ScratchTools
 ### ScratchTools v1.0 was approved on 2/22/22
 While ScratchTools was published later during a livestream, it was approved for the Chrome Webstore by the Google Team very late at night on 2/22/22!
