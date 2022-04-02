@@ -94,6 +94,21 @@ This was a **HUGE** update, because we added in a settings page, where you can c
 # v1.9
 This version just fixed a major bug having to do with the settings for ScratchTools. We didn't add in any features, but now the settings work.
 
+# v2.0
+This is one of our **BIGGEST** updates yet, and we're excited to share it with you! We added a bunch of new features and fixed some major bugs! Introducing, ScratchTools v2.0!
+
+### What we did:
+- In the editor, you can remove the dots from the dotted background
+- You can now save posts as drafts in the forums
+- Replace the Scratch News section with your recent projects
+- Put the ScratchTools settings button in the footer
+- Automatically open links from project pages in a new tab
+- Ocular buttons next to usernames in the forums
+- Slider for outline in the paint editor
+- Remove the icons for the block, paint, and sound editors
+- Fixed the bug that hid the ScratchTools Settings
+- Fixed the bug that didn't show editor features when you first made a project
+
 ## Fun Facts About ScratchTools
 ### ScratchTools v1.0 was approved on 2/22/22
 While ScratchTools was published later during a livestream, it was approved for the Chrome Webstore by the Google Team very late at night on 2/22/22!
