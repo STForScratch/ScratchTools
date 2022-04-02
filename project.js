@@ -5,10 +5,27 @@ function getCookie(name) {
     if (parts.length === 2) return parts.pop().split(';').shift();
   }
 // get cookie
+if (getCookie('ST Features').includes('open-new-tab')) {
+    waitforit()
+    function waitforit() {
+if (document.querySelector('#view > div > div.inner > div:nth-child(2) > div.flex-row.project-notes') === null) {
+window.setTimeout(waitforit, 100)
+} else {
+    var openlink = document.querySelectorAll('a')
+    openlink.forEach(function(link) {
+        if (link.parentNode.parentNode === document.querySelector('#navigation > div > ul')) {
+        } else {
+    link.target = '_blank'
+    link.rel = 'noopener noreferrer'
+        }
+    })
+    }
+}
+}
 // april fool's day (start)
 const d = new Date();
 console.log(d.getDate())
-if (d.getDate() === 1) {
+if (d.getDate() === 31) {
 checkapril();
 function checkapril() {
     if(document.querySelector('#view > div > div.inner > div:nth-child(2) > div.guiPlayer > div > div:nth-child(1) > div > div > div.controls_controls-container_2xinB > img.stop-all_stop-all_1Y8P9') === null) {
