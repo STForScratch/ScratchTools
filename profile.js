@@ -189,6 +189,6 @@ replacelinks2(item)
     console.log(data);
 if(data.hasOwnProperty('title')){
     var stuff = data["title"]
-item.title = stuff
+item.title = `${stuff} by @${data['author']['username']}`
 }
     }
