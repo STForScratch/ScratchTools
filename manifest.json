@@ -2,7 +2,7 @@
     "name": "ScratchTools for Scratch",
     "short_name": "ScratchTools",
     "manifest_version": 3,
-    "version": "1.8",
+    "version": "2.0",
     "description": "Great tools to make Scratching easier!",
     "author": "rgantzos",
     "background": {
@@ -32,12 +32,6 @@
             "run_at": "document_end"
         },
         {
-            "matches": ["https://scratch.mit.edu/projects/*/editor/"],
-            "all_frames": true,
-            "js": ["editor.js"],
-            "run_at": "document_end"
-        },
-        {
             "matches": ["https://scratch.mit.edu/search/projects?q=*"],
             "all_frames": true,
             "js": ["search.js"],
@@ -50,7 +44,7 @@
             "run_at": "document_end"
         },
         {
-            "matches": ["https://scratch.mit.edu/editor"],
+            "matches": ["https://scratch.mit.edu/projects/editor/", "https://scratch.mit.edu/projects/*/editor/"],
             "all_frames": true,
             "js": ["editor.js"],
             "run_at": "document_end"
@@ -104,9 +98,9 @@
             "run_at": "document_end"
         },
         {
-            "matches": ["https://*/*"],
+            "matches": ["https://scratch.mit.edu/*"],
             "all_frames": true,
-            "js": ["blank.js"],
+            "js": ["all.js"],
             "run_at": "document_end"
         }
     ]
