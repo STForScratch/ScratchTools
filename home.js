@@ -1,3 +1,91 @@
+// get cookie
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+// get cookie
+if (getCookie('ST Features').includes('scratch-news-recent')) {
+titles()
+}
+function titles() {
+  if (document.querySelector('#view > div > div:nth-child(1) > div.splash-header > div.box.news') !== null) {
+    getprojects(document.querySelector('#navigation > div > ul > li.link.right.account-nav > div > ul > li:nth-child(1) > a').href.split('/users/')[1].split('/')[0])
+  } else {
+    window.setTimeout(titles, 100)
+  }
+}
+
+async function getprojects(item) {
+    
+  // Storing response
+  const response5 = await fetch(`https://api.scratch.mit.edu/users/${item}/projects/`);
+
+  document.querySelector('#view > div > div:nth-child(1) > div.splash-header > div.box.news > div.box-header > p > a').href = `https://scratch.mit.edu/users/${item}/projects/`
+  
+  // Storing data in form of JSON
+  var data = await response5.json();
+  console.log(data);
+if(data.hasOwnProperty(0)){
+  document.querySelector('#view > div > div:nth-child(1) > div.splash-header > div.box.news > div.box-header > h4').textContent = 'Recent Projects'
+  var titleofproject = data[0]["title"]
+  var descriptionofproject = data[0]["instructions"]
+  if (descriptionofproject === '') {
+    var descriptionofproject = data[0]["credits"]
+  }
+  if (titleofproject.length > 30) {
+    var titleofproject = `${titleofproject.slice(0, 30)}...`
+  }
+  if (descriptionofproject.length > 120) {
+    var descriptionofproject = `${descriptionofproject.slice(0, 120)}...`
+  }
+  var linktoproject = `projects/${data[0]['id']}/`
+document.querySelector('#view > div > div:nth-child(1) > div.splash-header > div.box.news > div.box-content > ul > li:nth-child(1) > a > div > h4').textContent = titleofproject
+document.querySelector('#view > div > div:nth-child(1) > div.splash-header > div.box.news > div.box-content > ul > li:nth-child(1) > a > div > p').textContent = descriptionofproject
+document.querySelector('#view > div > div:nth-child(1) > div.splash-header > div.box.news > div.box-content > ul > li:nth-child(1) > a').href = linktoproject
+document.querySelector('#view > div > div:nth-child(1) > div.splash-header > div.box.news > div.box-content > ul > li:nth-child(1) > a > img').src = 'https://64.media.tumblr.com/9a68a4b4b0a7d129dfa331eaf0b1f6c7/4b73a84798c588fd-78/s540x810/2054110f1aaca473920ea40aea70a6f57159ab94.png'
+}
+
+if(data.hasOwnProperty(1)){
+  var titleofproject = data[1]["title"]
+  var descriptionofproject = data[1]["instructions"]
+  if (descriptionofproject === '') {
+    var descriptionofproject = data[1]["credits"]
+  }
+  if (titleofproject.length > 30) {
+    var titleofproject = `${titleofproject.slice(0, 30)}...`
+  }
+  if (descriptionofproject.length > 120) {
+    var descriptionofproject = `${descriptionofproject.slice(0, 120)}...`
+  }
+  var linktoproject = `projects/${data[1]['id']}/`
+document.querySelector('#view > div > div:nth-child(1) > div.splash-header > div.box.news > div.box-content > ul > li:nth-child(2) > a > div > h4').textContent = titleofproject
+document.querySelector('#view > div > div:nth-child(1) > div.splash-header > div.box.news > div.box-content > ul > li:nth-child(2) > a > div > p').textContent = descriptionofproject
+document.querySelector('#view > div > div:nth-child(1) > div.splash-header > div.box.news > div.box-content > ul > li:nth-child(2) > a').href = linktoproject
+document.querySelector('#view > div > div:nth-child(1) > div.splash-header > div.box.news > div.box-content > ul > li:nth-child(2) > a > img').src = 'https://64.media.tumblr.com/9a68a4b4b0a7d129dfa331eaf0b1f6c7/4b73a84798c588fd-78/s540x810/2054110f1aaca473920ea40aea70a6f57159ab94.png'
+}
+
+if(data.hasOwnProperty(2)){
+  var titleofproject = data[2]["title"]
+  var descriptionofproject = data[2]["instructions"]
+  if (descriptionofproject === '') {
+    var descriptionofproject = data[2]["credits"]
+  }
+  if (titleofproject.length > 30) {
+    var titleofproject = `${titleofproject.slice(0, 30)}...`
+  }
+  if (descriptionofproject.length > 120) {
+    var descriptionofproject = `${descriptionofproject.slice(0, 120)}...`
+  }
+  var linktoproject = `projects/${data[2]['id']}/`
+document.querySelector('#view > div > div:nth-child(1) > div.splash-header > div.box.news > div.box-content > ul > li:nth-child(3) > a > div > h4').textContent = titleofproject
+document.querySelector('#view > div > div:nth-child(1) > div.splash-header > div.box.news > div.box-content > ul > li:nth-child(3) > a > div > p').textContent = descriptionofproject
+document.querySelector('#view > div > div:nth-child(1) > div.splash-header > div.box.news > div.box-content > ul > li:nth-child(3) > a').href = linktoproject
+document.querySelector('#view > div > div:nth-child(1) > div.splash-header > div.box.news > div.box-content > ul > li:nth-child(3) > a > img').src = 'https://64.media.tumblr.com/9a68a4b4b0a7d129dfa331eaf0b1f6c7/4b73a84798c588fd-78/s540x810/2054110f1aaca473920ea40aea70a6f57159ab94.png'
+}
+  }
+
+
 // set patrick's day start
 const d = new Date();
 console.log(d.getDate())
@@ -15,7 +103,10 @@ item.style.color = '#009a49'
 })
 }
 // st patrick's day end
+
 // settings button
+if (getCookie('ST Features').includes('settings-footer')) {
+} else {
 var centered = document.createElement('center')
 var a = document.createElement('a')
 a.textContent = 'ScratchTools Settings'
@@ -23,6 +114,7 @@ centered.style.marginTop = '20px'
 a.href = "https://scratch.mit.edu/ScratchTools/"
 centered.appendChild(a)
 document.querySelector('#view').prepend(centered)
+}
 // end settings button
 function getCookie(name) {
     const value = `; ${document.cookie}`;
@@ -30,8 +122,8 @@ function getCookie(name) {
     if (parts.length === 2) return parts.pop().split(';').shift();
   }
   function checkversion() {
-if (getCookie('ScratchToolsVersion') !== '1.8') {
-    document.cookie = "ScratchToolsVersion=1.8; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/";
+if (getCookie('ScratchToolsVersion') !== '2.0') {
+    document.cookie = "ScratchToolsVersion=2.0; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/";
     createExplanation()
 }
   }
@@ -56,26 +148,30 @@ el4.style.marginRight = 'auto'
 el5.style.marginRight = 'auto'
 el6.style.marginRight = 'auto'
 element.style.marginRight = 'auto'
-el4.href = 'https://github.com/rgantzosonscratch/ScratchTools'
-element.style.backgroundColor = 'white'
+el4.href = 'https://youtu.be/fTDH9YfN2ug'
+element.style.backgroundColor = 'black'
 element.style.color = 'Orange'
 element.className = 'box'
 element.style.borderColor = 'black'
 element.style.borderRadius = '20px'
 element.style.height = 'auto'
-el4.textContent = 'Official Repository'
+el4.textContent = 'Official Release Video'
+el4.style.fontFamily = 'sans-serif'
 parentstuff.appendChild(element)
 parentstuff.prepend(el3)
 var h1 = document.createElement('h1')
 h1.textContent = "What's New in ScratchTools"
+h1.style.fontFamily = 'sans-serif'
 element.appendChild(el)
 element.appendChild(h1)
 var stuff = document.createElement('br')
 element.appendChild(stuff)
 var el2 = document.createElement('p')
-el2.textContent = "This is a HUGE release, and we have a lot to show you. We didn't really add any new Scratch features, but we did add one thing: A SETTINGS PAGE!!! You can now control which features you do and don't see, and you can do so at any time! You can always find the settings button on the home page!"
-el2.style.color = 'black'
+el2.textContent = "Welcome to ScratchTools v2.0! This is a HUGE new release, and we're excited to show it to you! We have a ton of new features and fixed a few major bugs! Go explore ScratchTools v2.0!"
+h1.style.color = 'white'
+el2.style.color = '#ebebeb'
 el2.style.padding = '20px'
+el2.style.fontFamily = 'sans-serif'
 element.appendChild(el2)
 element.appendChild(el4)
 element.appendChild(el5)
