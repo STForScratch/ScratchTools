@@ -18,10 +18,311 @@ function getCookie(name) {
     if (parts.length === 2) return parts.pop().split(';').shift();
   }
 
+var featured = document.createElement('h1')
+featured.textContent = 'New Features'
+
+document.querySelector('#page-404 > div').appendChild(featured)
+
+  // plain white background in scratch editor
+var div14 = document.createElement('div')
+var h14 = document.createElement('h3')
+h14.textContent = 'Remove Dots from Block Editor Background'
+var label14 = document.createElement('label')
+label14.className = "switch"
+var switch14 = document.createElement('input')
+switch14.type = "checkbox"
+console.log(getCookie('ST Features'))
+if (getCookie('ST Features').includes('editorbg')) {
+    switch14.checked = true
+}
+switch14.onclick = function() {
+    myFunction14()
+  }
+label14.appendChild(switch14)
+var span14 = document.createElement('span')
+span14.className = "slider round"
+label14.appendChild(span14)
+div14.appendChild(h14)
+div14.appendChild(document.createElement('br'))
+var description = document.createElement('h3')
+description.style.marginTop = '-20px'
+description.textContent = 'Switches the white dotted background in the editor for a plain white background.'
+div14.appendChild(description)
+div14.appendChild(label14)
+document.querySelector('#page-404 > div').appendChild(div14)
+function myFunction14() {
+    if (switch14.checked === true) {
+        document.cookie = `ST Features=${getCookie('ST Features') + 'editorbg '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+    } else {
+        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('editorbg', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+    }
+}
+
+// save forum drafts
+var div15 = document.createElement('div')
+var h15 = document.createElement('h3')
+h15.textContent = 'Save Forum Post Drafts'
+var label15 = document.createElement('label')
+label15.className = "switch"
+var switch15 = document.createElement('input')
+switch15.type = "checkbox"
+console.log(getCookie('ST Features'))
+if (getCookie('ST Features').includes('forum-draft')) {
+    switch15.checked = true
+}
+switch15.onclick = function() {
+    myFunction15()
+  }
+label15.appendChild(switch15)
+var span15 = document.createElement('span')
+span15.className = "slider round"
+label15.appendChild(span15)
+div15.appendChild(h15)
+div15.appendChild(document.createElement('br'))
+var description = document.createElement('h3')
+description.style.marginTop = '-20px'
+description.textContent = 'Saves what you write in your forum post, and gives you the option to reuse it next time.'
+div15.appendChild(description)
+div15.appendChild(label15)
+document.querySelector('#page-404 > div').appendChild(div15)
+function myFunction15() {
+    if (switch15.checked === true) {
+        document.cookie = `ST Features=${getCookie('ST Features') + 'forum-draft '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+    } else {
+        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('forum-draft', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+    }
+}
+
+// replace news with recent projects
+var div16 = document.createElement('div')
+var h16 = document.createElement('h3')
+h16.textContent = 'Replace Scratch News with Recent Projects'
+var label16 = document.createElement('label')
+label16.className = "switch"
+var switch16 = document.createElement('input')
+switch16.type = "checkbox"
+console.log(getCookie('ST Features'))
+if (getCookie('ST Features').includes('scratch-news-recent')) {
+    switch16.checked = true
+}
+switch16.onclick = function() {
+    myFunction16()
+  }
+label16.appendChild(switch16)
+var span16 = document.createElement('span')
+span16.className = "slider round"
+label16.appendChild(span16)
+div16.appendChild(h16)
+div16.appendChild(document.createElement('br'))
+var description = document.createElement('h3')
+description.style.marginTop = '-20px'
+description.textContent = 'Replaces the Scratch News on the homepage with your recent projects.'
+div16.appendChild(description)
+div16.appendChild(label16)
+document.querySelector('#page-404 > div').appendChild(div16)
+function myFunction16() {
+    if (switch16.checked === true) {
+        document.cookie = `ST Features=${getCookie('ST Features') + 'scratch-news-recent '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+    } else {
+        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('scratch-news-recent', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+    }
+}
+
+// settings button in footer
+var div17 = document.createElement('div')
+var h17 = document.createElement('h3')
+h17.textContent = 'ScratchTools Settings Button in Footer'
+var label17 = document.createElement('label')
+label17.className = "switch"
+var switch17 = document.createElement('input')
+switch17.type = "checkbox"
+console.log(getCookie('ST Features'))
+if (getCookie('ST Features').includes('settings-footer')) {
+    switch17.checked = true
+}
+switch17.onclick = function() {
+    myFunction17()
+  }
+label17.appendChild(switch17)
+var span17 = document.createElement('span')
+span17.className = "slider round"
+label17.appendChild(span17)
+div17.appendChild(h17)
+div17.appendChild(document.createElement('br'))
+var description = document.createElement('h3')
+description.style.marginTop = '-20px'
+description.textContent = 'Puts the ScratchTools settings button in the footer, rather than at the top of the homepage.'
+div17.appendChild(description)
+div17.appendChild(label17)
+document.querySelector('#page-404 > div').appendChild(div17)
+function myFunction17() {
+    if (switch17.checked === true) {
+        document.cookie = `ST Features=${getCookie('ST Features') + 'settings-footer '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+    } else {
+        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('settings-footer', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+    }
+}
+
+// open links in new tab
+var div18 = document.createElement('div')
+var h18 = document.createElement('h3')
+h18.textContent = 'Open Links in New Tabs on Projects'
+var label18 = document.createElement('label')
+label18.className = "switch"
+var switch18 = document.createElement('input')
+switch18.type = "checkbox"
+console.log(getCookie('ST Features'))
+if (getCookie('ST Features').includes('open-new-tab')) {
+    switch18.checked = true
+}
+switch18.onclick = function() {
+    myFunction18()
+  }
+label18.appendChild(switch18)
+var span18 = document.createElement('span')
+span18.className = "slider round"
+label18.appendChild(span18)
+div18.appendChild(h18)
+div18.appendChild(document.createElement('br'))
+var description = document.createElement('h3')
+description.style.marginTop = '-20px'
+description.textContent = 'Automatically opens links (other than those in the navbar) in a new tab to make sure you do not lose your progress in a project.'
+div18.appendChild(description)
+div18.appendChild(label18)
+document.querySelector('#page-404 > div').appendChild(div18)
+function myFunction18() {
+    if (switch18.checked === true) {
+        document.cookie = `ST Features=${getCookie('ST Features') + 'open-new-tab '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+    } else {
+        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('open-new-tab', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+    }
+}
+
+// ocular button in forums
+var div19 = document.createElement('div')
+var h19 = document.createElement('h3')
+h19.textContent = 'Ocular Button in Forums'
+var label19 = document.createElement('label')
+label19.className = "switch"
+var switch19 = document.createElement('input')
+switch19.type = "checkbox"
+console.log(getCookie('ST Features'))
+if (getCookie('ST Features').includes('ocular-link')) {
+    switch19.checked = true
+}
+switch19.onclick = function() {
+    myFunction19()
+  }
+label19.appendChild(switch19)
+var span19 = document.createElement('span')
+span19.className = "slider round"
+label19.appendChild(span19)
+div19.appendChild(h19)
+div19.appendChild(document.createElement('br'))
+var description = document.createElement('h3')
+description.style.marginTop = '-20px'
+description.textContent = "Adds a button to a user's Ocular page next to their usernames in the forums."
+div19.appendChild(description)
+div19.appendChild(label19)
+document.querySelector('#page-404 > div').appendChild(div19)
+function myFunction19() {
+    if (switch19.checked === true) {
+        document.cookie = `ST Features=${getCookie('ST Features') + 'ocular-link '}; expires=Thu, 19 Dec 9999 12:00:00 UTC; path=/`;
+    } else {
+        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('ocular-link', '')}; expires=Thu, 19 Dec 9999 12:00:00 UTC; path=/`;
+    }
+}
+
+// color slider input
+var div20 = document.createElement('div')
+var h20 = document.createElement('h3')
+h20.textContent = 'Slider for Outline'
+var label20 = document.createElement('label')
+label20.className = "switch"
+var switch20 = document.createElement('input')
+switch20.type = "checkbox"
+console.log(getCookie('ST Features'))
+if (getCookie('ST Features').includes('color-slider-input')) {
+    switch20.checked = true
+}
+switch20.onclick = function() {
+    myFunction20()
+  }
+label20.appendChild(switch20)
+var span20 = document.createElement('span')
+span20.className = "slider round"
+label20.appendChild(span20)
+div20.appendChild(h20)
+div20.appendChild(document.createElement('br'))
+var description = document.createElement('h3')
+description.style.marginTop = '-20px'
+description.textContent = "Replaces the number input for the outline width in the color editor with a slider."
+div20.appendChild(description)
+div20.appendChild(label20)
+document.querySelector('#page-404 > div').appendChild(div20)
+function myFunction20() {
+    if (switch20.checked === true) {
+        document.cookie = `ST Features=${getCookie('ST Features') + 'color-slider-input '}; expires=Thu, 19 Dec 9999 12:00:00 UTC; path=/`;
+    } else {
+        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('color-slider-input', '')}; expires=Thu, 19 Dec 9999 12:00:00 UTC; path=/`;
+    }
+}
+
+// remove editor icons
+var div21 = document.createElement('div')
+var h21 = document.createElement('h3')
+h21.textContent = 'Remove Editor Icons'
+var label21 = document.createElement('label')
+label21.className = "switch"
+var switch21 = document.createElement('input')
+switch21.type = "checkbox"
+console.log(getCookie('ST Features'))
+if (getCookie('ST Features').includes('remove-editor-icons')) {
+    switch21.checked = true
+}
+switch21.onclick = function() {
+    myFunction21()
+  }
+label21.appendChild(switch21)
+var span21 = document.createElement('span')
+span21.className = "slider round"
+label21.appendChild(span21)
+div21.appendChild(h21)
+div21.appendChild(document.createElement('br'))
+var description = document.createElement('h3')
+description.style.marginTop = '-20px'
+description.textContent = "Hides the icons for the code, paint, and sound editors."
+div21.appendChild(description)
+div21.appendChild(label21)
+document.querySelector('#page-404 > div').appendChild(div21)
+function myFunction21() {
+    if (switch21.checked === true) {
+        document.cookie = `ST Features=${getCookie('ST Features') + 'remove-editor-icons '}; expires=Thu, 19 Dec 9999 12:00:00 UTC; path=/`;
+    } else {
+        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('remove-editor-icons', '')}; expires=Thu, 19 Dec 9999 12:00:00 UTC; path=/`;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+var featured = document.createElement('h1')
+featured.textContent = 'Other Features'
+
+document.querySelector('#page-404 > div').appendChild(featured)
+
   // show profile comment project titles
 
   var div1 = document.createElement('div')
-var h1 = document.createElement('h1')
+var h1 = document.createElement('h3')
 h1.textContent = 'Show Profile Comment Project Titles'
 var label1 = document.createElement('label')
 label1.className = "switch"
@@ -39,6 +340,7 @@ var span1 = document.createElement('span')
 span1.className = "slider round"
 label1.appendChild(span1)
 div1.appendChild(h1)
+div1.appendChild(document.createElement('br'))
 var description = document.createElement('h3')
 description.style.marginTop = '-20px'
 description.textContent = 'In the comments of profiles, project links will switch to their titles.'
@@ -55,7 +357,7 @@ function myFunction1() {
 
 // hover over user
 var div2 = document.createElement('div')
-var h2 = document.createElement('h1')
+var h2 = document.createElement('h3')
 h2.textContent = 'Hover Over Username to Show Bio'
 var label2 = document.createElement('label')
 label2.className = "switch"
@@ -73,6 +375,7 @@ var span2 = document.createElement('span')
 span2.className = "slider round"
 label2.appendChild(span2)
 div2.appendChild(h2)
+div2.appendChild(document.createElement('br'))
 var description = document.createElement('h3')
 description.style.marginTop = '-20px'
 description.textContent = 'In the comments of profiles, hover over any user to view their bio.'
@@ -89,7 +392,7 @@ function myFunction2() {
 
 // follower count on projects
 var div3 = document.createElement('div')
-var h3 = document.createElement('h1')
+var h3 = document.createElement('h3')
 h3.textContent = 'Show Follower Count on Projects'
 var label3 = document.createElement('label')
 label3.className = "switch"
@@ -107,6 +410,7 @@ var span3 = document.createElement('span')
 span3.className = "slider round"
 label3.appendChild(span3)
 div3.appendChild(h3)
+div3.appendChild(document.createElement('br'))
 var description = document.createElement('h3')
 description.style.marginTop = '-20px'
 description.textContent = 'View the follower count of any user on their project, right next to their username.'
@@ -123,7 +427,7 @@ function myFunction3() {
 
 // show message count
 var div4 = document.createElement('div')
-var h4 = document.createElement('h1')
+var h4 = document.createElement('h3')
 h4.textContent = 'Show Message Count on Profiles'
 var label4 = document.createElement('label')
 label4.className = "switch"
@@ -141,6 +445,7 @@ var span4 = document.createElement('span')
 span4.className = "slider round"
 label4.appendChild(span4)
 div4.appendChild(h4)
+div4.appendChild(document.createElement('br'))
 var description = document.createElement('h3')
 description.style.marginTop = '-20px'
 description.textContent = "Any user's message count will be displayed on their profile."
@@ -157,7 +462,7 @@ function myFunction4() {
 
 // more tutorials
 var div5 = document.createElement('div')
-var h5 = document.createElement('h1')
+var h5 = document.createElement('h3')
 h5.textContent = 'Show More Tutorials'
 var label5 = document.createElement('label')
 label5.className = "switch"
@@ -175,6 +480,7 @@ var span5 = document.createElement('span')
 span5.className = "slider round"
 label5.appendChild(span5)
 div5.appendChild(h5)
+div5.appendChild(document.createElement('br'))
 var description = document.createElement('h3')
 description.style.marginTop = '-20px'
 description.textContent = 'Extra tutorials are added to the Ideas page.'
@@ -191,7 +497,7 @@ function myFunction5() {
 
 // pptbf
 var div6 = document.createElement('div')
-var h6 = document.createElement('h1')
+var h6 = document.createElement('h3')
 h6.textContent = 'Add Propose Button to Projects'
 var label6 = document.createElement('label')
 label6.className = "switch"
@@ -209,6 +515,7 @@ var span6 = document.createElement('span')
 span6.className = "slider round"
 label6.appendChild(span6)
 div6.appendChild(h6)
+div6.appendChild(document.createElement('br'))
 var description = document.createElement('h3')
 description.style.marginTop = '-20px'
 description.textContent = "A button is added to other Scratchers' project pages that takes you to the Propose Projects to Be Featured studio."
@@ -224,7 +531,7 @@ function myFunction6() {
 }
 
 var div7 = document.createElement('div')
-var h7 = document.createElement('h1')
+var h7 = document.createElement('h3')
 h7.textContent = 'Add TurboWarp Button to Editor'
 var label7 = document.createElement('label')
 label7.className = "switch"
@@ -242,6 +549,7 @@ var span7 = document.createElement('span')
 span7.className = "slider round"
 label7.appendChild(span7)
 div7.appendChild(h7)
+div7.appendChild(document.createElement('br'))
 var description = document.createElement('h3')
 description.style.marginTop = '-20px'
 description.textContent = 'A button is added in the Scratch editor to open the project in the TurboWarp editor.'
@@ -258,7 +566,7 @@ function myFunction7() {
 
 // rounded corners
 var div8 = document.createElement('div')
-var h8 = document.createElement('h1')
+var h8 = document.createElement('h3')
 h8.textContent = 'Add Rounded Corners to Profile Images'
 var label8 = document.createElement('label')
 label8.className = "switch"
@@ -276,6 +584,7 @@ var span8 = document.createElement('span')
 span8.className = "slider round"
 label8.appendChild(span8)
 div8.appendChild(h8)
+div8.appendChild(document.createElement('br'))
 var description = document.createElement('h3')
 description.style.marginTop = '-20px'
 description.textContent = 'The featured project thumbnail and the profile picture have rounded corners.'
@@ -292,7 +601,7 @@ function myFunction8() {
 
 // statistics button
 var div9 = document.createElement('div')
-var h9 = document.createElement('h1')
+var h9 = document.createElement('h3')
 h9.textContent = 'Show Statistics in My Stuff'
 var label9 = document.createElement('label')
 label9.className = "switch"
@@ -310,6 +619,7 @@ var span9 = document.createElement('span')
 span9.className = "slider round"
 label9.appendChild(span9)
 div9.appendChild(h9)
+div9.appendChild(document.createElement('br'))
 var description = document.createElement('h3')
 description.style.marginTop = '-20px'
 description.textContent = 'Adds a button that takes you to your automatic ScratchStats page.'
@@ -326,7 +636,7 @@ function myFunction9() {
 
 // hide sprite watermark
 var div10 = document.createElement('div')
-var h10 = document.createElement('h1')
+var h10 = document.createElement('h3')
 h10.textContent = 'Hide the Useless Sprite Watermark'
 var label10 = document.createElement('label')
 label10.className = "switch"
@@ -344,6 +654,7 @@ var span10 = document.createElement('span')
 span10.className = "slider round"
 label10.appendChild(span10)
 div10.appendChild(h10)
+div10.appendChild(document.createElement('br'))
 var description = document.createElement('h3')
 description.style.marginTop = '-20px'
 description.textContent = 'Hides the useless watermark of the current sprite in the top right corner of the block editor.'
@@ -360,7 +671,7 @@ function myFunction10() {
 
 // show full title
 var div11 = document.createElement('div')
-var h11 = document.createElement('h1')
+var h11 = document.createElement('h3')
 h11.textContent = 'Show Full Project Title'
 var label11 = document.createElement('label')
 label11.className = "switch"
@@ -378,6 +689,7 @@ var span11 = document.createElement('span')
 span11.className = "slider round"
 label11.appendChild(span11)
 div11.appendChild(h11)
+div11.appendChild(document.createElement('br'))
 var description = document.createElement('h3')
 description.style.marginTop = '-20px'
 description.textContent = 'Hover over any project title on a profile to view the full title, not cut off.'
@@ -394,7 +706,7 @@ function myFunction11() {
 
 // add * to scratch team in discuss
 var div12 = document.createElement('div')
-var h12 = document.createElement('h1')
+var h12 = document.createElement('h3')
 h12.textContent = 'Scratch Team Asterisk in Forums'
 var label12 = document.createElement('label')
 label12.className = "switch"
@@ -412,6 +724,7 @@ var span12 = document.createElement('span')
 span12.className = "slider round"
 label12.appendChild(span12)
 div12.appendChild(h12)
+div12.appendChild(document.createElement('br'))
 var description = document.createElement('h3')
 description.style.marginTop = '-20px'
 description.textContent = 'Adds an asterisk (*) next to the usernames of any Scratch Team member in the forums.'
@@ -428,7 +741,7 @@ function myFunction12() {
 
 // add * to scratch team in discuss
 var div13 = document.createElement('div')
-var h13 = document.createElement('h1')
+var h13 = document.createElement('h3')
 h13.textContent = 'Show All Projects Button in Search'
 var label13 = document.createElement('label')
 label13.className = "switch"
@@ -446,6 +759,7 @@ var span13 = document.createElement('span')
 span13.className = "slider round"
 label13.appendChild(span13)
 div13.appendChild(h13)
+div13.appendChild(document.createElement('br'))
 var description = document.createElement('h3')
 description.style.marginTop = '-20px'
 description.textContent = 'Adds a button to search through all the Scratch projects, not just the FE (for everyone) ones.'
@@ -459,3 +773,5 @@ function myFunction13() {
         document.cookie = `ST Features=${getCookie('ST Features').replaceAll('nfe', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
     }
 }
+
+document.querySelector('#page-404 > div').style.display = 'block'
