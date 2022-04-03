@@ -6,11 +6,11 @@
     "description": "Great tools to make Scratching easier!",
     "author": "rgantzos",
     "background": {
-        "service_worker": "background.js"
+        "service_worker": "/extras/background.js"
     },
     "browser": {
         "default_icon": "icon128.png",
-        "default_popup": "popup.html",
+        "default_popup": "/extras/popup.html",
         "default_title": "ScratchTools"
     },
     "icons": { "16": "icon16.png",
