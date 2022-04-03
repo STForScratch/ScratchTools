@@ -1,3 +1,4 @@
+if (window.location.href.includes("https://scratch.mit.edu/discuss")) {
 if (getCookie('forum') === undefined) {
   document.cookie = `forum=${text2Binary('No draft saved. Start writing and you can save a draft if necessary.')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
 }
@@ -90,4 +91,5 @@ function text2Binary(string) {
 function binaryToText(binary) {
 binary = binary.split(' ');
 return binary.map(elem => String.fromCharCode(parseInt(elem, 2))).join("");
+}
 }
