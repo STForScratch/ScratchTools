@@ -97,6 +97,9 @@ This version just fixed a major bug having to do with the settings for ScratchTo
 # v2.0
 This is one of our **BIGGEST** updates yet, and we're excited to share it with you! We added a bunch of new features and fixed some major bugs! Introducing, ScratchTools v2.0!
 
+# v2.1
+This version fixed a bug that was hiding the settings button until you went to the settings page.
+
 ### What we did:
 - In the editor, you can remove the dots from the dotted background
 - You can now save posts as drafts in the forums
