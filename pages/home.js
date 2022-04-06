@@ -5,6 +5,11 @@ function getCookie(name) {
   if (parts.length === 2) return parts.pop().split(';').shift();
 }
 // get cookie
+
+if (getCookie('ST Features') === undefined) {
+  document.cookie = `ST Features=${getCookie('ST Features') + 'ST '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+}
+
 if (window.location.href === "https://scratch.mit.edu/") {
 if (getCookie('ST Features').includes('scratch-news-recent')) {
 titles()
