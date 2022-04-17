@@ -128,8 +128,8 @@ function getCookie(name) {
     if (parts.length === 2) return parts.pop().split(';').shift();
   }
   function checkversion() {
-if (getCookie('ScratchToolsVersion') !== '2.0') {
-    document.cookie = "ScratchToolsVersion=2.0; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/";
+if (getCookie('ScratchToolsVersion') !== '2.1.2') {
+    document.cookie = "ScratchToolsVersion=2.1.2; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/";
     createExplanation()
 }
   }
@@ -154,7 +154,7 @@ el4.style.marginRight = 'auto'
 el5.style.marginRight = 'auto'
 el6.style.marginRight = 'auto'
 element.style.marginRight = 'auto'
-el4.href = 'https://youtu.be/fTDH9YfN2ug'
+el4.href = 'https://tools.scratchstatus.org'
 element.style.backgroundColor = 'black'
 element.style.color = 'Orange'
 element.className = 'box'
@@ -173,7 +173,7 @@ element.appendChild(h1)
 var stuff = document.createElement('br')
 element.appendChild(stuff)
 var el2 = document.createElement('p')
-el2.textContent = "Welcome to ScratchTools v2.0! This is a HUGE new release, and we're excited to show it to you! We have a ton of new features and fixed a few major bugs! Go explore ScratchTools v2.0!"
+el2.textContent = "This is ScratchTools v2.1.2! Yes, our versions are getting more specific! Anyways, this version includes a lot more important features that might not always be visible to you. We added three new ones that definitely will, and you can check them out by going to the ScratchTools settings page!"
 h1.style.color = 'white'
 el2.style.color = '#ebebeb'
 el2.style.padding = '20px'
