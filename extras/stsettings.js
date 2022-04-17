@@ -2,14 +2,33 @@ if (getCookie('ST Features') === undefined) {
     document.cookie = `ST Features=${getCookie('ST Features') + 'ST '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
 }
 
+var l1 = document.createElement('link')
+l1.rel = 'preconnect'
+l1.href = 'https://fonts.googleapis.com'
+document.head.appendChild(l1)
+var l2 = document.createElement('link')
+l2.rel = 'preconnect'
+l2.href = 'https://fonts.gstatic.com'
+document.head.appendChild(l2)
+var l3 = document.createElement('link')
+l3.href = 'https://fonts.googleapis.com/css2?family=Roboto&display=swap'
+l3.rel = 'stylesheet'
+document.head.appendChild(l3)
+
 document.querySelector('#page-404 > div.box-content').remove()
 document.querySelector('title').textContent = 'ScratchTools'
 
 var centered = document.createElement('center')
+var divtitle = document.createElement('div')
+divtitle.style.backgroundColor = '#302c2c'
+divtitle.style.borderRadius = '25px'
 var titleofpage = document.createElement('h1')
 titleofpage.textContent = 'ScratchTools Settings'
 titleofpage.style.fontSize = '65px'
-centered.appendChild(titleofpage)
+divtitle.appendChild(titleofpage)
+titleofpage.style.color = 'white'
+titleofpage.style.marginTop = '50px'
+centered.appendChild(divtitle)
 document.querySelector('#page-404 > div').appendChild(centered)
 
 function getCookie(name) {
@@ -23,288 +42,118 @@ featured.textContent = 'New Features'
 
 document.querySelector('#page-404 > div').appendChild(featured)
 
-  // plain white background in scratch editor
-var div14 = document.createElement('div')
-var h14 = document.createElement('h3')
-h14.textContent = 'Remove Dots from Block Editor Background'
-var label14 = document.createElement('label')
-label14.className = "switch"
-var switch14 = document.createElement('input')
-switch14.type = "checkbox"
+// NFE project status
+
+var div23 = document.createElement('div')
+var h23 = document.createElement('h3')
+h23.textContent = 'NFE Project Status'
+var label23 = document.createElement('label')
+label23.className = "switch"
+var switch23 = document.createElement('input')
+switch23.type = "checkbox"
 console.log(getCookie('ST Features'))
-if (getCookie('ST Features').includes('editorbg')) {
-    switch14.checked = true
+if (getCookie('ST Features').includes('feprojectcheck')) {
+    switch23.checked = true
 }
-switch14.onclick = function() {
-    myFunction14()
+switch23.onclick = function() {
+    myFunction23()
   }
-label14.appendChild(switch14)
-var span14 = document.createElement('span')
-span14.className = "slider round"
-label14.appendChild(span14)
-div14.appendChild(h14)
-div14.appendChild(document.createElement('br'))
+label23.appendChild(switch23)
+var span23 = document.createElement('span')
+span23.className = "slider round"
+label23.appendChild(span23)
+div23.appendChild(h23)
+div23.appendChild(document.createElement('br'))
 var description = document.createElement('h3')
 description.style.marginTop = '-20px'
-description.textContent = 'Switches the white dotted background in the editor for a plain white background.'
-div14.appendChild(description)
-div14.appendChild(label14)
-document.querySelector('#page-404 > div').appendChild(div14)
-function myFunction14() {
-    if (switch14.checked === true) {
-        document.cookie = `ST Features=${getCookie('ST Features') + 'editorbg '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+description.textContent = 'Shows if a project is marked as NFE, FE, or not reviewed (shows next to timestamp on projects). Thanks to the Jeffalo API.'
+div23.appendChild(description)
+div23.appendChild(label23)
+document.querySelector('#page-404 > div').appendChild(div23)
+function myFunction23() {
+    console.log('test')
+    if (switch23.checked === true) {
+        document.cookie = `ST Features=${getCookie('ST Features') + 'feprojectcheck '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
     } else {
-        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('editorbg', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('feprojectcheck', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
     }
 }
 
-// save forum drafts
-var div15 = document.createElement('div')
-var h15 = document.createElement('h3')
-h15.textContent = 'Save Forum Post Drafts'
-var label15 = document.createElement('label')
-label15.className = "switch"
-var switch15 = document.createElement('input')
-switch15.type = "checkbox"
+// st settings button in account settings
+var div25 = document.createElement('div')
+var h25 = document.createElement('h3')
+h25.textContent = 'ScratchTools Settings Button in Account Settings'
+var label25 = document.createElement('label')
+label25.className = "switch"
+var switch25 = document.createElement('input')
+switch25.type = "checkbox"
 console.log(getCookie('ST Features'))
-if (getCookie('ST Features').includes('forum-draft')) {
-    switch15.checked = true
+if (getCookie('ST Features').includes('stsettingsaccount')) {
+    switch25.checked = true
 }
-switch15.onclick = function() {
-    myFunction15()
+switch25.onclick = function() {
+    myFunction25()
   }
-label15.appendChild(switch15)
-var span15 = document.createElement('span')
-span15.className = "slider round"
-label15.appendChild(span15)
-div15.appendChild(h15)
-div15.appendChild(document.createElement('br'))
+label25.appendChild(switch25)
+var span25 = document.createElement('span')
+span25.className = "slider round"
+label25.appendChild(span25)
+div25.appendChild(h25)
+div25.appendChild(document.createElement('br'))
 var description = document.createElement('h3')
 description.style.marginTop = '-20px'
-description.textContent = 'Saves what you write in your forum post, and gives you the option to reuse it next time.'
-div15.appendChild(description)
-div15.appendChild(label15)
-document.querySelector('#page-404 > div').appendChild(div15)
-function myFunction15() {
-    if (switch15.checked === true) {
-        document.cookie = `ST Features=${getCookie('ST Features') + 'forum-draft '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+description.textContent = 'Puts the ScratchTools Settings button on the Account Settings page, in addition to any pages that it is already in.'
+div25.appendChild(description)
+div25.appendChild(label25)
+document.querySelector('#page-404 > div').appendChild(div25)
+function myFunction25() {
+    console.log('test')
+    if (switch25.checked === true) {
+        document.cookie = `ST Features=${getCookie('ST Features') + 'stsettingsaccount '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
     } else {
-        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('forum-draft', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('stsettingsaccount', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
     }
 }
 
-// replace news with recent projects
-var div16 = document.createElement('div')
-var h16 = document.createElement('h3')
-h16.textContent = 'Replace Scratch News with Recent Projects'
-var label16 = document.createElement('label')
-label16.className = "switch"
-var switch16 = document.createElement('input')
-switch16.type = "checkbox"
+// account settings --> settings
+var div24 = document.createElement('div')
+var h24 = document.createElement('h3')
+h24.textContent = 'Replace Account Settings Text'
+var label24 = document.createElement('label')
+label24.className = "switch"
+var switch24 = document.createElement('input')
+switch24.type = "checkbox"
 console.log(getCookie('ST Features'))
-if (getCookie('ST Features').includes('scratch-news-recent')) {
-    switch16.checked = true
+if (getCookie('ST Features').includes('accountsettings')) {
+    switch24.checked = true
 }
-switch16.onclick = function() {
-    myFunction16()
+switch24.onclick = function() {
+    myFunction24()
   }
-label16.appendChild(switch16)
-var span16 = document.createElement('span')
-span16.className = "slider round"
-label16.appendChild(span16)
-div16.appendChild(h16)
-div16.appendChild(document.createElement('br'))
+label24.appendChild(switch24)
+var span24 = document.createElement('span')
+span24.className = "slider round"
+label24.appendChild(span24)
+div24.appendChild(h24)
+div24.appendChild(document.createElement('br'))
 var description = document.createElement('h3')
 description.style.marginTop = '-20px'
-description.textContent = 'Replaces the Scratch News on the homepage with your recent projects.'
-div16.appendChild(description)
-div16.appendChild(label16)
-document.querySelector('#page-404 > div').appendChild(div16)
-function myFunction16() {
-    if (switch16.checked === true) {
-        document.cookie = `ST Features=${getCookie('ST Features') + 'scratch-news-recent '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+description.textContent = 'Replaces the Account Settings button with a Settings button that leads to the same place.'
+div24.appendChild(description)
+div24.appendChild(label24)
+document.querySelector('#page-404 > div').appendChild(div24)
+function myFunction24() {
+    console.log('test')
+    if (switch24.checked === true) {
+        document.cookie = `ST Features=${getCookie('ST Features') + 'accountsettings '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
     } else {
-        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('scratch-news-recent', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('accountsettings', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
     }
 }
-
-// settings button in footer
-var div17 = document.createElement('div')
-var h17 = document.createElement('h3')
-h17.textContent = 'ScratchTools Settings Button in Footer'
-var label17 = document.createElement('label')
-label17.className = "switch"
-var switch17 = document.createElement('input')
-switch17.type = "checkbox"
-console.log(getCookie('ST Features'))
-if (getCookie('ST Features').includes('settings-footer')) {
-    switch17.checked = true
-}
-switch17.onclick = function() {
-    myFunction17()
-  }
-label17.appendChild(switch17)
-var span17 = document.createElement('span')
-span17.className = "slider round"
-label17.appendChild(span17)
-div17.appendChild(h17)
-div17.appendChild(document.createElement('br'))
-var description = document.createElement('h3')
-description.style.marginTop = '-20px'
-description.textContent = 'Puts the ScratchTools settings button in the footer, rather than at the top of the homepage.'
-div17.appendChild(description)
-div17.appendChild(label17)
-document.querySelector('#page-404 > div').appendChild(div17)
-function myFunction17() {
-    if (switch17.checked === true) {
-        document.cookie = `ST Features=${getCookie('ST Features') + 'settings-footer '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
-    } else {
-        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('settings-footer', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
-    }
-}
-
-// open links in new tab
-var div18 = document.createElement('div')
-var h18 = document.createElement('h3')
-h18.textContent = 'Open Links in New Tabs on Projects'
-var label18 = document.createElement('label')
-label18.className = "switch"
-var switch18 = document.createElement('input')
-switch18.type = "checkbox"
-console.log(getCookie('ST Features'))
-if (getCookie('ST Features').includes('open-new-tab')) {
-    switch18.checked = true
-}
-switch18.onclick = function() {
-    myFunction18()
-  }
-label18.appendChild(switch18)
-var span18 = document.createElement('span')
-span18.className = "slider round"
-label18.appendChild(span18)
-div18.appendChild(h18)
-div18.appendChild(document.createElement('br'))
-var description = document.createElement('h3')
-description.style.marginTop = '-20px'
-description.textContent = 'Automatically opens links (other than those in the navbar) in a new tab to make sure you do not lose your progress in a project.'
-div18.appendChild(description)
-div18.appendChild(label18)
-document.querySelector('#page-404 > div').appendChild(div18)
-function myFunction18() {
-    if (switch18.checked === true) {
-        document.cookie = `ST Features=${getCookie('ST Features') + 'open-new-tab '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
-    } else {
-        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('open-new-tab', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
-    }
-}
-
-// ocular button in forums
-var div19 = document.createElement('div')
-var h19 = document.createElement('h3')
-h19.textContent = 'Ocular Button in Forums'
-var label19 = document.createElement('label')
-label19.className = "switch"
-var switch19 = document.createElement('input')
-switch19.type = "checkbox"
-console.log(getCookie('ST Features'))
-if (getCookie('ST Features').includes('ocular-link')) {
-    switch19.checked = true
-}
-switch19.onclick = function() {
-    myFunction19()
-  }
-label19.appendChild(switch19)
-var span19 = document.createElement('span')
-span19.className = "slider round"
-label19.appendChild(span19)
-div19.appendChild(h19)
-div19.appendChild(document.createElement('br'))
-var description = document.createElement('h3')
-description.style.marginTop = '-20px'
-description.textContent = "Adds a button to a user's Ocular page next to their usernames in the forums."
-div19.appendChild(description)
-div19.appendChild(label19)
-document.querySelector('#page-404 > div').appendChild(div19)
-function myFunction19() {
-    if (switch19.checked === true) {
-        document.cookie = `ST Features=${getCookie('ST Features') + 'ocular-link '}; expires=Thu, 19 Dec 9999 12:00:00 UTC; path=/`;
-    } else {
-        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('ocular-link', '')}; expires=Thu, 19 Dec 9999 12:00:00 UTC; path=/`;
-    }
-}
-
-// color slider input
-var div20 = document.createElement('div')
-var h20 = document.createElement('h3')
-h20.textContent = 'Slider for Outline'
-var label20 = document.createElement('label')
-label20.className = "switch"
-var switch20 = document.createElement('input')
-switch20.type = "checkbox"
-console.log(getCookie('ST Features'))
-if (getCookie('ST Features').includes('color-slider-input')) {
-    switch20.checked = true
-}
-switch20.onclick = function() {
-    myFunction20()
-  }
-label20.appendChild(switch20)
-var span20 = document.createElement('span')
-span20.className = "slider round"
-label20.appendChild(span20)
-div20.appendChild(h20)
-div20.appendChild(document.createElement('br'))
-var description = document.createElement('h3')
-description.style.marginTop = '-20px'
-description.textContent = "Replaces the number input for the outline width in the color editor with a slider."
-div20.appendChild(description)
-div20.appendChild(label20)
-document.querySelector('#page-404 > div').appendChild(div20)
-function myFunction20() {
-    if (switch20.checked === true) {
-        document.cookie = `ST Features=${getCookie('ST Features') + 'color-slider-input '}; expires=Thu, 19 Dec 9999 12:00:00 UTC; path=/`;
-    } else {
-        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('color-slider-input', '')}; expires=Thu, 19 Dec 9999 12:00:00 UTC; path=/`;
-    }
-}
-
-// remove editor icons
-var div21 = document.createElement('div')
-var h21 = document.createElement('h3')
-h21.textContent = 'Remove Editor Icons'
-var label21 = document.createElement('label')
-label21.className = "switch"
-var switch21 = document.createElement('input')
-switch21.type = "checkbox"
-console.log(getCookie('ST Features'))
-if (getCookie('ST Features').includes('remove-editor-icons')) {
-    switch21.checked = true
-}
-switch21.onclick = function() {
-    myFunction21()
-  }
-label21.appendChild(switch21)
-var span21 = document.createElement('span')
-span21.className = "slider round"
-label21.appendChild(span21)
-div21.appendChild(h21)
-div21.appendChild(document.createElement('br'))
-var description = document.createElement('h3')
-description.style.marginTop = '-20px'
-description.textContent = "Hides the icons for the code, paint, and sound editors."
-div21.appendChild(description)
-div21.appendChild(label21)
-document.querySelector('#page-404 > div').appendChild(div21)
-function myFunction21() {
-    if (switch21.checked === true) {
-        document.cookie = `ST Features=${getCookie('ST Features') + 'remove-editor-icons '}; expires=Thu, 19 Dec 9999 12:00:00 UTC; path=/`;
-    } else {
-        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('remove-editor-icons', '')}; expires=Thu, 19 Dec 9999 12:00:00 UTC; path=/`;
-    }
-}
-
-
-
+var br = document.createElement('br')
+document.querySelector('#page-404 > div').appendChild(br)
+var br = document.createElement('br')
+document.querySelector('#page-404 > div').appendChild(br)
 
 
 
@@ -775,3 +624,299 @@ function myFunction13() {
 }
 
 document.querySelector('#page-404 > div').style.display = 'block'
+
+  // plain white background in scratch editor
+  var div14 = document.createElement('div')
+  var h14 = document.createElement('h3')
+  h14.textContent = 'Remove Dots from Block Editor Background'
+  var label14 = document.createElement('label')
+  label14.className = "switch"
+  var switch14 = document.createElement('input')
+  switch14.type = "checkbox"
+  console.log(getCookie('ST Features'))
+  if (getCookie('ST Features').includes('editorbg')) {
+      switch14.checked = true
+  }
+  switch14.onclick = function() {
+      myFunction14()
+    }
+  label14.appendChild(switch14)
+  var span14 = document.createElement('span')
+  span14.className = "slider round"
+  label14.appendChild(span14)
+  div14.appendChild(h14)
+  div14.appendChild(document.createElement('br'))
+  var description = document.createElement('h3')
+  description.style.marginTop = '-20px'
+  description.textContent = 'Switches the white dotted background in the editor for a plain white background.'
+  div14.appendChild(description)
+  div14.appendChild(label14)
+  document.querySelector('#page-404 > div').appendChild(div14)
+  function myFunction14() {
+      if (switch14.checked === true) {
+          document.cookie = `ST Features=${getCookie('ST Features') + 'editorbg '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+      } else {
+          document.cookie = `ST Features=${getCookie('ST Features').replaceAll('editorbg', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+      }
+  }
+  
+  // save forum drafts
+  var div15 = document.createElement('div')
+  var h15 = document.createElement('h3')
+  h15.textContent = 'Save Forum Post Drafts'
+  var label15 = document.createElement('label')
+  label15.className = "switch"
+  var switch15 = document.createElement('input')
+  switch15.type = "checkbox"
+  console.log(getCookie('ST Features'))
+  if (getCookie('ST Features').includes('forum-draft')) {
+      switch15.checked = true
+  }
+  switch15.onclick = function() {
+      myFunction15()
+    }
+  label15.appendChild(switch15)
+  var span15 = document.createElement('span')
+  span15.className = "slider round"
+  label15.appendChild(span15)
+  div15.appendChild(h15)
+  div15.appendChild(document.createElement('br'))
+  var description = document.createElement('h3')
+  description.style.marginTop = '-20px'
+  description.textContent = 'Saves what you write in your forum post, and gives you the option to reuse it next time.'
+  div15.appendChild(description)
+  div15.appendChild(label15)
+  document.querySelector('#page-404 > div').appendChild(div15)
+  function myFunction15() {
+      if (switch15.checked === true) {
+          document.cookie = `ST Features=${getCookie('ST Features') + 'forum-draft '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+      } else {
+          document.cookie = `ST Features=${getCookie('ST Features').replaceAll('forum-draft', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+      }
+  }
+  
+  // replace news with recent projects
+  var div16 = document.createElement('div')
+  var h16 = document.createElement('h3')
+  h16.textContent = 'Replace Scratch News with Recent Projects'
+  var label16 = document.createElement('label')
+  label16.className = "switch"
+  var switch16 = document.createElement('input')
+  switch16.type = "checkbox"
+  console.log(getCookie('ST Features'))
+  if (getCookie('ST Features').includes('scratch-news-recent')) {
+      switch16.checked = true
+  }
+  switch16.onclick = function() {
+      myFunction16()
+    }
+  label16.appendChild(switch16)
+  var span16 = document.createElement('span')
+  span16.className = "slider round"
+  label16.appendChild(span16)
+  div16.appendChild(h16)
+  div16.appendChild(document.createElement('br'))
+  var description = document.createElement('h3')
+  description.style.marginTop = '-20px'
+  description.textContent = 'Replaces the Scratch News on the homepage with your recent projects.'
+  div16.appendChild(description)
+  div16.appendChild(label16)
+  document.querySelector('#page-404 > div').appendChild(div16)
+  function myFunction16() {
+      if (switch16.checked === true) {
+          document.cookie = `ST Features=${getCookie('ST Features') + 'scratch-news-recent '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+      } else {
+          document.cookie = `ST Features=${getCookie('ST Features').replaceAll('scratch-news-recent', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+      }
+  }
+  
+  // settings button in footer
+  var div17 = document.createElement('div')
+  var h17 = document.createElement('h3')
+  h17.textContent = 'ScratchTools Settings Button in Footer'
+  var label17 = document.createElement('label')
+  label17.className = "switch"
+  var switch17 = document.createElement('input')
+  switch17.type = "checkbox"
+  console.log(getCookie('ST Features'))
+  if (getCookie('ST Features').includes('settings-footer')) {
+      switch17.checked = true
+  }
+  switch17.onclick = function() {
+      myFunction17()
+    }
+  label17.appendChild(switch17)
+  var span17 = document.createElement('span')
+  span17.className = "slider round"
+  label17.appendChild(span17)
+  div17.appendChild(h17)
+  div17.appendChild(document.createElement('br'))
+  var description = document.createElement('h3')
+  description.style.marginTop = '-20px'
+  description.textContent = 'Puts the ScratchTools settings button in the footer, rather than at the top of the homepage.'
+  div17.appendChild(description)
+  div17.appendChild(label17)
+  document.querySelector('#page-404 > div').appendChild(div17)
+  function myFunction17() {
+      if (switch17.checked === true) {
+          document.cookie = `ST Features=${getCookie('ST Features') + 'settings-footer '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+      } else {
+          document.cookie = `ST Features=${getCookie('ST Features').replaceAll('settings-footer', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+      }
+  }
+  
+  // open links in new tab
+  var div18 = document.createElement('div')
+  var h18 = document.createElement('h3')
+  h18.textContent = 'Open Links in New Tabs on Projects'
+  var label18 = document.createElement('label')
+  label18.className = "switch"
+  var switch18 = document.createElement('input')
+  switch18.type = "checkbox"
+  console.log(getCookie('ST Features'))
+  if (getCookie('ST Features').includes('open-new-tab')) {
+      switch18.checked = true
+  }
+  switch18.onclick = function() {
+      myFunction18()
+    }
+  label18.appendChild(switch18)
+  var span18 = document.createElement('span')
+  span18.className = "slider round"
+  label18.appendChild(span18)
+  div18.appendChild(h18)
+  div18.appendChild(document.createElement('br'))
+  var description = document.createElement('h3')
+  description.style.marginTop = '-20px'
+  description.textContent = 'Automatically opens links (other than those in the navbar) in a new tab to make sure you do not lose your progress in a project.'
+  div18.appendChild(description)
+  div18.appendChild(label18)
+  document.querySelector('#page-404 > div').appendChild(div18)
+  function myFunction18() {
+      if (switch18.checked === true) {
+          document.cookie = `ST Features=${getCookie('ST Features') + 'open-new-tab '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+      } else {
+          document.cookie = `ST Features=${getCookie('ST Features').replaceAll('open-new-tab', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+      }
+  }
+  
+  // ocular button in forums
+  var div19 = document.createElement('div')
+  var h19 = document.createElement('h3')
+  h19.textContent = 'Ocular Button in Forums'
+  var label19 = document.createElement('label')
+  label19.className = "switch"
+  var switch19 = document.createElement('input')
+  switch19.type = "checkbox"
+  console.log(getCookie('ST Features'))
+  if (getCookie('ST Features').includes('ocular-link')) {
+      switch19.checked = true
+  }
+  switch19.onclick = function() {
+      myFunction19()
+    }
+  label19.appendChild(switch19)
+  var span19 = document.createElement('span')
+  span19.className = "slider round"
+  label19.appendChild(span19)
+  div19.appendChild(h19)
+  div19.appendChild(document.createElement('br'))
+  var description = document.createElement('h3')
+  description.style.marginTop = '-20px'
+  description.textContent = "Adds a button to a user's Ocular page next to their usernames in the forums."
+  div19.appendChild(description)
+  div19.appendChild(label19)
+  document.querySelector('#page-404 > div').appendChild(div19)
+  function myFunction19() {
+      if (switch19.checked === true) {
+          document.cookie = `ST Features=${getCookie('ST Features') + 'ocular-link '}; expires=Thu, 19 Dec 9999 12:00:00 UTC; path=/`;
+      } else {
+          document.cookie = `ST Features=${getCookie('ST Features').replaceAll('ocular-link', '')}; expires=Thu, 19 Dec 9999 12:00:00 UTC; path=/`;
+      }
+  }
+  
+  // color slider input
+  var div20 = document.createElement('div')
+  var h20 = document.createElement('h3')
+  h20.textContent = 'Slider for Outline'
+  var label20 = document.createElement('label')
+  label20.className = "switch"
+  var switch20 = document.createElement('input')
+  switch20.type = "checkbox"
+  console.log(getCookie('ST Features'))
+  if (getCookie('ST Features').includes('color-slider-input')) {
+      switch20.checked = true
+  }
+  switch20.onclick = function() {
+      myFunction20()
+    }
+  label20.appendChild(switch20)
+  var span20 = document.createElement('span')
+  span20.className = "slider round"
+  label20.appendChild(span20)
+  div20.appendChild(h20)
+  div20.appendChild(document.createElement('br'))
+  var description = document.createElement('h3')
+  description.style.marginTop = '-20px'
+  description.textContent = "Replaces the number input for the outline width in the color editor with a slider."
+  div20.appendChild(description)
+  div20.appendChild(label20)
+  document.querySelector('#page-404 > div').appendChild(div20)
+  function myFunction20() {
+      if (switch20.checked === true) {
+          document.cookie = `ST Features=${getCookie('ST Features') + 'color-slider-input '}; expires=Thu, 19 Dec 9999 12:00:00 UTC; path=/`;
+      } else {
+          document.cookie = `ST Features=${getCookie('ST Features').replaceAll('color-slider-input', '')}; expires=Thu, 19 Dec 9999 12:00:00 UTC; path=/`;
+      }
+  }
+  
+  // remove editor icons
+  var div21 = document.createElement('div')
+  var h21 = document.createElement('h3')
+  h21.textContent = 'Remove Editor Icons'
+  var label21 = document.createElement('label')
+  label21.className = "switch"
+  var switch21 = document.createElement('input')
+  switch21.type = "checkbox"
+  console.log(getCookie('ST Features'))
+  if (getCookie('ST Features').includes('remove-editor-icons')) {
+      switch21.checked = true
+  }
+  switch21.onclick = function() {
+      myFunction21()
+    }
+  label21.appendChild(switch21)
+  var span21 = document.createElement('span')
+  span21.className = "slider round"
+  label21.appendChild(span21)
+  div21.appendChild(h21)
+  div21.appendChild(document.createElement('br'))
+  var description = document.createElement('h3')
+  description.style.marginTop = '-20px'
+  description.textContent = "Hides the icons for the code, paint, and sound editors."
+  div21.appendChild(description)
+  div21.appendChild(label21)
+  document.querySelector('#page-404 > div').appendChild(div21)
+  function myFunction21() {
+      if (switch21.checked === true) {
+          document.cookie = `ST Features=${getCookie('ST Features') + 'remove-editor-icons '}; expires=Thu, 19 Dec 9999 12:00:00 UTC; path=/`;
+      } else {
+          document.cookie = `ST Features=${getCookie('ST Features').replaceAll('remove-editor-icons', '')}; expires=Thu, 19 Dec 9999 12:00:00 UTC; path=/`;
+      }
+  }
+
+  document.querySelector('#page-404 > div').querySelectorAll('div').forEach(function(item) {
+      item.style.margin = '15px'
+      item.style.border = '1px solid black'
+      item.style.padding = '5px'
+      item.style.borderRadius = '5px'
+      if (item === document.querySelector('#page-404 > div > center > div')) {
+        item.style.borderRadius = '25px'
+      }
+  })
+  document.querySelector('#page-404 > div').querySelectorAll('h3').forEach(function(item) {
+    item.style.width = '720px'
+    if (item.parentNode.firstChild === item) {
+        item.style.color = '#2196F3'
+    }
+})
