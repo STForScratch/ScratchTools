@@ -161,7 +161,7 @@ element.className = 'box'
 element.style.borderColor = 'black'
 element.style.borderRadius = '20px'
 element.style.height = 'auto'
-el4.textContent = 'Official Release Video'
+el4.textContent = 'Official Website'
 el4.style.fontFamily = 'sans-serif'
 parentstuff.appendChild(element)
 parentstuff.prepend(el3)
