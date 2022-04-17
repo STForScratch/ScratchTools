@@ -1,8 +1,8 @@
 {
-    "name": "ScratchTools for Scratch",
+    "name": "ScratchTools",
     "short_name": "ScratchTools",
     "manifest_version": 3,
-    "version": "2.1.1",
+    "version": "2.1.2",
     "description": "Great tools to make Scratching easier!",
     "author": "rgantzos",
     "background": {
@@ -15,7 +15,7 @@
     },
     "icons": { "16": "/extras/icon16.png",
             "48": "/extras/icon48.png",
-            "128": "/extras/icon128.png" },   
+            "128": "/extras/icon128.png" },
     "content_scripts":
     [
         {
@@ -28,7 +28,7 @@
         {
             "matches": ["https://scratch.mit.edu/*"],
             "all_frames": true,
-            "js": ["/pages/all.js", "/pages/discuss.js", "/pages/editor.js", "/pages/home.js", "/pages/join.js", "/pages/profile.js", "/pages/project.js", "/features/advanced-search.js", "/features/color-slider-input.js", "/features/more-tutorials.js", "/features/nfe-search.js", "/features/open-in-new-tab.js", "/features/plain-background.js", "/features/statistics.js", "/features/turbowarp-button.js"],
+            "js": ["/pages/all.js", "/pages/discuss.js", "/features/nfe-project-checker.js", "/pages/editor.js", "/pages/home.js", "/pages/join.js", "/pages/profile.js", "/pages/project.js", "/features/advanced-search.js", "/features/color-slider-input.js", "/features/more-tutorials.js", "/features/nfe-search.js", "/features/open-in-new-tab.js", "/features/plain-background.js", "/features/statistics.js", "/features/turbowarp-button.js"],
             "run_at": "document_end"
         }
     ]
