@@ -61,7 +61,7 @@ function checkforspace() {
     if (document.querySelector('#id_body') !== null) {
         setCodeForText()
     } else {
-        window.setTimeout(checkforspace(), 200)
+        window.setTimeout(checkforspace(), 50)
     }
 }
 
