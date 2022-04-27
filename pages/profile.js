@@ -11,8 +11,8 @@ function getCookie(name) {
   const parts = value.split(`; ${name}=`);
   if (parts.length === 2) return parts.pop().split(';').shift();
 }
-setTimeout(() => { replacealllinks() }, 2000);
-setTimeout(() => { addOnClick() }, 2000);
+setTimeout(() => { replacealllinks() }, 50);
+setTimeout(() => { addOnClick() }, 50);
 about()
 str = window.location.href
 if (getCookie('ST Features').includes('round')) {
@@ -96,7 +96,7 @@ if (elementExists !== null) {
       var thebutton = document.querySelector('#comments > div:nth-child(2) > ul > div')
     }
     thebutton.onclick = function() {
-      setTimeout(() => { replacealllinks() }, 2000);
+      setTimeout(() => { replacealllinks() }, 50);
     }
   }
     // done replacing
