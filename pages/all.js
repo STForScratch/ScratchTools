@@ -33,7 +33,7 @@ function getCookie(name) {
             document.querySelector('#navigation > div > ul > li.link.right.account-nav > div > ul > li:nth-child(3) > a > span').textContent = 'Settings'
           }
         } else {
-          window.setTimeout(stufftodo, 100)
+          window.setTimeout(stufftodo, 50)
         }
       }
       if (getCookie('ST Features').includes('accountsettings')) {
