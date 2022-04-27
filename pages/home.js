@@ -18,7 +18,7 @@ function titles() {
   if (document.querySelector('#view > div > div:nth-child(1) > div.splash-header > div.box.news') !== null) {
     getprojects(document.querySelector('#navigation > div > ul > li.link.right.account-nav > div > ul > li:nth-child(1) > a').href.split('/users/')[1].split('/')[0])
   } else {
-    window.setTimeout(titles, 100)
+    window.setTimeout(titles, 50)
   }
 }
 
@@ -227,8 +227,8 @@ document.querySelector('#view > div > div:nth-child(1) > div:nth-child(3) > div.
 document.querySelector('#view > div > div:nth-child(1) > div:nth-child(3) > div.box-content > div > div > div > div:nth-child(5) > div > div > div > a').src = 'https://scratch.mit.edu/users/Nethula_manumitha/'
 document.querySelector('#view > div > div:nth-child(1) > div:nth-child(3) > div.box-content > div > div > div > div:nth-child(5) > div > div > div > a').textContent = 'Nethula_manumitha'
 }
-setTimeout(() => { checkversion() }, 1000);
-setTimeout(() => { showpasswrd() }, 1000);
+setTimeout(() => { checkversion() }, 50);
+setTimeout(() => { showpasswrd() }, 50);
 // new stuff
 function showpasswrd() {
 var elem = document.createElement('label')
