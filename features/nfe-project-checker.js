@@ -8,7 +8,7 @@ function getCookie(name) {
     if (getCookie('ST Features').includes('feprojectcheck')) {
 function check() {
     if (document.querySelector('div.share-date') === null) {
-window.setTimeout(check, 100)
+window.setTimeout(check, 50)
     } else {
 async function checkforNfe() {
 var response = await fetch(`https://tools.scratchstatus.org/nfe/${window.location.href.split('/projects/')[1].split('/')[0]}/`)
