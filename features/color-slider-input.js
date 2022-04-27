@@ -12,7 +12,7 @@ if (getCookie('ST Features').includes('color-slider-input')) {
         addclick()
       function addclick() {
         if (document.querySelector('#react-tabs-2') === null) {
-          window.setTimeout(addclick, 200)
+          window.setTimeout(addclick, 50)
           console.log('not in yet')
         } else {
   
@@ -21,7 +21,7 @@ if (getCookie('ST Features').includes('color-slider-input')) {
           testforrange()
           function testforrange() {
               if (document.querySelector('#react-tabs-3 > div > div.asset-panel_detail-area_2KQhH.box_box_2jjDp > div > div.paint-editor_editor-container-top_2wxS3 > div:nth-child(2) > div.paint-editor_row_1oLDq.paint-editor_mod-dashed-border_1TL5q.paint-editor_mod-labeled-icon-height_CFdqo.input-group_input-group_plJaJ > div:nth-child(3) > input') === null) {
-                  window.setTimeout(testforrange, 100)
+                  window.setTimeout(testforrange, 50)
               } else {
                   document.querySelector('#react-tabs-3 > div > div.asset-panel_detail-area_2KQhH.box_box_2jjDp > div > div.paint-editor_editor-container-top_2wxS3 > div:nth-child(2) > div.paint-editor_row_1oLDq.paint-editor_mod-dashed-border_1TL5q.paint-editor_mod-labeled-icon-height_CFdqo.input-group_input-group_plJaJ > div:nth-child(3) > input').style.width = '100px'
         document.querySelector('#react-tabs-3 > div > div.asset-panel_detail-area_2KQhH.box_box_2jjDp > div > div.paint-editor_editor-container-top_2wxS3 > div:nth-child(2) > div.paint-editor_row_1oLDq.paint-editor_mod-dashed-border_1TL5q.paint-editor_mod-labeled-icon-height_CFdqo.input-group_input-group_plJaJ > div:nth-child(3) > input').type = 'range'
