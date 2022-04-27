@@ -10,7 +10,7 @@ if (getCookie('ST Features').includes('open-new-tab')) {
     waitforit()
     function waitforit() {
 if (document.querySelector('#view > div > div.inner > div:nth-child(2) > div.flex-row.project-notes') === null) {
-window.setTimeout(waitforit, 100)
+window.setTimeout(waitforit, 50)
 } else {
     var openlink = document.querySelectorAll('a')
     openlink.forEach(function(link) {
