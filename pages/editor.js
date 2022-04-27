@@ -11,7 +11,7 @@ function getCookie(name) {
     addclick2()
   function addclick2() {
     if (document.querySelector('#react-tabs-0 > img') === null) {
-      window.setTimeout(addclick2, 200)
+      window.setTimeout(addclick2, 50)
     } else {
       document.querySelector('#react-tabs-0 > img').remove()
       document.querySelector('#react-tabs-2 > img').remove()
