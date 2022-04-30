@@ -59,7 +59,7 @@ Project links in profile comments are replaced with their titles
 This new update has all the features from v1.2, but the project links on profile comments being replaced with their titles becomes possible on all profiles, not just yours!
 
 # v1.4
-This update has a very big feature, a suggestion added on our [Official Discord](https://discord.gg/5AkUsCbEsy) by [ScratchFangs](https://scratch.mit.edu/users/Scratchfangs/) on Scratch: you can now press a button when searching through projects to see ALL the projects- even the ones that usually wouldn't show up in the search because they're rated as NFE (Not For Everyone- not bad enough to be banned, but possibly not for the younger people of Scratch).
+This update has a very big feature, a suggestion added on our [Official Discord](https://discord.gg/5AkUsCbEsy) by [Scratchfangs](https://scratch.mit.edu/users/Scratchfangs/) on Scratch: you can now press a button when searching through projects to see ALL the projects- even the ones that usually wouldn't show up in the search because they're rated as NFE (Not For Everyone- not bad enough to be banned, but possibly not for the younger people of Scratch).
 
 Other than that, this has all the features of v1.3- but get ready! v2.0 will be a BIG update!
 
