@@ -2,6 +2,48 @@ if (getCookie('ST Features') === undefined) {
     document.cookie = `ST Features=${getCookie('ST Features') + 'ST '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
 }
 
+
+function createFeature(name, description, id) {
+    var div23 = document.createElement('div')
+var h23 = document.createElement('h3')
+h23.textContent = name
+var label23 = document.createElement('label')
+label23.className = "switch"
+var switch23 = document.createElement('input')
+switch23.type = "checkbox"
+switch23.id = id
+console.log(getCookie('ST Features'))
+if (getCookie('ST Features').includes(id)) {
+    switch23.checked = true
+}
+switch23.onclick = function() {
+    if (this.checked === true) {
+        document.cookie = `ST Features=${getCookie('ST Features') + this.id+' '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+    } else {
+        document.cookie = `ST Features=${getCookie('ST Features').replaceAll(this.id, '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+    }
+  }
+label23.appendChild(switch23)
+var span23 = document.createElement('span')
+span23.className = "slider round"
+label23.appendChild(span23)
+div23.appendChild(h23)
+div23.appendChild(document.createElement('br'))
+var description2 = document.createElement('h3')
+description2.style.marginTop = '-20px'
+description2.textContent = description
+div23.appendChild(description2)
+div23.appendChild(label23)
+document.querySelector('#page-404 > div').appendChild(div23)
+}
+
+
+
+
+
+
+
+
 var l1 = document.createElement('link')
 l1.rel = 'preconnect'
 l1.href = 'https://fonts.googleapis.com'
@@ -42,114 +84,9 @@ featured.textContent = 'New Features'
 
 document.querySelector('#page-404 > div').appendChild(featured)
 
-// NFE project status
+createFeature('Unbold Forum Topics', 'Make it so that the titles of forum topics will no longer be bolded, giving a calmer feeling to the discuss page.', 'unbold-forum-topics')
 
-var div23 = document.createElement('div')
-var h23 = document.createElement('h3')
-h23.textContent = 'NFE Project Status'
-var label23 = document.createElement('label')
-label23.className = "switch"
-var switch23 = document.createElement('input')
-switch23.type = "checkbox"
-console.log(getCookie('ST Features'))
-if (getCookie('ST Features').includes('feprojectcheck')) {
-    switch23.checked = true
-}
-switch23.onclick = function() {
-    myFunction23()
-  }
-label23.appendChild(switch23)
-var span23 = document.createElement('span')
-span23.className = "slider round"
-label23.appendChild(span23)
-div23.appendChild(h23)
-div23.appendChild(document.createElement('br'))
-var description = document.createElement('h3')
-description.style.marginTop = '-20px'
-description.textContent = 'Shows if a project is marked as NFE, FE, or not reviewed (shows next to timestamp on projects). Thanks to the Jeffalo API.'
-div23.appendChild(description)
-div23.appendChild(label23)
-document.querySelector('#page-404 > div').appendChild(div23)
-function myFunction23() {
-    console.log('test')
-    if (switch23.checked === true) {
-        document.cookie = `ST Features=${getCookie('ST Features') + 'feprojectcheck '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
-    } else {
-        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('feprojectcheck', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
-    }
-}
 
-// st settings button in account settings
-var div25 = document.createElement('div')
-var h25 = document.createElement('h3')
-h25.textContent = 'ScratchTools Settings Button in Account Settings'
-var label25 = document.createElement('label')
-label25.className = "switch"
-var switch25 = document.createElement('input')
-switch25.type = "checkbox"
-console.log(getCookie('ST Features'))
-if (getCookie('ST Features').includes('stsettingsaccount')) {
-    switch25.checked = true
-}
-switch25.onclick = function() {
-    myFunction25()
-  }
-label25.appendChild(switch25)
-var span25 = document.createElement('span')
-span25.className = "slider round"
-label25.appendChild(span25)
-div25.appendChild(h25)
-div25.appendChild(document.createElement('br'))
-var description = document.createElement('h3')
-description.style.marginTop = '-20px'
-description.textContent = 'Puts the ScratchTools Settings button on the Account Settings page, in addition to any pages that it is already in.'
-div25.appendChild(description)
-div25.appendChild(label25)
-document.querySelector('#page-404 > div').appendChild(div25)
-function myFunction25() {
-    console.log('test')
-    if (switch25.checked === true) {
-        document.cookie = `ST Features=${getCookie('ST Features') + 'stsettingsaccount '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
-    } else {
-        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('stsettingsaccount', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
-    }
-}
-
-// account settings --> settings
-var div24 = document.createElement('div')
-var h24 = document.createElement('h3')
-h24.textContent = 'Replace Account Settings Text'
-var label24 = document.createElement('label')
-label24.className = "switch"
-var switch24 = document.createElement('input')
-switch24.type = "checkbox"
-console.log(getCookie('ST Features'))
-if (getCookie('ST Features').includes('accountsettings')) {
-    switch24.checked = true
-}
-switch24.onclick = function() {
-    myFunction24()
-  }
-label24.appendChild(switch24)
-var span24 = document.createElement('span')
-span24.className = "slider round"
-label24.appendChild(span24)
-div24.appendChild(h24)
-div24.appendChild(document.createElement('br'))
-var description = document.createElement('h3')
-description.style.marginTop = '-20px'
-description.textContent = 'Replaces the Account Settings button with a Settings button that leads to the same place.'
-div24.appendChild(description)
-div24.appendChild(label24)
-document.querySelector('#page-404 > div').appendChild(div24)
-function myFunction24() {
-    console.log('test')
-    if (switch24.checked === true) {
-        document.cookie = `ST Features=${getCookie('ST Features') + 'accountsettings '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
-    } else {
-        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('accountsettings', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
-    }
-}
 var br = document.createElement('br')
 document.querySelector('#page-404 > div').appendChild(br)
 var br = document.createElement('br')
@@ -904,6 +841,130 @@ document.querySelector('#page-404 > div').style.display = 'block'
           document.cookie = `ST Features=${getCookie('ST Features').replaceAll('remove-editor-icons', '')}; expires=Thu, 19 Dec 9999 12:00:00 UTC; path=/`;
       }
   }
+
+// NFE project status
+
+var div23 = document.createElement('div')
+var h23 = document.createElement('h3')
+h23.textContent = 'NFE Project Status'
+var label23 = document.createElement('label')
+label23.className = "switch"
+var switch23 = document.createElement('input')
+switch23.type = "checkbox"
+console.log(getCookie('ST Features'))
+if (getCookie('ST Features').includes('feprojectcheck')) {
+    switch23.checked = true
+}
+switch23.onclick = function() {
+    myFunction23()
+  }
+label23.appendChild(switch23)
+var span23 = document.createElement('span')
+span23.className = "slider round"
+label23.appendChild(span23)
+div23.appendChild(h23)
+div23.appendChild(document.createElement('br'))
+var description = document.createElement('h3')
+description.style.marginTop = '-20px'
+description.textContent = 'Shows if a project is marked as NFE, FE, or not reviewed (shows next to timestamp on projects). Thanks to the Jeffalo API.'
+div23.appendChild(description)
+div23.appendChild(label23)
+document.querySelector('#page-404 > div').appendChild(div23)
+function myFunction23() {
+    console.log('test')
+    if (switch23.checked === true) {
+        document.cookie = `ST Features=${getCookie('ST Features') + 'feprojectcheck '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+    } else {
+        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('feprojectcheck', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+    }
+}
+
+// st settings button in account settings
+var div25 = document.createElement('div')
+var h25 = document.createElement('h3')
+h25.textContent = 'ScratchTools Settings Button in Account Settings'
+var label25 = document.createElement('label')
+label25.className = "switch"
+var switch25 = document.createElement('input')
+switch25.type = "checkbox"
+console.log(getCookie('ST Features'))
+if (getCookie('ST Features').includes('stsettingsaccount')) {
+    switch25.checked = true
+}
+switch25.onclick = function() {
+    myFunction25()
+  }
+label25.appendChild(switch25)
+var span25 = document.createElement('span')
+span25.className = "slider round"
+label25.appendChild(span25)
+div25.appendChild(h25)
+div25.appendChild(document.createElement('br'))
+var description = document.createElement('h3')
+description.style.marginTop = '-20px'
+description.textContent = 'Puts the ScratchTools Settings button on the Account Settings page, in addition to any pages that it is already in.'
+div25.appendChild(description)
+div25.appendChild(label25)
+document.querySelector('#page-404 > div').appendChild(div25)
+function myFunction25() {
+    console.log('test')
+    if (switch25.checked === true) {
+        document.cookie = `ST Features=${getCookie('ST Features') + 'stsettingsaccount '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+    } else {
+        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('stsettingsaccount', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+    }
+}
+
+// account settings --> settings
+var div24 = document.createElement('div')
+var h24 = document.createElement('h3')
+h24.textContent = 'Replace Account Settings Text'
+var label24 = document.createElement('label')
+label24.className = "switch"
+var switch24 = document.createElement('input')
+switch24.type = "checkbox"
+console.log(getCookie('ST Features'))
+if (getCookie('ST Features').includes('accountsettings')) {
+    switch24.checked = true
+}
+switch24.onclick = function() {
+    myFunction24()
+  }
+label24.appendChild(switch24)
+var span24 = document.createElement('span')
+span24.className = "slider round"
+label24.appendChild(span24)
+div24.appendChild(h24)
+div24.appendChild(document.createElement('br'))
+var description = document.createElement('h3')
+description.style.marginTop = '-20px'
+description.textContent = 'Replaces the Account Settings button with a Settings button that leads to the same place.'
+div24.appendChild(description)
+div24.appendChild(label24)
+document.querySelector('#page-404 > div').appendChild(div24)
+function myFunction24() {
+    console.log('test')
+    if (switch24.checked === true) {
+        document.cookie = `ST Features=${getCookie('ST Features') + 'accountsettings '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+    } else {
+        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('accountsettings', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   document.querySelector('#page-404 > div').querySelectorAll('div').forEach(function(item) {
       item.style.margin = '15px'
