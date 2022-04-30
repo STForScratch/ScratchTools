@@ -37,3 +37,35 @@ div.appendChild(button)
     }
 }
 doStuff()
+
+function again() {
+    var abc = document.querySelector('center')
+    var def = document.createElement('button')
+    def.onclick = function() {
+        chrome.tabs.create({active: true, url: 'https://tools.scratchstatus.org/' });
+    }
+    def.textContent = 'Website'
+            def.style.border = '0px'
+            def.style.padding = '7px'
+            def.style.borderRadius = '5px'
+            def.style.backgroundColor = '#ff9f00'
+            def.style.color = 'white'
+            def.style.margin = '10px'
+abc.appendChild(def)
+
+var abc = document.querySelector('center')
+    var def = document.createElement('button')
+    def.onclick = function() {
+        chrome.tabs.create({active: true, url: 'https://discord.gg/B8be27p5Cn' });
+    }
+    def.textContent = 'Discord'
+    def.title = 'Ages 13 and over!!'
+            def.style.border = '0px'
+            def.style.padding = '7px'
+            def.style.borderRadius = '5px'
+            def.style.backgroundColor = '#ff9f00'
+            def.style.color = 'white'
+            def.style.margin = '10px'
+abc.appendChild(def)
+}
+again()
