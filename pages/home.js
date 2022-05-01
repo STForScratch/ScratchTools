@@ -128,8 +128,8 @@ function getCookie(name) {
     if (parts.length === 2) return parts.pop().split(';').shift();
   }
   function checkversion() {
-if (getCookie('ScratchToolsVersion') !== '2.1.2') {
-    document.cookie = "ScratchToolsVersion=2.1.2; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/";
+if (getCookie('ScratchToolsVersion') !== '2.2.3') {
+    document.cookie = "ScratchToolsVersion=2.2.3; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/";
     createExplanation()
 }
   }
@@ -173,7 +173,7 @@ element.appendChild(h1)
 var stuff = document.createElement('br')
 element.appendChild(stuff)
 var el2 = document.createElement('p')
-el2.textContent = "This is ScratchTools v2.1.2! Yes, our versions are getting more specific! Anyways, this version includes a lot more important features that might not always be visible to you. We added three new ones that definitely will, and you can check them out by going to the ScratchTools settings page!"
+el2.textContent = "Welcome to v2.2.3! This new version introduces a new feature, which makes the forum titles unbolded. Other than that, we're just working on a ton of other features, soon to be released."
 h1.style.color = 'white'
 el2.style.color = '#ebebeb'
 el2.style.padding = '20px'
