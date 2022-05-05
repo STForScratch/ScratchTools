@@ -84,7 +84,7 @@ featured.textContent = 'New Features'
 
 document.querySelector('#page-404 > div').appendChild(featured)
 
-createFeature('Unbold Forum Topics', 'Make it so that the titles of forum topics will no longer be bolded, giving a calmer feeling to the discuss page.', 'unbold-forum-topics')
+createFeature('Unbold Site Text', 'Makes it so that all test across Scratch is unbolded, and just normal text!', 'unbold-forum-topics')
 
 
 var br = document.createElement('br')
