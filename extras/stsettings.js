@@ -548,7 +548,7 @@ div13.appendChild(h13)
 div13.appendChild(document.createElement('br'))
 var description = document.createElement('h3')
 description.style.marginTop = '-20px'
-description.textContent = 'Adds a button to search through all the Scratch projects, not just the FE (for everyone) ones.'
+description.textContent = 'Adds a button to search all Scratch projects, including projects that are marked NFE.'
 div13.appendChild(description)
 div13.appendChild(label13)
 document.querySelector('#page-404 > div').appendChild(div13)
@@ -725,7 +725,7 @@ document.querySelector('#page-404 > div').style.display = 'block'
   div18.appendChild(document.createElement('br'))
   var description = document.createElement('h3')
   description.style.marginTop = '-20px'
-  description.textContent = 'Automatically opens links (other than those in the navbar) in a new tab to make sure you do not lose your progress in a project.'
+  description.textContent = 'Opens clicked links in a new tab to make sure you do not lose your project progress.'
   div18.appendChild(description)
   div18.appendChild(label18)
   document.querySelector('#page-404 > div').appendChild(div18)
@@ -846,7 +846,7 @@ document.querySelector('#page-404 > div').style.display = 'block'
 
 var div23 = document.createElement('div')
 var h23 = document.createElement('h3')
-h23.textContent = 'NFE Project Status'
+h23.textContent = 'Show Project Rating'
 var label23 = document.createElement('label')
 label23.className = "switch"
 var switch23 = document.createElement('input')
@@ -866,7 +866,7 @@ div23.appendChild(h23)
 div23.appendChild(document.createElement('br'))
 var description = document.createElement('h3')
 description.style.marginTop = '-20px'
-description.textContent = 'Shows if a project is marked as NFE, FE, or not reviewed (shows next to timestamp on projects). Thanks to the Jeffalo API.'
+description.textContent = 'Shows a project's rating next to the project timestamp.'
 div23.appendChild(description)
 div23.appendChild(label23)
 document.querySelector('#page-404 > div').appendChild(div23)
