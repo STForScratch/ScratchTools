@@ -423,7 +423,7 @@ function myFunction9() {
 // hide sprite watermark
 var div10 = document.createElement('div')
 var h10 = document.createElement('h3')
-h10.textContent = 'Hide the Useless Sprite Watermark'
+h10.textContent = 'Hide Sprite Watermark'
 var label10 = document.createElement('label')
 label10.className = "switch"
 var switch10 = document.createElement('input')
@@ -443,7 +443,7 @@ div10.appendChild(h10)
 div10.appendChild(document.createElement('br'))
 var description = document.createElement('h3')
 description.style.marginTop = '-20px'
-description.textContent = 'Hides the useless watermark of the current sprite in the top right corner of the block editor.'
+description.textContent = 'Hides the current sprite watermark on the top right corner of the editor.'
 div10.appendChild(description)
 div10.appendChild(label10)
 document.querySelector('#page-404 > div').appendChild(div10)
