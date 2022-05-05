@@ -1,0 +1,2 @@
+- name: Prettier Check
+  uses: rutajdash/prettier-cli-action@v1.0.0
