@@ -37,6 +37,9 @@ div.appendChild(button)
     }
 }
 doStuff()
+function leaderboard() {
+    chrome.tabs.create({active: true, url: '/extras/leaderboard.html' });
+}
 
 function again() {
     var abc = document.querySelector('center')
