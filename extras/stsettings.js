@@ -866,7 +866,7 @@ div23.appendChild(h23)
 div23.appendChild(document.createElement('br'))
 var description = document.createElement('h3')
 description.style.marginTop = '-20px'
-description.textContent = 'Shows a project's rating next to the project timestamp.'
+description.textContent = "Shows a project's rating next to the project timestamp."
 div23.appendChild(description)
 div23.appendChild(label23)
 document.querySelector('#page-404 > div').appendChild(div23)
