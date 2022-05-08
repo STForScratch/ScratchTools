@@ -950,6 +950,40 @@ function myFunction24() {
         document.cookie = `ST Features=${getCookie('ST Features').replaceAll('accountsettings', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
     }
 }
+//secret
+var div3 = document.createElement('div')
+var h3 = document.createElement('h3')
+h3.textContent = 'THE FORBIDDEN SECRET'
+var label3 = document.createElement('label')
+label3.className = "switch"
+var switch3 = document.createElement('input')
+switch3.type = "checkbox"
+console.log(getCookie('ST Features'))
+if (getCookie('ST Features').includes('secret')) {
+    switch3.checked = true
+}
+switch3.onclick = function() {
+    myFunction3()
+  }
+label3.appendChild(switch3)
+var span3 = document.createElement('span')
+span3.className = "slider round"
+label3.appendChild(span3)
+div3.appendChild(h3)
+div3.appendChild(document.createElement('br'))
+var description = document.createElement('h3')
+description.style.marginTop = '-20px'
+description.textContent = '[redacted]'
+div3.appendChild(description)
+div3.appendChild(label3)
+document.querySelector('#page-404 > div').appendChild(div3)
+function myFunction3() {
+    if (switch3.checked === true) {
+        document.cookie = `ST Features=${getCookie('ST Features') + 'secret'}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+    } else {
+        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('secret', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
+    }
+}
 
 
 
