@@ -951,6 +951,11 @@ function myFunction24() {
     }
 }
 
+document.querySelector('a.logo').href = ''
+document.querySelector('a.logo').onclick = function() {
+createFeature('THE FORBIDDEN SECRET', '[redacted]', 'secret')
+}
+
 
 
 
