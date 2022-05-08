@@ -41,6 +41,10 @@ function leaderboard() {
     chrome.tabs.create({active: true, url: '/extras/leaderboard.html' });
 }
 
+document.querySelector('h3.leaderboard').onclick = function() {
+leaderboard()
+}
+
 function again() {
     var abc = document.querySelector('center')
     var def = document.createElement('button')
