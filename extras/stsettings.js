@@ -86,6 +86,8 @@ document.querySelector('#page-404 > div').appendChild(featured)
 
 createFeature('Unbold Site Text', 'Makes it so that all test across Scratch is unbolded, and just normal text!', 'unbold-forum-topics')
 
+createFeature("Meow", "Meow mrow reoowwww meow mrow. Mew mrow reoowwww purr meow mreow purr! Reoowwww mew!", "meow")
+
 
 var br = document.createElement('br')
 document.querySelector('#page-404 > div').appendChild(br)
@@ -985,7 +987,6 @@ function myFunction3() {
     }
 }
 //meow
-createFeature("Meow, Meow mrow reoowwww meow mrow. Mew mrow reoowwww purr meow mreow purr! Reoowwww mew!, meow")
 
 
 
