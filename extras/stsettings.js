@@ -85,6 +85,7 @@ featured.textContent = 'New Features'
 document.querySelector('#page-404 > div').appendChild(featured)
 
 createFeature('Unbold Site Text', 'Makes it so that all test across Scratch is unbolded, and just normal text!', 'unbold-forum-topics')
+createFeature('Advanced Search', 'Easily search for users, projects, and studios with Advanced Search! (BETA)', 'advanced-search')
 
 
 var br = document.createElement('br')
