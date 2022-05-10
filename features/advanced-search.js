@@ -5,6 +5,7 @@ function getCookie(name) {
     if (parts.length === 2) return parts.pop().split(';').shift();
   }
   // get cookie
+if (getCookie('ST Features').includes('advanced-search')) {
 if (window.location.href.includes("https://scratch.mit.edu/search/")) {
 var user = document.querySelector('#frc-q-1088').value
 checkfor(user)
@@ -37,4 +38,5 @@ userbox.style.borderRadius = '10px'
 document.querySelector('#projectBox').prepend(userbox)
 }
     }
+}
 }
