@@ -84,8 +84,7 @@ featured.textContent = 'New Features'
 
 document.querySelector('#page-404 > div').appendChild(featured)
 
-createFeature('Unbold Site Text', 'Makes it so that all test across Scratch is unbolded, and just normal text!', 'unbold-forum-topics')
-createFeature('Advanced Search', 'Easily search for users, projects, and studios with Advanced Search! (BETA)', 'advanced-search')
+createFeature('Compact Navbar', 'Makes more room on the navigation bar near where your profile dropdown is.', 'compact-navbar')
 
 
 var br = document.createElement('br')
@@ -105,6 +104,9 @@ var featured = document.createElement('h1')
 featured.textContent = 'Other Features'
 
 document.querySelector('#page-404 > div').appendChild(featured)
+
+createFeature('Unbold Site Text', 'Makes it so that all test across Scratch is unbolded, and just normal text!', 'unbold-forum-topics')
+createFeature('Advanced Search', 'Easily search for users, projects, and studios with Advanced Search! (BETA)', 'advanced-search')
 
   // show profile comment project titles
 
