@@ -92,23 +92,6 @@ document.querySelector('#view > div > div:nth-child(1) > div.splash-header > div
   }
 
 
-// set patrick's day start
-const d = new Date();
-console.log(d.getDate())
-if (d.getDate() === 17) {
-document.querySelector('#navigation').style.backgroundColor = '#009a49'
-
-const highlightedItems5 = document.querySelectorAll("a");
-
-highlightedItems5.forEach(function(item) {
-    if (item.parentNode.parentNode.parentNode.parentNode.id !== 'navigation') {
-        if (item.className !== 'ignore-react-onclickoutside user-info') {
-item.style.color = '#009a49'
-        }
-    }
-})
-}
-// st patrick's day end
 
 // settings button
 if (getCookie('ST Features').includes('settings-footer')) {
@@ -128,8 +111,8 @@ function getCookie(name) {
     if (parts.length === 2) return parts.pop().split(';').shift();
   }
   function checkversion() {
-if (getCookie('ScratchToolsVersion') !== '2.2.3') {
-    document.cookie = "ScratchToolsVersion=2.2.3; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/";
+if (getCookie('ScratchToolsVersion') !== '2.3.0') {
+    document.cookie = "ScratchToolsVersion=2.3.0; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/";
     createExplanation()
 }
   }
@@ -173,7 +156,7 @@ element.appendChild(h1)
 var stuff = document.createElement('br')
 element.appendChild(stuff)
 var el2 = document.createElement('p')
-el2.textContent = "Welcome to v2.2.3! This new version introduces a new feature, which makes the forum titles unbolded. Other than that, we're just working on a ton of other features, soon to be released."
+el2.textContent = "Welcome to v2.3.0! The new version adds a feature which will make the navbar more compact, and will also just make it look more modern."
 h1.style.color = 'white'
 el2.style.color = '#ebebeb'
 el2.style.padding = '20px'
