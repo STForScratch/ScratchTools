@@ -4,4 +4,4 @@ Simply edit this file and add yourself to the list in the form of a pull request
 ### Contributors
 - rgantzos
 - Scratchfangs
-- Anonymous
+- Misty/EASTER EGG GOD
