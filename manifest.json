@@ -28,7 +28,7 @@
         {
             "matches": ["https://scratch.mit.edu/*"],
             "all_frames": true,
-            "js": ["/features/compact-navbar.js", "/pages/all.js", "/pages/discuss.js", "/features/unbold-forum-topics.js", "/features/nfe-project-checker.js", "/pages/editor.js", "/pages/home.js", "/pages/join.js", "/pages/profile.js", "/pages/project.js", "/features/advanced-search.js", "/features/color-slider-input.js", "/features/more-tutorials.js", "/features/nfe-search.js", "/features/open-in-new-tab.js", "/features/plain-background.js", "/features/statistics.js", "/features/turbowarp-button.js"],
+            "js": ["/features/compact-navbar.js", "/pages/all.js", "/pages/discuss.js", "/features/round-profile-pictures.js", "/features/unbold-forum-topics.js", "/features/nfe-project-checker.js", "/pages/editor.js", "/pages/home.js", "/pages/join.js", "/pages/profile.js", "/pages/project.js", "/features/advanced-search.js", "/features/color-slider-input.js", "/features/more-tutorials.js", "/features/nfe-search.js", "/features/open-in-new-tab.js", "/features/plain-background.js", "/features/statistics.js", "/features/turbowarp-button.js"],
             "run_at": "document_end"
         }
     ]
