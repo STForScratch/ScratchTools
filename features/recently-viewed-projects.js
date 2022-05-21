@@ -3,7 +3,7 @@ function checkFeature(name) {
   const parts = value.split(`; ${name}=`);
   if (parts.length === 2) return parts.pop().split(';').shift();
 }
-if (checkFeature('ST Features').includes('recently-viewed-projects') {
+if (checkFeature('ST Features').includes('recently-viewed-projects')) {
 var li = document.createElement('li')
 var a = document.createElement('a')
 a.textContent = 'Recently Viewed'
