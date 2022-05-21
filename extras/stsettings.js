@@ -419,7 +419,7 @@ description.style.marginTop = '-20px'
 description.textContent = 'Adds a button that takes you to your automatic ScratchStats page.'
 div9.appendChild(description)
 div9.appendChild(label9)
-document.querySelector('#page-404 > div').appendChild(div9)
+// document.querySelector('#page-404 > div').appendChild(div9)
 function myFunction9() {
     if (switch9.checked === true) {
         document.cookie = `ST Features=${getCookie('ST Features') + 'stats '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
