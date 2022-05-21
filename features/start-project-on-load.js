@@ -1,6 +1,6 @@
 function startProjectOnLoad() {
   if (window.location.href.includes('https://scratch.mit.edu/projects/')) {
-    if (document.querySelector('div.stage_green-flag-overlay_gNXnv') === undefined) {
+    if (document.querySelector('div.stage_green-flag-overlay_gNXnv') === null) {
       window.setTimeout(startProjectOnLoad, 50)
     } else {
       document.querySelector('div.stage_green-flag-overlay_gNXnv').click()
