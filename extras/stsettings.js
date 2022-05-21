@@ -84,6 +84,7 @@ featured.textContent = 'New Features'
 
 document.querySelector('#page-404 > div').appendChild(featured)
 
+createFeature('Sidebar', 'Adds a sidebar to the Scratch website, rather than just the normal navigation bar at the top of the screen.')
 createFeature('Round Profile Pictures', 'All profile pictures on the Scratch website will be rounded.', 'round-profile-pictures')
 createFeature('Start Project on Load', 'Automatically starts the project on project pages after it has loaded.', 'start-project-on-load')
 
