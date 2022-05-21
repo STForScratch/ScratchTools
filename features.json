@@ -77,6 +77,12 @@
     "description": "Adds a sidebar to the Scratch website, rather than just the normal navigation bar at the top of the screen.",
     "credits": "Scratchfangs, rgantzos",
     "urls": "https://scratch.mit.edu/users/scratchfangs/, https://scratch.mit.edu/users/rgantzos/"
+},
+{
+    "title": "Recently Viewed Ptojects",
+    "description": "Adds a tab to the My Stuff page where you can see a list of the projects that you have recently viewed.",
+    "credits": "Karve_, rgantzos",
+    "urls": "https://scratch.mit.edu/users/Karve_/, https://scratch.mit.edu/users/rgantzos/"
 }
 ]
 }
