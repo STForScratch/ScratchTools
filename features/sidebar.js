@@ -1,4 +1,4 @@
-      if (getCookie('ST Features').includes('settings-footer')) {
+      if (getCookie('ST Features').includes('sidebar')) {
         if (document.querySelector('#footer > div > ul.clearfix.footer-col > li:nth-child(3) > ul > li:nth-child(4)') !== null) {
 
           document.querySelector('div#content').style.width = '80%'
