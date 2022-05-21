@@ -119,7 +119,7 @@ async function session() {
         br3.height = '1vh'
         links.appendChild(br3)
         createMenu('My Stuff', 'https://scratch.mit.edu/mystuff/')
-        createMenu('Settings', 'https://scratch.mit.edu/settings/')
+        createMenu('Settings', 'https://scratch.mit.edu/accounts/settings/')
         createMenu('ScratchTools', 'https://scratch.mit.edu/ScratchTools/')
     }
 
@@ -247,7 +247,7 @@ async function session() {
         br3.height = '1vh'
         links.appendChild(br3)
         createMenu('My Stuff', 'https://scratch.mit.edu/mystuff/')
-        createMenu('Settings', 'https://scratch.mit.edu/settings/')
+        createMenu('Settings', 'https://scratch.mit.edu/accounts/settings/')
         createMenu('ScratchTools', 'https://scratch.mit.edu/ScratchTools/')
     }
 
