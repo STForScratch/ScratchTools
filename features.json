@@ -71,6 +71,12 @@
     "description": "Automatically starts the project on project pages after it has loaded.",
     "credits": "rgantzos",
     "urls": "https://scratch.mit.edu/users/rgantzos"
+},
+{
+    "title": "Sidebar",
+    "description": "Adds a sidebar to the Scratch website, rather than just the normal navigation bar at the top of the screen.",
+    "credits": "Scratchfangs, rgantzos",
+    "urls": "https://scratch.mit.edu/users/scratchfangs/, https://scratch.mit.edu/users/rgantzos/"
 }
 ]
 }
