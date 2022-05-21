@@ -8,6 +8,7 @@ var li = document.createElement('li')
 var a = document.createElement('a')
 a.textContent = 'Recently Viewed'
 li.appendChild(a)
+  li.dataset.tab = 'recent'
 document.querySelector('ul#tabs').lastChild.className = ''
 li.className = 'last'
 document.querySelector('ul#tabs').appendChild(li)
