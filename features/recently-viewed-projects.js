@@ -1,9 +1,4 @@
-function checkFeature(name) {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
-}
-if (checkFeature('ST Features').includes('recently-viewed-projects')) {
+
 var li = document.createElement('li')
 var a = document.createElement('a')
 a.textContent = 'Recently Viewed'
@@ -96,5 +91,4 @@ function removeAllChildNodes(parent) {
             setTimeout(deleteButton, 50)
         }
     }
-}
 }
