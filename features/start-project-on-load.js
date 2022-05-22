@@ -3,7 +3,12 @@ function startProjectOnLoad() {
     if (document.querySelector('div.stage_green-flag-overlay_gNXnv') === null) {
       window.setTimeout(startProjectOnLoad, 50)
     } else {
-      document.querySelector('div.stage_green-flag-overlay_gNXnv').click()
+      const vm = window.vm || (() => {
+    const app = document.querySelector("#app");
+    return app[Object.keys(app).find(key => key.startsWith("__reactContainer"))].child.stateNode.store.getState().scratchGui.vm;
+})();
+vm.start()
+vm.greenFlag()
     }
   }
 }
