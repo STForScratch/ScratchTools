@@ -9,12 +9,4 @@ function roundProfile() {
     window.setTimeout(roundProfile, 80)
 }
 
-if (getCookie('ST Features').includes('round-profile-pictures')) {
-  roundProfile()
-}
-
-function getCookie(name) {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
-}
+roundProfile()
