@@ -84,10 +84,7 @@ featured.textContent = 'New Features'
 
 document.querySelector('#page-404 > div').appendChild(featured)
 
-createFeature('Sidebar', 'Adds a sidebar to the Scratch website, rather than just the normal navigation bar at the top of the screen.', 'sidebar')
-createFeature('Recently Viewed Projects', 'Adds a tab to the My Stuff page where you can see a list of the projects that you have recently viewed.', 'recently-viewed-projects')
-createFeature('Round Profile Pictures', 'All profile pictures on the Scratch website will be rounded.', 'round-profile-pictures')
-// createFeature('Start Project on Load', 'Automatically starts the project on project pages after it has loaded.', 'start-project-on-load')
+createFeature('Start Project on Load', 'Automatically starts the project on project pages after it has loaded.', 'start-project-on-load')
 
 
 var br = document.createElement('br')
@@ -107,6 +104,10 @@ var featured = document.createElement('h1')
 featured.textContent = 'Other Features'
 
 document.querySelector('#page-404 > div').appendChild(featured)
+
+createFeature('Sidebar', 'Adds a sidebar to the Scratch website, rather than just the normal navigation bar at the top of the screen.', 'sidebar')
+createFeature('Recently Viewed Projects', 'Adds a tab to the My Stuff page where you can see a list of the projects that you have recently viewed.', 'recently-viewed-projects')
+createFeature('Round Profile Pictures', 'All profile pictures on the Scratch website will be rounded.', 'round-profile-pictures')
 
 createFeature('Compact Navbar', 'Makes more room on the navigation bar near where your profile dropdown is.', 'compact-navbar')
 
