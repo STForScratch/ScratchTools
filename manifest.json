@@ -20,5 +20,8 @@
     },
     "icons": { "16": "/extras/icon16.png",
             "48": "/extras/icon48.png",
-            "128": "/extras/icon128.png" }
+            "128": "/extras/icon128.png" },
+    "host_permissions": [
+        "https://scratch.mit.edu/"
+      ]
 }
