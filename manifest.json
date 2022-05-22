@@ -8,6 +8,11 @@
     "background": {
         "service_worker": "/extras/background.js"
     },
+    "permissions": [
+        "scripting",
+        "tabs",
+        "storage"
+    ],
     "action": {
         "default_icon": "/extras/icon128.png",
         "default_popup": "/extras/popup.html",
