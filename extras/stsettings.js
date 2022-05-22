@@ -84,6 +84,7 @@ featured.textContent = 'New Features'
 
 document.querySelector('#page-404 > div').appendChild(featured)
 
+createFeature('Sprite Hover Data', 'In sprites on the editor, hover over the Code, Costumes, and Sounds tabs to view how many there are in each tab.', 'sprite-hover-data')
 // createFeature('Start Project on Load', 'Automatically starts the project on project pages after it has loaded.', 'start-project-on-load')
 
 
