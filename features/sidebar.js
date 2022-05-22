@@ -1,4 +1,3 @@
-      if (getCookie('ST Features').includes('sidebar')) {
         if (document.querySelector('#footer > div > ul.clearfix.footer-col > li:nth-child(3) > ul > li:nth-child(4)') !== null) {
 
           document.querySelector('div#content').style.width = '80%'
@@ -257,10 +256,3 @@ async function session() {
 document.querySelector('div#app').prepend(sidebar)
           
         }
-      }
-
-function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-  }
