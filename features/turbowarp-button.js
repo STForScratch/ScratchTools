@@ -1,10 +1,4 @@
-// get cookie
-function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-  }
-  // get cookie
+
 if (window.location.href.includes("https://scratch.mit.edu/projects/")) {
     if (window.location.href.includes('editor')) {
 function checkFlag2() {
@@ -15,7 +9,6 @@ function checkFlag2() {
     }
 }
 function editor() {
-    if (getCookie('ST Features').includes('turbowarp')) {
 var element = document.createElement('a')
 var str = window.location.href
 var apple = str.split('https://scratch.mit.edu/projects/')[1];
@@ -28,6 +21,5 @@ document.querySelector('#app > div > div.gui_menu-bar-position_3U1T0.menu-bar_me
 document.querySelector('#app > div > div.gui_menu-bar-position_3U1T0.menu-bar_menu-bar_JcuHF.box_box_2jjDp > a > div > span > div > span').textContent = 'Open in Turbowarp'
 document.querySelector('#app > div > div.gui_menu-bar-position_3U1T0.menu-bar_menu-bar_JcuHF.box_box_2jjDp > a > div > span > img').src = 'https://dashboard.snapcraft.io/site_media/appmedia/2021/02/512x512_Q3PveGU.png'
     }
-}
 }
 }
