@@ -84,7 +84,7 @@ featured.textContent = 'New Features'
 
 document.querySelector('#page-404 > div').appendChild(featured)
 
-createFeature('Start Project on Load', 'Automatically starts the project on project pages after it has loaded.', 'start-project-on-load')
+// createFeature('Start Project on Load', 'Automatically starts the project on project pages after it has loaded.', 'start-project-on-load')
 
 
 var br = document.createElement('br')
