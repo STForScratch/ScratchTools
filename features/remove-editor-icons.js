@@ -8,4 +8,3 @@
       document.querySelector('#react-tabs-4 > img').remove()
     }
   }
-}
