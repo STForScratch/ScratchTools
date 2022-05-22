@@ -96,5 +96,47 @@
         "credits": "rgantzos",
         "urls": "https://scratch.mit.edu/users/rgantzos/",
         "file": "forum-scratch-team"
+    },
+    {
+        "title": "Full Project Title",
+        "description": "On profile pages, hover over any project title to show the full title.",
+        "credits": "rgantzos",
+        "urls": "https://scratch.mit.edu/users/rgantzos",
+        "file": "full-title"
+    },
+    {
+        "title": "Message Count",
+        "description": "On profiles, displays the user's message count next to their country.",
+        "credits": "rgantzos",
+        "urls": "https://scratch.mit.edu/users/rgantzos",
+        "file": "message-count"
+    },
+    {
+        "title": "Project Title as Link",
+        "description": "On profiles, project links in comments are replaced with their titles.",
+        "credits": "rgantzos",
+        "urls": "https://scratch.mit.edu/users/rgantzos",
+        "file": "project-links"
+    },
+    {
+        "title": "Remove Editor Icons",
+        "description": "Removes the icons from the tabs in the editor.",
+        "credits": "rgantzos",
+        "urls": "https://scratch.mit.edu/users/rgantzos",
+        "file": "remove-editor-icons"
+    },
+    {
+        "title": "Remove Sprite Watermark",
+        "description": "Removes the sprite watermark that shows in the editor.",
+        "credits": "rgantzos",
+        "urls": "https://scratch.mit.edu/users/rgantzos",
+        "file": "sprite-watermark"
+    },
+    {
+        "title": "User Bio on Hover",
+        "description": "In profile comments, hover over any username to display the user's bio.",
+        "credits": "rgantzos",
+        "urls": "https://scratch.mit.edu/users/rgantzos",
+        "file": "user-bio"
     }
 ]
