@@ -2,7 +2,6 @@
   
   replacealllinks2()
   function replacealllinks2() {
-    if (getCookie('ST Features').includes('full-title')) {
   const highlightedItems2 = document.querySelectorAll("a");
   
   highlightedItems2.forEach(function(item) {
@@ -14,7 +13,6 @@
     }
   })
                            }
-                          }
       async function replacelinks2(item) {
       
       // Storing response
