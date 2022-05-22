@@ -1,11 +1,4 @@
-// get cookie
-function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-  }
-  // get cookie
-    if (getCookie('ST Features').includes('feprojectcheck')) {
+
 function check() {
     if (document.querySelector('div.share-date') === null) {
 window.setTimeout(check, 50)
@@ -28,4 +21,3 @@ checkforNfe()
 }
 }
 check()
-}
