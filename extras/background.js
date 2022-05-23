@@ -3,7 +3,7 @@ chrome.runtime.onInstalled.addListener(() => { // this event is triggered when t
 });
 
 chrome.tabs.onUpdated.addListener(function (tabId , info) {
-  if (info.status === 'interactive') {
+  if (info.status === 'loading') {
 async function getCurrentTab() {
   var response = await fetch('/features/features.json')
   var data = await response.json()
