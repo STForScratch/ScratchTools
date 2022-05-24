@@ -151,6 +151,6 @@
         "description": "Adds extra functionality to context menus in the editor.",
         "credits": "GarboMuffin",
         "urls": "https://scratch.mit.edu/users/GarboMuffin",
-        "file": "compact-editor"
+        "file": "better-context-menus"
     }
 ]
