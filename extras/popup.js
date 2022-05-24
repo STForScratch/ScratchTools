@@ -77,7 +77,7 @@ abc.appendChild(def)
 }
 again()
 
-async function createFeature(name, description, id, credits) {
+async function createFeature(name, description, id, credits, def) {
     var div23 = document.createElement('div')
     var item = div23
     item.style.margin = '15px'
@@ -93,11 +93,19 @@ switch23.type = "checkbox"
 switch23.id = id
 await chrome.storage.sync.get("features", async function (obj) {
     if (obj['features'] !== undefined) {
+        if (def === true) {
+            if (obj['features'].includes(switch23.id)) {
+    switch23.checked = false
+} else {
+    switch23.checked = true
+}
+        } else {
 if (obj['features'].includes(switch23.id)) {
     switch23.checked = true
 } else {
     switch23.checked = false
 }
+        }
     } else {
         await chrome.storage.sync.set({"features": "ok"})
         switch23.checked = false
@@ -144,7 +152,7 @@ async function getFeatures() {
     var response = await fetch('/features/features.json')
     var data = await response.json()
     Object.keys(data).forEach(function(el) {
-        createFeature(data[el]['title'], data[el]['description'], data[el]['file'], data[el]['credits'])
+        createFeature(data[el]['title'], data[el]['description'], data[el]['file'], data[el]['credits'], data[el]['default'])
     })
 }
 getFeatures()
