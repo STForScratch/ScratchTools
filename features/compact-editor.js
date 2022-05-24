@@ -9,7 +9,8 @@
 // @run-at document-end
 // ==/UserScript==
 
-GM_addStyle(`
+var style = document.createElement('style')
+style.innerHTML = `
 .gui_target-wrapper_36Gbz {
   padding-top: 0.25rem !important;
 }
@@ -53,4 +54,5 @@ div.sprite-info_row_1om5V:nth-child(1) {
 .sprite-selector_scroll-wrapper_3NNnc {
   height: 100% !important;
 }
-`);
+`
+document.body.appendChild(style)
