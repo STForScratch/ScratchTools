@@ -1,12 +1,5 @@
-// get cookie
-function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-  }
-  // get cookie
+
   if (window.location.href.includes("https://scratch.mit.edu/ideas")) {
-  if (getCookie('ST Features').includes('tutorials')) {
 el = document.querySelector('#view > div > div.tips-activity-guides > div > section > div.masonry > div > div:nth-child(1)')
 var clone = el.cloneNode(true);
 document.querySelector('#view > div > div.tips-activity-guides > div > section > div.masonry > div').appendChild(clone);
@@ -42,5 +35,4 @@ document.querySelector('#view > div > div.tips-activity-guides > div > section >
 document.querySelector('#view > div > div.tips-activity-guides > div > section > div.masonry > div > div:nth-child(12)').onClick = 'window.location.href = "https://scratchstatus.org/"'
 document.querySelector('#view > div > div.tips-activity-guides > div > section > div.masonry > div > div:nth-child(12) > div > div.ttt-tile-info > p').textContent = 'Make a game where you control a snake and make sure it does not die!'
 document.querySelector('#view > div > div.tips-activity-guides > div > section > div.masonry > div > div:nth-child(12) > div > div.ttt-tile-image > img').src = 'https://i.ytimg.com/vi/JEw3xiC3-aQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBBSeaBRVYFbQ99iUc4iqPTmVvytg'
-  }
 }

@@ -1,17 +1,11 @@
-function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-  }
 
-if (getCookie('ST Features').includes('compact-navbar')) {
+
         if (document.querySelector('#footer > div > ul.clearfix.footer-col > li:nth-child(3) > ul > li:nth-child(4)') !== null) {
           twoPointO()
         }
         if (document.querySelector('#footer > div > div > dl:nth-child(3) > dd:nth-child(5)') !== null) {
           threePointO()
         }
-      }
 
 function twoPointO() {
 if (document.querySelector('#topnav > div > div > ul.account-nav.logged-in > li.logged-in-user.dropdown > span') !== null && document.querySelector('ul.user-nav') !== null) {

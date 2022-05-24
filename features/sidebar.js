@@ -1,4 +1,3 @@
-      if (getCookie('ST Features').includes('sidebar')) {
         if (document.querySelector('#footer > div > ul.clearfix.footer-col > li:nth-child(3) > ul > li:nth-child(4)') !== null) {
 
           document.querySelector('div#content').style.width = '80%'
@@ -7,6 +6,7 @@ document.querySelector('div#content').style.right = '0px'
 document.querySelector('div#content').style.marginTop = '0px'
 document.querySelector('#topnav').remove()
 var sidebar = document.createElement('div')
+document.querySelector('div#pagewrapper').prepend(sidebar)
 sidebar.style.backgroundColor = '#282424'
 sidebar.style.color = 'white'
 sidebar.style.width = '20vw'
@@ -125,8 +125,6 @@ async function session() {
 
     sidebar.appendChild(links)
 }
-
-document.querySelector('div#pagewrapper').prepend(sidebar)
           
         }
         if (document.querySelector('#footer > div > div > dl:nth-child(3) > dd:nth-child(5)') !== null) {
@@ -137,6 +135,7 @@ document.querySelector('div.page').style.right = '0px'
 document.querySelector('div#view').style.marginTop = '0px'
 document.querySelector('#navigation').remove()
 var sidebar = document.createElement('div')
+document.querySelector('div#app').prepend(sidebar)
 sidebar.style.backgroundColor = '#282424'
 sidebar.style.color = 'white'
 sidebar.style.width = '20vw'
@@ -253,14 +252,5 @@ async function session() {
 
     sidebar.appendChild(links)
 }
-
-document.querySelector('div#app').prepend(sidebar)
           
         }
-      }
-
-function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-  }

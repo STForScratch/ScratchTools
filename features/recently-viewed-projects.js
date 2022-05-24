@@ -1,9 +1,4 @@
-function checkFeature(name) {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
-}
-if (checkFeature('ST Features').includes('recently-viewed-projects')) {
+
 var li = document.createElement('li')
 var a = document.createElement('a')
 a.textContent = 'Recently Viewed'
@@ -26,7 +21,6 @@ if (window.location.href === 'https://scratch.mit.edu/mystuff/#recent') {
   const parts = value.split(`; ${name}=`);
   if (parts.length === 2) return parts.pop().split(';').shift();
 }
-    window.location.href = 'https://scratch.mit.edu/mystuff/#recent'
         var response2 = await fetch("https://scratch.mit.edu/session/", {
   "headers": {
     "accept": "*/*",
@@ -96,5 +90,4 @@ function removeAllChildNodes(parent) {
             setTimeout(deleteButton, 50)
         }
     }
-}
 }
