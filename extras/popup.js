@@ -77,7 +77,7 @@ abc.appendChild(def)
 }
 again()
 
-async function createFeature(name, description, id) {
+async function createFeature(name, description, id, credits) {
     var div23 = document.createElement('div')
     var item = div23
     item.style.margin = '15px'
@@ -119,10 +119,9 @@ switch23.addEventListener('click', async function() {
         switch23.checked = true
     }
 })
-await chrome.storage.sync.get("features", function (obj) {
-    console.log(obj['features'])
-})
   })
+  await chrome.storage.sync.get("features", function (obj) {
+    console.log(obj['features'])
 label23.appendChild(switch23)
 var span23 = document.createElement('span')
 span23.className = "slider round"
@@ -133,15 +132,19 @@ var description2 = document.createElement('h3')
 description2.style.marginTop = '-20px'
 description2.style.width = '200px'
 description2.textContent = description
+var a = document.createElement('h3')
+a.textContent = `Credits: ${credits}.`
 div23.appendChild(description2)
 div23.appendChild(label23)
+div23.appendChild(a)
 document.querySelector('div.settings').appendChild(div23)
+})
 }
 async function getFeatures() {
     var response = await fetch('/features/features.json')
     var data = await response.json()
     Object.keys(data).forEach(function(el) {
-        createFeature(data[el]['title'], data[el]['description'], data[el]['file'])
+        createFeature(data[el]['title'], data[el]['description'], data[el]['file'], data[el]['credits'])
     })
 }
 getFeatures()
