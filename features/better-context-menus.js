@@ -1,15 +1,6 @@
-// ==UserScript==
-// @name Better Context Menus for Scratch 3
-// @version 0.2
-// @namespace https://github.com/forkphorus/cat-plus
-// @match https://scratch.mit.edu/projects/*
-// @run-at document-idle
-// ==/UserScript==
+var script = document.createElement('script')
 
-'use strict';
-
-window.addEventListener('load', function() {
-
+script.innerHTML = `
   let workspace = Blockly.getMainWorkspace();
   let hooked = false;
 
@@ -51,7 +42,7 @@ window.addEventListener('load', function() {
     return function(options, block) {
       options.splice(insertIndex, 0, {
         enabled: true,
-        text: `Rename ${type}`,
+        text: `+"`Rename ${type}`"+`,
         callback() {
           const target = block.childBlocks_.length > 0 ? block.childBlocks_[0] : block;
 
@@ -62,7 +53,7 @@ window.addEventListener('load', function() {
           const oldName = variable.name;
 
           // prompt() isn't perfect but works well enough for this use case
-          const newName = prompt(`Rename '${oldName}' ${type} to:`, oldName);
+          const newName = prompt(`+"`Rename '${oldName}' ${type} to:`"+`, oldName);
           if (typeof newName !== 'string') {
             return;
           }
@@ -128,5 +119,5 @@ window.addEventListener('load', function() {
       }
     });
   }
-
-});
+`
+document.body.appendChild(script)
