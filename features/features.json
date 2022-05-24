@@ -140,10 +140,10 @@
         "file": "user-bio"
     },
     {
-        "title": "Compact Editor",
-        "description": "Makes sprite and backdrop information more compact so it takes up less room.",
+        "title": "Better Context Menus",
+        "description": "In the editor, makes context menus better and gives them more abilities.",
         "credits": "GarboMuffin",
         "urls": "https://scratch.mit.edu/users/GarboMuffin",
-        "file": "better-context-menus"
+        "file": "compact-editor"
     }
 ]
