@@ -138,5 +138,19 @@
         "credits": "rgantzos",
         "urls": "https://scratch.mit.edu/users/rgantzos",
         "file": "user-bio"
+    },
+    {
+        "title": "Compact Editor",
+        "description": "Makes sprite and backdrop information more compact.",
+        "credits": "GarboMuffin",
+        "urls": "https://scratch.mit.edu/users/GarboMuffin",
+        "file": "compact-editor"
+    },
+    {
+        "title": "Right Side Flag",
+        "description": "Moves the green flag and the red stop sign to the right side of the stage.",
+        "credits": "GarboMuffin",
+        "urls": "https://scratch.mit.edu/users/GarboMuffin",
+        "file": "right-side-flag"
     }
 ]
