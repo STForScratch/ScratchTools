@@ -147,8 +147,8 @@
         "file": "compact-editor"
     },
     {
-        "title": "Better Context Menus",
-        "description": "Adds extra functionality to context menus in the editor.",
+        "title": "Right Side Flag",
+        "description": "Moves the green flag and the red stop sign to the right side of the stage.",
         "credits": "GarboMuffin",
         "urls": "https://scratch.mit.edu/users/GarboMuffin",
         "file": "better-context-menus"
