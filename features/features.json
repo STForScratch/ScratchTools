@@ -152,5 +152,12 @@
         "credits": "GarboMuffin",
         "urls": "https://scratch.mit.edu/users/GarboMuffin",
         "file": "right-side-flag"
+    },
+    {
+        "title": "Fix Content Boxes",
+        "description": "Makes all sides of boxes on the pages rounded, rather than just the tops.",
+        "credits": "Scratchfangs, rgantzos",
+        "urls": "https://scratch.mit.edu/users/Scratchfangs, https://scratch.mit.edu/users/rgantzos",
+        "file": "fixed-box"
     }
 ]
