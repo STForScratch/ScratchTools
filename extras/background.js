@@ -12,11 +12,20 @@ async function getCurrentTab() {
     chrome.storage.sync.get("features", function (obj) {
       console.log(obj['features']);
       console.log(obj['features'])
+      if (data[el]['default'] === true) {
+        if (!obj['features'].includes(data[el]['file'])) {
+     chrome.scripting.executeScript({
+      target: { tabId: tabId },
+      files: [`/features/${data[el]['file']}.js`]
+    });
+  }
+      } else {
       if (obj['features'].includes(data[el]['file'])) {
      chrome.scripting.executeScript({
       target: { tabId: tabId },
       files: [`/features/${data[el]['file']}.js`]
     });
+      }
   }
   });
   })
