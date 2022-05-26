@@ -1,5 +1,12 @@
 [
     {
+        "title":"April Fools 2022",
+        "description":"Brings back the special modes from the 2022 April Fools Day!",
+        "credits":"rgantzos",
+        "urls":"https://scratch.mit.edu/users/rgantzos/",
+        "file":"april-fools"
+    },
+    {
         "title":"Advanced Search",
         "description":"Replaces the basic search that Scratch uses with a much better and smarter search.",
         "credits":"rgantzos",
