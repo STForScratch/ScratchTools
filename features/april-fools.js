@@ -155,9 +155,9 @@ document.querySelector('div.prehistoric-mode_prehistoric-mode_30xo9').remove()
         document.querySelector('div.nineties-mode_nineties-mode_3atEu').remove()
     }
 }
-waitforready
+waitforready()
 function waitforready() {
-if (document.querySelector('#app > div > div.gui_menu-bar-position_3U1T0.menu-bar_menu-bar_JcuHF.box_box_2jjDp > div.menu-bar_main-menu_3wjWH') === null) {
+if (document.querySelector('div.menu-bar_main-menu_3wjWH') === null) {
   setTimeout(waitforready, 100)
 } else {
 var april = document.querySelector('#app > div > div.gui_menu-bar-position_3U1T0.menu-bar_menu-bar_JcuHF.box_box_2jjDp > div.menu-bar_main-menu_3wjWH > div.menu-bar_file-group_1_CHX > div:nth-child(3)').cloneNode(true)
