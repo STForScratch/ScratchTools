@@ -128,12 +128,9 @@ body {
 document.body.appendChild(style)
 document.querySelector('img.menu-bar_scratch-logo_2uReV.menu-bar_clickable_1g3uo').src = 'https://llk.github.io/scratch-gui/hotfix/totally-normal-2022/static/assets/0051f19c3035bdaca5117f973f571af0.svg'
     var img = document.querySelector('img.prehistoric-mode_torch_2mPjO')
-    var img2 = document.querySelector('div.prehistoric-mode_prehistoric-background_2xL8Y')
 const onMouseMove = (e) =>{
   img.style.left = e.pageX-30 + 'px';
   img.style.top = e.pageY-230 + 'px';
-    img2.style.left = e.pageX-30 + 'px';
-  img2.style.top = e.pageY-230 + 'px';
 }
 document.addEventListener('mousemove', onMouseMove);
 }
