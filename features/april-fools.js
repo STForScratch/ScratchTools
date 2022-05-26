@@ -156,7 +156,7 @@ document.querySelector('div.prehistoric-mode_prehistoric-mode_30xo9').remove()
     }
 }
 waitforready
-function waitforready()
+function waitforready() {
 if (document.querySelector('#app > div > div.gui_menu-bar-position_3U1T0.menu-bar_menu-bar_JcuHF.box_box_2jjDp > div.menu-bar_main-menu_3wjWH') === null) {
   setTimeout(waitforready, 100)
 } else {
