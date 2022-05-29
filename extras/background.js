@@ -1,35 +1,46 @@
 chrome.runtime.onInstalled.addListener(() => { // this event is triggered when the extension is installed or reloaded
-  chrome.tabs.create({ url: 'https://tools.scratchstatus.org/' }); // this is to open a webpage
-});
-
-chrome.tabs.onUpdated.addListener(function (tabId , info) {
-  if (info.status === 'loading') {
-async function getCurrentTab() {
-  var response = await fetch('/features/features.json')
-  var data = await response.json()
-  console.log(data)
-  Object.keys(data).forEach(async function(el) {
-    chrome.storage.sync.get("features", function (obj) {
-      console.log(obj['features']);
-      console.log(obj['features'])
-      if (data[el]['default'] === true) {
-        if (!obj['features'].includes(data[el]['file'])) {
-     chrome.scripting.executeScript({
-      target: { tabId: tabId },
-      files: [`/features/${data[el]['file']}.js`]
-    });
-  }
-      } else {
-      if (obj['features'].includes(data[el]['file'])) {
-     chrome.scripting.executeScript({
-      target: { tabId: tabId },
-      files: [`/features/${data[el]['file']}.js`]
-    });
-      }
-  }
+    chrome.tabs.create({ url: 'https://tools.scratchstatus.org/' }); // this is to open a webpage
   });
+  
+  chrome.tabs.onUpdated.addListener(function (tabId , info) {
+    if (info.status === 'loading') {
+  async function getCurrentTab() {
+    var response = await fetch('/features/features.json')
+    var data = await response.json()
+    console.log(data)
+    Object.keys(data).forEach(async function(el) {
+      chrome.storage.sync.get("features", function (obj) {
+        console.log(obj['features']);
+        console.log(obj['features'])
+        if (data[el]['default'] === true) {
+          if (!obj['features'].includes(data[el]['file'])) {
+       chrome.scripting.executeScript({
+        target: { tabId: tabId },
+        files: [`/features/${data[el]['file']}.js`]
+      });
+    }
+        } else {
+        if (obj['features'].includes(data[el]['file'])) {
+       chrome.scripting.executeScript({
+        target: { tabId: tabId },
+        files: [`/features/${data[el]['file']}.js`]
+      });
+        }
+    }
+    });
+    })
+    var version = '2.5.0'
+    await chrome.storage.sync.get("version", function (obj) {
+        if (obj['version'] !== version) {
+            chrome.storage.sync.set({"version": version})
+            chrome.scripting.executeScript({
+                target: { tabId: tabId },
+                files: [`/extras/new.js`]
+              });
+        }
+    })
+  }
+  getCurrentTab()
+  }
   })
-}
-getCurrentTab()
-}
-})
+  
