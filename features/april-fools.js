@@ -160,7 +160,9 @@ function waitforready() {
 if (document.querySelector('div.menu-bar_main-menu_3wjWH') === null) {
   setTimeout(waitforready, 100)
 } else {
+if (document.querySelector('div.stmodes') === null) {
 var april = document.querySelector('#app > div > div.gui_menu-bar-position_3U1T0.menu-bar_menu-bar_JcuHF.box_box_2jjDp > div.menu-bar_main-menu_3wjWH > div.menu-bar_file-group_1_CHX > div:nth-child(3)').cloneNode(true)
+april.className = 'menu-bar_menu-bar-item_oLDa- menu-bar_hoverable_c6WFB stmodes'
 april.firstChild.firstChild.textContent = 'Mode'
 april.onclick = function() {
     var div = document.createElement('div')
@@ -191,6 +193,7 @@ april.onclick = function() {
             reset()
             prehistoric()
         }
+    }
     }
 }
 
