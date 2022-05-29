@@ -275,5 +275,4 @@ document.body.appendChild(style)
     document.querySelector('button.prompt_ok-button_3QFdD').onclick = function() {
         document.querySelector('div.ScratchToolsNew').remove()
     }
-    }
 }
