@@ -276,6 +276,8 @@ document.body.appendChild(style)
         document.querySelector('div.ScratchToolsNew').remove()
     }
     document.querySelector('button.prompt_ok-buttonScratchTools').onclick = function() {
-window.location.href = 'https://2-5-0.scratchstatus.org'
+        chrome.tabs.create({
+      url: 'https://2-5-0.scratchstatus.org'
+    });
     }
 }
