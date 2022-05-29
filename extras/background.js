@@ -32,11 +32,13 @@ chrome.runtime.onInstalled.addListener(() => { // this event is triggered when t
     var version = '2.5.0'
     await chrome.storage.sync.get("version", function (obj) {
         if (obj['version'] !== version) {
+            if (window.location.href.includes('https://scratch.mit.edu')) {
             chrome.storage.sync.set({"version": version})
             chrome.scripting.executeScript({
                 target: { tabId: tabId },
                 files: [`/extras/new.js`]
               });
+            }
         }
     })
   }
