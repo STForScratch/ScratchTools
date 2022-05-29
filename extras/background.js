@@ -30,7 +30,7 @@ chrome.runtime.onInstalled.addListener(() => { // this event is triggered when t
     });
     })
     var version = '2.5.0'
-    await chrome.storage.sync.get("version", function (obj) {
+    await chrome.storage.sync.get("version", async function (obj) {
         if (obj['version'] !== version) {
             var tab = await chrome.tabs.get(tabId)
             if (tab.url.includes('https://scratch.mit.edu')) {
