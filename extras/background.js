@@ -14,15 +14,19 @@ chrome.runtime.onInstalled.addListener(() => { // this event is triggered when t
         console.log(obj['features'])
         if (data[el]['default'] === true) {
           if (!obj['features'].includes(data[el]['file'])) {
-       chrome.tabs.executeScript(tabId, {
-        files: [`/features/${data[el]['file']}.js`]
-      });
+       var script = document.createElement('script')
+        var response = await fetch(`/features/${data[el]['file']}.js`)
+        var data = await response.text()
+        script.innerHTML = data
+            document.body.prepend(script)
     }
         } else {
         if (obj['features'].includes(data[el]['file'])) {
-       chrome.tabs.executeScript(tabId, {
-        files: [`/features/${data[el]['file']}.js`]
-      });
+            var script = document.createElement('script')
+        var response = await fetch(`/features/${data[el]['file']}.js`)
+        var data = await response.text()
+        script.innerHTML = data
+            document.body.prepend(script)
         }
     }
     });
@@ -33,9 +37,11 @@ chrome.runtime.onInstalled.addListener(() => { // this event is triggered when t
             var tab = await chrome.tabs.get(tabId)
             if (tab.url.includes('https://scratch.mit.edu')) {
             chrome.storage.sync.set({"version": version})
-            chrome.tabs.executeScript(tabId, {
-                files: [`/extras/new.js`]
-              });
+            var script = document.createElement('script')
+        var response = await fetch(`/extras/new.js`)
+        var data = await response.text()
+        script.innerHTML = data
+            document.body.prepend(script)
             }
         }
     })
