@@ -9,7 +9,7 @@ chrome.runtime.onInstalled.addListener(() => { // this event is triggered when t
     var data = await response.json()
     console.log(data)
     Object.keys(data).forEach(async function(el) {
-      chrome.storage.sync.get("features", function (obj) {
+      chrome.storage.sync.get("features", async function (obj) {
         console.log(obj['features']);
         console.log(obj['features'])
         if (data[el]['default'] === true) {
