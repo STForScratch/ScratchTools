@@ -1,5 +1,4 @@
 
-    if (info.status === 'loading') {
   async function getCurrentTab() {
     var response = await fetch('/features/features.json')
     var data = await response.json()
@@ -43,5 +42,4 @@
     })
   }
   getCurrentTab()
-  }
   
