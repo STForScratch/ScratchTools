@@ -21,7 +21,6 @@ chrome.runtime.onInstalled.addListener(() => { // this event is triggered when t
         } else {
         if (obj['features'].includes(data[el]['file'])) {
        chrome.tabs.executeScript(tabId, {
-        target: { tabId: tabId },
         files: [`/features/${data[el]['file']}.js`]
       });
         }
@@ -35,7 +34,6 @@ chrome.runtime.onInstalled.addListener(() => { // this event is triggered when t
             if (tab.url.includes('https://scratch.mit.edu')) {
             chrome.storage.sync.set({"version": version})
             chrome.tabs.executeScript(tabId, {
-                target: { tabId: tabId },
                 files: [`/extras/new.js`]
               });
             }
