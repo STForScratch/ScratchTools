@@ -22,7 +22,7 @@
       ],
  "content_scripts": [
    {
-     "matches": ["https://*.nytimes.com/*"],
+     "matches": ["https://scratch.mit.edu/*"],
      "js": ["/extras/background.js"]
    }
  ]
