@@ -14,14 +14,13 @@ chrome.runtime.onInstalled.addListener(() => { // this event is triggered when t
         console.log(obj['features'])
         if (data[el]['default'] === true) {
           if (!obj['features'].includes(data[el]['file'])) {
-       chrome.tabs.executeScript({
-        target: { tabId: tabId },
+       chrome.tabs.executeScript(tabId, {
         files: [`/features/${data[el]['file']}.js`]
       });
     }
         } else {
         if (obj['features'].includes(data[el]['file'])) {
-       chrome.tabs.executeScript({
+       chrome.tabs.executeScript(tabId, {
         target: { tabId: tabId },
         files: [`/features/${data[el]['file']}.js`]
       });
@@ -35,7 +34,7 @@ chrome.runtime.onInstalled.addListener(() => { // this event is triggered when t
             var tab = await chrome.tabs.get(tabId)
             if (tab.url.includes('https://scratch.mit.edu')) {
             chrome.storage.sync.set({"version": version})
-            chrome.tabs.executeScript({
+            chrome.tabs.executeScript(tabId, {
                 target: { tabId: tabId },
                 files: [`/extras/new.js`]
               });
