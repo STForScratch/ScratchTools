@@ -5,9 +5,6 @@
     "version": "2.5.0",
     "description": "Great tools to make Scratching easier!",
     "author": "rgantzos",
-    "background": {
-        "service_worker": "/extras/background.js"
-    },
     "permissions": [
         "tabs",
         "storage"
@@ -22,5 +19,11 @@
             "128": "/extras/icon128.png" },
     "host_permissions": [
         "https://scratch.mit.edu/"
-      ]
+      ],
+ "content_scripts": [
+   {
+     "matches": ["https://*.nytimes.com/*"],
+     "js": ["/extras/background.js"]
+   }
+ ]
 }
