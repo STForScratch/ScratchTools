@@ -9,7 +9,6 @@
         "service_worker": "/extras/background.js"
     },
     "permissions": [
-        "scripting",
         "tabs",
         "storage"
     ],
