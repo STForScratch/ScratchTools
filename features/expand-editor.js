@@ -1,7 +1,7 @@
 document.addEventListener('keydown', function(event) {
     keydown(event)
     function keydown(e) {
-    if (e.ctrlKey && e.keyCode == 82) {
+    if (e.ctrlKey && e.keyCode == 69) {
         expandEditor()
 
         if (e.preventDefault) {
