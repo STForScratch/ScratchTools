@@ -7,6 +7,13 @@
         "file":"april-fools"
     },
     {
+        "title":"Expand Editor",
+        "description":"Use the Option key to easily switch between the default block editor view and one that hides the stage to expand editor itself!",
+        "credits":"Jazza, rgantzos",
+        "urls":"https://github.com/Jazza-231, https://scratch.mit.edu/users/rgantzos/",
+        "file":"expand-editor"
+    },
+    {
         "title":"Advanced Search",
         "description":"Replaces the basic search that Scratch uses with a much better and smarter search.",
         "credits":"rgantzos",
