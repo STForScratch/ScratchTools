@@ -18,15 +18,11 @@ function expandEditor() {
 if (document.querySelector('div#app').firstChild.lastChild.firstChild.lastChild.style.display === 'none') {
 document.querySelector('div#app').firstChild.lastChild.firstChild.lastChild.style.display = 'flex'
 document.querySelector('svg.blocklySvg').style.width = '75vw'
-            document.querySelector('g.blocklyZoom').childNodes.forEach(function(el) {
-                el.style.display = 'block'
-            })
+document.querySelector('g.blocklyZoom').style.display = 'block'
         } else {
 document.querySelector('div#app').firstChild.lastChild.firstChild.lastChild.style.display = 'none'
 document.querySelector('svg.blocklySvg').style.width = '100vw'
             document.querySelector('svg.blocklyScrollbarVertical').style.display = 'none'
-            document.querySelector('g.blocklyZoom').childNodes.forEach(function(el) {
-                el.style.display = 'inline-block'
-            })
+            document.querySelector('g.blocklyZoom').style.display = 'none'
         }
 }
