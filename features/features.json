@@ -16,7 +16,7 @@
     {
         "title":"NFE Project Checker",
         "description":"On project pages, displays whether the project is Safe, Unreviewed, or NSFE (Not Safe for Everyone).",
-        "urls":"Scratchfangs, Jeffalo, rgantzos",
+        "credits":"Scratchfangs, Jeffalo, rgantzos",
         "urls":"https://scratch.mit.edu/users/scratchfangs/, https://scratch.mit.edu/users/jeffalo/, https://scratch.mit.edu/users/rgantzos/",
         "file":"nfe-project-checker"
     },
