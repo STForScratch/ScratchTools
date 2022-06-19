@@ -1,191 +1,190 @@
-[
-    {
-        "title":"April Fools 2022",
-        "description":"Brings back the special modes from the 2022 April Fools Day!",
-        "credits":["rgantzos"],
-        "urls":["https://scratch.mit.edu/users/rgantzos/"],
-        "file":"april-fools"
-    },
-    {
-        "title":"Expand Editor",
-        "description":"Use the ctrl+e to easily switch between the default block editor view and one that hides the stage to expand editor itself!",
-        "credits":["Jazza", "rgantzos"],
-        "urls":["https://github.com/Jazza-231", "https://scratch.mit.edu/users/rgantzos/"],
-        "file":"expand-editor"
-    },
-    {
-        "title":"NFE Project Checker",
-        "description":"On project pages, displays whether the project is Safe, Unreviewed, or NSFE (Not Safe for Everyone).",
-        "credits":["Scratchfangs", "Jeffalo", "rgantzos"],
-        "urls":["https://scratch.mit.edu/users/scratchfangs/", "https://scratch.mit.edu/users/jeffalo/", "https://scratch.mit.edu/users/rgantzos/"],
-        "file":"nfe-project-checker"
-    },
-    {
-        "title":"Advanced Search",
-        "description":"Replaces the basic search that Scratch uses with a much better and smarter search.",
-        "credits":["rgantzos"],
-        "urls":["https://scratch.mit.edu/users/rgantzos/"],
-        "file":"advanced-search"
-    },
-    {
-        "title":"Color Slider",
-        "description":"Replaces the number input for the outline width in the paint editor with a slider.",
-        "credits":["rgantzos"],
-        "urls":["https://scratch.mit.edu/users/rgantzos/"],
-        "file":"color-slider-input"
-    },
-    {
-        "title":"More Tutorials",
-        "description":"Adds extra tutorials to the ideas page.",
-        "credits":["rgantzos"],
-        "urls":["https://scratch.mit.edu/users/rgantzos/"],
-        "file":"more-tutorials"
-    },
-    {
-        "title":"NFE Search",
-        "description":"Use a button to search all projects, including NFE ones.",
-        "credits":"Scratchfangs, rgantzos",
-        "urls":["https://scratch.mit.edu/users/Scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
-        "file":"nfe-search"
-    },
-    {
-        "title":"Statistics",
-        "description":"Adds a statistics button on the my stuff page that leads to the user's ScratchStats profile.",
-        "credits":["rgantzos"],
-        "urls":["https://scratch.mit.edu/users/rgantzos/"],
-        "file":"statistics"
-    },
-    {
-        "title":"Open in New Tab",
-        "description":"Automatically opens links on project pages in a new tab.",
-        "credits":["rgantzos"],
-        "urls":["https://scratch.mit.edu/users/rgantzos/"],
-        "file":"open-in-new-tab"
-    },
-    {
-        "title":"Plain Background",
-        "description":"Removes the dots from the background of the code editor.",
-        "credits":["rgantzos"],
-        "urls":["https://scratch.mit.edu/users/rgantzos/"],
-        "file":"plain-background"
-    },
-    {
-        "title":"Unbold Site Text",
-        "description":"Makes it so that all test across Scratch is unbolded, and just normal text!",
-        "credits":["Scratchfangs", "rgantzos"],
-        "urls":["https://scratch.mit.edu/users/scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
-        "file":"unbold-forum-topics"
-    },
-    {
-        "title":"Compact Navbar",
-        "description":"Makes more room on the navigation bar near where your profile dropdown is.",
-        "credits":["Scratchfangs", "rgantzos"],
-        "urls":["https://scratch.mit.edu/users/scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
-        "file":"compact-navbar"
-    },
-    {
-        "title":"Round Profile Pictures",
-        "description":"All profile pictures on the Scratch website will be rounded.",
-        "credits":["Scratchfangs", "rgantzos"],
-        "urls":["https://scratch.mit.edu/users/scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
-        "file":"round-profile-pictures"
-    },
-    {
-        "title":"Sidebar",
-        "description":"Adds a sidebar to the Scratch website, rather than just the normal navigation bar at the top of the screen.",
-        "credits":["Scratchfangs", "rgantzos"],
-        "urls":["https://scratch.mit.edu/users/scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
-        "file":"sidebar"
-    },
-    {
-        "title":"Recently Viewed Projects",
-        "description":"Adds a tab to the My Stuff page where you can see a list of the projects that you have recently viewed.",
-        "credits":["Karve_", "rgantzos"],
-        "urls":["https://scratch.mit.edu/users/Karve_/", "https://scratch.mit.edu/users/rgantzos/"],
-        "file":"recently-viewed-projects"
-    },
-    {
-        "title": "Ocular Links in Forums",
-        "description": "Adds a link to any user's Ocular page right below their username on a post.",
-        "credits": ["rgantzos"],
-        "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-        "file": "ocular-link"
-    },
-    {
-        "title": "Scratch Team Symbol in Forums",
-        "description": "Next to the username of any Scratch Team member in the forums, an asterisk (*) is placed at the end of their username.",
-        "credits": ["rgantzos"],
-        "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-        "file": "forum-scratch-team"
-    },
-    {
-        "title": "Full Project Title",
-        "description": "On profile pages, hover over any project title to show the full title.",
-        "credits": ["rgantzos"],
-        "urls": ["https://scratch.mit.edu/users/rgantzos"],
-        "file": "full-title"
-    },
-    {
-        "title": "Message Count",
-        "description": "On profiles, displays the user's message count next to their country.",
-        "credits": ["rgantzos"],
-        "urls": ["https://scratch.mit.edu/users/rgantzos"],
-        "file": "message-count"
-    },
-    {
-        "title": "Project Title as Link",
-        "description": "On profiles, project links in comments are replaced with their titles.",
-        "credits": ["rgantzos"],
-        "urls": ["https://scratch.mit.edu/users/rgantzos"],
-        "file": "project-links"
-    },
-    {
-        "title": "Remove Editor Icons",
-        "description": "Removes the icons from the tabs in the editor.",
-        "credits": ["rgantzos"],
-        "urls": ["https://scratch.mit.edu/users/rgantzos"],
-        "file": "remove-editor-icons"
-    },
-    {
-        "title": "Remove Sprite Watermark",
-        "description": "Removes the sprite watermark that shows in the editor.",
-        "credits": ["rgantzos"],
-        "urls": ["https://scratch.mit.edu/users/rgantzos"],
-        "file": "sprite-watermark"
-    },
-    {
-        "title": "User Bio on Hover",
-        "description": "In profile comments, hover over any username to display the user's bio.",
-        "credits": ["rgantzos"],
-        "urls": ["https://scratch.mit.edu/users/rgantzos"],
-        "file": "user-bio"
-    },
-    {
-        "title": "Compact Editor",
-        "description": "Makes sprite and backdrop information more compact.",
-        "credits": ["GarboMuffin"],
-        "urls": ["https://scratch.mit.edu/users/GarboMuffin"],
-        "file": "compact-editor"
-    },
-    {
-        "title": "Right Side Flag",
-        "description": "Moves the green flag and the red stop sign to the right side of the stage.",
-        "credits": ["GarboMuffin"],
-        "urls": ["https://scratch.mit.edu/users/GarboMuffin",
-        "file": "right-side-flag"
-    },
-    {
-        "title": "Fix Content Boxes",
-        "description": "Makes all sides of boxes on the pages rounded, rather than just the tops.",
-        "credits": ["Scratchfangs", "rgantzos"],
-        "urls": ["https://scratch.mit.edu/users/Scratchfangs", "https://scratch.mit.edu/users/rgantzos"],
-        "file": "fixed-box"
-    },
-    {
-        "title": "Follows You Message on Profiles",
-        "description": "If the user whose profile you're visiting follows you, it will put a small message next to their username.",
-        "credits": ["Bob the Potato with Drip", "TimMcCool"],
-        "urls": ["https://scratch.mit.edu/users/JefferyTheSuperKat/", "https://scratch.mit.edu/users/TimMcCool/"],
-        "file": "follows-you"
-    }
+[{
+		"title": "April Fools 2022",
+		"description": "Brings back the special modes from the 2022 April Fools Day!",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "april-fools"
+	},
+	{
+		"title": "Expand Editor",
+		"description": "Use the ctrl+e to easily switch between the default block editor view and one that hides the stage to expand editor itself!",
+		"credits": ["Jazza", "rgantzos"],
+		"urls": ["https://github.com/Jazza-231", "https://scratch.mit.edu/users/rgantzos/"],
+		"file": "expand-editor"
+	},
+	{
+		"title": "NFE Project Checker",
+		"description": "On project pages, displays whether the project is Safe, Unreviewed, or NSFE (Not Safe for Everyone).",
+		"credits": ["Scratchfangs", "Jeffalo", "rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/scratchfangs/", "https://scratch.mit.edu/users/jeffalo/", "https://scratch.mit.edu/users/rgantzos/"],
+		"file": "nfe-project-checker"
+	},
+	{
+		"title": "Advanced Search",
+		"description": "Replaces the basic search that Scratch uses with a much better and smarter search.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "advanced-search"
+	},
+	{
+		"title": "Color Slider",
+		"description": "Replaces the number input for the outline width in the paint editor with a slider.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "color-slider-input"
+	},
+	{
+		"title": "More Tutorials",
+		"description": "Adds extra tutorials to the ideas page.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "more-tutorials"
+	},
+	{
+		"title": "NFE Search",
+		"description": "Use a button to search all projects, including NFE ones.",
+		"credits": ["Scratchfangs", "rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/Scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
+		"file": "nfe-search"
+	},
+	{
+		"title": "Statistics",
+		"description": "Adds a statistics button on the my stuff page that leads to the user's ScratchStats profile.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "statistics"
+	},
+	{
+		"title": "Open in New Tab",
+		"description": "Automatically opens links on project pages in a new tab.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "open-in-new-tab"
+	},
+	{
+		"title": "Plain Background",
+		"description": "Removes the dots from the background of the code editor.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "plain-background"
+	},
+	{
+		"title": "Unbold Site Text",
+		"description": "Makes it so that all test across Scratch is unbolded, and just normal text!",
+		"credits": ["Scratchfangs", "rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
+		"file": "unbold-forum-topics"
+	},
+	{
+		"title": "Compact Navbar",
+		"description": "Makes more room on the navigation bar near where your profile dropdown is.",
+		"credits": ["Scratchfangs", "rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
+		"file": "compact-navbar"
+	},
+	{
+		"title": "Round Profile Pictures",
+		"description": "All profile pictures on the Scratch website will be rounded.",
+		"credits": ["Scratchfangs", "rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
+		"file": "round-profile-pictures"
+	},
+	{
+		"title": "Sidebar",
+		"description": "Adds a sidebar to the Scratch website, rather than just the normal navigation bar at the top of the screen.",
+		"credits": ["Scratchfangs", "rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
+		"file": "sidebar"
+	},
+	{
+		"title": "Recently Viewed Projects",
+		"description": "Adds a tab to the My Stuff page where you can see a list of the projects that you have recently viewed.",
+		"credits": ["Karve_", "rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/Karve_/", "https://scratch.mit.edu/users/rgantzos/"],
+		"file": "recently-viewed-projects"
+	},
+	{
+		"title": "Ocular Links in Forums",
+		"description": "Adds a link to any user's Ocular page right below their username on a post.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "ocular-link"
+	},
+	{
+		"title": "Scratch Team Symbol in Forums",
+		"description": "Next to the username of any Scratch Team member in the forums, an asterisk (*) is placed at the end of their username.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "forum-scratch-team"
+	},
+	{
+		"title": "Full Project Title",
+		"description": "On profile pages, hover over any project title to show the full title.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos"],
+		"file": "full-title"
+	},
+	{
+		"title": "Message Count",
+		"description": "On profiles, displays the user's message count next to their country.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos"],
+		"file": "message-count"
+	},
+	{
+		"title": "Project Title as Link",
+		"description": "On profiles, project links in comments are replaced with their titles.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos"],
+		"file": "project-links"
+	},
+	{
+		"title": "Remove Editor Icons",
+		"description": "Removes the icons from the tabs in the editor.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos"],
+		"file": "remove-editor-icons"
+	},
+	{
+		"title": "Remove Sprite Watermark",
+		"description": "Removes the sprite watermark that shows in the editor.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos"],
+		"file": "sprite-watermark"
+	},
+	{
+		"title": "User Bio on Hover",
+		"description": "In profile comments, hover over any username to display the user's bio.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos"],
+		"file": "user-bio"
+	},
+	{
+		"title": "Compact Editor",
+		"description": "Makes sprite and backdrop information more compact.",
+		"credits": ["GarboMuffin"],
+		"urls": ["https://scratch.mit.edu/users/GarboMuffin"],
+		"file": "compact-editor"
+	},
+	{
+		"title": "Right Side Flag",
+		"description": "Moves the green flag and the red stop sign to the right side of the stage.",
+		"credits": ["GarboMuffin"],
+		"urls": ["https://scratch.mit.edu/users/GarboMuffin"],
+		"file": "right-side-flag"
+	},
+	{
+		"title": "Fix Content Boxes",
+		"description": "Makes all sides of boxes on the pages rounded, rather than just the tops.",
+		"credits": ["Scratchfangs", "rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/Scratchfangs", "https://scratch.mit.edu/users/rgantzos"],
+		"file": "fixed-box"
+	},
+	{
+		"title": "Follows You Message on Profiles",
+		"description": "If the user whose profile you're visiting follows you, it will put a small message next to their username.",
+		"credits": ["Bob the Potato with Drip", "TimMcCool"],
+		"urls": ["https://scratch.mit.edu/users/JefferyTheSuperKat/", "https://scratch.mit.edu/users/TimMcCool/"],
+		"file": "follows-you"
+	}
 ]
