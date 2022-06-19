@@ -186,5 +186,12 @@
 		"credits": ["Bob the Potato with Drip", "TimMcCool"],
 		"urls": ["https://scratch.mit.edu/users/JefferyTheSuperKat/", "https://scratch.mit.edu/users/TimMcCool/"],
 		"file": "follows-you"
+	},
+ 	{
+		"title": "Replace Scratch News with Recent Projects",
+		"description": "Replaces the Scratch News section on the home page with your recently shared projects.",
+		"credits": ["Scratchfangs", "rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
+		"file":"my-recent-projects"
 	}
 ]
