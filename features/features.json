@@ -7,6 +7,13 @@
         "file":"april-fools"
     },
     {
+        "title":"Expand Editor",
+        "description":"Use the ctrl+e to easily switch between the default block editor view and one that hides the stage to expand editor itself!",
+        "credits":"Jazza, rgantzos",
+        "urls":"https://github.com/Jazza-231, https://scratch.mit.edu/users/rgantzos/",
+        "file":"expand-editor"
+    },
+    {
         "title":"Advanced Search",
         "description":"Replaces the basic search that Scratch uses with a much better and smarter search.",
         "credits":"rgantzos",
@@ -84,7 +91,7 @@
         "file":"sidebar"
     },
     {
-        "title":"Recently Viewed Ptojects",
+        "title":"Recently Viewed Projects",
         "description":"Adds a tab to the My Stuff page where you can see a list of the projects that you have recently viewed.",
         "credits":"Karve_, rgantzos",
         "urls":"https://scratch.mit.edu/users/Karve_/, https://scratch.mit.edu/users/rgantzos/",
