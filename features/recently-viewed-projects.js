@@ -79,8 +79,9 @@ function removeAllChildNodes(parent) {
         }
     Object.keys(data).forEach(function(project) {
         var pr = document.createElement('li')
-        pr.innerHTML = `<div class="media-item-content not-shared"><div class="media-thumb"><a href="/projects/${data[project]['id']}/"><img src="${data[project]['image']}"></a></div><div class="media-info"><span class="media-info-item title"><a href="/projects/${data[project]['id']}/">${data[project]['title']}</a></span></div></div>`
-       document.querySelector('ul.media-list').prepend(pr)
+        pr.innerHTML = `<div class="media-item-content not-shared"><div class="media-thumb"><a href="/projects/${data[project]['id']}/"><img src="${data[project]['image']}"></a></div><div class="media-info"><span class="media-info-item title"><a href="/projects/${data[project]['id']}/" class="ScratchToolsProjectTitle"></a></span></div></div>`
+       pr.querySelector('a.ScratchToolsProjectTitle').textContent = data[project]['title']
+        document.querySelector('ul.media-list').prepend(pr)
     })
     deleteButton()
     function deleteButton() {
