@@ -141,7 +141,7 @@ description2.style.marginTop = '-20px'
 description2.style.width = '200px'
 description2.textContent = description
 var a = document.createElement('h3')
-a.textContent = `Credits: ${credits}.`
+a.textContent = `Credits: ${credits.join(', ')}.`
 div23.appendChild(description2)
 div23.appendChild(label23)
 div23.appendChild(a)
