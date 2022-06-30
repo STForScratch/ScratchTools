@@ -5,7 +5,7 @@
   "description": "Making scratching easier!",
   "version": "2.5.2",
   "background": {
-        "service_worker": "/extras/background.js"
+        "page": "/extras/background.js"
   },
   "permissions": [
     "https://scratch.mit.edu/*",
