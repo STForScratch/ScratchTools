@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "ScratchTools",
+  "name": "ScratchTools for Firefox",
   "short_name": "ST",
   "description": "Making scratching easier!",
   "version": "2.5.2",
