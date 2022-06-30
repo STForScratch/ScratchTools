@@ -1,27 +1,30 @@
 {
-    "name": "ScratchTools",
-    "short_name": "ScratchTools",
-    "manifest_version": 2,
-    "version": "2.5.2",
-    "description": "Great tools to make Scratching easier!",
-    "author": "rgantzos",
-    "background": {
+  "manifest_version": 2,
+  "name": "ScratchTools",
+  "short_name": "ST",
+  "description": "Making scratching easier!",
+  "version": "2.5.2",
+  "background": {
         "service_worker": "/extras/background.js"
-    },
-    "permissions": [
-        "scripting",
-        "tabs",
-        "storage"
-    ],
-    "action": {
-        "default_icon": "/extras/icon128.png",
-        "default_popup": "/extras/popup.html",
-        "default_title": "ScratchTools"
-    },
-    "icons": { "16": "/extras/icon16.png",
-            "48": "/extras/icon48.png",
-            "128": "/extras/icon128.png" },
-    "host_permissions": [
-        "https://scratch.mit.edu/"
-      ]
+  },
+  "permissions": [
+    "https://scratch.mit.edu/*",
+    "scripting",
+    "tabs",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://scratch.mit.edu/*"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "/extras/icon128.png",
+    "default_popup": "/extras/popup.html",
+    "default_title": "ScratchTools"
+  },
+  "icons": { "16": "/extras/icon16.png",
+    "48": "/extras/icon48.png",
+    "128": "/extras/icon128.png"
+  }
 }
