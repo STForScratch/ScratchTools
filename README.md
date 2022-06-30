@@ -9,3 +9,8 @@ Firefox is different from other browsers. Most browsers (eg. Chrome) use Chromiu
 ## Changes
 - [x] Convert manifest verison from 3 to 2
 - [ ] Change background.js
+
+| Task           | Assigned to | Finished? | 
+|----------------|---------------|---------------|
+| Convert manifest verison from 3 to 2 | [Daniel4-Scratch](https://github.com/daniel4-scratch)    | Yes| 
+| Change background.js | Pending   |Pending|
