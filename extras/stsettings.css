@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
 .switch {
     position: relative;
     display: inline-block;
@@ -79,5 +85,5 @@ h3 {
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: Roboto;
+    font-family: 'Space Grotesk', sans-serif;
   }
