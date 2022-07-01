@@ -2,11 +2,14 @@
 var li = document.createElement('li')
 var a = document.createElement('a')
 a.textContent = 'Recently Viewed'
+a.className = 'recent-scratchtools'
 li.appendChild(a)
   li.dataset.tab = 'recent'
 document.querySelector('ul#tabs').lastChild.className = ''
 li.className = 'last'
+if (document.querySelector('a.recent-scratchtools') === null) {
 document.querySelector('ul#tabs').appendChild(li)
+}
 li.onclick = function() {
     getRecent()
 }
