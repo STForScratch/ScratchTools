@@ -5,11 +5,11 @@
   "description": "Making scratching easier!",
   "version": "2.5.2",
   "background": {
-        "page": "/extras/background.js"
+    "scripts": ["/extras/background.js"],
+    "persistent": false
   },
   "permissions": [
     "https://scratch.mit.edu/*",
-    "scripting",
     "tabs",
     "storage"
   ],
@@ -18,7 +18,7 @@
       "matches": ["https://scratch.mit.edu/*"]
     }
   ],
-  "browser_action": {
+  "page_action": {
     "default_icon": "/extras/icon128.png",
     "default_popup": "/extras/popup.html",
     "default_title": "ScratchTools"
