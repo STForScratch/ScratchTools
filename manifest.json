@@ -10,7 +10,6 @@
     },
     "permissions": [
         "scripting",
-        "tabs",
         "storage"
     ],
     "action": {
