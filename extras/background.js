@@ -17,14 +17,12 @@ chrome.tabs.onUpdated.addListener(function(tabId, info) {
                     if (data[el]['default'] === true) {
                         if (!obj['features'].includes(data[el]['file'])) {
                             chrome.tabs.executeScript({
-                                tabId: tabId,
                                 file: `/features/${data[el]['file']}.js`
                             });
                         }
                     } else {
                         if (obj['features'].includes(data[el]['file'])) {
                             chrome.tabs.executeScript({
-                                tabId: tabId,
                                 file: `/features/${data[el]['file']}.js`
                             });
                         }
@@ -40,7 +38,6 @@ chrome.tabs.onUpdated.addListener(function(tabId, info) {
                             "version": version
                         })
                         chrome.tabs.executeScript({
-                            tabId: tabId,
                             file: `/extras/new.js`
                         });
                     }
