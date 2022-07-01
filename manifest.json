@@ -13,11 +13,6 @@
     "tabs",
     "storage"
   ],
-  "content_scripts": [
-    {
-      "matches": ["https://scratch.mit.edu/*"]
-    }
-  ],
   "page_action": {
     "default_icon": "/extras/icon128.png",
     "default_popup": "/extras/popup.html",
