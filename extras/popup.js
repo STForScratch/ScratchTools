@@ -91,7 +91,7 @@ label23.className = "switch"
 var switch23 = document.createElement('input')
 switch23.type = "checkbox"
 switch23.id = id
-await chrome.storage.sync.get("features", async function (obj) {
+await chrome.storage.sync.get(["features"], async function (obj) {
     if (obj['features'] !== undefined) {
         if (def === true) {
             if (obj['features'].includes(switch23.id)) {
@@ -114,7 +114,7 @@ if (obj['features'].includes(switch23.id)) {
 });
 console.log(getCookie('ST Features'))
 switch23.addEventListener('click', async function() {
-    await chrome.storage.sync.get("features", async function (obj) {
+    await chrome.storage.sync.get(["features"], async function (obj) {
         console.log(obj['features'])
     if (obj['features'].includes(switch23.id)) {
         console.log('false')
@@ -128,7 +128,7 @@ switch23.addEventListener('click', async function() {
     }
 })
   })
-  await chrome.storage.sync.get("features", function (obj) {
+  await chrome.storage.sync.get(["features"], function (obj) {
     console.log(obj['features'])
 label23.appendChild(switch23)
 var span23 = document.createElement('span')
