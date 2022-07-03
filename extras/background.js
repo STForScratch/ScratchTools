@@ -11,7 +11,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, info) {
             var data = await response.json()
             console.log(data)
             Object.keys(data).forEach(async function(el) {
-                chrome.storage.sync.get(["features"], function(obj) {
+                chrome.storage.local.get(["features"], function(obj) {
                     console.log(obj['features']);
                     console.log(obj['features'])
                     if (data[el]['default'] === true) {
@@ -30,11 +30,11 @@ chrome.tabs.onUpdated.addListener(function(tabId, info) {
                 });
             })
             var version = '2.5.0'
-            await chrome.storage.sync.get(["version"], async function(obj) {
+            await chrome.storage.local.get(["version"], async function(obj) {
                 if (obj['version'] !== version) {
                     var tab = await chrome.tabs.get(tabId)
                     if (tab.url.includes('https://scratch.mit.edu')) {
-                        chrome.storage.sync.set({
+                        chrome.storage.local.set({
                             "version": version
                         })
                         chrome.tabs.executeScript({
