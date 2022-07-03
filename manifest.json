@@ -1,25 +1,26 @@
 {
-  "manifest_version": 2,
-  "name": "ScratchTools for Firefox",
-  "short_name": "ST",
-  "description": "Making scratching easier!",
-  "version": "2.5.2",
-  "background": {
-    "scripts": ["/extras/background.js"],
-    "persistent": false
-  },
-  "permissions": [
-    "https://scratch.mit.edu/*",
-    "tabs",
-    "storage"
-  ],
-  "browser_action": {
-    "default_icon": "/extras/icon128.png",
-    "default_popup": "/extras/popup.html",
-    "default_title": "ScratchTools"
-  },
-  "icons": { "16": "/extras/icon16.png",
-    "48": "/extras/icon48.png",
-    "128": "/extras/icon128.png"
-  }
-}
+     "name": "ScratchTools",
+     "short_name": "ScratchTools",
+     "manifest_version": 3,
+     "version": "2.5.3",
+     "description": "Great tools to make Scratching easier!",
+     "author": "rgantzos",
+     "background": {
+         "service_worker": "/extras/background.js"
+     },
+     "permissions": [
+         "scripting",
+         "storage"
+     ],
+     "action": {
+         "default_icon": "/extras/icon128.png",
+         "default_popup": "/extras/popup.html",
+         "default_title": "ScratchTools"
+     },
+     "icons": { "16": "/extras/icon16.png",
+             "48": "/extras/icon48.png",
+             "128": "/extras/icon128.png" },
+     "host_permissions": [
+         "https://scratch.mit.edu/"
+       ]
+ }
