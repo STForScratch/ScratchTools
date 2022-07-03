@@ -91,7 +91,7 @@ label23.className = "switch"
 var switch23 = document.createElement('input')
 switch23.type = "checkbox"
 switch23.id = id
-await chrome.storage.sync.get("features", async function (obj) {
+await chrome.storage.local.get(["features"], async function (obj) {
     if (obj['features'] !== undefined) {
         if (def === true) {
             if (obj['features'].includes(switch23.id)) {
@@ -107,28 +107,28 @@ if (obj['features'].includes(switch23.id)) {
 }
         }
     } else {
-        await chrome.storage.sync.set({"features": "ok"})
+        await chrome.storage.local.set({"features": "ok"})
         switch23.checked = false
     }
 
 });
 console.log(getCookie('ST Features'))
 switch23.addEventListener('click', async function() {
-    await chrome.storage.sync.get("features", async function (obj) {
+    await chrome.storage.local.get(["features"], async function (obj) {
         console.log(obj['features'])
     if (obj['features'].includes(switch23.id)) {
         console.log('false')
-        await chrome.storage.sync.set({"features": obj['features'].replaceAll(switch23.id, '')})
-                await chrome.storage.sync.set({"features": obj['features'].replaceAll(switch23.id, '')})
+        await chrome.storage.local.set({"features": obj['features'].replaceAll(switch23.id, '')})
+                await chrome.storage.local.set({"features": obj['features'].replaceAll(switch23.id, '')})
                 switch23.checked = false
     } else {
         console.log('true')
-        await chrome.storage.sync.set({"features": obj['features']+switch23.id})
+        await chrome.storage.local.set({"features": obj['features']+switch23.id})
         switch23.checked = true
     }
 })
   })
-  await chrome.storage.sync.get("features", function (obj) {
+  await chrome.storage.local.get(["features"], function (obj) {
     console.log(obj['features'])
 label23.appendChild(switch23)
 var span23 = document.createElement('span')
