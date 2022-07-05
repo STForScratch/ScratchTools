@@ -1,4 +1,4 @@
-createModal("What's New in ScratchTools v2.5", "We've put the settings into the extension popup! Now, just click on the extension icon and choose which features you want on or off! Take a look around at the new features! We even added back the modes from April Fool's Day!")
+createModal("What's New in ScratchTools v2.6", "This new version has made a lot of changes. First, it added a beta feature that hides likely generic projects from the trending page. It also added some significant UI updates to the settings popup to make it look much nicer.")
 function createModal(title, description) {
 var div = document.createElement('div')
     div.className = 'ReactModalPortal ScratchToolsNew'
