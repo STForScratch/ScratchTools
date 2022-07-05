@@ -20,7 +20,7 @@
 		"file": "nfe-project-checker"
 	},
 	{
-		"title": "Advanced Search",
+		"title": "(Beta) Advanced Search",
 		"description": "Replaces the basic search that Scratch uses with a much better and smarter search.",
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
@@ -179,13 +179,6 @@
 		"credits": ["Scratchfangs", "rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/Scratchfangs", "https://scratch.mit.edu/users/rgantzos"],
 		"file": "fixed-box"
-	},
-	{
-		"title": "Follows You Message on Profiles",
-		"description": "If the user whose profile you're visiting follows you, it will put a small message next to their username.",
-		"credits": ["Bob the Potato with Drip", "TimMcCool"],
-		"urls": ["https://scratch.mit.edu/users/JefferyTheSuperKat/", "https://scratch.mit.edu/users/TimMcCool/"],
-		"file": "follows-you"
 	},
  	{
 		"title": "Replace Scratch News with Recent Projects",
