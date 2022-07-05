@@ -12,8 +12,8 @@ async function doStuff() {
         var description2 = document.createElement('p')
         description2.textContent = description
         var color = data['color']
-        div.style.padding = '10px'
-        div.style.margin = '5px'
+        div.style.padding = '5px'
+        div.style.margin = '0px'
         div.style.borderRadius = '10px'
         div.style.border = `2px solid ${color}`
         div.appendChild(title2)
@@ -75,17 +75,19 @@ var abc = document.querySelector('center')
             def.style.margin = '10px'
 abc.appendChild(def)
 }
-again()
+//again()
 
 async function createFeature(name, description, id, credits, def) {
     var div23 = document.createElement('div')
     var item = div23
-    item.style.margin = '15px'
-    item.style.border = '1px solid black'
+    item.style.margin = '10px'
+    //item.style.border = '2px solid #8e9091'
     item.style.padding = '5px'
-    item.style.borderRadius = '5px'
+    item.style.borderRadius = '7px'
 var h23 = document.createElement('h3')
 h23.textContent = name
+h23.style.fontSize = '1.5em'
+h23.style.color = '#FF9F00'
 var label23 = document.createElement('label')
 label23.className = "switch"
 var switch23 = document.createElement('input')
@@ -138,10 +140,11 @@ div23.appendChild(h23)
 div23.appendChild(document.createElement('br'))
 var description2 = document.createElement('h3')
 description2.style.marginTop = '-20px'
-description2.style.width = '200px'
+description2.style.width = '250px'
 description2.textContent = description
 var a = document.createElement('h3')
 a.textContent = `Credits: ${credits.join(', ')}.`
+a.style.color = '#8e9091'
 div23.appendChild(description2)
 div23.appendChild(label23)
 div23.appendChild(a)
