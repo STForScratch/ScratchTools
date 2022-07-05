@@ -2,6 +2,8 @@
 
 body {
     font-family: 'Space Grotesk', sans-serif;
+    background-color: #1b2126;
+    color: white;
 }
 
 .switch {
@@ -9,11 +11,22 @@ body {
     display: inline-block;
     width: 60px;
     height: 34px;
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: right;
+  right: 4%;
+  }
+
+  div {
+    position: relative;
   }
 
 h3 {
   margin-top: 10px;
-  padding: 10px;
+  padding: 3px;
 }
   
   /* Hide default HTML checkbox */
@@ -26,7 +39,7 @@ h3 {
 
   .switch {
     float: right;
-    margin-top: -50px;
+    /* margin-top: -50px; */
   }
   
   /* The slider */
@@ -37,7 +50,7 @@ h3 {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #262e3b;
     -webkit-transition: .4s;
     transition: .4s;
     float: right;
@@ -57,12 +70,12 @@ h3 {
   }
   
   input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #FF9F00;
     float: right;
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #FF9F00;
     float: right;
   }
   
