@@ -13,7 +13,7 @@
          "storage"
      ],
      "action": {
-         "default_icon": "/extras/icon128.png",
+         "default_icon": "/extras/logo3.png",
          "default_popup": "/extras/popup.html",
          "default_title": "ScratchTools"
      },
