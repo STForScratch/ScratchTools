@@ -193,5 +193,12 @@
 		"credits": ["Scratchfangs", "rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
 		"file":"my-recent-projects"
+	},
+ 	{
+		"title": "Focus Mode",
+		"description": "Removes the comments, studio and remix column, header, and footer on project pages.",
+		"credits": ["Scratchfangs"],
+		"urls": ["https://scratch.mit.edu/users/Scratchfangs"],
+		"file": "focus-mode"
 	}
 ]
