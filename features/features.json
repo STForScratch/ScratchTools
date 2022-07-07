@@ -38,7 +38,7 @@
 		"description":"Easily search through options in the code editor. You can search for variables, costumes, and more!",
 	 	"credits":["Garbomuffin"],
 	 	"urls":["https://scratch.mit.edu/users/garbomuffin/"],
-		"file":"searchable-dropdowns"
+		"file":"searchable-dropdown"
 	},
 	{
 		"title": "Color Slider",
