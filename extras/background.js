@@ -8,6 +8,16 @@ chrome.runtime.onInstalled.addListener(() => { // this event is triggered when t
     var response = await fetch('/features/features.json')
     var data = await response.json()
     console.log(data)
+    chrome.scripting.executeScript({
+      target: { tabId: tabId },
+      files: [`/api/logging.js`],
+      world:'MAIN'
+    });
+    chrome.scripting.executeScript({
+      target: { tabId: tabId },
+      files: [`/api/vm.js`],
+      world:'MAIN'
+    });
     Object.keys(data).forEach(async function(el) {
       chrome.storage.sync.get("features", function (obj) {
         console.log(obj['features']);
@@ -16,14 +26,16 @@ chrome.runtime.onInstalled.addListener(() => { // this event is triggered when t
           if (!obj['features'].includes(data[el]['file'])) {
        chrome.scripting.executeScript({
         target: { tabId: tabId },
-        files: [`/features/${data[el]['file']}.js`]
+        files: [`/features/${data[el]['file']}.js`],
+        world:'MAIN'
       });
     }
         } else {
         if (obj['features'].includes(data[el]['file'])) {
        chrome.scripting.executeScript({
         target: { tabId: tabId },
-        files: [`/features/${data[el]['file']}.js`]
+        files: [`/features/${data[el]['file']}.js`],
+        world:'MAIN'
       });
         }
     }
@@ -46,4 +58,3 @@ chrome.runtime.onInstalled.addListener(() => { // this event is triggered when t
   getCurrentTab()
   }
   })
-  
