@@ -34,6 +34,20 @@
 		"file": "advanced-search"
 	},
 	{
+		"title":"Clone Counter",
+		"description":"Displays a bar with the percentage of allowed clones active in the project.",
+		"credits":["rgantzos"],
+		"urls":["https://scratch.mit.edu/users/rgantzos/"],
+		"file":"clone-counter"
+	},
+	{
+		"title":"Colored Messages",
+		"description":"Colors your messages based on the type of message, such as loves, favorites, and studio invites!",
+		"credits":["_nix"],
+		"urls":["https://scratch.mit.edu/users/_nix/"],
+		"file":"colored-messages"
+	},
+	{
 		"title": "Color Slider",
 		"description": "Replaces the number input for the outline width in the paint editor with a slider.",
 		"credits": ["rgantzos"],
