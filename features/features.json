@@ -48,7 +48,7 @@
 		"file":"colored-messages"
 	},
  	{
-		"title":"Aviate Status",
+		"title":"Aviate Statuses",
 		"description":"Displays Aviate statuses on profile pages. You can set your status at aviateapp.eu.org.",
 		"credits":["MystPi", "rgantzos"],
 		"urls":["https://github.com/MystPi/", "https://scratch.mit.edu/users/rgantzos/"],
