@@ -115,7 +115,7 @@
 		"description": "Makes it so that all test across Scratch is unbolded, and just normal text!",
 		"credits": ["Scratchfangs", "rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
-		"file": "unbold-forum-topics"
+		"file": "unbold-site-text"
 	},
 	{
 		"title": "Compact Navbar",
