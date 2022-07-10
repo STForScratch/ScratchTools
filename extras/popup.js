@@ -36,7 +36,7 @@ div.appendChild(button)
         document.body.prepend(div)
     }
 }
-doStuff()
+//doStuff()
 function leaderboard() {
     chrome.tabs.create({active: true, url: '/extras/leaderboard.html' });
 }
@@ -80,6 +80,7 @@ abc.appendChild(def)
 async function createFeature(name, description, id, credits, def) {
     var div23 = document.createElement('div')
     var item = div23
+    item.style.textAlign = 'left'
     item.style.margin = '10px'
     //item.style.border = '2px solid #8e9091'
     item.style.padding = '5px'
@@ -151,6 +152,62 @@ div23.appendChild(a)
 document.querySelector('div.settings').appendChild(div23)
 })
 }
+function deleteAll() {
+    while (document.querySelector('div.settings').firstChild) {
+        document.querySelector('div.settings').firstChild.remove()
+    }
+}
+var lastValue = ['']
+var input = document.querySelector('input')
+checkSearchBar()
+function checkSearchBar() {
+    if (lastValue[lastValue.length-1] !== document.querySelector('input').value) {
+        lastValue.push(document.querySelector('input').value)
+        if (input.value.replaceAll(' ', '') === '') {
+            deleteAll()
+            getFeatures()
+        } else {
+        async function getFeaturesBySearch(search) {
+            
+        deleteAll()
+            var response = await fetch('/features/features.json')
+            var data = await response.json()
+            var allValues = []
+            var allStuff = []
+            Object.keys(data).forEach(function(el) {
+                if (searchBar(`${data[el].title}`.toLowerCase(), search.toLowerCase()) > 0.4) {
+                    console.log(`${search} - ${data[el].title} - ${searchBar(`${data[el].title}`.toLowerCase(), search.toLowerCase())}`)
+                    allValues.push(searchBar(`${data[el].title}`.toLowerCase(), search.toLowerCase()))
+                    allStuff.push(data[el])
+                }
+            })
+            if (allStuff.length === 0) {
+                var i = document.createElement('i')
+                i.textContent = "We couldn't find anything, maybe keep searching?"
+                i.style.marginTop = '12vw'
+                document.querySelector('div.settings').appendChild(i)
+            } else {
+            var top = []
+            var orderedStuff = []
+            while (allValues.join('').toString().replaceAll('0', '') !== '') {
+                top.push(0)
+            allValues.forEach(function(el, i) {
+                if (allValues[top[top.length-1]] < el) {
+                    top.push(i)
+                }
+            })
+            createFeature(allStuff[top[top.length-1]]['title'], allStuff[top[top.length-1]]['description'], allStuff[top[top.length-1]]['file'], allStuff[top[top.length-1]]['credits'], allStuff[top[top.length-1]]['default'])
+            allValues[top[top.length-1]] = ''
+            allStuff[top[top.length-1]] = ''
+        }
+    }
+        }
+        getFeaturesBySearch(document.querySelector('input').value)
+    }
+}
+    setTimeout(checkSearchBar, 250)
+}
+
 async function getFeatures() {
     var response = await fetch('/features/features.json')
     var data = await response.json()
@@ -172,3 +229,44 @@ document.querySelector('div.settings').querySelectorAll('h3').forEach(function(i
       item.style.color = '#2196F3'
   }
 })
+
+function searchBar(s1, s2) {
+    var longer = s1;
+    var shorter = s2;
+    if (s1.length < s2.length) {
+      longer = s2;
+      shorter = s1;
+    }
+    var longerLength = longer.length;
+    if (longerLength == 0) {
+      return 1.0;
+    }
+    return (longerLength - editDistance(longer, shorter)) / parseFloat(longerLength);
+  }
+
+function editDistance(s1, s2) {
+    s1 = s1.toLowerCase();
+    s2 = s2.toLowerCase();
+  
+    var costs = new Array();
+    for (var i = 0; i <= s1.length; i++) {
+      var lastValue = i;
+      for (var j = 0; j <= s2.length; j++) {
+        if (i == 0)
+          costs[j] = j;
+        else {
+          if (j > 0) {
+            var newValue = costs[j - 1];
+            if (s1.charAt(i - 1) != s2.charAt(j - 1))
+              newValue = Math.min(Math.min(newValue, lastValue),
+                costs[j]) + 1;
+            costs[j - 1] = lastValue;
+            lastValue = newValue;
+          }
+        }
+      }
+      if (i > 0)
+        costs[s2.length] = lastValue;
+    }
+    return costs[s2.length];
+  }
