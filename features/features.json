@@ -231,7 +231,7 @@
 	},
  	{
 		"title": "Focus Mode",
-		"description": "Removes the comments, studio and remix column, header, and footer on project pages.",
+		"description": "Removes the comments, studio and remix column, header, and footer on project pages when the button is clicked.",
 		"credits": ["Scratchfangs"],
 		"urls": ["https://scratch.mit.edu/users/Scratchfangs"],
 		"file": "focus-mode"
