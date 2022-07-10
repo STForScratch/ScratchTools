@@ -100,3 +100,25 @@ h3 {
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', sans-serif;
   }
+
+  input {
+    background-color: #262e3b;
+    width: 90vw;
+    height: 10vw;
+    font-family: 'Space Grotesk', sans-serif;
+    outline: none;
+    border: 0px;
+    color: white;
+    padding: 0.5vw;
+    text-align: center;
+    border-radius: 5vw;
+  }
+
+  i {
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  }
