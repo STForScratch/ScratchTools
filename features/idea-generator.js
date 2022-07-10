@@ -6,32 +6,7 @@ if (document.querySelector('div.scratchtools.generator') === null) {
 document.querySelector('div#view').firstChild.prepend(div)
 document.querySelector('div#view').prepend(document.querySelector('div.banner-wrapper'))
 document.querySelector('div.scratchtools.generator').onclick = function() {
-//Chooses a random project type
-const projectTheme = ["a Space", "an Underground", "an Airplane", "a Superhero", "an Ocean", "an Island", "a Spaceship", "a Miniature"];
-const random0 = Math.floor(Math.random() * projectTheme.length);
-console.log(random0, projectTheme[random0]);
-
-const projectType = ["Parallax", "Animation", "Clicker", "Platformer", "Blockshade", "Noteblock", "RPG", "Tutorial"];
-const random = Math.floor(Math.random() * projectType.length);
-console.log(random, projectType[random]);
-
-//Chooses a random project feature
-const projectFeature = ["an Economy", "Multiplayer", "a Market", "Collectibles", "Achievements", "Hidden Secrets"];
-const random2 = Math.floor(Math.random() * projectFeature.length);
-console.log(random2, projectFeature[random2]);
-
-//Chooses a random project constraint
-const projectConstraint = ["Sprites", "Days", "Hour(s)", "Clones"];
-const random3 = Math.floor(Math.random() * projectConstraint.length);
-console.log(random3, projectConstraint[random3]);
-
-//Chooses a random project constraint amount
-const projectConstraintAmount = ["6", "2", "3", "4", "5"];
-const random4 = Math.floor(Math.random() * projectConstraintAmount.length);
-console.log(random4, projectConstraintAmount[random4]);
-
-var idea = `Make ${projectTheme[random0]} ${projectType[random]} that has ${projectFeature[random2]}! Maybe even try to make it in just ${projectConstraintAmount[random4]} ${projectConstraint[random3]}!`
-createModal('Idea', idea)
+    generateIdea()
 }
 }
 }
@@ -39,7 +14,7 @@ createModal('Idea', idea)
 function createModal(title, description) {
 var div = document.createElement('div')
     div.className = 'ReactModalPortal ScratchToolsNew'
-    div.innerHTML = `<div class="ReactModal__Overlay ReactModal__Overlay--after-open modal_modal-overlay_1Lcbx"><div style="width: 50vw;" class="ReactModal__Content ReactModal__Content--after-open modal_modal-content_1h3ll prompt_modal-content_1BfWj" tabindex="-1" role="dialog" aria-label="New Variable"><div style="width: 50vw;" class="box_box_2jjDp" dir="ltr"><div class="modal_header_1h7ps"><div class="modal_header-item_2zQTd modal_header-item-title_tLOU5">${title}</div><div class="modal_header-item_2zQTd modal_header-item-close_2XDeL"></div></div><div class="prompt_body_18Z-I box_box_2jjDp"><div class="prompt_label_tWjYZ box_box_2jjDp">${description}</div><center><div class="prompt_button-row_3Wc5Z box_box_2jjDp"><button class="prompt_ok-button_3QFdD"><span>OK</span></button></div></center></div></div></div></div>`
+    div.innerHTML = `<div class="ReactModal__Overlay ReactModal__Overlay--after-open modal_modal-overlay_1Lcbx"><div style="width: 50vw;" class="ReactModal__Content ReactModal__Content--after-open modal_modal-content_1h3ll prompt_modal-content_1BfWj" tabindex="-1" role="dialog" aria-label="New Variable"><div style="width: 50vw;" class="box_box_2jjDp" dir="ltr"><div class="modal_header_1h7ps"><div class="modal_header-item_2zQTd modal_header-item-title_tLOU5">${title}</div><div class="modal_header-item_2zQTd modal_header-item-close_2XDeL"></div></div><div class="prompt_body_18Z-I box_box_2jjDp"><div class="prompt_label_tWjYZ box_box_2jjDp">${description}</div><center><div class="prompt_button-row_3Wc5Z box_box_2jjDp"><button class="prompt_generate-button"><span>Generate Another</span></button><button class="prompt_ok-button_3QFdD"><span>Close</span></button></div></center></div></div></div></div>`
     document.body.appendChild(div)
 var style = document.createElement('style')
 style.innerHTML = `
@@ -312,4 +287,37 @@ document.body.appendChild(style)
     document.querySelector('button.prompt_ok-button_3QFdD').onclick = function() {
         document.querySelector('div.ScratchToolsNew').remove()
     }
+    document.querySelector('button.prompt_generate-button').onclick = function() {
+        document.querySelector('div.ScratchToolsNew').remove()
+        generateIdea()
+    }
 }
+
+function generateIdea() {
+    //Chooses a random project type
+    const projectTheme = ["a Space", "an Underground", "an Airplane", "a Superhero", "an Ocean", "an Island", "a Spaceship", "a Miniature"];
+    const random0 = Math.floor(Math.random() * projectTheme.length);
+    console.log(random0, projectTheme[random0]);
+    
+    const projectType = ["Parallax", "Animation", "Clicker", "Platformer", "Blockshade", "Noteblock", "RPG", "Tutorial"];
+    const random = Math.floor(Math.random() * projectType.length);
+    console.log(random, projectType[random]);
+    
+    //Chooses a random project feature
+    const projectFeature = ["an Economy", "Multiplayer", "a Market", "Collectibles", "Achievements", "Hidden Secrets"];
+    const random2 = Math.floor(Math.random() * projectFeature.length);
+    console.log(random2, projectFeature[random2]);
+    
+    //Chooses a random project constraint
+    const projectConstraint = ["Sprites", "Days", "Hour(s)", "Clones"];
+    const random3 = Math.floor(Math.random() * projectConstraint.length);
+    console.log(random3, projectConstraint[random3]);
+    
+    //Chooses a random project constraint amount
+    const projectConstraintAmount = ["6", "2", "3", "4", "5"];
+    const random4 = Math.floor(Math.random() * projectConstraintAmount.length);
+    console.log(random4, projectConstraintAmount[random4]);
+    
+    var idea = `Make ${projectTheme[random0]} ${projectType[random]} that has ${projectFeature[random2]}! Maybe even try to make it in just ${projectConstraintAmount[random4]} ${projectConstraint[random3]}!`
+    createModal('Idea', idea)
+    }
