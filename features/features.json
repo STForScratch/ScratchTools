@@ -43,9 +43,9 @@
  	{
 		"title": "Content Box Shadows",
 		"description": "Adds shadows on all content boxes. When hovering one, the shadow will darken.",
-		"credits": ["rgantzos"],
-		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
-		"file": "more-tutorials"
+		"credits": ["Scratchfangs"],
+		"urls": ["https://scratch.mit.edu/users/Scratchfangs/"],
+		"file": "box-shadows"
 	},
 	{
 		"title":"Colored Messages",
