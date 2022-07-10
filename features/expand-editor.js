@@ -1,3 +1,4 @@
+if (window.location.href.includes('https://scratch.mit.edu/projects/') && window.location.href.includes('/editor')) {
 document.addEventListener('keydown', function(event) {
     keydown(event)
     function keydown(e) {
@@ -25,4 +26,5 @@ document.querySelector('svg.blocklySvg').style.width = '100vw'
             document.querySelector('svg.blocklyScrollbarVertical').style.display = 'none'
             document.querySelector('g.blocklyZoom').style.display = 'none'
         }
+}
 }
