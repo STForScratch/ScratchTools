@@ -41,6 +41,13 @@
 		"file":"clone-counter"
 	},
  	{
+		"title": "Display Sprite Data",
+		"description": "In the Code, Costumes, and Sounds tab for each sprite, the number of blocks, costumes, and sounds will be displayed for the current sprite.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "sprite-data"
+	},
+ 	{
 		"title": "Content Box Shadows",
 		"description": "Adds shadows on all content boxes. When hovering one, the shadow will darken.",
 		"credits": ["Scratchfangs"],
