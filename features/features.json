@@ -124,6 +124,13 @@
 		"urls": ["https://scratch.mit.edu/users/scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
 		"file": "compact-navbar"
 	},
+ 	{
+		"title": "Delete All Sprites",
+		"description": "Adds an option in the right-click context menu for sprites. It will delete all sprites (after confirmation to make sure it isn't an accident).",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "delete-all"
+	},
 	{
 		"title": "Round Profile Pictures",
 		"description": "All profile pictures on the Scratch website will be rounded.",
