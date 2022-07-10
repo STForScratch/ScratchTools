@@ -224,7 +224,7 @@
 	},
  	{
 		"title":"Hide Scratch News",
-		"description":"Hides the Scratch News section on the homepage of the Scratch website.",
+		"description":"Hides the Scratch News section on the homepage of the Scratch website. This feature will interfere with the Replace Scratch News with Recent Projects feature if enabled.",
 		"credits":["Bob the Potato wit Drip Jr.", "rgantzos"],
 		"urls":["https://scratch.mit.edu/users/JefferyTheSuperKat/", "https://scratch.mit.edu/users/rgantzos/"],
 		"file":"hide-scratch-news"
