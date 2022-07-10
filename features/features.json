@@ -40,6 +40,13 @@
 		"urls":["https://scratch.mit.edu/users/rgantzos/"],
 		"file":"clone-counter"
 	},
+ 	{
+		"title": "Content Box Shadows",
+		"description": "Adds shadows on all content boxes. When hovering one, the shadow will darken.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "more-tutorials"
+	},
 	{
 		"title":"Colored Messages",
 		"description":"Colors your messages based on the type of message, such as loves, favorites, and studio invites!",
