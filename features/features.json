@@ -82,6 +82,13 @@
 		"urls":["https://scratch.mit.edu/users/Lasted10_Forever/"],
 		"file":"idea-generator"
 	},
+ 	{
+		"title":"Hide Forum Stickies",
+		"description":"Hides the basic stickies from the top of each forum topic.",
+		"credits":["rgantzos"],
+		"urls":["https://scratch.mit.edu/users/rgantzos/"],
+		"file":"hide-stickies"
+	},
 	{
 		"title": "More Tutorials",
 		"description": "Adds extra tutorials to the ideas page.",
