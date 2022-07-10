@@ -47,6 +47,13 @@
 		"urls":["https://scratch.mit.edu/users/_nix/"],
 		"file":"colored-messages"
 	},
+ 	{
+		"title":"Aviate Statuses",
+		"description":"Displays Aviate statuses on profile pages. You can set your status at aviateapp.eu.org.",
+		"credits":["MystPi", "rgantzos"],
+		"urls":["https://github.com/MystPi/", "https://scratch.mit.edu/users/rgantzos/"],
+		"file":"aviate"
+	},
 	{
 		"title": "Color Slider",
 		"description": "Replaces the number input for the outline width in the paint editor with a slider.",
