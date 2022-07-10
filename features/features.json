@@ -223,6 +223,13 @@
 		"file":"my-recent-projects"
 	},
  	{
+		"title":"Hide Scratch News",
+		"description":"Hides the Scratch News section on the homepage of the Scratch website.",
+		"credits":["Bob the Potato wit Drip Jr.", "rgantzos"],
+		"urls":["https://scratch.mit.edu/users/JefferyTheSuperKat/", "https://scratch.mit.edu/users/rgantzos/"],
+		"file":"hide-scratch-news"
+	},
+ 	{
 		"title": "Focus Mode",
 		"description": "Removes the comments, studio and remix column, header, and footer on project pages.",
 		"credits": ["Scratchfangs"],
