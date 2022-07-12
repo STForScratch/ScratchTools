@@ -1,14 +1,37 @@
-if (window.location.href.includes('/users/')) {
+if (window.location.href.includes('https://scratch.mit.edu/users/')) {
 replacealllinks()
-}
+const targetNode = document.querySelector('ul.comments');
+
+// Options for the observer (which mutations to observe)
+const config = { attributes: true, childList: true, subtree: true };
+
+// Callback function to execute when mutations are observed
+const callback = function(mutationList, observer) {
+    // Use traditional 'for loops' for IE 11
+    for(const mutation of mutationList) {
+        if (mutation.type === 'childList') {
+            replacealllinks()
+        }
+    }
+};
+
+// Create an observer instance linked to the callback function
+const observer = new MutationObserver(callback);
+
+// Start observing the target node for configured mutations
+observer.observe(targetNode, config);
+
+
   function replacealllinks() {
-  addOnClick()
-  const highlightedItems = document.querySelectorAll("a");
+  const highlightedItems = document.querySelector('ul.comments').querySelectorAll("a");
   
   highlightedItems.forEach(function(item) {
-  if (item.parentNode.className === 'content') {
+      if (item.href.includes('https://scratch.mit.edu/projects/')) {
+  if (!item.className.includes('scratchtools')) {
+      item.className = item.className+' scratchtools'
   replacelinks(item)
   }
+      }
   });
   
   async function replacelinks(item) {
@@ -24,29 +47,7 @@ replacealllinks()
   item.textContent = stuff
   }
       }
-  
-      async function replaceuserlinks(item) {
-      
-        // Storing response
-        const response5 = await fetch(`https://api.${item.href.replace('https://', '')}`);
-        
-        // Storing data in form of JSON
-        var data = await response5.json();
-        console.log(data);
-    if(data.hasOwnProperty('profile')){
-        var stuff = data["profile"]["bio"]
-    item.title = stuff
+
     }
-        }
-    }
-    function addOnClick() {
-      var elementExists = document.querySelector('#comments > div:nth-child(3) > ul > div')
-  if (elementExists !== null) {
-      var thebutton = document.querySelector('#comments > div:nth-child(3) > ul > div')
-      } else {
-        var thebutton = document.querySelector('#comments > div:nth-child(2) > ul > div')
-      }
-      thebutton.onclick = function() {
-        setTimeout(() => { replacealllinks() }, 50);
-      }
-    }
+
+  }
