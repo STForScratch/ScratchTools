@@ -120,7 +120,6 @@ async function session() {
         links.appendChild(br3)
         createMenu('My Stuff', 'https://scratch.mit.edu/mystuff/')
         createMenu('Settings', 'https://scratch.mit.edu/accounts/settings/')
-        createMenu('ScratchTools', 'https://scratch.mit.edu/ScratchTools/')
     }
 
     sidebar.appendChild(links)
