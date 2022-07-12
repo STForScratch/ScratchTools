@@ -26,6 +26,13 @@
 		 "urls":["https://scratch.mit.edu/users/JefferyTheSuperKat/", "https://scratch.mit.edu/users/rgantzos/"],
 		 "file":"anti-generic"
  	},
+ 	{
+		 "title":"Hide Studio Group Icon",
+		 "description":"Hides the studio group icon, and only shows the studio thumbnail.",
+		 "credits":["Scratchfangs"],
+		 "urls":["https://scratch.mit.edu/users/Scratchfangs/"],
+		 "file":"hide-studio-group-icon"
+ 	},
 	{
 		"title": "(Beta) Advanced Search",
 		"description": "Replaces the basic search that Scratch uses with a much better and smarter search.",
