@@ -1,16 +1,83 @@
-[{
-		"title": "April Fools 2022",
-		"description": "Brings back the special modes from the 2022 April Fools Day!",
-		"credits": ["rgantzos"],
-		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
-		"file": "april-fools"
+[
+	{
+		 "title":"Hide Studio Group Icon",
+		 "description":"Hides the studio group icon, and only shows the studio thumbnail.",
+		 "credits":["Scratchfangs"],
+		 "urls":["https://scratch.mit.edu/users/Scratchfangs/"],
+		 "file":"hide-studio-group-icon",
+		 "tags":["New"]
+ 	},
+	{
+		"title":"Colored Messages",
+		"description":"Colors your messages based on the type of message, such as loves, favorites, and studio invites!",
+		"credits":["_nix"],
+		"urls":["https://scratch.mit.edu/users/_nix/"],
+		"file":"colored-messages",
+		"tags":[ "Recommended"]
 	},
 	{
 		"title": "Expand Editor",
 		"description": "Use the ctrl+e to easily switch between the default block editor view and one that hides the stage to expand editor itself!",
 		"credits": ["Jazza", "rgantzos"],
 		"urls": ["https://github.com/Jazza-231", "https://scratch.mit.edu/users/rgantzos/"],
-		"file": "expand-editor"
+		"file": "expand-editor",
+		"tags":["Recommended"]
+	},
+	{
+		"title": "Full Project Title",
+		"description": "On profile pages, hover over any project title to show the full title.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos"],
+		"file": "full-title",
+		"tags":["Recommended"]
+	},
+	{
+		"title": "Recently Viewed Projects",
+		"description": "Adds a tab to the My Stuff page where you can see a list of the projects that you have recently viewed.",
+		"credits": ["Karve_", "rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/Karve_/", "https://scratch.mit.edu/users/rgantzos/"],
+		"file": "recently-viewed-projects",
+		"tags":["Featured", "Recommended"]
+	},
+	{
+		"title":"(Beta) Anti Generic",
+		"description":"On the explore and trending pages, this beta feature automatically hides repetitive projects, along with projects that it expects are generic. This includes projects with a lot of tags, common names, and project duplicates.",
+		"credits":["Bob the Potato wit Drip Jr.", "rgantzos"],
+		"urls":["https://scratch.mit.edu/users/JefferyTheSuperKat/", "https://scratch.mit.edu/users/rgantzos/"],
+		"file":"anti-generic",
+		"tags":["Beta", "Featured"]
+	},
+	{
+		"title": "April Fools 2022",
+		"description": "Brings back the special modes from the 2022 April Fools Day!",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "april-fools",
+		"tags":["Featured"]
+	},
+	{
+		"title": "Project Title as Link",
+		"description": "On profiles, project links in comments are replaced with their titles.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos"],
+		"file": "project-links",
+		"tags":["Featured"]
+	},
+	{
+		"title": "Fix Content Boxes",
+		"description": "Makes all sides of boxes on the pages rounded, rather than just the tops.",
+		"credits": ["Scratchfangs", "rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/Scratchfangs", "https://scratch.mit.edu/users/rgantzos"],
+		"file": "fixed-box",
+		"tags":["Featured"]
+	},
+	{
+		"title": "User Bio on Hover",
+		"description": "In profile comments, hover over any username to display the user's bio.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos"],
+		"file": "user-bio",
+		"tags":["Featured"]
 	},
 	{
 		"title": "NFE Project Checker",
@@ -19,61 +86,45 @@
 		"urls": ["https://scratch.mit.edu/users/scratchfangs/", "https://scratch.mit.edu/users/jeffalo/", "https://scratch.mit.edu/users/rgantzos/"],
 		"file": "nfe-project-checker"
 	},
- 	{
-		 "title":"(Beta) Anti Generic",
-		 "description":"On the explore and trending pages, this beta feature automatically hides repetitive projects, along with projects that it expects are generic. This includes projects with a lot of tags, common names, and project duplicates.",
-		 "credits":["Bob the Potato wit Drip Jr.", "rgantzos"],
-		 "urls":["https://scratch.mit.edu/users/JefferyTheSuperKat/", "https://scratch.mit.edu/users/rgantzos/"],
-		 "file":"anti-generic"
- 	},
- 	{
-		 "title":"Hide Studio Group Icon",
-		 "description":"Hides the studio group icon, and only shows the studio thumbnail.",
-		 "credits":["Scratchfangs"],
-		 "urls":["https://scratch.mit.edu/users/Scratchfangs/"],
-		 "file":"hide-studio-group-icon"
- 	},
 	{
 		"title": "(Beta) Advanced Search",
 		"description": "Replaces the basic search that Scratch uses with a much better and smarter search.",
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
-		"file": "advanced-search"
+		"file": "advanced-search",
+		"tags":["Beta"]
 	},
 	{
 		"title":"Clone Counter",
 		"description":"Displays a bar with the percentage of allowed clones active in the project.",
 		"credits":["rgantzos"],
 		"urls":["https://scratch.mit.edu/users/rgantzos/"],
-		"file":"clone-counter"
+		"file":"clone-counter",
+		"tags":[]
 	},
  	{
 		"title": "Display Sprite Data",
 		"description": "In the Code, Costumes, and Sounds tab for each sprite, the number of blocks, costumes, and sounds will be displayed for the current sprite.",
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
-		"file": "sprite-data"
+		"file": "sprite-data",
+		"tags":[]
 	},
  	{
 		"title": "Content Box Shadows",
 		"description": "Adds shadows on all content boxes. When hovering one, the shadow will darken.",
 		"credits": ["Scratchfangs"],
 		"urls": ["https://scratch.mit.edu/users/Scratchfangs/"],
-		"file": "box-shadows"
-	},
-	{
-		"title":"Colored Messages",
-		"description":"Colors your messages based on the type of message, such as loves, favorites, and studio invites!",
-		"credits":["_nix"],
-		"urls":["https://scratch.mit.edu/users/_nix/"],
-		"file":"colored-messages"
+		"file": "box-shadows",
+		"tags":[]
 	},
  	{
 		"title":"Aviate Statuses",
 		"description":"Displays Aviate statuses on profile pages. You can set your status at aviateapp.eu.org.",
 		"credits":["MystPi", "rgantzos"],
 		"urls":["https://github.com/MystPi/", "https://scratch.mit.edu/users/rgantzos/"],
-		"file":"aviate"
+		"file":"aviate",
+		"tags":[]
 	},
 	{
 		"title": "Color Slider",
@@ -87,14 +138,16 @@
 		"description":"On the Scratch Ideas page, there will be a section where you can generate project ideas if you need some!",
 		"credits":["Lasted10"],
 		"urls":["https://scratch.mit.edu/users/Lasted10_Forever/"],
-		"file":"idea-generator"
+		"file":"idea-generator",
+		"tags":[]
 	},
  	{
 		"title":"Hide Forum Stickies",
 		"description":"Hides the basic stickies from the top of each forum topic.",
 		"credits":["rgantzos"],
 		"urls":["https://scratch.mit.edu/users/rgantzos/"],
-		"file":"hide-stickies"
+		"file":"hide-stickies",
+		"tags":[]
 	},
 	{
 		"title": "More Tutorials",
@@ -150,7 +203,8 @@
 		"description": "Adds an option in the right-click context menu for sprites. It will delete all sprites (after confirmation to make sure it isn't an accident).",
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
-		"file": "delete-all"
+		"file": "delete-all",
+		"tags":[]
 	},
 	{
 		"title": "Round Profile Pictures",
@@ -167,13 +221,6 @@
 		"file": "sidebar"
 	},
 	{
-		"title": "Recently Viewed Projects",
-		"description": "Adds a tab to the My Stuff page where you can see a list of the projects that you have recently viewed.",
-		"credits": ["Karve_", "rgantzos"],
-		"urls": ["https://scratch.mit.edu/users/Karve_/", "https://scratch.mit.edu/users/rgantzos/"],
-		"file": "recently-viewed-projects"
-	},
-	{
 		"title": "Ocular Links in Forums",
 		"description": "Adds a link to any user's Ocular page right below their username on a post.",
 		"credits": ["rgantzos"],
@@ -188,25 +235,11 @@
 		"file": "forum-scratch-team"
 	},
 	{
-		"title": "Full Project Title",
-		"description": "On profile pages, hover over any project title to show the full title.",
-		"credits": ["rgantzos"],
-		"urls": ["https://scratch.mit.edu/users/rgantzos"],
-		"file": "full-title"
-	},
-	{
 		"title": "Message Count",
 		"description": "On profiles, displays the user's message count next to their country.",
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos"],
 		"file": "message-count"
-	},
-	{
-		"title": "Project Title as Link",
-		"description": "On profiles, project links in comments are replaced with their titles.",
-		"credits": ["rgantzos"],
-		"urls": ["https://scratch.mit.edu/users/rgantzos"],
-		"file": "project-links"
 	},
 	{
 		"title": "Remove Editor Icons",
@@ -223,13 +256,6 @@
 		"file": "sprite-watermark"
 	},
 	{
-		"title": "User Bio on Hover",
-		"description": "In profile comments, hover over any username to display the user's bio.",
-		"credits": ["rgantzos"],
-		"urls": ["https://scratch.mit.edu/users/rgantzos"],
-		"file": "user-bio"
-	},
-	{
 		"title": "Compact Editor",
 		"description": "Makes sprite and backdrop information more compact.",
 		"credits": ["GarboMuffin"],
@@ -243,13 +269,6 @@
 		"urls": ["https://scratch.mit.edu/users/GarboMuffin/"],
 		"file": "right-side-flag"
 	},
-	{
-		"title": "Fix Content Boxes",
-		"description": "Makes all sides of boxes on the pages rounded, rather than just the tops.",
-		"credits": ["Scratchfangs", "rgantzos"],
-		"urls": ["https://scratch.mit.edu/users/Scratchfangs", "https://scratch.mit.edu/users/rgantzos"],
-		"file": "fixed-box"
-	},
  	{
 		"title": "Replace Scratch News with Recent Projects",
 		"description": "Replaces the Scratch News section on the home page with your recently shared projects.",
@@ -262,13 +281,15 @@
 		"description":"Hides the Scratch News section on the homepage of the Scratch website. This feature will interfere with the Replace Scratch News with Recent Projects feature if enabled.",
 		"credits":["Bob the Potato wit Drip Jr.", "rgantzos"],
 		"urls":["https://scratch.mit.edu/users/JefferyTheSuperKat/", "https://scratch.mit.edu/users/rgantzos/"],
-		"file":"hide-scratch-news"
+		"file":"hide-scratch-news",
+		"tags":[]
 	},
  	{
 		"title": "Focus Mode",
 		"description": "Removes the comments, studio and remix column, header, and footer on project pages when the button is clicked.",
 		"credits": ["Scratchfangs"],
 		"urls": ["https://scratch.mit.edu/users/Scratchfangs"],
-		"file": "focus-mode"
+		"file": "focus-mode",
+		"tags":[]
 	}
 ]

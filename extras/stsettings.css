@@ -6,44 +6,126 @@ body {
     color: white;
 }
 
+.beta {
+    background-color: #f2420c;
+    border-radius: 0.4rem;
+    display: inline-block;
+    padding: 0.35rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+}
+
+.betatab {
+    color: #f2420c;
+}
+
+.recommended {
+    background-color: #f2ad0c;
+    border-radius: 0.4rem;
+    display: inline-block;
+    padding: 0.35rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+}
+
+.recommendedtab {
+    color: #f2ad0c;
+}
+
+.tabtype {
+    display: block;
+    background-color: #1b2126;
+    outline: none;
+    border: 0px;
+    font-size: 200%;
+    font-family: 'Space Grotesk', sans-serif;
+    float: left;
+}
+
+.settingstab {
+    background-color: #f20c9e;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    display: inline-block;
+    padding: 0.35rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+}
+
+.new {
+    background-color: #0c5df2;
+    border-radius: 0.4rem;
+    display: inline-block;
+    padding: 0.35rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+}
+
+.newtab {
+    color: #0c5df2;
+}
+
+.featured {
+    background-color: #700cf2;
+    border-radius: 0.4rem;
+    display: inline-block;
+    padding: 0.35rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+}
+
+.featuredtab {
+    color: #700cf2;
+}
+
+.tag {
+    margin-left: 0.4rem;
+}
+
+.tags {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
 .switch {
     position: relative;
     display: inline-block;
     width: 60px;
     height: 34px;
     margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  text-align: right;
-  right: 4%;
-  }
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: right;
+    right: 4%;
+}
 
-  div {
+div {
     position: relative;
-  }
+}
 
 h3 {
-  margin-top: 10px;
-  padding: 3px;
+    margin-top: 10px;
+    padding: 3px;
 }
-  
-  /* Hide default HTML checkbox */
-  .switch input {
+
+/* Hide default HTML checkbox */
+.switch input {
     opacity: 0;
     width: 0;
     height: 0;
     float: right;
-  }
+}
 
-  .switch {
+.switch {
     float: right;
     /* margin-top: -50px; */
-  }
-  
-  /* The slider */
-  .slider {
+}
+
+/* The slider */
+.slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -54,9 +136,9 @@ h3 {
     -webkit-transition: .4s;
     transition: .4s;
     float: right;
-  }
-  
-  .slider:before {
+}
+
+.slider:before {
     position: absolute;
     content: "";
     height: 26px;
@@ -67,41 +149,46 @@ h3 {
     -webkit-transition: .4s;
     transition: .4s;
     float: right;
-  }
-  
-  input:checked + .slider {
+}
+
+input:checked+.slider {
     background-color: #FF9F00;
     float: right;
-  }
-  
-  input:focus + .slider {
+}
+
+input:focus+.slider {
     box-shadow: 0 0 1px #FF9F00;
     float: right;
-  }
-  
-  input:checked + .slider:before {
+}
+
+input:checked+.slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
     float: right;
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
+}
+
+/* Rounded sliders */
+.slider.round {
     border-radius: 34px;
     float: right;
-  }
-  
-  .slider.round:before {
+}
+
+.slider.round:before {
     border-radius: 50%;
     float: right;
-  }
+}
 
-  h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Space Grotesk', sans-serif;
-  }
+}
 
-  input {
+input {
     background-color: #262e3b;
     width: 90vw;
     height: 10vw;
@@ -112,13 +199,41 @@ h3 {
     padding: 0.5vw;
     text-align: center;
     border-radius: 5vw;
-  }
+}
 
-  i {
+i {
     margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  }
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+h3 {
+    width: 10rem;
+}
+
+.navbar {
+    position: fixed;
+    width: 100vw;
+    left: 0px;
+    top: 0px;
+    float: right;
+    background-color: #262e3b;
+}
+
+.settings2 {
+    width: 70vw;
+    position: absolute;
+    right: 0px;
+    column-count: 2;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-gap: 0.5rem;
+    -moz-column-gap: 0.5rem;
+    column-gap: 0.5rem;
+    margin-top: -5rem;
+    text-align: -webkit-center;
+}
