@@ -89,7 +89,7 @@ function again() {
 }
 //again()
 
-async function createFeature(name, description, id, credits, def, tags) {
+async function createFeature(name, description, id, credits, def, tags, urls) {
     var div23 = document.createElement('div')
     var item = div23
     item.style.textAlign = 'left'
@@ -165,7 +165,28 @@ async function createFeature(name, description, id, credits, def, tags) {
         description2.style.width = '250px'
         description2.textContent = description
         var a = document.createElement('h3')
-        a.textContent = `Credits: ${credits.join(', ')}.`
+        a.innerHTML = `<span>Credits: <span>`
+        a.style.display = 'inline-block'
+        a.style.width = '70vw'
+        credits.forEach(function(el, i) {
+            var credit = document.createElement('a')
+            credit.style.display = 'inline-block'
+            credit.onclick = function() {
+                chrome.tabs.create({
+                    url: urls[i]
+                })
+            }
+            credit.textContent = el
+            credit.style.cursor = 'pointer'
+            a.appendChild(credit)
+            var span = document.createElement('span')
+            span.textContent = ',   '
+            if (i !== credits.length - 1) {
+                a.appendChild(span)
+            }
+            span.style.display = 'inline-block'
+            span.style.marginRight = '2px'
+        })
         a.style.color = '#8e9091'
         div23.appendChild(description2)
         div23.appendChild(label23)
@@ -251,7 +272,7 @@ function checkSearchBar() {
                         } else {
                             var tags = []
                         }
-                        createFeature(allStuff[top[top.length - 1]]['title'], allStuff[top[top.length - 1]]['description'], allStuff[top[top.length - 1]]['file'], allStuff[top[top.length - 1]]['credits'], allStuff[top[top.length - 1]]['default'], tags)
+                        createFeature(allStuff[top[top.length - 1]]['title'], allStuff[top[top.length - 1]]['description'], allStuff[top[top.length - 1]]['file'], allStuff[top[top.length - 1]]['credits'], allStuff[top[top.length - 1]]['default'], tags, allStuff[top[top.length - 1]]['urls'])
                         allValues[top[top.length - 1]] = ''
                         allStuff[top[top.length - 1]] = ''
                     }
@@ -272,7 +293,7 @@ async function getFeatures() {
         } else {
             var tags = data[el].tags
         }
-        createFeature(data[el]['title'], data[el]['description'], data[el]['file'], data[el]['credits'], data[el]['default'], tags)
+        createFeature(data[el]['title'], data[el]['description'], data[el]['file'], data[el]['credits'], data[el]['default'], tags, data[el]['urls'])
     })
 }
 getFeatures()
