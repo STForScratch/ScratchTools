@@ -6,6 +6,88 @@ body {
     color: white;
 }
 
+.beta {
+  background-color: #f2420c;
+  border-radius: 0.4rem;
+  display: inline-block;
+  padding: 0.35rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+}
+
+.betatab {
+  color: #f2420c;
+}
+
+.recommended {
+  background-color: #f2ad0c;
+  border-radius: 0.4rem;
+  display: inline-block;
+  padding: 0.35rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+}
+
+.recommendedtab {
+  color: #f2ad0c;
+}
+
+.tabtype {
+  display: block;
+  background-color: #1b2126;
+  outline: none;
+  border: 0px;
+  font-size: 200%;
+  font-family: 'Space Grotesk', sans-serif;
+  float: left;
+}
+
+.settingstab {
+  background-color: #f20c9e;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  display: inline-block;
+  padding: 0.35rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+}
+
+.new {
+  background-color: #0c5df2;
+  border-radius: 0.4rem;
+  display: inline-block;
+  padding: 0.35rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+}
+
+.newtab {
+  color: #0c5df2;
+}
+
+.featured {
+  background-color: #700cf2;
+  border-radius: 0.4rem;
+  display: inline-block;
+  padding: 0.35rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+}
+
+.featuredtab {
+  color: #700cf2;
+}
+
+.tag {
+  margin-left: 0.4rem;
+}
+
+.tags {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
 .switch {
     position: relative;
     display: inline-block;
@@ -121,4 +203,32 @@ h3 {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  }
+
+  h3 {
+    width: 10rem;
+  }
+
+  .navbar {
+    position: fixed;
+    width: 100vw;
+    left: 0px;
+    top: 0px;
+    float: right;
+    background-color: #262e3b;
+  }
+
+  .settings2 {
+    width: 70vw;
+    position: absolute;
+    right: 0px;
+    column-count: 2;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-gap: 0.5rem;
+    -moz-column-gap: 0.5rem;
+    column-gap: 0.5rem;
+    margin-top: -5rem;
+    text-align: -webkit-center;
   }
