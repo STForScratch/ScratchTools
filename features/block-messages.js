@@ -50,7 +50,7 @@ if (window.location.href.startsWith ('https://scratch.mit.edu/messages')) {
 
 async function editMessages() {
     await chrome.storage.sync.get("block", function (obj) {
-            if (obj !==undefined) {
+            if (obj.block !== undefined) {
                 var users= obj.block
                 document.querySelectorAll('li.social-message').forEach(function(el) {
                         if (el.querySelector('a.social-messages-profile-link') !==null) {
