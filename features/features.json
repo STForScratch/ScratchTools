@@ -1,5 +1,14 @@
 [
 	{
+		"title":"Block Users from Messages",
+		"description":"Hide messages on the messages page that are created by users that you have blocked (includes a block page).",
+		"credits":["rgantzos", "Scratchfangs"],
+		"urls":["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/rgantzos/"],
+		"file":"block-messages",
+		"tags":["New", "Featured"],
+		"world":"ISOLATED"
+	},
+	{
 		 "title":"Hide Studio Group Icon",
 		 "description":"Hides the studio group icon, and only shows the studio thumbnail.",
 		 "credits":["Scratchfangs"],

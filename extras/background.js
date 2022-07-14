@@ -22,6 +22,17 @@ chrome.runtime.onInstalled.addListener(function (object) {
       world:'MAIN'
     });
     Object.keys(data).forEach(async function(el) {
+      if (data[el]['world'] === undefined) {
+        var world = 'MAIN'
+      } else {
+        if (data[el]['world'].toLowerCase() === 'isolated') {
+          var world = 'ISOLATED'
+        }
+        if (data[el]['world'].toLowerCase() === 'main') {
+          var world = 'MAIN'
+        }
+      }
+      console.log(world)
       chrome.storage.sync.get("features", function (obj) {
         console.log(obj['features']);
         console.log(obj['features'])
@@ -30,7 +41,7 @@ chrome.runtime.onInstalled.addListener(function (object) {
        chrome.scripting.executeScript({
         target: { tabId: tabId },
         files: [`/features/${data[el]['file']}.js`],
-        world:'MAIN'
+        world:world
       });
     }
         } else {
@@ -38,7 +49,7 @@ chrome.runtime.onInstalled.addListener(function (object) {
        chrome.scripting.executeScript({
         target: { tabId: tabId },
         files: [`/features/${data[el]['file']}.js`],
-        world:'MAIN'
+        world:world
       });
         }
     }
