@@ -75,7 +75,13 @@ var div = document.createElement('div')
 div.className = 'buttons'
 div.style.right = '120px'
 chrome.storage.sync.get("block", async function (obj) {
-    if (obj.block.includes(window.location.href.replace('https://scratch.mit.edu/users/', '').replaceAll('/', '').toLowerCase())) {
+    if (obj.blocked === undefined) {
+        await chrome.storage.sync.set({"block":[]})
+        var blocked = []
+    } else {
+        var blocked = obj.block
+    }
+    if (blocked.includes(window.location.href.replace('https://scratch.mit.edu/users/', '').replaceAll('/', '').toLowerCase())) {
 div.innerHTML = `<div class="button grey">
 	<span class="follow text"><span class="follower white"></span>Unblock</span>
 	
