@@ -75,7 +75,7 @@ var div = document.createElement('div')
 div.className = 'buttons'
 div.style.right = '120px'
 chrome.storage.sync.get("block", async function (obj) {
-    if (obj.blocked === undefined) {
+    if (obj.block === undefined) {
         await chrome.storage.sync.set({"block":[]})
         var blocked = []
     } else {
