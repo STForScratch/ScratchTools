@@ -38,11 +38,6 @@ function getColoredComments() {
         textarea.scratchCommentTextarea.scratchCommentText {
             background-color: unset;
     }
-
-    image {
-        filter: brightness(0) invert(1);
-    }
-    }
     `
     document.body.appendChild(style)
     colorComments()
