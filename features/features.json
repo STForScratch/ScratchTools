@@ -66,7 +66,7 @@
 	},
 	{
 		"title": "Project Title as Link",
-		"description": "On profiles, project links in comments are replaced with their titles.",
+		"description": "In profile and project comments, project links in comments are replaced with their titles.",
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos"],
 		"file": "project-links",
