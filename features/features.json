@@ -1,5 +1,13 @@
 [
 	{
+		"title":"Colored Comments",
+		"description":"Colors comments in the editor based on the color of their parent block.",
+		"credits":["rgantzos"],
+		"urls":["https://scratch.mit.edu/users/rgantzos/"],
+		"file":"colored-comments",
+		"tags":["New", "Featured"]
+	},
+	{
 		"title":"Block Users from Messages",
 		"description":"Hide messages on the messages page that are created by users that you have blocked (includes a block page).",
 		"credits":["rgantzos", "Scratchfangs"],
