@@ -246,7 +246,7 @@ function checkSearchBar() {
                 var allValues = []
                 var allStuff = []
                 Object.keys(data).forEach(function(el) {
-                    if (searchBar(`${data[el].title}`.toLowerCase(), search.toLowerCase()) > 0.4) {
+                    if (searchBar(`${data[el].title}`.toLowerCase(), search.toLowerCase()) > 0.1) {
                         console.log(`${search} - ${data[el].title} - ${searchBar(`${data[el].title}`.toLowerCase(), search.toLowerCase())}`)
                         allValues.push(searchBar(`${data[el].title}`.toLowerCase(), search.toLowerCase()))
                         allStuff.push(data[el])
