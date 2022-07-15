@@ -17,6 +17,14 @@
 		"world":"ISOLATED"
 	},
 	{
+		"title":"Editor Dark Mode",
+		"description":"Is light to bright in the editor? Now you can enjoy darkness in the editor, with a beautiful dark theme.",
+		"credits":["infinitytec"],
+		"urls":["https://github.com/infinitytec"],
+		"file":"editor-dark-mode",
+		"tags":["New", "Featured"]
+	},
+	{
 		 "title":"Hide Studio Group Icon",
 		 "description":"Hides the studio group icon, and only shows the studio thumbnail.",
 		 "credits":["Scratchfangs"],
@@ -24,6 +32,14 @@
 		 "file":"hide-studio-group-icon",
 		 "tags":["New"]
  	},
+	{
+		"title":"2.0 Block Colors",
+		"description":"Replaces the colors of the blocks in the editor with the blocks from the 2.0 version of the code editor.",
+		"credits":["infinitytec"],
+		"urls":["https://github.com/infinitytec"],
+		"file":"two-colors",
+		"tags":["New"]
+	},
 	{
 		"title":"Colored Messages",
 		"description":"Colors your messages based on the type of message, such as loves, favorites, and studio invites!",
