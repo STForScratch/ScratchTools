@@ -1,4 +1,4 @@
-createModal("What's New in ScratchTools v2.7", "This is a HUGE new version! It adds tons of new features (10 to be exact) and has plenty of new editor features, so that ScratchTools can help you in the editor, not just the main Scratch website!")
+createModal("What's New in ScratchTools v2.8", "This new version includes colored editor comments, blocking other Scratchers, editor dark mode, hidden studio icons, and Scratch 2.0 block colors. We've also added an entire page for the settings, a better search bar, and tags for different types of features! The replace project link with titles feature now works in project comments, too!")
 function createModal(title, description) {
 var div = document.createElement('div')
     div.className = 'ReactModalPortal ScratchToolsNew'
