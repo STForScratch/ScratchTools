@@ -1,4 +1,6 @@
 if (window.location.href.includes('https://scratch.mit.edu/projects/') && window.location.href.includes('/editor')) {
+	if (docuemnt.querySelector('div#app.scratchtools.expand') === null) {
+		document.querySelector('div#app').className = 'scratchtools expand '+document.querySelector('div#app').className
 	document.addEventListener('keydown', function(event) {
 		keydown(event)
 
@@ -26,5 +28,6 @@ if (window.location.href.includes('https://scratch.mit.edu/projects/') && window
 			document.querySelector('svg.blocklyScrollbarVertical').style.display = 'none'
 			document.querySelector('g.blocklyZoom').style.display = 'none'
 		}
+	}
 	}
 }
