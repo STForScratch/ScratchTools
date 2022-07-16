@@ -8,7 +8,7 @@
 		"tags":["New", "Featured"]
 	},
 	{
-		"title":"Block Users from Messages",
+		"title":"Block Users",
 		"description":"Hide messages on the messages page that are created by users that you have blocked (includes a block page).",
 		"credits":["rgantzos", "Scratchfangs"],
 		"urls":["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/rgantzos/"],
