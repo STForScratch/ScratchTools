@@ -33,6 +33,14 @@
 		 "tags":["New"]
  	},
 	{
+		"title":"Hide Wifi Icon on the Forums",
+		"description":"Hide the wi-fi icon behind every title on the forums.",
+		"credits":["Scratchfangs"],
+		"urls":["https://scratch.mit.edu/users/Scratchfangs/"],
+		"file":"hide-wifi-icon-on-forums",
+		"tags":["New"],
+	},
+	{
 		"title":"2.0 Block Colors",
 		"description":"Replaces the colors of the blocks in the editor with the blocks from the 2.0 version of the code editor.",
 		"credits":["infinitytec"],
