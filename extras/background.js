@@ -55,7 +55,7 @@ chrome.runtime.onInstalled.addListener(function (object) {
     }
     });
     })
-    var version = '2.6.0'
+    var version = '2.8.0'
     await chrome.storage.sync.get("version", async function (obj) {
         if (obj['version'] !== version) {
             var tab = await chrome.tabs.get(tabId)
