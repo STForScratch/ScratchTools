@@ -1,6 +1,6 @@
 [
 	{
-		"title":"Colored Comments",
+		"title":"Colored Editor Comments",
 		"description":"Colors comments in the editor based on the color of their parent block.",
 		"credits":["rgantzos"],
 		"urls":["https://scratch.mit.edu/users/rgantzos/"],
