@@ -5,7 +5,8 @@
 		"credits":["rgantzos"],
 		"urls":["https://scratch.mit.edu/users/rgantzos/"],
 		"file":"colored-comments",
-		"tags":["New", "Featured"]
+		"tags":["New", "Featured"],
+        "type":["Editor", "Theme"]
 	},
 	{
 		"title":"Block Users",
@@ -14,7 +15,8 @@
 		"urls":["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/rgantzos/"],
 		"file":"block-messages",
 		"tags":["New", "Featured"],
-		"world":"ISOLATED"
+		"world":"ISOLATED",
+        "type":["Website"]
 	},
 	{
 		"title":"Editor Dark Mode",
@@ -22,7 +24,8 @@
 		"credits":["infinitytec"],
 		"urls":["https://github.com/infinitytec"],
 		"file":"editor-dark-mode",
-		"tags":["New", "Featured"]
+		"tags":["New", "Featured"],
+        "type":["Editor", "Theme"]
 	},
 	{
 		 "title":"Hide Studio Group Icon",
@@ -30,7 +33,8 @@
 		 "credits":["Scratchfangs"],
 		 "urls":["https://scratch.mit.edu/users/Scratchfangs/"],
 		 "file":"hide-studio-group-icon",
-		 "tags":["New"]
+		 "tags":["New"],
+         "type":["Website"]
  	},
 	{
 		"title":"2.0 Block Colors",
@@ -38,7 +42,8 @@
 		"credits":["infinitytec"],
 		"urls":["https://github.com/infinitytec"],
 		"file":"two-colors",
-		"tags":["New"]
+		"tags":["New"],
+        "type":["Editor", "Theme"]
 	},
 	{
 		"title":"Colored Messages",
@@ -46,7 +51,8 @@
 		"credits":["_nix"],
 		"urls":["https://scratch.mit.edu/users/_nix/"],
 		"file":"colored-messages",
-		"tags":[ "Recommended"]
+		"tags":[ "Recommended"],
+        "type":["Website", "Theme"]
 	},
 	{
 		"title": "Expand Editor",
@@ -54,7 +60,8 @@
 		"credits": ["Jazza", "rgantzos"],
 		"urls": ["https://github.com/Jazza-231", "https://scratch.mit.edu/users/rgantzos/"],
 		"file": "expand-editor",
-		"tags":["Recommended"]
+		"tags":["Recommended"],
+        "type":["Editor"]
 	},
 	{
 		"title": "Full Project Title",
@@ -62,7 +69,8 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos"],
 		"file": "full-title",
-		"tags":["Recommended"]
+		"tags":["Recommended"],
+        "type":["Website"]
 	},
 	{
 		"title": "Recently Viewed Projects",
@@ -70,7 +78,8 @@
 		"credits": ["Karve_", "rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/Karve_/", "https://scratch.mit.edu/users/rgantzos/"],
 		"file": "recently-viewed-projects",
-		"tags":["Featured", "Recommended"]
+		"tags":["Featured", "Recommended"],
+        "type":["Website"]
 	},
 	{
 		"title":"Anti Generic",
@@ -78,7 +87,8 @@
 		"credits":["Bob the Potato wit Drip Jr.", "rgantzos"],
 		"urls":["https://scratch.mit.edu/users/JefferyTheSuperKat/", "https://scratch.mit.edu/users/rgantzos/"],
 		"file":"anti-generic",
-		"tags":["Beta", "Featured"]
+		"tags":["Beta", "Featured"],
+        "type":["Website", "Theme"]
 	},
 	{
 		"title": "April Fools 2022",
@@ -86,7 +96,8 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "april-fools",
-		"tags":["Featured"]
+		"tags":["Featured"],
+        "type":["Editor", "Theme"]
 	},
 	{
 		"title": "Project Link as Title",
@@ -94,7 +105,8 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos"],
 		"file": "project-links",
-		"tags":["Featured"]
+		"tags":["Featured"],
+        "type":["Website"]
 	},
 	{
 		"title": "Fix Content Boxes",
@@ -102,7 +114,8 @@
 		"credits": ["Scratchfangs", "rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/Scratchfangs", "https://scratch.mit.edu/users/rgantzos"],
 		"file": "fixed-box",
-		"tags":["Featured"]
+		"tags":["Featured"],
+        "type":["Website", "Theme"]
 	},
 	{
 		"title": "User Bio on Hover",
@@ -110,14 +123,16 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos"],
 		"file": "user-bio",
-		"tags":["Featured"]
+		"tags":["Featured"],
+        "type":["Website"]
 	},
 	{
 		"title": "NFE Project Checker",
 		"description": "On project pages, displays whether the project is Safe, Unreviewed, or NSFE (Not Safe for Everyone).",
 		"credits": ["Scratchfangs", "Jeffalo", "rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/scratchfangs/", "https://scratch.mit.edu/users/jeffalo/", "https://scratch.mit.edu/users/rgantzos/"],
-		"file": "nfe-project-checker"
+		"file": "nfe-project-checker",
+        "type":["Website"]
 	},
 	{
 		"title": "Advanced Search",
@@ -125,7 +140,8 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "advanced-search",
-		"tags":["Beta"]
+		"tags":["Beta"],
+        "type":["Website"]
 	},
 	{
 		"title":"Clone Counter",
@@ -133,7 +149,8 @@
 		"credits":["rgantzos"],
 		"urls":["https://scratch.mit.edu/users/rgantzos/"],
 		"file":"clone-counter",
-		"tags":[]
+		"tags":[],
+        "type":["Website"]
 	},
  	{
 		"title": "Display Sprite Data",
@@ -141,7 +158,8 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "sprite-data",
-		"tags":[]
+		"tags":[],
+        "type":["Editor"]
 	},
  	{
 		"title": "Content Box Shadows",
@@ -149,7 +167,8 @@
 		"credits": ["Scratchfangs"],
 		"urls": ["https://scratch.mit.edu/users/Scratchfangs/"],
 		"file": "box-shadows",
-		"tags":[]
+		"tags":[],
+        "type":["Website", "Theme"]
 	},
  	{
 		"title":"Aviate Statuses",
@@ -157,14 +176,16 @@
 		"credits":["MystPi", "rgantzos"],
 		"urls":["https://github.com/MystPi/", "https://scratch.mit.edu/users/rgantzos/"],
 		"file":"aviate",
-		"tags":[]
+		"tags":[],
+        "type":["Website"]
 	},
 	{
 		"title": "Color Slider",
 		"description": "Replaces the number input for the outline width in the paint editor with a slider.",
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
-		"file": "color-slider-input"
+		"file": "color-slider-input",
+        "type":["Editor"]
 	},
 	{
 		"title":"Project Idea Generator",
@@ -172,7 +193,8 @@
 		"credits":["Lasted10"],
 		"urls":["https://scratch.mit.edu/users/Lasted10_Forever/"],
 		"file":"idea-generator",
-		"tags":[]
+		"tags":[],
+        "type":["Website"]
 	},
  	{
 		"title":"Hide Forum Stickies",
@@ -180,56 +202,64 @@
 		"credits":["rgantzos"],
 		"urls":["https://scratch.mit.edu/users/rgantzos/"],
 		"file":"hide-stickies",
-		"tags":[]
+		"tags":[],
+        "type":["Website"]
 	},
 	{
 		"title": "More Tutorials",
 		"description": "Adds extra tutorials to the ideas page.",
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
-		"file": "more-tutorials"
+		"file": "more-tutorials",
+        "type":["Website"]
 	},
 	{
 		"title": "NFE Search",
 		"description": "Use a button to search all projects, including NFE ones.",
 		"credits": ["Scratchfangs", "rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/Scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
-		"file": "nfe-search"
+		"file": "nfe-search",
+        "type":["Website"]
 	},
 	{
 		"title": "Statistics",
 		"description": "Adds a statistics button on the my stuff page that leads to the user's ScratchStats profile.",
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
-		"file": "statistics"
+		"file": "statistics",
+        "type":["Website"]
 	},
 	{
 		"title": "Open in New Tab",
 		"description": "Automatically opens links on project pages in a new tab.",
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
-		"file": "open-in-new-tab"
+		"file": "open-in-new-tab",
+        "type":["Website"]
 	},
 	{
 		"title": "Plain Background",
 		"description": "Removes the dots from the background of the code editor.",
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
-		"file": "plain-background"
+		"file": "plain-background",
+        "type":["Editor", "Theme"]
 	},
 	{
 		"title": "Unbold Site Text",
 		"description": "Makes it so that all text across Scratch is unbolded, and just normal text!",
 		"credits": ["Scratchfangs", "rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
-		"file": "unbold-site-text"
+		"file": "unbold-site-text",
+        "type":["Website", "Theme"]
 	},
 	{
 		"title": "Compact Navbar",
 		"description": "Makes more room on the navigation bar near where your profile dropdown is.",
 		"credits": ["Scratchfangs", "rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
-		"file": "compact-navbar"
+		"file": "compact-navbar",
+        "type":["Website", "Theme"]
 	},
  	{
 		"title": "Delete All Sprites",
@@ -237,77 +267,88 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "delete-all",
-		"tags":[]
+		"tags":[],
+        "type":["Editor"]
 	},
 	{
 		"title": "Round Profile Pictures",
 		"description": "All profile pictures on the Scratch website will be rounded.",
 		"credits": ["Scratchfangs", "rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
-		"file": "round-profile-pictures"
+		"file": "round-profile-pictures",
+        "type":["Website", "Theme"]
 	},
 	{
 		"title": "Sidebar",
 		"description": "Adds a sidebar to the Scratch website, rather than just the normal navigation bar at the top of the screen.",
 		"credits": ["Scratchfangs", "rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
-		"file": "sidebar"
+		"file": "sidebar",
+        "type":["Website", "Theme"]
 	},
 	{
 		"title": "Ocular Links in Forums",
 		"description": "Adds a link to any user's Ocular page right below their username on a post.",
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
-		"file": "ocular-link"
+		"file": "ocular-link",
+        "type":["Website"]
 	},
 	{
 		"title": "Scratch Team Symbol in Forums",
 		"description": "Next to the username of any Scratch Team member in the forums, an asterisk (*) is placed at the end of their username.",
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
-		"file": "forum-scratch-team"
+		"file": "forum-scratch-team",
+        "type":["Website"]
 	},
 	{
 		"title": "Message Count",
 		"description": "On profiles, displays the user's message count next to their country.",
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos"],
-		"file": "message-count"
+		"file": "message-count",
+        "type":["Website"]
 	},
 	{
 		"title": "Remove Editor Icons",
 		"description": "Removes the icons from the tabs in the editor.",
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos"],
-		"file": "remove-editor-icons"
+		"file": "remove-editor-icons",
+        "type":["Editor"]
 	},
 	{
 		"title": "Remove Sprite Watermark",
 		"description": "Removes the sprite watermark that shows in the editor.",
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos"],
-		"file": "sprite-watermark"
+		"file": "sprite-watermark",
+        "type":["Editor"]
 	},
 	{
 		"title": "Compact Editor",
 		"description": "Makes sprite and backdrop information more compact.",
 		"credits": ["GarboMuffin"],
 		"urls": ["https://scratch.mit.edu/users/GarboMuffin"],
-		"file": "compact-editor"
+		"file": "compact-editor",
+        "type":["Editor"]
 	},
 	{
 		"title": "Right Side Flag",
 		"description": "Moves the green flag and the red stop sign to the right side of the stage.",
 		"credits": ["GarboMuffin"],
 		"urls": ["https://scratch.mit.edu/users/GarboMuffin/"],
-		"file": "right-side-flag"
+		"file": "right-side-flag",
+        "type":["Theme"]
 	},
  	{
 		"title": "Replace Scratch News with Recent Projects",
 		"description": "Replaces the Scratch News section on the home page with your recently shared projects.",
 		"credits": ["Scratchfangs", "rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
-		"file":"my-recent-projects"
+		"file":"my-recent-projects",
+        "type":["Website"]
 	},
  	{
 		"title":"Hide Scratch News",
@@ -315,7 +356,8 @@
 		"credits":["Bob the Potato wit Drip Jr.", "rgantzos"],
 		"urls":["https://scratch.mit.edu/users/JefferyTheSuperKat/", "https://scratch.mit.edu/users/rgantzos/"],
 		"file":"hide-scratch-news",
-		"tags":[]
+		"tags":[],
+        "type":["Website", "Theme"]
 	},
  	{
 		"title": "Focus Mode",
@@ -323,6 +365,7 @@
 		"credits": ["Scratchfangs"],
 		"urls": ["https://scratch.mit.edu/users/Scratchfangs"],
 		"file": "focus-mode",
-		"tags":[]
+		"tags":[],
+        "type":["Website", "Theme"]
 	}
 ]

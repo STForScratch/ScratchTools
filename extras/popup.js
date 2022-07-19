@@ -89,7 +89,29 @@ function again() {
 }
 //again()
 
-async function createFeature(name, description, id, credits, def, tags, urls) {
+document.querySelectorAll('h2.title.type').forEach(function(el) {
+    el.onclick = function() {
+        document.querySelectorAll('h2.title.type').forEach(function(elem) {
+            elem.style.color = 'white'
+        })
+        el.style.color = '#ff9f00'
+        document.body.className = el.id
+        getFeaturesBySearch(document.querySelector('input').value)
+    }
+})
+
+function createFeature(name, description, id, credits, def, tags, urls, type) {
+    if (document.body.className !== undefined && document.body.className !== null && document.body.className !== '') {
+        console.log('passed checkpoint a')
+        if (type.includes(document.body.className) || document.body.className === 'all') {
+            console.log('passed checkpoint b')
+            continueCreateFeature(name, description, id, credits, def, tags, urls)
+        }
+    } else {
+        console.log('missed checkpoint a, continued anyway')
+        continueCreateFeature(name, description, id, credits, def, tags, urls)
+    }
+        async function continueCreateFeature(name, description, id, credits, def, tags, urls) {
     var div23 = document.createElement('div')
     var item = div23
     item.style.textAlign = 'left'
@@ -221,6 +243,7 @@ async function createFeature(name, description, id, credits, def, tags, urls) {
         document.querySelector('div.settings').appendChild(div23)
     })
 }
+}
 
 function deleteAll() {
     while (document.querySelector('div.settings').firstChild) {
@@ -238,46 +261,6 @@ function checkSearchBar() {
             deleteAll()
             getFeatures()
         } else {
-            async function getFeaturesBySearch(search) {
-
-                deleteAll()
-                var response = await fetch('/features/features.json')
-                var data = await response.json()
-                var allValues = []
-                var allStuff = []
-                Object.keys(data).forEach(function(el) {
-                    if (searchBar(`${data[el].title}`.toLowerCase(), search.toLowerCase()) > 0.1) {
-                        console.log(`${search} - ${data[el].title} - ${searchBar(`${data[el].title}`.toLowerCase(), search.toLowerCase())}`)
-                        allValues.push(searchBar(`${data[el].title}`.toLowerCase(), search.toLowerCase()))
-                        allStuff.push(data[el])
-                    }
-                })
-                if (allStuff.length === 0) {
-                    var i = document.createElement('i')
-                    i.textContent = "We couldn't find anything, maybe keep searching?"
-                    i.style.marginTop = '12vw'
-                    document.querySelector('div.settings').appendChild(i)
-                } else {
-                    var top = []
-                    var orderedStuff = []
-                    while (allValues.join('').toString().replaceAll('0', '') !== '') {
-                        top.push(0)
-                        allValues.forEach(function(el, i) {
-                            if (allValues[top[top.length - 1]] < el) {
-                                top.push(i)
-                            }
-                        })
-                        if (allStuff[top[top.length - 1]]['tags'] !== undefined) {
-                            var tags = allStuff[top[top.length - 1]]['tags']
-                        } else {
-                            var tags = []
-                        }
-                        createFeature(allStuff[top[top.length - 1]]['title'], allStuff[top[top.length - 1]]['description'], allStuff[top[top.length - 1]]['file'], allStuff[top[top.length - 1]]['credits'], allStuff[top[top.length - 1]]['default'], tags, allStuff[top[top.length - 1]]['urls'])
-                        allValues[top[top.length - 1]] = ''
-                        allStuff[top[top.length - 1]] = ''
-                    }
-                }
-            }
             getFeaturesBySearch(document.querySelector('input').value)
         }
     }
@@ -293,7 +276,7 @@ async function getFeatures() {
         } else {
             var tags = data[el].tags
         }
-        createFeature(data[el]['title'], data[el]['description'], data[el]['file'], data[el]['credits'], data[el]['default'], tags, data[el]['urls'])
+        createFeature(data[el]['title'], data[el]['description'], data[el]['file'], data[el]['credits'], data[el]['default'], tags, data[el]['urls'], data[el]['type'])
     })
 }
 getFeatures()
@@ -357,4 +340,56 @@ if (document.querySelector('div.settingstab') !== null) {
             url: '/extras/index.html'
         })
     }
+}
+
+async function getFeaturesBySearch(search) {
+
+    deleteAll()
+    var response = await fetch('/features/features.json')
+    var data = await response.json()
+    var allValues = []
+    var allStuff = []
+    if (search.replaceAll(' ', '') !== '') {
+    Object.keys(data).forEach(function(el) {
+        
+        if (searchBar(`${data[el].title}`.toLowerCase(), search.toLowerCase()) > 0.1) {
+            console.log(`${search} - ${data[el].title} - ${searchBar(`${data[el].title}`.toLowerCase(), search.toLowerCase())}`)
+            allValues.push(searchBar(`${data[el].title}`.toLowerCase(), search.toLowerCase()))
+            allStuff.push(data[el])
+        }
+    })
+    if (allStuff.length === 0) {
+        var i = document.createElement('i')
+        i.textContent = "We couldn't find anything, maybe keep searching?"
+        i.style.marginTop = '12vw'
+        document.querySelector('div.settings').appendChild(i)
+    } else {
+        var top = []
+        var orderedStuff = []
+        while (allValues.join('').toString().replaceAll('0', '') !== '') {
+            top.push(0)
+            allValues.forEach(function(el, i) {
+                if (allValues[top[top.length - 1]] < el) {
+                    top.push(i)
+                }
+            })
+            if (allStuff[top[top.length - 1]]['tags'] !== undefined) {
+                var tags = allStuff[top[top.length - 1]]['tags']
+            } else {
+                var tags = []
+            }
+            createFeature(allStuff[top[top.length - 1]]['title'], allStuff[top[top.length - 1]]['description'], allStuff[top[top.length - 1]]['file'], allStuff[top[top.length - 1]]['credits'], allStuff[top[top.length - 1]]['default'], tags, allStuff[top[top.length - 1]]['urls'], allStuff[top[top.length - 1]]['type'])
+            allValues[top[top.length - 1]] = ''
+            allStuff[top[top.length - 1]] = ''
+        }
+    }
+} else {
+    Object.keys(data).forEach(function(el) {
+        createFeature(data[el].title, data[el].description, data[el].file, data[el].credits, data[el].default, data[el].tags, data[el].urls, data[el].type)
+    })
+}
+}
+
+document.querySelector('h2.feedback').onclick = function() {
+    chrome.tabs.create({ url:"https://tools.scratchstatus.org/feedback/" })
 }
