@@ -1,5 +1,5 @@
 if (window.location.href.includes('https://scratch.mit.edu/projects/') && window.location.href.includes('/editor')) {
-	if (docuemnt.querySelector('div#app.scratchtools.expand') === null) {
+	if (document.querySelector('div#app.scratchtools.expand') === null) {
 		document.querySelector('div#app').className = 'scratchtools expand '+document.querySelector('div#app').className
 	document.addEventListener('keydown', function(event) {
 		keydown(event)
@@ -31,3 +31,14 @@ if (window.location.href.includes('https://scratch.mit.edu/projects/') && window
 	}
 	}
 }
+function reset() {
+if (document.querySelector('div#app').firstChild.lastChild.firstChild.lastChild.style.display === 'none') {
+			document.querySelector('div#app').firstChild.lastChild.firstChild.lastChild.style.display = 'flex'
+			document.querySelector('svg.blocklySvg').style.width = '75vw'
+			document.querySelector('g.blocklyZoom').style.display = 'block'
+		}
+}
+
+vm.runtime.on('PROJECT_RUN_START', function() {
+reset()
+})
