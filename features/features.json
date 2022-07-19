@@ -1,11 +1,19 @@
 [
 	{
+		"title":"Project Timer",
+		"description":"Displays the amount of time (in milliseconds) that the project has been running for.",
+		"credits":["rgantzos"],
+		"urls":["https://scratch.mit.edu/users/rgantzos/"],
+		"file":"project-timer",
+		"tags":["New", "Featured"],
+		"type":["Editor"]
+	{
 		"title":"Go to Parent Button",
 		"description":"In the editor for any project that is a remix, you can click a button to go to the editor in the parent project.",
 		"credits":["rgantzos"],
 		"urls":["https://scratch.mit.edu/users/rgantzos/"],
 		"file":"go-to-parent",
-		"tags":["New", "Featured"],
+		"tags":["New"],
 		"type":["Editor"]
 	},
 	{
@@ -14,7 +22,7 @@
 		"credits":["Portilizen", "rgantzos"],
 		"urls":["https://scratch.mit.edu/users/Portilizen/", "https://scratch.mit.edu/users/rgantzos/"],
 		"file":"most-popular-project",
-		"tags":["New", "Featured"],
+		"tags":["New"],
 		"type":["Website"]
 	},
 	{
