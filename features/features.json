@@ -1,5 +1,14 @@
 [
 	{
+		"title":"Go to Parent Button",
+		"description":"In the editor for any project that is a remix, you can click a button to go to the editor in the parent project.",
+		"credits":["rgantzos"],
+		"urls":["https://scratch.mit.edu/users/rgantzos/"],
+		"file":"go-to-parent",
+		"tags":["New", "Featured"],
+		"type":["Editor"]
+	},
+	{
 		"title":"Most Popular Project",
 		"description":"Displays the most popular project (by views) of the user on profile pages. You can click on the project to view it.",
 		"credits":["Portilizen", "rgantzos"],
