@@ -12,8 +12,10 @@ vm.runtime.on('PROJECT_RUN_STOP', function() {
 })
 function getCurrentM() {
     if (stop.length === 0) {
+    if ((vm.runtime.currentMSecs-times[times.length-1])/1000 !== NaN) {
     document.querySelector('div.timer.scratchtools').textContent = `${(vm.runtime.currentMSecs-times[times.length-1])/1000} secs`
     setTimeout(getCurrentM, 50)
+    }
     }
 }
 
