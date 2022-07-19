@@ -7,6 +7,7 @@
 		"file":"project-timer",
 		"tags":["New", "Featured"],
 		"type":["Editor"]
+	},
 	{
 		"title":"Go to Parent Button",
 		"description":"In the editor for any project that is a remix, you can click a button to go to the editor in the parent project.",
