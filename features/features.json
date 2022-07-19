@@ -1,5 +1,14 @@
 [
 	{
+		"title":"Most Popular Project",
+		"description":"Displays the most popular project (by views) of the user on profile pages. You can click on the project to view it.",
+		"credits":["Portilizen", "rgantzos"],
+		"urls":["https://scratch.mit.edu/users/Portilizen/", "https://scratch.mit.edu/users/rgantzos/"],
+		"file":"most-popular-project",
+		"tags":["New", "Featured"],
+		"type":["Website"]
+	},
+	{
 		"title":"Colored Editor Comments",
 		"description":"Colors comments in the editor based on the color of their parent block.",
 		"credits":["rgantzos"],
