@@ -295,28 +295,23 @@ e.g. STAGE_DIMENSION_DEFAULTS in lib/screen-utils.js */ /* layout contants from 
 
 function generateIdea() {
 	//Chooses a random project type
-	const projectTheme = ["a Space", "an Underground", "an Airplane", "a Superhero", "an Ocean", "an Island", "a Spaceship", "a Miniature"];
-	const random0 = Math.floor(Math.random() * projectTheme.length);
-	console.log(random0, projectTheme[random0]);
+	var projectTheme = ["a Space", "an Underground", "an Airplane", "a Superhero", "an Ocean", "an Island", "a Spaceship", "a Miniature", "a Super Huge", "an Above the Clouds", "a Volcano", "a Mountain", "a Desert"];
+	var random0 = Math.floor(Math.random() * projectTheme.length);
 
-	const projectType = ["Parallax", "Animation", "Clicker", "Platformer", "Blockshade", "Noteblock", "RPG", "Tutorial"];
-	const random = Math.floor(Math.random() * projectType.length);
-	console.log(random, projectType[random]);
+	var projectType = ["Parallax", "Animation", "Clicker", "Platformer", "Blockshade", "Noteblock", "RPG", "Tutorial"];
+	var random = Math.floor(Math.random() * projectType.length);
 
 	//Chooses a random project feature
-	const projectFeature = ["an Economy", "Multiplayer", "a Market", "Collectibles", "Achievements", "Hidden Secrets"];
-	const random2 = Math.floor(Math.random() * projectFeature.length);
-	console.log(random2, projectFeature[random2]);
+	var projectFeature = ["an Economy", "Multiplayer", "a Market", "Collectibles", "Achievements", "Hidden Secrets", "Coins you can Earn", "Enemies you must Befriend", "an Environment you must hide in", "Food you must Eat"];
+	var random2 = Math.floor(Math.random() * projectFeature.length);
 
 	//Chooses a random project constraint
-	const projectConstraint = ["Sprites", "Days", "Hour(s)", "Clones"];
-	const random3 = Math.floor(Math.random() * projectConstraint.length);
-	console.log(random3, projectConstraint[random3]);
+	var projectConstraint = ["Sprites", "Days", "Hour(s)", "Clones"];
+	var random3 = Math.floor(Math.random() * projectConstraint.length);
 
 	//Chooses a random project constraint amount
-	const projectConstraintAmount = ["6", "2", "3", "4", "5"];
-	const random4 = Math.floor(Math.random() * projectConstraintAmount.length);
-	console.log(random4, projectConstraintAmount[random4]);
+	var projectConstraintAmount = ["6", "2", "3", "4", "5"];
+	var random4 = Math.floor(Math.random() * projectConstraintAmount.length);
 
 	var idea = `Make ${projectTheme[random0]} ${projectType[random]} that has ${projectFeature[random2]}! Maybe even try to make it in just ${projectConstraintAmount[random4]} ${projectConstraint[random3]}!`
 	createModal('Idea', idea)
