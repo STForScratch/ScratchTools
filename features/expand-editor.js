@@ -18,27 +18,20 @@ if (window.location.href.includes('https://scratch.mit.edu/projects/') && window
 	})
 
 	function expandEditor() {
-		if (document.querySelector('div#app').firstChild.lastChild.firstChild.lastChild.style.display === 'none') {
-			document.querySelector('div#app').firstChild.lastChild.firstChild.lastChild.style.display = 'flex'
-			document.querySelector('svg.blocklySvg').style.width = '75vw'
+		if (document.querySelector('div#app').firstChild.lastChild.firstChild.lastChild.style.zIndex === '-100') {
+			document.querySelector('div#app').firstChild.lastChild.firstChild.lastChild.style.zIndex = null
+			document.querySelector('svg.blocklySvg').style.width = null
+			document.querySelector('div.injectionDiv').style.width = null
 			document.querySelector('g.blocklyZoom').style.display = 'block'
+			document.querySelector('#react-tabs-1 > div.gui_watermark_3vBYb.box_box_2jjDp > img').style.display = null
 		} else {
-			document.querySelector('div#app').firstChild.lastChild.firstChild.lastChild.style.display = 'none'
+			document.querySelector('div#app').firstChild.lastChild.firstChild.lastChild.style.zIndex = '-100'
 			document.querySelector('svg.blocklySvg').style.width = '100vw'
 			document.querySelector('svg.blocklyScrollbarVertical').style.display = 'none'
+			document.querySelector('div.injectionDiv').style.width = '100vw'
 			document.querySelector('g.blocklyZoom').style.display = 'none'
+			document.querySelector('#react-tabs-1 > div.gui_watermark_3vBYb.box_box_2jjDp > img').style.display = 'none'
 		}
 	}
 	}
 }
-function reset() {
-if (document.querySelector('div#app').firstChild.lastChild.firstChild.lastChild.style.display === 'none') {
-			document.querySelector('div#app').firstChild.lastChild.firstChild.lastChild.style.display = 'flex'
-			document.querySelector('svg.blocklySvg').style.width = '75vw'
-			document.querySelector('g.blocklyZoom').style.display = 'block'
-		}
-}
-
-vm.runtime.on('PROJECT_RUN_START', function() {
-reset()
-})
