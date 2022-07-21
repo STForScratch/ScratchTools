@@ -1,4 +1,4 @@
-createModal("What's New in ScratchTools v2.8", "This new version includes colored editor comments, blocking other Scratchers, editor dark mode, hidden studio icons, and Scratch 2.0 block colors. We've also added an entire page for the settings, a better search bar, and tags for different types of features! The replace project link with titles feature now works in project comments, too!")
+createModal("What's New in ScratchTools v2.9", "This is an amazing version! We've added a Project Timer, a Go to Parent button in the editor for remixes, a section on profiles with the user's most popular project, and we even merged features from another extension, ScratchFormat! You can enjoy these new features, plus a few bug fixes! You can also search for features based on type on the settings page (website features, editor features, and themes)!")
 function createModal(title, description) {
 var div = document.createElement('div')
     div.className = 'ReactModalPortal ScratchToolsNew'
