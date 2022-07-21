@@ -1,5 +1,14 @@
 [
 	{
+		"title":"ScratchFormat",
+		"description":"Format your comments with bold, italic, and more! The comments will look amazing to everyone using ScratchTools.",
+		"credits":["petabyt", "Daniel4-Scratch"],
+		"urls":["https://github.com/petabyt", "https://github.com/Daniel4-Scratch"],
+		"file":"scratchformat",
+		"tags":["New", "Recommended"],
+		"type":["Website"]
+	},
+	{
 		"title":"Project Timer",
 		"description":"Displays the amount of time (in seconds) that the project has been running for.",
 		"credits":["rgantzos"],
