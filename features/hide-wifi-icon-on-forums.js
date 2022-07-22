@@ -1,7 +1,7 @@
 var style = document.createElement('style')
 style.innerHTML = `
 .breadcrumb_rss {
-display: none;
+  display: none;
 }
 `
 document.body.appendChild(style)
