@@ -74,26 +74,7 @@ sf.tags = [
 		"formatter": function(part1, part2) {
 			return "<u>" + part2 + "</u>";
 		}
-	},
-	{
-		"name": "color",
-		"tag": "color",
-		"sensitive": true, // Prevent exploits
-		"src": "https://raw.githubusercontent.com/Remix-Design/RemixIcon/master/icons/Design/paint-brush-line.svg",
-		"fillers": ["[color=red]", "[/color]"],
-		"formatter": function(part1, part2) {
-			return "<span style='color:" + part1 + "'>" + part2 + "</span>";
-		}
-	},
-	{
-		"name": "link",
-		"tag": "link",
-		"dontshow": true,
-		"src": "https://raw.githubusercontent.com/Remix-Design/RemixIcon/master/icons/Editor/link.svg",
-		"fillers": ["[link=URLHERE]", "[/link]"],
-		"formatter": function(part1, part2) {
-			return "<a href='" + part1 + "'  target='_newtab'>" + part2 + "</a>";
-		}
+	}
 	},
 	{
 		"name": "easteregg",
