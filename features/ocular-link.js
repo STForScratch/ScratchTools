@@ -1,4 +1,5 @@
-document.querySelectorAll('a').forEach(function(item) {
+document.querySelectorAll('div.postleft').forEach(function(item2) {
+var item = item2.querySelector('dt').querySelector('a')
 	if (item.href.includes('https://scratch.mit.edu/users/')) {
 		if (item.className === 'black username') {
 			var test = item.parentNode.cloneNode(true)
