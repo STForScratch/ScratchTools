@@ -74,7 +74,6 @@ sf.tags = [
 		"formatter": function(part1, part2) {
 			return "<u>" + part2 + "</u>";
 		}
-	}
 	},
 	{
 		"name": "easteregg",
