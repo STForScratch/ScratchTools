@@ -122,7 +122,7 @@ function createFeature(name, description, id, credits, def, tags, urls, type) {
     var h23 = document.createElement('h3')
     h23.textContent = name
     h23.style.fontSize = '1.5em'
-    h23.style.color = '#FF9F00'
+    h23.className = 'featureTitle'
     var label23 = document.createElement('label')
     label23.className = "switch"
     var switch23 = document.createElement('input')
