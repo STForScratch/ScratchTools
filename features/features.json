@@ -1,5 +1,14 @@
 [
 	{
+		"title":"Last Key Pressed",
+		"description":"On any project page, you can view the last key that you have pressed while on that project, according to the project itself! This is good for games such as platformers.",
+		"credits":["rgantzos"],
+		"urls":["https://scratch.mit.edu/users/rgantzos/"],
+		"file":"last-key-pressed",
+		"tags":["New"],
+		"type":["Website"]
+	},
+	{
 		"title":"Set Featured Project",
 		"description":"On any project page, you can easily set your profile's featured project with the click of a button- even unshared projects.",
 		"credits":["rgantzos"],
