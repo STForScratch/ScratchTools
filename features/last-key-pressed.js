@@ -21,7 +21,7 @@ if (window.location.href.startsWith('https://scratch.mit.edu/projects/')) {
       for (const mutation of mutationList) {
           if (document.querySelector("div.flex-row.subactions") !== null) {
               observer.disconnect()
-                  addKepPressed()
+                  addKeyPressed()
           }
       }
   };
