@@ -39,7 +39,7 @@ const configure = {
 const getSpot = function(mutationList, observer) {
     // Use traditional 'for loops' for IE 11
     for (const mutation of mutationList) {
-        if (document.querySelector('div.flex-row.preview-row.force-center') !== null) {
+        if (document.querySelector("#view > div > div.inner > div:nth-child(3) > div.flex-row.subactions") !== null) {
             observer.disconnect()
             if (document.querySelector('button.button.action-button.copy-link-button.scratchtools') === null) {
                 var btn = document.createElement('button')
