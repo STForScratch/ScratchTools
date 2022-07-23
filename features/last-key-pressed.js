@@ -9,21 +9,22 @@ function addKeyPressed() {
   })
   }
 }
-
-const page = document.querySelector('div.page');
-const configure = {
-    attributes: true,
-    childList: true,
-    subtree: true
-};
-const getSpot = function(mutationList, observer) {
-    // Use traditional 'for loops' for IE 11
-    for (const mutation of mutationList) {
-        if (document.querySelector("div.flex-row.subactions") !== null) {
-            observer.disconnect()
-                addKepPressed()
-        }
-    }
-};
-const observer = new MutationObserver(getSpot);
-observer.observe(page, configure);
+if (window.location.href.startsWith('https://scratch.mit.edu/projects/')) {
+  const page = document.querySelector('div.page');
+  const configure = {
+      attributes: true,
+      childList: true,
+      subtree: true
+  };
+  const getSpot = function(mutationList, observer) {
+      // Use traditional 'for loops' for IE 11
+      for (const mutation of mutationList) {
+          if (document.querySelector("div.flex-row.subactions") !== null) {
+              observer.disconnect()
+                  addKepPressed()
+          }
+      }
+  };
+  const observer = new MutationObserver(getSpot);
+  observer.observe(page, configure);
+}
