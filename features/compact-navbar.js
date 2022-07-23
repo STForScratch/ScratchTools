@@ -1,8 +1,12 @@
-if (document.querySelector('#footer > div > ul.clearfix.footer-col > li:nth-child(3) > ul > li:nth-child(4)') !== null) {
-	twoPointO()
-}
-if (document.querySelector('#footer > div > div > dl:nth-child(3) > dd:nth-child(5)') !== null) {
-	threePointO()
+if (document.querySelector('img.avatar') === null && document.querySelector('img.user-icon') === null) {
+
+} else {
+	if (document.querySelector('#footer > div > ul.clearfix.footer-col > li:nth-child(3) > ul > li:nth-child(4)') !== null) {
+		twoPointO()
+	}
+	if (document.querySelector('#footer > div > div > dl:nth-child(3) > dd:nth-child(5)') !== null) {
+		threePointO()
+	}
 }
 
 function twoPointO() {
