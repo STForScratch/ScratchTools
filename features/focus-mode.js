@@ -18,6 +18,8 @@ if (window.location.href.includes("https://scratch.mit.edu/projects/")) {
 			document.querySelector('#navigation').remove()
 			document.querySelector("#view > div > div.project-lower-container").remove()
 		}
-		document.querySelector("#view > div > div.inner > div:nth-child(3) > div.flex-row.subactions").appendChild(btn)
+		if (document.querySelector('button.focusMode') === null) {
+			document.querySelector("#view > div > div.inner > div:nth-child(3) > div.flex-row.subactions").appendChild(btn)
+		}
 	}
 }
