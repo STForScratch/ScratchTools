@@ -49,7 +49,7 @@ const getSpot = function(mutationList, observer) {
                     setFeaturedProject(window.location.href.replace('https://scratch.mit.edu/projects/', '').replaceAll('/', ''), document.querySelector('div.account-nav').querySelector('ul').querySelector('a').href.replace('https://scratch.mit.edu/users/', '').replaceAll('/', ''))
                 }
                 if (document.querySelector('input.inplace-input') !== null) {
-                    document.querySelector('div.flex-row.preview-row.force-center').appendChild(btn)
+                    document.querySelector("#view > div > div.inner > div:nth-child(3) > div.flex-row.subactions").appendChild(btn)
                 }
             }
         }
