@@ -24,25 +24,25 @@ function addKeyPressedEditor() {
     }
 }
 if (window.location.href.startsWith('https://scratch.mit.edu/projects/')) {
-    if (window.location.href.includes('/editor')) {
-        addKeyPressedEditor()
-    } else {
-        const page = document.querySelector('div.page');
-        const configure = {
-            attributes: true,
-            childList: true,
-            subtree: true
-        };
-        const getSpot = function(mutationList, observer) {
-            // Use traditional 'for loops' for IE 11
-            for (const mutation of mutationList) {
-                if (document.querySelector("div.flex-row.subactions") !== null) {
-                    observer.disconnect()
-                    addKeyPressed()
-                }
+    const page = document.querySelector('body');
+    const configure = {
+        attributes: true,
+        childList: true,
+        subtree: true
+    };
+    const getSpot = function(mutationList, observer) {
+        // Use traditional 'for loops' for IE 11
+        for (const mutation of mutationList) {
+            if (document.querySelector("div.flex-row.subactions") !== null) {
+                observer.disconnect()
+                addKeyPressed()
             }
-        };
-        const observer = new MutationObserver(getSpot);
-        observer.observe(page, configure);
-    }
+            if (document.querySelector('div.scratchtools.navlastkey') !== null) {
+                observer.disconnect()
+                addKeyPressedEditor()
+            }
+        }
+    };
+    const observer = new MutationObserver(getSpot);
+    observer.observe(page, configure);
 }
