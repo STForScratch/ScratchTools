@@ -19,7 +19,7 @@ function addKeyPressedEditor() {
     if (document.querySelector('div.scratchtools.navlastkey') === null) {
         document.querySelector('div.gui').childNodes[1].firstChild.appendChild(div)
         vm.runtime.on('KEY_PRESSED', function(el) {
-            document.querySelector('div.scratchtools.navlastkey').firstChild.textContent = 'Last Key Pressed: ' + el
+            document.querySelector('div.scratchtools.navlastkey').querySelector('span').textContent = 'Last Key Pressed: ' + el
         })
     }
 }
