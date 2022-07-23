@@ -37,7 +37,7 @@ if (window.location.href.startsWith('https://scratch.mit.edu/projects/')) {
                 observer.disconnect()
                 addKeyPressed()
             }
-            if (document.querySelector('div.scratchtools.navlastkey') !== null) {
+            if (document.querySelector('div.gui') !== null) {
                 observer.disconnect()
                 addKeyPressedEditor()
             }
