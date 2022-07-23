@@ -1,3 +1,23 @@
+if (chrome.runtime.getManifest().version.toLowerCase().includes('beta')) {
+    var style = document.createElement('style')
+    style.innerHTML = `
+    input:checked+.slider {
+    background-color: #4800ff;
+    float: right;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #4800ff;
+    float: right;
+}
+
+.featureTitle {
+    color: #4800ff;
+}
+    `
+    document.body.appendChild(style)
+}
+
 async function doStuff() {
     const response = await fetch('https://tools.scratchstatus.org/warning/')
     const data = await response.json()
