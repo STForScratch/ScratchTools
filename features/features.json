@@ -1,5 +1,14 @@
 [
 	{
+		"title":"Set Featured Project",
+		"description":"On any project page, you can easily set your profile's featured project with the click of a button- even unshared projects.",
+		"credits":["rgantzos"],
+		"urls":["https://scratch.mit.edu/users/rgantzos/"],
+		"file":"set-featured-project",
+		"tags":["New", "Recommended"],
+		"type":["Website"]
+	},
+	{
 		"title":"ScratchFormat",
 		"description":"Format your comments with bold, italic, and more! The comments will look amazing to everyone using ScratchTools.",
 		"credits":["petabyt", "Daniel4-Scratch"],
