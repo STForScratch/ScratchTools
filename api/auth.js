@@ -21,3 +21,4 @@ async function getAuth() {
   var data = await response.json()
   ScratchTools.Auth = data
 }
+getAuth()
