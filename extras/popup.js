@@ -92,9 +92,9 @@ function again() {
 document.querySelectorAll('h2.title.type').forEach(function(el) {
     el.onclick = function() {
         document.querySelectorAll('h2.title.type').forEach(function(elem) {
-            elem.style.color = 'white'
+            elem.className = 'title type'
         })
-        el.style.color = '#ff9f00'
+        el.className = 'title type active'
         document.body.className = el.id
         getFeaturesBySearch(document.querySelector('input').value)
     }
