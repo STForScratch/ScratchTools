@@ -66,11 +66,19 @@
 		"title":"Block Users",
 		"description":"Hide messages on the messages page that are created by users that you have blocked (includes a block page).",
 		"credits":["rgantzos", "Scratchfangs"],
-		"urls":["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/rgantzos/"],
+		"urls":["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/Scratchfangs/"],
 		"file":"block-messages",
 		"tags":["Featured"],
 		"world":"ISOLATED",
         "type":["Website"]
+	},
+	{
+		"title":"Hide Cancel Button on Comments",
+		"description":"Hides the cancel button on comments to prevent accidentally erasing your comment.",
+		"credits":["Scratchfangs"],
+		"urls":["https://scratch.mit.edu/users/Scratchfangs/"],
+		"file":"hide-cancel-button",
+		"tags":["New"],
 	},
 	{
 		"title":"Editor Dark Mode",
