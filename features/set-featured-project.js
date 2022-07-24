@@ -32,7 +32,6 @@ async function setFeaturedProject(project, user) {
 
 var page = document.querySelector('div.page');
         if (document.querySelector("#view > div > div.inner > div:nth-child(3) > div.flex-row.subactions") !== null) {
-            observer.disconnect()
             if (document.querySelector('button.button.action-button.scratchtools') === null) {
                 var btn = document.createElement('button')
                 btn.textContent = 'Set Featured Project'
