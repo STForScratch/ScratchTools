@@ -22,8 +22,12 @@ logTool("Loaded VM.")
 }
 }
 ScratchTools.Scratch = {}
+try {
 if (Blockly !== undefined) {
     ScratchTools.Scratch.blockly = Blockly   
+}
+} catch(err) {
+    warnTool("Tried to load Blockly but failed.")   
 }
 if (vm !== undefined) {
     ScratchTools.Scratch.vm = vm   
