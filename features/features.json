@@ -23,7 +23,7 @@
 		"credits":["petabyt", "Daniel4-Scratch"],
 		"urls":["https://danielc.dev/", "https://github.com/Daniel4-Scratch"],
 		"file":"scratchformat",
-		"tags":["New", "Recommended"],
+		"tags":["Recommended"],
 		"type":["Website"]
 	},
 	{
@@ -32,7 +32,7 @@
 		"credits":["rgantzos"],
 		"urls":["https://scratch.mit.edu/users/rgantzos/"],
 		"file":"project-timer",
-		"tags":["New", "Featured", "Beta"],
+		"tags":["Featured", "Beta"],
 		"type":["Editor"]
 	},
 	{
@@ -41,7 +41,7 @@
 		"credits":["rgantzos"],
 		"urls":["https://scratch.mit.edu/users/rgantzos/"],
 		"file":"go-to-parent",
-		"tags":["New"],
+		"tags":[],
 		"type":["Editor"]
 	},
 	{
@@ -50,7 +50,7 @@
 		"credits":["Portilizen", "rgantzos"],
 		"urls":["https://scratch.mit.edu/users/Portilizen/", "https://scratch.mit.edu/users/rgantzos/"],
 		"file":"most-popular-project",
-		"tags":["New"],
+		"tags":[],
 		"type":["Website"]
 	},
 	{
