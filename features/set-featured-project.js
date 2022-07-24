@@ -24,19 +24,19 @@ async function setFeaturedProject(project, user) {
     alert('Set Featured Project.')
 
     function getCookie(name) {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
+        var value = `; ${document.cookie}`;
+        var parts = value.split(`; ${name}=`);
         if (parts.length === 2) return parts.pop().split(';').shift();
     }
 }
 
-const page = document.querySelector('div.page');
-const configure = {
+var page = document.querySelector('div.page');
+var configure = {
     attributes: true,
     childList: true,
     subtree: true
 };
-const getSpot = function(mutationList, observer) {
+var getSpot = function(mutationList, observer) {
     // Use traditional 'for loops' for IE 11
     for (const mutation of mutationList) {
         if (document.querySelector("#view > div > div.inner > div:nth-child(3) > div.flex-row.subactions") !== null) {
@@ -55,5 +55,5 @@ const getSpot = function(mutationList, observer) {
         }
     }
 };
-const observer = new MutationObserver(getSpot);
+var observer = new MutationObserver(getSpot);
 observer.observe(page, configure);
