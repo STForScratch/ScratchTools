@@ -23,10 +23,12 @@ Remember, our developers are always there for you. If you ever need help or have
 
 ### Our APIs
 Our APIs are growing slowly, but, as of right now, we have two main ones that we use. As long as your feature's world isn't set to "ISOLATED", these APIs will work for you!
-#### vm
-`ScratchTools().vm` will return the vm for any project. You can be on the project page, in the editor, or in fullscreen and it will work! You can view all information about the project, from the number of clones to the values of variables. You can also perform actions with it, such as adding event listeners for when sprites are added or turning on turbo mode.
-#### blockly
-`ScratchTools().blockly` only works in the editor, but you can use it to edit the blocks in a project! It only works for the current sprite. This variable is extremely helpful, as it controls everything in the block editor, including block colors.
+#### Auth
+Using `ScratchTools.Auth`, you can access the authentication info for the signed in user. This includes the session ID, username, profile picture, and more. This is the only API that requires you to wait for a value when using it immediately after your userscript has loaded.
+#### Scratch APIs
+Using `ScratchTools.Scratch.blockly` and `ScratchTools.Scratch.vm`, you can access the Blockly and Virtual Machine from inside the editor (or on the project page with vm). Blockly must wait for the editor to load, but the virtual machine is ready instantly.
+#### Logging
+Logging can be very important, especially when testing. You can use `ScratchTools.console.log()`, `ScratchTools.console.warn()`, and `ScratchTools.console.error()` to log, warn, and error in the console, specifically for ScratchTools.
 
 ### How to Support without Code
 Not only do you have to be a developer to code for ScratchTools (technically, we would teach you if you wanted help), but you can also be a beta tester, suggest ideas, design our website, create art, and more! Here are some common things people like to help with:
