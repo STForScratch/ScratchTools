@@ -6,7 +6,7 @@
 		"urls":["https://scratch.mit.edu/users/rgantzos/"],
 		"file":"last-key-pressed",
 		"tags":["New"],
-		"type":["Website"]
+		"type":["Website", "Editor"]
 	},
 	{
 		"title":"Set Featured Project",
@@ -204,7 +204,7 @@
 		"urls":["https://scratch.mit.edu/users/rgantzos/"],
 		"file":"clone-counter",
 		"tags":[],
-        "type":["Website"]
+        "type":["Website", "Editor"]
 	},
  	{
 		"title": "Display Sprite Data",
