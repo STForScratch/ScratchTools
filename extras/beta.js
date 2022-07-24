@@ -30,4 +30,7 @@ a:hover, a:visited, a:link, a:active {
     if (document.querySelector('h2.title') !== null) {
         document.querySelector('h2.title').innerHTML = `ScratchTools Settings <span style="color: #6f00ff">Beta</span>`
     }
+    if (document.querySelector('div.span') !-- null) {
+        document.querySelector('div.span').textContent = 'ScratchTools Beta '   
+    }
 }
