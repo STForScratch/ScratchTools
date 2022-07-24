@@ -31,6 +31,20 @@ async function setFeaturedProject(project, user) {
 }
 
 var page = document.querySelector('div.page');
+        if (document.querySelector("#view > div > div.inner > div:nth-child(3) > div.flex-row.subactions") !== null) {
+            observer.disconnect()
+            if (document.querySelector('button.button.action-button.scratchtools') === null) {
+                var btn = document.createElement('button')
+                btn.textContent = 'Set Featured Project'
+                btn.className = 'button action-button scratchtools'
+                btn.onclick = function() {
+                    setFeaturedProject(window.location.href.replace('https://scratch.mit.edu/projects/', '').replaceAll('/', ''), document.querySelector('div.account-nav').querySelector('ul').querySelector('a').href.replace('https://scratch.mit.edu/users/', '').replaceAll('/', ''))
+                }
+                if (document.querySelector('input.inplace-input') !== null) {
+                    document.querySelector("div.flex-row.action-buttons").appendChild(btn)
+                }
+            }
+        } else {
 var configure = {
     attributes: true,
     childList: true,
@@ -57,3 +71,4 @@ var getSpot = function(mutationList, observer) {
 };
 var observer = new MutationObserver(getSpot);
 observer.observe(page, configure);
+        }
