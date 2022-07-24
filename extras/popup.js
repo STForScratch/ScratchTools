@@ -1,4 +1,4 @@
-if (chrome.runtime.getManifest().version.toLowerCase().includes('beta')) {
+if (chrome.runtime.getManifest().version_name.toLowerCase().includes('beta')) {
     var style = document.createElement('style')
     style.innerHTML = `
     input:checked+.slider {
