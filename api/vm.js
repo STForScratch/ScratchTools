@@ -26,4 +26,4 @@ var vm = window.vm || (() => {
         return app[Object.keys(app).find(key => key.startsWith("__reactContainer"))].child.stateNode.store.getState().scratchGui.vm;
     })();
 
-var ScratchTools = {"vm":vm, "blockly":Blockly}
+ScratchTools.Scratch = {"vm":vm, "blockly":Blockly}
