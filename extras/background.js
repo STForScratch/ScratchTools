@@ -16,6 +16,16 @@ chrome.runtime.onInstalled.addListener(function (object) {
     var response = await fetch('/features/features.json')
     var data = await response.json()
     console.log(data)
+      chrome.scripting.executeScript({
+      target: { tabId: tabId },
+      files: [`/api/main.js`],
+      world:'MAIN'
+    });
+    chrome.scripting.executeScript({
+      target: { tabId: tabId },
+      files: [`/api/auth.js`],
+      world:'MAIN'
+    });
     chrome.scripting.executeScript({
       target: { tabId: tabId },
       files: [`/api/logging.js`],
