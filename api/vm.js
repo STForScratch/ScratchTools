@@ -4,7 +4,7 @@ var vm = window.vm || (() => {
     return app[Object.keys(app).find(key => key.startsWith("__reactContainer"))].child.stateNode.store.getState().scratchGui.vm;
 })();
 logTool("Loaded VM.")
-    if (Blockly === undefined) {
+    if (Blockly !== undefined) {
         logTool("Loaded Blockly.")
     } else {
         warnTool("Could not load Blockly.")
@@ -21,5 +21,10 @@ logTool("Loaded VM.")
     warnTool("Could not load Blockly.")
 }
 }
-
-ScratchTools.Scratch = {"vm":vm, "blockly":Blockly}
+ScratchTools.Scratch = {}
+if (Blockly !== undefined) {
+    ScratchTools.Scratch.blockly = Blockly   
+}
+if (vm !== undefined) {
+    ScratchTools.Scratch.vm = vm   
+}
