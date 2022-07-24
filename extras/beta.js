@@ -21,6 +21,10 @@ a:hover, a:visited, a:link, a:active {
       text-decoration: none;
       color: #6f00ff;
     }
+    
+    .navbar2 {
+    background-color: #6f00ff;
+    }
     `
     document.body.appendChild(style)
     if (document.querySelector('h2.title') !== null) {
