@@ -10,16 +10,16 @@ input:focus+.slider {
     float: right;
 }
 .featureTitle {
-    color: #6f00ff;
+    color: #9b57fa;
 }
 
 .title.type.active {
-    color: #6f00ff;
+    color: #9b57fa;
 }
 
 a:hover, a:visited, a:link, a:active {
       text-decoration: none;
-      color: #6f00ff;
+      color: #9b57fa;
     }
     
     .navbar2 {
