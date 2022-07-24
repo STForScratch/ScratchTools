@@ -334,8 +334,8 @@ function editDistance(s1, s2) {
     return costs[s2.length];
 }
 
-if (document.querySelector('div.settingstab') !== null) {
-    document.querySelector('div.settingstab').onclick = function() {
+if (document.querySelector('img.seticon') !== null) {
+    document.querySelector('img.seticon').onclick = function() {
         chrome.tabs.create({
             url: '/extras/index.html'
         })
