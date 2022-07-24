@@ -12,6 +12,10 @@ input:focus+.slider {
 .featureTitle {
     color: #6f00ff;
 }
+
+.title.type.active {
+    color: #6f00ff;
+}
     `
     document.body.appendChild(style)
 }
