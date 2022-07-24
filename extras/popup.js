@@ -413,3 +413,4 @@ input:focus+.slider {
     `
     document.body.appendChild(style)
 }
+console.log(chrome.runtime.getManifest().version_name.toLowerCase())
