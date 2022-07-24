@@ -9,7 +9,7 @@ if (window.location.href.startsWith('https://scratch.mit.edu/mystuff')) {
             a.onclick = async function() {
                 if (confirm("Are you sure you want to unpin this project?")) {
                     await chrome.storage.sync.set({
-                        "pinned": undefined
+                        "pinned": null
                     })
                     document.querySelector('div.box.scratchtools').remove()
                     alert('Unpinned project.')
