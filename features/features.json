@@ -1,12 +1,22 @@
 [
 	{
+		"title":"Pin Projects to My Stuff",
+		"description":"Pin one of your projects to the top of your My Stuff page with the click of a button! You can unpin your pinned project or switch out your pinned project for another one as well!",
+		"credits":["Scratchfangs", "rgantzos"],
+		"urls":["https://scratch.mit.edu/users/Scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
+		"file":"pin-projects",
+		"tags":["New"],
+		"type":["Website"],
+		"world":"ISOLATED"
+	},
+	{
 		"title":"Last Key Pressed",
-		"description":"On any project page, you can view the last key that you have pressed while on that project, according to the project itself! This is good for games such as platformers.",
+		"description":"On any project page and in the editor, you can view the last key that you have pressed while on that project, according to the project itself! This is good for games such as platformers.",
 		"credits":["rgantzos"],
 		"urls":["https://scratch.mit.edu/users/rgantzos/"],
 		"file":"last-key-pressed",
 		"tags":["New"],
-		"type":["Website", "Editor"]
+		"type":["Website"]
 	},
 	{
 		"title":"Set Featured Project",
@@ -204,7 +214,7 @@
 		"urls":["https://scratch.mit.edu/users/rgantzos/"],
 		"file":"clone-counter",
 		"tags":[],
-        "type":["Website", "Editor"]
+        "type":["Website"]
 	},
  	{
 		"title": "Display Sprite Data",
