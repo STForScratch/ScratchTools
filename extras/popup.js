@@ -390,6 +390,8 @@ async function getFeaturesBySearch(search) {
 }
 }
 
+if (document.querySelector('h2.feedback') !== null) {
 document.querySelector('h2.feedback').onclick = function() {
     chrome.tabs.create({ url:"https://tools.scratchstatus.org/feedback/" })
+}
 }
