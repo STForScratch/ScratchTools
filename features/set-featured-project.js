@@ -41,7 +41,7 @@ const getSpot = function(mutationList, observer) {
     for (const mutation of mutationList) {
         if (document.querySelector("#view > div > div.inner > div:nth-child(3) > div.flex-row.subactions") !== null) {
             observer.disconnect()
-            if (document.querySelector('button.button.action-button.copy-link-button.scratchtools') === null) {
+            if (document.querySelector('button.button.action-button.scratchtools') === null) {
                 var btn = document.createElement('button')
                 btn.textContent = 'Set Featured Project'
                 btn.className = 'button action-button scratchtools'
