@@ -18,4 +18,7 @@ input:focus+.slider {
 }
     `
     document.body.appendChild(style)
+    if (document.querySelector('h2.title') !== null) {
+        document.querySelector('h2.title').innerHTML = `ScratchTools Settings <span style="color: #6f00ff">Beta</span>`
+    }
 }
