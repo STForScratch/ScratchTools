@@ -31,8 +31,8 @@ function addCloneCounter() {
 		}
 
 		function cloneCount() {
-			document.querySelector('progress.clonecount.scratchtools').value = ScratchTools.Editor.vm.runtime._cloneCounter.toString()
-			document.querySelector('progress.clonecount.scratchtools').style.backgroundColor = ScratchTools.Editor.vm.runtime._cloneCounter.toString()
+			document.querySelector('progress.clonecount.scratchtools').value = ScratchTools.Scratch.vm.runtime._cloneCounter.toString()
+			document.querySelector('progress.clonecount.scratchtools').style.backgroundColor = ScratchTools.Scratch.vm.runtime._cloneCounter.toString()
 			setTimeout(cloneCount, 200)
 		}
 	}
