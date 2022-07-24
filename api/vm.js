@@ -21,10 +21,9 @@ logTool("Loaded VM.")
     warnTool("Could not load Blockly.")
 }
 }
-function ScratchTools() {
-    var vm = window.vm || (() => {
+var vm = window.vm || (() => {
         const app = document.querySelector("#app");
         return app[Object.keys(app).find(key => key.startsWith("__reactContainer"))].child.stateNode.store.getState().scratchGui.vm;
     })();
-    return({"vm":vm, "blockly":Blockly.getMainWorkspace()})
-}
+
+var ScratchTools = {"vm":vm, "blockly":Blockly}
