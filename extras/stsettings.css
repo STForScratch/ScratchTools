@@ -240,3 +240,7 @@ h3 {
 .featureTitle {
     color: #ff9f00;
 }
+
+.title.type.active {
+    color: #ff9f00;   
+}
