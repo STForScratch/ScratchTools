@@ -58,3 +58,4 @@ if (window.location.href.startsWith('https://scratch.mit.edu/projects/')) {
         var observer = new MutationObserver(getSpot);
         observer.observe(page, configure);
     }
+}
