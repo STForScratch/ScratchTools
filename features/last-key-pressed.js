@@ -33,13 +33,13 @@ function addKeyPressedEditor() {
     }
 }
 if (window.location.href.startsWith('https://scratch.mit.edu/projects/')) {
-    const page = document.querySelector('body');
-    const configure = {
+    var page = document.querySelector('body');
+    var configure = {
         attributes: true,
         childList: true,
         subtree: true
     };
-    const getSpot = function(mutationList, observer) {
+    var getSpot = function(mutationList, observer) {
         // Use traditional 'for loops' for IE 11
         for (const mutation of mutationList) {
             if (document.querySelector("div.flex-row.subactions") !== null) {
@@ -55,6 +55,6 @@ if (window.location.href.startsWith('https://scratch.mit.edu/projects/')) {
                 })
             }
         };
-        const observer = new MutationObserver(getSpot);
+        var observer = new MutationObserver(getSpot);
         observer.observe(page, configure);
     }
