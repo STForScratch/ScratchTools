@@ -33,6 +33,14 @@ function addKeyPressedEditor() {
     }
 }
 if (window.location.href.startsWith('https://scratch.mit.edu/projects/')) {
+    if (window.location.href.includes('/editor')) {
+        document.querySelector('div.gui').childNodes.forEach(function(el) {
+                    if (el.className.startsWith('gui_menu-bar-position')) {
+                        observer.disconnect()
+                        addKeyPressedEditor()
+                    }
+                })
+    }
     var page = document.querySelector('body');
     var configure = {
         attributes: true,
