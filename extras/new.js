@@ -1,4 +1,4 @@
-createModal("What's New in ScratchTools v2.9", "This is an amazing version! We've added a Project Timer, a Go to Parent button in the editor for remixes, a section on profiles with the user's most popular project, and we even merged features from another extension, ScratchFormat! You can enjoy these new features, plus a few bug fixes! You can also search for features based on type on the settings page (website features, editor features, and themes)!")
+createModal("What's New in ScratchTools v2.10.0", "This new version included many bug fixes, enhancements, and features. The new features even included a way to easily set the Scratch website's font!")
 function createModal(title, description) {
 var div = document.createElement('div')
     div.className = 'ReactModalPortal ScratchToolsNew'
