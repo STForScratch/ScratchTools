@@ -1,5 +1,14 @@
 [
 	{
+		"title":"Better Forum Emojis",
+		"description":"The current forum emojis have very low resolution, and they can be replaced with better Twemojis.",
+		"credits":["Scratchfangs", "rgantzos"],
+		"urls":["https://scratch.mit.edu/users/Scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
+		"file":"twemoji-in-forums",
+		"tags":["New"],
+		"type":["Website"]
+	},
+	{
 		"title":"Pin Projects to My Stuff",
 		"description":"Pin one of your projects to the top of your My Stuff page with the click of a button! You can unpin your pinned project or switch out your pinned project for another one as well!",
 		"credits":["Scratchfangs", "rgantzos"],
