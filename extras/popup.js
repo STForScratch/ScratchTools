@@ -214,7 +214,7 @@ function createFeature(name, description, id, credits, def, tags, urls, type) {
         div23.appendChild(label23)
         if (id === 'custom-fonts') {
         var input = document.createElement('input')
-        input.style.width = '30vw'
+        input.style.width = '40%'
         input.style.padding = '0.1vw'
         input.placeholder = 'font name'
         getFont()
@@ -232,7 +232,7 @@ function createFeature(name, description, id, credits, def, tags, urls, type) {
         div23.appendChild(input)
         var btn = document.createElement('button')
         btn.textContent = 'Save'
-        btn.style.width = '15vw'
+        btn.style.width = '20%'
         btn.style.marginLeft = '0.5vw'
         btn.style.padding = '0.1vw'
         btn.onclick = async function() {
