@@ -1,11 +1,11 @@
 [
 	{
-		"title":"Better Forum Emojis",
-		"description":"The current forum emojis have very low resolution, and they can be replaced with better Twemojis.",
-		"credits":["Scratchfangs", "rgantzos"],
-		"urls":["https://scratch.mit.edu/users/Scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
-		"file":"twemoji-in-forums",
-		"tags":["New"],
+		"title":"Set Featured Project",
+		"description":"On any project page, you can easily set your profile's featured project with the click of a button- even unshared projects.",
+		"credits":["rgantzos"],
+		"urls":["https://scratch.mit.edu/users/rgantzos/"],
+		"file":"set-featured-project",
+		"tags":["New", "Recommended"],
 		"type":["Website"]
 	},
 	{
@@ -25,15 +25,15 @@
 		"urls":["https://scratch.mit.edu/users/rgantzos/"],
 		"file":"last-key-pressed",
 		"tags":["New"],
-		"type":["Website"]
+		"type":["Website", "Editor"]
 	},
 	{
-		"title":"Set Featured Project",
-		"description":"On any project page, you can easily set your profile's featured project with the click of a button- even unshared projects.",
-		"credits":["rgantzos"],
-		"urls":["https://scratch.mit.edu/users/rgantzos/"],
-		"file":"set-featured-project",
-		"tags":["New", "Recommended"],
+		"title":"Better Forum Emojis",
+		"description":"The current forum emojis have very low resolution, and they can be replaced with better Twemojis.",
+		"credits":["Scratchfangs", "rgantzos"],
+		"urls":["https://scratch.mit.edu/users/Scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
+		"file":"twemoji-in-forums",
+		"tags":["New"],
 		"type":["Website"]
 	},
 	{
