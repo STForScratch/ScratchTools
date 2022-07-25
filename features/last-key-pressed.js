@@ -19,6 +19,11 @@ function addKeyPressedEditor() {
 <span>No Key Pressed</span>
 `
     if (document.querySelector('div.scratchtools.navlastkey') === null) {
+        document.querySelector('div.gui').childNodes.forEach(function(el) {
+            if (el.className.startsWith('gui_menu-bar-position')) {
+                el.firstChild.appendChild(div)
+            }
+        })
         document.querySelector('div.gui').childNodes[1].firstChild.appendChild(div)
         vm.runtime.on('KEY_PRESSED', function(el) {
             if (document.querySelector('div.scratchtools.navlastkey') !== null) {
@@ -41,12 +46,15 @@ if (window.location.href.startsWith('https://scratch.mit.edu/projects/')) {
                 observer.disconnect()
                 addKeyPressed()
             }
-            if (document.querySelector('div.gui') !== null) {
-                observer.disconnect()
-                addKeyPressedEditor()
+            if (document.querySelector('div.scratchtools.navlastkey') === null) {
+                document.querySelector('div.gui').childNodes.forEach(function(el) {
+                    if (el.className.startsWith('gui_menu-bar-position')) {
+                        observer.disconnect()
+                        addKeyPressedEditor()
+                    }
+                })
             }
-        }
-    };
-    const observer = new MutationObserver(getSpot);
-    observer.observe(page, configure);
-}
+        };
+        const observer = new MutationObserver(getSpot);
+        observer.observe(page, configure);
+    }
