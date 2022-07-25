@@ -216,6 +216,7 @@ function createFeature(name, description, id, credits, def, tags, urls, type) {
         var input = document.createElement('input')
         input.style.width = '40%'
         input.style.padding = '0.1vw'
+        input.style.height = '4rem'
         input.placeholder = 'font name'
         getFont()
         async function getFont() {
@@ -234,6 +235,7 @@ function createFeature(name, description, id, credits, def, tags, urls, type) {
         btn.textContent = 'Save'
         btn.style.width = '20%'
         btn.style.padding = '0.1vw'
+        btn.style.height = '4rem'
         btn.style.marginLeft = '0.5vw'
         btn.onclick = async function() {
             await chrome.storage.sync.set({
