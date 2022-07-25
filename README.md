@@ -24,7 +24,7 @@ Remember, our developers are always there for you. If you ever need help or have
 ### Our APIs
 Our APIs are growing slowly, but, as of right now, we have two main ones that we use. As long as your feature's world isn't set to "ISOLATED", these APIs will work for you!
 #### Auth
-Using `ScratchTools.Auth`, you can access the authentication info for the signed in user. This includes the session ID, username, profile picture, and more. This is the only API that requires you to wait for a value when using it immediately after your userscript has loaded.
+Using `ScratchTools.Auth`, you can access the authentication info for the signed in user. This includes the session ID, username, profile picture, and more. This is the only API that requires you to wait for a value when using it immediately after your userscript has loaded. You can also use `await ScratchTools.Session()` to get the same information.
 #### Scratch APIs
 Using `ScratchTools.Scratch.blockly` and `ScratchTools.Scratch.vm`, you can access the Blockly and Virtual Machine from inside the editor (or on the project page with vm). Blockly must wait for the editor to load, but the virtual machine is ready instantly.
 #### Logging
