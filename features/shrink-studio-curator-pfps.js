@@ -3,8 +3,8 @@ function changeSize() {
 if (el.src !== undefined) {
     if (window.location.href.match ('https://scratch.mit.edu/studios/')) {
         		if (el.src.includes('90x90')) {
-    			el.style.width = '50px'
-    			el.style.height = '50px'
+    			el.style.width = '40px'
+    			el.style.height = '40px'
 			}
 		}
     }
