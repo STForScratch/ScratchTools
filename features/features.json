@@ -19,6 +19,16 @@
 		"world":"ISOLATED"
 	},
 	{
+		"title":"Custom Website Font",
+		"description":"On the Scratch website, you can set the font to whatever font you want, as long as it is on the Google Fonts website. This is case-sensitive.",
+		"credits":["Scratchfangs", "devxan", "rgantzos"],
+		"urls":["https://scratch.mit.edu/users/Scratchfangs/", "https://github.com/devxan", "https://scratch.mit.edu/users/rgantzos/"],
+		"file":"custom-fonts",
+		"tags":["New", "Featured"],
+		"type":["Website", "Theme"],
+		"world":"ISOLATED"
+	},
+	{
 		"title":"Last Key Pressed",
 		"description":"On any project page and in the editor, you can view the last key that you have pressed while on that project, according to the project itself! This is good for games such as platformers.",
 		"credits":["rgantzos"],

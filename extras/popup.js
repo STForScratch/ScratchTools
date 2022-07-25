@@ -212,6 +212,39 @@ function createFeature(name, description, id, credits, def, tags, urls, type) {
         a.style.color = '#8e9091'
         div23.appendChild(description2)
         div23.appendChild(label23)
+        if (id === 'custom-fonts') {
+        var input = document.createElement('input')
+        input.style.width = '30vw'
+        input.style.padding = '0.1vw'
+        input.placeholder = 'font name'
+        getFont()
+        async function getFont() {
+            await chrome.storage.sync.get("font", async function (obj) {
+                try {
+                    input.value = obj.font
+                } catch(err) {
+                    console.log(err)
+                }
+            })
+        }
+        div23.appendChild(input)
+        var btn = document.createElement('button')
+        btn.textContent = 'Save'
+        btn.style.width = '15vw'
+        btn.style.marginLeft = '0.5vw'
+        btn.style.padding = '0.1vw'
+        btn.onclick = async function() {
+            await chrome.storage.sync.set({
+                "font": input.value
+            })
+            btn.textContent = 'Saved'
+            setTimeout(fixButton, 1000)
+            function fixButton() {
+                btn.textContent = 'Save'
+            }
+        }
+        div23.appendChild(btn)
+        }
         div23.appendChild(a)
         var tags2 = document.createElement('div')
         tags2.className = 'tags'

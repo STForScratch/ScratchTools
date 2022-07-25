@@ -200,6 +200,20 @@ input {
     border-radius: 5vw;
 }
 
+button {
+    background-color: #262e3b;
+    width: 90vw;
+    height: 10vw;
+    font-family: 'Space Grotesk', sans-serif;
+    outline: none;
+    border: 0px;
+    color: white;
+    padding: 0.5vw;
+    text-align: center;
+    border-radius: 5vw;
+    cursor: pointer;
+}
+
 i {
     margin: 0;
     position: absolute;
