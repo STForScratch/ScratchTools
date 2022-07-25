@@ -40,7 +40,7 @@ if (window.location.href.startsWith('https://scratch.mit.edu/projects/')) {
             if (document.querySelector('div.scratchtools.navlastkey') === null) {
                 if (document.querySelector('div.gui') !== null) {
                 document.querySelector('div.gui').childNodes.forEach(function(el) {
-                    if (el.className.startsWith('gui_menu-bar-position')) {
+                    if (el.className.startsWith('gui_menu-bar-position') && el.className.includes('box_box_')) {
                         observer.disconnect()
                         addKeyPressedEditor()
                     }
@@ -63,7 +63,7 @@ if (window.location.href.startsWith('https://scratch.mit.edu/projects/')) {
             if (document.querySelector('div.scratchtools.navlastkey') === null) {
                 if (document.querySelector('div.gui') !== null) {
                 document.querySelector('div.gui').childNodes.forEach(function(el) {
-                    if (el.className.startsWith('gui_menu-bar-position')) {
+                    if (el.className.startsWith('gui_menu-bar-position') && el.className.includes('box_box_')) {
                         observer.disconnect()
                         addKeyPressedEditor()
                     }
