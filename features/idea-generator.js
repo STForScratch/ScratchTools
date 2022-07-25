@@ -1,7 +1,7 @@
 if (window.location.href.includes('https://scratch.mit.edu/ideas')) {
 	var div = document.createElement('div')
 	div.className = 'tips-getting-started scratchtools generator'
-	div.innerHTML = '<div class="inner"><section class="flex-row tips-info-section tips-left"><div class="ideas-image"></div><div><h2><span>Getting Started</span></h2><p><span>If you need project ideas, use the ScratchTools idea generator!</span></p><a><button class="button ideas-button"><img src="https://scratch.mit.edu/static/assets/b433ee02a13fa2a12f7f7059f1f6729a.svg"><span>Generate</span></button></a></div></section></div>'
+	div.innerHTML = '<div class="inner"><section class="flex-row tips-info-section tips-left"><div class="ideas-image"></div><div><h2><span>Idea Generator</span></h2><p><span>If you need project ideas, use the ScratchTools idea generator!</span></p><a><button class="button ideas-button"><img src="https://scratch.mit.edu/static/assets/b433ee02a13fa2a12f7f7059f1f6729a.svg"><span>Generate</span></button></a></div></section></div>'
 	if (document.querySelector('div.scratchtools.generator') === null) {
 		document.querySelector('div#view').firstChild.prepend(div)
 		document.querySelector('div#view').prepend(document.querySelector('div.banner-wrapper'))
