@@ -90,6 +90,15 @@
 		"tags": [],
 		"type": ["Website"]
 	},
+ 	{
+		"title": "Shrink Studio Curator Profile Pictures",
+		"description": "Shrinks the size of the new studio curator profile pictures.",
+		"credits": ["Scratchfangs"],
+		"urls": ["https://scratch.mit.edu/users/Scratchfangs/"],
+		"file": "shrink-studio-curator-pfps",
+		"tags": [],
+		"type": ["Website"]
+	},
 	{
 		"title": "Colored Editor Comments",
 		"description": "Colors comments in the editor based on the color of their parent block.",
