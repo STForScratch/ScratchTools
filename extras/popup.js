@@ -221,7 +221,9 @@ function createFeature(name, description, id, credits, def, tags, urls, type) {
         async function getFont() {
             await chrome.storage.sync.get("font", async function (obj) {
                 try {
-                    input.value = obj.font
+                    if (obj.font !== undefined) {
+                        input.value = obj.font
+                    }
                 } catch(err) {
                     console.log(err)
                 }
