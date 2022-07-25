@@ -234,7 +234,6 @@ function createFeature(name, description, id, credits, def, tags, urls, type) {
         btn.textContent = 'Save'
         btn.style.width = '20%'
         btn.style.marginLeft = '0.5vw'
-        btn.style.padding = '0.1vw'
         btn.onclick = async function() {
             await chrome.storage.sync.set({
                 "font": input.value
