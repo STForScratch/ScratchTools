@@ -1,4 +1,4 @@
-async function getAuth() {
+ScratchTools.Session = async function() {
  var response = await fetch("https://scratch.mit.edu/session/", {
   "headers": {
     "accept": "*/*",
@@ -19,6 +19,9 @@ async function getAuth() {
   "credentials": "include"
 });
   var data = await response.json()
-  ScratchTools.Auth = data
+  return data
+}
+async function getAuth() {
+ ScratchTools.Auth = await ScratchTools.Session()
 }
 getAuth()
