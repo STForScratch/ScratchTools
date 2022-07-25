@@ -1,4 +1,5 @@
-function logTool(text) {
+ScratchTools.console = {}
+ScratchTools.console.log = function(text) {
     var styleArray= [
         'padding: 0.1rem',
       'border : 0.1rem solid lime',
@@ -6,7 +7,7 @@ function logTool(text) {
     ];
     console.log('%cScratchTools', styleArray.join(';'), text);
 }
-function warnTool(text) {
+ScratchTools.console.warn = function(text) {
   var styleArray= [
       'padding: 0.1rem',
     'border : 0.1rem solid yellow',
@@ -14,7 +15,7 @@ function warnTool(text) {
   ];
   console.log('%cScratchTools', styleArray.join(';'), text);
 }
-function errorTool(text) {
+ScratchTools.console.error = function(text) {
   var styleArray= [
       'padding: 0.1rem',
     'border : 0.1rem solid #ff9f00',

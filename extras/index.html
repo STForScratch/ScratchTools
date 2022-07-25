@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Settings | ScratchTools</title>
+    </head>
+    <body class="all">
+        <div class="navbar" style="padding: 1vw; margin-bottom: 5vw;">
+            <h2 class="title" style="display: inline-block;">ScratchTools Settings</h2>
+            <div class="options">
+            <h2 class="title type active" style="display: inline-block; margin-left: 10vw;" id="all">All</h2>
+            <h2 class="title type" style="display: inline-block;" id="Website">Website Features</h2>
+            <h2 class="title type" style="display: inline-block;" id="Editor">Editor Features</h2>
+            <h2 class="title type" style="display: inline-block;" id="Theme">Themes</h2>
+            <h2 class="title feedback" style="display: inline-block; margin-left: 4vw; color: #0c5df2; cursor: pointer;">Feedback</h2>
+        </div>
+        </div>
+        <center style="height: 500px; margin-top: 5vw;">
+                <input placeholder="search" class="search" style="margin-top: 5vw;">
+                <div class="blocked" style="margin-top: 20px;"></div>
+            <div class="settings settings2"></div>
+        </center>
+            <script src="/extras/popup.js"></script>
+    <script src="/extras/blocked.js"></script>
+    <link href="/extras/stsettings.css" rel="stylesheet">
+        <style>
+
+        .options {
+            display: block;
+            position: fixed;
+            right: 5vw;
+            top: 1vw;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .type {
+            text-align: right;
+            margin-left: 1.5vw;
+            cursor: pointer;
+        }
+
+        .navbar {
+            z-index: 100;
+        }
+
+        input {
+            width: 25vw;
+            height: 2.5vw;
+        }
+
+        body {
+            font-family: arial;
+            height: 500px;
+            width: 400px;
+            margin: none;
+        }
+
+        .stuff {
+            margin-left: 80px;
+            margin-right: 80px;
+            color: orange;
+        }
+
+        p {
+            color: black;
+            width: 400px;
+        }
+
+        li {
+            color: black;
+        }
+
+        .logo {
+            width: 80px;
+        }
+
+        a:hover, a:visited, a:link, a:active {
+      text-decoration: none;
+      color: #f99f00;
+    }
+
+    .feature {
+        width: 30vw;
+        display: inline-block;
+        flex-direction: column;
+    position: relative;
+    box-sizing: border-box;
+    orphans: 1;
+    widows: 1;
+    }
+
+    .settings {
+        -webkit-column-count: auto;
+    -moz-column-count: auto;
+    column-count: auto;
+    -webkit-column-gap: 0.5rem;
+    -moz-column-gap: 0.5rem;
+    column-gap: 0.5rem;
+    display: block;
+    }
+
+    </style>
+    </body>
+    <script src="/extras/beta.js"></script>
+</html>

@@ -13,19 +13,18 @@ function checkForContextMenu() {
                 deleteAllSprites()
             }
         }
-    } else {
-    }
+    } else {}
     setTimeout(checkForContextMenu, 200)
 }
 checkForContextMenu()
 
 function deleteAllSprites() {
-    document.querySelectorAll('div').forEach(function(el) {
-    if (el.className.includes('sprite-selector-item_sprite-name_')) {
-vm.deleteSprite(vm.runtime.getSpriteTargetByName(el.textContent).id)
-    }
-})
+    ScratchTools.Scratch.vm.runtime.targets.forEach(function(el) {
+        if (!el.isStage) {
+            vm.deleteSprite(el.id)
+        }
+    })
 }
 if (window.location.href.includes('https://scratch.mit.edu/projects/') && window.location.href.includes('/editor')) {
-checkForContextMenu()
+    checkForContextMenu()
 }
