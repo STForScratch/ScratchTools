@@ -38,6 +38,15 @@
 		"type":["Website", "Editor"]
 	},
 	{
+		"title":"Hide Forum Signatures",
+		"description":"Hides all forum signatures and signature dividers.",
+		"credits":["Scratchfangs"],
+		"urls":["https://scratch.mit.edu/users/Scratchfangs/"],
+		"file":"hide-signatures",
+		"tags":["New"]
+		"type":["Website, "Theme"]
+	},
+	{
 		"title":"Better Forum Emojis",
 		"description":"The current forum emojis have very low resolution, and they can be replaced with better Twemojis.",
 		"credits":["Scratchfangs", "rgantzos"],
