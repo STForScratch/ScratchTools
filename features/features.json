@@ -1,4 +1,13 @@
-[{
+[{	
+		"title": "Emojis on Forum Homepage Categories",
+		"description": "Adds colorful emojis on the forum homepage categories based on their topic.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "forum-homepage-emojis",
+		"tags": ["New"],
+		"type": ["Website"]
+	},
+	{
 		"title": "Hide Forum Collapse Buttons",
 		"description": "Hides the collapse buttons on the forum main page.",
 		"credits": ["Scratchfangs"],
