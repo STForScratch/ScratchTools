@@ -1,4 +1,14 @@
-[{	
+[
+	{	
+		"title": "Link Users in Forum Activity",
+		"description": "In the forums' last post section, makes the usernames link to the user's profile.",
+		"credits": ["-KittyStudios-", "rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/-KittyStudios-/", "https://scratch.mit.edu/users/rgantzos/"],
+		"file": "link-forum-activity",
+		"tags": ["New"],
+		"type": ["Website"]
+	},
+	{	
 		"title": "Hide Forum Category Counts",
 		"description": "Hides the forum homepage topic and post boxes.",
 		"credits": ["Scratchfangs"],
