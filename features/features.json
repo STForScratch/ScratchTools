@@ -7,6 +7,7 @@
 		"tags": ["New"],
 		"type": ["Website"]
 	},
+	{
 		"title": "Set Featured Project",
 		"description": "On any project page, you can easily set your profile's featured project with the click of a button- even unshared projects.",
 		"credits": ["rgantzos"],
