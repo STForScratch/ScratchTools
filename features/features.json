@@ -199,6 +199,15 @@
 		"tags": ["Featured"],
 		"type": ["Website"]
 	},
+        {
+		"title": "Clickable TurboWarp Links",
+		"description": "Allows you to use TurboWarp links without copying and pasting them.",
+		"credits": ["ScolderCreations"],
+		"urls": ["https://scratch.mit.edu/users/ScolderCreations/"],
+		"file": "linkify-turbowarp",
+		"tags": [],
+		"type": ["Website"]
+	},
 	{
 		"title": "Fix Content Boxes",
 		"description": "Makes all sides of boxes on the pages rounded, rather than just the tops.",
