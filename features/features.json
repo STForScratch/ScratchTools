@@ -1,4 +1,12 @@
 [{
+		"title": "Hide Forum Collapse Buttons",
+		"description": "Hides the collapse buttons on the forum main page.",
+		"credits": ["Scratchfangs"],
+		"urls": ["https://scratch.mit.edu/users/Scratchfangs/"],
+		"file": "remove-collapse-buttons",
+		"tags": ["New"],
+		"type": ["Website"]
+	},
 		"title": "Set Featured Project",
 		"description": "On any project page, you can easily set your profile's featured project with the click of a button- even unshared projects.",
 		"credits": ["rgantzos"],
