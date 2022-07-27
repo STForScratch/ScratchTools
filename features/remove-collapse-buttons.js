@@ -1,0 +1,1 @@
+document.querySelectorAll(".toggle").forEach(el => el.remove());
