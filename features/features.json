@@ -1,8 +1,17 @@
 [{	
-		"title": "Emojis on Forum Homepage Categories",
+		"title": "Hide Forum Topic and Post Boxes",
+		"description": "Hides the forum homepage topic and post boxes.",
+		"credits": ["Scratchfangs"],
+		"urls": ["https://scratch.mit.edu/users/Scratchfangs/"],
+		"file": "remove-topic-and-post",
+		"tags": ["New"],
+		"type": ["Website"]
+	},
+	{
+		"title": "Forum Category Emojis",
 		"description": "Adds colorful emojis on the forum homepage categories based on their topic.",
-		"credits": ["rgantzos"],
-		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"credits": ["Scratchfangs"],
+		"urls": ["https://scratch.mit.edu/users/Scratchfangs/"],
 		"file": "forum-homepage-emojis",
 		"tags": ["New"],
 		"type": ["Website"]
