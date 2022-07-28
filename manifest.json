@@ -2,8 +2,8 @@
      "name": "ScratchTools",
      "short_name": "ScratchTools",
      "manifest_version": 3,
-     "version": "2.11.0",
-     "version_name": "2.11.0-beta",
+     "version": "2.10.1",
+     "version_name": "2.10.1-beta",
      "description": "Great tools to make Scratching easier!",
      "author": "rgantzos",
      "background": {
