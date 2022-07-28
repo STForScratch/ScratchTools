@@ -308,14 +308,6 @@
 		"type": ["Website"]
 	},
 	{
-		"title": "Color Slider",
-		"description": "Replaces the number input for the outline width in the paint editor with a slider.",
-		"credits": ["rgantzos"],
-		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
-		"file": "color-slider-input",
-		"type": ["Editor"]
-	},
-	{
 		"title": "Project Idea Generator",
 		"description": "On the Scratch Ideas page, there will be a section where you can generate project ideas if you need some!",
 		"credits": ["Lasted10"],
