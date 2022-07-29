@@ -1,5 +1,14 @@
 [
 	{	
+		"title": "Collapse Blocks",
+		"description": "Right-click block menus in the editor include a button that will let you collapse the selected block.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "collapse-blocks",
+		"tags": ["New"],
+		"type": ["Editor"]
+	},
+	{	
 		"title": "Link Users in Forum Activity",
 		"description": "In the forums' last post section, makes the usernames link to the user's profile.",
 		"credits": ["-KittyStudios-", "rgantzos"],
