@@ -6,7 +6,8 @@
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "collapse-blocks",
 		"tags": ["New"],
-		"type": ["Editor"]
+		"type": ["Editor"],
+		"default":true
 	},
 	{	
 		"title": "Link Users in Forum Activity",
@@ -14,7 +15,7 @@
 		"credits": ["-KittyStudios-", "rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/-KittyStudios-/", "https://scratch.mit.edu/users/rgantzos/"],
 		"file": "link-forum-activity",
-		"tags": ["New"],
+		"tags": [],
 		"type": ["Website"]
 	},
 	{	
@@ -23,7 +24,7 @@
 		"credits": ["Scratchfangs"],
 		"urls": ["https://scratch.mit.edu/users/Scratchfangs/"],
 		"file": "remove-topic-and-post",
-		"tags": ["New"],
+		"tags": [],
 		"type": ["Website"]
 	},
 	{
@@ -32,7 +33,7 @@
 		"credits": ["Scratchfangs"],
 		"urls": ["https://scratch.mit.edu/users/Scratchfangs/"],
 		"file": "forum-homepage-emojis",
-		"tags": ["New"],
+		"tags": [],
 		"type": ["Website"]
 	},
 	{
@@ -41,7 +42,7 @@
 		"credits": ["Scratchfangs"],
 		"urls": ["https://scratch.mit.edu/users/Scratchfangs/"],
 		"file": "remove-collapse-buttons",
-		"tags": ["New"],
+		"tags": [],
 		"type": ["Website"]
 	},
 	{
@@ -50,7 +51,7 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "set-featured-project",
-		"tags": ["New", "Recommended"],
+		"tags": ["Recommended"],
 		"type": ["Website"]
 	},
 	{
@@ -59,7 +60,7 @@
 		"credits": ["Scratchfangs", "rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/Scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
 		"file": "pin-projects",
-		"tags": ["New"],
+		"tags": [],
 		"type": ["Website"],
 		"world": "ISOLATED"
 	},
@@ -69,7 +70,7 @@
 		"credits": ["Scratchfangs", "devxan", "rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/Scratchfangs/", "https://github.com/devxan", "https://scratch.mit.edu/users/rgantzos/"],
 		"file": "custom-fonts",
-		"tags": ["New", "Featured"],
+		"tags": ["Featured"],
 		"type": ["Website", "Theme"],
 		"world": "ISOLATED"
 	},
@@ -79,7 +80,7 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "last-key-pressed",
-		"tags": ["New"],
+		"tags": [],
 		"type": ["Website", "Editor"]
 	},
 	{
@@ -88,7 +89,7 @@
 		"credits": ["Scratchfangs"],
 		"urls": ["https://scratch.mit.edu/users/Scratchfangs/"],
 		"file": "hide-signatures",
-		"tags": ["New"],
+		"tags": [],
 		"type": ["Website", "Theme"]
 	},
 	{
@@ -97,7 +98,7 @@
 		"credits": ["Scratchfangs", "rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/Scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
 		"file": "twemoji-in-forums",
-		"tags": ["New"],
+		"tags": [],
 		"type": ["Website"]
 	},
 	{
