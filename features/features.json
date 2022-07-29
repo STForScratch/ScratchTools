@@ -5,9 +5,8 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "collapse-blocks",
-		"tags": ["New"],
-		"type": ["Editor"],
-		"default":true
+		"tags": ["New", "Recommended"],
+		"type": ["Editor"]
 	},
 	{	
 		"title": "Link Users in Forum Activity",
