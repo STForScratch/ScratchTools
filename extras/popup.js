@@ -160,21 +160,16 @@ function createFeature(name, description, id, credits, def, tags, urls, type) {
                 await chrome.storage.sync.set({
                     "features": obj['features'].replaceAll(switch23.id, '')
                 })
-                if (def === true) {
+                await chrome.storage.sync.set({
+                    "features": obj['features'].replaceAll(switch23.id, '')
+                })
                 switch23.checked = false
-                } else {
-                    switch23.checked = true
-                }
             } else {
                 console.log('true')
                 await chrome.storage.sync.set({
                     "features": obj['features'] + switch23.id
                 })
-                if (def === false) {
                 switch23.checked = true
-                } else {
-                switch23.checked = false
-                }
             }
         })
     })
