@@ -7,7 +7,6 @@
 		"file": "collapse-blocks",
 		"tags": ["New"],
 		"type": ["Editor"],
-		"default":true
 	},
 	{	
 		"title": "Link Users in Forum Activity",
