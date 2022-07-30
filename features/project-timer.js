@@ -1,19 +1,19 @@
 if (window.location.href.includes('https://scratch.mit.edu/projects/')) {
 var times = []
 var stop = []
-vm.runtime.on('PROJECT_RUN_START', function() {
+ScratchTools.Scratch.vm.runtime.on('PROJECT_RUN_START', function() {
     times = []
     stop = []
-    times.push(vm.runtime.currentMSecs)
+    times.push(ScratchTools.Scratch.vm.runtime.currentMSecs)
     getCurrentM()
 })
-vm.runtime.on('PROJECT_RUN_STOP', function() {
+ScratchTools.Scratch.vm.runtime.on('PROJECT_RUN_STOP', function() {
     stop.push('')
 })
 function getCurrentM() {
     if (stop.length === 0) {
-    if ((vm.runtime.currentMSecs-times[times.length-1])/1000 !== NaN) {
-    document.querySelector('div.timer.scratchtools').textContent = `${(vm.runtime.currentMSecs-times[times.length-1])/1000} secs`
+    if ((ScratchTools.Scratch.vm.runtime.currentMSecs-times[times.length-1])/1000 !== NaN) {
+    document.querySelector('div.timer.scratchtools').textContent = `${(ScratchTools.Scratch.vm.runtime.currentMSecs-times[times.length-1])/1000} secs`
     setTimeout(getCurrentM, 50)
     }
     }

@@ -21,7 +21,7 @@ checkForContextMenu()
 function deleteAllSprites() {
     ScratchTools.Scratch.vm.runtime.targets.forEach(function(el) {
         if (!el.isStage) {
-            vm.deleteSprite(el.id)
+            ScratchTools.Scratch.vm.deleteSprite(el.id)
         }
     })
 }
