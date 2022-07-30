@@ -10,6 +10,7 @@ function addCollapse() {
 try {
 Object.keys(ScratchTools.Scratch.blockly.getMainWorkspace().blockDB_).forEach(function(id) {
     var block = ScratchTools.Scratch.blockly.getMainWorkspace().getBlockById(id)
+    if (block.outputShape_ === null) {
     if (Window.collapsed.includes(id)) {
         block.setCollapsed(true)
     } else {
@@ -31,6 +32,7 @@ var collapse = {"enabled":true, "text":"Uncollapse"}
     }
     el.push(collapse)
 }
+    }
 })
 } catch(err) {
     ScratchTools.console.error(err)
