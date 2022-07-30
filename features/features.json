@@ -2,8 +2,8 @@
 	{	
 		"title": "Collapse Blocks",
 		"description": "Right-click block menus in the editor include a button that will let you collapse the selected block.",
-		"credits": ["rgantzos"],
-		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"credits": ["rgantzos", "romadillo"],
+		"urls": ["https://scratch.mit.edu/users/romadillo/", "https://scratch.mit.edu/users/rgantzos/"],
 		"file": "collapse-blocks",
 		"tags": ["New", "Recommended"],
 		"type": ["Editor"]
