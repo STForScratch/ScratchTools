@@ -4,7 +4,7 @@ function addKeyPressed() {
     lkp.className = 'scratchtools key share-date'
     if (document.querySelector('div.scratchtools.key') === null) {
         document.querySelector('div.flex-row.subactions').prepend(lkp)
-        vm.runtime.on('KEY_PRESSED', function(el) {
+        ScratchTools.Scratch.vm.runtime.on('KEY_PRESSED', function(el) {
             if (document.querySelector('div.scratchtools.key') !== null) {
                 document.querySelector('div.scratchtools.key').textContent = 'Last Key Pressed: ' + el
             }
@@ -24,7 +24,7 @@ function addKeyPressedEditor() {
                 el.firstChild.appendChild(div)
             }
         })
-        vm.runtime.on('KEY_PRESSED', function(el) {
+        ScratchTools.Scratch.vm.runtime.on('KEY_PRESSED', function(el) {
             if (document.querySelector('div.scratchtools.navlastkey') !== null) {
                 document.querySelector('div.scratchtools.navlastkey').querySelector('span').textContent = 'Last Key Pressed: ' + el
             }
