@@ -1,5 +1,7 @@
 if (window.location.href.includes('/editor') && window.location.href.startsWith('https://scratch.mit.edu/projects/')) {
-Window.collapsed = []
+    if (Window.collapsed === undefined) {
+        Window.collapsed = []
+    }
 var gui = document.querySelector('body');
 
 var observe = new MutationObserver(addCollapse);
