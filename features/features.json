@@ -18,6 +18,15 @@
 		"type": ["Editor"]
 	},
 	{	
+		"title": "Check if Trending",
+		"description": "If a project you're viewing is on the trending page, the place on the trending page will be shown next to the share date on the project page.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "check-if-trending",
+		"tags": ["New"],
+		"type": ["Website"]
+	},
+	{	
 		"title": "Link Users in Forum Activity",
 		"description": "In the forums' last post section, makes the usernames link to the user's profile.",
 		"credits": ["-KittyStudios-", "rgantzos"],
