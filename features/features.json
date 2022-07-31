@@ -9,6 +9,15 @@
 		"type": ["Editor"]
 	},
 	{	
+		"title": "Sprite List",
+		"description": "Replaces the sprite grid in the editor with a list that includes the block count and position of the sprite.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "list-sprites",
+		"tags": ["New", "Beta"],
+		"type": ["Editor"]
+	},
+	{	
 		"title": "Link Users in Forum Activity",
 		"description": "In the forums' last post section, makes the usernames link to the user's profile.",
 		"credits": ["-KittyStudios-", "rgantzos"],
