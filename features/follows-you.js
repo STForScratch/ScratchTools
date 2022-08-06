@@ -20,7 +20,7 @@ async function getUser() {
 	});
 	var data2 = await response2.json()
 
-	var response = await fetch(`https://tools.scratchstatus.org/${window.location.href.split('/users/')[1].split('/')[0]}/isfollowing/${data2.LOGGED_IN_USER.model.username}/`)
+	var response = await fetch(`https://scratchtools.app/${window.location.href.split('/users/')[1].split('/')[0]}/isfollowing/${data2.LOGGED_IN_USER.model.username}/`)
 	var data = await response.json()
 	console.log(data)
 	if (data['following'] === true) {

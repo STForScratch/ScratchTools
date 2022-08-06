@@ -1,5 +1,14 @@
 [
 	{	
+		"title": "Rickroll",
+		"description": "You won't know until you find out... there's a button on project pages.",
+		"credits": ["rgantzos", "TimMcCool"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/TimMcCool/"],
+		"file": "rickroll",
+		"tags": ["New", "Egg"],
+		"type": ["Website"]
+	},
+	{	
 		"title": "Collapse Blocks",
 		"description": "Right-click block menus in the editor include a button that will let you collapse the selected block.",
 		"credits": ["rgantzos", "romadillo"],
@@ -251,7 +260,7 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "april-fools",
-		"tags": ["Featured"],
+		"tags": ["Featured", "Egg"],
 		"type": ["Editor", "Theme"]
 	},
 	{

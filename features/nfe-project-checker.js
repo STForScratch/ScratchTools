@@ -3,7 +3,7 @@ function check() {
 		window.setTimeout(check, 50)
 	} else {
 		async function checkforNfe() {
-			var response = await fetch(`https://tools.scratchstatus.org/nfe/${window.location.href.split('/projects/')[1].split('/')[0]}/`)
+			var response = await fetch(`https://scratchtools.app/nfe/${window.location.href.split('/projects/')[1].split('/')[0]}/`)
 			var data = await response.json()
 			var date = document.querySelector('div.share-date').lastChild
 			if (!date.className.includes('scratchtools')) {

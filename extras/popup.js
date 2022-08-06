@@ -1,5 +1,25 @@
+let easterEggClicks = 0
+if (document.querySelector('.easteregg') !== null) {
+    document.querySelector('.easteregg').onclick = function() {
+        easterEggClicks = easterEggClicks+1
+        if (easterEggClicks === 5) {
+            var style = document.createElement('style')
+            style.innerHTML = `
+                .easter.tag {
+                    display: inline-block;
+                }
+
+                .eastereggFeature {
+                    display: block;
+                }
+            `
+            document.querySelector('html').appendChild(style)
+        }
+    }
+}
+
 async function doStuff() {
-    const response = await fetch('https://tools.scratchstatus.org/warning/')
+    const response = await fetch('https://scratchtools.app/warning/')
     const data = await response.json()
     if (data['title'] !== ' ') {
         console.log(data['color'])
@@ -57,7 +77,7 @@ function again() {
     def.onclick = function() {
         chrome.tabs.create({
             active: true,
-            url: 'https://tools.scratchstatus.org/'
+            url: 'https://scratchtools.app/'
         });
     }
     def.textContent = 'Website'
@@ -252,6 +272,17 @@ function createFeature(name, description, id, credits, def, tags, urls, type) {
         div23.appendChild(a)
         var tags2 = document.createElement('div')
         tags2.className = 'tags'
+        if (tags.includes('Egg')) {
+            var div = document.createElement('div')
+            div.className = 'easter tag'
+            div.textContent = 'Easter Egg'
+            tags2.appendChild(div)
+            div23.className = div23.className+' eastereggFeature'
+            if (switch23.checked) {
+                div23.style.display = 'block'
+                div.style.display = 'inline-block'
+            }
+        }
         if (tags.includes("New")) {
             var div = document.createElement('div')
             div.className = 'new tag'
@@ -429,6 +460,6 @@ async function getFeaturesBySearch(search) {
 
 if (document.querySelector('h2.feedback') !== null) {
 document.querySelector('h2.feedback').onclick = function() {
-    chrome.tabs.create({ url:"https://tools.scratchstatus.org/feedback/" })
+    chrome.tabs.create({ url:"https://scratchtools.app/feedback/" })
 }
 }

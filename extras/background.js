@@ -1,11 +1,11 @@
 chrome.runtime.onInstalled.addListener(function (object) {
     if (object.reason === chrome.runtime.OnInstalledReason.INSTALL) {
         if (chrome.runtime.getManifest().version_name.toLowerCase().includes('beta')) {
-            chrome.runtime.setUninstallURL('https://tools.scratchstatus.org/beta-goodbye')
-            chrome.tabs.create({ url: 'https://tools.scratchstatus.org/beta-welcome' })
+            chrome.runtime.setUninstallURL('https://scratchtools.app/beta-goodbye')
+            chrome.tabs.create({ url: 'https://scratchtools.app/beta-welcome' })
         } else {
-            chrome.runtime.setUninstallURL('https://tools.scratchstatus.org/goodbye')
-            chrome.tabs.create({ url: 'https://tools.scratchstatus.org/welcome' })
+            chrome.runtime.setUninstallURL('https://scratchtools.app/goodbye')
+            chrome.tabs.create({ url: 'https://scratchtools.app/welcome' })
         }
     }
 });

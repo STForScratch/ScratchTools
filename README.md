@@ -8,8 +8,8 @@ We're a browser extension for the Scratch website that makes Scratch look, work,
 
 ### Installing
 There are multiple ways of installing.
-- Chrome: You can download from Chrome [here](https://tools.scratchstatus.org/chrome/). Then just press the Add to Chrome button, and you've downloaded ScratchTools!
-- Firefox/Mozilla: You can download for Firefox [here](https://tools.scratchstatus.org/firefox/). You can then just add it to Firefox, and then you have ScratchTools!
+- Chrome: You can download from Chrome [here](https://scratchtools.app/chrome/). Then just press the Add to Chrome button, and you've downloaded ScratchTools!
+- Firefox/Mozilla: You can download for Firefox [here](https://scratchtools.app/firefox/). You can then just add it to Firefox, and then you have ScratchTools!
 - GitHub: Download from GitHub [here](https://github.com/STForScratch/ScratchTools/zipball/master). If it downloads a `.zip` file, unpack it. Then, with the folder, go to `chrome://extensions`, make sure you have developer mode enabled (switch in the top right corner), and drag the downloaded folder onto the page. Make sure you've disabled other versions of ScratchTools.
 
 ### Building a Feature
@@ -32,8 +32,8 @@ Logging can be very important, especially when testing. You can use `ScratchTool
 
 ### How to Support without Code
 Not only do you have to be a developer to code for ScratchTools (technically, we would teach you if you wanted help), but you can also be a beta tester, suggest ideas, design our website, create art, and more! Here are some common things people like to help with:
-- **Beta testing.** You can search for bugs and then report them [here](https://tools.scratchstatus.org/bugs/). Just [download](https://github.com/STForScratch/ScratchTools/zipball/master) the newest changes from GitHub, and add them to your browser! [Here's how to add Chrome Extensions without the Chrome Webstore.](https://www.labnol.org/internet/install-chrome-extensions/25817/)
+- **Beta testing.** You can search for bugs and then report them [here](https://scratchtools.app/bugs/). Just [download](https://github.com/STForScratch/ScratchTools/zipball/master) the newest changes from GitHub, and add them to your browser! [Here's how to add Chrome Extensions without the Chrome Webstore.](https://www.labnol.org/internet/install-chrome-extensions/25817/)
 - **Website.** If you know HTML or CSS, we could really use your help on our website! We aren't looking for big changes, but we'd love your help with it anyways! Let us know by creating an issue or contacting a developer!
 - **Graphic Designer.** If you're an artist or designer, you can help us! We need banners, cool art, and more! We love all kinds of styles, you can contact us by creating an issue or contacting a developer!
-- **Brainstorming.** If you have ideas, you can suggest them on our [feedback section](https://tools.scratchstatus.org/feedback/)!
+- **Brainstorming.** If you have ideas, you can suggest them on our [feedback section](https://scratchtools.app/feedback/)!
 - **Posting.** Feel free to post about us on social media! We'd love to help as many Scratchers as possible, so every post helps!
