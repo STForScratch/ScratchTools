@@ -1,5 +1,14 @@
 [
 	{	
+		"title": "Sprite Clone Counter",
+		"description": "Displays the clone count for each individual sprite.",
+		"credits": ["rgantzos", "GrahamBurger"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/GrahamBurger/"],
+		"file": "sprite-clones",
+		"tags": ["New", "Recommended"],
+		"type": ["Editor"]
+	},
+	{	
 		"title": "Rickroll",
 		"description": "You won't know until you find out... there's a button on project pages.",
 		"credits": ["rgantzos", "TimMcCool"],
