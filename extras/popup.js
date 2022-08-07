@@ -1,3 +1,13 @@
+if (document.querySelector('.message') !== null)  {
+    document.querySelector('.message').onclick = function() {
+        chrome.tabs.create({
+            active: true,
+            url: 'https://scratchtools.app/discord'
+        });
+    }
+}
+
+
 let easterEggClicks = 0
 if (document.querySelector('.easteregg') !== null) {
     document.querySelector('.easteregg').onclick = function() {
