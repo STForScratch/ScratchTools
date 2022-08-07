@@ -1,5 +1,14 @@
 [
 	{	
+		"title": "Scrollable List Items",
+		"description": "List items that have a value longer than the width of the list itself will get cut off. Now, you can scroll left and right through the list item.",
+		"credits": ["rgantzos", "philipp2007"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/philipp2007/"],
+		"file": "scrollable-list-items",
+		"tags": ["New", "Recommended"],
+		"type": ["Website", "Editor"]
+	},
+	{	
 		"title": "Sprite Clone Counter",
 		"description": "Displays the clone count for each individual sprite.",
 		"credits": ["rgantzos", "GrahamBurger"],
