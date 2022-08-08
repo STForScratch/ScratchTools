@@ -1,5 +1,14 @@
 [
 	{	
+		"title": "Block Log",
+		"description": "Logs and displays all undo information for the block editor when you press ctrl+shift+l.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "block-log",
+		"tags": ["New"],
+		"type": ["Editor"]
+	},
+	{	
 		"title": "Message Indicator Red for Admin Messages",
 		"description": "If you have an admin notification from the Scratch Team, the message indicator in the navigation bar will display red instead of orange.",
 		"credits": ["rgantzos"],
