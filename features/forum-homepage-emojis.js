@@ -15,6 +15,7 @@ document.querySelector("#category_body_5 > div.box-content > table > tbody > tr:
 document.querySelector("#category_body_5 > div.box-content > table > tbody > tr:nth-child(3) > td.tcl > div > div.tclcon > h3 > a").textContent = "💡 Project Ideas"
 document.querySelector("#category_body_5 > div.box-content > table > tbody > tr:nth-child(4) > td.tcl > div > div.tclcon > h3 > a").textContent = "🤝 Collaboration"
 document.querySelector("#category_body_5 > div.box-content > table > tbody > tr:nth-child(5) > td.tcl > div > div.tclcon > h3 > a").textContent = "📜 Requests"
+document.querySelector("#category_body_5 > div.box-content > table > tbody > tr:nth-child(6) > td.tcl > div > div.tclcon > h3 > a").textContent = "📩 Project Save & Level Codes"
 
 document.querySelector("#category_body_2 > div.box-content > table > tbody > tr:nth-child(1) > td.tcl > div > div.tclcon > h3 > a").textContent = "🤔 Questions about Scratch"
 document.querySelector("#category_body_2 > div.box-content > table > tbody > tr:nth-child(2) > td.tcl > div > div.tclcon > h3 > a").textContent = "💭 Suggestions"
