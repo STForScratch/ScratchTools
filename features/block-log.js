@@ -24,7 +24,7 @@ var div = document.createElement('div')
 div.innerHTML = `
 <div id="mydivheader">Block Log<div aria-label="Close" class="close-button_close-button_lOp2G close-button_large_2oadS closescratchtools" role="button" tabindex="0"><img class="close-button_close-icon_HBCuO" src="/static/assets/cb666b99d3528f91b52f985dfb102afa.svg"></div></div>
 <div class="content">
-<span style="opacity: 0.5;">Empty</span>
+<span style="opacity: 0.5;"><i>Empty</i></span>
 </div>
 `
 div.querySelector('.closescratchtools').onclick = function() {
@@ -57,6 +57,7 @@ height: 50%;
 width: 20%;
 overflow: scroll;
 border-radius: 10px;
+box-shadow: 0px 0px 8px #8c8c8c;
 }
 
 #mydivheader {
@@ -126,7 +127,7 @@ ScratchTools.Scratch.blockly.getMainWorkspace().undoStack_.forEach(function(el) 
 })
 if (ScratchTools.Scratch.blockly.getMainWorkspace().undoStack_.length === 0) {
     var span = document.createElement('span')
-    span.textContent = 'Empty'
+    span.innerHTML = '<i>Empty</i>'
     div.querySelector('.content').appendChild(span)
     span.style.opacity = '0.5'
 }
