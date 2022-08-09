@@ -1,5 +1,6 @@
 if (window.location.href.startsWith('https://scratch.mit.edu/projects/') && window.location.href.includes('/editor')) {
 if (document.blockLog === undefined) {
+    document.blockLog = 'ok'
 document.addEventListener('keydown', function(event) {
     keydown(event)
 
@@ -114,6 +115,7 @@ document.onmousemove = null;
 
 function logEvents() {
 var div = document.querySelector('#mydiv')
+if (div !== null) {
 while (div.querySelector('.content').firstChild) {
     div.querySelector('.content').firstChild.remove()
 }
@@ -130,6 +132,7 @@ if (ScratchTools.Scratch.blockly.getMainWorkspace().undoStack_.length === 0) {
     span.innerHTML = '<i>Empty</i>'
     div.querySelector('.content').appendChild(span)
     span.style.opacity = '0.5'
+}
 }
 }
 
