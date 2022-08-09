@@ -422,11 +422,11 @@ if (document.querySelector('img.seticon') !== null) {
 
 async function getFeaturesBySearch(search) {
 
-    deleteAll()
     var response = await fetch('/features/features.json')
     var data = await response.json()
     var allValues = []
     var allStuff = []
+    deleteAll()
     if (search.replaceAll(' ', '') !== '') {
     Object.keys(data).forEach(function(el) {
         
