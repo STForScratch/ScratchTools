@@ -1,3 +1,75 @@
+chrome.storage.sync.get("mode", async function(obj) {
+    if (obj.mode !== undefined) {
+        if (obj.mode === 'light') {
+            var link = document.createElement('link')
+            link.href = '/extras/lightmode.css'
+            link.rel = 'stylesheet'
+            link.className = 'light'
+            document.querySelector('html').appendChild(link)
+            if (document.querySelector('.modeSwitch') !== null) {
+                document.querySelector('.modeSwitch').src = '/extras/night.png'
+            }
+            }
+    } else {
+        var style = document.createElement('style')
+        style.innerHTML = `
+        body {
+            transition: background-color .3s, color .3s;
+        }
+        
+        .span {
+            transition: background-color .3s;
+        }
+        
+        input, .search, button {
+            transition: background-color .3s, color .3s;
+        }
+        
+        .new, .recommended, .featured, .beta, .easter {
+            transition: color .3s;
+        }
+        
+        .slider {
+            transition: background-color .3s;
+        }
+        
+        .slider:before {
+            transition: color .3s;
+        }
+        
+        .creditNames {
+            transition: color .3s;
+        }
+        
+        .navbar {
+            transition: background-color .3s, color .3s;
+        }
+        
+        .message {
+            transition: color .3s;
+        }`
+        document.body.appendChild(style)
+    }
+});
+
+if (document.querySelector('.modeSwitch') !== null) {
+    document.querySelector('.modeSwitch').onclick = function() {
+        if (document.querySelector('link.light') === null) {
+            chrome.storage.sync.set({"mode":"light"})
+            document.querySelector('.modeSwitch').src = '/extras/night.png'
+            var link = document.createElement('link')
+            link.href = '/extras/lightmode.css'
+            link.rel = 'stylesheet'
+            link.className = 'light'
+            document.querySelector('html').appendChild(link)
+        } else {
+            chrome.storage.sync.set({"mode":"dark"})
+            document.querySelector('.modeSwitch').src = '/extras/day.png'
+            document.querySelector('link.light').remove()
+        }
+    }
+}
+
 if (document.querySelector('.message') !== null)  {
     document.querySelector('.message').onclick = function() {
         chrome.tabs.create({
@@ -14,13 +86,18 @@ if (document.querySelector('.easteregg') !== null) {
         easterEggClicks = easterEggClicks+1
         if (easterEggClicks === 5) {
             var style = document.createElement('style')
+            if (document.querySelector('.navbar') === null) {
+                var display = 'block'
+            } else {
+                var display = 'inline-block'
+            }
             style.innerHTML = `
                 .easter.tag {
                     display: inline-block;
                 }
 
                 .eastereggFeature {
-                    display: block;
+                    display: ${display};
                 }
             `
             document.querySelector('html').appendChild(style)
@@ -239,7 +316,7 @@ function createFeature(name, description, id, credits, def, tags, urls, type) {
             span.style.display = 'inline-block'
             span.style.marginRight = '2px'
         })
-        a.style.color = '#8e9091'
+        a.className = 'creditNames'
         div23.appendChild(description2)
         div23.appendChild(label23)
         if (id === 'custom-fonts') {
@@ -289,7 +366,11 @@ function createFeature(name, description, id, credits, def, tags, urls, type) {
             tags2.appendChild(div)
             div23.className = div23.className+' eastereggFeature'
             if (switch23.checked) {
-                div23.style.display = 'block'
+                if (document.querySelector('.navbar') === null) {
+                    div23.style.display = 'block'
+                } else {
+                    div23.style.display = 'inline-block'
+                }
                 div.style.display = 'inline-block'
             }
         }

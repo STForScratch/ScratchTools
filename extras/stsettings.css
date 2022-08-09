@@ -304,3 +304,20 @@ h3 {
 .easter.tag, .eastereggFeature {
     display: none;
 }
+
+.creditNames {
+    color: #8e9091;
+}
+
+.modeSwitch {
+    position: fixed;
+    right: 1vw;
+    top: 2vw;
+    display: inline-block;
+    height: 2vw;
+    cursor: pointer;
+}
+
+.message {
+    font-family: 'Space Grotesk', sans-serif;
+}
