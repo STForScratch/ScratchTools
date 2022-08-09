@@ -1,5 +1,14 @@
 [
 	{	
+		"title": "FPS Counter",
+		"description": "Displays the current FPS for the project.",
+		"credits": ["rgantzos", "ThePro255", "Tacodude7729"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/ThePro255/", "https://github.com/Tacodude7729"],
+		"file": "fps",
+		"tags": ["New", "Beta"],
+		"type": ["Website", "Editor"]
+	},
+	{	
 		"title": "Block Log",
 		"description": "Logs and displays all undo information for the block editor when you press ctrl+shift+l.",
 		"credits": ["rgantzos"],
@@ -50,7 +59,7 @@
 		"credits": ["rgantzos", "romadillo"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/romadillo/"],
 		"file": "collapse-blocks",
-		"tags": ["New", "Recommended"],
+		"tags": ["Recommended"],
 		"type": ["Editor"]
 	},
 	{	
@@ -59,7 +68,7 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "list-sprites",
-		"tags": ["New", "Beta"],
+		"tags": ["Beta"],
 		"type": ["Editor"]
 	},
 	{	
@@ -68,7 +77,7 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "check-if-trending",
-		"tags": ["New"],
+		"tags": [],
 		"type": ["Website"]
 	},
 	{	
