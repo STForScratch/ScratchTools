@@ -1,4 +1,16 @@
+var version = '2.13.0'
+
 chrome.runtime.onInstalled.addListener(function (object) {
+  if (chrome.runtime.getManifest().version_name.toLowerCase().includes('beta')) {
+    chrome.action.setIcon({
+      path : {
+        "default_icon":"/extras/purple.png",
+        "16": "/extras/purple-16.png",
+        "48": "/extras/purple-48.png",
+        "128": "/extras/purple-128.png"
+      }
+    })
+  }
     if (object.reason === chrome.runtime.OnInstalledReason.INSTALL) {
         if (chrome.runtime.getManifest().version_name.toLowerCase().includes('beta')) {
             chrome.runtime.setUninstallURL('https://scratchtools.app/beta-goodbye')
@@ -71,7 +83,6 @@ chrome.tabs.onUpdated.addListener(function (tabId , info) {
     }
     });
     })
-    var version = '2.10.0'
     await chrome.storage.sync.get("version", async function (obj) {
         if (obj['version'] !== version) {
             var tab = await chrome.tabs.get(tabId)
