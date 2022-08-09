@@ -2,8 +2,8 @@
 	{	
 		"title": "FPS Counter",
 		"description": "Displays the current FPS for the project.",
-		"credits": ["rgantzos", "Tacodude7729"],
-		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://github.com/Tacodude7729"],
+		"credits": ["rgantzos", "ThePro255", "Tacodude7729"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/ThePro255/", "https://github.com/Tacodude7729"],
 		"file": "fps",
 		"tags": ["New", "Beta"],
 		"type": ["Website", "Editor"]
