@@ -1,12 +1,12 @@
 [
 	{	
-		"title": "FPS Counter",
-		"description": "Displays the current FPS for the project.",
-		"credits": ["rgantzos", "ThePro255", "Tacodude7729"],
-		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/ThePro255/", "https://github.com/Tacodude7729"],
-		"file": "fps",
-		"tags": ["New", "Beta"],
-		"type": ["Website", "Editor"]
+		"title": "Sprite Clone Counter",
+		"description": "Displays the clone count for each individual sprite.",
+		"credits": ["rgantzos", "GrahamBurger"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/GrahamBurger/"],
+		"file": "sprite-clones",
+		"tags": ["New", "Recommended"],
+		"type": ["Editor"]
 	},
 	{	
 		"title": "Block Log",
@@ -18,15 +18,6 @@
 		"type": ["Editor"]
 	},
 	{	
-		"title": "Message Indicator Red for Admin Messages",
-		"description": "If you have an admin notification from the Scratch Team, the message indicator in the navigation bar will display red instead of orange.",
-		"credits": ["rgantzos"],
-		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
-		"file": "admin-notifications",
-		"tags": ["New"],
-		"type": ["Website"]
-	},
-	{	
 		"title": "Scrollable List Items",
 		"description": "List items that have a value longer than the width of the list itself will get cut off. Now, you can scroll left and right through the list item.",
 		"credits": ["rgantzos", "philipp2007"],
@@ -36,13 +27,22 @@
 		"type": ["Website", "Editor"]
 	},
 	{	
-		"title": "Sprite Clone Counter",
-		"description": "Displays the clone count for each individual sprite.",
-		"credits": ["rgantzos", "GrahamBurger"],
-		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/GrahamBurger/"],
-		"file": "sprite-clones",
-		"tags": ["New", "Recommended"],
-		"type": ["Editor"]
+		"title": "FPS Counter",
+		"description": "Displays the current FPS for the project.",
+		"credits": ["rgantzos", "ThePro255", "Tacodude7729"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/ThePro255/", "https://github.com/Tacodude7729"],
+		"file": "fps",
+		"tags": ["New", "Beta"],
+		"type": ["Website", "Editor"]
+	},
+	{	
+		"title": "Message Indicator Red for Admin Messages",
+		"description": "If you have an admin notification from the Scratch Team, the message indicator in the navigation bar will display red instead of orange.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "admin-notifications",
+		"tags": ["New"],
+		"type": ["Website"]
 	},
 	{	
 		"title": "Rickroll",
@@ -53,12 +53,85 @@
 		"tags": ["New", "Egg"],
 		"type": ["Website"]
 	},
+	{
+		"title": "Custom Website Font",
+		"description": "On the Scratch website, you can set the font to whatever font you want, as long as it is on the Google Fonts website. This is case-sensitive.",
+		"credits": ["Scratchfangs", "devxan", "rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/Scratchfangs/", "https://github.com/devxan", "https://scratch.mit.edu/users/rgantzos/"],
+		"file": "custom-fonts",
+		"tags": ["Featured"],
+		"type": ["Website", "Theme"],
+		"world": "ISOLATED"
+	},
+	{
+		"title": "Project Timer",
+		"description": "Displays the amount of time (in seconds) that the project has been running for.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "project-timer",
+		"tags": ["Featured"],
+		"type": ["Editor"]
+	},
+	{
+		"title": "Colored Editor Comments",
+		"description": "Colors comments in the editor based on the color of their parent block.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "colored-comments",
+		"tags": ["Featured"],
+		"type": ["Editor", "Theme"]
+	},
+	{
+		"title": "Recently Viewed Projects",
+		"description": "Adds a tab to the My Stuff page where you can see a list of the projects that you have recently viewed.",
+		"credits": ["Karve_", "rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/Karve_/", "https://scratch.mit.edu/users/rgantzos/"],
+		"file": "recently-viewed-projects",
+		"tags": ["Featured", "Recommended"],
+		"type": ["Website"]
+	},
+	{
+		"title": "Anti Generic",
+		"description": "On the explore and trending pages, this beta feature automatically hides repetitive projects, along with projects that it expects are generic. This includes projects with a lot of tags, common names, and project duplicates.",
+		"credits": ["Bob the Potato wit Drip Jr.", "rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/JefferyTheSuperKat/", "https://scratch.mit.edu/users/rgantzos/"],
+		"file": "anti-generic",
+		"tags": ["Beta", "Featured"],
+		"type": ["Website", "Theme"]
+	},
 	{	
 		"title": "Collapse Blocks",
 		"description": "Right-click block menus in the editor include a button that will let you collapse the selected block.",
 		"credits": ["rgantzos", "romadillo"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/romadillo/"],
 		"file": "collapse-blocks",
+		"tags": ["Recommended"],
+		"type": ["Editor"]
+	},
+	{
+		"title": "Set Featured Project",
+		"description": "On any project page, you can easily set your profile's featured project with the click of a button- even unshared projects.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "set-featured-project",
+		"tags": ["Recommended"],
+		"type": ["Website"]
+	},
+	{
+		"title": "ScratchFormat",
+		"description": "Format your comments with bold, italic, and more! The comments will look amazing to everyone using ScratchTools.",
+		"credits": ["petabyt", "Daniel4-Scratch"],
+		"urls": ["https://danielc.dev/", "https://github.com/Daniel4-Scratch"],
+		"file": "scratchformat",
+		"tags": ["Recommended"],
+		"type": ["Website"]
+	},
+	{
+		"title": "Expand Editor",
+		"description": "Use the ctrl+e to easily switch between the default block editor view and one that hides the stage to expand editor itself!",
+		"credits": ["Jazza", "rgantzos"],
+		"urls": ["https://github.com/Jazza-231", "https://scratch.mit.edu/users/rgantzos/"],
+		"file": "expand-editor",
 		"tags": ["Recommended"],
 		"type": ["Editor"]
 	},
@@ -117,15 +190,6 @@
 		"type": ["Website"]
 	},
 	{
-		"title": "Set Featured Project",
-		"description": "On any project page, you can easily set your profile's featured project with the click of a button- even unshared projects.",
-		"credits": ["rgantzos"],
-		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
-		"file": "set-featured-project",
-		"tags": ["Recommended"],
-		"type": ["Website"]
-	},
-	{
 		"title": "Pin Projects to My Stuff",
 		"description": "Pin one of your projects to the top of your My Stuff page with the click of a button! You can unpin your pinned project or switch out your pinned project for another one as well!",
 		"credits": ["Scratchfangs", "rgantzos"],
@@ -133,16 +197,6 @@
 		"file": "pin-projects",
 		"tags": [],
 		"type": ["Website"],
-		"world": "ISOLATED"
-	},
-	{
-		"title": "Custom Website Font",
-		"description": "On the Scratch website, you can set the font to whatever font you want, as long as it is on the Google Fonts website. This is case-sensitive.",
-		"credits": ["Scratchfangs", "devxan", "rgantzos"],
-		"urls": ["https://scratch.mit.edu/users/Scratchfangs/", "https://github.com/devxan", "https://scratch.mit.edu/users/rgantzos/"],
-		"file": "custom-fonts",
-		"tags": ["Featured"],
-		"type": ["Website", "Theme"],
 		"world": "ISOLATED"
 	},
 	{
@@ -173,24 +227,6 @@
 		"type": ["Website"]
 	},
 	{
-		"title": "ScratchFormat",
-		"description": "Format your comments with bold, italic, and more! The comments will look amazing to everyone using ScratchTools.",
-		"credits": ["petabyt", "Daniel4-Scratch"],
-		"urls": ["https://danielc.dev/", "https://github.com/Daniel4-Scratch"],
-		"file": "scratchformat",
-		"tags": ["Recommended"],
-		"type": ["Website"]
-	},
-	{
-		"title": "Project Timer",
-		"description": "Displays the amount of time (in seconds) that the project has been running for.",
-		"credits": ["rgantzos"],
-		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
-		"file": "project-timer",
-		"tags": ["Featured", "Beta"],
-		"type": ["Editor"]
-	},
-	{
 		"title": "Go to Parent Button",
 		"description": "In the editor for any project that is a remix, you can click a button to go to the editor in the parent project.",
 		"credits": ["rgantzos"],
@@ -209,21 +245,12 @@
 		"type": ["Website"]
 	},
 	{
-		"title": "Colored Editor Comments",
-		"description": "Colors comments in the editor based on the color of their parent block.",
-		"credits": ["rgantzos"],
-		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
-		"file": "colored-comments",
-		"tags": ["Featured"],
-		"type": ["Editor", "Theme"]
-	},
-	{
 		"title": "Block Users",
 		"description": "Hide messages on the messages page that are created by users that you have blocked (includes a block page).",
 		"credits": ["rgantzos", "Scratchfangs"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/rgantzos/"],
 		"file": "block-messages",
-		"tags": ["Featured"],
+		"tags": [],
 		"world": "ISOLATED",
 		"type": ["Website"]
 	},
@@ -233,7 +260,7 @@
 		"credits": ["infinitytec"],
 		"urls": ["https://github.com/infinitytec"],
 		"file": "editor-dark-mode",
-		"tags": ["Featured"],
+		"tags": [],
 		"type": ["Editor", "Theme"]
 	},
 	{
@@ -260,17 +287,8 @@
 		"credits": ["_nix"],
 		"urls": ["https://scratch.mit.edu/users/_nix/"],
 		"file": "colored-messages",
-		"tags": ["Recommended"],
+		"tags": [],
 		"type": ["Website", "Theme"]
-	},
-	{
-		"title": "Expand Editor",
-		"description": "Use the ctrl+e to easily switch between the default block editor view and one that hides the stage to expand editor itself!",
-		"credits": ["Jazza", "rgantzos"],
-		"urls": ["https://github.com/Jazza-231", "https://scratch.mit.edu/users/rgantzos/"],
-		"file": "expand-editor",
-		"tags": ["Recommended"],
-		"type": ["Editor"]
 	},
 	{
 		"title": "Full Project Title",
@@ -278,26 +296,8 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos"],
 		"file": "full-title",
-		"tags": ["Recommended"],
+		"tags": [],
 		"type": ["Website"]
-	},
-	{
-		"title": "Recently Viewed Projects",
-		"description": "Adds a tab to the My Stuff page where you can see a list of the projects that you have recently viewed.",
-		"credits": ["Karve_", "rgantzos"],
-		"urls": ["https://scratch.mit.edu/users/Karve_/", "https://scratch.mit.edu/users/rgantzos/"],
-		"file": "recently-viewed-projects",
-		"tags": ["Featured", "Recommended"],
-		"type": ["Website"]
-	},
-	{
-		"title": "Anti Generic",
-		"description": "On the explore and trending pages, this beta feature automatically hides repetitive projects, along with projects that it expects are generic. This includes projects with a lot of tags, common names, and project duplicates.",
-		"credits": ["Bob the Potato wit Drip Jr.", "rgantzos"],
-		"urls": ["https://scratch.mit.edu/users/JefferyTheSuperKat/", "https://scratch.mit.edu/users/rgantzos/"],
-		"file": "anti-generic",
-		"tags": ["Beta", "Featured"],
-		"type": ["Website", "Theme"]
 	},
 	{
 		"title": "April Fools 2022",
@@ -305,7 +305,7 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "april-fools",
-		"tags": ["Featured", "Egg"],
+		"tags": ["Egg"],
 		"type": ["Editor", "Theme"]
 	},
 	{
@@ -314,7 +314,7 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos"],
 		"file": "project-links",
-		"tags": ["Featured"],
+		"tags":[],
 		"type": ["Website"]
 	},
 	{
@@ -323,7 +323,7 @@
 		"credits": ["Scratchfangs", "rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/Scratchfangs", "https://scratch.mit.edu/users/rgantzos"],
 		"file": "fixed-box",
-		"tags": ["Featured"],
+		"tags": [],
 		"type": ["Website", "Theme"]
 	},
 	{
@@ -332,7 +332,7 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos"],
 		"file": "user-bio",
-		"tags": ["Featured"],
+		"tags": [],
 		"type": ["Website"]
 	},
 	{
