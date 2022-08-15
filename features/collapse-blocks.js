@@ -18,7 +18,7 @@ Object.keys(ScratchTools.Scratch.blockly.getMainWorkspace().blockDB_).forEach(fu
     } else {
         block.setCollapsed(false)
     }
-block.customContextMenu = function(el) {
+var test = function(el) {
     if (block.collapsed_ === false) {
     var collapse = {"enabled":true, "text":"Collapse"}
     collapse.callback = function() {
@@ -34,6 +34,7 @@ var collapse = {"enabled":true, "text":"Uncollapse"}
     }
     el.push(collapse)
 }
+ScratchTools.Scratch.addContextMenu({"block":block.id,"id":"collapse-blocks","callback":test})
     }
 })
 } catch(err) {

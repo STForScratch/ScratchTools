@@ -21,3 +21,19 @@ try {
 } catch (err) {
     ScratchTools.console.warn("Unable to load Blockly.")
 }
+
+ScratchTools.Scratch.contextMenus = {}
+
+ScratchTools.Scratch.addContextMenu = function(info) {
+    if (ScratchTools.Scratch.contextMenus[info.block] !== undefined) {
+        ScratchTools.Scratch.contextMenus[info.block][info.id] = info.callback
+    } else {
+        ScratchTools.Scratch.contextMenus[info.block] = {}
+        ScratchTools.Scratch.contextMenus[info.block][info.id] = info.callback
+    }
+    ScratchTools.Scratch.blockly.getMainWorkspace().getBlockById(info.block).customContextMenu = function(menu) {
+        Object.keys(ScratchTools.Scratch.contextMenus[info.block]).forEach(function(el) {
+            ScratchTools.Scratch.contextMenus[info.block][el](menu)
+        })
+    }
+}
