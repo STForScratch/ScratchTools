@@ -49,6 +49,11 @@ chrome.tabs.onUpdated.addListener(function (tabId , info) {
       files: [`/api/vm.js`],
       world:'MAIN'
     });
+    chrome.scripting.executeScript({
+      target: { tabId: tabId },
+      files: [`/api/cookies.js`],
+      world:'MAIN'
+    });
     Object.keys(data).forEach(async function(el) {
       if (data[el]['world'] === undefined) {
         var world = 'MAIN'
