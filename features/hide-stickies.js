@@ -13,10 +13,13 @@ function showStickies() {
 		}
 	})
 }
+if (document.querySelector('.scratchtoolsHideStickies') === null) {
 var a = document.createElement('a')
 a.textContent = 'Show Stickies'
 a.style.float = 'right'
+a.className = 'scratchtoolsHideStickies'
 document.querySelector('div#vf').querySelector('div.box-head').appendChild(a)
+}
 document.querySelector('div#vf').querySelector('div.box-head').querySelector('h4').style.float = 'left'
 a.onclick = function() {
 	if (a.textContent === 'Show Stickies') {
