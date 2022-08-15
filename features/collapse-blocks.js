@@ -34,7 +34,7 @@ var collapse = {"enabled":true, "text":"Uncollapse"}
     }
     el.push(collapse)
 }
-ScratchTools.Scratch.addContextMenu({"block":block.id,"id":"collapse-blocks","callback":test})
+ScratchTools.Scratch.waitForContextMenu({"block":block.id,"id":"collapse-blocks","callback":test})
     }
 })
 } catch(err) {
