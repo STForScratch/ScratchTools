@@ -24,7 +24,7 @@ try {
 
 ScratchTools.Scratch.contextMenus = {}
 
-ScratchTools.Scratch.addContextMenu = function(info) {
+ScratchTools.Scratch.waitForContextMenu = function(info) {
     if (ScratchTools.Scratch.contextMenus[info.block] !== undefined) {
         ScratchTools.Scratch.contextMenus[info.block][info.id] = info.callback
     } else {
