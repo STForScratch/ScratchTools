@@ -1,5 +1,14 @@
 [
 	{	
+		"title": "Delete Custom Block",
+		"description": "To delete a custom block, you must remove all of it's uses. Now, you can Right Click > Delete All Uses on a custom block to delete all of it's uses. This will delete all blocks below the custom block in scripts.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "delete-custom-block-uses",
+		"tags": ["New", "Beta"],
+		"type": ["Editor"]
+	},
+	{	
 		"title": "Sprite Clone Counter",
 		"description": "Displays the clone count for each individual sprite.",
 		"credits": ["rgantzos", "GrahamBurger"],
