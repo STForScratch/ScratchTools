@@ -26,7 +26,10 @@ Our APIs are growing slowly, but, as of right now, we have two main ones that we
 #### Auth
 Using `ScratchTools.Auth`, you can access the authentication info for the signed in user. This includes the session ID, username, profile picture, and more. This is the only API that requires you to wait for a value when using it immediately after your userscript has loaded. You can also use `await ScratchTools.Session()` to get the same information.
 #### Scratch APIs
+##### Basics
 Using `ScratchTools.Scratch.blockly` and `ScratchTools.Scratch.vm`, you can access the Blockly and Virtual Machine from inside the editor (or on the project page with vm). Blockly must wait for the editor to load, but the virtual machine is ready instantly.
+##### Blockly Context Menus
+If you want to control what appears in a context menu, you easily can with the `ScratchTools.Scratch.waitForContextMenu()` API. The only input you need is JSON, which must include the block ID for the context menu, the ID you want to set for the context menu option (lets you change the context menu option, so don't use the same ID as another feature), and the callback for when the context menu is opened. The callback function will also have an input, which is the context menu itself. That way, you can add the context menu option when the context menu is opened.
 #### Logging
 Logging can be very important, especially when testing. You can use `ScratchTools.console.log()`, `ScratchTools.console.warn()`, and `ScratchTools.console.error()` to log, warn, and error in the console, specifically for ScratchTools.
 
