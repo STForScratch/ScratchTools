@@ -8,9 +8,12 @@ if (window.location.href.startsWith('https://scratch.mit.edu/projects/')) {
         var data = await response.json()
         data.forEach(function(el, i) {
             if (el.id.toString() === window.location.href.replace('https://scratch.mit.edu/projects/', '').replaceAll('/', '')) {
+                if (document.querySelector('.scratchtoolsTrendingInfo') === null) {
                 var span = document.createElement('span')
                 span.textContent = ` • #${i+1} on Trending`
+                span.className = 'scratchtoolsTrendingInfo'
                 document.querySelector('div.share-date').appendChild(span)
+                }
             }
         })
     }
