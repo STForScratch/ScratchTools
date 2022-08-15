@@ -5,7 +5,7 @@ document.addEventListener('keydown', function(event) {
     keydown(event)
 
     function keydown(e) {
-        if (e.keyCode == 76 && e.shiftKey) {
+        if (e.keyCode == 76 && e.shiftKey && e.ctrlKey) {
             if (document.querySelector('#mydiv') === null) {
             addProjectLog()
             } else {
