@@ -4,7 +4,7 @@
 		"description": "Replaces the default 3.0 online project editor with the 2.0 editor. It's nostalgic, really.",
 		"credits": ["MixelFanUTTP", "rgantzos", "GarboMuffin", "infinitytec"],
 		"urls": ["https://scratch.mit.edu/users/MixelFanUTTP/", "https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/GarboMuffin/", "https://scratch.mit.edu/users/infinitytec/"],
-		"file": "comment-on-closed-profile",
+		"file": "editor-in-two",
 		"tags": ["Featured","New"],
 		"type": ["Editor","Theme"]
 	},
