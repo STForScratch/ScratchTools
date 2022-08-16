@@ -1,4 +1,22 @@
 [
+	{
+		"title": "2.0 Editor",
+		"description": "Replaces the default 3.0 online project editor with the 2.0 editor. It's nostalgic, really.",
+		"credits": ["MixelFanUTTP", "rgantzos", "GarboMuffin", "infinitytec"],
+		"urls": ["https://scratch.mit.edu/users/MixelFanUTTP/", "https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/GarboMuffin/", "https://scratch.mit.edu/users/infinitytec/"],
+		"file": "comment-on-closed-profile",
+		"tags": ["Featured","New"],
+		"type": ["Editor","Theme"]
+	},
+	{
+		"title": "Comment On Profile With Comments Closed",
+		"description": "If your profile comments are closed, you can now comment on your own profile anyways! Only you can comment on the profile.",
+		"credits": ["7pace", "rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/7pace/", "https://scratch.mit.edu/users/rgantzos/"],
+		"file": "comment-on-closed-profile",
+		"tags": ["New", "Recommended"],
+		"type": ["Website"]
+	},
 	{	
 		"title": "Delete Custom Block",
 		"description": "To delete a custom block, you must remove all of it's uses. Now, you can Right Click > Delete All Uses on a custom block to delete all of it's uses. This will delete all blocks below the custom block in scripts.",
@@ -14,7 +32,7 @@
 		"credits": ["rgantzos", "GrahamBurger"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/GrahamBurger/"],
 		"file": "sprite-clones",
-		"tags": ["New", "Recommended"],
+		"tags": ["Recommended"],
 		"type": ["Editor"]
 	},
 	{	
@@ -23,7 +41,7 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "block-log",
-		"tags": ["New","Featured"],
+		"tags": ["Featured"],
 		"type": ["Editor"]
 	},
 	{	
@@ -32,7 +50,7 @@
 		"credits": ["rgantzos", "philipp2007"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/philipp2007/"],
 		"file": "scrollable-list-items",
-		"tags": ["New", "Recommended"],
+		"tags": ["Recommended"],
 		"type": ["Website", "Editor"]
 	},
 	{	
@@ -41,7 +59,7 @@
 		"credits": ["rgantzos", "ThePro255", "Tacodude7729"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/ThePro255/", "https://github.com/Tacodude7729"],
 		"file": "fps",
-		"tags": ["New", "Beta"],
+		"tags": ["Beta"],
 		"type": ["Website", "Editor"]
 	},
 	{	
@@ -50,7 +68,7 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "admin-notifications",
-		"tags": ["New"],
+		"tags": [],
 		"type": ["Website"]
 	},
 	{	
@@ -59,7 +77,7 @@
 		"credits": ["rgantzos", "TimMcCool"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/TimMcCool/"],
 		"file": "rickroll",
-		"tags": ["New", "Egg"],
+		"tags": ["Egg"],
 		"type": ["Website"]
 	},
 	{
