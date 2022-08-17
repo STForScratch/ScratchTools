@@ -102,6 +102,33 @@ if (document.querySelector('.easteregg') !== null) {
             `
             document.querySelector('html').appendChild(style)
         }
+        if (easterEggClicks > 9) {
+            document.querySelector('div.span').textContent = easterEggClicks.toString()
+            document.querySelector('.navbar2').style.transition = 'height .3s'
+            document.querySelector('.navbar2').style.height = '500px'
+            document.body.style.overflow = 'hidden'
+            document.body.style.transition = 'height .3s'
+            var s = document.querySelector('.easteregg').style
+            s.transition = 'position .3s, height .3s, width .3s, left .3s, right .3s, top .3s, bottom .3s'
+            s.position = 'fixed'
+            s.left = '40vw'
+            s.top = '40%'
+            s.width = '20vw'
+            s.height = '20vw'
+            function removeSettings() {
+                document.querySelector('center').remove()
+            }
+            setTimeout(removeSettings, 300)
+            var style = document.createElement('style')
+            style.innerHTML = `
+            .easteregg:hover {
+                width: 30vw !important;
+                height: 30vw !important;
+                left: 35vw !important;
+                top: 30%;
+            }`
+            document.body.appendChild(style)
+        }
     }
 }
 
