@@ -207,18 +207,18 @@ document.querySelectorAll('h2.title.type').forEach(function(el) {
     }
 })
 
-function createFeature(name, description, id, credits, def, tags, urls, type) {
+function createFeature(name, description, id, credits, def, tags, urls, type, options) {
     if (document.body.className !== undefined && document.body.className !== null && document.body.className !== '') {
         console.log('passed checkpoint a')
         if (type.includes(document.body.className) || document.body.className === 'all') {
             console.log('passed checkpoint b')
-            continueCreateFeature(name, description, id, credits, def, tags, urls)
+            continueCreateFeature(name, description, id, credits, def, tags, urls, options)
         }
     } else {
         console.log('missed checkpoint a, continued anyway')
-        continueCreateFeature(name, description, id, credits, def, tags, urls)
+        continueCreateFeature(name, description, id, credits, def, tags, urls, options)
     }
-        async function continueCreateFeature(name, description, id, credits, def, tags, urls) {
+        async function continueCreateFeature(name, description, id, credits, def, tags, urls, options) {
     var div23 = document.createElement('div')
     var item = div23
     item.style.textAlign = 'left'
@@ -319,18 +319,20 @@ function createFeature(name, description, id, credits, def, tags, urls, type) {
         a.className = 'creditNames'
         div23.appendChild(description2)
         div23.appendChild(label23)
-        if (id === 'custom-fonts') {
+        if (options !== undefined) {
+            options.forEach(function(el) {
         var input = document.createElement('input')
         input.style.width = '40%'
         input.style.padding = '0.1vw'
         input.style.height = '2rem'
-        input.placeholder = 'font name'
+        input.placeholder = el
+        input.type = 'text'
         getFont()
         async function getFont() {
-            await chrome.storage.sync.get("font", async function (obj) {
+            await chrome.storage.sync.get(el, async function (obj) {
                 try {
-                    if (obj.font !== undefined) {
-                        input.value = obj.font
+                    if (obj[el] !== undefined) {
+                        input.value = obj[el]
                     }
                 } catch(err) {
                     console.log(err)
@@ -338,6 +340,7 @@ function createFeature(name, description, id, credits, def, tags, urls, type) {
             })
         }
         div23.appendChild(input)
+    })
         var btn = document.createElement('button')
         btn.textContent = 'Save'
         btn.style.width = '20%'
@@ -345,9 +348,16 @@ function createFeature(name, description, id, credits, def, tags, urls, type) {
         btn.style.height = '2rem'
         btn.style.marginLeft = '0.5vw'
         btn.onclick = async function() {
-            await chrome.storage.sync.set({
-                "font": input.value
-            })
+            div23.querySelectorAll('input').forEach(async function(el) {
+                var input = el.placeholder
+                var data = {}
+                if (input.type === 'checkbox') {
+                    data[input] = el.checked
+                } else {
+                    data[input] = el.value
+                }
+            await chrome.storage.sync.set(data)
+        })
             btn.textContent = 'Saved'
             setTimeout(fixButton, 1000)
             function fixButton() {
@@ -435,7 +445,7 @@ async function getFeatures() {
         } else {
             var tags = data[el].tags
         }
-        createFeature(data[el]['title'], data[el]['description'], data[el]['file'], data[el]['credits'], data[el]['default'], tags, data[el]['urls'], data[el]['type'])
+        createFeature(data[el]['title'], data[el]['description'], data[el]['file'], data[el]['credits'], data[el]['default'], tags, data[el]['urls'], data[el]['type'], data[el].options)
     })
 }
 getFeatures()
@@ -537,14 +547,14 @@ async function getFeaturesBySearch(search) {
             } else {
                 var tags = []
             }
-            createFeature(allStuff[top[top.length - 1]]['title'], allStuff[top[top.length - 1]]['description'], allStuff[top[top.length - 1]]['file'], allStuff[top[top.length - 1]]['credits'], allStuff[top[top.length - 1]]['default'], tags, allStuff[top[top.length - 1]]['urls'], allStuff[top[top.length - 1]]['type'])
+            createFeature(allStuff[top[top.length - 1]]['title'], allStuff[top[top.length - 1]]['description'], allStuff[top[top.length - 1]]['file'], allStuff[top[top.length - 1]]['credits'], allStuff[top[top.length - 1]]['default'], tags, allStuff[top[top.length - 1]]['urls'], allStuff[top[top.length - 1]]['type'], allStuff[top[top.length - 1]]['options'])
             allValues[top[top.length - 1]] = ''
             allStuff[top[top.length - 1]] = ''
         }
     }
 } else {
     Object.keys(data).forEach(function(el) {
-        createFeature(data[el].title, data[el].description, data[el].file, data[el].credits, data[el].default, data[el].tags, data[el].urls, data[el].type)
+        createFeature(data[el].title, data[el].description, data[el].file, data[el].credits, data[el].default, data[el].tags, data[el].urls, data[el].type, data[el].options)
     })
 }
 }
