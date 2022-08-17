@@ -23,12 +23,10 @@ chrome.runtime.onInstalled.addListener(function (object) {
 });
 
 chrome.tabs.onUpdated.addListener(function (tabId , info) {
-    console.log(info.status)
     if (info.status === 'loading') {
   async function getCurrentTab() {
     var response = await fetch('/features/features.json')
     var data = await response.json()
-    console.log(data)
       chrome.scripting.executeScript({
       target: { tabId: tabId },
       files: [`/api/main.js`],
@@ -54,6 +52,16 @@ chrome.tabs.onUpdated.addListener(function (tabId , info) {
       files: [`/api/cookies.js`],
       world:'MAIN'
     });
+    chrome.scripting.executeScript({
+      target: { tabId: tabId },
+      files: [`/api/getScratch.js`],
+      world:'MAIN'
+    });
+    chrome.scripting.executeScript({
+      target: { tabId: tabId },
+      files: [`/extras/protect-mention.js`],
+      world:'MAIN'
+    });
     Object.keys(data).forEach(async function(el) {
       if (data[el]['world'] === undefined) {
         var world = 'MAIN'
@@ -65,10 +73,7 @@ chrome.tabs.onUpdated.addListener(function (tabId , info) {
           var world = 'MAIN'
         }
       }
-      console.log(world)
       chrome.storage.sync.get("features", function (obj) {
-        console.log(obj['features']);
-        console.log(obj['features'])
         if (data[el]['default'] === true) {
           if (!obj['features'].includes(data[el]['file'])) {
        chrome.scripting.executeScript({
