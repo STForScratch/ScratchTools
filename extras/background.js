@@ -62,6 +62,30 @@ chrome.tabs.onUpdated.addListener(function (tabId , info) {
       files: [`/extras/protect-mention.js`],
       world:'MAIN'
     });
+    addData()
+    async function addData() {
+    var allStorage = {}
+    await data.forEach(async function(el) {
+      if (el.options !== undefined) {
+        await el.options.forEach(async function(option) {
+          var test = await chrome.storage.sync.get(option)
+          if (test[option] !== undefined) {
+            var data = {}
+            data[option] = test[option]
+            chrome.scripting.executeScript({
+              args: [data],
+              target: { tabId: tabId },
+              func: getStorage,
+              world:'MAIN'
+            });
+          }
+        })
+      }
+    })
+  }
+    function getStorage(storage) {
+      ScratchTools.Storage[Object.keys(storage)[0]] = storage[Object.keys(storage)[0]]
+    }
     Object.keys(data).forEach(async function(el) {
       if (data[el]['world'] === undefined) {
         var world = 'MAIN'
