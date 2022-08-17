@@ -97,7 +97,8 @@
 		"file": "custom-fonts",
 		"tags": ["Featured"],
 		"type": ["Website", "Theme"],
-		"world": "ISOLATED"
+		"world": "ISOLATED",
+		"options":["font"]
 	},
 	{
 		"title": "Project Timer",
