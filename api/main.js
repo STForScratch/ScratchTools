@@ -19,8 +19,10 @@ ScratchTools.createModal = function(titleText, description, buttons) {
       box.appendChild(boxContent)
       var title = document.createElement('h4')
       title.textContent = titleText
+      title.style.color = '#575e75'
       var p = document.createElement('p')
       p.innerHTML = description
+      p.style.color = '#575e75'
       boxContent.appendChild(p)
       boxHeader.appendChild(title)
       box.style.position = 'fixed'

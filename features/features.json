@@ -1,5 +1,14 @@
 [
 	{
+		"title": "Hide Advertisements in Comments",
+		"description": "Hides advertisements in the comments of profiles, projects, and studios. They can take up a lot of space in the comments.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "hide-advertisements",
+		"tags": ["New", "Beta"],
+		"type": ["Website"]
+	},
+	{
 		"title": "Open in Turbowarp from Editor",
 		"description": "Adds a button to the editor so that you can instantly open the current project in Turbowarp.",
 		"credits": ["rgantzos"],
