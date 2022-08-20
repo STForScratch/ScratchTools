@@ -7,6 +7,41 @@ if (window.location.href.startsWith('https://scratch.mit.edu/projects/') && wind
  ScratchTools.type = 'Website' 
 }
 
+let allSelectors = {}
+let allCallbacksForWait = {}
+ScratchTools.waitForElements = function(selector, callback, id, rework) {
+  if (allCallbacksForWait[selector] === undefined) {
+    allCallbacksForWait[selector] = [{ "callback":callback, "id":id }]
+  } else {
+    allCallbacksForWait[selector].push({ "callback":callback, "id":id })
+  }
+  if (rework) {
+    allSelectors[id] = [document.querySelectorAll(selector)]
+  } else {
+    allSelectors[id] = []
+    returnScratchToolsSelectorsMutationObserverCallbacks()
+  }
+}
+
+function enableScratchToolsSelectorsMutationObserver() {
+  var ScratchToolsSelectorsMutationObserver = new MutationObserver(returnScratchToolsSelectorsMutationObserverCallbacks);
+  ScratchToolsSelectorsMutationObserver.observe(document.querySelector('html'), { attributes: true, childList: true, subtree: true });
+}
+enableScratchToolsSelectorsMutationObserver()
+
+function returnScratchToolsSelectorsMutationObserverCallbacks() {
+  Object.keys(allCallbacksForWait).forEach(function(el) {
+    document.querySelectorAll(el).forEach(function(element) {
+      allCallbacksForWait[el].forEach(function(el2) {
+      if (!allSelectors[el2.id].includes(element)) {
+        allSelectors[el2.id].push(element)
+        el2.callback(element)
+      }
+    })
+  })
+  })
+}
+
 ScratchTools.createModal = function(titleText, description, buttons) {
   if (document.querySelector('.scratchtoolsUpdateInfo') === null) {
       var box = document.createElement('div')
