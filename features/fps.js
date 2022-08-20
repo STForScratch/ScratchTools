@@ -23,4 +23,4 @@ function setFpsCounter() {
     }
 }
 
-setInterval(setFpsCounter, 150)
+setInterval(setFpsCounter, 1000)
