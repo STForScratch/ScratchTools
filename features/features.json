@@ -617,11 +617,11 @@
 	},
 	{
 		"title": "Terrible Feature",
-		"description": "Removes the comments, studio and remix column, header, and footer on project pages when the button is clicked.",
+		"description": "do not enable",
 		"credits": ["misty"],
 		"urls": ["https://github.com/mistysloth"],
 		"file": "terrible",
-		"tags": [],
-		"type": ["Website", "Theme"]
+		"tags": ["Egg"],
+		"type": ["Website"]
 	}
 ]
