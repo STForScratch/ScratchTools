@@ -106,3 +106,12 @@ ScratchTools.createModal = function(titleText, description, buttons) {
       box.style.width = '40vw'
   }
 }
+
+ScratchTools.Features = {}
+ScratchTools.Features.get = function(search) {
+  var all = {}
+  ScratchTools.Features.data.forEach(function(el) {
+    all[el.file] = el
+  })
+  return all[search]
+}

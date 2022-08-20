@@ -62,6 +62,15 @@ chrome.tabs.onUpdated.addListener(function (tabId , info) {
       files: [`/extras/protect-mention.js`],
       world:'MAIN'
     });
+    chrome.scripting.executeScript({
+      args: [data],
+      target: { tabId: tabId },
+      func: getFeaturesForAPI,
+      world:'MAIN'
+    });
+    function getFeaturesForAPI(dataFeatures) {
+      ScratchTools.Features.data = dataFeatures
+    }
     addData()
     async function addData() {
     var allStorage = {}
