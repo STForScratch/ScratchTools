@@ -84,7 +84,8 @@ featured.textContent = 'New Features'
 
 document.querySelector('#page-404 > div').appendChild(featured)
 
-createFeature('Unbold Site Text', 'Makes it so that all test across Scratch is unbolded, and just normal text!', 'unbold-forum-topics')
+createFeature('Sprite Hover Data', 'In sprites on the editor, hover over the Code, Costumes, and Sounds tabs to view how many there are in each tab.', 'sprite-hover-data')
+// createFeature('Start Project on Load', 'Automatically starts the project on project pages after it has loaded.', 'start-project-on-load')
 
 
 var br = document.createElement('br')
@@ -104,6 +105,15 @@ var featured = document.createElement('h1')
 featured.textContent = 'Other Features'
 
 document.querySelector('#page-404 > div').appendChild(featured)
+
+createFeature('Sidebar', 'Adds a sidebar to the Scratch website, rather than just the normal navigation bar at the top of the screen.', 'sidebar')
+createFeature('Recently Viewed Projects', 'Adds a tab to the My Stuff page where you can see a list of the projects that you have recently viewed.', 'recently-viewed-projects')
+createFeature('Round Profile Pictures', 'All profile pictures on the Scratch website will be rounded.', 'round-profile-pictures')
+
+createFeature('Compact Navbar', 'Makes more room on the navigation bar near where your profile dropdown is.', 'compact-navbar')
+
+createFeature('Unbold Site Text', 'Makes it so that all test across Scratch is unbolded, and just normal text!', 'unbold-forum-topics')
+createFeature('Advanced Search', 'Easily search for users, projects, and studios with Advanced Search! (BETA)', 'advanced-search')
 
   // show profile comment project titles
 
@@ -411,7 +421,7 @@ description.style.marginTop = '-20px'
 description.textContent = 'Adds a button that takes you to your automatic ScratchStats page.'
 div9.appendChild(description)
 div9.appendChild(label9)
-document.querySelector('#page-404 > div').appendChild(div9)
+// document.querySelector('#page-404 > div').appendChild(div9)
 function myFunction9() {
     if (switch9.checked === true) {
         document.cookie = `ST Features=${getCookie('ST Features') + 'stats '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
@@ -948,40 +958,6 @@ function myFunction24() {
         document.cookie = `ST Features=${getCookie('ST Features') + 'accountsettings '}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
     } else {
         document.cookie = `ST Features=${getCookie('ST Features').replaceAll('accountsettings', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
-    }
-}
-//secret
-var div3 = document.createElement('div')
-var h3 = document.createElement('h3')
-h3.textContent = 'THE FORBIDDEN SECRET'
-var label3 = document.createElement('label')
-label3.className = "switch"
-var switch3 = document.createElement('input')
-switch3.type = "checkbox"
-console.log(getCookie('ST Features'))
-if (getCookie('ST Features').includes('secret')) {
-    switch3.checked = true
-}
-switch3.onclick = function() {
-    myFunction3()
-  }
-label3.appendChild(switch3)
-var span3 = document.createElement('span')
-span3.className = "slider round"
-label3.appendChild(span3)
-div3.appendChild(h3)
-div3.appendChild(document.createElement('br'))
-var description = document.createElement('h3')
-description.style.marginTop = '-20px'
-description.textContent = '[redacted]'
-div3.appendChild(description)
-div3.appendChild(label3)
-document.querySelector('#page-404 > div').appendChild(div3)
-function myFunction3() {
-    if (switch3.checked === true) {
-        document.cookie = `ST Features=${getCookie('ST Features') + 'secret'}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
-    } else {
-        document.cookie = `ST Features=${getCookie('ST Features').replaceAll('secret', '')}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
     }
 }
 

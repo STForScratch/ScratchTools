@@ -1,10 +1,4 @@
-// get cookie
-function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-  }
-  // get cookie
+
 if (window.location.href.includes("https://scratch.mit.edu/search/")) {
 var user = document.querySelector('#frc-q-1088').value
 checkfor(user)
