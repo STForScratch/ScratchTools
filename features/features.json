@@ -614,5 +614,14 @@
 		"file": "focus-mode",
 		"tags": [],
 		"type": ["Website", "Theme"]
+	},
+	{
+		"title": "Terrible Feature",
+		"description": "Removes the comments, studio and remix column, header, and footer on project pages when the button is clicked.",
+		"credits": ["misty"],
+		"urls": ["https://github.com/mistysloth"],
+		"file": "terrible",
+		"tags": [],
+		"type": ["Website", "Theme"]
 	}
 ]
