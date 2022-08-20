@@ -219,7 +219,7 @@ left: inherit !important;
 }
 `);
 function addOtherAttributes() {
-    if (document.querySelector('.menu-bar_menu-bar-item_oLDa-.menu-bar_growable_1sHWN') !== null) {
+    if (document.querySelector('.menu-bar_menu-bar-item_oLDa-.menu-bar_growable_1sHWN') !== null && document.querySelector('.stage-header_stage-menu-wrapper_15JJt.box_box_2jjDp') !== null && document.querySelector('.input_input-form_l9eYg.project-title-input_title-field_en5Gd.menu-bar_title-field-growable_3qr4G') !== null) {
         waitForEditorNavBarForTwo.disconnect();
     try {
 document.querySelector('.stage-header_stage-menu-wrapper_15JJt.box_box_2jjDp').insertBefore(document.querySelector('.input_input-form_l9eYg.project-title-input_title-field_en5Gd.menu-bar_title-field-growable_3qr4G'),document.querySelector('.stage-header_stage-size-row_14N65'))
