@@ -1,3 +1,4 @@
+if (!document.querySelector(".location").className.includes(' scratchtools')) {
 getapi2(`https://api.${window.location.href.replaceAll('https://', '')}messages/count`)
 async function getapi2(url) {
 	// Storing response
@@ -8,4 +9,6 @@ async function getapi2(url) {
 	console.log(data);
 	var stuff = data["count"]
 	document.querySelector(".location").textContent = `${document.querySelector('.location').textContent} | ${stuff} Messages`;
+	document.querySelector(".location").className = document.querySelector(".location").className+' scratchtools'
+}
 }
