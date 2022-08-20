@@ -621,7 +621,7 @@
 		"credits": ["misty"],
 		"urls": ["https://github.com/mistysloth"],
 		"file": "terrible",
-		"tags": ["Egg"],
+		"tags": ["Egg", "New"],
 		"type": ["Website"]
 	}
 ]
