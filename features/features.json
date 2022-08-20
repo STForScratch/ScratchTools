@@ -614,5 +614,14 @@
 		"file": "focus-mode",
 		"tags": [],
 		"type": ["Website", "Theme"]
+	},
+	{
+		"title": "Terrible Feature",
+		"description": "do not enable",
+		"credits": ["misty"],
+		"urls": ["https://github.com/mistysloth"],
+		"file": "terrible",
+		"tags": ["Egg", "New"],
+		"type": ["Website"]
 	}
 ]
