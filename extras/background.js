@@ -1,4 +1,4 @@
-var version = '2.13.0'
+var version = '2.14.0'
 
 chrome.runtime.onInstalled.addListener(function (object) {
   if (chrome.runtime.getManifest().version_name.toLowerCase().includes('beta')) {
