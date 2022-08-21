@@ -1,5 +1,14 @@
 [
 	{
+		"title": "More Editor Fonts",
+		"description": "Adds more fonts to choose from in the paint editor. They look nicer and are more modern.",
+		"credits": ["rgantzos", "Lasted10"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/Lasted10_Forever/"],
+		"file": "special-editor-fonts",
+		"tags": ["Recommended","New","Beta"],
+		"type": ["Editor"]
+	},
+	{
 		"title": "2.0 Editor",
 		"description": "Replaces the default 3.0 online project editor with the 2.0 editor. It's nostalgic, really.",
 		"credits": ["MixelFanUTTP", "rgantzos", "GarboMuffin", "infinitytec"],
