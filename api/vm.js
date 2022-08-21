@@ -37,3 +37,12 @@ ScratchTools.Scratch.waitForContextMenu = function(info) {
         })
     }
 }
+
+ScratchTools.Scratch.scratchPaint = function() {
+var app = document.querySelector('.paint-editor_mode-selector_28iiQ')
+if (app !== null) {
+return app[Object.keys(app).find(key => key.startsWith("__reactInternalInstance"))].child.stateNode.store.getState().scratchPaint
+} else {
+    return null
+}
+}
