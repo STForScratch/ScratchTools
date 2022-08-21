@@ -1,4 +1,4 @@
-update("v2.13.0", "This new version includes a lot of new features! We've added a sprite-specific clone counter, the ability to scroll through individual list items, a block logger, an FPS counter, and more! We've even added in some easter eggs- maybe you can find them!")
+update("v2.14.0", "This new version included multiple new features, enhancements, easter eggs, and bug fixes. We even added a new 2.0 theme for the editor and an easy way to comment on your own profile when the comments are closed!")
 function update(updateVersion, updateDescription) {
     if (document.querySelector('.scratchtoolsUpdateInfo') === null) {
         var box = document.createElement('div')
