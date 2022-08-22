@@ -1,4 +1,4 @@
-const fonts = ['Montserrat', 'Space Grotesk', 'Arial']
+const fonts = ['Montserrat', 'Space Grotesk', 'Arial', 'Helvetica', 'Chalkboard', 'Courier New']
 
 function addFonts() {
     if (document.querySelector('.font-dropdown_'+fonts[0]+'_2fPOh') === null && document.querySelector('body > div.Popover.Popover-below.font-dropdown_mod-unselect_33YJN.font-dropdown_font-dropdown_3XyMU > div > div') !== null) {
@@ -14,6 +14,7 @@ function addNewFont(font) {
     span.onclick = function() {
         ScratchTools.Scratch.scratchPaint().selectedItems[0].setFont(font)
         document.querySelector('#react-tabs-3 > div > div.asset-panel_detail-area_2KQhH.box_box_2jjDp > div > div.paint-editor_editor-container-top_2wxS3 > div:nth-child(2) > div.paint-editor_mod-mode-tools_2Ihob.input-group_input-group_plJaJ > div > div > div').click()
+        document.querySelector('.font-dropdown_font-dropdown_3XyMU').firstChild.textContent = font
     }
     document.querySelector('body > div.Popover.Popover-below.font-dropdown_mod-unselect_33YJN.font-dropdown_font-dropdown_3XyMU > div > div').appendChild(span)
     }
