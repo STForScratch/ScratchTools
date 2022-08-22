@@ -1,5 +1,14 @@
 [
 	{
+		"title": "Online Scratchers in Multiplayer Game",
+		"description": "On cloud data pages, displays all of the Scratchers currently in that multiplayer game.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "cloud-scratchers",
+		"tags": ["Beta"],
+		"type": ["Website"]
+	},
+	{
 		"title": "More Editor Fonts",
 		"description": "Adds more fonts to choose from in the paint editor. They look nicer and are more modern.",
 		"credits": ["rgantzos", "Lasted10"],
@@ -14,7 +23,7 @@
 		"credits": ["MixelFanUTTP", "rgantzos", "GarboMuffin", "infinitytec"],
 		"urls": ["https://scratch.mit.edu/users/MixelFanUTTP/", "https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/GarboMuffin/", "https://scratch.mit.edu/users/infinitytec/"],
 		"file": "editor-in-two",
-		"tags": ["Featured","New"],
+		"tags": ["Featured"],
 		"type": ["Editor","Theme"]
 	},
 	{
@@ -23,7 +32,7 @@
 		"credits": ["7pace", "rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/7pace/", "https://scratch.mit.edu/users/rgantzos/"],
 		"file": "comment-on-closed-profile",
-		"tags": ["New", "Recommended"],
+		"tags": ["Recommended"],
 		"type": ["Website"]
 	},
 	{	
@@ -32,7 +41,7 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "delete-custom-block-uses",
-		"tags": ["New", "Beta"],
+		"tags": ["Beta"],
 		"type": ["Editor"]
 	},
 	{
@@ -41,7 +50,7 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "hide-advertisements",
-		"tags": ["New", "Beta"],
+		"tags": ["Beta"],
 		"type": ["Website"]
 	},
 	{
@@ -50,7 +59,7 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "turbowarp-button-in-editor",
-		"tags": ["New"],
+		"tags": [],
 		"type": ["Editor"]
 	},
 	{	
@@ -630,7 +639,7 @@
 		"credits": ["misty"],
 		"urls": ["https://github.com/mistysloth"],
 		"file": "terrible",
-		"tags": ["Egg", "New"],
+		"tags": ["Egg"],
 		"type": ["Website"]
 	}
 ]
