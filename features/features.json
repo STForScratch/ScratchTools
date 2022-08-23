@@ -1,5 +1,14 @@
 [
 	{
+		"title": "Opacity in Costume Editor",
+		"description": "Adds an input to the costume editor where you can set the opacity of elements.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "opacity-setter",
+		"tags": ["Recommended", "New"],
+		"type": ["Editor"]
+	},
+	{
 		"title": "Online Scratchers in Multiplayer Game",
 		"description": "On cloud data pages, displays all of the Scratchers currently in that multiplayer game.",
 		"credits": ["rgantzos"],
