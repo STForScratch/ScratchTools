@@ -10,7 +10,7 @@
 	},
 	{
 		"title": "Online Scratchers in Multiplayer Game",
-		"description": "On cloud data pages, displays all of the Scratchers currently in that multiplayer game.",
+		"description": "On project pages, displays all of the Scratchers currently in that multiplayer game.",
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "cloud-scratchers",
