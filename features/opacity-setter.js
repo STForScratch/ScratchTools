@@ -1,3 +1,4 @@
+let currentlySelected = null
 function addOpacityRange() {
 if (document.querySelector('.scratchtoolsOpacity') === null) {
 var opacity1 = document.createElement('div')
@@ -65,6 +66,8 @@ function rgbToHex(rgb) {
                 el.setFillColor(color)
             }
             ScratchTools.Scratch.scratchPaint().selectedItems[0]._changed()
+            document.querySelector('img.labeled-icon-button_edit-field-icon_3j-Pf[title="Flip Horizontal"]').parentElement.click()
+            document.querySelector('img.labeled-icon-button_edit-field-icon_3j-Pf[title="Flip Horizontal"]').parentElement.click()
         }
 if (opacity.split(',').length === 4) {
     var opacitySplit = opacity.split(',')
@@ -92,6 +95,8 @@ if (opacity.split(',').length === 4) {
 }
 }
 document.body.addEventListener('click', function() {
+    if (currentlySelected !== ScratchTools.Scratch.scratchPaint().selectedItems) {
+        currentlySelected = ScratchTools.Scratch.scratchPaint().selectedItems
     if (document.querySelector('.scratchtoolsFillOpacity') !== null) {
     if (ScratchTools.Scratch.scratchPaint().selectedItems.length === 1) {
         if (ScratchTools.Scratch.scratchPaint().selectedItems[0].getFillColor()._canvasStyle.split(',').length === 4) 
@@ -111,5 +116,6 @@ document.body.addEventListener('click', function() {
         document.querySelector('.scratchtoolsFillOpacity').value = '100'
     }
 }
+    }
 })
 ScratchTools.waitForElements('.mode-tools_mode-tools_2nFfV', addOpacityRange, 'opacityRange', false)
