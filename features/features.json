@@ -108,15 +108,6 @@
 		"type": ["Website", "Editor"]
 	},
 	{	
-		"title": "FPS Counter",
-		"description": "Displays the current FPS for the project.",
-		"credits": ["rgantzos", "ThePro255", "Tacodude7729"],
-		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/ThePro255/", "https://github.com/Tacodude7729"],
-		"file": "fps",
-		"tags": ["Beta"],
-		"type": ["Website", "Editor"]
-	},
-	{	
 		"title": "Message Indicator Red for Admin Messages",
 		"description": "If you have an admin notification from the Scratch Team, the message indicator in the navigation bar will display red instead of orange.",
 		"credits": ["rgantzos"],
