@@ -1,5 +1,14 @@
 [
 	{
+		"title": "Open Project as Javascript",
+		"description": "Easily open any Scratch project in a Javascript editor!",
+		"credits": ["PullJosh", "maDU59"],
+		"urls": ["https://scratch.mit.edu/users/PullJosh/", "https://github.com/maDU59"],
+		"file": "leopard",
+		"tags": ["Featured", "New"],
+		"type": ["Editor"]
+	},
+	{
 		"title": "Opacity in Costume Editor",
 		"description": "Adds an input to the costume editor where you can set the opacity of elements.",
 		"credits": ["rgantzos"],
