@@ -200,11 +200,11 @@
 		"type": ["Website"]
 	},
         {
-		"title": "Clickable TurboWarp Links",
-		"description": "Allows you to use TurboWarp links without copying and pasting them.",
+		"title": "Clickable Description/Comment Links",
+		"description": "Allows you to use offsite links without copying and pasting them.",
 		"credits": ["ScolderCreations"],
 		"urls": ["https://scratch.mit.edu/users/ScolderCreations/"],
-		"file": "linkify-turbowarp",
+		"file": "linkify-unlinked",
 		"tags": [],
 		"type": ["Website"]
 	},
