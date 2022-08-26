@@ -46,3 +46,20 @@ return app[Object.keys(app).find(key => key.startsWith("__reactInternalInstance"
     return null
 }
 }
+
+ScratchTools.Scratch.scratchSound = function() {
+    try {
+        return document.querySelector("div.sound-editor_editor-container_iUSW-")[Object.keys(document.querySelector("div.sound-editor_editor-container_iUSW-")).find(key => key.startsWith("__reactInternalInstance"))].return.return.return.stateNode
+    } catch(err) {
+        return null
+    }
+}
+
+ScratchTools.Scratch.scratchGui = function() {
+    try {
+        const app = document.querySelector("#app");
+        return app[Object.keys(app).find(key => key.startsWith("__reactContainer"))].child.stateNode.store.getState().scratchGui;
+    } catch(err) {
+        return null
+    }
+}
