@@ -1,0 +1,39 @@
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #f5f5f5;
+    color: black;
+}
+
+.span {
+    color: white;
+}
+
+input, .search, button {
+    background-color: #d1d1d1;
+    color: black;
+}
+
+.new, .recommended, .featured, .beta, .easter {
+    color: white;
+}
+
+.slider {
+    background-color: #d1d1d1;
+}
+
+.slider:before {
+    color: black;
+}
+
+.creditNames {
+    color: #4c4c4d;
+}
+
+.navbar {
+    background-color: #d1d1d1;
+    color: black;
+}
+
+.message {
+    color: white;
+}

@@ -182,8 +182,8 @@ sf.init = function() {
 			if (event.target.parentElement.children[0].id !== "formatter") {
 				event.target.parentElement.prepend(sf.formatter);
 				event.target.style.height = "250px";
-				sf.formatter.style.width = event.target.offsetWidth + "px";
-				event.target.style.resize = "auto";
+				//sf.formatter.style.width = event.target.offsetWidth + "px";
+				event.target.style.resize = "vertical";
 			}
 		}
 	}

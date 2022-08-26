@@ -1,5 +1,139 @@
+chrome.storage.sync.get("mode", async function(obj) {
+    if (obj.mode !== undefined) {
+        if (obj.mode === 'light') {
+            var link = document.createElement('link')
+            link.href = '/extras/lightmode.css'
+            link.rel = 'stylesheet'
+            link.className = 'light'
+            document.querySelector('html').appendChild(link)
+            if (document.querySelector('.modeSwitch') !== null) {
+                document.querySelector('.modeSwitch').src = '/extras/night.png'
+            }
+            }
+    } else {
+        var style = document.createElement('style')
+        style.innerHTML = `
+        body {
+            transition: background-color .3s, color .3s;
+        }
+        
+        .span {
+            transition: background-color .3s;
+        }
+        
+        input, .search, button {
+            transition: background-color .3s, color .3s;
+        }
+        
+        .new, .recommended, .featured, .beta, .easter {
+            transition: color .3s;
+        }
+        
+        .slider {
+            transition: background-color .3s;
+        }
+        
+        .slider:before {
+            transition: color .3s;
+        }
+        
+        .creditNames {
+            transition: color .3s;
+        }
+        
+        .navbar {
+            transition: background-color .3s, color .3s;
+        }
+        
+        .message {
+            transition: color .3s;
+        }`
+        document.body.appendChild(style)
+    }
+});
+
+if (document.querySelector('.modeSwitch') !== null) {
+    document.querySelector('.modeSwitch').onclick = function() {
+        if (document.querySelector('link.light') === null) {
+            chrome.storage.sync.set({"mode":"light"})
+            document.querySelector('.modeSwitch').src = '/extras/night.png'
+            var link = document.createElement('link')
+            link.href = '/extras/lightmode.css'
+            link.rel = 'stylesheet'
+            link.className = 'light'
+            document.querySelector('html').appendChild(link)
+        } else {
+            chrome.storage.sync.set({"mode":"dark"})
+            document.querySelector('.modeSwitch').src = '/extras/day.png'
+            document.querySelector('link.light').remove()
+        }
+    }
+}
+
+if (document.querySelector('.message') !== null)  {
+    document.querySelector('.message').onclick = function() {
+        chrome.tabs.create({
+            active: true,
+            url: 'https://scratchtools.app/discord'
+        });
+    }
+}
+
+
+let easterEggClicks = 0
+if (document.querySelector('.easteregg') !== null) {
+    document.querySelector('.easteregg').onclick = function() {
+        easterEggClicks = easterEggClicks+1
+        if (easterEggClicks === 5) {
+            var style = document.createElement('style')
+            if (document.querySelector('.navbar') === null) {
+                var display = 'block'
+            } else {
+                var display = 'inline-block'
+            }
+            style.innerHTML = `
+                .easter.tag {
+                    display: inline-block;
+                }
+
+                .eastereggFeature {
+                    display: ${display};
+                }
+            `
+            document.querySelector('html').appendChild(style)
+        }
+        if (easterEggClicks > 9) {
+            document.querySelector('div.span').textContent = easterEggClicks.toString()
+            document.querySelector('.navbar2').style.transition = 'height .3s'
+            document.querySelector('.navbar2').style.height = '500px'
+            document.body.style.overflow = 'hidden'
+            document.body.style.transition = 'height .3s'
+            var s = document.querySelector('.easteregg').style
+            s.transition = 'position .3s, height .3s, width .3s, left .3s, right .3s, top .3s, bottom .3s'
+            s.position = 'fixed'
+            s.left = '40vw'
+            s.top = '40%'
+            s.width = '20vw'
+            s.height = '20vw'
+            function removeSettings() {
+                document.querySelector('center').remove()
+            }
+            setTimeout(removeSettings, 300)
+            var style = document.createElement('style')
+            style.innerHTML = `
+            .easteregg:hover {
+                width: 30vw !important;
+                height: 30vw !important;
+                left: 35vw !important;
+                top: 30%;
+            }`
+            document.body.appendChild(style)
+        }
+    }
+}
+
 async function doStuff() {
-    const response = await fetch('https://tools.scratchstatus.org/warning/')
+    const response = await fetch('https://scratchtools.app/warning/')
     const data = await response.json()
     if (data['title'] !== ' ') {
         console.log(data['color'])
@@ -57,7 +191,7 @@ function again() {
     def.onclick = function() {
         chrome.tabs.create({
             active: true,
-            url: 'https://tools.scratchstatus.org/'
+            url: 'https://scratchtools.app/'
         });
     }
     def.textContent = 'Website'
@@ -100,18 +234,18 @@ document.querySelectorAll('h2.title.type').forEach(function(el) {
     }
 })
 
-function createFeature(name, description, id, credits, def, tags, urls, type) {
+function createFeature(name, description, id, credits, def, tags, urls, type, options) {
     if (document.body.className !== undefined && document.body.className !== null && document.body.className !== '') {
         console.log('passed checkpoint a')
         if (type.includes(document.body.className) || document.body.className === 'all') {
             console.log('passed checkpoint b')
-            continueCreateFeature(name, description, id, credits, def, tags, urls)
+            continueCreateFeature(name, description, id, credits, def, tags, urls, options)
         }
     } else {
         console.log('missed checkpoint a, continued anyway')
-        continueCreateFeature(name, description, id, credits, def, tags, urls)
+        continueCreateFeature(name, description, id, credits, def, tags, urls, options)
     }
-        async function continueCreateFeature(name, description, id, credits, def, tags, urls) {
+        async function continueCreateFeature(name, description, id, credits, def, tags, urls, options) {
     var div23 = document.createElement('div')
     var item = div23
     item.style.textAlign = 'left'
@@ -209,21 +343,23 @@ function createFeature(name, description, id, credits, def, tags, urls, type) {
             span.style.display = 'inline-block'
             span.style.marginRight = '2px'
         })
-        a.style.color = '#8e9091'
+        a.className = 'creditNames'
         div23.appendChild(description2)
         div23.appendChild(label23)
-        if (id === 'custom-fonts') {
+        if (options !== undefined) {
+            options.forEach(function(el) {
         var input = document.createElement('input')
         input.style.width = '40%'
         input.style.padding = '0.1vw'
         input.style.height = '2rem'
-        input.placeholder = 'font name'
+        input.placeholder = el
+        input.type = 'text'
         getFont()
         async function getFont() {
-            await chrome.storage.sync.get("font", async function (obj) {
+            await chrome.storage.sync.get(el, async function (obj) {
                 try {
-                    if (obj.font !== undefined) {
-                        input.value = obj.font
+                    if (obj[el] !== undefined) {
+                        input.value = obj[el]
                     }
                 } catch(err) {
                     console.log(err)
@@ -231,6 +367,7 @@ function createFeature(name, description, id, credits, def, tags, urls, type) {
             })
         }
         div23.appendChild(input)
+    })
         var btn = document.createElement('button')
         btn.textContent = 'Save'
         btn.style.width = '20%'
@@ -238,9 +375,16 @@ function createFeature(name, description, id, credits, def, tags, urls, type) {
         btn.style.height = '2rem'
         btn.style.marginLeft = '0.5vw'
         btn.onclick = async function() {
-            await chrome.storage.sync.set({
-                "font": input.value
-            })
+            div23.querySelectorAll('input').forEach(async function(el) {
+                var input = el.placeholder
+                var data = {}
+                if (input.type === 'checkbox') {
+                    data[input] = el.checked
+                } else {
+                    data[input] = el.value
+                }
+            await chrome.storage.sync.set(data)
+        })
             btn.textContent = 'Saved'
             setTimeout(fixButton, 1000)
             function fixButton() {
@@ -252,6 +396,21 @@ function createFeature(name, description, id, credits, def, tags, urls, type) {
         div23.appendChild(a)
         var tags2 = document.createElement('div')
         tags2.className = 'tags'
+        if (tags.includes('Egg')) {
+            var div = document.createElement('div')
+            div.className = 'easter tag'
+            div.textContent = 'Easter Egg'
+            tags2.appendChild(div)
+            div23.className = div23.className+' eastereggFeature'
+            if (switch23.checked) {
+                if (document.querySelector('.navbar') === null) {
+                    div23.style.display = 'block'
+                } else {
+                    div23.style.display = 'inline-block'
+                }
+                div.style.display = 'inline-block'
+            }
+        }
         if (tags.includes("New")) {
             var div = document.createElement('div')
             div.className = 'new tag'
@@ -313,7 +472,7 @@ async function getFeatures() {
         } else {
             var tags = data[el].tags
         }
-        createFeature(data[el]['title'], data[el]['description'], data[el]['file'], data[el]['credits'], data[el]['default'], tags, data[el]['urls'], data[el]['type'])
+        createFeature(data[el]['title'], data[el]['description'], data[el]['file'], data[el]['credits'], data[el]['default'], tags, data[el]['urls'], data[el]['type'], data[el].options)
     })
 }
 getFeatures()
@@ -381,11 +540,11 @@ if (document.querySelector('img.seticon') !== null) {
 
 async function getFeaturesBySearch(search) {
 
-    deleteAll()
     var response = await fetch('/features/features.json')
     var data = await response.json()
     var allValues = []
     var allStuff = []
+    deleteAll()
     if (search.replaceAll(' ', '') !== '') {
     Object.keys(data).forEach(function(el) {
         
@@ -415,20 +574,20 @@ async function getFeaturesBySearch(search) {
             } else {
                 var tags = []
             }
-            createFeature(allStuff[top[top.length - 1]]['title'], allStuff[top[top.length - 1]]['description'], allStuff[top[top.length - 1]]['file'], allStuff[top[top.length - 1]]['credits'], allStuff[top[top.length - 1]]['default'], tags, allStuff[top[top.length - 1]]['urls'], allStuff[top[top.length - 1]]['type'])
+            createFeature(allStuff[top[top.length - 1]]['title'], allStuff[top[top.length - 1]]['description'], allStuff[top[top.length - 1]]['file'], allStuff[top[top.length - 1]]['credits'], allStuff[top[top.length - 1]]['default'], tags, allStuff[top[top.length - 1]]['urls'], allStuff[top[top.length - 1]]['type'], allStuff[top[top.length - 1]]['options'])
             allValues[top[top.length - 1]] = ''
             allStuff[top[top.length - 1]] = ''
         }
     }
 } else {
     Object.keys(data).forEach(function(el) {
-        createFeature(data[el].title, data[el].description, data[el].file, data[el].credits, data[el].default, data[el].tags, data[el].urls, data[el].type)
+        createFeature(data[el].title, data[el].description, data[el].file, data[el].credits, data[el].default, data[el].tags, data[el].urls, data[el].type, data[el].options)
     })
 }
 }
 
 if (document.querySelector('h2.feedback') !== null) {
 document.querySelector('h2.feedback').onclick = function() {
-    chrome.tabs.create({ url:"https://tools.scratchstatus.org/feedback/" })
+    chrome.tabs.create({ url:"https://scratchtools.app/feedback/" })
 }
 }

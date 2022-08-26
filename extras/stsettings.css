@@ -13,10 +13,35 @@ body {
     padding: 0.35rem;
     font-family: 'Space Grotesk', sans-serif;
     font-size: 0.8rem;
+    transition: box-shadow .3s;
+    cursor: default;
+}
+
+.beta:hover {
+    box-shadow: 3px 3px #f2420c80;
 }
 
 .betatab {
     color: #f2420c;
+}
+
+.easter {
+    background-color: #f20cd3;
+    border-radius: 0.4rem;
+    display: inline-block;
+    padding: 0.35rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+    transition: box-shadow .3s;
+    cursor: default;
+}
+
+.easter:hover {
+    box-shadow: 3px 3px #f20cd380;
+}
+
+.eastertab {
+    color: #f20cd3;
 }
 
 .recommended {
@@ -26,6 +51,12 @@ body {
     padding: 0.35rem;
     font-family: 'Space Grotesk', sans-serif;
     font-size: 0.8rem;
+    transition: box-shadow .3s;
+    cursor: default;
+}
+
+.recommended:hover {
+    box-shadow: 3px 3px #f2ad0c80;
 }
 
 .recommendedtab {
@@ -58,6 +89,12 @@ body {
     padding: 0.35rem;
     font-family: 'Space Grotesk', sans-serif;
     font-size: 0.8rem;
+    transition: box-shadow .3s;
+    cursor: default;
+}
+
+.new:hover {
+    box-shadow: 3px 3px #0c5df280;
 }
 
 .newtab {
@@ -71,6 +108,12 @@ body {
     padding: 0.35rem;
     font-family: 'Space Grotesk', sans-serif;
     font-size: 0.8rem;
+    transition: box-shadow .3s;
+    cursor: default;
+}
+
+.featured:hover {
+    box-shadow: 3px 3px #700cf280;
 }
 
 .featuredtab {
@@ -256,4 +299,25 @@ h3 {
 
 .title.type.active {
     color: #ff9f00;   
+}
+
+.easter.tag, .eastereggFeature {
+    display: none;
+}
+
+.creditNames {
+    color: #8e9091;
+}
+
+.modeSwitch {
+    position: fixed;
+    right: 1vw;
+    top: 2vw;
+    display: inline-block;
+    height: 2vw;
+    cursor: pointer;
+}
+
+.message {
+    font-family: 'Space Grotesk', sans-serif;
 }

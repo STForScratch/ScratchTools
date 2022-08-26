@@ -2,8 +2,8 @@
      "name": "ScratchTools",
      "short_name": "ScratchTools",
      "manifest_version": 3,
-     "version": "2.10.0",
-     "version_name": "2.10.0",
+     "version": "2.15.0",
+     "version_name": "2.15.0-beta",
      "description": "Great tools to make Scratching easier!",
      "author": "rgantzos",
      "background": {
@@ -14,7 +14,7 @@
          "storage"
      ],
      "action": {
-         "default_icon": "/extras/logo3.png",
+         "default_icon": "/extras/icon48.png",
          "default_popup": "/extras/popup.html",
          "default_title": "ScratchTools"
      },

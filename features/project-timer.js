@@ -1,51 +1,49 @@
 if (window.location.href.includes('https://scratch.mit.edu/projects/')) {
-var times = []
-var stop = []
-vm.runtime.on('PROJECT_RUN_START', function() {
-    times = []
-    stop = []
-    times.push(vm.runtime.currentMSecs)
-    getCurrentM()
-})
-vm.runtime.on('PROJECT_RUN_STOP', function() {
-    stop.push('')
-})
-function getCurrentM() {
-    if (stop.length === 0) {
-    if ((vm.runtime.currentMSecs-times[times.length-1])/1000 !== NaN) {
-    document.querySelector('div.timer.scratchtools').textContent = `${(vm.runtime.currentMSecs-times[times.length-1])/1000} secs`
-    setTimeout(getCurrentM, 50)
-    }
-    }
-}
-
-var bar = document.createElement('div')
+    if (document.scratchtoolsTimer !== undefined && document.scratchtoolsTimer !== null) {
+        var bar = document.createElement('div')
     bar.className = "timer scratchtools"
         bar.style.margin = '0'
 bar.style.marginTop = '7px'
 bar.style.marginLeft = '5px'
-        var style = document.createElement('style')
-        style.innerHTML = `
-    div.timer.scratchtools {
-        top: 50%;
-      left: 50%;
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-    }
-    `
-        //document.body.appendChild(style)
-        checkForTimerPosition()
-        function checkForTimerPosition() {
-        document.querySelectorAll('div').forEach(function(el) {
-            if (el.className.includes('controls_controls-container_')) {
-                if (document.querySelector('div.timer.scratchtools') === null) {
-    el.appendChild(bar)
-                bar.textContent = '0 secs'
-                }
-            }
-        })
-            if (document.querySelector('div.timer.scratchtools') === null) {
-                setTimeout(checkForTimerPosition, 100)
-            }
+document.querySelectorAll('div').forEach(function(el) {
+    if (el.className.includes('controls_controls-container_')) {
+        if (document.querySelector('div.timer.scratchtools') === null) {
+el.appendChild(bar)
+        bar.textContent = '0 secs'
         }
     }
+})
+    }
+ScratchTools.Scratch.vm.runtime.on('PROJECT_RUN_START', function() {
+    if (document.querySelector('div.timer.scratchtools') === null) {
+        var bar = document.createElement('div')
+    bar.className = "timer scratchtools"
+        bar.style.margin = '0'
+bar.style.marginTop = '7px'
+bar.style.marginLeft = '5px'
+document.querySelectorAll('div').forEach(function(el) {
+    if (el.className.includes('controls_controls-container_')) {
+        if (document.querySelector('div.timer.scratchtools') === null) {
+el.appendChild(bar)
+        bar.textContent = '0 secs'
+        }
+    }
+})
+    }
+    document.scratchtoolsTimer = ScratchTools.Scratch.vm.runtime.currentMSecs
+})
+ScratchTools.Scratch.vm.runtime.on("PROJECT_RUN_STOP", function() {
+    document.scratchtoolsTimer = null
+    if (document.querySelector('div.timer.scratchtools') !== null) {
+    document.querySelector('div.timer.scratchtools').remove()
+    }
+})
+setInterval(getCurrentM, 50)
+function getCurrentM() {
+    if (document.querySelector('div.timer.scratchtools') !== null) {
+    if (document.scratchtoolsTimer !== undefined) {
+    document.querySelector('div.timer.scratchtools').textContent = `${(ScratchTools.Scratch.vm.runtime.currentMSecs-document.scratchtoolsTimer)/1000} secs`
+    }
+}
+}
+}
