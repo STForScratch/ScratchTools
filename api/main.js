@@ -7,8 +7,8 @@ if (window.location.href.startsWith('https://scratch.mit.edu/projects/') && wind
  ScratchTools.type = 'Website' 
 }
 
-let allSelectors = {}
-let allCallbacksForWait = {}
+var allSelectors = {}
+var allCallbacksForWait = {}
 ScratchTools.waitForElements = function(selector, callback, id, rework) {
   if (allCallbacksForWait[selector] === undefined) {
     allCallbacksForWait[selector] = [{ "callback":callback, "id":id }]
