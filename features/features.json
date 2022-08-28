@@ -1,5 +1,14 @@
 [
 	{
+		"title": "Display Project Tags",
+		"description": "Lists all of the tags used in the project description right below the project notes and credits.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "get-project-tags",
+		"tags": ["New"],
+		"type": ["Website"]
+	},
+	{
 		"title": "Set List Item to Last",
 		"description": "Right click a 'get item [number] of [list]' to set it to select the very last item in the selected list.",
 		"credits": ["johnny263", "rgantzos"],
