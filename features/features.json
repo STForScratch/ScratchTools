@@ -1,5 +1,14 @@
 [
 	{
+		"title": "Set List Item to Last",
+		"description": "Right click a 'get item [number] of [list]' to set it to select the very last item in the selected list.",
+		"credits": ["johnny263", "rgantzos"],
+		"urls": ["https://github.com/johnny263", "https://scratch.mit.edu/users/rgantzos/"],
+		"file": "add-last-option-list",
+		"tags": ["Recommended", "New"],
+		"type": ["Editor"]
+	},
+	{
 		"title": "Open Project as Javascript",
 		"description": "Easily open any Scratch project in a Javascript editor!",
 		"credits": ["PullJosh", "maDU59"],
