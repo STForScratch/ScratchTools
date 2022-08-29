@@ -5,5 +5,5 @@ Simply edit this file and add yourself to the list in the form of a pull request
 - rgantzos
 - Scratchfangs
 - Misty/EASTER EGG GOD
-- Electro-Corp
 - Daniel4-Scratch
+- Electro-Corp
