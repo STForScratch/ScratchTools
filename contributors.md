@@ -6,3 +6,4 @@ Simply edit this file and add yourself to the list in the form of a pull request
 - Scratchfangs
 - Misty/EASTER EGG GOD
 - Electro-Corp
+- Daniel4-Scratch
