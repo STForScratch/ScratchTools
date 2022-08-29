@@ -1,5 +1,32 @@
 [
 	{
+		"title": "Link Featured Projects to Studio",
+		"description": "Links the Featured Projects box on the homepage to the Propose Projects to Be Featured studio.",
+		"credits": ["johnny263", "rgantzos"],
+		"urls": ["https://github.com/johnny263", "https://scratch.mit.edu/users/rgantzos/"],
+		"file": "link-to-propose",
+		"tags": ["New"],
+		"type": ["Website"]
+	},
+	{
+		"title": "Display Project Tags",
+		"description": "Lists all of the tags used in the project description right below the project notes and credits.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "get-project-tags",
+		"tags": ["New"],
+		"type": ["Website"]
+	},
+	{
+		"title": "Set List Item to Last",
+		"description": "Right click a 'get item [number] of [list]' to set it to select the very last item in the selected list.",
+		"credits": ["johnny263", "rgantzos"],
+		"urls": ["https://github.com/johnny263", "https://scratch.mit.edu/users/rgantzos/"],
+		"file": "add-last-option-list",
+		"tags": ["Recommended", "New"],
+		"type": ["Editor"]
+	},
+	{
 		"title": "Open Project as Javascript",
 		"description": "Easily open any Scratch project in a Javascript editor!",
 		"credits": ["PullJosh", "maDU59"],
@@ -627,7 +654,7 @@
 	},
 	{
 		"title": "Replace Scratch News with Recent Projects",
-		"description": "Replaces the Scratch News section on the home page with your recently shared projects.",
+		"description": "Replaces the Scratch News section on the homepage with your recently shared projects.",
 		"credits": ["Scratchfangs", "rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/scratchfangs/", "https://scratch.mit.edu/users/rgantzos/"],
 		"file": "my-recent-projects",
