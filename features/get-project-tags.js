@@ -1,6 +1,18 @@
 function addTags() {
     if (document.querySelector('.scratchtoolsTagMain') === null) {
-var div = document.createElement('div')
+var allTags = []
+document.querySelectorAll('.project-description').forEach(function(e) {
+e.querySelectorAll('a').forEach(function(el) {
+    if (el.href.startsWith('https://scratch.mit.edu/search/projects?q=') && el.textContent.startsWith('#')) {
+        if (!allTags.includes(el.textContent.toLowerCase())) {
+        allTags.push(el)
+        }
+    }
+})
+})
+console.log(allTags.length)
+if (allTags.length !== 0) {
+    var div = document.createElement('div')
 div.className = 'description-block scratchtoolsTagMain'
 var divTop = document.createElement('div')
 divTop.className = 'project-textlabel'
@@ -14,11 +26,7 @@ divBottom.className = 'project-description'
 divBottom.style.overflowWrap = 'anywhere'
 div.appendChild(divBottom)
 document.querySelector('.flex-row.project-notes').appendChild(div)
-var allTags = []
-document.querySelectorAll('a').forEach(function(el) {
-    if (el.href.startsWith('https://scratch.mit.edu/search/projects?q=') && el.textContent.startsWith('#')) {
-        if (!allTags.includes(el.textContent.toLowerCase())) {
-        allTags.push(el.textContent.toLowerCase())
+    allTags.forEach(function(el) {
         var miniDiv = document.createElement('a')
 miniDiv.className = 'scratchtoolsTag'
 miniDiv.textContent = el.textContent.toLowerCase()
@@ -29,9 +37,8 @@ miniDiv.style.backgroundColor = '#4d97ff'
 miniDiv.style.margin = '0.3rem'
 miniDiv.style.borderRadius = '0.3rem'
 divBottom.appendChild(miniDiv)
-        }
-    }
-})
+    })
+}
     }
 }
 ScratchTools.waitForElements('.flex-row.project-notes', addTags, 'tags', false)
