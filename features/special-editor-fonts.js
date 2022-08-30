@@ -1,4 +1,4 @@
-const fonts = ['Arial', 'Helvetica', 'Verdana', 'Impact', 'Monospace', 'Handwriting']
+const fonts = ['Arial', 'Helvetica', 'Verdana', 'Impact', 'Monospace']
 
 function addFonts() {
     if (document.querySelector('.font-dropdown_'+fonts[0]+'_2fPOh') === null && document.querySelector('body > div.Popover.Popover-below.font-dropdown_mod-unselect_33YJN.font-dropdown_font-dropdown_3XyMU > div > div') !== null) {

@@ -1,12 +1,21 @@
 [
 	{
-		"title": "Link Featured Projects to Studio",
-		"description": "Links the Featured Projects box on the homepage to the Propose Projects to Be Featured studio.",
-		"credits": ["johnny263", "rgantzos"],
-		"urls": ["https://github.com/johnny263", "https://scratch.mit.edu/users/rgantzos/"],
-		"file": "link-to-propose",
-		"tags": ["New"],
-		"type": ["Website"]
+		"title": "More Editor Fonts",
+		"description": "Adds more fonts to choose from in the paint editor. They look nicer and are more modern.",
+		"credits": ["rgantzos", "Lasted10"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/Lasted10_Forever/"],
+		"file": "special-editor-fonts",
+		"tags": ["Recommended","New","Beta"],
+		"type": ["Editor"]
+	},
+	{
+		"title": "Opacity in Costume Editor",
+		"description": "Adds an input to the costume editor where you can set the opacity of elements.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "opacity-setter",
+		"tags": ["Recommended", "New"],
+		"type": ["Editor"]
 	},
 	{
 		"title": "Display Project Tags",
@@ -14,6 +23,15 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "get-project-tags",
+		"tags": ["New"],
+		"type": ["Website"]
+	},
+	{
+		"title": "Link Featured Projects to Studio",
+		"description": "Links the Featured Projects box on the homepage to the Propose Projects to Be Featured studio.",
+		"credits": ["johnny263", "rgantzos"],
+		"urls": ["https://github.com/johnny263", "https://scratch.mit.edu/users/rgantzos/"],
+		"file": "link-to-propose",
 		"tags": ["New"],
 		"type": ["Website"]
 	},
@@ -36,31 +54,13 @@
 		"type": ["Editor"]
 	},
 	{
-		"title": "Opacity in Costume Editor",
-		"description": "Adds an input to the costume editor where you can set the opacity of elements.",
-		"credits": ["rgantzos"],
-		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
-		"file": "opacity-setter",
-		"tags": ["Recommended", "New"],
-		"type": ["Editor"]
-	},
-	{
 		"title": "Online Scratchers in Multiplayer Game",
 		"description": "On project pages, displays all of the Scratchers currently in that multiplayer game.",
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "cloud-scratchers",
-		"tags": ["Beta"],
+		"tags": ["New"],
 		"type": ["Website"]
-	},
-	{
-		"title": "More Editor Fonts",
-		"description": "Adds more fonts to choose from in the paint editor. They look nicer and are more modern.",
-		"credits": ["rgantzos", "Lasted10"],
-		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/Lasted10_Forever/"],
-		"file": "special-editor-fonts",
-		"tags": ["Recommended","New","Beta"],
-		"type": ["Editor"]
 	},
 	{
 		"title": "2.0 Editor",
