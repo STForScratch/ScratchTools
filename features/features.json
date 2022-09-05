@@ -1,5 +1,14 @@
 [
 	{
+		"title": "Hide Studio Activity Messages",
+		"description": "Hide the studio activity messages from the messages page- they pile up quickly and can get annoying.",
+		"credits": ["rgantzos", "MaterArc"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/MaterArc/"],
+		"file": "hide-studio-messages",
+		"tags": ["New"],
+		"type": ["Website"]
+	},
+	{
 		"title": "Preview Textboxes",
 		"description": "Preview your profile About Me and What I'm Working On, and your projects' Instructions and Notes and Credits, so that you can see what it will look like to other users!",
 		"credits": ["rgantzos", "Giolaboman"],
