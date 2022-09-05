@@ -23,7 +23,7 @@
 		"credits": ["rgantzos", "Lasted10"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/Lasted10_Forever/"],
 		"file": "special-editor-fonts",
-		"tags": ["Recommended","New","Beta"],
+		"tags": ["Recommended","Beta"],
 		"type": ["Editor"]
 	},
 	{
@@ -32,7 +32,7 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "opacity-setter",
-		"tags": ["Recommended", "New"],
+		"tags": ["Recommended"],
 		"type": ["Editor"]
 	},
 	{
@@ -41,7 +41,7 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "get-project-tags",
-		"tags": ["New"],
+		"tags": [],
 		"type": ["Website"]
 	},
 	{
@@ -50,7 +50,7 @@
 		"credits": ["johnny263", "rgantzos"],
 		"urls": ["https://github.com/johnny263", "https://scratch.mit.edu/users/rgantzos/"],
 		"file": "link-to-propose",
-		"tags": ["New"],
+		"tags": [],
 		"type": ["Website"]
 	},
 	{
@@ -59,7 +59,7 @@
 		"credits": ["johnny263", "rgantzos"],
 		"urls": ["https://github.com/johnny263", "https://scratch.mit.edu/users/rgantzos/"],
 		"file": "add-last-option-list",
-		"tags": ["Recommended", "New"],
+		"tags": ["Recommended"],
 		"type": ["Editor"]
 	},
 	{
@@ -68,7 +68,7 @@
 		"credits": ["PullJosh", "maDU59"],
 		"urls": ["https://scratch.mit.edu/users/PullJosh/", "https://github.com/maDU59"],
 		"file": "leopard",
-		"tags": ["Featured", "New"],
+		"tags": ["Featured"],
 		"type": ["Editor"]
 	},
 	{
@@ -77,7 +77,7 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "cloud-scratchers",
-		"tags": ["New"],
+		"tags": [],
 		"type": ["Website"]
 	},
 	{
