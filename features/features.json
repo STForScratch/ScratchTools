@@ -1,5 +1,14 @@
 [
 	{
+		"title": "Preview Textboxes",
+		"description": "Preview your profile About Me and What I'm Working On, and your projects' Instructions and Notes and Credits, so that you can see what it will look like to other users!",
+		"credits": ["rgantzos", "Giolaboman"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/Giolaboman/"],
+		"file": "preview-textboxes",
+		"tags": ["Recommended","New"],
+		"type": ["Website"]
+	},
+	{
 		"title": "More Editor Fonts",
 		"description": "Adds more fonts to choose from in the paint editor. They look nicer and are more modern.",
 		"credits": ["rgantzos", "Lasted10"],
