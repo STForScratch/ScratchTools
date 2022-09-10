@@ -1,5 +1,23 @@
 [
 	{
+		"title": "Infinite Backpack Scrolling",
+		"description": "Scroll through the backpack until you reach the very end (does take some time to load, but loads automatically).",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "infinite-backpack-scrolling",
+		"tags": ["New","Recommended"],
+		"type": ["Editor"]
+	},
+	{
+		"title": "Default to Local",
+		"description": "When creating a variable, sets the default to For This Sprite Only, rather than For All Sprites.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "default-to-local",
+		"tags": ["New"],
+		"type": ["Editor"]
+	},
+	{
 		"title": "Hide Studio Activity Messages",
 		"description": "Hide the studio activity messages from the messages page- they pile up quickly and can get annoying.",
 		"credits": ["rgantzos", "MaterArc"],
