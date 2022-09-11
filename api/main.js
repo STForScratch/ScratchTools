@@ -115,3 +115,16 @@ ScratchTools.Features.get = function(search) {
   })
   return all[search]
 }
+
+ScratchTools.createProjectButton = function(text, callback, id) {
+  var button = document.createElement('button')
+  button.textContent = text
+  button.className = 'button action-button'
+  button.dataset.id = id
+  ScratchTools.waitForElements('.flex-row.action-buttons', function(el) {
+    el.appendChild(button)
+    button.onclick = function() {
+      callback(button)
+    }
+  }, "addProjectButton-"+id, false)
+}
