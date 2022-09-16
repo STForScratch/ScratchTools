@@ -1,4 +1,4 @@
-update("v2.14.0", "This new version included multiple new features, enhancements, easter eggs, and bug fixes. We even added a new 2.0 theme for the editor and an easy way to comment on your own profile when the comments are closed!")
+update("v2.16.0", "ScratchTools v2.16.0 includes a few new features, bug fixes, enhancements, and behind-the-scenes changes. You can now preview your profile and project textboxes, hide studio activity messages, and more! We’ve even upgraded the compact navbar feature!")
 function update(updateVersion, updateDescription) {
     if (document.querySelector('.scratchtoolsUpdateInfo') === null) {
         var box = document.createElement('div')
