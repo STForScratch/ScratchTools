@@ -78,7 +78,8 @@
 		"urls": ["https://github.com/johnny263", "https://scratch.mit.edu/users/rgantzos/"],
 		"file": "add-last-option-list",
 		"tags": ["Recommended"],
-		"type": ["Editor"]
+		"type": ["Editor"],
+		"dynamic":true
 	},
 	{
 		"title": "Open Project as Javascript",
@@ -159,7 +160,8 @@
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "block-log",
 		"tags": ["Featured"],
-		"type": ["Editor"]
+		"type": ["Editor"],
+		"dynamic":true
 	},
 	{	
 		"title": "Scrollable List Items",
@@ -196,8 +198,8 @@
 		"file": "custom-fonts",
 		"tags": ["Featured"],
 		"type": ["Website", "Theme"],
-		"world": "ISOLATED",
-		"options":["font"]
+		"options":["font"],
+		"dynamic":true
 	},
 	{
 		"title": "Project Timer",
@@ -233,7 +235,8 @@
 		"urls": ["https://scratch.mit.edu/users/JefferyTheSuperKat/", "https://scratch.mit.edu/users/rgantzos/"],
 		"file": "anti-generic",
 		"tags": ["Beta", "Featured"],
-		"type": ["Website", "Theme"]
+		"type": ["Website", "Theme"],
+		"dynamic":true
 	},
 	{	
 		"title": "Collapse Blocks",
@@ -287,7 +290,8 @@
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "check-if-trending",
 		"tags": [],
-		"type": ["Website"]
+		"type": ["Website"],
+		"dynamic":true
 	},
 	{	
 		"title": "Link Users in Forum Activity",
@@ -388,7 +392,8 @@
 		"file": "block-messages",
 		"tags": [],
 		"world": "ISOLATED",
-		"type": ["Website"]
+		"type": ["Website"],
+		"dynamic":true
 	},
 	{
 		"title": "Editor Dark Mode",
@@ -442,7 +447,8 @@
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "april-fools",
 		"tags": ["Egg"],
-		"type": ["Editor", "Theme"]
+		"type": ["Editor", "Theme"],
+		"dynamic":true
 	},
 	{
 		"title": "Project Link as Title",
@@ -486,7 +492,8 @@
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "advanced-search",
 		"tags": ["Beta"],
-		"type": ["Website"]
+		"type": ["Website"],
+		"dynamic":true
 	},
 	{
 		"title": "Clone Counter",
@@ -495,7 +502,8 @@
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "clone-counter",
 		"tags": [],
-		"type": ["Website"]
+		"type": ["Website"],
+		"dynamic":true
 	},
 	{
 		"title": "Display Sprite Data",
@@ -513,7 +521,8 @@
 		"urls": ["https://scratch.mit.edu/users/Scratchfangs/"],
 		"file": "box-shadows",
 		"tags": [],
-		"type": ["Website", "Theme"]
+		"type": ["Website", "Theme"],
+		"dynamic":true
 	},
 	{
 		"title": "Aviate Statuses",
@@ -522,7 +531,8 @@
 		"urls": ["https://github.com/MystPi/", "https://scratch.mit.edu/users/rgantzos/"],
 		"file": "aviate",
 		"tags": [],
-		"type": ["Website"]
+		"type": ["Website"],
+		"dynamic":true
 	},
 	{
 		"title": "Project Idea Generator",

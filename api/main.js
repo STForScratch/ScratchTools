@@ -115,3 +115,16 @@ ScratchTools.Features.get = function(search) {
   })
   return all[search]
 }
+
+var allDisableFunctions = {}
+ScratchTools.setDisable = function(feature, f) {
+  allDisableFunctions[feature] = f
+  ScratchTools.console.log(`Set disable function for ${feature}.`)
+}
+
+ScratchTools.disable = function(feature) {
+  if (allDisableFunctions[feature]) {
+    allDisableFunctions[feature]()
+    ScratchTools.console.log(`Disabled ${feature}.`)
+  }
+}

@@ -6,6 +6,7 @@ document.addEventListener('keydown', function(event) {
 
     function keydown(e) {
         if (e.keyCode == 76 && e.shiftKey && e.ctrlKey) {
+            if (displayBlockLog) {
             if (document.querySelector('#mydiv') === null) {
             addProjectLog()
             } else {
@@ -16,6 +17,7 @@ document.addEventListener('keydown', function(event) {
             } else {
                 return false;
             }
+        }
         }
     }
 })
@@ -138,3 +140,9 @@ if (ScratchTools.Scratch.blockly.getMainWorkspace().undoStack_.length === 0) {
 
 setInterval(logEvents, 250)
 }
+var displayBlockLog = true
+
+ScratchTools.setDisable('block-log', function() {
+    document.querySelector('#mydiv').remove()
+    displayBlockLog = false
+})
