@@ -10,6 +10,7 @@ async function checkfor(user) {
     if(data.hasOwnProperty('profile')){
     var logo = data['profile']['images']['90x90'];
 var userbox = document.createElement('div')
+userbox.className = 'scratchtoolsAdvancedSearch'
 var useravatar = document.createElement('img')
 var username = document.createElement('a')
 username.textContent = `${user} is a user.`
@@ -30,5 +31,8 @@ userbox.style.width = '50vw'
 userbox.style.borderRadius = '10px'
 document.querySelector('#projectBox').prepend(userbox)
 }
+ScratchTools.setDisable('advanced-search', function() {
+    document.querySelector('.scratchtoolsAdvancedSearch').remove()
+})
     }
 }

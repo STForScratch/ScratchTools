@@ -1,3 +1,4 @@
+var countClonesStill = true
 function addCloneCounter() {
 	if (document.querySelector('progress.clonecount.scratchtools') === null) {
 		var bar = document.createElement('progress')
@@ -33,8 +34,14 @@ function addCloneCounter() {
 		function cloneCount() {
 			document.querySelector('progress.clonecount.scratchtools').value = ScratchTools.Scratch.vm.runtime._cloneCounter.toString()
 			document.querySelector('progress.clonecount.scratchtools').style.backgroundColor = ScratchTools.Scratch.vm.runtime._cloneCounter.toString()
+			if (countClonesStill) {
 			setTimeout(cloneCount, 200)
+			}
 		}
 	}
 }
 addCloneCounter()
+ScratchTools.setDisable('clone-counter', function() {
+	countClonesStill = false
+	document.querySelector('.clonecount').remove()
+})

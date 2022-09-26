@@ -116,6 +116,18 @@ ScratchTools.Features.get = function(search) {
   return all[search]
 }
 
+var allDisableFunctions = {}
+ScratchTools.setDisable = function(feature, f) {
+  allDisableFunctions[feature] = f
+  ScratchTools.console.log(`Set disable function for ${feature}.`)
+}
+
+ScratchTools.disable = function(feature) {
+  if (allDisableFunctions[feature]) {
+    allDisableFunctions[feature]()
+    ScratchTools.console.log(`Disabled ${feature}.`)
+  }
+
 ScratchTools.createProjectButton = function(text, callback, id) {
   var button = document.createElement('button')
   button.textContent = text
@@ -127,4 +139,5 @@ ScratchTools.createProjectButton = function(text, callback, id) {
       callback(button)
     }
   }, "addProjectButton-"+id, false)
+  
 }

@@ -1,68 +1,69 @@
 function cleanUp() {
+	if (allowCleanUp) {
 	var titles = []
 	document.querySelectorAll('div.thumbnail.project').forEach(function(el) {
 		var title = el.querySelector('div.thumbnail-title').firstChild.textContent.toLowerCase()
 		if (title.includes("part ")) {
 			console.log(title)
-			el.remove()
+			el.style.display = 'none'
 		}
 		if (title.includes("#trending")) {
 			console.log(title)
-			el.remove()
+			el.style.display = 'none'
 		}
 		if (title.includes("speedrun platformer")) {
 			console.log(title)
-			el.remove()
+			el.style.display = 'none'
 		}
 		if (title.includes("cave platformer")) {
 			console.log(title)
-			el.remove()
+			el.style.display = 'none'
 		}
 		if (title.includes("dark platformer")) {
 			console.log(title)
-			el.remove()
+			el.style.display = 'none'
 		}
 		if (title.includes("jungle platformer")) {
 			console.log(title)
-			el.remove()
+			el.style.display = 'none'
 		}
 		if (title.includes("platformer 1")) {
 			console.log(title)
-			el.remove()
+			el.style.display = 'none'
 		}
 		if (title.includes("platformer 2")) {
 			console.log(title)
-			el.remove()
+			el.style.display = 'none'
 		}
 		if (title.includes("platformer 3")) {
 			console.log(title)
-			el.remove()
+			el.style.display = 'none'
 		}
 		if (title.includes("dark") && title.includes("platformer")) {
 			console.log(title)
-			el.remove()
+			el.style.display = 'none'
 		}
 		if (title.includes("generic") && title.includes("platformer")) {
 			console.log(title)
-			el.remove()
+			el.style.display = 'none'
 		}
 		if (title.includes("jungle") && title.includes("platformer")) {
 			console.log(title)
-			el.remove()
+			el.style.display = 'none'
 		}
 		if (title.includes("night") && title.includes("platformer")) {
 			console.log(title)
-			el.remove()
+			el.style.display = 'none'
 		}
 		if (countInstances(title, "#") > 3) {
 			console.log(title)
-			el.remove()
+			el.style.display = 'none'
 		}
 		titles.forEach(function(el2) {
 			if (similarity(el2, title) > 0.5) {
 				if (el !== undefined && el !== null) {
 					console.log(title)
-					el.remove()
+					el.style.display = 'none'
 				}
 			}
 		})
@@ -117,6 +118,14 @@ function cleanUp() {
 		setTimeout(cleanUp, 200)
 	}
 }
+}
 if (window.location.href.includes('https://scratch.mit.edu/explore/')) {
+	var allowCleanUp = true
 	cleanUp()
+	ScratchTools.setDisable('anti-generic', function() {
+		allowCleanUp = false
+		document.querySelectorAll('div.thumbnail.project').forEach(function(el) {
+			el.style.display = null
+		})
+	})
 }

@@ -10,6 +10,9 @@ async function getTheUser() {
 			i.title = "This is an Aviate Status being displayed with ScratchTools."
 			i.className = 'aviate scratchtools'
 			document.querySelector('div.header-text').appendChild(i)
+			ScratchTools.setDisable('aviate', function() {
+				i.remove()
+			})
 		}
 	}
 }

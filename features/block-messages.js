@@ -56,7 +56,7 @@ async function editMessages() {
                         if (el.querySelector('a.social-messages-profile-link') !==null) {
                             if (users.includes(el.querySelector('a.social-messages-profile-link').textContent.toLowerCase())) {
                                 console.log(el)
-                                el.remove()
+                                el.style.display = 'none'
                             }
                         }
                     })
@@ -72,7 +72,7 @@ if (window.location.href.includes('https://scratch.mit.edu/users/')) {
     var user = window.location.href.replace('https://scratch.mit.edu/users/', '').replaceAll('/', '').toLowerCase()
     if (user.toLowerCase() !== document.querySelector('#topnav > div > div > ul.account-nav.logged-in > li.logged-in-user.dropdown > div > ul > li:nth-child(1) > a').href.replace('https://scratch.mit.edu/users/', '').replace('/', '').toLowerCase()) {
 var div = document.createElement('div')
-div.className = 'buttons'
+div.className = 'buttons scratchtoolsBlockPerson'
 div.style.right = '120px'
 chrome.storage.sync.get("block", async function (obj) {
     if (obj.block === undefined) {
@@ -124,3 +124,4 @@ document.body.appendChild(style)
     }
 }
 }
+

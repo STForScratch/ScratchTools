@@ -13,6 +13,9 @@ if (window.location.href.startsWith('https://scratch.mit.edu/projects/')) {
                 span.textContent = ` • #${i+1} on Trending`
                 span.className = 'scratchtoolsTrendingInfo'
                 document.querySelector('div.share-date').appendChild(span)
+                ScratchTools.setDisable('check-if-trending', function() {
+                    document.querySelector('.scratchtoolsTrendingInfo').remove()
+                })
                 }
             }
         })

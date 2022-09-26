@@ -159,6 +159,11 @@ body {
 }
 waitforready()
 
+ScratchTools.setDisable('april-fools', function() {
+	reset()
+	document.querySelector('.stmodes').remove()
+})
+
 function waitforready() {
 	if (document.querySelector('div.menu-bar_main-menu_3wjWH') === null) {
 		setTimeout(waitforready, 100)
