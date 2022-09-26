@@ -2,8 +2,8 @@
 	{
 		"title": "Infinite Backpack Scrolling",
 		"description": "Scroll through the backpack until you reach the very end (does take some time to load, but loads automatically).",
-		"credits": ["rgantzos"],
-		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"credits": ["rgantzos","johnny263"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/","https://github.com/johnny263"],
 		"file": "infinite-backpack-scrolling",
 		"tags": ["New","Recommended"],
 		"type": ["Editor"]
