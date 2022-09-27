@@ -371,14 +371,14 @@ function createFeature(
           features.forEach(function (el) {
             if (el.file === switch23.id) {
               if (el.dynamic) {
-                console.log("yasss")
+                console.log("yasss");
                 chrome.tabs.query({}, function (tabs) {
                   for (var i = 0; i < tabs.length; i++) {
                     try {
                       chrome.scripting.executeScript({
                         target: { tabId: tabs[i].id },
                         files: [`/features/${el.file}.js`],
-                        world: 'MAIN'
+                        world: "MAIN",
                       });
                     } catch (err) {}
                   }
@@ -518,6 +518,21 @@ function createFeature(
         tags2.appendChild(div);
       }
       div23.appendChild(tags2);
+      async function getWarnings() {
+        var response = await fetch("/features/features.json");
+        var data = await response.json();
+        data.forEach(function (el) {
+          if (el.file === id) {
+            if (el.warning) {
+              var warning = document.createElement("div");
+              warning.textContent = el.warning;
+              warning.className = "warning";
+              div23.insertBefore(warning, div23.querySelector("label"));
+            }
+          }
+        });
+      }
+      getWarnings();
       document.querySelector("div.settings").appendChild(div23);
     });
   }
