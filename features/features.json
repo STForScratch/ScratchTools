@@ -88,7 +88,8 @@
 		"urls": ["https://scratch.mit.edu/users/PullJosh/", "https://github.com/maDU59"],
 		"file": "leopard",
 		"tags": ["Featured"],
-		"type": ["Editor"]
+		"type": ["Editor"],
+		"dynamic":true
 	},
 	{
 		"title": "Online Scratchers in Multiplayer Game",
