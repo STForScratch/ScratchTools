@@ -89,7 +89,8 @@
 		"file": "leopard",
 		"tags": ["Featured"],
 		"type": ["Editor"],
-		"dynamic":true
+		"dynamic":true,
+		"warning":"The button is no longer in the navbar, it is now in the File dropdown menu."
 	},
 	{
 		"title": "Online Scratchers in Multiplayer Game",

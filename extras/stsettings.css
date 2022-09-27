@@ -321,3 +321,12 @@ h3 {
 .message {
     font-family: 'Space Grotesk', sans-serif;
 }
+
+.warning {
+    margin-left: 0.1rem;
+    background-color: #ff9f00;
+    padding: 0.4rem;
+    border-radius: 0.2rem;
+    border: 4px solid rgba(255, 157, 0, 0.5);
+    width: 250px;
+}
