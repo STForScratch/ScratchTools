@@ -1,7 +1,23 @@
-<p align="center" style="text-align: center;">
-  <img src="https://cdn.glitch.global/cb2bf217-ffc5-4d43-a8ef-956942c7aa4d/favicon.png?v=1655008522709" style="width: 128px;">
-  <h1 align="center">Welcome to ScratchTools!</h1>
-</p>
+<br />
+<div align="center">
+  <a href="https://github.com/STForScratch/ScratchTools">
+    <img src="https://cdn.glitch.global/cb2bf217-ffc5-4d43-a8ef-956942c7aa4d/favicon.png?v=1655008522709" alt="Logo" width="100" height="100">
+    <h1 align="center">Welcome to ScratchTools!</h1>
+  </a>
+
+  <p align="center">
+    Extension for which makes Scratch much easier
+    <br />
+    <a href="https://github.com/STForScratch/ScratchTools"><strong>Explore the documents »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/STForScratch/ScratchTools">See demo</a>
+    ·
+    <a href="https://github.com/STForScratch/ScratchTools/issues/new?assignees=&labels=feature&template=bug_report.md&title=">Report a Bug</a>
+    ·
+    <a href="https://github.com/STForScratch/ScratchTools/issues/new?assignees=&labels=feature&template=feature_request.md&title=">Request feature</a>
+  </p>
+</div>  
 
 ### About Us
 We're a browser extension for the Scratch website that makes Scratch look, work, and feel even better. We're fully customizeable, so you can build the Scratch website based on just how you want it to look! We're the fastest-growing browser extension for Scratch, and we're run by the community! Anyone can build a feature!
