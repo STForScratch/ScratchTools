@@ -13,9 +13,9 @@
     <br />
     <a href="https://github.com/STForScratch/ScratchTools">See demo</a>
     ·
-    <a href="https://github.com/STForScratch/ScratchTools/issues">Report a Bug</a>
+    <a href="https://github.com/STForScratch/ScratchTools/issues/new?assignees=&labels=feature&template=bug_report.md&title=">Report a Bug</a>
     ·
-    <a href="https://github.com/STForScratch/ScratchTools/issues">Request feature</a>
+    <a href="https://github.com/STForScratch/ScratchTools/issues/new?assignees=&labels=feature&template=feature_request.md&title=">Request feature</a>
   </p>
 </div>  
 
