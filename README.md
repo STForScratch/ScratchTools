@@ -20,7 +20,7 @@
 </div>  
 
 ### About Us
-We're a browser extension for the Scratch website that makes Scratch look, work, and feel even better. We're fully customizeable, so you can build the Scratch website based on just how you want it to look! We're the fastest-growing browser extension for Scratch, and we're run by the community! Anyone can build a feature!
+We're a browser extension for the Scratch website that makes Scratch look, work, and feel even better. We're fully customizable, so you can build the Scratch website based on just how you want it to look! We're the fastest-growing browser extension for Scratch, and we're run by the community! Anyone can build a feature!
 
 ### Installing
 There are multiple ways of installing.
@@ -35,7 +35,7 @@ It's not very hard to build a feature, and if you're ever having trouble, our de
 3. **Edit** the `/features/features.json` file. This is one of the most important files. Make sure you understand JSON before you edit this, or use a [JSON validator](https://jsonlint.com) after editing to make sure it's all correct. In this file, you'll notice each and every ScratchTools feature. Follow the formatting, and add your feature to the bottom of the list. Make sure that the file name is correct, along with the credits, urls, description, and, of course, the title.
 4. **Go** to the main repository (the one you're currently in), and create a pull request with the changes from your fork. If you don't know how to do this, you can [quickly read this article from GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork). Now, our developers can review your changes and make sure everything works well! You'll get credit for all of your changes as well!
 
-Remember, our developers are always there for you. If you ever need help or have questions, feel free to ask us. You can create an issue or [join our Discord server](https://discord.gg/5AkUsCbEsy). If you need code help, we can help you as well. Also ScratchTools has a [YouTube channel](https://www.youtube.com/channel/UCYZiKwxZ_8gJaMwbxHmP0KA) with tutorials such as how to make the website a custom font or jow to install the Beta version of ScratchTools to test out features before they are released to the public.
+Remember, our developers are always there for you. If you ever need help or have questions, feel free to ask us. You can create an issue or [join our Discord server](https://discord.gg/5AkUsCbEsy). If you need code help, we can help you as well. Also ScratchTools has a [YouTube channel](https://www.youtube.com/channel/UCYZiKwxZ_8gJaMwbxHmP0KA) with tutorials such as how to make the website use a custom font or how to install the Beta version of ScratchTools to test out features before they are released to the public.
 
 ### Our APIs
 Our APIs are growing slowly, but, as of right now, we have two main ones that we use. As long as your feature's world isn't set to "ISOLATED", these APIs will work for you!
