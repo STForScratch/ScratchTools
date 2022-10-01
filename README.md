@@ -46,6 +46,9 @@ Using `ScratchTools.Auth`, you can access the authentication info for the signed
 Using `ScratchTools.Scratch.blockly` and `ScratchTools.Scratch.vm`, you can access the Blockly and Virtual Machine from inside the editor (or on the project page with vm). Blockly must wait for the editor to load, but the virtual machine is ready instantly.
 ##### Blockly Context Menus
 If you want to control what appears in a context menu, you easily can with the `ScratchTools.Scratch.waitForContextMenu()` API. The only input you need is JSON, which must include the block ID for the context menu, the ID you want to set for the context menu option (lets you change the context menu option, so don't use the same ID as another feature), and the callback for when the context menu is opened. The callback function will also have an input, which is the context menu itself. That way, you can add the context menu option when the context menu is opened.
+##### Sound , GUI and Paint-Mode
+Using `ScratchTools.Scratch.scratchSound`and `ScratchTools.Scratch.scratchGui`, you can return sound from the editor as well as access Graphical User Interface inside the editor. `ScratchTools.Scratch.scratchPaint` can be used in selecting the paint editor mode.
+
 #### Logging
 Logging can be very important, especially when testing. You can use `ScratchTools.console.log()`, `ScratchTools.console.warn()`, and `ScratchTools.console.error()` to log, warn, and error in the console, specifically for ScratchTools.
 
@@ -56,3 +59,4 @@ Not only do you have to be a developer to code for ScratchTools (technically, we
 - **Graphic Designer.** If you're an artist or designer, you can help us! We need banners, cool art, and more! We love all kinds of styles, you can contact us by creating an issue or contacting a developer!
 - **Brainstorming.** If you have ideas, you can suggest them on our [feedback section](https://scratchtools.app/feedback/)!
 - **Posting.** Feel free to post about us on social media! We'd love to help as many Scratchers as possible, so every post helps!
+
