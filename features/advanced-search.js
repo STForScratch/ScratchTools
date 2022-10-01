@@ -31,7 +31,7 @@ userbox.style.width = '50vw'
 userbox.style.borderRadius = '10px'
 document.querySelector('#projectBox').prepend(userbox)
 }
-ScratchTools.setDisable('advanced-search', function() {
+ScratchTools.setDisable('advanced-search', ()=> {
     document.querySelector('.scratchtoolsAdvancedSearch').remove()
 })
     }
