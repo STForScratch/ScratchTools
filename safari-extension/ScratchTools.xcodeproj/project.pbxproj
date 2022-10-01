@@ -1,0 +1,983 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3412774F28E854A600227C66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3412774E28E854A600227C66 /* AppDelegate.swift */; };
+		3412775128E854A600227C66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3412775028E854A600227C66 /* SceneDelegate.swift */; };
+		3412775428E854A600227C66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3412775228E854A600227C66 /* LaunchScreen.storyboard */; };
+		3412775728E854A600227C66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3412775528E854A600227C66 /* Main.storyboard */; };
+		3412776028E854A600227C66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3412775F28E854A600227C66 /* AppDelegate.swift */; };
+		3412776328E854A600227C66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3412776128E854A600227C66 /* Main.storyboard */; };
+		3412776B28E854A600227C66 /* ScratchTools Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3412776A28E854A600227C66 /* ScratchTools Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3412777528E854A600227C66 /* ScratchTools Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3412777428E854A600227C66 /* ScratchTools Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3412777B28E854A600227C66 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 3412773E28E854A500227C66 /* Main.html */; };
+		3412777C28E854A600227C66 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 3412773E28E854A500227C66 /* Main.html */; };
+		3412777D28E854A600227C66 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3412774028E854A500227C66 /* Icon.png */; };
+		3412777E28E854A600227C66 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3412774028E854A500227C66 /* Icon.png */; };
+		3412777F28E854A600227C66 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 3412774128E854A500227C66 /* Style.css */; };
+		3412778028E854A600227C66 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 3412774128E854A500227C66 /* Style.css */; };
+		3412778128E854A600227C66 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 3412774228E854A500227C66 /* Script.js */; };
+		3412778228E854A600227C66 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 3412774228E854A500227C66 /* Script.js */; };
+		3412778328E854A600227C66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3412774328E854A500227C66 /* ViewController.swift */; };
+		3412778428E854A600227C66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3412774328E854A500227C66 /* ViewController.swift */; };
+		3412778528E854A600227C66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3412774428E854A600227C66 /* Assets.xcassets */; };
+		3412778628E854A600227C66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3412774428E854A600227C66 /* Assets.xcassets */; };
+		3412778728E854A600227C66 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3412774628E854A600227C66 /* SafariWebExtensionHandler.swift */; };
+		3412778828E854A600227C66 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3412774628E854A600227C66 /* SafariWebExtensionHandler.swift */; };
+		341277A528E854A700227C66 /* CODE_OF_CONDUCT.md in Resources */ = {isa = PBXBuildFile; fileRef = 3412779A28E854A700227C66 /* CODE_OF_CONDUCT.md */; };
+		341277A628E854A700227C66 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3412779B28E854A700227C66 /* LICENSE */; };
+		341277A728E854A700227C66 /* features in Resources */ = {isa = PBXBuildFile; fileRef = 3412779C28E854A700227C66 /* features */; };
+		341277A828E854A700227C66 /* _metadata in Resources */ = {isa = PBXBuildFile; fileRef = 3412779D28E854A700227C66 /* _metadata */; };
+		341277A928E854A700227C66 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3412779E28E854A700227C66 /* README.md */; };
+		341277AA28E854A700227C66 /* contributors.md in Resources */ = {isa = PBXBuildFile; fileRef = 3412779F28E854A700227C66 /* contributors.md */; };
+		341277AB28E854A700227C66 /* CONTRIBUTING.md in Resources */ = {isa = PBXBuildFile; fileRef = 341277A028E854A700227C66 /* CONTRIBUTING.md */; };
+		341277AC28E854A700227C66 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 341277A128E854A700227C66 /* manifest.json */; };
+		341277AD28E854A700227C66 /* api in Resources */ = {isa = PBXBuildFile; fileRef = 341277A228E854A700227C66 /* api */; };
+		341277AE28E854A700227C66 /* pages in Resources */ = {isa = PBXBuildFile; fileRef = 341277A328E854A700227C66 /* pages */; };
+		341277AF28E854A700227C66 /* extras in Resources */ = {isa = PBXBuildFile; fileRef = 341277A428E854A700227C66 /* extras */; };
+		341277B028E854A700227C66 /* CODE_OF_CONDUCT.md in Resources */ = {isa = PBXBuildFile; fileRef = 3412779A28E854A700227C66 /* CODE_OF_CONDUCT.md */; };
+		341277B128E854A700227C66 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3412779B28E854A700227C66 /* LICENSE */; };
+		341277B228E854A700227C66 /* features in Resources */ = {isa = PBXBuildFile; fileRef = 3412779C28E854A700227C66 /* features */; };
+		341277B328E854A700227C66 /* _metadata in Resources */ = {isa = PBXBuildFile; fileRef = 3412779D28E854A700227C66 /* _metadata */; };
+		341277B428E854A700227C66 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3412779E28E854A700227C66 /* README.md */; };
+		341277B528E854A700227C66 /* contributors.md in Resources */ = {isa = PBXBuildFile; fileRef = 3412779F28E854A700227C66 /* contributors.md */; };
+		341277B628E854A700227C66 /* CONTRIBUTING.md in Resources */ = {isa = PBXBuildFile; fileRef = 341277A028E854A700227C66 /* CONTRIBUTING.md */; };
+		341277B728E854A700227C66 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 341277A128E854A700227C66 /* manifest.json */; };
+		341277B828E854A700227C66 /* api in Resources */ = {isa = PBXBuildFile; fileRef = 341277A228E854A700227C66 /* api */; };
+		341277B928E854A700227C66 /* pages in Resources */ = {isa = PBXBuildFile; fileRef = 341277A328E854A700227C66 /* pages */; };
+		341277BA28E854A700227C66 /* extras in Resources */ = {isa = PBXBuildFile; fileRef = 341277A428E854A700227C66 /* extras */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3412776C28E854A600227C66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3412773828E854A400227C66 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3412776928E854A600227C66;
+			remoteInfo = "ScratchTools Extension (iOS)";
+		};
+		3412777628E854A600227C66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3412773828E854A400227C66 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3412777328E854A600227C66;
+			remoteInfo = "ScratchTools Extension (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3412778E28E854A600227C66 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3412776B28E854A600227C66 /* ScratchTools Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3412779528E854A600227C66 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3412777528E854A600227C66 /* ScratchTools Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3412773F28E854A500227C66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
+		3412774028E854A500227C66 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		3412774128E854A500227C66 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		3412774228E854A500227C66 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		3412774328E854A500227C66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3412774428E854A600227C66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3412774628E854A600227C66 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		3412774B28E854A600227C66 /* ScratchTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScratchTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3412774E28E854A600227C66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3412775028E854A600227C66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3412775328E854A600227C66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3412775628E854A600227C66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3412775828E854A600227C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3412775D28E854A600227C66 /* ScratchTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScratchTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3412775F28E854A600227C66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3412776228E854A600227C66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3412776428E854A600227C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3412776528E854A600227C66 /* ScratchTools.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScratchTools.entitlements; sourceTree = "<group>"; };
+		3412776A28E854A600227C66 /* ScratchTools Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ScratchTools Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3412776F28E854A600227C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3412777428E854A600227C66 /* ScratchTools Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ScratchTools Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3412777928E854A600227C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3412777A28E854A600227C66 /* ScratchTools.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScratchTools.entitlements; sourceTree = "<group>"; };
+		3412779A28E854A700227C66 /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CODE_OF_CONDUCT.md; path = "../../Library/Application Support/Google/Chrome/Default/Extensions/jjnpbalpllpfdpgplpbcbadkgdmleopm/2.16.0_0/CODE_OF_CONDUCT.md"; sourceTree = "<group>"; };
+		3412779B28E854A700227C66 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = "../../Library/Application Support/Google/Chrome/Default/Extensions/jjnpbalpllpfdpgplpbcbadkgdmleopm/2.16.0_0/LICENSE"; sourceTree = "<group>"; };
+		3412779C28E854A700227C66 /* features */ = {isa = PBXFileReference; lastKnownFileType = folder; name = features; path = "../../Library/Application Support/Google/Chrome/Default/Extensions/jjnpbalpllpfdpgplpbcbadkgdmleopm/2.16.0_0/features"; sourceTree = "<group>"; };
+		3412779D28E854A700227C66 /* _metadata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = _metadata; path = "../../Library/Application Support/Google/Chrome/Default/Extensions/jjnpbalpllpfdpgplpbcbadkgdmleopm/2.16.0_0/_metadata"; sourceTree = "<group>"; };
+		3412779E28E854A700227C66 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = "../../Library/Application Support/Google/Chrome/Default/Extensions/jjnpbalpllpfdpgplpbcbadkgdmleopm/2.16.0_0/README.md"; sourceTree = "<group>"; };
+		3412779F28E854A700227C66 /* contributors.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = contributors.md; path = "../../Library/Application Support/Google/Chrome/Default/Extensions/jjnpbalpllpfdpgplpbcbadkgdmleopm/2.16.0_0/contributors.md"; sourceTree = "<group>"; };
+		341277A028E854A700227C66 /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CONTRIBUTING.md; path = "../../Library/Application Support/Google/Chrome/Default/Extensions/jjnpbalpllpfdpgplpbcbadkgdmleopm/2.16.0_0/CONTRIBUTING.md"; sourceTree = "<group>"; };
+		341277A128E854A700227C66 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = "../../Library/Application Support/Google/Chrome/Default/Extensions/jjnpbalpllpfdpgplpbcbadkgdmleopm/2.16.0_0/manifest.json"; sourceTree = "<group>"; };
+		341277A228E854A700227C66 /* api */ = {isa = PBXFileReference; lastKnownFileType = folder; name = api; path = "../../Library/Application Support/Google/Chrome/Default/Extensions/jjnpbalpllpfdpgplpbcbadkgdmleopm/2.16.0_0/api"; sourceTree = "<group>"; };
+		341277A328E854A700227C66 /* pages */ = {isa = PBXFileReference; lastKnownFileType = folder; name = pages; path = "../../Library/Application Support/Google/Chrome/Default/Extensions/jjnpbalpllpfdpgplpbcbadkgdmleopm/2.16.0_0/pages"; sourceTree = "<group>"; };
+		341277A428E854A700227C66 /* extras */ = {isa = PBXFileReference; lastKnownFileType = folder; name = extras; path = "../../Library/Application Support/Google/Chrome/Default/Extensions/jjnpbalpllpfdpgplpbcbadkgdmleopm/2.16.0_0/extras"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3412774828E854A600227C66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3412775A28E854A600227C66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3412776728E854A600227C66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3412777128E854A600227C66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3412773728E854A400227C66 = {
+			isa = PBXGroup;
+			children = (
+				3412773C28E854A500227C66 /* Shared (App) */,
+				3412774528E854A600227C66 /* Shared (Extension) */,
+				3412774D28E854A600227C66 /* iOS (App) */,
+				3412775E28E854A600227C66 /* macOS (App) */,
+				3412776E28E854A600227C66 /* iOS (Extension) */,
+				3412777828E854A600227C66 /* macOS (Extension) */,
+				3412774C28E854A600227C66 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3412773C28E854A500227C66 /* Shared (App) */ = {
+			isa = PBXGroup;
+			children = (
+				3412774328E854A500227C66 /* ViewController.swift */,
+				3412774428E854A600227C66 /* Assets.xcassets */,
+				3412773D28E854A500227C66 /* Resources */,
+			);
+			path = "Shared (App)";
+			sourceTree = "<group>";
+		};
+		3412773D28E854A500227C66 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3412773E28E854A500227C66 /* Main.html */,
+				3412774028E854A500227C66 /* Icon.png */,
+				3412774128E854A500227C66 /* Style.css */,
+				3412774228E854A500227C66 /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3412774528E854A600227C66 /* Shared (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				3412779928E854A700227C66 /* Resources */,
+				3412774628E854A600227C66 /* SafariWebExtensionHandler.swift */,
+			);
+			path = "Shared (Extension)";
+			sourceTree = "<group>";
+		};
+		3412774C28E854A600227C66 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3412774B28E854A600227C66 /* ScratchTools.app */,
+				3412775D28E854A600227C66 /* ScratchTools.app */,
+				3412776A28E854A600227C66 /* ScratchTools Extension.appex */,
+				3412777428E854A600227C66 /* ScratchTools Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3412774D28E854A600227C66 /* iOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				3412774E28E854A600227C66 /* AppDelegate.swift */,
+				3412775028E854A600227C66 /* SceneDelegate.swift */,
+				3412775228E854A600227C66 /* LaunchScreen.storyboard */,
+				3412775528E854A600227C66 /* Main.storyboard */,
+				3412775828E854A600227C66 /* Info.plist */,
+			);
+			path = "iOS (App)";
+			sourceTree = "<group>";
+		};
+		3412775E28E854A600227C66 /* macOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				3412775F28E854A600227C66 /* AppDelegate.swift */,
+				3412776128E854A600227C66 /* Main.storyboard */,
+				3412776428E854A600227C66 /* Info.plist */,
+				3412776528E854A600227C66 /* ScratchTools.entitlements */,
+			);
+			path = "macOS (App)";
+			sourceTree = "<group>";
+		};
+		3412776E28E854A600227C66 /* iOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				3412776F28E854A600227C66 /* Info.plist */,
+			);
+			path = "iOS (Extension)";
+			sourceTree = "<group>";
+		};
+		3412777828E854A600227C66 /* macOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				3412777928E854A600227C66 /* Info.plist */,
+				3412777A28E854A600227C66 /* ScratchTools.entitlements */,
+			);
+			path = "macOS (Extension)";
+			sourceTree = "<group>";
+		};
+		3412779928E854A700227C66 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3412779A28E854A700227C66 /* CODE_OF_CONDUCT.md */,
+				3412779B28E854A700227C66 /* LICENSE */,
+				3412779C28E854A700227C66 /* features */,
+				3412779D28E854A700227C66 /* _metadata */,
+				3412779E28E854A700227C66 /* README.md */,
+				3412779F28E854A700227C66 /* contributors.md */,
+				341277A028E854A700227C66 /* CONTRIBUTING.md */,
+				341277A128E854A700227C66 /* manifest.json */,
+				341277A228E854A700227C66 /* api */,
+				341277A328E854A700227C66 /* pages */,
+				341277A428E854A700227C66 /* extras */,
+			);
+			name = Resources;
+			path = "Shared (Extension)";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3412774A28E854A600227C66 /* ScratchTools (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3412778F28E854A600227C66 /* Build configuration list for PBXNativeTarget "ScratchTools (iOS)" */;
+			buildPhases = (
+				3412774728E854A600227C66 /* Sources */,
+				3412774828E854A600227C66 /* Frameworks */,
+				3412774928E854A600227C66 /* Resources */,
+				3412778E28E854A600227C66 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3412776D28E854A600227C66 /* PBXTargetDependency */,
+			);
+			name = "ScratchTools (iOS)";
+			productName = "ScratchTools (iOS)";
+			productReference = 3412774B28E854A600227C66 /* ScratchTools.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3412775C28E854A600227C66 /* ScratchTools (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3412779628E854A600227C66 /* Build configuration list for PBXNativeTarget "ScratchTools (macOS)" */;
+			buildPhases = (
+				3412775928E854A600227C66 /* Sources */,
+				3412775A28E854A600227C66 /* Frameworks */,
+				3412775B28E854A600227C66 /* Resources */,
+				3412779528E854A600227C66 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3412777728E854A600227C66 /* PBXTargetDependency */,
+			);
+			name = "ScratchTools (macOS)";
+			productName = "ScratchTools (macOS)";
+			productReference = 3412775D28E854A600227C66 /* ScratchTools.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3412776928E854A600227C66 /* ScratchTools Extension (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3412778B28E854A600227C66 /* Build configuration list for PBXNativeTarget "ScratchTools Extension (iOS)" */;
+			buildPhases = (
+				3412776628E854A600227C66 /* Sources */,
+				3412776728E854A600227C66 /* Frameworks */,
+				3412776828E854A600227C66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ScratchTools Extension (iOS)";
+			productName = "ScratchTools Extension (iOS)";
+			productReference = 3412776A28E854A600227C66 /* ScratchTools Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		3412777328E854A600227C66 /* ScratchTools Extension (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3412779228E854A600227C66 /* Build configuration list for PBXNativeTarget "ScratchTools Extension (macOS)" */;
+			buildPhases = (
+				3412777028E854A600227C66 /* Sources */,
+				3412777128E854A600227C66 /* Frameworks */,
+				3412777228E854A600227C66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ScratchTools Extension (macOS)";
+			productName = "ScratchTools Extension (macOS)";
+			productReference = 3412777428E854A600227C66 /* ScratchTools Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3412773828E854A400227C66 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					3412774A28E854A600227C66 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					3412775C28E854A600227C66 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					3412776928E854A600227C66 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					3412777328E854A600227C66 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+				};
+			};
+			buildConfigurationList = 3412773B28E854A400227C66 /* Build configuration list for PBXProject "ScratchTools" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3412773728E854A400227C66;
+			productRefGroup = 3412774C28E854A600227C66 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3412774A28E854A600227C66 /* ScratchTools (iOS) */,
+				3412775C28E854A600227C66 /* ScratchTools (macOS) */,
+				3412776928E854A600227C66 /* ScratchTools Extension (iOS) */,
+				3412777328E854A600227C66 /* ScratchTools Extension (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3412774928E854A600227C66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3412777D28E854A600227C66 /* Icon.png in Resources */,
+				3412775428E854A600227C66 /* LaunchScreen.storyboard in Resources */,
+				3412777B28E854A600227C66 /* Main.html in Resources */,
+				3412778128E854A600227C66 /* Script.js in Resources */,
+				3412778528E854A600227C66 /* Assets.xcassets in Resources */,
+				3412775728E854A600227C66 /* Main.storyboard in Resources */,
+				3412777F28E854A600227C66 /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3412775B28E854A600227C66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3412777E28E854A600227C66 /* Icon.png in Resources */,
+				3412778028E854A600227C66 /* Style.css in Resources */,
+				3412776328E854A600227C66 /* Main.storyboard in Resources */,
+				3412778228E854A600227C66 /* Script.js in Resources */,
+				3412778628E854A600227C66 /* Assets.xcassets in Resources */,
+				3412777C28E854A600227C66 /* Main.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3412776828E854A600227C66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				341277B828E854A700227C66 /* api in Resources */,
+				341277B928E854A700227C66 /* pages in Resources */,
+				341277B528E854A700227C66 /* contributors.md in Resources */,
+				341277B128E854A700227C66 /* LICENSE in Resources */,
+				341277BA28E854A700227C66 /* extras in Resources */,
+				341277B328E854A700227C66 /* _metadata in Resources */,
+				341277B428E854A700227C66 /* README.md in Resources */,
+				341277B728E854A700227C66 /* manifest.json in Resources */,
+				341277B628E854A700227C66 /* CONTRIBUTING.md in Resources */,
+				341277B028E854A700227C66 /* CODE_OF_CONDUCT.md in Resources */,
+				341277B228E854A700227C66 /* features in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3412777228E854A600227C66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				341277AD28E854A700227C66 /* api in Resources */,
+				341277AE28E854A700227C66 /* pages in Resources */,
+				341277AA28E854A700227C66 /* contributors.md in Resources */,
+				341277A628E854A700227C66 /* LICENSE in Resources */,
+				341277AF28E854A700227C66 /* extras in Resources */,
+				341277A828E854A700227C66 /* _metadata in Resources */,
+				341277A928E854A700227C66 /* README.md in Resources */,
+				341277AC28E854A700227C66 /* manifest.json in Resources */,
+				341277AB28E854A700227C66 /* CONTRIBUTING.md in Resources */,
+				341277A528E854A700227C66 /* CODE_OF_CONDUCT.md in Resources */,
+				341277A728E854A700227C66 /* features in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3412774728E854A600227C66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3412778328E854A600227C66 /* ViewController.swift in Sources */,
+				3412774F28E854A600227C66 /* AppDelegate.swift in Sources */,
+				3412775128E854A600227C66 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3412775928E854A600227C66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3412778428E854A600227C66 /* ViewController.swift in Sources */,
+				3412776028E854A600227C66 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3412776628E854A600227C66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3412778728E854A600227C66 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3412777028E854A600227C66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3412778828E854A600227C66 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3412776D28E854A600227C66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3412776928E854A600227C66 /* ScratchTools Extension (iOS) */;
+			targetProxy = 3412776C28E854A600227C66 /* PBXContainerItemProxy */;
+		};
+		3412777728E854A600227C66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3412777328E854A600227C66 /* ScratchTools Extension (macOS) */;
+			targetProxy = 3412777628E854A600227C66 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3412773E28E854A500227C66 /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3412773F28E854A500227C66 /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		3412775228E854A600227C66 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3412775328E854A600227C66 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3412775528E854A600227C66 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3412775628E854A600227C66 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3412776128E854A600227C66 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3412776228E854A600227C66 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3412778928E854A600227C66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3412778A28E854A600227C66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		3412778C28E854A600227C66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "ScratchTools Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.STForScratch.ScratchTools.iOS-Extension";
+				PRODUCT_NAME = "ScratchTools Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3412778D28E854A600227C66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "ScratchTools Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.STForScratch.ScratchTools.iOS-Extension";
+				PRODUCT_NAME = "ScratchTools Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3412779028E854A600227C66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ScratchTools;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.STForScratch.ScratchTools-iOS";
+				PRODUCT_NAME = ScratchTools;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3412779128E854A600227C66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ScratchTools;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.STForScratch.ScratchTools-iOS";
+				PRODUCT_NAME = ScratchTools;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3412779328E854A600227C66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/ScratchTools.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "ScratchTools Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.STForScratch.ScratchTools.macOS-Extension";
+				PRODUCT_NAME = "ScratchTools Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3412779428E854A600227C66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/ScratchTools.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "ScratchTools Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.STForScratch.ScratchTools.macOS-Extension";
+				PRODUCT_NAME = "ScratchTools Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		3412779728E854A600227C66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/ScratchTools.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ScratchTools;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.STForScratch.ScratchTools-macOS";
+				PRODUCT_NAME = ScratchTools;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3412779828E854A600227C66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/ScratchTools.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ScratchTools;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.STForScratch.ScratchTools-macOS";
+				PRODUCT_NAME = ScratchTools;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3412773B28E854A400227C66 /* Build configuration list for PBXProject "ScratchTools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3412778928E854A600227C66 /* Debug */,
+				3412778A28E854A600227C66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3412778B28E854A600227C66 /* Build configuration list for PBXNativeTarget "ScratchTools Extension (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3412778C28E854A600227C66 /* Debug */,
+				3412778D28E854A600227C66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3412778F28E854A600227C66 /* Build configuration list for PBXNativeTarget "ScratchTools (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3412779028E854A600227C66 /* Debug */,
+				3412779128E854A600227C66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3412779228E854A600227C66 /* Build configuration list for PBXNativeTarget "ScratchTools Extension (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3412779328E854A600227C66 /* Debug */,
+				3412779428E854A600227C66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3412779628E854A600227C66 /* Build configuration list for PBXNativeTarget "ScratchTools (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3412779728E854A600227C66 /* Debug */,
+				3412779828E854A600227C66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3412773828E854A400227C66 /* Project object */;
+}
