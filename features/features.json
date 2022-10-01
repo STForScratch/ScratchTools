@@ -1,12 +1,23 @@
 [
 	{
+		"title": "Hide Studio Frames",
+		"description": "Removes the odd frames from around studio images on 2.0 pages.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "hide-studio-borders",
+		"tags": ["New"],
+		"type": ["Website"],
+		"dynamic":true
+	},
+	{
 		"title": "Infinite Backpack Scrolling",
 		"description": "Scroll through the backpack until you reach the very end (does take some time to load, but loads automatically).",
 		"credits": ["rgantzos","johnny263"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/","https://github.com/johnny263"],
 		"file": "infinite-backpack-scrolling",
 		"tags": ["New","Recommended"],
-		"type": ["Editor"]
+		"type": ["Editor"],
+		"dynamic":true
 	},
 	{
 		"title": "Preview Textboxes",
@@ -24,7 +35,8 @@
 		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/MaterArc/"],
 		"file": "hide-studio-messages",
 		"tags": ["New"],
-		"type": ["Website"]
+		"type": ["Website"],
+		"dynamic":true
 	},
 	{
 		"title": "Default to Local",
@@ -33,7 +45,8 @@
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "default-to-local",
 		"tags": ["New"],
-		"type": ["Editor"]
+		"type": ["Editor"],
+		"dynamic":true
 	},
 	{
 		"title": "More Editor Fonts",
@@ -126,7 +139,8 @@
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "delete-custom-block-uses",
 		"tags": ["Beta"],
-		"type": ["Editor"]
+		"type": ["Editor"],
+		"warning":"When deleting custom block uses, all blocks dependent on the use of the custom block will also be deleted."
 	},
 	{
 		"title": "Hide Advertisements in Comments",
@@ -135,7 +149,8 @@
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "hide-advertisements",
 		"tags": ["Beta"],
-		"type": ["Website"]
+		"type": ["Website"],
+		"warning":"This feature uses an algorithm that ScratchTools developed. That does not mean that it will work every time."
 	},
 	{
 		"title": "Open in Turbowarp from Editor",
@@ -238,7 +253,8 @@
 		"file": "anti-generic",
 		"tags": ["Beta", "Featured"],
 		"type": ["Website", "Theme"],
-		"dynamic":true
+		"dynamic":true,
+		"warning":"This feature uses an algorithm that ScratchTools developed. That does not mean that it will work every time."
 	},
 	{	
 		"title": "Collapse Blocks",

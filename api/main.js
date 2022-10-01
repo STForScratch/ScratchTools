@@ -141,3 +141,4 @@ ScratchTools.createProjectButton = function(text, callback, id) {
   }, "addProjectButton-"+id, false)
   
 }
+}
