@@ -7,3 +7,4 @@ Simply edit this file and add yourself to the list in the form of a pull request
 - Misty/EASTER EGG GOD
 - Daniel4-Scratch
 - Electro-Corp
+- Kugelpfusch

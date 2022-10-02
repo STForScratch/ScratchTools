@@ -19,6 +19,19 @@
   </p>
 </div>  
 
+### Table of Contents
+- [About Us](#about-us)
+- [Installing](#installing)
+- [Building a Feature](#building-a-feature)
+- [Our APIs](#our-apis)
+  - [Auth](#auth)
+  - [Scratch APIs](#scratch-apis)
+    - [Basics](#basics)
+    - [Blockly Context Menus](#blockly-context-menus)
+    - [Sound , GUI and Paint-Mode](#sound-gui-and-paint-mode)
+  - [Logging](#logging)
+- [How to Support without Code](#how-to-support-without-code)
+
 ### About Us
 We're a browser extension for the Scratch website that makes Scratch look, work, and feel even better. We're fully customizable, so you can build the Scratch website based on just how you want it to look! We're the fastest-growing browser extension for Scratch, and we're run by the community! Anyone can build a feature!
 
