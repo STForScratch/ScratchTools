@@ -1,27 +1,33 @@
-if (window.location.href.includes('https://scratch.mit.edu/ideas')) {
-	var div = document.createElement('div')
-	div.className = 'tips-getting-started scratchtools generator'
-	div.innerHTML = '<div class="inner"><section class="flex-row tips-info-section tips-left"><div class="ideas-image"></div><div><h2><span>Idea Generator</span></h2><p><span>If you need project ideas, use the ScratchTools idea generator!</span></p><a><button class="button ideas-button"><img src="https://scratch.mit.edu/static/assets/b433ee02a13fa2a12f7f7059f1f6729a.svg"><span>Generate</span></button></a></div></section></div>'
-	if (document.querySelector('div.scratchtools.generator') === null) {
-		document.querySelector('div#view').firstChild.prepend(div)
-		document.querySelector('div#view').prepend(document.querySelector('div.banner-wrapper'))
-		document.querySelector('div.scratchtools.generator').onclick = function() {
-			generateIdea()
-		}
-	}
+if (window.location.href.includes("https://scratch.mit.edu/ideas")) {
+  var div = document.createElement("div");
+  div.className = "tips-getting-started scratchtools generator";
+  div.innerHTML =
+    '<div class="inner"><section class="flex-row tips-info-section tips-left"><div class="ideas-image"></div><div><h2><span>Idea Generator</span></h2><p><span>If you need project ideas, use the ScratchTools idea generator!</span></p><a><button class="button ideas-button"><img src="https://scratch.mit.edu/static/assets/b433ee02a13fa2a12f7f7059f1f6729a.svg"><span>Generate</span></button></a></div></section></div>';
+  if (document.querySelector("div.scratchtools.generator") === null) {
+    document.querySelector("div#view").firstChild.prepend(div);
+    document
+      .querySelector("div#view")
+      .prepend(document.querySelector("div.banner-wrapper"));
+    document.querySelector("div.scratchtools.generator").onclick = function () {
+      generateIdea();
+    };
+  }
 }
 
 function createModal(title, description) {
-	var div = document.createElement('div')
-	div.className = 'ReactModalPortal ScratchToolsNew'
-	div.innerHTML = `<div class="ReactModal__Overlay ReactModal__Overlay--after-open modal_modal-overlay_1Lcbx"><div style="width: 50vw;" class="ReactModal__Content ReactModal__Content--after-open modal_modal-content_1h3ll prompt_modal-content_1BfWj" tabindex="-1" role="dialog" aria-label="New Variable"><div style="width: 50vw;" class="box_box_2jjDp" dir="ltr"><div class="modal_header_1h7ps"><div class="modal_header-item_2zQTd modal_header-item-title_tLOU5">${title}</div><div class="modal_header-item_2zQTd modal_header-item-close_2XDeL"></div></div><div class="prompt_body_18Z-I box_box_2jjDp"><div class="prompt_label_tWjYZ box_box_2jjDp">${description}</div><center><div class="prompt_button-row_3Wc5Z box_box_2jjDp"><button class="prompt_generate-button"><span>Generate Another</span></button><button class="prompt_ok-button_3QFdD"><span>Close</span></button></div></center></div></div></div></div>`
-	document.body.appendChild(div)
-	var style = document.createElement('style')
-	style.innerHTML = `
+  var div = document.createElement("div");
+  div.className = "ReactModalPortal ScratchToolsNew";
+  div.innerHTML = `<div class="ReactModal__Overlay ReactModal__Overlay--after-open modal_modal-overlay_1Lcbx"><div style="width: 50vw;" class="ReactModal__Content ReactModal__Content--after-open modal_modal-content_1h3ll prompt_modal-content_1BfWj" tabindex="-1" role="dialog" aria-label="New Variable"><div style="width: 50vw;" class="box_box_2jjDp" dir="ltr"><div class="modal_header_1h7ps"><div class="modal_header-item_2zQTd modal_header-item-title_tLOU5">${title}</div><div class="modal_header-item_2zQTd modal_header-item-close_2XDeL"></div></div><div class="prompt_body_18Z-I box_box_2jjDp"><div class="prompt_label_tWjYZ box_box_2jjDp">${description}</div><center><div class="prompt_button-row_3Wc5Z box_box_2jjDp"><button class="prompt_generate-button"><span>Generate Another</span></button><button class="prompt_ok-button_3QFdD"><span>Close</span></button></div></center></div></div></div></div>`;
+  document.body.appendChild(div);
+  var style = document.createElement("style");
+  style.innerHTML =
+    `
 @media only screen and (max-width : 479px){#view{text-align:center}.inner{margin:0 auto;width:100%}}@media only screen and (min-width : 480px)and (max-width : 767px){#view{text-align:center}.inner{margin:0 auto;width:480px}}@media only screen and (min-width : 768px)and (max-width : 941px){#view{text-align:center}.inner{margin:0 auto;width:768px}}@media only screen and (min-width : 942px){.inner{margin:0 auto;width:942px}}html,body{display:block;margin:0;background-color:#4280d7;padding:0;color:#575e75;font-family:"Helvetica Neue","Helvetica",Arial,sans-serif}h1,h2,h3,h4{margin:0;border:0;padding:0;color:#575e75;font-weight:bold}h1{font-size:2.5rem;font-weight:bold}h2{font-size:2rem;font-weight:bold}h3{font-size:1.4rem;font-weight:bold}h4{font-size:1rem;font-weight:bold}h5{text-transform:uppercase;letter-spacing:2px;font-size:.85rem;font-weight:bold}p.legal{font-size:.8rem}p.intro{font-size:1.1rem}p.callout{margin:1.5em 0;border:1px solid rgba(0,0,0,.1);border-radius:.5rem;background-color:rgba(77,151,255,.1);padding:1.25em}p.callout.orange{background-color:rgba(244,157,37,.1)}p a{white-space:nowrap}b,strong{font-weight:bold}a{cursor:pointer;color:#4d97ff;font-weight:bold}a:link,a:visited,a:active{text-decoration:none;color:#4d97ff}a:hover{text-decoration:none;color:#4280d7}.empty{border:1px solid rgba(0,0,0,.1);border-radius:5px;background-color:rgba(77,151,255,.1);padding:10px;text-align:center;line-height:2rem;color:#575e75}.empty h4{color:#575e75}h1,h2,h3,h4,h5,p{line-height:1.7em;color:#575e75}p{font-size:1rem;font-weight:normal}::selection{background-color:rgba(77,151,255,.25)}ol,ul{padding-left:20px;line-height:1.5em;font-size:1rem;font-weight:normal}ol li,ul li{margin:.75em 0}dl{line-height:1.5rem;font-size:1rem;font-weight:normal}dl dt{font-weight:bold}dl dd{margin:0}#view{display:inline-block;margin-top:50px;background-color:#fcfcfc;padding:20px 0;min-width:100%;min-height:680px}
 
 /* #E5F0FF */ /* #E9F1FC */ /* #D9E3F2 */ /* 90% transparent version of motion-primary */ /* #FFFFFF */ /* 25% transparent version of ui-white */ /* 25% transparent version of ui-white */ /* 25% transparent version of ui-white */ /* 15% transparent version of black */ /* #575E75 */ /* #4C97FF */ /* #3373CC */ /* 35% transparent version of motion-primary */ /* 15% transparent version of motion-primary */ /* #FF661A */ /* #E64D00 */ /* #CF63CF */ /* #BD42BD */ /* #FFAB19 */ /* #FF8C1A */ /* #0FBD8C */ /* #0FBD8C */ /* #FF8C1A */ /* #FFB366 */ /* #FF8C1A */ /* #0FBD8C */ /* #0B8E69 */ /* 35% transparent version of extensions-primary */ /* opaque version of extensions-transparent, on white bg */ /* lighter than motion-primary */ /* make sure to keep these in sync with other constants,
-e.g. STAGE_DIMENSION_DEFAULTS in lib/screen-utils.js */ /* layout contants from ` + "`layout-constants.js`" + ` */ /*
+e.g. STAGE_DIMENSION_DEFAULTS in lib/screen-utils.js */ /* layout contants from ` +
+    "`layout-constants.js`" +
+    ` */ /*
     Contains constants for the z-index values of elements that are part of the global stack context.
     In other words, z-index values that are "inside" a component are not added here.
     This prevents conflicts between identical z-index values in different components.
@@ -211,7 +217,9 @@ e.g. STAGE_DIMENSION_DEFAULTS in lib/screen-utils.js */ /* layout contants from 
 }
 
 /* #E5F0FF */ /* #E9F1FC */ /* #D9E3F2 */ /* 90% transparent version of motion-primary */ /* #FFFFFF */ /* 25% transparent version of ui-white */ /* 25% transparent version of ui-white */ /* 25% transparent version of ui-white */ /* 15% transparent version of black */ /* #575E75 */ /* #4C97FF */ /* #3373CC */ /* 35% transparent version of motion-primary */ /* 15% transparent version of motion-primary */ /* #FF661A */ /* #E64D00 */ /* #CF63CF */ /* #BD42BD */ /* #FFAB19 */ /* #FF8C1A */ /* #0FBD8C */ /* #0FBD8C */ /* #FF8C1A */ /* #FFB366 */ /* #FF8C1A */ /* #0FBD8C */ /* #0B8E69 */ /* 35% transparent version of extensions-primary */ /* opaque version of extensions-transparent, on white bg */ /* lighter than motion-primary */ /* make sure to keep these in sync with other constants,
-e.g. STAGE_DIMENSION_DEFAULTS in lib/screen-utils.js */ /* layout contants from ` + "`layout-constants.js`" + ` */ .prompt_modal-content_1BfWj {
+e.g. STAGE_DIMENSION_DEFAULTS in lib/screen-utils.js */ /* layout contants from ` +
+    "`layout-constants.js`" +
+    ` */ .prompt_modal-content_1BfWj {
     width: 360px;
 } .prompt_body_18Z-I {
     background: hsla(0, 100%, 100%, 1);
@@ -282,37 +290,73 @@ e.g. STAGE_DIMENSION_DEFAULTS in lib/screen-utils.js */ /* layout contants from 
     opacity: .5;
 }
 
-`
-	document.body.appendChild(style)
-	document.querySelector('button.prompt_ok-button_3QFdD').onclick = function() {
-		document.querySelector('div.ScratchToolsNew').remove()
-	}
-	document.querySelector('button.prompt_generate-button').onclick = function() {
-		document.querySelector('div.ScratchToolsNew').remove()
-		generateIdea()
-	}
+`;
+  document.body.appendChild(style);
+  document.querySelector("button.prompt_ok-button_3QFdD").onclick =
+    function () {
+      document.querySelector("div.ScratchToolsNew").remove();
+    };
+  document.querySelector("button.prompt_generate-button").onclick =
+    function () {
+      document.querySelector("div.ScratchToolsNew").remove();
+      generateIdea();
+    };
 }
 
 function generateIdea() {
-	//Chooses a random project type
-	var projectTheme = ["a Space", "an Underground", "an Airplane", "a Superhero", "an Ocean", "an Island", "a Spaceship", "a Miniature", "a Super Huge", "an Above the Clouds", "a Volcano", "a Mountain", "a Desert"];
-	var random0 = Math.floor(Math.random() * projectTheme.length);
+  //Chooses a random project type
+  var projectTheme = [
+    "a Space",
+    "an Underground",
+    "an Airplane",
+    "a Superhero",
+    "an Ocean",
+    "an Island",
+    "a Spaceship",
+    "a Miniature",
+    "a Super Huge",
+    "an Above the Clouds",
+    "a Volcano",
+    "a Mountain",
+    "a Desert",
+  ];
+  var random0 = Math.floor(Math.random() * projectTheme.length);
 
-	var projectType = ["Parallax", "Animation", "Clicker", "Platformer", "Blockshade", "Noteblock", "RPG", "Tutorial"];
-	var random = Math.floor(Math.random() * projectType.length);
+  var projectType = [
+    "Parallax",
+    "Animation",
+    "Clicker",
+    "Platformer",
+    "Blockshade",
+    "Noteblock",
+    "RPG",
+    "Tutorial",
+  ];
+  var random = Math.floor(Math.random() * projectType.length);
 
-	//Chooses a random project feature
-	var projectFeature = ["an Economy", "Multiplayer", "a Market", "Collectibles", "Achievements", "Hidden Secrets", "Coins you can Earn", "Enemies you must Befriend", "an Environment you must hide in", "Food you must Eat"];
-	var random2 = Math.floor(Math.random() * projectFeature.length);
+  //Chooses a random project feature
+  var projectFeature = [
+    "an Economy",
+    "Multiplayer",
+    "a Market",
+    "Collectibles",
+    "Achievements",
+    "Hidden Secrets",
+    "Coins you can Earn",
+    "Enemies you must Befriend",
+    "an Environment you must hide in",
+    "Food you must Eat",
+  ];
+  var random2 = Math.floor(Math.random() * projectFeature.length);
 
-	//Chooses a random project constraint
-	var projectConstraint = ["Sprites", "Days", "Hour(s)", "Clones"];
-	var random3 = Math.floor(Math.random() * projectConstraint.length);
+  //Chooses a random project constraint
+  var projectConstraint = ["Sprites", "Days", "Hour(s)", "Clones"];
+  var random3 = Math.floor(Math.random() * projectConstraint.length);
 
-	//Chooses a random project constraint amount
-	var projectConstraintAmount = ["6", "2", "3", "4", "5"];
-	var random4 = Math.floor(Math.random() * projectConstraintAmount.length);
+  //Chooses a random project constraint amount
+  var projectConstraintAmount = ["6", "2", "3", "4", "5"];
+  var random4 = Math.floor(Math.random() * projectConstraintAmount.length);
 
-	var idea = `Make ${projectTheme[random0]} ${projectType[random]} that has ${projectFeature[random2]}! Maybe even try to make it in just ${projectConstraintAmount[random4]} ${projectConstraint[random3]}!`
-	createModal('Idea', idea)
+  var idea = `Make ${projectTheme[random0]} ${projectType[random]} that has ${projectFeature[random2]}! Maybe even try to make it in just ${projectConstraintAmount[random4]} ${projectConstraint[random3]}!`;
+  createModal("Idea", idea);
 }

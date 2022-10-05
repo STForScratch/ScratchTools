@@ -1,7 +1,10 @@
-if (window.location.href.includes('https://scratch.mit.edu/projects/') && window.location.href.includes('/editor')) {
-var style = document.createElement('style')
-style.id = 'scratchtoolseditor'
-style.innerHTML = `
+if (
+  window.location.href.includes("https://scratch.mit.edu/projects/") &&
+  window.location.href.includes("/editor")
+) {
+  var style = document.createElement("style");
+  style.id = "scratchtoolseditor";
+  style.innerHTML = `
 /* 3.Darker CSS.
 Built by infinitytec. 
 Version 1.8.
@@ -293,10 +296,10 @@ input[type=text]:focus {
 .blocklyScrollbarHandle {
   fill: #CECDCE55;
 }
-`
-document.body.appendChild(style)
+`;
+  document.body.appendChild(style);
 } else {
-  if (document.querySelector('style#scratchtoolseditor') !== null) {
-    document.querySelector('style#scratchtoolseditor').remove()
+  if (document.querySelector("style#scratchtoolseditor") !== null) {
+    document.querySelector("style#scratchtoolseditor").remove();
   }
 }

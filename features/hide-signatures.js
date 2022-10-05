@@ -1,1 +1,1 @@
-document.querySelectorAll(".postsignature").forEach(el => el.remove());
+document.querySelectorAll(".postsignature").forEach((el) => el.remove());

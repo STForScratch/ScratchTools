@@ -1,10 +1,9 @@
 ---
 name: Feature request
 about: Suggest an idea for ScratchTools
-title: ''
-labels: 'feature'
-assignees: ''
-
+title: ""
+labels: "feature"
+assignees: ""
 ---
 
 **Please describe your idea.**
