@@ -506,6 +506,15 @@
 		"tags":[],
 		"type": ["Website"]
 	},
+        {
+		"title": "Clickable Description/Comment Links",
+		"description": "Allows you to use offsite links without copying and pasting them.",
+		"credits": ["ScolderCreations"],
+		"urls": ["https://scratch.mit.edu/users/ScolderCreations/"],
+		"file": "linkify-unlinked",
+		"tags": [],
+		"type": ["Website"]
+	},
 	{
 		"title": "Fix Content Boxes",
 		"description": "Makes all sides of boxes on the pages rounded, rather than just the tops.",
