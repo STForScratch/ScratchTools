@@ -1,5 +1,5 @@
 var style = document.createElement('style')
-style.className = '.hideTextareaLabels'
+style.className = 'hideTextareaLabels'
 style.textContent = `
 .project-textlabel {
     display: none !important;
