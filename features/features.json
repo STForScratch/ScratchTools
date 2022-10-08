@@ -1,5 +1,15 @@
 [
 	{
+		"title": "Follower Count on Projects",
+		"description": "Displays the follower count of the project creator on their projects.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "follower-count",
+		"tags": ["New", "Recommended"],
+		"type": ["Website"],
+		"dynamic":true
+	},
+	{
 		"title": "Hide Studio Frames",
 		"description": "Removes the odd frames from around studio images on 2.0 pages.",
 		"credits": ["rgantzos"],
@@ -10,12 +20,31 @@
 		"dynamic":true
 	},
 	{
+		"title": "Hide Project Instructions and Notes and Credits Labels",
+		"description": "The instructions and notes and credits labels take up quite a bit of space where there could be usual information. This removes them.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "hide-textarea-labels",
+		"tags": ["New"],
+		"type": ["Website"],
+		"dynamic":true
+	},
+	{
+		"title": "Search Trending by Default",
+		"description": "Currently, when you search projects on the Scratch website, you automatically search with the popular filter, instead of trending.",
+		"credits": ["rgantzos"],
+		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
+		"file": "default-to-trending",
+		"tags": [],
+		"type": ["Website"]
+	},
+	{
 		"title": "Infinite Backpack Scrolling",
 		"description": "Scroll through the backpack until you reach the very end (does take some time to load, but loads automatically).",
 		"credits": ["rgantzos","johnny263"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/","https://github.com/johnny263"],
 		"file": "infinite-backpack-scrolling",
-		"tags": ["New","Recommended"],
+		"tags": ["Recommended"],
 		"type": ["Editor"],
 		"dynamic":true
 	},
@@ -25,7 +54,7 @@
 		"credits": ["rgantzos", "Giolaboman"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/Giolaboman/"],
 		"file": "preview-textboxes",
-		"tags": ["Recommended","New"],
+		"tags": ["Recommended"],
 		"type": ["Website"]
 	},
 	{
@@ -34,7 +63,7 @@
 		"credits": ["rgantzos", "MaterArc"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/MaterArc/"],
 		"file": "hide-studio-messages",
-		"tags": ["New"],
+		"tags": [],
 		"type": ["Website"],
 		"dynamic":true
 	},
@@ -44,7 +73,7 @@
 		"credits": ["rgantzos"],
 		"urls": ["https://scratch.mit.edu/users/rgantzos/"],
 		"file": "default-to-local",
-		"tags": ["New"],
+		"tags": [],
 		"type": ["Editor"],
 		"dynamic":true
 	},

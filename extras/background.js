@@ -95,6 +95,12 @@ ScratchTools.console.error = function(text) {
     ScratchTools.console.log("Injected getScratch API.")
     chrome.scripting.executeScript({
       target: { tabId: tabId },
+      files: [`/api/spaces.js`],
+      world:'MAIN'
+    });
+    ScratchTools.console.log("Injected protect spaces API.")
+    chrome.scripting.executeScript({
+      target: { tabId: tabId },
       files: [`/extras/protect-mention.js`],
       world:'MAIN'
     });
