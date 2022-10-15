@@ -1,3 +1,19 @@
+var btn = document.querySelector('.searchbaricon') || document.querySelector('.sticon')
+var clicks = 0
+btn.addEventListener('click', function() {
+  clicks = clicks+1
+  if (clicks > 4) {
+    document.querySelector('.easterEgg').textContent = `
+    .feature {
+      display: none !important;
+    }
+
+    .eastereggFeature {
+      display: inline-block !important;
+    }`
+  }
+})
+
 chrome.storage.sync.get("mode", async function (obj) {
   if (obj.mode !== undefined) {
     if (obj.mode === "light") {
