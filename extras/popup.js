@@ -271,7 +271,8 @@ function createFeature(
   tags,
   urls,
   type,
-  options
+  options,
+  enabled
 ) {
   if (
     document.body.className !== undefined &&
@@ -292,7 +293,8 @@ function createFeature(
         def,
         tags,
         urls,
-        options
+        options,
+        enabled
       );
     }
   } else {
@@ -305,7 +307,8 @@ function createFeature(
       def,
       tags,
       urls,
-      options
+      options,
+      enabled
     );
   }
   async function continueCreateFeature(
@@ -316,8 +319,14 @@ function createFeature(
     def,
     tags,
     urls,
-    options
+    options,
+    enabled
   ) {
+    if (document.querySelector("div.enabled")) {
+      while (document.querySelector("div.enabled").firstChild) {
+        document.querySelector("div.enabled").firstChild.remove()
+      }
+    }
     var div23 = document.createElement("div");
     var item = div23;
     item.style.textAlign = "left";
@@ -336,19 +345,11 @@ function createFeature(
     switch23.id = id;
     await chrome.storage.sync.get("features", async function (obj) {
       if (obj["features"] !== undefined) {
-        if (def === true) {
-          if (obj["features"].includes(switch23.id)) {
-            switch23.checked = false;
-          } else {
-            switch23.checked = true;
-          }
-        } else {
           if (obj["features"].includes(switch23.id)) {
             switch23.checked = true;
           } else {
             switch23.checked = false;
           }
-        }
       } else {
         await chrome.storage.sync.set({
           features: "ok",
@@ -560,7 +561,16 @@ function createFeature(
         });
       }
       getWarnings();
+      if (enabled && document.querySelector("div.enabled") && document.querySelector('input.searchbar').value.replaceAll(" ", '') === '') {
+        document.querySelector("div.enabled").appendChild(div23);
+      } else {
       document.querySelector("div.settings").appendChild(div23);
+      }
+      if ((!document.querySelector('input.searchbar').value.replaceAll(" ", '') === '') && document.querySelector("div.enabled")) {
+        while (document.querySelector("div.enabled").firstChild) {
+          document.querySelector("div.enabled").firstChild.remove()
+        }
+      }
     });
   }
 }
@@ -592,24 +602,35 @@ function checkSearchBar() {
 async function getFeatures() {
   var response = await fetch("/features/features.json");
   var data = await response.json();
-  Object.keys(data).forEach(function (el) {
-    if (data[el].tags === undefined) {
-      var tags = [];
-    } else {
-      var tags = data[el].tags;
-    }
-    createFeature(
-      data[el]["title"],
-      data[el]["description"],
-      data[el]["file"],
-      data[el]["credits"],
-      data[el]["default"],
-      tags,
-      data[el]["urls"],
-      data[el]["type"],
-      data[el].options
-    );
-  });
+    var obj = await chrome.storage.sync.get("features")
+    Object.keys(data).forEach(function (el) {
+      if (obj.features.includes(data[el].file)) {
+        createFeature(
+          data[el].title,
+          data[el].description,
+          data[el].file,
+          data[el].credits,
+          data[el].default,
+          data[el].tags,
+          data[el].urls,
+          data[el].type,
+          data[el].options,
+          true
+        );
+      } else {
+        createFeature(
+          data[el].title,
+          data[el].description,
+          data[el].file,
+          data[el].credits,
+          data[el].default,
+          data[el].tags,
+          data[el].urls,
+          data[el].type,
+          data[el].options,
+        );
+      }
+    });
 }
 getFeatures();
 
@@ -682,6 +703,7 @@ async function getFeaturesBySearch(search) {
   var data = await response.json();
   var allValues = [];
   var allStuff = [];
+  var obj = await chrome.storage.sync.get("features")
   deleteAll();
   if (search.replaceAll(" ", "") !== "") {
     Object.keys(data).forEach(function (el) {
@@ -737,17 +759,17 @@ async function getFeaturesBySearch(search) {
     }
   } else {
     Object.keys(data).forEach(function (el) {
-      createFeature(
-        data[el].title,
-        data[el].description,
-        data[el].file,
-        data[el].credits,
-        data[el].default,
-        data[el].tags,
-        data[el].urls,
-        data[el].type,
-        data[el].options
-      );
+        createFeature(
+          data[el].title,
+          data[el].description,
+          data[el].file,
+          data[el].credits,
+          data[el].default,
+          data[el].tags,
+          data[el].urls,
+          data[el].type,
+          data[el].options,
+        );
     });
   }
 }
