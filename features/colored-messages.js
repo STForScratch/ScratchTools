@@ -1,6 +1,6 @@
-var style = document.createElement('style')
-if (window.location.href.includes('https://scratch.mit.edu/messages')) {
-style.innerHTML = `
+var style = document.createElement("style");
+if (window.location.href.includes("https://scratch.mit.edu/messages")) {
+  style.innerHTML = `
   .social-message
   {
     border-bottom-color: #C5C5C5;
@@ -47,6 +47,6 @@ opacity: 0.75;
   {
     opacity: 1;
   }
-`
-document.body.appendChild(style)
+`;
+  document.body.appendChild(style);
 }

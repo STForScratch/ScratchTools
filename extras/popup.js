@@ -1,18 +1,19 @@
-var btn = document.querySelector('.searchbaricon') || document.querySelector('.sticon')
-var clicks = 0
-btn.addEventListener('click', function() {
-  clicks = clicks+1
+var btn =
+  document.querySelector(".searchbaricon") || document.querySelector(".sticon");
+var clicks = 0;
+btn.addEventListener("click", function () {
+  clicks = clicks + 1;
   if (clicks > 4) {
-    document.querySelector('.easterEgg').textContent = `
+    document.querySelector(".easterEgg").textContent = `
     .feature {
       display: none !important;
     }
 
     .eastereggFeature {
       display: inline-block !important;
-    }`
+    }`;
   }
-})
+});
 
 chrome.storage.sync.get("mode", async function (obj) {
   if (obj.mode !== undefined) {
@@ -324,7 +325,7 @@ function createFeature(
   ) {
     if (document.querySelector("div.enabled")) {
       while (document.querySelector("div.enabled").firstChild) {
-        document.querySelector("div.enabled").firstChild.remove()
+        document.querySelector("div.enabled").firstChild.remove();
       }
     }
     var div23 = document.createElement("div");
@@ -345,11 +346,11 @@ function createFeature(
     switch23.id = id;
     await chrome.storage.sync.get("features", async function (obj) {
       if (obj["features"] !== undefined) {
-          if (obj["features"].includes(switch23.id)) {
-            switch23.checked = true;
-          } else {
-            switch23.checked = false;
-          }
+        if (obj["features"].includes(switch23.id)) {
+          switch23.checked = true;
+        } else {
+          switch23.checked = false;
+        }
       } else {
         await chrome.storage.sync.set({
           features: "ok",
@@ -561,14 +562,23 @@ function createFeature(
         });
       }
       getWarnings();
-      if (enabled && document.querySelector("div.enabled") && document.querySelector('input.searchbar').value.replaceAll(" ", '') === '') {
+      if (
+        enabled &&
+        document.querySelector("div.enabled") &&
+        document.querySelector("input.searchbar").value.replaceAll(" ", "") ===
+          ""
+      ) {
         document.querySelector("div.enabled").appendChild(div23);
       } else {
-      document.querySelector("div.settings").appendChild(div23);
+        document.querySelector("div.settings").appendChild(div23);
       }
-      if ((!document.querySelector('input.searchbar').value.replaceAll(" ", '') === '') && document.querySelector("div.enabled")) {
+      if (
+        !document.querySelector("input.searchbar").value.replaceAll(" ", "") ===
+          "" &&
+        document.querySelector("div.enabled")
+      ) {
         while (document.querySelector("div.enabled").firstChild) {
-          document.querySelector("div.enabled").firstChild.remove()
+          document.querySelector("div.enabled").firstChild.remove();
         }
       }
     });
@@ -602,35 +612,35 @@ function checkSearchBar() {
 async function getFeatures() {
   var response = await fetch("/features/features.json");
   var data = await response.json();
-    var obj = await chrome.storage.sync.get("features")
-    Object.keys(data).forEach(function (el) {
-      if (obj.features.includes(data[el].file)) {
-        createFeature(
-          data[el].title,
-          data[el].description,
-          data[el].file,
-          data[el].credits,
-          data[el].default,
-          data[el].tags,
-          data[el].urls,
-          data[el].type,
-          data[el].options,
-          true
-        );
-      } else {
-        createFeature(
-          data[el].title,
-          data[el].description,
-          data[el].file,
-          data[el].credits,
-          data[el].default,
-          data[el].tags,
-          data[el].urls,
-          data[el].type,
-          data[el].options,
-        );
-      }
-    });
+  var obj = await chrome.storage.sync.get("features");
+  Object.keys(data).forEach(function (el) {
+    if (obj.features.includes(data[el].file)) {
+      createFeature(
+        data[el].title,
+        data[el].description,
+        data[el].file,
+        data[el].credits,
+        data[el].default,
+        data[el].tags,
+        data[el].urls,
+        data[el].type,
+        data[el].options,
+        true
+      );
+    } else {
+      createFeature(
+        data[el].title,
+        data[el].description,
+        data[el].file,
+        data[el].credits,
+        data[el].default,
+        data[el].tags,
+        data[el].urls,
+        data[el].type,
+        data[el].options
+      );
+    }
+  });
 }
 getFeatures();
 
@@ -703,7 +713,7 @@ async function getFeaturesBySearch(search) {
   var data = await response.json();
   var allValues = [];
   var allStuff = [];
-  var obj = await chrome.storage.sync.get("features")
+  var obj = await chrome.storage.sync.get("features");
   deleteAll();
   if (search.replaceAll(" ", "") !== "") {
     Object.keys(data).forEach(function (el) {
@@ -759,17 +769,17 @@ async function getFeaturesBySearch(search) {
     }
   } else {
     Object.keys(data).forEach(function (el) {
-        createFeature(
-          data[el].title,
-          data[el].description,
-          data[el].file,
-          data[el].credits,
-          data[el].default,
-          data[el].tags,
-          data[el].urls,
-          data[el].type,
-          data[el].options,
-        );
+      createFeature(
+        data[el].title,
+        data[el].description,
+        data[el].file,
+        data[el].credits,
+        data[el].default,
+        data[el].tags,
+        data[el].urls,
+        data[el].type,
+        data[el].options
+      );
     });
   }
 }
