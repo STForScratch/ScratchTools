@@ -1,3 +1,19 @@
+var btn = document.querySelector('.searchbaricon') || document.querySelector('.sticon')
+var clicks = 0
+btn.addEventListener('click', function() {
+  clicks = clicks+1
+  if (clicks > 4) {
+    document.querySelector('.easterEgg').textContent = `
+    .feature {
+      display: none !important;
+    }
+
+    .eastereggFeature {
+      display: inline-block !important;
+    }`
+  }
+})
+
 chrome.storage.sync.get("mode", async function (obj) {
   if (obj.mode !== undefined) {
     if (obj.mode === "light") {
@@ -21,7 +37,7 @@ chrome.storage.sync.get("mode", async function (obj) {
             transition: background-color .3s;
         }
         
-        input, .search, button {
+        input, .searchbar, button {
             transition: background-color .3s, color .3s;
         }
         
@@ -235,6 +251,17 @@ document.querySelectorAll("h2.title.type").forEach(function (el) {
   };
 });
 
+document
+  .querySelector(".searchbarbutton")
+  .addEventListener("click", function () {
+    if (document.querySelector(".searchbar").value === "") {
+      deleteAll();
+      getFeatures();
+    } else {
+      getFeaturesBySearch(document.querySelector(".searchbar").value);
+    }
+  });
+
 function createFeature(
   name,
   description,
@@ -244,7 +271,8 @@ function createFeature(
   tags,
   urls,
   type,
-  options
+  options,
+  enabled
 ) {
   if (
     document.body.className !== undefined &&
@@ -265,7 +293,8 @@ function createFeature(
         def,
         tags,
         urls,
-        options
+        options,
+        enabled
       );
     }
   } else {
@@ -278,7 +307,8 @@ function createFeature(
       def,
       tags,
       urls,
-      options
+      options,
+      enabled
     );
   }
   async function continueCreateFeature(
@@ -289,8 +319,14 @@ function createFeature(
     def,
     tags,
     urls,
-    options
+    options,
+    enabled
   ) {
+    if (document.querySelector("div.enabled")) {
+      while (document.querySelector("div.enabled").firstChild) {
+        document.querySelector("div.enabled").firstChild.remove()
+      }
+    }
     var div23 = document.createElement("div");
     var item = div23;
     item.style.textAlign = "left";
@@ -309,19 +345,11 @@ function createFeature(
     switch23.id = id;
     await chrome.storage.sync.get("features", async function (obj) {
       if (obj["features"] !== undefined) {
-        if (def === true) {
-          if (obj["features"].includes(switch23.id)) {
-            switch23.checked = false;
-          } else {
-            switch23.checked = true;
-          }
-        } else {
           if (obj["features"].includes(switch23.id)) {
             switch23.checked = true;
           } else {
             switch23.checked = false;
           }
-        }
       } else {
         await chrome.storage.sync.set({
           features: "ok",
@@ -533,7 +561,16 @@ function createFeature(
         });
       }
       getWarnings();
+      if (enabled && document.querySelector("div.enabled") && document.querySelector('input.searchbar').value.replaceAll(" ", '') === '') {
+        document.querySelector("div.enabled").appendChild(div23);
+      } else {
       document.querySelector("div.settings").appendChild(div23);
+      }
+      if ((!document.querySelector('input.searchbar').value.replaceAll(" ", '') === '') && document.querySelector("div.enabled")) {
+        while (document.querySelector("div.enabled").firstChild) {
+          document.querySelector("div.enabled").firstChild.remove()
+        }
+      }
     });
   }
 }
@@ -545,7 +582,7 @@ function deleteAll() {
 }
 var lastValue = [""];
 var input = document.querySelector("input");
-checkSearchBar();
+//checkSearchBar();
 
 function checkSearchBar() {
   if (
@@ -565,24 +602,35 @@ function checkSearchBar() {
 async function getFeatures() {
   var response = await fetch("/features/features.json");
   var data = await response.json();
-  Object.keys(data).forEach(function (el) {
-    if (data[el].tags === undefined) {
-      var tags = [];
-    } else {
-      var tags = data[el].tags;
-    }
-    createFeature(
-      data[el]["title"],
-      data[el]["description"],
-      data[el]["file"],
-      data[el]["credits"],
-      data[el]["default"],
-      tags,
-      data[el]["urls"],
-      data[el]["type"],
-      data[el].options
-    );
-  });
+    var obj = await chrome.storage.sync.get("features")
+    Object.keys(data).forEach(function (el) {
+      if (obj.features.includes(data[el].file)) {
+        createFeature(
+          data[el].title,
+          data[el].description,
+          data[el].file,
+          data[el].credits,
+          data[el].default,
+          data[el].tags,
+          data[el].urls,
+          data[el].type,
+          data[el].options,
+          true
+        );
+      } else {
+        createFeature(
+          data[el].title,
+          data[el].description,
+          data[el].file,
+          data[el].credits,
+          data[el].default,
+          data[el].tags,
+          data[el].urls,
+          data[el].type,
+          data[el].options,
+        );
+      }
+    });
 }
 getFeatures();
 
@@ -642,8 +690,8 @@ function editDistance(s1, s2) {
   return costs[s2.length];
 }
 
-if (document.querySelector("img.seticon") !== null) {
-  document.querySelector("img.seticon").onclick = function () {
+if (document.querySelector("input.settingsButton") !== null) {
+  document.querySelector("input.settingsButton").onclick = function () {
     chrome.tabs.create({
       url: "/extras/index.html",
     });
@@ -655,6 +703,7 @@ async function getFeaturesBySearch(search) {
   var data = await response.json();
   var allValues = [];
   var allStuff = [];
+  var obj = await chrome.storage.sync.get("features")
   deleteAll();
   if (search.replaceAll(" ", "") !== "") {
     Object.keys(data).forEach(function (el) {
@@ -710,17 +759,17 @@ async function getFeaturesBySearch(search) {
     }
   } else {
     Object.keys(data).forEach(function (el) {
-      createFeature(
-        data[el].title,
-        data[el].description,
-        data[el].file,
-        data[el].credits,
-        data[el].default,
-        data[el].tags,
-        data[el].urls,
-        data[el].type,
-        data[el].options
-      );
+        createFeature(
+          data[el].title,
+          data[el].description,
+          data[el].file,
+          data[el].credits,
+          data[el].default,
+          data[el].tags,
+          data[el].urls,
+          data[el].type,
+          data[el].options,
+        );
     });
   }
 }

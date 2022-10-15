@@ -1,6 +1,6 @@
 var version = '2.14.0'
 
-chrome.runtime.onInstalled.addListener(function (object) {
+chrome.runtime.onInstalled.addListener(async function (object) {
   if (chrome.runtime.getManifest().version_name.toLowerCase().includes('beta')) {
     chrome.action.setIcon({
       path : {
@@ -20,6 +20,17 @@ chrome.runtime.onInstalled.addListener(function (object) {
             chrome.tabs.create({ url: 'https://scratchtools.app/welcome' })
         }
     }
+chrome.storage.sync.get("features", function(obj) {
+  if (!obj) {
+  var str = ''
+  obj.forEach(function(el) {
+if (el.enabled) {
+  str = str+' '+el.file
+}
+  })
+  chrome.storage.sync.set({"features":str})
+}
+})
 });
 
 chrome.tabs.onUpdated.addListener(function (tabId , info) {

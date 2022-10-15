@@ -159,7 +159,8 @@
 		"urls": ["https://scratch.mit.edu/users/7pace/", "https://scratch.mit.edu/users/rgantzos/"],
 		"file": "comment-on-closed-profile",
 		"tags": ["Recommended"],
-		"type": ["Website"]
+		"type": ["Website"],
+		"default":true
 	},
 	{	
 		"title": "Delete Custom Block Uses",
@@ -197,7 +198,8 @@
 		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/GrahamBurger/"],
 		"file": "sprite-clones",
 		"tags": ["Recommended"],
-		"type": ["Editor"]
+		"type": ["Editor"],
+		"default":true
 	},
 	{	
 		"title": "Block Log",
@@ -292,7 +294,8 @@
 		"urls": ["https://scratch.mit.edu/users/rgantzos/", "https://scratch.mit.edu/users/romadillo/"],
 		"file": "collapse-blocks",
 		"tags": ["Recommended"],
-		"type": ["Editor"]
+		"type": ["Editor"],
+		"default":true
 	},
 	{
 		"title": "Set Featured Project",
