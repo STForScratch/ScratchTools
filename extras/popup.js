@@ -21,7 +21,7 @@ chrome.storage.sync.get("mode", async function (obj) {
             transition: background-color .3s;
         }
         
-        input, .search, button {
+        input, .searchbar, button {
             transition: background-color .3s, color .3s;
         }
         
@@ -234,6 +234,17 @@ document.querySelectorAll("h2.title.type").forEach(function (el) {
     getFeaturesBySearch(document.querySelector("input").value);
   };
 });
+
+document
+  .querySelector(".searchbarbutton")
+  .addEventListener("click", function () {
+    if (document.querySelector(".searchbar").value === "") {
+      deleteAll();
+      getFeatures();
+    } else {
+      getFeaturesBySearch(document.querySelector(".searchbar").value);
+    }
+  });
 
 function createFeature(
   name,
@@ -545,7 +556,7 @@ function deleteAll() {
 }
 var lastValue = [""];
 var input = document.querySelector("input");
-checkSearchBar();
+//checkSearchBar();
 
 function checkSearchBar() {
   if (
@@ -642,8 +653,8 @@ function editDistance(s1, s2) {
   return costs[s2.length];
 }
 
-if (document.querySelector("img.seticon") !== null) {
-  document.querySelector("img.seticon").onclick = function () {
+if (document.querySelector("input.settingsButton") !== null) {
+  document.querySelector("input.settingsButton").onclick = function () {
     chrome.tabs.create({
       url: "/extras/index.html",
     });

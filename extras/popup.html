@@ -1,9 +1,28 @@
-
 <!DOCTYPE html>
 <html>
   <head>
     <title>ScratchTools</title>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+      .feature {
+        margin: 2em;
+        margin-top: 3em;
+      }
+      .feature {
+        border: 0px solid black;
+      }
+      .feature h3 {
+        margin-left: 0em;
+      }
+      .feature span {
+        color: #00000077;
+      }
+      .feature .switch {
+        float: right;
+        margin-top: -2em;
+        margin-right: 0.2em;
+      }
+
       body {
         font-family: arial;
         height: 500px;
@@ -37,53 +56,416 @@
         text-decoration: none;
         color: #ff9f00;
       }
-      .navbar2 {
-  height:40px;
-  position: fixed;
-  width: 100vw;
-  left: 0px;
-  top: 0px;
-  float: right;
-  background-color: #ff9f00;
-  padding: 15px;
-  z-index: 2;
-}
-.navbar2 .seticon{
-  float:right;
-  margin-right:40px;
-  cursor:pointer;
-}
-.navbar2 .span{
-  font-size:25px;
-  display:block;
-  float:left;
-  margin-left:10px;
-  margin-top:3.5px;
-}
+
+      .minilogo {
+        width: 2rem;
+        height: 2rem;
+      }
+
+      .welcome {
+        background-color: #eeeeee;
+        border-radius: var(--radius);
+        width: 80vw;
+        padding: 1rem;
+        position: relative;
+        left: 10vw;
+        margin-left: -1.5rem;
+        text-align: center;
+      }
+
+      .welcome img,
+      .welcome h3 {
+        display: block;
+      }
+
+      .feature button,
+    .feature input {
+      padding: 0.1vw;
+      height: 2rem;
+      margin-left: 0.5vw;
+      background-color: #ff9f00;
+      border-radius: 1rem;
+      outline: none;
+      border: 0px;
+      color: white;
+    }
+
+    .feature input {
+      color: black;
+      background-color: rgb(228, 228, 228);
+      padding-left: 1rem !important;
+    }
+    .feature button {
+      cursor: pointer;
+    }
     </style>
   </head>
   <body>
-    <div class="navbar2">
-      <img style="float:left;" src="/extras/icontrans128.png" width="40" class="easteregg">
-       <div class="span">ScratchTools </div>
-      <img class="seticon" src="/extras/settings-icon.svg" width="40">
+    <div class="navwrap">
+      <div class="navbar">
+        <div class="wrap">
+          <input
+            class="searchbaricon"
+            value=""
+            type="submit"
+            style="margin-left: 1em"
+          /><input class="searchbar" placeholder="search" /><input
+            class="searchbarbutton"
+            value=""
+            type="submit"
+          />
+          <input class="settingsButton" type="submit" value="" />
+        </div>
+      </div>
     </div>
-    <div class="settingstab tab" style="position: absolute; right: 2vw; top: 2vw">
-      
+    <hr style="border: none; height: 70px" />
+    <div class="welcome">
+      <center>
+        <img src="/extras/mini-logo.svg" class="minilogo" />
+        <h3 class="count">
+          Welcome to your settings! You can find all features here!
+        </h3>
+      </center>
     </div>
-    <center style="height: 500px">
-        <br />
-        <br />
-  
-        <br />
-        <br /><br />
-        <br />
-
-      <input placeholder="search" class="search" />
-      <div class="settings"></div>
-    </center>
-    <script src="/extras/popup.js"></script>
-    <link href="/extras/stsettings.css" rel="stylesheet" />
+    <div class="settings"></div>
   </body>
-  <script src="/extras/beta.js"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
+
+    html {
+      --radius: 12px;
+      width: 400px;
+      font-family: "Space Grotesk", sans-serif;
+      height: 500px;
+    }
+    .feature {
+      margin: 2em;
+      margin-top: 3em;
+    }
+    .feature .featureTitle {
+      border: 0px solid black;
+    }
+    .feature .featureTitle {
+      font-weight: bold;
+      font-size: 1.25rem !important;
+    }
+    .feature h3 {
+      color: #00000077;
+      margin-left: 0em;
+    }
+    .feature .featureTitle {
+      color: #00000077;
+    }
+
+    .navbar {
+      height: 45px;
+      position: fixed;
+      background: white;
+      top: 0;
+      margin-top: 1em;
+      z-index: 2;
+    }
+    .navwrap {
+      width: 100%;
+      background: white;
+      height: 70px;
+      top: 0;
+      position: fixed;
+      z-index: 2;
+    }
+
+    .wrap {
+      position: relative;
+      height: 45px;
+    }
+
+    .searchbar {
+      border-radius: 0px 0px 0px 0px;
+      padding: 12px;
+      padding-left: 10px;
+      height: 21px;
+      width: 50%;
+      border: none;
+      background: #eeeeee;
+      outline: none;
+      vertical-align: middle;
+      position: initial;
+      margin-bottom: 2.9em;
+    }
+    .searchbarbutton {
+      border-radius: 0px var(--radius) var(--radius) 0px;
+      padding: 12px;
+      width: 45px;
+      height: 45px;
+      border: none;
+      background: #eeeeee;
+      outline: none;
+      background-image: url("/extras/search.svg");
+      background-position: 47% 46%;
+      background-size: 20px 20px;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+    .searchbarbutton:hover {
+      background: #ff9f00;
+      background-image: url("/extras/search2.svg");
+      background-position: 47% 46%;
+      background-size: 20px 20px;
+      background-repeat: no-repeat;
+    }
+    .searchbaricon {
+      border-radius: var(--radius) 0px 0px var(--radius);
+      padding: 12px;
+      width: 45px;
+      height: 45px;
+      border: none;
+      background: #eeeeee;
+      outline: none;
+      background-image: url("/extras/mini-logo.svg");
+      background-position: 80% 50%;
+      background-size: 30px 30px;
+      background-repeat: no-repeat;
+    }
+    .settingsButton {
+      padding: 12px;
+      width: 60px;
+      height: 50px;
+      border: none;
+      background: none;
+      outline: none;
+      background-image: url("/extras/settings.svg");
+      background-position: 50% 50%;
+      background-size: 25px 25px;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      float: right;
+      margin-top: -6.5em;
+      margin-left: 3em;
+    }
+
+    /*Switch*/
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 55px;
+      height: 28px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #cccccc;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+
+    input:checked + .slider {
+      background-color: #ff9f00;
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+
+    .feature h3 {
+      color: #00000077;
+    }
+
+    .feature .featureTitle {
+      color: black;
+    }
+
+    .beta {
+      background-color: #f2420c;
+      border-radius: 0.4rem;
+      display: inline-block;
+      padding: 0.35rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.8rem;
+      transition: box-shadow 0.3s;
+      cursor: default;
+    }
+
+    .beta:hover {
+      box-shadow: 3px 3px #f2420c80;
+    }
+
+    .betatab {
+      color: #f2420c;
+    }
+
+    .easter {
+      background-color: #f20cd3;
+      border-radius: 0.4rem;
+      display: inline-block;
+      padding: 0.35rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.8rem;
+      transition: box-shadow 0.3s;
+      cursor: default;
+    }
+
+    .easter:hover {
+      box-shadow: 3px 3px #f20cd380;
+    }
+
+    .eastertab {
+      color: #f20cd3;
+    }
+
+    .recommended {
+      background-color: #f2ad0c;
+      border-radius: 0.4rem;
+      display: inline-block;
+      padding: 0.35rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.8rem;
+      transition: box-shadow 0.3s;
+      cursor: default;
+    }
+
+    .recommended:hover {
+      box-shadow: 3px 3px #f2ad0c80;
+    }
+
+    .recommendedtab {
+      color: #f2ad0c;
+    }
+
+    .tabtype {
+      display: block;
+      background-color: #1b2126;
+      outline: none;
+      border: 0px;
+      font-size: 200%;
+      font-family: "Space Grotesk", sans-serif;
+      float: left;
+    }
+
+    .new {
+      background-color: #0c5df2;
+      border-radius: 0.4rem;
+      display: inline-block;
+      padding: 0.35rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.8rem;
+      transition: box-shadow 0.3s;
+      cursor: default;
+    }
+
+    .new:hover {
+      box-shadow: 3px 3px #0c5df280;
+    }
+
+    .switch {
+      float: right;
+    }
+
+    .newtab {
+      color: #0c5df2;
+    }
+
+    .featured {
+      background-color: #700cf2;
+      border-radius: 0.4rem;
+      display: inline-block;
+      padding: 0.35rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.8rem;
+      transition: box-shadow 0.3s;
+      cursor: default;
+    }
+
+    .featured:hover {
+      box-shadow: 3px 3px #700cf280;
+    }
+
+    .featuredtab {
+      color: #700cf2;
+    }
+
+    .tag {
+      margin-left: 0.4rem;
+    }
+
+    .tags {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+    }
+
+    .creditNames * {
+      color: #00000077;
+    }
+
+    .feature h3 {
+      color: #00000077;
+    }
+
+    .feature .featureTitle {
+      color: black;
+    }
+
+    * {
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .switch {
+      position: relative;
+      bottom: calc(50% - 14px);
+      margin-right: 1rem !important;
+    }
+
+    * {
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .warning {
+      margin-left: 0.1rem;
+      background-color: #ff9f00;
+      padding: 0.4rem;
+      border-radius: 0.2rem;
+      border: 4px solid rgba(255, 157, 0, 0.5);
+      width: 250px;
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .tags {
+      display: none;
+    }
+  </style>
+  <script src="/extras/popup.js"></script>
 </html>

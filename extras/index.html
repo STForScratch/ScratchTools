@@ -1,117 +1,355 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Settings | ScratchTools</title>
-    </head>
-    <body class="all">
-        <div class="navbar" style="padding: 1vw; margin-bottom: 5vw;">
-            <h2 class="title" style="display: inline-block;">ScratchTools Settings</h2>
-            <div class="options">
-            <h2 class="title type active" style="display: inline-block; margin-left: 10vw;" id="all">All</h2>
-            <h2 class="title type" style="display: inline-block;" id="Website">Website Features</h2>
-            <h2 class="title type" style="display: inline-block;" id="Editor">Editor Features</h2>
-            <h2 class="title type" style="display: inline-block;" id="Theme">Themes</h2>
-            <h2 class="title feedback" style="display: inline-block; margin-left: 4vw; margin-right: 2vw; color: #0c5df2; cursor: pointer;">Feedback</h2>
-            <img src="/extras/day.png" class="modeSwitch">
+<html lang="en">
+  <head>
+    <title>Settings | ScratchTools</title>
+    <link rel="icon" href="/extras/icon128.png"
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="sticon"></div>
+      <span></span>
+      <div class="titlebar">ScratchTools</div>
+      <div style="float: left; margin-left: 9em">
+        <input class="searchbar" placeholder="search" /><input
+          class="searchbarbutton"
+          value=""
+          type="submit"
+        />
+      </div>
+    </div>
+    <div class="section1">
+      <hr style="border: none; height: 70px" />
+      <div class="sectionwrap">
+        <div class="note yellow">
+          <h3>Brand New Settings</h3>
+          If you've used ScratchTools before, you may notice that our settings
+          page looks totally different! We love this completely new look, and we
+          hope you do too!
         </div>
+        <br />
+        <div class="note purple blocked" style="display: none">
+          <h3>Blocked Users</h3>
         </div>
-        <center style="height: 500px; margin-top: 5vw;">
-                <input placeholder="search" class="search" style="margin-top: 5vw;">
-                <div class="blocked" style="margin-top: 20px;"></div>
-                <div class="message" style="margin-top: 20px;background-color: #313fde;display: inline-block;padding: 1vw;border-radius: 0.3vw;position: fixed;left: 1vw;bottom: 1vw;cursor: pointer;">13 or Older? Join Our Discord Server!</div>
-            <div class="settings settings2"></div>
-        </center>
-            <script src="/extras/popup.js"></script>
-    <script src="/extras/blocked.js"></script>
-    <link href="/extras/stsettings.css" rel="stylesheet">
-        <style>
+      </div>
+    </div>
+    <div class="section2" id="section2">
+      <div class="sectionwrap">
+        <hr style="border: none; height: 70px" />
+        <div class="settings"></div>
+      </div>
+    </div>
+  </body>
 
-        .options {
-            display: block;
-            position: fixed;
-            right: 5vw;
-            top: 1vw;
-        }
+  <style>
+    html {
+      height: 100%;
+    }
+    @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+    body {
+      margin: 0em;
+      font-family: "Roboto", sans-serif;
+    }
 
-        body {
-            overflow-x: hidden;
-        }
+    .feature button,
+    .feature input {
+      padding: 0.1vw;
+      height: 2rem;
+      margin-left: 0.5vw;
+      background-color: #ff9f00;
+      border-radius: 1rem;
+      outline: none;
+      border: 0px;
+      color: white;
+    }
 
-        .type {
-            text-align: right;
-            margin-left: 1.5vw;
-            cursor: pointer;
-        }
+    .feature input {
+      color: black;
+      background-color: rgb(228, 228, 228);
+      padding-left: 1rem !important;
+    }
+    .feature button {
+      cursor: pointer;
+    }
 
-        .navbar {
-            z-index: 100;
-        }
-
-        input {
-            width: 25vw;
-            height: 2.5vw;
-        }
-
-        body {
-            font-family: arial;
-            height: 500px;
-            width: 400px;
-            margin: none;
-        }
-
-        .stuff {
-            margin-left: 80px;
-            margin-right: 80px;
-            color: orange;
-        }
-
-        p {
-            color: black;
-            width: 400px;
-        }
-
-        li {
-            color: black;
-        }
-
-        .logo {
-            width: 80px;
-        }
-
-        a:hover, a:visited, a:link, a:active {
+    a {
+      color: white;
       text-decoration: none;
-      color: #f99f00;
+    }
+    .section1 {
+      border: 0px solid black;
+      min-height: 100% !important;
+      height: 100vh;
+      width: 400px;
+      margin: 0px;
+      max-width: 400px;
+      float: left;
+    }
+    .section2 {
+      border: 0px solid black;
+      min-height: 100% !important;
+      height: 100vh;
+      width: 900px;
+      margin-left: 0em;
+      overflow: auto;
+      float: left;
+    }
+    .section2::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .section2 {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+    .sticon {
+      width: 45px;
+      height: 45px;
+      background-image: url("https://cdn.glitch.global/0f8f769f-292b-4786-9a1c-54f5d051001b/scratchtools24.svg?v=1662105850729");
+      background-position: 50% 50%;
+      background-size: 40px 40px;
+      background-repeat: no-repeat;
+      display: inline-block;
+      float: left;
+    }
+    .navbar .titlebar {
+      border-radius: 10px;
+      padding: 12px;
+      padding-left: 20px;
+      padding-right: 20px;
+      height: 21px;
+      width: 100px;
+      border: none;
+      background: #eeeeee;
+      outline: none;
+      text-align: center;
+      float: left;
+      margin-left: 1em;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .navbar {
+      display: block;
+      height: 45px;
+      width: 100%;
+      position: fixed;
+      background: white;
+      top: 0;
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+      margin-left: 0.5em;
+      z-index: 2;
+      border: 0px solid black;
+    }
+    .searchbar {
+      border-radius: 10px 0px 0px 10px;
+      padding: 12px;
+      padding-left: 20px;
+      height: 21px;
+      width: 200px;
+      border: none;
+      background: #eeeeee;
+      outline: none;
+      vertical-align: middle;
+      position: initial;
+      margin-bottom: 2.75em;
+    }
+
+    .searchbarbutton {
+      border-radius: 0px var(--radius) var(--radius) 0px;
+      padding: 12px;
+      width: 45px;
+      height: 45px;
+      border: none;
+      background: #eeeeee;
+      outline: none;
+      background-image: url("https://cdn.glitch.global/0f8f769f-292b-4786-9a1c-54f5d051001b/searchiconImage24px.svg?v=1662106223454");
+      background-position: 47% 46%;
+      background-size: 20px 20px;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      top: 1px;
+      position: relative;
+      left: -1px;
+    }
+    .searchbarbutton:hover {
+      background: #ff9f00;
+      background-image: url("https://cdn.glitch.global/0f8f769f-292b-4786-9a1c-54f5d051001b/search24.svg?v=1662106223454");
+      background-position: 47% 46%;
+      background-size: 20px 20px;
+      background-repeat: no-repeat;
+    }
+    .searchbaricon {
+      border-radius: var(--radius) 0px 0px var(--radius);
+      padding: 12px;
+      width: 45px;
+      height: 45px;
+      border: none;
+      background: #eeeeee;
+      outline: none;
+      background-image: url("https://cdn.glitch.global/0f8f769f-292b-4786-9a1c-54f5d051001b/scratchtools24.svg?v=1662105850729");
+      background-position: 80% 50%;
+      background-size: 30px 30px;
+      background-repeat: no-repeat;
+    }
+    html {
+      --radius: 12px;
+    }
+    .sectionwrap {
+      padding: 2em;
+      padding-right: 2.5em;
+    }
+    .section1 .note {
+      color: rgba(0, 0, 0, 0.8);
+      padding: 2em;
+      border-radius: 15px;
+    }
+    .section1 .note.yellow {
+      background: rgba(252, 224, 79, 0.79);
+    }
+    .section1 .note.purple {
+      background: rgba(134, 79, 252, 0.79);
+    }
+    .section1 .note h3 {
+      line-height: 10px;
     }
 
     .feature {
-        width: 30vw;
-        display: inline-block;
-        flex-direction: column;
-    position: relative;
-    box-sizing: border-box;
-    orphans: 1;
-    widows: 1;
+      margin-top: 2em;
+      border: 0px solid black;
+      line-height: 25px;
+      width: 360px;
+      display: inline-block;
+      margin-left: 2em;
+    }
+    .feature h3[style="font-size: 1.5em;"] {
+      font-weight: bold;
+    }
+    .feature h3[style="margin-top: -20px; width: 250px;"] {
+      margin-left: 0em;
+      color: #00000077;
+    }
+    .feature span {
+      color: #00000077;
+    }
+    .feature .switch {
+      float: right;
+      margin-top: -1.8em;
+      margin-right: 1em;
     }
 
-    .settings {
-        -webkit-column-count: auto;
-    -moz-column-count: auto;
-    column-count: auto;
-    -webkit-column-gap: 0.5rem;
-    -moz-column-gap: 0.5rem;
-    column-gap: 0.5rem;
-    display: block;
+    /*Switch*/
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 55px;
+      height: 28px;
     }
 
-    .easter.tag, .eastereggFeature {
-    display: none;
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #cccccc;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+
+    input:checked + .slider {
+      background-color: #ff9f00;
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+    /*
+@media (max-width:1211px) { 
+    .section2{
+  border:0px solid black;
+  min-height: 100% !important;
+  height:100vh;
+  margin-left:0em;
+  min-width:0px;
+  max-width:100%;
+      width:500px;
+  overflow:auto;
+  float:left;
+}
 }
 
-.feature {
-    width: 400px !important;
+@media (max-width:900px) { 
+    .section2{
+  border:0px solid black;
+  min-height: 100% !important;
+  height:100vh;
+  margin-left:0em;
+  min-width:0px;
+  max-width:100%;
+      width:100px;
+  overflow:auto;
+  float:left;
 }
+}*/
 
-    </style>
-    </body>
-    <script src="/extras/beta.js"></script>
+    * {
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .warning {
+      margin-left: 0.1rem;
+      background-color: #ff9f00;
+      padding: 0.4rem;
+      border-radius: 0.2rem;
+      border: 4px solid rgba(255, 157, 0, 0.5);
+      width: 250px;
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .creditNames a:hover {
+      text-decoration: none;
+      color: #ff9f00;
+    }
+
+    .creditNames * {
+      color: #00000077;
+    }
+
+    .tags {
+      display: none;
+    }
+  </style>
+  <script src="/extras/popup.js"></script>
+  <script src="/extras/blocked.js"></script>
 </html>
