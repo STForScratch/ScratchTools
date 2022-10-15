@@ -39,6 +39,7 @@ We're a browser extension for the Scratch website that makes Scratch look, work,
 There are multiple ways of installing.
 - Chrome: You can download from Chrome [here](https://scratchtools.app/chrome/). Then just press the Add to Chrome button, and you've downloaded ScratchTools!
 - Firefox/Mozilla: You can download for Firefox [here](https://scratchtools.app/firefox/). You can then just add it to Firefox, and then you have ScratchTools!
+- Safari (macOS, iPadOS and iOS): You can build the extension by typing `make` for macOS, and `make ios` for the iOS app (you will have to sign it on  Xcode), make sure you have enabled Developer mode and allowed unsigned extensions.
 - GitHub: Download from GitHub [here](https://github.com/STForScratch/ScratchTools/zipball/master). If it downloads a `.zip` file, unpack it. Then, with the folder, go to `chrome://extensions`, make sure you have developer mode enabled (switch in the top right corner), and drag the downloaded folder onto the page. Make sure you've disabled other versions of ScratchTools.
 
 ### Building a Feature
