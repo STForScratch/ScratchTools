@@ -23,11 +23,13 @@ chrome.runtime.onInstalled.addListener(async function (object) {
       chrome.runtime.setUninstallURL("https://scratchtools.app/goodbye");
       chrome.tabs.create({ url: "https://scratchtools.app/welcome" });
     }
+    var response = await fetch('/features/features.json')
+    var data = await response.json()
     chrome.storage.sync.get("features", function (obj) {
-      if (!obj) {
+      if (!obj.features) {
         var str = "";
-        obj.forEach(function (el) {
-          if (el.enabled) {
+        data.forEach(function (el) {
+          if (el.default) {
             str = str + " " + el.file;
           }
         });
@@ -168,16 +170,6 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
           }
         }
         chrome.storage.sync.get("features", function (obj) {
-          if (data[el]["default"] === true) {
-            if (!obj["features"].includes(data[el]["file"])) {
-              chrome.scripting.executeScript({
-                target: { tabId: tabId },
-                files: [`/features/${data[el]["file"]}.js`],
-                world: world,
-              });
-              ScratchTools.console.log("Injected feature: " + data[el].file);
-            }
-          } else {
             if (obj["features"].includes(data[el]["file"])) {
               chrome.scripting.executeScript({
                 target: { tabId: tabId },
@@ -186,7 +178,6 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
               });
               ScratchTools.console.log("Injected feature: " + data[el].file);
             }
-          }
         });
       });
       await chrome.storage.sync.get("version", async function (obj) {

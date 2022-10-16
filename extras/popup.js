@@ -789,3 +789,22 @@ if (document.querySelector("h2.feedback") !== null) {
     chrome.tabs.create({ url: "https://scratchtools.app/feedback/" });
   };
 }
+
+async function getNews() {
+  try {
+  var response = await fetch('https://scratchtools.app/news/')
+  var data = await response.json()
+  data.forEach(function(el) {
+    var div = document.createElement('div')
+    div.className = 'note '+el.color
+    var h3 = document.createElement('h3')
+    h3.innerHTML = el.title
+    var span = document.createElement('span')
+    span.innerHTML = el.description
+    div.appendChild(h3)
+    div.appendChild(span)
+    document.querySelector('.news').appendChild(div)
+  })
+} catch(err) {}
+}
+getNews()

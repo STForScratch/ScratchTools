@@ -8,8 +8,7 @@
     <div class="navbar">
       <div class="sticon"></div>
       <span></span>
-      <div class="titlebar">ScratchTools</div>
-      <div style="float: left; margin-left: 9em">
+      <div style="float: left; margin-left: 1em">
         <input class="searchbar" placeholder="search" /><input
           class="searchbarbutton"
           value=""
@@ -20,12 +19,7 @@
     <div class="section1">
       <hr style="border: none; height: 70px" />
       <div class="sectionwrap">
-        <div class="note yellow">
-          <h3>Brand New Settings</h3>
-          If you've used ScratchTools before, you may notice that our settings
-          page looks totally different! We love this completely new look, and we
-          hope you do too!
-        </div>
+        <div class="news"></div>
         <br />
         <div class="note purple blocked" style="display: none">
           <h3>Blocked Users</h3>
@@ -80,9 +74,9 @@
       border: 0px solid black;
       min-height: 100% !important;
       height: 100vh;
-      width: 400px;
+      width: 500px;
       margin: 0px;
-      max-width: 400px;
+      max-width: 40vw;
       float: left;
     }
     .section2 {
@@ -92,7 +86,7 @@
       width: 900px;
       margin-left: 0em;
       overflow: auto;
-      float: left;
+      float: right;
     }
     .section2::-webkit-scrollbar {
       display: none;
@@ -203,12 +197,25 @@
       color: rgba(0, 0, 0, 0.8);
       padding: 2em;
       border-radius: 15px;
+      margin-top:1rem;
     }
     .section1 .note.yellow {
       background: rgba(252, 224, 79, 0.79);
     }
     .section1 .note.purple {
       background: rgba(134, 79, 252, 0.79);
+    }
+
+    .section1 .note.pink {
+      background: #fc4fb7;
+    }
+
+    .section1 .note.orange {
+      background: #fc8c4f;
+    }
+
+    .section1 .note.blue {
+      background:#4fb1fc;
     }
     .section1 .note h3 {
       line-height: 10px;
