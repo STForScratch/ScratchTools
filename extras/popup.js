@@ -425,7 +425,10 @@ function createFeature(
       var span23 = document.createElement("span");
       span23.className = "slider round";
       label23.appendChild(span23);
+      var tags2 = document.createElement("div");
+      tags2.className = "tags";
       div23.appendChild(h23);
+      div23.appendChild(tags2)
       div23.appendChild(document.createElement("br"));
       var description2 = document.createElement("h3");
       description2.style.marginTop = "-20px";
@@ -505,8 +508,6 @@ function createFeature(
         div23.appendChild(btn);
       }
       div23.appendChild(a);
-      var tags2 = document.createElement("div");
-      tags2.className = "tags";
       if (tags.includes("Egg")) {
         var div = document.createElement("div");
         div.className = "easter tag";
@@ -789,3 +790,22 @@ if (document.querySelector("h2.feedback") !== null) {
     chrome.tabs.create({ url: "https://scratchtools.app/feedback/" });
   };
 }
+
+async function getNews() {
+  try {
+  var response = await fetch('https://scratchtools.app/news/')
+  var data = await response.json()
+  data.forEach(function(el) {
+    var div = document.createElement('div')
+    div.className = 'note '+el.color
+    var h3 = document.createElement('h3')
+    h3.innerHTML = el.title
+    var span = document.createElement('span')
+    span.innerHTML = el.description
+    div.appendChild(h3)
+    div.appendChild(span)
+    document.querySelector('.news').appendChild(div)
+  })
+} catch(err) {}
+}
+getNews()
