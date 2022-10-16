@@ -1,5 +1,16 @@
 [
   {
+    "title": "Pause Audio",
+    "description": "Allows you to pause and resume audio in the sound editor of Scratch projects.",
+    "credits": ["Giolaboman", "rgantzos"],
+    "urls": ["https://scratch.mit.edu/users/Giolaboman/", "https://scratch.mit.edu/users/rgantzos/"],
+    "file": "pause-audio",
+    "type": ["Website"],
+    "tags": ["New", "Recommended"],
+    "dynamic": true,
+    "default":true
+  },
+  {
     "title": "Dumpster Fire",
     "description": "The Scratch homepage is a liar with their \"Featured Projects\" section. This changes the name to the proper form, which is \"Dumpster Fire\".",
     "credits": ["Kuzyn_Official", "rgantzos"],
