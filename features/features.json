@@ -26,7 +26,7 @@
     "credits": ["rgantzos"],
     "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "follower-count",
-    "tags": ["New", "Recommended"],
+    "tags": ["Recommended"],
     "type": ["Website"],
     "dynamic": true
   },
@@ -36,7 +36,7 @@
     "credits": ["rgantzos"],
     "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "hide-studio-borders",
-    "tags": ["New"],
+    "tags": [],
     "type": ["Website"],
     "dynamic": true
   },
@@ -46,7 +46,7 @@
     "credits": ["rgantzos"],
     "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "hide-textarea-labels",
-    "tags": ["New"],
+    "tags": [],
     "type": ["Website"],
     "dynamic": true
   },
