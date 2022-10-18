@@ -2,14 +2,14 @@
   "name": "ScratchTools",
   "short_name": "ScratchTools",
   "manifest_version": 3,
-  "version": "2.18.0-beta",
+  "version": "2.18.0",
   "version_name": "2.18.0-beta",
   "description": "Great tools to make Scratching easier!",
   "author": "rgantzos",
   "background": {
     "service_worker": "/extras/background.js"
   },
-  "permissions": ["scripting", "storage"],
+  "permissions": ["scripting", "storage", "alarms"],
   "action": {
     "default_icon": "/extras/icon48.png",
     "default_popup": "/extras/popup.html",

@@ -391,7 +391,23 @@ function createFeature(
               }
             }
           });
+          if (switch23.id === "display-message-count-in-icon") {
+            chrome.action.setBadgeText({ text:'' })
+          }
         } else {
+          if (switch23.id === "display-message-count-in-icon") {
+            try {
+              var response = await fetch(
+                "https://scratch.mit.edu/messages/ajax/get-message-count/"
+              );
+              var data = await response.json();
+              chrome.action.setBadgeText({ text: data.msg_count.toString() });
+              chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
+            } catch (err) {
+              chrome.action.setBadgeText({ text: "?" });
+              chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
+            }
+          }
           console.log("true");
           await chrome.storage.sync.set({
             features: obj["features"] + switch23.id,
@@ -400,7 +416,6 @@ function createFeature(
           features.forEach(function (el) {
             if (el.file === switch23.id) {
               if (el.dynamic) {
-                console.log("yasss");
                 chrome.tabs.query({}, function (tabs) {
                   for (var i = 0; i < tabs.length; i++) {
                     try {

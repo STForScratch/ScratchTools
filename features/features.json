@@ -1,5 +1,14 @@
 [
   {
+    "title": "Display Message Count",
+    "description": "Displays your current message count in the extension icon for ScratchTools.",
+    "credits": ["rgantzos"],
+    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
+    "file": "display-message-count-in-icon",
+    "type": [],
+    "tags": ["New"]
+  },
+  {
     "title": "Pause Audio",
     "description": "Allows you to pause and resume audio in the sound editor of Scratch projects.",
     "credits": ["Giolaboman", "rgantzos"],
