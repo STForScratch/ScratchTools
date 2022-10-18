@@ -1,6 +1,11 @@
 var version = "2.14.0";
 
 chrome.runtime.onInstalled.addListener(async function (object) {
+  chrome.alarms.clearAll();
+  chrome.alarms.create("displayMessageCount", {
+    delayInMinutes: 0.1,
+    periodInMinutes: 0.1,
+  });
   if (
     chrome.runtime.getManifest().version_name.toLowerCase().includes("beta")
   ) {
@@ -23,8 +28,8 @@ chrome.runtime.onInstalled.addListener(async function (object) {
       chrome.runtime.setUninstallURL("https://scratchtools.app/goodbye");
       chrome.tabs.create({ url: "https://scratchtools.app/welcome" });
     }
-    var response = await fetch('/features/features.json')
-    var data = await response.json()
+    var response = await fetch("/features/features.json");
+    var data = await response.json();
     chrome.storage.sync.get("features", function (obj) {
       if (!obj.features) {
         var str = "";
@@ -37,6 +42,22 @@ chrome.runtime.onInstalled.addListener(async function (object) {
       }
     });
   }
+  var obj = await chrome.storage.sync.get("features")
+  if (obj.features && obj.features.includes("display-message-count-in-icon")) {
+  try {
+    var response = await fetch(
+      "https://scratch.mit.edu/messages/ajax/get-message-count/"
+    );
+    var data = await response.json();
+    chrome.action.setBadgeText({ text: data.msg_count.toString() });
+    chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
+  } catch (err) {
+    chrome.action.setBadgeText({ text: "?" });
+    chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
+  }
+} else {
+  chrome.action.setBadgeText({ text:'' })
+}
 });
 
 chrome.tabs.onUpdated.addListener(function (tabId, info) {
@@ -170,14 +191,14 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
           }
         }
         chrome.storage.sync.get("features", function (obj) {
-            if (obj["features"].includes(data[el]["file"])) {
-              chrome.scripting.executeScript({
-                target: { tabId: tabId },
-                files: [`/features/${data[el]["file"]}.js`],
-                world: world,
-              });
-              ScratchTools.console.log("Injected feature: " + data[el].file);
-            }
+          if (obj["features"].includes(data[el]["file"])) {
+            chrome.scripting.executeScript({
+              target: { tabId: tabId },
+              files: [`/features/${data[el]["file"]}.js`],
+              world: world,
+            });
+            ScratchTools.console.log("Injected feature: " + data[el].file);
+          }
         });
       });
       await chrome.storage.sync.get("version", async function (obj) {
@@ -196,4 +217,28 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
     }
     getCurrentTab();
   }
+});
+
+chrome.alarms.onAlarm.addListener(async function () {
+  chrome.alarms.clearAll();
+  chrome.alarms.create("test", {
+    delayInMinutes: 0.1,
+    periodInMinutes: 0.1,
+  });
+  var obj = await chrome.storage.sync.get("features")
+  if (obj.features && obj.features.includes("display-message-count-in-icon")) {
+  try {
+    var response = await fetch(
+      "https://scratch.mit.edu/messages/ajax/get-message-count/"
+    );
+    var data = await response.json();
+    chrome.action.setBadgeText({ text: data.msg_count.toString() });
+    chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
+  } catch (err) {
+    chrome.action.setBadgeText({ text: "?" });
+    chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
+  }
+} else {
+  chrome.action.setBadgeText({ text:'' })
+}
 });
