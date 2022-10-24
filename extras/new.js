@@ -1,6 +1,6 @@
 update(
-  "v2.16.0",
-  "ScratchTools v2.16.0 includes a few new features, bug fixes, enhancements, and behind-the-scenes changes. You can now preview your profile and project textboxes, hide studio activity messages, and more! We’ve even upgraded the compact navbar feature!"
+  "v2.17.0",
+  "This new version includes multiple new features, including the ability to pause audio in the sound editor! We've also completely redesigned our settings page and popup to look more unique. A big announcement: we've just hit 1,000 users! Thank you so much for using ScratchTools!"
 );
 function update(updateVersion, updateDescription) {
   if (document.querySelector(".scratchtoolsUpdateInfo") === null) {
