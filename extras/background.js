@@ -180,6 +180,8 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
       }
       ScratchTools.console.log("Injected storage API.");
       Object.keys(data).forEach(async function (el) {
+        var disabled = (await chrome.storage.sync.get("autoDisabled")).autoDisabled
+        if (!disabled || !disabled.includes(data[el].file)) {
         if (data[el]["world"] === undefined) {
           var world = "MAIN";
         } else {
@@ -200,6 +202,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
             ScratchTools.console.log("Injected feature: " + data[el].file);
           }
         });
+      }
       });
       await chrome.storage.sync.get("version", async function (obj) {
         if (obj["version"] !== version) {
@@ -225,6 +228,9 @@ chrome.alarms.onAlarm.addListener(async function () {
     delayInMinutes: 0.1,
     periodInMinutes: 0.1,
   });
+  var response = await fetch('https://scratchtools.app/disabled/')
+  var data = await response.json()
+  await chrome.storage.sync.set({"autoDisabled":data})
   var obj = await chrome.storage.sync.get("features")
   if (obj.features && obj.features.includes("display-message-count-in-icon")) {
   try {

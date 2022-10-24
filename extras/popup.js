@@ -576,6 +576,13 @@ function createFeature(
             }
           }
         });
+        var disabled = (await chrome.storage.sync.get("autoDisabled")).autoDisabled
+        if (disabled && disabled.includes(id)) {
+          var warning = document.createElement("div");
+          warning.textContent = "This feature has been disabled remotely by ScratchTools. You can still enable/disable it, but, for safety reasons, it won't work for now.";
+          warning.className = "warning disabled";
+          div23.insertBefore(warning, div23.querySelector("label"));
+        }
       }
       getWarnings();
       if (
