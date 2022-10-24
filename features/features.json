@@ -7,7 +7,7 @@
     "file": "left-side-stage",
     "type": ["Editor"],
     "tags": ["New"],
-    "dynamic":true
+    "dynamic": true
   },
   {
     "title": "Colored Context Menus",
@@ -26,7 +26,7 @@
     "file": "hide-disabled-menu-options",
     "type": ["Editor"],
     "tags": ["New"],
-    "dynamic":true
+    "dynamic": true
   },
   {
     "title": "Project Title Above Stage",

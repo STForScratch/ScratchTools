@@ -7,8 +7,8 @@
 // @grant GM_addStyle
 // ==/UserScript==
 
-if (!document.querySelector('.scratchtoolsLeftSideStage')) {
-    var style = GM_addStyle(`
+if (!document.querySelector(".scratchtoolsLeftSideStage")) {
+  var style = GM_addStyle(`
     .gui_flex-wrapper_uXHkj {
       flex-direction: row-reverse !important;
     }
@@ -24,9 +24,9 @@ if (!document.querySelector('.scratchtoolsLeftSideStage')) {
       margin-right: calc(0.5rem / 2) !important;
     }
     `);
-    style.className = 'scratchtoolsLeftSideStage'
-    
-    ScratchTools.setDisable('left-side-stage', function() {
-        document.querySelector('.scratchtoolsLeftSideStage').remove()
-    })
-    }
+  style.className = "scratchtoolsLeftSideStage";
+
+  ScratchTools.setDisable("left-side-stage", function () {
+    document.querySelector(".scratchtoolsLeftSideStage").remove();
+  });
+}

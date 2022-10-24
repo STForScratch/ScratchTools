@@ -156,7 +156,7 @@ ScratchTools.disable = function (feature) {
 };
 
 function GM_addStyle(styleData) {
-  var style = document.createElement('style')
-  style.textContent = styleData
-  return document.querySelector('html').appendChild(style)
+  var style = document.createElement("style");
+  style.textContent = styleData;
+  return document.querySelector("html").appendChild(style);
 }

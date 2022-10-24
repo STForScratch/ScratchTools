@@ -392,7 +392,7 @@ function createFeature(
             }
           });
           if (switch23.id === "display-message-count-in-icon") {
-            chrome.action.setBadgeText({ text:'' })
+            chrome.action.setBadgeText({ text: "" });
           }
         } else {
           if (switch23.id === "display-message-count-in-icon") {
@@ -443,7 +443,7 @@ function createFeature(
       var tags2 = document.createElement("div");
       tags2.className = "tags";
       div23.appendChild(h23);
-      div23.appendChild(tags2)
+      div23.appendChild(tags2);
       div23.appendChild(document.createElement("br"));
       var description2 = document.createElement("h3");
       description2.style.marginTop = "-20px";
@@ -576,10 +576,12 @@ function createFeature(
             }
           }
         });
-        var disabled = (await chrome.storage.sync.get("autoDisabled")).autoDisabled
+        var disabled = (await chrome.storage.sync.get("autoDisabled"))
+          .autoDisabled;
         if (disabled && disabled.includes(id)) {
           var warning = document.createElement("div");
-          warning.textContent = "This feature has been disabled remotely by ScratchTools. You can still enable/disable it, but, for safety reasons, it won't work for now.";
+          warning.textContent =
+            "This feature has been disabled remotely by ScratchTools. You can still enable/disable it, but, for safety reasons, it won't work for now.";
           warning.className = "warning disabled";
           div23.insertBefore(warning, div23.querySelector("label"));
         }
@@ -815,19 +817,19 @@ if (document.querySelector("h2.feedback") !== null) {
 
 async function getNews() {
   try {
-  var response = await fetch('https://scratchtools.app/news/')
-  var data = await response.json()
-  data.forEach(function(el) {
-    var div = document.createElement('div')
-    div.className = 'note '+el.color
-    var h3 = document.createElement('h3')
-    h3.innerHTML = el.title
-    var span = document.createElement('span')
-    span.innerHTML = el.description
-    div.appendChild(h3)
-    div.appendChild(span)
-    document.querySelector('.news').appendChild(div)
-  })
-} catch(err) {}
+    var response = await fetch("https://scratchtools.app/news/");
+    var data = await response.json();
+    data.forEach(function (el) {
+      var div = document.createElement("div");
+      div.className = "note " + el.color;
+      var h3 = document.createElement("h3");
+      h3.innerHTML = el.title;
+      var span = document.createElement("span");
+      span.innerHTML = el.description;
+      div.appendChild(h3);
+      div.appendChild(span);
+      document.querySelector(".news").appendChild(div);
+    });
+  } catch (err) {}
 }
-getNews()
+getNews();
