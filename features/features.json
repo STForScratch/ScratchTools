@@ -1,5 +1,43 @@
 [
   {
+    "title": "Stage on Left Side",
+    "description": "Like in Scratch 2.0, moves the stage to the left side of the editor, rather than keeping it on the right.",
+    "credits": ["GarboMuffin"],
+    "urls": ["https://scratch.mit.edu/users/GarboMuffin/"],
+    "file": "left-side-stage",
+    "type": ["Editor"],
+    "tags": ["New"],
+    "dynamic": true
+  },
+  {
+    "title": "Colored Context Menus",
+    "description": "Like in Scratch 2.0, colors the context menus based on the color of the block they're for.",
+    "credits": ["GarboMuffin"],
+    "urls": ["https://scratch.mit.edu/users/GarboMuffin/"],
+    "file": "colored-context-menus",
+    "type": ["Editor"],
+    "tags": ["New"]
+  },
+  {
+    "title": "Hide Disabled Context Menu Options",
+    "description": "Context menu options in the editor show even if they are disabled and unable to be used, so this feature will hide them if they are.",
+    "credits": ["rgantzos"],
+    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
+    "file": "hide-disabled-menu-options",
+    "type": ["Editor"],
+    "tags": ["New"],
+    "dynamic": true
+  },
+  {
+    "title": "Project Title Above Stage",
+    "description": "Like in Scratch 2.0, moves the project title input box above the stage, rather than in the navbar. This only applies to the editor.",
+    "credits": ["rgantzos"],
+    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
+    "file": "move-project-title-input",
+    "type": ["Editor"],
+    "tags": ["New"]
+  },
+  {
     "title": "Display Message Count",
     "description": "Displays your current message count in the extension icon for ScratchTools.",
     "credits": ["rgantzos"],
@@ -12,18 +50,24 @@
     "title": "Pause Audio",
     "description": "Allows you to pause and resume audio in the sound editor of Scratch projects.",
     "credits": ["Giolaboman", "rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/Giolaboman/", "https://scratch.mit.edu/users/rgantzos/"],
+    "urls": [
+      "https://scratch.mit.edu/users/Giolaboman/",
+      "https://scratch.mit.edu/users/rgantzos/"
+    ],
     "file": "pause-audio",
     "type": ["Website"],
     "tags": ["New", "Recommended"],
     "dynamic": true,
-    "default":true
+    "default": true
   },
   {
     "title": "Dumpster Fire",
     "description": "The Scratch homepage is a liar with their \"Featured Projects\" section. This changes the name to the proper form, which is \"Dumpster Fire\".",
     "credits": ["Kuzyn_Official", "rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/Kuzyn_Official/", "https://scratch.mit.edu/users/rgantzos/"],
+    "urls": [
+      "https://scratch.mit.edu/users/Kuzyn_Official/",
+      "https://scratch.mit.edu/users/rgantzos/"
+    ],
     "file": "dumpster-fire",
     "type": ["Website"],
     "tags": ["New", "Egg"],

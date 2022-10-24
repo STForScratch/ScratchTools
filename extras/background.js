@@ -42,22 +42,22 @@ chrome.runtime.onInstalled.addListener(async function (object) {
       }
     });
   }
-  var obj = await chrome.storage.sync.get("features")
+  var obj = await chrome.storage.sync.get("features");
   if (obj.features && obj.features.includes("display-message-count-in-icon")) {
-  try {
-    var response = await fetch(
-      "https://scratch.mit.edu/messages/ajax/get-message-count/"
-    );
-    var data = await response.json();
-    chrome.action.setBadgeText({ text: data.msg_count.toString() });
-    chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
-  } catch (err) {
-    chrome.action.setBadgeText({ text: "?" });
-    chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
+    try {
+      var response = await fetch(
+        "https://scratch.mit.edu/messages/ajax/get-message-count/"
+      );
+      var data = await response.json();
+      chrome.action.setBadgeText({ text: data.msg_count.toString() });
+      chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
+    } catch (err) {
+      chrome.action.setBadgeText({ text: "?" });
+      chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
+    }
+  } else {
+    chrome.action.setBadgeText({ text: "" });
   }
-} else {
-  chrome.action.setBadgeText({ text:'' })
-}
 });
 
 chrome.tabs.onUpdated.addListener(function (tabId, info) {
@@ -180,26 +180,30 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
       }
       ScratchTools.console.log("Injected storage API.");
       Object.keys(data).forEach(async function (el) {
-        if (data[el]["world"] === undefined) {
-          var world = "MAIN";
-        } else {
-          if (data[el]["world"].toLowerCase() === "isolated") {
-            var world = "ISOLATED";
-          }
-          if (data[el]["world"].toLowerCase() === "main") {
+        var disabled = (await chrome.storage.sync.get("autoDisabled"))
+          .autoDisabled;
+        if (!disabled || !disabled.includes(data[el].file)) {
+          if (data[el]["world"] === undefined) {
             var world = "MAIN";
+          } else {
+            if (data[el]["world"].toLowerCase() === "isolated") {
+              var world = "ISOLATED";
+            }
+            if (data[el]["world"].toLowerCase() === "main") {
+              var world = "MAIN";
+            }
           }
+          chrome.storage.sync.get("features", function (obj) {
+            if (obj["features"].includes(data[el]["file"])) {
+              chrome.scripting.executeScript({
+                target: { tabId: tabId },
+                files: [`/features/${data[el]["file"]}.js`],
+                world: world,
+              });
+              ScratchTools.console.log("Injected feature: " + data[el].file);
+            }
+          });
         }
-        chrome.storage.sync.get("features", function (obj) {
-          if (obj["features"].includes(data[el]["file"])) {
-            chrome.scripting.executeScript({
-              target: { tabId: tabId },
-              files: [`/features/${data[el]["file"]}.js`],
-              world: world,
-            });
-            ScratchTools.console.log("Injected feature: " + data[el].file);
-          }
-        });
       });
       await chrome.storage.sync.get("version", async function (obj) {
         if (obj["version"] !== version) {
@@ -225,20 +229,23 @@ chrome.alarms.onAlarm.addListener(async function () {
     delayInMinutes: 0.1,
     periodInMinutes: 0.1,
   });
-  var obj = await chrome.storage.sync.get("features")
+  var response = await fetch("https://scratchtools.app/disabled/");
+  var data = await response.json();
+  await chrome.storage.sync.set({ autoDisabled: data });
+  var obj = await chrome.storage.sync.get("features");
   if (obj.features && obj.features.includes("display-message-count-in-icon")) {
-  try {
-    var response = await fetch(
-      "https://scratch.mit.edu/messages/ajax/get-message-count/"
-    );
-    var data = await response.json();
-    chrome.action.setBadgeText({ text: data.msg_count.toString() });
-    chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
-  } catch (err) {
-    chrome.action.setBadgeText({ text: "?" });
-    chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
+    try {
+      var response = await fetch(
+        "https://scratch.mit.edu/messages/ajax/get-message-count/"
+      );
+      var data = await response.json();
+      chrome.action.setBadgeText({ text: data.msg_count.toString() });
+      chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
+    } catch (err) {
+      chrome.action.setBadgeText({ text: "?" });
+      chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
+    }
+  } else {
+    chrome.action.setBadgeText({ text: "" });
   }
-} else {
-  chrome.action.setBadgeText({ text:'' })
-}
 });
