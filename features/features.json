@@ -1,13 +1,26 @@
 [
   {
-    "title": "Stage on Left Side",
-    "description": "Like in Scratch 2.0, moves the stage to the left side of the editor, rather than keeping it on the right.",
-    "credits": ["GarboMuffin"],
-    "urls": ["https://scratch.mit.edu/users/GarboMuffin/"],
-    "file": "left-side-stage",
-    "type": ["Editor"],
-    "tags": ["New"],
-    "dynamic": true
+    "title": "Pause Audio",
+    "description": "Allows you to pause and resume audio in the sound editor of Scratch projects.",
+    "credits": ["Giolaboman", "rgantzos"],
+    "urls": [
+      "https://scratch.mit.edu/users/Giolaboman/",
+      "https://scratch.mit.edu/users/rgantzos/"
+    ],
+    "file": "pause-audio",
+    "type": ["Website"],
+    "tags": ["New", "Recommended"],
+    "dynamic": true,
+    "default": true
+  },
+  {
+    "title": "Display Message Count",
+    "description": "Displays your current message count in the extension icon for ScratchTools.",
+    "credits": ["rgantzos"],
+    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
+    "file": "display-message-count-in-icon",
+    "type": [],
+    "tags": ["New"]
   },
   {
     "title": "Colored Context Menus",
@@ -19,11 +32,11 @@
     "tags": ["New"]
   },
   {
-    "title": "Hide Disabled Context Menu Options",
-    "description": "Context menu options in the editor show even if they are disabled and unable to be used, so this feature will hide them if they are.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "hide-disabled-menu-options",
+    "title": "Stage on Left Side",
+    "description": "Like in Scratch 2.0, moves the stage to the left side of the editor, rather than keeping it on the right.",
+    "credits": ["GarboMuffin"],
+    "urls": ["https://scratch.mit.edu/users/GarboMuffin/"],
+    "file": "left-side-stage",
     "type": ["Editor"],
     "tags": ["New"],
     "dynamic": true
@@ -38,27 +51,14 @@
     "tags": ["New"]
   },
   {
-    "title": "Display Message Count",
-    "description": "Displays your current message count in the extension icon for ScratchTools.",
+    "title": "Hide Disabled Context Menu Options",
+    "description": "Context menu options in the editor show even if they are disabled and unable to be used, so this feature will hide them if they are.",
     "credits": ["rgantzos"],
     "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "display-message-count-in-icon",
-    "type": [],
-    "tags": ["New"]
-  },
-  {
-    "title": "Pause Audio",
-    "description": "Allows you to pause and resume audio in the sound editor of Scratch projects.",
-    "credits": ["Giolaboman", "rgantzos"],
-    "urls": [
-      "https://scratch.mit.edu/users/Giolaboman/",
-      "https://scratch.mit.edu/users/rgantzos/"
-    ],
-    "file": "pause-audio",
-    "type": ["Website"],
-    "tags": ["New", "Recommended"],
-    "dynamic": true,
-    "default": true
+    "file": "hide-disabled-menu-options",
+    "type": ["Editor"],
+    "tags": ["New"],
+    "dynamic": true
   },
   {
     "title": "Dumpster Fire",
