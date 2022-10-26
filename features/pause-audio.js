@@ -36,7 +36,7 @@ if (window.location.href.startsWith("https://scratch.mit.edu/projects/")) {
           btn3.appendChild(img2);
           btn.parentNode.appendChild(btn3);
           function callback() {
-            if (btn.title === "Play") {
+            if (btn.firstChild.src === "https://scratch.mit.edu/static/assets/b5257afbe4bcf7953029ddb8f18b24fe.svg") {
               btn2.style.opacity = "0.5";
             } else {
               btn2.style.opacity = "1";
