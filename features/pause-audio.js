@@ -7,8 +7,7 @@ if (window.location.href.startsWith("https://scratch.mit.edu/projects/")) {
         var currentStart = 0;
         var currentlyActive = false;
         var btn =
-          document.querySelector('[title="Play"]') ||
-          document.querySelector('[title="Stop"]');
+        document.querySelector('[class^="sound-editor_round-button_"]')
         function addButton() {
           window.btn2 = document.createElement("button");
           btn2.className = btn.className + " scratchtoolsPause";
