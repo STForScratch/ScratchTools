@@ -1,5 +1,18 @@
 [
   {
+    "title": "Block Count in My Stuff",
+    "description": "Displays the block count for projects on the My Stuff page.",
+    "credits": ["Lasted10", "rgantzos"],
+    "urls": [
+      "https://scratch.mit.edu/users/Lasted10_Forever/",
+      "https://scratch.mit.edu/users/rgantzos/"
+    ],
+    "file": "block-count-in-mystuff",
+    "type": ["Website"],
+    "tags": ["New", "Recommended"],
+    "dynamic": true
+  },
+  {
     "title": "Pause Audio",
     "description": "Allows you to pause and resume audio in the sound editor of Scratch projects.",
     "credits": ["Giolaboman", "rgantzos"],
