@@ -1,5 +1,31 @@
 [
   {
+    "title": "Block Individual Studio Activity",
+    "description": "Disable studio activity messages from specific studios.",
+    "credits": ["Mario_best_games", "rgantzos"],
+    "urls": [
+      "https://scratch.mit.edu/users/Mario_best_games/",
+      "https://scratch.mit.edu/users/rgantzos/"
+    ],
+    "file": "block-studios",
+    "type": ["Website"],
+    "tags": ["New"],
+    "dynamic": true
+  },
+  {
+    "title": "Search Assets",
+    "description": "Easily search through costume and sound assets in the editor.",
+    "credits": ["Mario_best_games", "rgantzos"],
+    "urls": [
+      "https://scratch.mit.edu/users/Mario_best_games/",
+      "https://scratch.mit.edu/users/rgantzos/"
+    ],
+    "file": "search-assets",
+    "type": ["Editor"],
+    "tags": ["New"],
+    "dynamic": true
+  },
+  {
     "title": "Block Count in My Stuff",
     "description": "Displays the block count for projects on the My Stuff page.",
     "credits": ["Lasted10", "rgantzos"],
