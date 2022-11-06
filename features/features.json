@@ -48,7 +48,7 @@
     ],
     "file": "pause-audio",
     "type": ["Website"],
-    "tags": ["New", "Recommended"],
+    "tags": ["Recommended"],
     "dynamic": true,
     "default": true
   },
@@ -59,7 +59,7 @@
     "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "display-message-count-in-icon",
     "type": [],
-    "tags": ["New"]
+    "tags": []
   },
   {
     "title": "Colored Context Menus",
@@ -68,7 +68,7 @@
     "urls": ["https://scratch.mit.edu/users/GarboMuffin/"],
     "file": "colored-context-menus",
     "type": ["Editor"],
-    "tags": ["New"]
+    "tags": []
   },
   {
     "title": "Stage on Left Side",
@@ -77,7 +77,7 @@
     "urls": ["https://scratch.mit.edu/users/GarboMuffin/"],
     "file": "left-side-stage",
     "type": ["Editor"],
-    "tags": ["New"],
+    "tags": [],
     "dynamic": true
   },
   {
@@ -87,7 +87,7 @@
     "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "move-project-title-input",
     "type": ["Editor"],
-    "tags": ["New"]
+    "tags": []
   },
   {
     "title": "Hide Disabled Context Menu Options",
@@ -96,7 +96,7 @@
     "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "hide-disabled-menu-options",
     "type": ["Editor"],
-    "tags": ["New"],
+    "tags": [],
     "dynamic": true
   },
   {
@@ -109,7 +109,7 @@
     ],
     "file": "dumpster-fire",
     "type": ["Website"],
-    "tags": ["New", "Egg"],
+    "tags": ["Egg"],
     "dynamic": true
   },
   {
