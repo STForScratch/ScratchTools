@@ -23,6 +23,20 @@ if (!document.querySelector(".scratchtoolsLeftSideStage")) {
       margin-left: 0 !important;
       margin-right: calc(0.5rem / 2) !important;
     }
+.injectionDiv {
+    border-top-right-radius: 0px !important;
+    border-bottom-left-radius: .5rem !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+div[class^="gui_extension-button-container_"] {
+    border-bottom-left-radius: .5rem !important;
+}
+
+[class^="backpack_backpack-header_"] {
+    border-top-right-radius: 0px !important;
+    border-top-left-radius: .5rem !important;
+}
     `);
   style.className = "scratchtoolsLeftSideStage";
 
