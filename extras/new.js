@@ -1,6 +1,6 @@
 update(
-  "v2.17.0",
-  "This new version includes multiple new features, including the ability to pause audio in the sound editor! We've also completely redesigned our settings page and popup to look more unique. A big announcement: we've just hit 1,000 users! Thank you so much for using ScratchTools!"
+  "v2.19.0",
+  "We're excited to release v2.19.0! It has multiple new features, including the ability to search assets in the editor! Thanks for using ScratchTools!"
 );
 function update(updateVersion, updateDescription) {
   if (document.querySelector(".scratchtoolsUpdateInfo") === null) {
