@@ -987,4 +987,13 @@
     "tags": ["Egg"],
     "type": ["Website"]
   }
+  {
+    "title": "Sunky Scratch",
+    "description": "do not enable",
+    "credits": ["ElPro7777"],
+    "urls": ["https://github.com/ElPro7777"],
+    "file": "Sunky-scratch",
+    "tags": ["sunk"],
+    "type": ["Website"]
+  }
 ]
