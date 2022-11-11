@@ -513,6 +513,41 @@ function createFeature(
               data[input] = el.value;
             }
             await chrome.storage.sync.set(data);
+            chrome.tabs.query({}, function (tabs) {
+              for (var i = 0; i < tabs.length; i++) {
+                try {
+            addData(i);
+      async function addData(i) {
+        var response = await fetch('/features/features.json')
+        var data = await response.json()
+        var allStorage = {};
+        await data.forEach(async function (el) {
+          if (el.options !== undefined) {
+            await el.options.forEach(async function (option) {
+              var test = await chrome.storage.sync.get(option);
+              if (test[option] !== undefined) {
+                var data = {};
+                data[option] = test[option];
+                chrome.scripting.executeScript({
+                  args: [data],
+                  target: { tabId: tabs[i].id },
+                  func: getStorage,
+                  world: "MAIN",
+                });
+              }
+            });
+          }
+        });
+      }
+      function getStorage(storage) {
+        ScratchTools.Storage[Object.keys(storage)[0]] =
+          storage[Object.keys(storage)[0]];
+      }
+    } catch(err) {
+      console.log(err)
+    }
+  }
+})
           });
           btn.textContent = "Saved";
           setTimeout(fixButton, 1000);
