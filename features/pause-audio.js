@@ -15,7 +15,7 @@ if (window.location.href.startsWith("https://scratch.mit.edu/projects/")) {
           btn2.style.backgroundColor = "#ff9f00";
           btn2.style.marginLeft = ".5rem";
           var img = document.createElement("img");
-          img.src = "https://scratchtools.app/pause.svg";
+          img.src = "https://raw.githubusercontent.com/STForScratch/data/main/pause.svg";
           img.draggable = false;
           if (!ScratchTools.Scratch.scratchSound().state.playhead) {
             btn2.style.opacity = "0.5";

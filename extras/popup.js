@@ -817,7 +817,7 @@ if (document.querySelector("h2.feedback") !== null) {
 
 async function getNews() {
   try {
-    var response = await fetch("https://scratchtools.app/news/");
+    var response = await fetch("https://raw.githubusercontent.com/STForScratch/data/main/news.json");
     var data = await response.json();
     data.forEach(function (el) {
       var div = document.createElement("div");

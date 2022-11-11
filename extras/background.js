@@ -229,7 +229,7 @@ chrome.alarms.onAlarm.addListener(async function () {
     delayInMinutes: 0.1,
     periodInMinutes: 0.1,
   });
-  var response = await fetch("https://scratchtools.app/disabled/");
+  var response = await fetch("https://raw.githubusercontent.com/STForScratch/data/main/disabled.json");
   var data = await response.json();
   await chrome.storage.sync.set({ autoDisabled: data });
   var obj = await chrome.storage.sync.get("features");
