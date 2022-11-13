@@ -48,13 +48,13 @@ if (window.location.href.startsWith("https://scratch.mit.edu/discuss/")) {
   ).textContent = "🕷️ Bugs and Glitches";
   document.querySelector(
     "#category_body_2 > div.box-content > table > tbody > tr:nth-child(4) > td.tcl > div > div.tclcon > h3 > a"
-  ).textContent = "⚙️ Advanced Topics";
+  ).textContent = "📈 Advanced Topics";
   document.querySelector(
     "#category_body_2 > div.box-content > table > tbody > tr:nth-child(5) > td.tcl > div > div.tclcon > h3 > a"
   ).textContent = "🧑‍🔬 Connecting to the Physical World";
   document.querySelector(
     "#category_body_2 > div.box-content > table > tbody > tr:nth-child(6) > td.tcl > div > div.tclcon > h3 > a"
-  ).textContent = "🏠 Developing Scratch Extensions";
+  ).textContent = "⚙️ Developing Scratch Extensions";
   document.querySelector(
     "#category_body_2 > div.box-content > table > tbody > tr:nth-child(7) > td.tcl > div > div.tclcon > h3 > a"
   ).textContent = "👷 Open Source Projects";
