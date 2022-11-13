@@ -850,6 +850,12 @@ if (document.querySelector("h2.feedback") !== null) {
   };
 }
 
+document.querySelector('.searchbar').addEventListener('keyup', function(e) {
+  if (e.which === 13) {
+  document.querySelector('.searchbarbutton').click()
+  }
+})
+
 async function getNews() {
   try {
     var response = await fetch("https://raw.githubusercontent.com/STForScratch/data/main/news.json");
