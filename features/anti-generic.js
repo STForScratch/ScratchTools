@@ -13,6 +13,18 @@ function cleanUp() {
         console.log(title);
         el.style.display = "none";
       }
+      if (title.includes("test")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("doors")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("scp")) {
+        console.log(title);
+        el.style.display = "none";
+      }
       if (title.includes("speedrun platformer")) {
         console.log(title);
         el.style.display = "none";
@@ -41,7 +53,99 @@ function cleanUp() {
         console.log(title);
         el.style.display = "none";
       }
+      if (title.includes("fnf")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("funkin")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("vs")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("Add yourself")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("your oc")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("scratch's smooth saturday")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("dave")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("bambi")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("fnf vs")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("friday night funkin")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("funk")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("mcm")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("sarvente")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("singing")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("ays")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("ays/oc")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("friday night")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("scratched out")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("dave and bambi")) {
+        console.log(title);
+        el.style.display = "none";
+      }
       if (title.includes("dark") && title.includes("platformer")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("friday night") && title.includes("funkin")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("dave") && title.includes("bambi")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("fnf") && title.includes("vs")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("funkin") && title.includes("vs")) {
         console.log(title);
         el.style.display = "none";
       }
@@ -54,6 +158,10 @@ function cleanUp() {
         el.style.display = "none";
       }
       if (title.includes("night") && title.includes("platformer")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("OST")) {
         console.log(title);
         el.style.display = "none";
       }
