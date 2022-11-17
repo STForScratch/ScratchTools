@@ -17,6 +17,22 @@ function cleanUp() {
         console.log(title);
         el.style.display = "none";
       }
+      if (title.includes("gf")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("bf")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("girlfriend")) {
+        console.log(title);
+        el.style.display = "none";
+      }
+      if (title.includes("boyfriend")) {
+        console.log(title);
+        el.style.display = "none";
+      }
       if (title.includes("doors")) {
         console.log(title);
         el.style.display = "none";
