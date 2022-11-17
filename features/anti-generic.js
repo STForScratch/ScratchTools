@@ -97,10 +97,6 @@ function cleanUp() {
         console.log(title);
         el.style.display = "none";
       }
-      if (title.includes("mcm")) {
-        console.log(title);
-        el.style.display = "none";
-      }
       if (title.includes("sarvente")) {
         console.log(title);
         el.style.display = "none";
