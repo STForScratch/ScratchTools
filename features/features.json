@@ -255,6 +255,20 @@
     "dynamic": true
   },
   {
+    "title": "Open Project as Javascript",
+    "description": "Easily open any Scratch project in a Javascript editor!",
+    "credits": ["PullJosh", "maDU59"],
+    "urls": [
+      "https://scratch.mit.edu/users/PullJosh/",
+      "https://github.com/maDU59"
+    ],
+    "file": "leopard",
+    "tags": ["Featured"],
+    "type": ["Editor"],
+    "dynamic": true,
+    "warning": "The button is no longer in the navbar, it is now in the File dropdown menu."
+  },
+  {
     "title": "Online Scratchers in Multiplayer Game",
     "description": "On project pages, displays all of the Scratchers currently in that multiplayer game.",
     "credits": ["rgantzos"],
@@ -423,10 +437,11 @@
   {
     "title": "Anti Generic",
     "description": "On the explore and trending pages, this beta feature automatically hides repetitive projects, along with projects that it expects are generic. This includes projects with a lot of tags, common names, and project duplicates.",
-    "credits": ["Bob the Potato wit Drip Jr.", "rgantzos"],
+    "credits": ["Bob the Potato wit Drip Jr.", "rgantzos", "mrfurretguy"],
     "urls": [
       "https://scratch.mit.edu/users/JefferyTheSuperKat/",
       "https://scratch.mit.edu/users/rgantzos/"
+      "https://scratch.mit.edu/users/MrAK2006/"
     ],
     "file": "anti-generic",
     "tags": ["Beta", "Featured"],
