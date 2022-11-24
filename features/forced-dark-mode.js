@@ -14,6 +14,7 @@ function addStyle(styleString) {
 addStyle(`
     * {
         background-color: invert(100%);
-        color: invert(100%);
     }
 `)
+
+document.body.style.filter = 'invert(1)'
