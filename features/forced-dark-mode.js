@@ -15,6 +15,6 @@ document.body.style.filter = 'invert(1)'
 
 addStyle(`
   img {
-    color: invert(100%);
+    filter: invert(1);
   }
 `)
