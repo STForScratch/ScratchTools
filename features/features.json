@@ -13,6 +13,17 @@
     "dynamic": true
   },
   {
+    "title": "Forced dark mode (for all pages)",
+    "description": "Forces dark mode on all Scratch pages. (not compatible with other dark mode features!)",
+    "credits": ["JaydenDev"],
+    "urls": [
+      "https://github.com/jdev082"
+    ],
+    "file": "forced-dark-mode",
+    "tags": ["New"],
+    "dynamic": true
+  },
+  {
     "title": "Search Assets",
     "description": "Easily search through costume and sound assets in the editor.",
     "credits": ["Mario_best_games", "rgantzos"],
