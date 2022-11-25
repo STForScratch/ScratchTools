@@ -13,13 +13,13 @@
     "dynamic": true
   },
   {
-    "title": "Forced dark mode (for all pages)",
-    "description": "Forces dark mode on all Scratch pages. (not compatible with other dark mode features!)",
+    "title": "High contrast (for all pages)",
+    "description": "High contrast theme for all Scratch pages. (not compatible with other dark mode features!)",
     "credits": ["JaydenDev"],
     "urls": [
       "https://github.com/jdev082"
     ],
-    "file": "forced-dark-mode",
+    "file": "high-contrast",
     "tags": ["New"],
     "dynamic": true
   },
