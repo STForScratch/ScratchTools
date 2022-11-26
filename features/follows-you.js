@@ -3,13 +3,13 @@ async function getFollowing(user1, user2) {
   var isFollowing = false
   var offset = 0
   while (notFound) {
-      var response = await fetch(`https://api.scratch.mit.edu/users/${user1}/following/?limit=40&offset=${offset.toString()}`)
+      var response = await fetch(`https://api.scratch.mit.edu/users/${user2}/following/?limit=40&offset=${offset.toString()}`)
       var data = await response.json()
       if (data.length === 0) {
           notFound = false
       }
       data.forEach(function(el) {
-          if (el.username.toLowerCase() === user2.toLowerCase()) {
+          if (el.username.toLowerCase() === user1.toLowerCase()) {
               notFound = false
               isFollowing = true
               ScratchTools.waitForElements('.header-text', function(element) {
