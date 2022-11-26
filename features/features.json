@@ -1,5 +1,18 @@
  [
   {
+    "title": "Show if Following on Profile",
+    "description": "If a user is following you, it will show next to their username when you visit their profile.",
+    "credits": ["Bob the Potato with Drip", "TimMcCool"],
+    "urls": [
+      "https://scratch.mit.edu/users/JefferyTheSuperKat/",
+      "https://scratch.mit.edu/users/TimMcCool/"
+    ],
+    "file": "follows-you",
+    "type": ["Website"],
+    "tags": ["New", "Featured"],
+    "dynamic": true
+  },
+  {
     "title": "Custom Studio Section",
     "description": "On the homepage of the Scratch website, the newest projects from the studio of your choice are displayed above the Featured Projects.",
     "credits": ["rgantzos"],
@@ -45,19 +58,6 @@
     "file": "hide-block-category-names",
     "tags": ["Theme", "New"],
     "type": ["Editor"],
-    "dynamic": true
-  },
-  {
-    "title": "Show if Following on Profile",
-    "description": "If a user is following you, it will show next to their username when you visit their profile.",
-    "credits": ["Bob the Potato with Drip", "TimMcCool"],
-    "urls": [
-      "https://scratch.mit.edu/users/JefferyTheSuperKat/",
-      "https://scratch.mit.edu/users/TimMcCool/"
-    ],
-    "file": "follows-you",
-    "type": ["Website"],
-    "tags": ["New", "Featured"],
     "dynamic": true
   },
   {
