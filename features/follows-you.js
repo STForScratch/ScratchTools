@@ -31,3 +31,9 @@ async function getFollowing(user1, user2) {
 if (window.location.href.toLowerCase().startsWith('https://scratch.mit.edu/users/')) {
   getFollowing(Scratch.INIT_DATA.LOGGED_IN_USER.model.username, window.location.href.toLowerCase().split('https://scratch.mit.edu/users/')[1].split('/')[0])
 }
+
+ScratchTools.setDisable('follows-you', function() {
+  if (document.querySelector('.scratchtoolsFollowsYou')) {
+    document.querySelector('.scratchtoolsFollowsYou').remove()
+  }
+})
