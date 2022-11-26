@@ -1,5 +1,17 @@
  [
   {
+    "title": "Custom Studio Section",
+    "description": "On the homepage of the Scratch website, the newest projects from the studio of your choice are displayed above the Featured Projects.",
+    "credits": ["rgantzos"],
+    "urls": [
+      "https://scratch.mit.edu/users/rgantzos/"
+    ],
+    "file": "custom-studio",
+    "tags": ["Featured", "New"],
+    "type": ["Website"],
+    "options": ["Studio ID"]
+  },
+  {
     "title": "Hide Project Tags",
     "description": "Hides all linked tags in the Instructions/Notes and Credits of projects.",
     "credits": ["rgantzos"],
