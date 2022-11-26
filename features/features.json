@@ -12,6 +12,18 @@
     "options": ["Studio ID"]
   },
   {
+    "title": "Highlight Unanswered Forum Topics",
+    "description": "Adds a blue highlight to topics in the forums that have no replies.",
+    "credits": ["rgantzos"],
+    "urls": [
+      "https://scratch.mit.edu/users/rgantzos/"
+    ],
+    "file": "highlight-unanswered",
+    "type": ["Website"],
+    "tags": ["New", "Recommended"],
+    "dynamic": true
+  },
+  {
     "title": "Hide Project Tags",
     "description": "Hides all linked tags in the Instructions/Notes and Credits of projects.",
     "credits": ["rgantzos"],
