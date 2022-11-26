@@ -22,7 +22,7 @@
     ],
     "file": "search-assets",
     "type": ["Editor"],
-    "tags": ["New"],
+    "tags": [],
     "dynamic": true
   },
   {
@@ -35,7 +35,7 @@
     ],
     "file": "block-count-in-mystuff",
     "type": ["Website"],
-    "tags": ["New", "Recommended"],
+    "tags": ["Recommended"],
     "dynamic": true
   },
   {
@@ -48,7 +48,7 @@
     ],
     "file": "block-studios",
     "type": ["Website"],
-    "tags": ["New"],
+    "tags": [],
     "dynamic": true
   },
   {
