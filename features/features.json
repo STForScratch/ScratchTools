@@ -24,6 +24,18 @@
     "dynamic": true
   },
   {
+    "title": "Hide Block Category Names",
+    "description": "Changes the block categories in the editor to only show the colors of the categories.",
+    "credits": ["rgantzos"],
+    "urls": [
+      "https://scratch.mit.edu/users/rgantzos/"
+    ],
+    "file": "hide-block-category-names",
+    "tags": ["Theme", "New"],
+    "type": ["Editor"],
+    "dynamic": true
+  },
+  {
     "title": "Show if Following on Profile",
     "description": "If a user is following you, it will show next to their username when you visit their profile.",
     "credits": ["Bob the Potato with Drip", "TimMcCool"],
