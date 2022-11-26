@@ -1,5 +1,17 @@
 [
   {
+    "title": "Hide Project Tags",
+    "description": "Hides all linked tags in the Instructions/Notes and Credits of projects.",
+    "credits": ["rgantzos"],
+    "urls": [
+      "https://scratch.mit.edu/users/rgantzos/"
+    ],
+    "file": "hide-project-tags",
+    "type": ["Website"],
+    "tags": ["New"],
+    "dynamic": true
+  },
+  {
     "title": "Show if Following on Profile",
     "description": "If a user is following you, it will show next to their username when you visit their profile.",
     "credits": ["Bob the Potato with Drip", "TimMcCool"],
@@ -9,7 +21,7 @@
     ],
     "file": "follows-you",
     "type": ["Website"],
-    "tags": ["New"],
+    "tags": ["New", "Featured"],
     "dynamic": true
   },
   {
