@@ -159,10 +159,10 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
         await data.forEach(async function (el) {
           if (el.options !== undefined) {
             await el.options.forEach(async function (option) {
-              var test = await chrome.storage.sync.get(option);
-              if (test[option] !== undefined) {
+              var test = await chrome.storage.sync.get(option.id);
+              if (test[option.id] !== undefined) {
                 var data = {};
-                data[option] = test[option];
+                data[option.id] = test[option.id];
                 chrome.scripting.executeScript({
                   args: [data],
                   target: { tabId: tabId },
