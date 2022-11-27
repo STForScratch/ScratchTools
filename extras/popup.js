@@ -481,14 +481,17 @@ function createFeature(
           input.style.width = "40%";
           input.style.padding = "0.1vw";
           input.style.height = "2rem";
-          input.placeholder = el;
+          input.placeholder = el.name;
           input.type = "text";
+          input.id = el.id
           getFont();
           async function getFont() {
-            await chrome.storage.sync.get(el, async function (obj) {
+            await chrome.storage.sync.get(el.id, async function (obj) {
               try {
-                if (obj[el] !== undefined) {
-                  input.value = obj[el];
+                if (obj[el.id] !== undefined) {
+                  input.value = obj[el.id];
+                } else {
+                  input.value = el.placeholder
                 }
               } catch (err) {
                 console.log(err);
@@ -505,9 +508,9 @@ function createFeature(
         btn.style.marginLeft = "0.5vw";
         btn.onclick = async function () {
           div23.querySelectorAll("input").forEach(async function (el) {
-            var input = el.placeholder;
+            var input = el.id;
             var data = {};
-            if (input.type === "checkbox") {
+            if (el.type === "checkbox") {
               data[input] = el.checked;
             } else {
               data[input] = el.value;
@@ -524,10 +527,10 @@ function createFeature(
         await data.forEach(async function (el) {
           if (el.options !== undefined) {
             await el.options.forEach(async function (option) {
-              var test = await chrome.storage.sync.get(option);
-              if (test[option] !== undefined) {
+              var test = await chrome.storage.sync.get(option.id);
+              if (test[option.id] !== undefined) {
                 var data = {};
-                data[option] = test[option];
+                data[option.id] = test[option.id];
                 chrome.scripting.executeScript({
                   args: [data],
                   target: { tabId: tabs[i].id },

@@ -9,7 +9,7 @@
     "file": "custom-studio",
     "tags": ["Featured", "New"],
     "type": ["Website"],
-    "options": ["Studio ID"]
+    "options": [{ "id":"Studio ID", "name":"Studio ID", "default":"27205657" }]
   },
   {
     "title": "Highlight Unanswered Forum Topics",
@@ -438,7 +438,7 @@
     "file": "custom-fonts",
     "tags": ["Featured"],
     "type": ["Website", "Theme"],
-    "options": ["font"],
+    "options": [{ "id":"font", "name":"Font Name" }],
     "dynamic": true
   },
   {
