@@ -488,10 +488,10 @@ function createFeature(
           async function getFont() {
             await chrome.storage.sync.get(el.id, async function (obj) {
               try {
-                if (obj[el.id] !== undefined) {
+                if (obj[el.id]) {
                   input.value = obj[el.id];
                 } else {
-                  input.value = el.placeholder
+                  input.value = el.default
                 }
               } catch (err) {
                 console.log(err);
