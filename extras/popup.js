@@ -452,7 +452,7 @@ function createFeature(
       var a = document.createElement("h3");
       a.innerHTML = `<span>Credits: <span>`;
       a.style.display = "inline-block";
-      a.style.width = "70vw";
+      a.style.width = "15rem";
       credits.forEach(function (el, i) {
         var credit = document.createElement("a");
         credit.style.display = "inline-block";
