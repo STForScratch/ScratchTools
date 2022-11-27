@@ -1,6 +1,6 @@
 update(
-  "v2.19.0",
-  "We're excited to release v2.19.0! It has multiple new features, including the ability to search assets in the editor! Thanks for using ScratchTools!"
+  "ScratchTools v2.20.0",
+  "We are so happy to be releasing v2.20.0! This new version includes a lot of new features, including the ability to see if someone is following you, just by looking at their profile!"
 );
 function update(updateVersion, updateDescription) {
   if (document.querySelector(".scratchtoolsUpdateInfo") === null) {

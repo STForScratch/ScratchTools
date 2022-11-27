@@ -1,4 +1,4 @@
-var version = "2.19.0";
+var version = "2.20.0";
 
 chrome.runtime.onInstalled.addListener(async function (object) {
   chrome.alarms.clearAll();
