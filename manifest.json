@@ -4,7 +4,7 @@
   "manifest_version": 3,
   "version": "2.20.0",
   "version_name": "2.20.0",
-  "description": "Great tools to make Scratching easier!",
+  "description": "ScratchTools is fully customizable with tons of features, all for making the Scratch website better and easier to use!",
   "author": "rgantzos",
   "background": {
     "service_worker": "/extras/background.js"
