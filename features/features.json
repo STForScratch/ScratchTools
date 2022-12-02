@@ -1,5 +1,16 @@
  [
   {
+    "title": "Show User Statistics",
+    "description": "Replaces the 'What I've been doing' section on a profile page with the user's statistics.",
+    "credits": ["Dr_Lego"],
+    "urls": [
+      "https://scratch.mit.edu/users/Dr_Lego/"
+    ],
+    "file": "show-user-stats",
+    "type": ["Editor"],
+    "tags": ["New"]
+  },
+  {
     "title": "Show if Following on Profile",
     "description": "If a user is following you, it will show next to their username when you visit their profile.",
     "credits": ["Bob the Potato with Drip", "TimMcCool"],
