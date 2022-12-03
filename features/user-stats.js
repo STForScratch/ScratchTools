@@ -17,7 +17,8 @@ if (!document.querySelector(".location").className.includes(" scratchtools")) {
     function image(url){return(`<img src='${url}' width='25' height='25' style='vertical-align:middle; margin:10px'></img>`)};
     function space(){return("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")};
     function commafy(num){
-      return(parseInt(num).toLocaleString())};
+      if(num == undefined){return("0")}else
+      {return(parseInt(num).toLocaleString())}};
     document.getElementsByClassName("activity-stream")[0].remove();
     var box = document.getElementsByClassName("doing")[0];
     var table = `${"<div style='margin:10px'>#" + commafy(data.statistics.ranks.followers) + " (#" + commafy(data.statistics.ranks.country.followers) + ")"+space()+"</div>"}${image('https://scratch.mit.edu/svgs/messages/follow.svg')}${commafy(data.statistics.followers)}${space()}<br>${image('https://scratch.mit.edu/svgs/messages/love.svg')}${commafy(data.statistics.loves)}${space()}<br>${image('https://scratch.mit.edu/svgs/messages/favorite.svg')}${commafy(data.statistics.favorites)}${space()}<br>${image('https://scratch.mit.edu/svgs/project/views-gray.svg')}${commafy(data.statistics.views)}${space()}<br>`;
