@@ -1,5 +1,17 @@
  [
   {
+    "title": "Upload Images with Scratch Assets in the forums",
+    "description": "Use assets.scratch.mit.edu as an image host",
+    "credits": ["ISTILLMAKESTUFF", "TheGlassPenguin"],
+    "urls": [
+      "https://scratch.mit.edu/users/ISTILLMAKESTUFF",
+      "https://scratch.mit.edu/users/TheGlassPenguin"
+    ],
+    "file": "host-images-in-forums-with-assets",
+    "type": ["Website"],
+    "tags": ["New"]
+},
+  {
     "title": "Show if Following on Profile",
     "description": "If a user is following you, it will show next to their username when you visit their profile.",
     "credits": ["Bob the Potato with Drip", "TimMcCool"],
