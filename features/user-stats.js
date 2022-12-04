@@ -1,7 +1,6 @@
 async function getStats()
 {
   if (window.location.href.includes("https://scratch.mit.edu/users/")) {
-  alert(window.location.href.includes("https://scratch.mit.edu/users/"))
   var response = await fetch(`https://scratchdb.lefty.one/v3/user/info/${window.location.href.replaceAll("https://scratch.mit.edu/users/","")}`)
   var data = await response.json()
   if(data.statistics != undefined){
