@@ -1,11 +1,12 @@
  [
   {
-    "title": "Upload Images with Scratch Assets in the forums",
+    "title": "Upload Images with Scratch Assets in the forums by either clicking on the button or ctrl+y",
     "description": "Use assets.scratch.mit.edu as an image host",
-    "credits": ["ISTILLMAKESTUFF", "TheGlassPenguin"],
+    "credits": ["ISTILLMAKESTUFF", "TheGlassPenguin", "StickFireGames"],
     "urls": [
       "https://scratch.mit.edu/users/ISTILLMAKESTUFF",
-      "https://scratch.mit.edu/users/TheGlassPenguin"
+      "https://scratch.mit.edu/users/TheGlassPenguin",
+      "https://scratch.mit.edu/users/stickfiregames"
     ],
     "file": "host-images-in-forums-with-assets",
     "type": ["Website"],
