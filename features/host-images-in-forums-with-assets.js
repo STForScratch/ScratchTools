@@ -6,6 +6,7 @@ img.alt = 'upload image icon';
 button5.before(bb5);
 bb5.classList.add("markItUpButton");
 bb5.appendChild(img);
+bb5.style.cursor = 'pointer';
 bb5.style.marginRight = "5px";
 bb5.title = 'Upload Image [CTRL + Y]';
 document.body.addEventListener("keydown", function (ev) {
