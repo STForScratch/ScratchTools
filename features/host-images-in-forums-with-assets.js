@@ -1,7 +1,7 @@
 var button5 = document.querySelector(".markItUpButton5");
 var bb5 = document.createElement('li');
 var img = document.createElement('img');
-img.src = 'https://lopste.github.io/forumoji/resources/forumoji/sunrise.png';
+img.src = 'https://github.com/lopste/forumoji/blob/main/resources/forumoji/sunrise-over-mountains.png?raw=true';
 img.alt = 'upload image icon';
 button5.before(bb5);
 bb5.classList.add("markItUpButton");
