@@ -4,6 +4,7 @@ var img = document.createElement('img');
 img.src = 'https://github.com/lopste/forumoji/blob/main/resources/forumoji/sunrise-over-mountains.png?raw=true';
 img.alt = 'upload image icon';
 button5.before(bb5);
+button5.title = 'Import Image with link [CTRL+P]';
 bb5.classList.add("markItUpButton");
 bb5.appendChild(img);
 bb5.style.cursor = 'pointer';
