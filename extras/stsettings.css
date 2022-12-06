@@ -122,6 +122,7 @@ body {
 
 .tag {
   margin-left: 0.4rem;
+  display: none !important;
 }
 
 .tags {
