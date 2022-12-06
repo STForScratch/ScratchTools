@@ -600,7 +600,7 @@ function createFeature(
         div.textContent = "Beta";
         tags2.appendChild(div);
       }
-      div23.appendChild(tags2);
+      //div23.appendChild(tags2);
       async function getWarnings() {
         var response = await fetch("/features/features.json");
         var data = await response.json();
