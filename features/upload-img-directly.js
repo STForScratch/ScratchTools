@@ -1,26 +1,31 @@
 var button5 = document.querySelector(".markItUpButton5");
-var bb5 = document.createElement('li');
-var img = document.createElement('img');
-img.src = 'https://gh.vercte.net/forumoji/resources/forumoji/outbox-tray.png';
-img.alt = 'upload image icon';
+var bb5 = document.createElement("li");
+var img = document.createElement("img");
+img.src = "https://gh.vercte.net/forumoji/resources/forumoji/outbox-tray.png";
+img.alt = "upload image icon";
 button5.before(bb5);
-button5.title = 'Import Image with link [CTRL+P]';
+button5.title = "Import Image with link [CTRL+P]";
 bb5.classList.add("markItUpButton");
 bb5.appendChild(img);
-bb5.style.cursor = 'pointer';
+bb5.style.cursor = "pointer";
 bb5.style.marginRight = "5px";
-bb5.title = 'Upload Image [CTRL + Y]';
-document.body.addEventListener("keydown", function (ev) {
-	ev = ev || window.event;
-	var key = ev.which || ev.keyCode;
-	var ctrl = ev.ctrlKey ? ev.ctrlKey : ((key === 17)
-		? true : false);
-	if (key == 89 && ctrl) {
-    host();
-	}
-}, false);
+bb5.title = "Upload Image [CTRL + Y]";
+document.body.addEventListener(
+  "keydown",
+  function (ev) {
+    ev = ev || window.event;
+    var key = ev.which || ev.keyCode;
+    var ctrl = ev.ctrlKey ? ev.ctrlKey : key === 17 ? true : false;
+    if (key == 89 && ctrl) {
+      host();
+    }
+  },
+  false
+);
 
-bb5.addEventListener('click', (event) => {host()});
+bb5.addEventListener("click", (event) => {
+  host();
+});
 
 function host() {
   if (!document.getElementById("_meta_md5")) {
