@@ -1,7 +1,7 @@
  [
   {
     "title": "Direct image uploads in the forums",
-    "description": "Use assets.scratch.mit.edu as an image host on the forums easily by either clicking the upload image button, or CTRL+Y. Works on the forum posts and signatures. Unblocked for School Chromebook users!",
+    "description": "Allows you to easily upload images to the Scratch forums for posts and signatures without having to use third party image uploading services.",
     "credits": ["ISTILLMAKESTUFF", "TheGlassPenguin", "StickFireGames"],
     "urls": [
       "https://scratch.mit.edu/users/ISTILLMAKESTUFF",
