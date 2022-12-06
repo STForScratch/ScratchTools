@@ -1,16 +1,16 @@
  [
   {
-    "title": "Upload Images with Scratch Assets in the forums by either clicking on the button or ctrl+y",
-    "description": "Use assets.scratch.mit.edu as an image host",
+    "title": "Direct image uploads in the forums",
+    "description": "Use assets.scratch.mit.edu as an image host on the forums easily by either clicking the upload image button, or CTRL+Y. Works on the forum posts and signatures. Unblocked for School Chromebook users!",
     "credits": ["ISTILLMAKESTUFF", "TheGlassPenguin", "StickFireGames"],
     "urls": [
       "https://scratch.mit.edu/users/ISTILLMAKESTUFF",
       "https://scratch.mit.edu/users/TheGlassPenguin",
       "https://scratch.mit.edu/users/stickfiregames"
     ],
-    "file": "host-images-in-forums-with-assets",
+    "file": "upload-img-directly",
     "type": ["Website"],
-    "tags": ["New"]
+    "tags": ["New", "Recomended", "Forums"]
 },
   {
     "title": "Show if Following on Profile",
