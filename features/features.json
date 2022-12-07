@@ -1,16 +1,15 @@
  [
   {
-    "title": "Direct image uploads in the forums",
-    "description": "Allows you to easily upload images to the Scratch forums for posts and signatures without having to use third party image uploading services.",
-    "credits": ["ISTILLMAKESTUFF", "TheGlassPenguin", "StickFireGames"],
+    "title": "Leave Studio button",
+    "description": "Leave a studio by just clicking a button! Ecpecially helpful for big studios!",
+    "credits": ["ISTILLMAKESTUFF", "NFlex23"],
     "urls": [
       "https://scratch.mit.edu/users/ISTILLMAKESTUFF",
-      "https://scratch.mit.edu/users/TheGlassPenguin",
-      "https://scratch.mit.edu/users/stickfiregames"
+      "https://scratch.mit.edu/users/NFlex23"
     ],
-    "file": "upload-img-directly",
+    "file": "leave-studio",
     "type": ["Website"],
-    "tags": ["New", "Recommended"]
+    "tags": ["New"]
 },
   {
     "title": "Show if Following on Profile",
