@@ -1,5 +1,14 @@
  [
   {
+		"title": "Leave Studio Button",
+		"description": "Adds a button to the curators page of any studios you curate or manage that allows you to easily leave the studio. A confirmation shows first.",
+		"credits": ["veloce-vasta", "rgantzos"],
+		"urls": ["https://github.com/veloce-vasta", "https://scratch.mit.edu/users/rgantzos/"],
+		"file": "leave-studio",
+		"tags": ["New"],
+		"type": ["Website"]
+	},
+  {
     "title": "Show if Following on Profile",
     "description": "If a user is following you, it will show next to their username when you visit their profile.",
     "credits": ["Bob the Potato with Drip", "TimMcCool"],
