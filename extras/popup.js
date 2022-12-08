@@ -562,45 +562,14 @@ function createFeature(
       }
       div23.appendChild(a);
       if (tags.includes("Egg")) {
-        var div = document.createElement("div");
-        div.className = "easter tag";
-        div.textContent = "Easter Egg";
-        tags2.appendChild(div);
-        div23.className = div23.className + " eastereggFeature";
         if (switch23.checked) {
           if (document.querySelector(".navbar") === null) {
             div23.style.display = "block";
           } else {
             div23.style.display = "inline-block";
           }
-          div.style.display = "inline-block";
         }
       }
-      if (tags.includes("New")) {
-        var div = document.createElement("div");
-        div.className = "new tag";
-        div.textContent = "New";
-        tags2.appendChild(div);
-      }
-      if (tags.includes("Recommended")) {
-        var div = document.createElement("div");
-        div.className = "recommended tag";
-        div.textContent = "Recommended";
-        tags2.appendChild(div);
-      }
-      if (tags.includes("Featured")) {
-        var div = document.createElement("div");
-        div.className = "featured tag";
-        div.textContent = "Featured";
-        tags2.appendChild(div);
-      }
-      if (tags.includes("Beta")) {
-        var div = document.createElement("div");
-        div.className = "beta tag";
-        div.textContent = "Beta";
-        tags2.appendChild(div);
-      }
-      div23.appendChild(tags2);
       async function getWarnings() {
         var response = await fetch("/features/features.json");
         var data = await response.json();
