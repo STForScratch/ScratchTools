@@ -39,9 +39,9 @@ if (
         }
       );
       var data = await response.json();
-      if (data.curator || data.manager) {
+      if ((data.curator || data.manager) & document.querySelector('.studio-member-name').textContent !== auth.user.username) {
         ScratchTools.waitForElements(
-          ".studio-header-container.studio-managers-header",
+          ".studio-member-name",
           function (el) {
             var btn = document.createElement("button");
             btn.className = "scratchtoolsLeaveStudio button";
