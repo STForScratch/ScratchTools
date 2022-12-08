@@ -1,13 +1,17 @@
- [
+[
   {
-		"title": "Leave Studio Button",
-		"description": "Adds a button to the curators page of any studios you curate or manage that allows you to easily leave the studio. A confirmation shows first.",
-		"credits": ["veloce-vasta", "rgantzos"],
-		"urls": ["https://github.com/veloce-vasta", "https://scratch.mit.edu/users/rgantzos/"],
-		"file": "leave-studio",
-		"tags": ["New"],
-		"type": ["Website"]
-	},
+    "title": "Leave Studio Button",
+    "description": "Adds a button to the curators page of any studios you curate or manage that allows you to easily leave the studio. A confirmation shows first.",
+    "credits": ["veloce-vasta", "rgantzos"],
+    "urls": [
+      "https://github.com/veloce-vasta",
+      "https://scratch.mit.edu/users/rgantzos/"
+    ],
+    "file": "leave-studio",
+    "tags": ["New"],
+    "type": ["Website"]
+  },
+  {
     "title": "Direct image uploads in the forums",
     "description": "Allows you to easily upload images to the Scratch forums for posts and signatures without having to use third party image uploading services.",
     "credits": ["ISTILLMAKESTUFF", "TheGlassPenguin", "StickFireGames"],
@@ -19,7 +23,7 @@
     "file": "upload-img-directly",
     "type": ["Website"],
     "tags": ["New", "Recommended"]
-},
+  },
   {
     "title": "Show if Following on Profile",
     "description": "If a user is following you, it will show next to their username when you visit their profile.",
@@ -37,21 +41,19 @@
     "title": "Custom Studio Section",
     "description": "On the homepage of the Scratch website, the newest projects from the studio of your choice are displayed above the Featured Projects.",
     "credits": ["rgantzos"],
-    "urls": [
-      "https://scratch.mit.edu/users/rgantzos/"
-    ],
+    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "custom-studio",
     "tags": ["Featured", "New"],
     "type": ["Website"],
-    "options": [{ "id":"Studio ID", "name":"Studio ID", "default":"27205657" }]
+    "options": [
+      { "id": "Studio ID", "name": "Studio ID", "default": "27205657" }
+    ]
   },
   {
     "title": "Highlight Unanswered Forum Topics",
     "description": "Adds a blue highlight to topics in the forums that have no replies.",
     "credits": ["rgantzos"],
-    "urls": [
-      "https://scratch.mit.edu/users/rgantzos/"
-    ],
+    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "highlight-unanswered",
     "type": ["Website"],
     "tags": ["New", "Recommended"],
@@ -61,9 +63,7 @@
     "title": "Hide Project Tags",
     "description": "Hides all linked tags in the Instructions/Notes and Credits of projects.",
     "credits": ["rgantzos"],
-    "urls": [
-      "https://scratch.mit.edu/users/rgantzos/"
-    ],
+    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "hide-project-tags",
     "type": ["Website"],
     "tags": ["New"],
@@ -73,9 +73,7 @@
     "title": "Hide Block Category Names",
     "description": "Changes the block categories in the editor to only show the colors of the categories.",
     "credits": ["rgantzos"],
-    "urls": [
-      "https://scratch.mit.edu/users/rgantzos/"
-    ],
+    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "hide-block-category-names",
     "tags": ["Theme", "New"],
     "type": ["Editor"],
@@ -459,7 +457,7 @@
     "file": "custom-fonts",
     "tags": ["Featured"],
     "type": ["Website", "Theme"],
-    "options": [{ "id":"font", "name":"Font Name" }],
+    "options": [{ "id": "font", "name": "Font Name" }],
     "dynamic": true
   },
   {
