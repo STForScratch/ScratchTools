@@ -6,17 +6,6 @@ async function getStats()
   if(data.statistics != undefined){
     function image(url,alt){return(`<img src='${url}' width='25' height='25' title='${alt}' style='vertical-align:middle; margin:10px'></img>`)};
     function space(){return("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")};
-    function change(){
-      if(mode == "WIBD"){
-        statistics.style.display = "block"
-        activity.style.display = "none"
-        mode = "stats"
-      }else{
-        statistics.style.display = "none"
-        activity.style.display = "block"
-        mode= "WIBD"
-      }
-    }
     function commafy(num){
       if(num == undefined){return("0")}else
       {return(parseInt(num).toLocaleString())}};
@@ -33,13 +22,12 @@ async function getStats()
         if(type){return('document.getElementById("statistics").style.display = "block"; document.getElementById("activity-feed").style.display = "none";document.getElementById("SA-WIBD").style.fontSize="80%";')}
         else{return('document.getElementById("statistics").style.display = "none"; document.getElementById("activity-feed").style.display = "block";document.getElementById("SA-STATS").style.fontSize="80%";')}
       }
-      var children = box.childNodes; children[1].innerHTML = `<span id='SA-STATS' onclick='${click(true)}this.style.fontSize="100%"' style='${boxStyle}'>Statistics</span> <span id='SA-WIBD' onclick='${click(false)}this.style.fontSize = "100%"' style='${boxStyle};font-size:80%'>What I've been doing</span>`;//children[1].onclick = change
+      var children = box.childNodes; children[1].innerHTML = `<span id='SA-STATS' onclick='${click(true)}this.style.fontSize="100%"' style='${boxStyle}'>Statistics</span> <span id='SA-WIBD' onclick='${click(false)}this.style.fontSize = "100%"' style='${boxStyle};font-size:80%'>What I've been doing</span>`;
       var divText = `<div id='statistics' style='text-align:center; font-size:20px; padding:10px; background-color: var(--darkWww-box, white);border-radius: 8px;border: 1px solid var(--darkWww-border-15, #d9d9d9);'>${table}${scratchstats}</div>`.replaceAll("undefined","0")
       var div = document.createElement("div");
       div.innerHTML = divText;
       box.appendChild(div);
       var statistics = document.getElementById("statistics")
-      //box.innerHTML = `<h3 onclick='alert("Test")'>Statistics</h3>${box.innerHTML}<div id='statistics' style='text-align:center; font-size:20px; padding:10px; background-color: var(--darkWww-box, white);border-radius: 8px;border: 1px solid var(--darkWww-border-15, #d9d9d9);'>${table}${scratchstats}</div>`.replaceAll("undefined","0")
     }
     };
   }
