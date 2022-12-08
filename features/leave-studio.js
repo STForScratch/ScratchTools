@@ -54,7 +54,7 @@ if (
                 leaveStudio();
               }
             };
-            el.appendChild(btn);
+            document.querySelector('.studio-header-container.studio-managers-header').appendChild(btn);
           },
           "scratchtoolsLeaveStudio",
           false
