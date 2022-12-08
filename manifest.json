@@ -2,8 +2,8 @@
   "name": "ScratchTools",
   "short_name": "ScratchTools",
   "manifest_version": 3,
-  "version": "2.21.0",
-  "version_name": "2.21.0-beta",
+  "version": "2.20.1",
+  "version_name": "2.20.1",
   "description": "ScratchTools is fully customizable with tons of features, all for making the Scratch website better and easier to use!",
   "author": "rgantzos",
   "background": {

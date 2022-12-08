@@ -8,6 +8,18 @@
 		"tags": ["New"],
 		"type": ["Website"]
 	},
+    "title": "Direct image uploads in the forums",
+    "description": "Allows you to easily upload images to the Scratch forums for posts and signatures without having to use third party image uploading services.",
+    "credits": ["ISTILLMAKESTUFF", "TheGlassPenguin", "StickFireGames"],
+    "urls": [
+      "https://scratch.mit.edu/users/ISTILLMAKESTUFF",
+      "https://scratch.mit.edu/users/TheGlassPenguin",
+      "https://scratch.mit.edu/users/stickfiregames"
+    ],
+    "file": "upload-img-directly",
+    "type": ["Website"],
+    "tags": ["New", "Recommended"]
+},
   {
     "title": "Show if Following on Profile",
     "description": "If a user is following you, it will show next to their username when you visit their profile.",

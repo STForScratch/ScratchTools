@@ -122,12 +122,14 @@ body {
 
 .tag {
   margin-left: 0.4rem;
+  display: none !important;
 }
 
 .tags {
   position: absolute;
   right: 1rem;
   top: 1rem;
+  display: none !important;
 }
 
 .switch {
