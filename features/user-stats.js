@@ -19,10 +19,10 @@ async function getStats()
       var scratchstats = `<a href="https://scratchstats.com/${window.location.href.replaceAll("https://scratch.mit.edu/users/","")}" style="font-size:10px">View on Scratchstats</a>`
       var boxStyle = "background-color: var(--darkWww-box, white);border-radius: 8px;border: 1px solid var(--darkWww-border-15, #d9d9d9);padding:5px;cursor:pointer"
       function click(type){
-        if(type){return('document.getElementById("statistics").style.display = "block"; document.getElementById("activity-feed").style.display = "none";document.getElementById("SA-WIBD").style.fontSize="80%";')}
-        else{return('document.getElementById("statistics").style.display = "none"; document.getElementById("activity-feed").style.display = "block";document.getElementById("SA-STATS").style.fontSize="80%";')}
+        if(type){return('document.getElementById("statistics").style.display = "block"; document.getElementById("activity-feed").style.display = "none";document.getElementById("ST-WIBD").style.fontSize="80%";')}
+        else{return('document.getElementById("statistics").style.display = "none"; document.getElementById("activity-feed").style.display = "block";document.getElementById("ST-STATS").style.fontSize="80%";')}
       }
-      var children = box.childNodes; children[1].innerHTML = `<span id='SA-STATS' onclick='${click(true)}this.style.fontSize="100%"' style='${boxStyle}'>Statistics</span> <span id='SA-WIBD' onclick='${click(false)}this.style.fontSize = "100%"' style='${boxStyle};font-size:80%'>What I've been doing</span>`;
+      var children = box.childNodes; children[1].innerHTML = `<span id='ST-STATS' onclick='${click(true)}this.style.fontSize="100%"' style='${boxStyle}'>Statistics</span> <span id='ST-WIBD' onclick='${click(false)}this.style.fontSize = "100%"' style='${boxStyle};font-size:80%'>Recent Activiy</span>`;
       var divText = `<div id='statistics' style='text-align:center; font-size:20px; padding:10px; background-color: var(--darkWww-box, white);border-radius: 8px;border: 1px solid var(--darkWww-border-15, #d9d9d9);'>${table}${scratchstats}</div>`.replaceAll("undefined","0")
       var div = document.createElement("div");
       div.innerHTML = divText;
