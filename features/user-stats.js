@@ -24,7 +24,7 @@ async function getStats()
     var children = box.childNodes; var h3 = children[1]; h3.innerText = ""; var spans = [];
 
     // functions & variables
-    var boxStyle = "background-color: var(--darkWww-box, white);border-radius: 8px;border: 1px solid var(--darkWww-border-15, #d9d9d9);padding:5px;cursor:pointer"
+    var boxStyle = "background-color: var(--darkWww-box, white);border-radius: 8px;border: 1px solid var(--darkWww-border-15, #d9d9d9);padding:2px;cursor:pointer"
     function click(type){
       if(type){statistics.style.display = "block"; activity.style.display = "none";spans[1].style.fontSize="75%";spans[0].style.fontSize="90%"}
       else{statistics.style.display = "none"; activity.style.display = "block";spans[0].style.fontSize="75%";spans[1].style.fontSize="90%"}
