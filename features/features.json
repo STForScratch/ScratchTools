@@ -1,4 +1,26 @@
-[
+ [
+ {
+  "title": "Frontpage Curator Name as Link",
+  "description": "Makes the name of the Frontpage Curator to a clickable link to his profile.",
+  "credits": ["Dr_Lego"],
+  "urls": [
+    "https://scratch.mit.edu/users/Dr_Lego/"
+  ],
+  "file": "frontpage-curator",
+  "type": ["Website"],
+  "tags": ["New"]
+  },
+  {
+    "title": "Show User Statistics",
+    "description": "Replaces the 'What I've been doing' section on a profile page with the user's statistics.",
+    "credits": ["Dr_Lego"],
+    "urls": [
+      "https://scratch.mit.edu/users/Dr_Lego/"
+    ],
+    "file": "user-stats",
+    "type": ["Website"],
+    "tags": ["New"]
+  },
   {
     "title": "Leave Studio Button",
     "description": "Adds a button to the curators page of any studios you curate or manage that allows you to easily leave the studio. A confirmation shows first.",
