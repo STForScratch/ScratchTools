@@ -6,8 +6,9 @@ if (window.location.href.startsWith("https://scratch.mit.edu/projects/")) {
         var respond = true;
         var currentStart = 0;
         var currentlyActive = false;
-        var btn =
-        document.querySelector('[class^="sound-editor_round-button_"]')
+        var btn = document.querySelector(
+          '[class^="sound-editor_round-button_"]'
+        );
         function addButton() {
           window.btn2 = document.createElement("button");
           btn2.className = btn.className + " scratchtoolsPause";
@@ -15,7 +16,8 @@ if (window.location.href.startsWith("https://scratch.mit.edu/projects/")) {
           btn2.style.backgroundColor = "#ff9f00";
           btn2.style.marginLeft = ".5rem";
           var img = document.createElement("img");
-          img.src = "https://raw.githubusercontent.com/STForScratch/data/main/pause.svg";
+          img.src =
+            "https://raw.githubusercontent.com/STForScratch/data/main/pause.svg";
           img.draggable = false;
           if (!ScratchTools.Scratch.scratchSound().state.playhead) {
             btn2.style.opacity = "0.5";
@@ -36,7 +38,10 @@ if (window.location.href.startsWith("https://scratch.mit.edu/projects/")) {
           btn3.appendChild(img2);
           btn.parentNode.appendChild(btn3);
           function callback() {
-            if (btn.firstChild.src === "https://scratch.mit.edu/static/assets/b5257afbe4bcf7953029ddb8f18b24fe.svg") {
+            if (
+              btn.firstChild.src ===
+              "https://scratch.mit.edu/static/assets/b5257afbe4bcf7953029ddb8f18b24fe.svg"
+            ) {
               btn2.style.opacity = "0.5";
             } else {
               btn2.style.opacity = "1";

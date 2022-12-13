@@ -82,14 +82,14 @@ async function addStudioProjects(studioId) {
     .querySelector(".inner.mod-splash")
     .insertBefore(box, document.querySelector(".inner.mod-splash > .box"));
 }
-let alreadyStarted = false
+let alreadyStarted = false;
 ScratchTools.waitForElements(
   ".inner.mod-splash > .box",
   function () {
     let studioid = ScratchTools.Storage["Studio ID"];
     if (/^\d+$/.test(studioid)) {
-      if (!alreadyStarted && document.querySelector('.splash-header')) {
-        alreadyStarted = true
+      if (!alreadyStarted && document.querySelector(".splash-header")) {
+        alreadyStarted = true;
         addStudioProjects(studioid);
       }
     }

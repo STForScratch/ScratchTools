@@ -3,7 +3,7 @@ var showSearchBar = true;
 if (document.querySelector('[class^="asset-panel_wrapper_"]')) {
   if (!document.querySelector(".scratchtoolsAssetSearch") && showSearchBar) {
     var input = document.createElement("input");
-    var assetBox = document.querySelector('[class^="asset-panel_wrapper_"]')
+    var assetBox = document.querySelector('[class^="asset-panel_wrapper_"]');
     var assetRow = assetBox.firstChild.firstChild;
     input.className = "scratchtoolsAssetSearch input_input-form_l9eYg";
     input.placeholder = "Search";
