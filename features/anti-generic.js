@@ -181,6 +181,10 @@ function cleanUp() {
         console.log(title);
         el.style.display = "none";
       }
+      if (title.includes("alphabet") && title.includes("lore")) {
+        console.log(title);
+        el.style.display = "none";
+      }
       titles.forEach(function (el2) {
         if (similarity(el2, title) > 0.5) {
           if (el !== undefined && el !== null) {
