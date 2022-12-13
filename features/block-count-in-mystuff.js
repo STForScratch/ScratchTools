@@ -21,7 +21,10 @@ if (window.location.href.startsWith("https://scratch.mit.edu/mystuff")) {
   ScratchTools.waitForElements(
     "ul.media-list > li",
     async function (el) {
-      if (stillLookingForBlockCount && !el.querySelector('.scratchtoolsBlockCount')) {
+      if (
+        stillLookingForBlockCount &&
+        !el.querySelector(".scratchtoolsBlockCount")
+      ) {
         if (el.querySelector('a[href*="/projects/"]')) {
           var blocks = await getBlockCount(
             el
@@ -39,7 +42,7 @@ if (window.location.href.startsWith("https://scratch.mit.edu/mystuff")) {
           el.querySelector(".media-info-item.date.shortDateFormat").appendChild(
             span
           );
-          el.querySelector('a[data-control="edit"]').style.transition = 'none'
+          el.querySelector('a[data-control="edit"]').style.transition = "none";
           el.querySelector('a[data-control="edit"]').style.marginTop = "1px";
         }
       }

@@ -1,4 +1,4 @@
-var style = document.createElement('style')
+var style = document.createElement("style");
 style.textContent = `
 .scratchCategoryItemBubble {
     border-radius: .2rem !important;
@@ -8,8 +8,8 @@ style.textContent = `
 .scratchCategoryMenuItemLabel {
     display: none !important;
 }
-`
-document.body.appendChild(style)
-ScratchTools.setDisable('hide-block-category-names', function() {
-    style.remove()
-})
+`;
+document.body.appendChild(style);
+ScratchTools.setDisable("hide-block-category-names", function () {
+  style.remove();
+});

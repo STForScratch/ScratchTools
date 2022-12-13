@@ -1,6 +1,6 @@
 update(
-  "ScratchTools v2.20.0",
-  "We are so happy to be releasing v2.20.0! This new version includes a lot of new features, including the ability to see if someone is following you, just by looking at their profile!"
+  "ScratchTools v2.21.0",
+  "This new version includes plenty of new features, including the ability to upload images directly to the forums without using other image hosting services. It also adds a user statistics box on profiles, as well as a button to leave studios."
 );
 function update(updateVersion, updateDescription) {
   if (document.querySelector(".scratchtoolsUpdateInfo") === null) {
