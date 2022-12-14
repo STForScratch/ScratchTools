@@ -1,4 +1,4 @@
-if (!document.querySelector('.scratchtoolsImgUpload') {
+if (!document.querySelector('.scratchtoolsImgUpload')) {
         var button5 = document.querySelector(".markItUpButton5");
         var bb5 = document.createElement("li");
         var img = document.createElement("img");
