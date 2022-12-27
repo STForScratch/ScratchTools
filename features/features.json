@@ -1,5 +1,16 @@
 [
   {
+    "title": "Exact Join Date",
+    "description": "Displays the exact time that a user joined, shown on their profile.",
+    "credits": ["rgantzos"],
+    "urls": [
+      "https://scratch.mit.edu/users/rgantzos"
+    ],
+    "file": "exact-join-date",
+    "type": ["Website"],
+    "tags": ["New"]
+  },
+  {
     "title": "Shortcuts for Starting and Stopping Projects",
     "description": "To start and stop a project you can use Control+G or Command+G (for Mac users).",
     "credits": ["rgantzos"],
