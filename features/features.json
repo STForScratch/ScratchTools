@@ -1,5 +1,16 @@
 [
   {
+    "title": "Exact Join Date",
+    "description": "Displays the exact time that a user joined, shown on their profile.",
+    "credits": ["rgantzos"],
+    "urls": [
+      "https://scratch.mit.edu/users/rgantzos"
+    ],
+    "file": "exact-join-date",
+    "type": ["Website"],
+    "tags": ["New"]
+  },
+  {
     "title": "Direct image uploads in the forums",
     "description": "Allows you to easily upload images to the Scratch forums for posts and signatures without having to use third party image uploading services.",
     "credits": ["ISTILLMAKESTUFF", "TheGlassPenguin", "StickFireGames"],
