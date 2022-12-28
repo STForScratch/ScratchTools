@@ -1,5 +1,16 @@
 [
   {
+    "title": "User Hover Cards",
+    "description": "Hover over any username on the website to display the profile picture, username and follower count.",
+    "credits": ["rgantzos"],
+    "urls": [
+      "https://scratch.mit.edu/users/rgantzos"
+    ],
+    "file": "hover-user-cards",
+    "type": ["Website"],
+    "tags": ["New"]
+  },
+  {
     "title": "Exact Join Date",
     "description": "Displays the exact time that a user joined, shown on their profile.",
     "credits": ["rgantzos"],
