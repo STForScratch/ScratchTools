@@ -22,6 +22,17 @@
     "tags": ["New"]
   },
   {
+    "title": "Shortcuts for Starting and Stopping Projects",
+    "description": "To start and stop a project you can use Control+G or Command+G (for Mac users).",
+    "credits": ["rgantzos"],
+    "urls": [
+      "https://scratch.mit.edu/users/rgantzos/"
+    ],
+    "file": "start-stop-hotkeys",
+    "type": ["Website", "Editor"],
+    "tags": ["New"]
+  },
+  {
     "title": "Direct image uploads in the forums",
     "description": "Allows you to easily upload images to the Scratch forums for posts and signatures without having to use third party image uploading services.",
     "credits": ["ISTILLMAKESTUFF", "TheGlassPenguin", "StickFireGames"],
