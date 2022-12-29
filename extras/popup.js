@@ -5,13 +5,17 @@ btn.addEventListener("click", function () {
   clicks = clicks + 1;
   if (clicks > 4) {
     document.querySelector("style#easter-egg").remove()
+    var display = "inline-block"
+    if (document.querySelector(".settingsButton")) {
+      display = "block"
+    }
     document.querySelector(".easterEgg").textContent = `
     .feature {
       display: none !important;
     }
 
     .eastereggFeature, .easterEggFeatureShown {
-      display: inline-block !important;
+      display: ${display} !important;
     }`;
   }
 });
@@ -603,10 +607,10 @@ function createFeature(
           div23.classList.add("easterEggFeatureShown")
         }
       }
-      if (document.querySelector(".navbar") === null) {
-        div23.style.display = "block";
-      } else {
+      if (document.querySelector(".settingsButton") === null) {
         div23.style.display = "inline-block";
+      } else {
+        div23.style.display = "block";
       }
       if (
         enabled &&
