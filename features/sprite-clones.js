@@ -16,7 +16,6 @@ if (
       document.querySelectorAll("div").forEach(function (el) {
         if (foundIt === false) {
           if (el.className.startsWith("sprite-info_row_")) {
-            console.log("foundIt");
             foundIt = true;
             var div = document.createElement("div");
             div.className = "sprite-info_group_14-B_";
