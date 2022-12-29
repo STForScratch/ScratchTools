@@ -1,6 +1,6 @@
 update(
-  "ScratchTools v2.21.0",
-  "This new version includes plenty of new features, including the ability to upload images directly to the forums without using other image hosting services. It also adds a user statistics box on profiles, as well as a button to leave studios."
+  "ScratchTools v2.22.0",
+  "This version of ScratchTools includes multiple new features, including the ability to hover over a user's username and view a preview of their profile!"
 );
 function update(updateVersion, updateDescription) {
   if (document.querySelector(".scratchtoolsUpdateInfo") === null) {
