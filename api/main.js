@@ -160,3 +160,15 @@ function GM_addStyle(styleData) {
   style.textContent = styleData;
   return document.querySelector("html").appendChild(style);
 }
+
+ScratchTools.styles = {
+  add: function(data, id) {
+    var style = document.createElement("style")
+    style.textContent = data
+    if (id) {
+      style.dataset.scratchtoolsstyleid = id
+    }
+    document.body.after(style)
+    return style
+  }
+}
