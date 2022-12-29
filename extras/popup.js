@@ -4,13 +4,18 @@ var clicks = 0;
 btn.addEventListener("click", function () {
   clicks = clicks + 1;
   if (clicks > 4) {
+    document.querySelector("style#easter-egg").remove()
+    var display = "inline-block"
+    if (document.querySelector(".settingsButton")) {
+      display = "block"
+    }
     document.querySelector(".easterEgg").textContent = `
     .feature {
       display: none !important;
     }
 
-    .eastereggFeature {
-      display: inline-block !important;
+    .eastereggFeature, .easterEggFeatureShown {
+      display: ${display} !important;
     }`;
   }
 });
@@ -95,6 +100,14 @@ if (document.querySelector(".message") !== null) {
     });
   };
 }
+
+var styleForEasterEgg = document.createElement("style")
+styleForEasterEgg.textContent = `
+.eastereggFeature {
+  display: none !important;
+}`
+styleForEasterEgg.id = "easter-egg"
+document.body.after(styleForEasterEgg)
 
 let easterEggClicks = 0;
 if (document.querySelector(".easteregg") !== null) {
@@ -561,15 +574,6 @@ function createFeature(
         div23.appendChild(btn);
       }
       div23.appendChild(a);
-      if (tags.includes("Egg")) {
-        if (switch23.checked) {
-          if (document.querySelector(".navbar") === null) {
-            div23.style.display = "block";
-          } else {
-            div23.style.display = "inline-block";
-          }
-        }
-      }
       async function getWarnings() {
         var response = await fetch("/features/features.json");
         var data = await response.json();
@@ -594,6 +598,20 @@ function createFeature(
         }
       }
       getWarnings();
+      console.log(tags.includes("Egg"))
+      console.log(switch23.checked)
+      if (tags.includes("Egg")) {
+        if (!switch23.checked) {
+          div23.classList.add("eastereggFeature")
+        } else {
+          div23.classList.add("easterEggFeatureShown")
+        }
+      }
+      if (document.querySelector(".settingsButton") === null) {
+        div23.style.display = "inline-block";
+      } else {
+        div23.style.display = "block";
+      }
       if (
         enabled &&
         document.querySelector("div.enabled") &&
