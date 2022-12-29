@@ -78,6 +78,6 @@ ScratchTools.waitForElements(
       }
     });
   },
-  "ABC",
+  "user-hover-cards",
   false
 );
