@@ -104,4 +104,11 @@ GM_addStyle(`
   .u-contextmenu-colored .blocklyContextMenu .goog-menuitem:hover {
     background-color: rgba(0, 0, 0, 0.2);
   }
+  input.scratchtools-search-contextmenu {
+    background-color: var(--u-contextmenu-bg);
+    color: white;
+    }
+  input.scratchtools-search-contextmenu::placeholder {
+    color: white;
+  }
   `);
