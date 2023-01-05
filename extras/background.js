@@ -3,8 +3,8 @@ var version = "2.21.0";
 chrome.runtime.onInstalled.addListener(async function (object) {
   chrome.alarms.clearAll();
   chrome.alarms.create("displayMessageCount", {
-    delayInMinutes: 0.1,
-    periodInMinutes: 0.1,
+    delayInMinutes: 0.5,
+    periodInMinutes: 0.5,
   });
   if (
     chrome.runtime.getManifest().version_name.toLowerCase().includes("beta")
@@ -226,8 +226,8 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
 chrome.alarms.onAlarm.addListener(async function () {
   chrome.alarms.clearAll();
   chrome.alarms.create("test", {
-    delayInMinutes: 0.1,
-    periodInMinutes: 0.1,
+    delayInMinutes: 0.5,
+    periodInMinutes: 0.5,
   });
   var response = await fetch("https://raw.githubusercontent.com/STForScratch/data/main/disabled.json");
   var data = await response.json();
