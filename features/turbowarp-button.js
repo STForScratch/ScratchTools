@@ -34,7 +34,7 @@ if (window.location.href.includes("https://scratch.mit.edu/projects/")) {
         .appendChild(clone);
       document.querySelector(
         "#app > div > div.gui_menu-bar-position_3U1T0.menu-bar_menu-bar_JcuHF.box_box_2jjDp > a > div > span > div > span"
-      ).textContent = "Open in Turbowarp";
+      ).textContent = "Open in TurboWarp";
       document.querySelector(
         "#app > div > div.gui_menu-bar-position_3U1T0.menu-bar_menu-bar_JcuHF.box_box_2jjDp > a > div > span > img"
       ).src =

@@ -29,7 +29,7 @@ if (
         innerDiv.className = "button_content_3jdgj";
         var innerSpan = document.createElement("span");
         innerSpan.style.color = "white";
-        innerSpan.textContent = "Open in Turbowarp";
+        innerSpan.textContent = "Open in TurboWarp";
         innerDiv.appendChild(innerSpan);
         outerSpan.appendChild(innerDiv);
         a.appendChild(outerSpan);
