@@ -457,8 +457,8 @@
     "warning": "This feature uses an algorithm that ScratchTools developed. That does not mean that it will work every time."
   },
   {
-    "title": "Open in Turbowarp from Editor",
-    "description": "Adds a button to the editor so that you can instantly open the current project in Turbowarp.",
+    "title": "Open in TurboWarp from Editor",
+    "description": "Adds a button to the editor so that you can instantly open the current project in TurboWarp.",
     "credits": ["rgantzos"],
     "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "turbowarp-button-in-editor",
