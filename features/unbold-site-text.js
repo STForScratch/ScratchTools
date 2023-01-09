@@ -1,9 +1,5 @@
-function unbold() {
-  if (window.location.href.includes("https://scratch.mit.edu/")) {
-    document.querySelectorAll("*").forEach(function (el) {
-      el.style.fontWeight = "normal";
-    });
-    window.setTimeout(unbold, 100);
-  }
-}
-unbold();
+var style = ScratchTools.styles.add("* { font-weight: normal !important; }");
+
+ScratchTools.setDisable("unbold-site-text", function () {
+  style.remove();
+});

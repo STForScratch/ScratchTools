@@ -979,7 +979,8 @@
       "https://scratch.mit.edu/users/rgantzos/"
     ],
     "file": "unbold-site-text",
-    "type": ["Website", "Theme"]
+    "type": ["Website", "Theme"],
+    "dynamic": true
   },
   {
     "title": "Compact Navbar",
