@@ -498,7 +498,8 @@
     ],
     "file": "scrollable-list-items",
     "tags": ["Recommended"],
-    "type": ["Website", "Editor"]
+    "type": ["Website", "Editor"],
+    "dynamic": true
   },
   {
     "title": "Message Indicator Red for Admin Messages",

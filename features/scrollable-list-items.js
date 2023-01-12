@@ -1,10 +1,13 @@
-if (window.location.href.startsWith("https://scratch.mit.edu/projects/")) {
-  var style = document.createElement("style");
-  style.innerHTML = `
-.monitor_value-inner_3E9Ou {
-    overflow: scroll;
+ScratchTools.styles.add(`
+[class^="monitor_value-inner_"] {
+    overflow-x: scroll;
     text-overflow: clip;
 }
-`;
-  document.body.appendChild(style);
-}
+`, "scrollable-lists")
+
+ScratchTools.setDisable("scrollable-list-items", function() {
+  document.querySelectorAll('[class^="monitor_value-inner_"]').forEach(function(el) {
+    el.scrollLeft = 0
+  })
+  ScratchTools.styles.removeStyleById("scrollable-lists")
+})
