@@ -170,5 +170,13 @@ ScratchTools.styles = {
     }
     document.body.after(style)
     return style
+  },
+  getStyleById: function(id) {
+    return document.querySelector(`[data-scratchtoolsstyleid="${id}"]`)
+  },
+  removeStyleById: function(id) {
+    document.querySelectorAll(`[data-scratchtoolsstyleid="${id}"]`).forEach(function(style) {
+      style.remove()
+    })
   }
 }
