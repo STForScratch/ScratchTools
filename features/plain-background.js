@@ -1,19 +1,5 @@
-if (window.location.href.includes("https://scratch.mit.edu/projects/")) {
-  if (window.location.href.includes("editor")) {
-    checkforbg();
+var scratchtoolsPlainBackground = ScratchTools.styles.add(".blocklyMainBackground { fill: none !important; }", "plain-background")
 
-    function checkforbg() {
-      if (
-        document.querySelector(
-          "#react-tabs-1 > div.gui_blocks-wrapper_1ccgf.box_box_2jjDp > div > div > svg.blocklySvg > g > rect.blocklyMainBackground"
-        ) === null
-      ) {
-        window.setTimeout(checkforbg, 50);
-      } else {
-        document.querySelector(
-          "#react-tabs-1 > div.gui_blocks-wrapper_1ccgf.box_box_2jjDp > div > div > svg.blocklySvg > g > rect.blocklyMainBackground"
-        ).style.fill = "white";
-      }
-    }
-  }
-}
+ScratchTools.setDisable("plain-background", function() {
+  ScratchTools.styles.removeStyleById("plain-background")
+})

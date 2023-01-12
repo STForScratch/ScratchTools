@@ -968,7 +968,8 @@
     "credits": ["rgantzos"],
     "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "plain-background",
-    "type": ["Editor", "Theme"]
+    "type": ["Editor", "Theme"],
+    "dynamic": true
   },
   {
     "title": "Unbold Site Text",
@@ -1054,7 +1055,8 @@
     "credits": ["rgantzos"],
     "urls": ["https://scratch.mit.edu/users/rgantzos"],
     "file": "remove-editor-icons",
-    "type": ["Editor"]
+    "type": ["Editor"],
+    "dynamic": true
   },
   {
     "title": "Remove Sprite Watermark",
