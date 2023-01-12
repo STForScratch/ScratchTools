@@ -1064,7 +1064,8 @@
     "credits": ["rgantzos"],
     "urls": ["https://scratch.mit.edu/users/rgantzos"],
     "file": "sprite-watermark",
-    "type": ["Editor"]
+    "type": ["Editor"],
+    "dynamic": true
   },
   {
     "title": "Compact Editor",
