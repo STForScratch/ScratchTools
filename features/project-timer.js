@@ -45,10 +45,11 @@ if (window.location.href.includes("https://scratch.mit.edu/projects/")) {
   function getCurrentM() {
     if (document.querySelector("div.timer.scratchtools") !== null) {
       if (document.scratchtoolsTimer !== undefined) {
+        const currentTime = (((ScratchTools.Scratch.vm.runtime.currentMSecs -
+          document.scratchtoolsTimer) /
+        1000).toString()+"000000").slice(0, 6)
         document.querySelector("div.timer.scratchtools").textContent = `${
-          (ScratchTools.Scratch.vm.runtime.currentMSecs -
-            document.scratchtoolsTimer) /
-          1000
+          currentTime
         } secs`;
       }
     }
