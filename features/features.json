@@ -1,16 +1,15 @@
 [
   {
     "title": "Unlisted Projects",
-    "description": "Hover over any username on the website to display the profile picture, username and follower count.",
-    "credits": ["Bingus the Bingus", "rgantzos"],
+    "description": "Allows you to generate share links for unshared projects in the editor.",
+    "credits": ["rgantzos"],
     "urls": [
-      "https://scratch.mit.edu/users/JefferyTheSuperKat/",
       "https://scratch.mit.edu/users/rgantzos"
     ],
     "file": "unlisted-projects",
-    "type": ["Website"],
+    "type": ["Editor"],
     "tags": ["New", "Recommended"],
-    "dynamic": true
+    "dynamic": false
   },
   {
     "title": "Search Context Menus",
