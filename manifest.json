@@ -21,4 +21,10 @@
     "128": "/extras/icon128.png"
   },
   "host_permissions": ["https://scratch.mit.edu/"]
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "info@scratchtools.app",
+      "strict_min_version": "42.0"
+    }
+  }
 }
