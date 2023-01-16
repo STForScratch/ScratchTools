@@ -4,10 +4,10 @@ var clicks = 0;
 btn.addEventListener("click", function () {
   clicks = clicks + 1;
   if (clicks > 4) {
-    document.querySelector("style#easter-egg").remove()
-    var display = "inline-block"
+    document.querySelector("style#easter-egg").remove();
+    var display = "inline-block";
     if (document.querySelector(".settingsButton")) {
-      display = "block"
+      display = "block";
     }
     document.querySelector(".easterEgg").textContent = `
     .feature {
@@ -101,13 +101,13 @@ if (document.querySelector(".message") !== null) {
   };
 }
 
-var styleForEasterEgg = document.createElement("style")
+var styleForEasterEgg = document.createElement("style");
 styleForEasterEgg.textContent = `
 .eastereggFeature {
   display: none !important;
-}`
-styleForEasterEgg.id = "easter-egg"
-document.body.after(styleForEasterEgg)
+}`;
+styleForEasterEgg.id = "easter-egg";
+document.body.after(styleForEasterEgg);
 
 let easterEggClicks = 0;
 if (document.querySelector(".easteregg") !== null) {
@@ -167,7 +167,6 @@ async function doStuff() {
   const response = await fetch("https://scratchtools.app/warning/");
   const data = await response.json();
   if (data["title"] !== " ") {
-    console.log(data["color"]);
     var div = document.createElement("div");
     var title = data["title"];
     var title2 = document.createElement("h3");
@@ -293,15 +292,13 @@ function createFeature(
     document.body.className !== null &&
     document.body.className !== ""
   ) {
-    console.log("passed checkpoint a");
     if (
       type.includes(document.body.className) ||
       document.body.className === "all"
     ) {
-      console.log("passed checkpoint b");
       continueCreateFeature(
-        name,
-        description,
+        chrome.i18n.getMessage(name.replaceAll(" ", "_")) || name,
+        chrome.i18n.getMessage(id.replaceAll("-", "_")+"_description") || description,
         id,
         credits,
         def,
@@ -312,10 +309,9 @@ function createFeature(
       );
     }
   } else {
-    console.log("missed checkpoint a, continued anyway");
     continueCreateFeature(
-      name,
-      description,
+      chrome.i18n.getMessage(name.replaceAll(" ", "_")) || name,
+      chrome.i18n.getMessage(id.replaceAll("-", "_")+"_description") || description,
       id,
       credits,
       def,
@@ -371,14 +367,11 @@ function createFeature(
         switch23.checked = false;
       }
     });
-    console.log(getCookie("ST Features"));
     switch23.addEventListener("click", async function () {
       var response = await fetch("/features/features.json");
       var features = await response.json();
       await chrome.storage.sync.get("features", async function (obj) {
-        console.log(obj["features"]);
         if (obj["features"].includes(switch23.id)) {
-          console.log("false");
           await chrome.storage.sync.set({
             features: obj["features"].replaceAll(switch23.id, ""),
           });
@@ -421,7 +414,6 @@ function createFeature(
               chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
             }
           }
-          console.log("true");
           await chrome.storage.sync.set({
             features: obj["features"] + switch23.id,
           });
@@ -447,7 +439,6 @@ function createFeature(
       });
     });
     await chrome.storage.sync.get("features", function (obj) {
-      console.log(obj["features"]);
       label23.appendChild(switch23);
       div23.className = "feature";
       var span23 = document.createElement("span");
@@ -496,7 +487,7 @@ function createFeature(
           input.style.height = "2rem";
           input.placeholder = el.name;
           input.type = "text";
-          input.id = el.id
+          input.id = el.id;
           getFont();
           async function getFont() {
             await chrome.storage.sync.get(el.id, async function (obj) {
@@ -504,7 +495,7 @@ function createFeature(
                 if (obj[el.id]) {
                   input.value = obj[el.id];
                 } else {
-                  input.value = el.default
+                  input.value = el.default;
                 }
               } catch (err) {
                 console.log(err);
@@ -532,38 +523,38 @@ function createFeature(
             chrome.tabs.query({}, function (tabs) {
               for (var i = 0; i < tabs.length; i++) {
                 try {
-            addData(i);
-      async function addData(i) {
-        var response = await fetch('/features/features.json')
-        var data = await response.json()
-        var allStorage = {};
-        await data.forEach(async function (el) {
-          if (el.options !== undefined) {
-            await el.options.forEach(async function (option) {
-              var test = await chrome.storage.sync.get(option.id);
-              if (test[option.id] !== undefined) {
-                var data = {};
-                data[option.id] = test[option.id];
-                chrome.scripting.executeScript({
-                  args: [data],
-                  target: { tabId: tabs[i].id },
-                  func: getStorage,
-                  world: "MAIN",
-                });
+                  addData(i);
+                  async function addData(i) {
+                    var response = await fetch("/features/features.json");
+                    var data = await response.json();
+                    var allStorage = {};
+                    await data.forEach(async function (el) {
+                      if (el.options !== undefined) {
+                        await el.options.forEach(async function (option) {
+                          var test = await chrome.storage.sync.get(option.id);
+                          if (test[option.id] !== undefined) {
+                            var data = {};
+                            data[option.id] = test[option.id];
+                            chrome.scripting.executeScript({
+                              args: [data],
+                              target: { tabId: tabs[i].id },
+                              func: getStorage,
+                              world: "MAIN",
+                            });
+                          }
+                        });
+                      }
+                    });
+                  }
+                  function getStorage(storage) {
+                    ScratchTools.Storage[Object.keys(storage)[0]] =
+                      storage[Object.keys(storage)[0]];
+                  }
+                } catch (err) {
+                  console.log(err);
+                }
               }
             });
-          }
-        });
-      }
-      function getStorage(storage) {
-        ScratchTools.Storage[Object.keys(storage)[0]] =
-          storage[Object.keys(storage)[0]];
-      }
-    } catch(err) {
-      console.log(err)
-    }
-  }
-})
           });
           btn.textContent = "Saved";
           setTimeout(fixButton, 1000);
@@ -598,13 +589,11 @@ function createFeature(
         }
       }
       getWarnings();
-      console.log(tags.includes("Egg"))
-      console.log(switch23.checked)
       if (tags.includes("Egg")) {
         if (!switch23.checked) {
-          div23.classList.add("eastereggFeature")
+          div23.classList.add("eastereggFeature");
         } else {
-          div23.classList.add("easterEggFeatureShown")
+          div23.classList.add("easterEggFeatureShown");
         }
       }
       if (document.querySelector(".settingsButton") === null) {
@@ -615,7 +604,7 @@ function createFeature(
       if (
         enabled &&
         document.querySelector("div.enabled") &&
-        document.querySelector("input.searchbar").value.replaceAll(" ", "") ===
+        document.querySelector("input.searchbar").value.replaceAll(" ", "_") ===
           ""
       ) {
         document.querySelector("div.enabled").appendChild(div23);
@@ -623,7 +612,7 @@ function createFeature(
         document.querySelector("div.settings").appendChild(div23);
       }
       if (
-        !document.querySelector("input.searchbar").value.replaceAll(" ", "") ===
+        !document.querySelector("input.searchbar").value.replaceAll(" ", "_") ===
           "" &&
         document.querySelector("div.enabled")
       ) {
@@ -649,7 +638,7 @@ function checkSearchBar() {
     lastValue[lastValue.length - 1] !== document.querySelector("input").value
   ) {
     lastValue.push(document.querySelector("input").value);
-    if (input.value.replaceAll(" ", "") === "") {
+    if (input.value.replaceAll(" ", "_") === "") {
       deleteAll();
       getFeatures();
     } else {
@@ -765,19 +754,23 @@ async function getFeaturesBySearch(search) {
   var allStuff = [];
   var obj = await chrome.storage.sync.get("features");
   deleteAll();
-  if (search.replaceAll(" ", "") !== "") {
+  if (search.replaceAll(" ", "_") !== "") {
     Object.keys(data).forEach(function (el) {
       if (
-        searchBar(`${data[el].title}`.toLowerCase(), search.toLowerCase()) > 0.1
+        searchBar(
+          `${
+            chrome.i18n.getMessage(data[el].title.replaceAll(" ", "_")) || data[el].title
+          }`.toLowerCase(),
+          search.toLowerCase()
+        ) > 0.1
       ) {
-        console.log(
-          `${search} - ${data[el].title} - ${searchBar(
-            `${data[el].title}`.toLowerCase(),
-            search.toLowerCase()
-          )}`
-        );
         allValues.push(
-          searchBar(`${data[el].title}`.toLowerCase(), search.toLowerCase())
+          searchBar(
+            `${
+              chrome.i18n.getMessage(data[el].title.replaceAll(" ", "_")) || data[el].title
+            }`.toLowerCase(),
+            search.toLowerCase()
+          )
         );
         allStuff.push(data[el]);
       }
@@ -840,15 +833,17 @@ if (document.querySelector("h2.feedback") !== null) {
   };
 }
 
-document.querySelector('.searchbar').addEventListener('keyup', function(e) {
+document.querySelector(".searchbar").addEventListener("keyup", function (e) {
   if (e.which === 13) {
-  document.querySelector('.searchbarbutton').click()
+    document.querySelector(".searchbarbutton").click();
   }
-})
+});
 
 async function getNews() {
   try {
-    var response = await fetch("https://raw.githubusercontent.com/STForScratch/data/main/news.json");
+    var response = await fetch(
+      "https://raw.githubusercontent.com/STForScratch/data/main/news.json"
+    );
     var data = await response.json();
     data.forEach(function (el) {
       var div = document.createElement("div");
