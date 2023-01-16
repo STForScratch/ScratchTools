@@ -1,10 +1,11 @@
 {
-  "name": "ScratchTools",
-  "short_name": "ScratchTools",
+  "name": "__MSG_extName__",
+  "short_name": "__MSG_extName__",
   "manifest_version": 3,
   "version": "2.23.0",
   "version_name": "2.23.0-beta",
-  "description": "ScratchTools is fully customizable with tons of features, all for making the Scratch website better and easier to use!",
+  "default_locale": "en",
+  "description": "__MSG_extDescription__",
   "author": "rgantzos",
   "background": {
     "service_worker": "/extras/background.js"
@@ -20,7 +21,7 @@
     "48": "/extras/icon48.png",
     "128": "/extras/icon128.png"
   },
-  "host_permissions": ["https://scratch.mit.edu/"]
+  "host_permissions": ["https://scratch.mit.edu/"],
   "browser_specific_settings": {
     "gecko": {
       "id": "info@scratchtools.app",
