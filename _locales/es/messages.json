@@ -1,8 +1,68 @@
 {
-    "extName": {
-        "message": "ScratchTools"
-    },
-    "extDescription": {
-        "message": "ScratchTools es completamente personalizable con muchas funciones, todas para hacer el sitio Scratch mejor y más fácil de usar!"
-    }
+  "extName": {
+    "message": "ScratchTools"
+  },
+  "extDescription": {
+    "message": "ScratchTools es completamente personalizable con muchas funciones, todas para hacer el sitio Scratch mejor y más fácil de usar!"
+  },
+  "search": {
+    "message": "buscar"
+  },
+  "unlisted_projects_title": {
+    "message": "Proyectos Ocultos"
+  },
+  "unlisted_projects_description": {
+    "message": "Te permite generar enlaces para compartir proyectos no compartidos desde el editor."
+  },
+  "scroll_project_titles_title": {
+    "message": "Desplazar Títulos de Proyectos"
+  },
+  "scroll_project_titles_description": {
+    "message": "Te permite desplazar y ver el título completo de proyectos que no son tuyos."
+  },
+  "search_context_menus_title": {
+    "message": "Buscar Menús Contextuales"
+  },
+  "search_context_menus_description": {
+    "message": "Buscar fácilmente menús contextuales para seleccionar más eficiente una opción. También puedes presionar intro para seleccionar la opción superior."
+  },
+  "hover_user_cards_title": {
+    "message": "Tarjetas Flotantes de Usuarios"
+  },
+  "hover_user_cards_description": {
+    "message": "Pon el cursor encima de cualquier nombre de usuario en el sitio web para mostrar su foto de perfil, nombre de usuario y contador de seguidores."
+  },
+  "exact_join_date_title": {
+    "message": "Fecha de Ingreso Exacta"
+  },
+  "exact_join_date_description": {
+    "message": "Muestra en el perfil del usuario el tiempo exacto en el que se unió."
+  },
+  "start_stop_hotkeys_title": {
+    "message": "Atajos para Iniciar y Detener Proyectos"
+  },
+  "start_stop_hotkeys_description": {
+    "message": "Para iniciar y detener un proyecto puedes usar Control+G o Command+G (para usuarios de Mac)."
+  },
+  "upload_img_directly_title": {
+    "message": "Subir imágenes directamente en los foros"
+  },
+  "upload_img_directly_description": {
+    "message": "Te permite subir imagenes en los foros de Scratch para publicaciones y firmas sin tener que usar ningún servicio de subida de imágenes de terceros."
+  },
+  "leave_studio_title": {
+    "message": "Botón de Salir de Estudio"
+  },
+  "leave_studio_description": {
+    "message": "Añade un botón en la página de curadores de cualquier estudio que estés curando o administrando que te permite salir del estudio fácilmente. Primero se mostrará una confirmación."
+  },
+  "user_stats_title": {
+    "message": "Mostrar Estadísticas de Usuario"
+  },
+  "user_stats_description": {
+    "message": "Reemplaza la sección \"Lo que he estado haciendo\" en un página de perfil con las estadísticas del usuario."
+  },
+  "frontpage_curator_title": {
+    "message": "Nombre de Curador en la Página Principal como Enlace"
+  }
 }
