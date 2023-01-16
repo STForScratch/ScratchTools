@@ -1,5 +1,15 @@
 [
   {
+    "title": "Scroll Project Titles",
+    "description": "Allows you to scroll and view the entire title of projects that you don't own.",
+    "credits": ["rgantzos"],
+    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
+    "file": "scroll-project-titles",
+    "type": ["Editor"],
+    "tags": ["New", "Recommended"],
+    "dynamic": true
+  },
+  {
     "title": "Search Context Menus",
     "description": "Hover over any username on the website to display the profile picture, username and follower count.",
     "credits": ["Bingus the Bingus", "rgantzos"],
