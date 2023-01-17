@@ -6,6 +6,7 @@ function update(updateVersion, updateDescription) {
   if (document.querySelector(".scratchtoolsUpdateInfo") === null) {
     var box = document.createElement("div");
     box.className = "box scratchtoolsUpdateInfo";
+    box.style.zIndex = "9999999999999999999999999999"
     var boxHeader = document.createElement("div");
     boxHeader.className = "box-header";
     var boxContent = document.createElement("div");
