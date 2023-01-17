@@ -64,5 +64,44 @@
   },
   "frontpage_curator_title": {
     "message": "Nombre de Curador en la Página Principal como Enlace"
+  },
+  "frontpage_curator_description": {
+    "message": "Hace que el nombre del curador en la página principal sea un enlace clicable a su perfil."
+  },
+  "minimized_remix_credits_title": {
+    "message": "Créditos por Reinventar Minimizados"
+  },
+  "minimized_remix_credits_description": {
+    "message": "La caja de créditos por reinventar le quita espacio a las Instrucciones del proyecto, entonces esto hace la caja más pequeña."
+  },
+  "follows_you_title": {
+    "message": "Mostrar si Te Sigue en Perfil"
+  },
+  "follows_you_description": {
+    "message": "Si un usuario te está siguiendo, se mostrará al lado de su nombre de usuario cuando visites su perfil."
+  },
+  "custom_studio_title": {
+    "message": "Sección de Estudio Personalizable"
+  },
+  "custom_studio_description": {
+    "message": "En la página principal del sitio web de Scratch, los proyectos más nuevos del estudio que elijas se mostrarán arriba de los Proyectos Destacados."
+  },
+  "highlight_unanswered_title": {
+    "message": "Destacar Temas de Foros Sin Responder"
+  },
+  "highlight_unanswered_description": {
+    "message": "Destaca con azul los temas de foro que no tienen respuestas."
+  },
+  "hide_project_tags_title": {
+    "message": "Esconder Etiquetas en Proyectos"
+  },
+  "hide_project_tags_description": {
+    "message": "Esconde todas las etiquetas con enlaces en las Instrucciones/Notas y Créditos de los proyectos."
+  },
+  "terrible_title": {
+    "message": "Función Terrible"
+  },
+  "terrible_description": {
+    "message": "no activar"
   }
 }
