@@ -1,5 +1,17 @@
 [
   {
+    "title": "Load More Posts",
+    "description": "Load more posts in the forum without having to switch pages.",
+    "credits": ["rgantzos"],
+    "urls": [
+      "https://scratch.mit.edu/users/rgantzos"
+    ],
+    "file": "load-more-forum-posts",
+    "type": ["Website"],
+    "tags": ["New"],
+    "dynamic": false
+  },
+  {
     "title": "Unlisted Projects",
     "description": "Allows you to generate share links for unshared projects in the editor.",
     "credits": ["rgantzos"],
