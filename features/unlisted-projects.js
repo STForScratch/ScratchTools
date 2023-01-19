@@ -75,6 +75,12 @@ async function createButton(el) {
       btn.className = "button";
       span.style.backgroundColor = "#ff9f00";
       btn.classList = classList;
+      btn.style.display = "none";
+      btn.classList.add("scratchtools-unlisted");
+      btn.appendChild(span);
+      document
+        .querySelector('[class^="menu-bar_main-menu_"]')
+        .lastChild.before(btn);
       span.classList = document.querySelector(
         "[class*='share-button_share-button']"
       ).classList;
@@ -97,11 +103,7 @@ async function createButton(el) {
           createButton();
         };
       }
-      btn.classList.add("scratchtools-unlisted");
-      btn.appendChild(span);
-      document
-        .querySelector('[class^="menu-bar_main-menu_"]')
-        .lastChild.before(btn);
+      btn.style.display = null;
     }
   }
 }
