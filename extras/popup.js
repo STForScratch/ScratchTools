@@ -1,4 +1,5 @@
-document.querySelector(".searchbar").placeholder = (chrome.i18n.getMessage("search") || "search")
+document.querySelector(".searchbar").placeholder =
+  chrome.i18n.getMessage("search") || "search";
 
 var btn =
   document.querySelector(".searchbaricon") || document.querySelector(".sticon");
@@ -299,8 +300,9 @@ function createFeature(
       document.body.className === "all"
     ) {
       continueCreateFeature(
-        chrome.i18n.getMessage(id.replaceAll("-", "_")+"_title") || name,
-        chrome.i18n.getMessage(id.replaceAll("-", "_")+"_description") || description,
+        chrome.i18n.getMessage(id.replaceAll("-", "_") + "_title") || name,
+        chrome.i18n.getMessage(id.replaceAll("-", "_") + "_description") ||
+          description,
         id,
         credits,
         def,
@@ -312,8 +314,9 @@ function createFeature(
     }
   } else {
     continueCreateFeature(
-      chrome.i18n.getMessage(id.replaceAll("-", "_")+"_title") || name,
-      chrome.i18n.getMessage(id.replaceAll("-", "_")+"_description") || description,
+      chrome.i18n.getMessage(id.replaceAll("-", "_") + "_title") || name,
+      chrome.i18n.getMessage(id.replaceAll("-", "_") + "_description") ||
+        description,
       id,
       credits,
       def,
@@ -614,8 +617,9 @@ function createFeature(
         document.querySelector("div.settings").appendChild(div23);
       }
       if (
-        !document.querySelector("input.searchbar").value.replaceAll(" ", "_") ===
-          "" &&
+        !document
+          .querySelector("input.searchbar")
+          .value.replaceAll(" ", "_") === "" &&
         document.querySelector("div.enabled")
       ) {
         while (document.querySelector("div.enabled").firstChild) {
@@ -761,7 +765,9 @@ async function getFeaturesBySearch(search) {
       if (
         searchBar(
           `${
-            chrome.i18n.getMessage(data[el].file.replaceAll("-", "_")+"_title") || data[el].title
+            chrome.i18n.getMessage(
+              data[el].file.replaceAll("-", "_") + "_title"
+            ) || data[el].title
           }`.toLowerCase(),
           search.toLowerCase()
         ) > 0.1
@@ -769,7 +775,9 @@ async function getFeaturesBySearch(search) {
         allValues.push(
           searchBar(
             `${
-              chrome.i18n.getMessage(data[el].file.replaceAll("-", "_")+"_title") || data[el].title
+              chrome.i18n.getMessage(
+                data[el].file.replaceAll("-", "_") + "_title"
+              ) || data[el].title
             }`.toLowerCase(),
             search.toLowerCase()
           )

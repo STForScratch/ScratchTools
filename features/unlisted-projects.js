@@ -35,7 +35,9 @@ async function uncacheProject() {
 }
 
 async function loadCachedProject(projectId) {
-  var response = await fetch(`https://unlisted.gantzos.com/cached/${projectId}/`);
+  var response = await fetch(
+    `https://unlisted.gantzos.com/cached/${projectId}/`
+  );
   var data = await response.json();
   ScratchTools.Scratch.vm.loadProject(JSON.stringify(data));
 }

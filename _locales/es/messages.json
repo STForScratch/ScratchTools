@@ -10,5 +10,8 @@
   },
   "feature_load_more_forum_posts_loadmore": {
     "message": "Cargar más"
+  },
+  "newest_update_message": {
+    "message": "Esta nueva versión incluye nuevas funciones geniales, además de varios arreglos de errores! Una función, Proyectos Ocultos, te permite crear enlaces especiales para tus proyectos no compartidos así otras personas pueden verlo!"
   }
 }
