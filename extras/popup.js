@@ -268,8 +268,8 @@ document.querySelectorAll("h2.title.type").forEach(function (el) {
 });
 
 document
-  .querySelector(".searchbarbutton")
-  .addEventListener("click", function () {
+  .querySelector("input.searchbar")
+  .addEventListener("input", function () {
     if (document.querySelector(".searchbar").value === "") {
       deleteAll();
       getFeatures();
@@ -842,12 +842,6 @@ if (document.querySelector("h2.feedback") !== null) {
     chrome.tabs.create({ url: "https://scratchtools.app/feedback/" });
   };
 }
-
-document.querySelector(".searchbar").addEventListener("keyup", function (e) {
-  if (e.which === 13) {
-    document.querySelector(".searchbarbutton").click();
-  }
-});
 
 async function getNews() {
   try {
