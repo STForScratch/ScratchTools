@@ -1,11 +1,14 @@
 {
-    "extName": {
-        "message": "ScratchTools"
-    },
-    "extDescription": {
-        "message": "ScratchTools is fully customizable with tons of features, all for making the Scratch website better and easier to use!"
-    },
-    "search": {
-        "message": "search"
-    }
+  "extName": {
+    "message": "ScratchTools"
+  },
+  "extDescription": {
+    "message": "ScratchTools is fully customizable with tons of features, all for making the Scratch website better and easier to use!"
+  },
+  "search": {
+    "message": "search"
+  },
+  "feature_load_more_forum_posts_loadmore": {
+    "message": "Load more"
+  }
 }
