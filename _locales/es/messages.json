@@ -7,5 +7,8 @@
   },
   "search": {
     "message": "buscar"
+  },
+  "feature_load_more_forum_posts_loadmore": {
+    "message": "Cargar más"
   }
 }

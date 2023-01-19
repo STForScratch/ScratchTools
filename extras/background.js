@@ -95,55 +95,59 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
       ScratchTools.console.log("STARTING.");
       var response = await fetch("/features/features.json");
       var data = await response.json();
-      chrome.scripting.executeScript({
+      var uiLanguage = chrome.i18n.getUILanguage() || "en";
+      if (uiLanguage.includes("-")) {
+        uiLanguage = uiLanguage.split("-")[0];
+      }
+      await chrome.scripting.executeScript({
         target: { tabId: tabId },
         files: [`/api/main.js`],
         world: "MAIN",
       });
       ScratchTools.console.log("Injected main API.");
-      chrome.scripting.executeScript({
+      await chrome.scripting.executeScript({
         target: { tabId: tabId },
         files: [`/api/auth.js`],
         world: "MAIN",
       });
       ScratchTools.console.log("Injected auth API.");
-      chrome.scripting.executeScript({
+      await chrome.scripting.executeScript({
         target: { tabId: tabId },
         files: [`/api/logging.js`],
         world: "MAIN",
       });
       ScratchTools.console.log("Injected logging API.");
-      chrome.scripting.executeScript({
+      await chrome.scripting.executeScript({
         target: { tabId: tabId },
         files: [`/api/vm.js`],
         world: "MAIN",
       });
       ScratchTools.console.log("Injected Scratch API.");
-      chrome.scripting.executeScript({
+      await chrome.scripting.executeScript({
         target: { tabId: tabId },
         files: [`/api/cookies.js`],
         world: "MAIN",
       });
       ScratchTools.console.log("Injected cookies API.");
-      chrome.scripting.executeScript({
+      await chrome.scripting.executeScript({
         target: { tabId: tabId },
         files: [`/api/getScratch.js`],
         world: "MAIN",
       });
       ScratchTools.console.log("Injected getScratch API.");
-      chrome.scripting.executeScript({
+      await chrome.scripting.executeScript({
         target: { tabId: tabId },
         files: [`/api/spaces.js`],
         world: "MAIN",
       });
       ScratchTools.console.log("Injected protect spaces API.");
-      chrome.scripting.executeScript({
+      await chrome.scripting.executeScript({
         target: { tabId: tabId },
         files: [`/extras/protect-mention.js`],
         world: "MAIN",
       });
       ScratchTools.console.log("Injected protect mention script.");
-      chrome.scripting.executeScript({
+      await chrome.scripting.executeScript({
         args: [data],
         target: { tabId: tabId },
         func: getFeaturesForAPI,
@@ -154,6 +158,32 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
         ScratchTools.Features.data = dataFeatures;
       }
       addData();
+      var langData = {};
+      try {
+        var langDataFetched = await (
+          await fetch(`/_locales/${uiLanguage}/messages.json`)
+        ).json();
+        if (langDataFetched) {
+          langData = langDataFetched;
+        } else {
+          langData = {};
+        }
+      } catch (err) {
+        langData = {};
+      }
+      chrome.scripting.executeScript({
+        args: [langData],
+        target: { tabId: tabId },
+        func: function (langData) {
+          ScratchTools.languageData = langData;
+          ScratchTools.i18n = {
+            getString: function (string, feature) {
+              return ScratchTools.languageData["feature_"+feature.replaceAll("-", "_")+"_"+string]?.message || null;
+            },
+          };
+        },
+        world: "MAIN",
+      });
       async function addData() {
         var allStorage = {};
         await data.forEach(async function (el) {
@@ -229,7 +259,9 @@ chrome.alarms.onAlarm.addListener(async function () {
     delayInMinutes: 0.5,
     periodInMinutes: 0.5,
   });
-  var response = await fetch("https://raw.githubusercontent.com/STForScratch/data/main/disabled.json");
+  var response = await fetch(
+    "https://raw.githubusercontent.com/STForScratch/data/main/disabled.json"
+  );
   var data = await response.json();
   await chrome.storage.sync.set({ autoDisabled: data });
   var obj = await chrome.storage.sync.get("features");
