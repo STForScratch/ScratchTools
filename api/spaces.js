@@ -1,6 +1,6 @@
 // from Scratch Addons
 
-ScratchTools.appendToSharedSpace = function({ space, element, order, scope }) {
+ScratchTools.appendToSharedSpace = function ({ space, element, order, scope }) {
   const q = document.querySelector.bind(document);
   const sharedSpaces = {
     stageHeader: {
@@ -155,13 +155,17 @@ ScratchTools.appendToSharedSpace = function({ space, element, order, scope }) {
       from: () => {
         return Array.prototype.filter.call(
           scope.children,
-          (c) => c.textContent === this.scratchMessage("gui.spriteSelectorItem.contextMenuExport")
+          (c) =>
+            c.textContent ===
+            this.scratchMessage("gui.spriteSelectorItem.contextMenuExport")
         );
       },
       until: () => {
         return Array.prototype.filter.call(
           scope.children,
-          (c) => c.textContent === this.scratchMessage("gui.spriteSelectorItem.contextMenuDelete")
+          (c) =>
+            c.textContent ===
+            this.scratchMessage("gui.spriteSelectorItem.contextMenuDelete")
         );
       },
     },
@@ -170,7 +174,9 @@ ScratchTools.appendToSharedSpace = function({ space, element, order, scope }) {
       from: () => {
         return Array.prototype.filter.call(
           scope.children,
-          (c) => c.textContent === this.scratchMessage("gui.spriteSelectorItem.contextMenuDelete")
+          (c) =>
+            c.textContent ===
+            this.scratchMessage("gui.spriteSelectorItem.contextMenuDelete")
         );
       },
       until: () => [],
@@ -184,7 +190,9 @@ ScratchTools.appendToSharedSpace = function({ space, element, order, scope }) {
           this.scratchMessage("gui.monitor.contextMenu.sliderRange"),
           this.scratchMessage("gui.monitor.contextMenu.export"),
         ];
-        const potential = Array.prototype.filter.call(scope.children, (c) => endOfVanilla.includes(c.textContent));
+        const potential = Array.prototype.filter.call(scope.children, (c) =>
+          endOfVanilla.includes(c.textContent)
+        );
         return [potential[potential.length - 1]];
       },
       until: () => [],
@@ -266,4 +274,4 @@ ScratchTools.appendToSharedSpace = function({ space, element, order, scope }) {
     spaceElement.insertBefore(element, insertAfter.nextSibling);
   }
   return true;
-}
+};

@@ -1,4 +1,4 @@
-var version = "2.21.0";
+var version = "2.23.0";
 
 chrome.runtime.onInstalled.addListener(async function (object) {
   chrome.alarms.clearAll();
@@ -178,7 +178,11 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
           ScratchTools.languageData = langData;
           ScratchTools.i18n = {
             getString: function (string, feature) {
-              return ScratchTools.languageData["feature_"+feature.replaceAll("-", "_")+"_"+string]?.message || null;
+              return (
+                ScratchTools.languageData[
+                  "feature_" + feature.replaceAll("-", "_") + "_" + string
+                ]?.message || null
+              );
             },
           };
         },

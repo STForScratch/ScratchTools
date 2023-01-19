@@ -162,21 +162,23 @@ function GM_addStyle(styleData) {
 }
 
 ScratchTools.styles = {
-  add: function(data, id) {
-    var style = document.createElement("style")
-    style.textContent = data
+  add: function (data, id) {
+    var style = document.createElement("style");
+    style.textContent = data;
     if (id) {
-      style.dataset.scratchtoolsstyleid = id
+      style.dataset.scratchtoolsstyleid = id;
     }
-    document.body.after(style)
-    return style
+    document.body.after(style);
+    return style;
   },
-  getStyleById: function(id) {
-    return document.querySelector(`[data-scratchtoolsstyleid="${id}"]`)
+  getStyleById: function (id) {
+    return document.querySelector(`[data-scratchtoolsstyleid="${id}"]`);
   },
-  removeStyleById: function(id) {
-    document.querySelectorAll(`[data-scratchtoolsstyleid="${id}"]`).forEach(function(style) {
-      style.remove()
-    })
-  }
-}
+  removeStyleById: function (id) {
+    document
+      .querySelectorAll(`[data-scratchtoolsstyleid="${id}"]`)
+      .forEach(function (style) {
+        style.remove();
+      });
+  },
+};

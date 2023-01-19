@@ -1,12 +1,13 @@
 update(
-  "ScratchTools v2.22.0",
-  "This version of ScratchTools includes multiple new features, including the ability to hover over a user's username and view a preview of their profile!"
+  chrome.runtime.getManifest().version_name,
+  chrome.i18n.getMessage("newest_update_message") ||
+    "This new version includes a few cool new features, as well as multiple bug fixes! One feature, Unlisted Projects, allows you to create special links for your unshared projects that allow other people to view them!"
 );
 function update(updateVersion, updateDescription) {
   if (document.querySelector(".scratchtoolsUpdateInfo") === null) {
     var box = document.createElement("div");
     box.className = "box scratchtoolsUpdateInfo";
-    box.style.zIndex = "9999999999999999999999999999"
+    box.style.zIndex = "9999999999999999999999999999";
     var boxHeader = document.createElement("div");
     boxHeader.className = "box-header";
     var boxContent = document.createElement("div");

@@ -13,7 +13,9 @@ if (
   let page = Number(params.page || "1");
   if (page !== lastPost) {
     var btn = document.createElement("button");
-    btn.textContent = ScratchTools.i18n.getString("loadmore", "load-more-forum-posts") || "Load more";
+    btn.textContent =
+      ScratchTools.i18n.getString("loadmore", "load-more-forum-posts") ||
+      "Load more";
     btn.onclick = getNextPage;
     btn.className = "button scratchtoolsLoadMorePosts";
     btn.style.paddingLeft = ".5rem";

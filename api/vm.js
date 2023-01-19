@@ -31,14 +31,30 @@ ScratchTools.Scratch.contextMenus = {};
 ScratchTools.Scratch.waitForContextMenu = function (info) {
   if (ScratchTools.Scratch.contextMenus[info.block] !== undefined) {
     ScratchTools.Scratch.contextMenus[info.block][info.id] = info.callback;
-    if (ScratchTools.Scratch.blockly.getMainWorkspace().getBlockById(info.block).type === "procedures_definition" && info.id !== "original-custom-block-function") {
-      ScratchTools.Scratch.contextMenus[info.block]["original-custom-block-function"] = ScratchTools.Scratch.blockly.getMainWorkspace().getBlockById(info.block).customContextMenu;
+    if (
+      ScratchTools.Scratch.blockly.getMainWorkspace().getBlockById(info.block)
+        .type === "procedures_definition" &&
+      info.id !== "original-custom-block-function"
+    ) {
+      ScratchTools.Scratch.contextMenus[info.block][
+        "original-custom-block-function"
+      ] = ScratchTools.Scratch.blockly
+        .getMainWorkspace()
+        .getBlockById(info.block).customContextMenu;
     }
   } else {
     ScratchTools.Scratch.contextMenus[info.block] = {};
     ScratchTools.Scratch.contextMenus[info.block][info.id] = info.callback;
-    if (ScratchTools.Scratch.blockly.getMainWorkspace().getBlockById(info.block).type === "procedures_definition" && info.id !== "original-custom-block-function") {
-      ScratchTools.Scratch.contextMenus[info.block]["original-custom-block-function"] = ScratchTools.Scratch.blockly.getMainWorkspace().getBlockById(info.block).customContextMenu;
+    if (
+      ScratchTools.Scratch.blockly.getMainWorkspace().getBlockById(info.block)
+        .type === "procedures_definition" &&
+      info.id !== "original-custom-block-function"
+    ) {
+      ScratchTools.Scratch.contextMenus[info.block][
+        "original-custom-block-function"
+      ] = ScratchTools.Scratch.blockly
+        .getMainWorkspace()
+        .getBlockById(info.block).customContextMenu;
     }
   }
   ScratchTools.Scratch.blockly

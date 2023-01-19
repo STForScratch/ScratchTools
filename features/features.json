@@ -1,26 +1,22 @@
 [
   {
-    "title": "Load More Posts",
-    "description": "Load more posts in the forum without having to switch pages.",
-    "credits": ["rgantzos"],
-    "urls": [
-      "https://scratch.mit.edu/users/rgantzos"
-    ],
-    "file": "load-more-forum-posts",
-    "type": ["Website"],
-    "tags": ["New"],
-    "dynamic": false
-  },
-  {
     "title": "Unlisted Projects",
     "description": "Allows you to generate share links for unshared projects in the editor.",
     "credits": ["rgantzos"],
-    "urls": [
-      "https://scratch.mit.edu/users/rgantzos"
-    ],
+    "urls": ["https://scratch.mit.edu/users/rgantzos"],
     "file": "unlisted-projects",
     "type": ["Editor"],
     "tags": ["New", "Recommended"],
+    "dynamic": false
+  },
+  {
+    "title": "Load More Posts",
+    "description": "Load more posts in the forum without having to switch pages.",
+    "credits": ["rgantzos"],
+    "urls": ["https://scratch.mit.edu/users/rgantzos"],
+    "file": "load-more-forum-posts",
+    "type": ["Website"],
+    "tags": ["New"],
     "dynamic": false
   },
   {
@@ -50,9 +46,7 @@
     "title": "User Hover Cards",
     "description": "Hover over any username on the website to display the profile picture, username and follower count.",
     "credits": ["rgantzos"],
-    "urls": [
-      "https://scratch.mit.edu/users/rgantzos"
-    ],
+    "urls": ["https://scratch.mit.edu/users/rgantzos"],
     "file": "hover-user-cards",
     "type": ["Website"],
     "tags": ["New"]
@@ -61,9 +55,7 @@
     "title": "Exact Join Date",
     "description": "Displays the exact time that a user joined, shown on their profile.",
     "credits": ["rgantzos"],
-    "urls": [
-      "https://scratch.mit.edu/users/rgantzos"
-    ],
+    "urls": ["https://scratch.mit.edu/users/rgantzos"],
     "file": "exact-join-date",
     "type": ["Website"],
     "tags": ["New"]
@@ -72,9 +64,7 @@
     "title": "Shortcuts for Starting and Stopping Projects",
     "description": "To start and stop a project you can use Control+G or Command+G (for Mac users).",
     "credits": ["rgantzos"],
-    "urls": [
-      "https://scratch.mit.edu/users/rgantzos/"
-    ],
+    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "start-stop-hotkeys",
     "type": ["Website", "Editor"],
     "tags": ["New"]
