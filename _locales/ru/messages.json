@@ -1,671 +1,671 @@
 {
-    "extName": {
-        "message": "ScratchTools"
-    },
-    "extDescription": {
-        "message": "ScratchTools полностью настраивается, имеет огромное количество возможностей — всё для того, чтобы сделать сайт Scratch лучше и удобнее в использовании!"
-    },
-    "search": {
-        "message": "принести"
-    },
-    "load_more_forum_posts_title": {
-        "message": "Загрузить больше постов"
-    },
-    "load_more_forum_posts_description": {
-        "message": "Загружайте больше постов на форуме без необходимости переключать страницы."
-    },
-    "unlisted_projects_title": {
-        "message": "Проекты с доступом по ссылке"
-    },
-    "unlisted_projects_description": {
-        "message": "Позволяет генерировать ссылки для публикования скрытых проектов в редакторе."
-    },
-    "scroll_project_titles_title": {
-        "message": "Прокрутка имён проектов"
-    },
-    "scroll_project_titles_description": {
-        "message": "Позволяет прокручивать и видеть целиком имена проектов, которыми вы не владеете."
-    },
-    "search_context_menus_title": {
-        "message": "Поиск в контекстных меню"
-    },
-    "search_context_menus_description": {
-        "message": "Удобный поиск в контекстных меню для быстрого выбора опций. Вы также можете нажать Enter для выбора верхней опции."
-    },
-    "hover_user_cards_title": {
-        "message": "Карточки при наведении на пользователи"
-    },
-    "hover_user_cards_description": {
-        "message": "Наведите на любое имя пользователя на сайте, чтобы показать аватар, имя пользователя, и количество подписчиков."
-    },
-    "exact_join_date_title": {
-        "message": "Точное время присоединения"
-    },
-    "exact_join_date_description": {
-        "message": "Показывает точное время присоединения пользователя на их профиле."
-    },
-    "start_stop_hotkeys_title": {
-        "message": "Горячие клавиши для запуска и остановки проектов"
-    },
-    "start_stop_hotkeys_description": {
-        "message": "Чтобы запустить и остановить проект вы можете использовать Ctrl+G или Command+G (для пользователей Mac)"
-    },
-    "upload_img_directly_title": {
-        "message": "Прямая загрузка изображений на форумы"
-    },
-    "upload_img_directly_description": {
-        "message": "Позволяет загружать изображения на форумы Scratch для постов и подписей без использования сторонних сервисов."
-    },
-    "leave_studio_title": {
-        "message": "Кнопка выхода из студии"
-    },
-    "leave_studio_description": {
-        "message": "Добавляет кнопку на страницу кураторов всех студий, которые вы курируете или управляете, которая позволяет легко покинуть студию. Сначала отображается подтверждение."
-    },
-    "user_stats_title": {
-        "message": "Показывать статистику пользователя"
-    },
-    "user_stats_description": {
-        "message": "Заменяет секцию \"Что я делал(а)\" в профилях на статистику пользователя"
-    },
-    "frontpage_curator_title": {
-        "message": "Имя куратора главной страницы как ссылка"
-    },
-    "frontpage_curator_description": {
-        "message": "Превращает имя куратора главной страницы в ссылку на их профиль."
-    },
-    "minimized_remix_credits_title": {
-        "message": "Уменьшенный размер благодарностей за ремикс"
-    },
-    "minimized_remix_credits_description": {
-        "message": "Поле для благодарностей ремикса проектов занимает место в Инструкциях проекта, поэтому этот аддон делает его меньше."
-    },
-    "follows_you_title": {
-        "message": "Показывать, подписан ли на вас пользователь, в профиле"
-    },
-    "follows_you_description": {
-        "message": "Если пользователь подписан на вас, это будет показано рядом с его именем пользователя, если вы зайдёте на его профиль."
-    },
-    "custom_studio_title": {
-        "message": "Секция пользовательской студии"
-    },
-    "custom_studio_description": {
-        "message": "На главной странице сайта проекты из выбранной вами студии будут отображаются выше секции \"Рекомендуемые проекты\"."
-    },
-    "highlight_unanswered_title": {
-        "message": "Подсвечивать не отвеченные темы на форумах"
-    },
-    "highlight_unanswered_description": {
-        "message": "Добавляет голубую подсветку к темам на форумах без ответов."
-    },
-    "hide_project_tags_title": {
-        "message": "Спрятать теги проектов"
-    },
-    "hide_project_tags_description": {
-        "message": "Прячет все теги в инструкциях и благодарностях проектов."
-    },
-    "hide_block_category_names_title": {
-        "message": "Спрятать имена категорий блоков"
-    },
-    "hide_block_category_names_description": {
-        "message": "Меняет категории блоков в редакторе для отображения только цветов категорий."
-    },
-    "search_assets_title": {
-        "message": "Поиск файлов"
-    },
-    "search_assets_description": {
-        "message": "Поиск по файлам костюмов и звуков в редакторе."
-    },
-    "block_count_in_mystuff_title": {
-        "message": "Количество блоков в \"Мои работы\""
-    },
-    "block_count_in_mystuff_description": {
-        "message": "Показывает количество блоков для проектов в \"Мои работы\"."
-    },
-    "block_studios_title": {
-        "message": "Блокировка уведомлений от конкретных студий"
-    },
-    "block_studios_description": {
-        "message": "Отключает уведомления об активности в конкретных студиях."
-    },
-    "pause_audio_title": {
-        "message": "Поставить аудио на паузу"
-    },
-    "pause_audio_description": {
-        "message": "Позволяет ставить на паузу и продолжать проигрывание аудио в звуковом редакторе Scratch проектов."
-    },
-    "display_message_count_in_icon_title": {
-        "message": "Показывать количество сообщений"
-    },
-    "display_message_count_in_icon_description": {
-        "message": "Показывает ваше текущее количество сообщений в иконке расширения ScratchTools."
-    },
-    "colored_context_menus_title": {
-        "message": "Цветные контекстные меню"
-    },
-    "colored_context_menus_description": {
-        "message": "Как в Scratch 2.0, цвета для контекстных меню основаны на цвете блока, для которого они предназначены."
-    },
-    "left_side_stage_title": {
-        "message": "Сцена слева"
-    },
-    "left_side_stage_description": {
-        "message": "Как в Scratch 2.0, перемещает сцену на левую сторону редактора."
-    },
-    "move_project_title_input_title": {
-        "message": "Название проекта над сценой"
-    },
-    "move_project_title_input_description": {
-        "message": "Располагает название проекта над сценой, как в Scratch 2.0. Применяется только в редакторе."
-    },
-    "hide_disabled_menu_options_title": {
-        "message": "Спрятать отключенные опции в контекстных меню"
-    },
-    "hide_disabled_menu_options_description": {
-        "message": "Опции контекстного меню в редакторе отображаются, даже если они отключены и не могут быть использованы. Эта функция скрывает их."
-    },
-    "dumpster_fire_title": {
-        "message": "Огненная мусорка"
-    },
-    "dumpster_fire_description": {
-        "message": "Главная страница Scratch врёт про секцию \"Рекомендуемые проекты\". Этот аддон меняет её имя на правильную форму, то есть \"Огненная мусорка\"."
-    },
-    "follower_count_title": {
-        "message": "Количество подписчиков создателя проекта"
-    },
-    "follower_count_description": {
-        "message": "Показывает количество подписчиков создателя проекта на его проектах"
-    },
-    "hide_studio_borders_title": {
-        "message": "Убрать рамки студий"
-    },
-    "hide_studio_borders_description": {
-        "message": "Удаляет странные рамки с изображений студий на страницах 2.0."
-    },
-    "hide_textarea_labels_title": {
-        "message": "Прятать заголовки \"Инструкции\" и \"Примечания и благодарности\""
-    },
-    "hide_textarea_labels_description": {
-        "message": "Заголовки \"Инструкции\" и \"Примечания и благодарности\" занимают довольно много места. Этот аддон убирает их."
-    },
-    "default_to_trending_title": {
-        "message": "Поиск в трендах по умолчанию"
-    },
-    "default_to_trending_description": {
-        "message": "На данный момент при поиске проектов на сайте Scratch вы автоматически ищете с фильтром \"популярные\", вместо \"тренды\"."
-    },
-    "infinite_backpack_scrolling_title": {
-        "message": "Бесконечная прокрутка рюкзака"
-    },
-    "infinite_backpack_scrolling_description": {
-        "message": "Позволяет прокручивать рюкзак до самого конца (загружается автоматически, но занимает время)."
-    },
-    "preview_textboxes_title": {
-        "message": "Превью текстовых полей"
-    },
-    "preview_textboxes_description": {
-        "message": "Позволяет предварительно просматривать ваши \"Обо мне\" и \"Над чем я работаю\", а также инструкции и \"Примечания и благодарности\" ваших проектов так, как другие пользователи их увидят."
-    },
-    "hide_studio_messages_title": {
-        "message": "Спрятать сообщения о действиях в студиях"
-    },
-    "hide_studio_messages_description": {
-        "message": "Прячет сообщения о действиях в студиях так как они могут мешать."
-    },
-    "default_to_local_title": {
-        "message": "Переменные локальные по умолчанию"
-    },
-    "default_to_local_description": {
-        "message": "При создании переменной ставит её на \"Только для этого спрайта\", а не на \"Для всех спрайтов\"."
-    },
-    "special_editor_fonts_title": {
-        "message": "Больше шрифтов в редакторе"
-    },
-    "special_editor_fonts_description": {
-        "message": "Добавляет больше шрифтов для выбора в редакторе Scratch. Они выглядят лучше и более современны."
-    },
-    "opacity_setter_title": {
-        "message": "Прозрачность в редакторе костюмов"
-    },
-    "opacity_setter_description": {
-        "message": "Добавляет ввод в редакторе костюмов для установки прозрачности элементов."
-    },
-    "get_project_tags_title": {
-        "message": "Показ тегов проекта"
-    },
-    "get_project_tags_description": {
-        "message": "Перечисляет все теги, используемые в описании проекта, ниже примечаний проекта."
-    },
-    "link_to_propose_title": {
-        "message": "\"Рекомендуемые проекты\" ссылается на студию"
-    },
-    "link_to_propose_description": {
-        "message": "Связывает секцию \"Рекомендуемые проекты\" на главной странице со студией \"Propose Projects to Be Featured\"."
-    },
-    "add_last_option_list_title": {
-        "message": "Выставить элемент списка на последний"
-    },
-    "add_last_option_list_description": {
-        "message": "Нажмите правой кнопкой мыши на блок 'элемент [число] в [список]', чтобы поставить номер самого последнего элемента в списке."
-    },
-    "cloud_scratchers_title": {
-        "message": "Пользователи Scratch онлайн в мультиплеер игре"
-    },
-    "cloud_scratchers_description": {
-        "message": "На страницах мультиплеер игр, показывает всех пользователей Scratch, которые на данный момент в неё играют."
-    },
-    "editor_in_two_title": {
-        "message": "Редактор из 2.0"
-    },
-    "editor_in_two_description": {
-        "message": "Заменяет редактор 3.0 по умолчанию на редактор 2.0. Ностальгия."
-    },
-    "comment_on_closed_profile_title": {
-        "message": "Комментируйте на профиле с закрытыми комментариями"
-    },
-    "comment_on_closed_profile_description": {
-        "message": "Если комментарии вашего профиля закрыты, теперь вы всё равно можете комментировать на своём профиле. Только вы можете это делать."
-    },
-    "hide_advertisements_title": {
-        "message": "Скрытие рекламы в комментариях"
-    },
-    "hide_advertisements_description": {
-        "message": "Скрывает рекламу в комментариях профилей, проектов и студий. Они могут занимать много места в комментариях."
-    },
-    "turbowarp_button_in_editor_title": {
-        "message": "Открыть в TurboWarp из редактора"
-    },
-    "turbowarp_button_in_editor_description": {
-        "message": "Добавляет кнопку в редактор для моментального открытия проекта в TurboWarp."
-    },
-    "sprite_clones_title": {
-        "message": "Счётчик клонов спрайта"
-    },
-    "sprite_clones_description": {
-        "message": "Показывает количество клонов каждого отдельного спрайта"
-    },
-    "block_log_title": {
-        "message": "Лог блоков"
-    },
-    "block_log_description": {
-        "message": "Логирует и показывает всю информацию для отмены в редакторе блоков когда вы нажимаете ctrl+shift+l."
-    },
-    "scrollable_list_items_title": {
-        "message": "Прокручиваемые элементы списков"
-    },
-    "scrollable_list_items_description": {
-        "message": "Элементы списка, значение которых шире самого списка, будут обрезаны. Теперь элементы списка можно прокручивать влево и вправо."
-    },
-    "admin_notifications_title": {
-        "message": "Индикатор сообщений красный для сообщений от команды Scratch."
-    },
-    "admin_notifications_description": {
-        "message": "Если у вас есть уведомления от команды Scratch, индикатор сообщений в строке навигации будет красным вместо оранжевого."
-    },
-    "rickroll_title": {
-        "message": "Рикролл"
-    },
-    "rickroll_description": {
-        "message": "Вы не узнаете пока не найдёте... На страницах проектов есть кнопка."
-    },
-    "custom_fonts_title": {
-        "message": "Пользовательский шрифт на сайте"
-    },
-    "custom_fonts_description": {
-        "message": "Вы можете поставить любой шрифт на сайте Scratch, если он есть на Google Fonts. Название должно точно совпадать."
-    },
-    "project_timer_title": {
-        "message": "Таймер проекта"
-    },
-    "project_timer_description": {
-        "message": "Показывает время в секундах, которое проект работал"
-    },
-    "colored_comments_title": {
-        "message": "Цветные комментарии в редакторе"
-    },
-    "colored_comments_description": {
-        "message": "Раскрашивает комментарии в редакторе в соответствии с цветом их родительского блока."
-    },
-    "recently_viewed_projects_title": {
-        "message": "Недавно просмотренные проекты"
-    },
-    "recently_viewed_projects_description": {
-        "message": "Добавляет вкладку на странице \"мои работы\", где можно увидеть список недавно посещённых проектов."
-    },
-    "anti_generic_title": {
-        "message": "Анти-повторяющиеся проекты"
-    },
-    "anti_generic_description": {
-        "message": "На страницах \"Исследуй\" и трендов эта бета-функция автоматически скрывает повторяющиеся проекты, а также проекты, которые, по ее мнению, являются похожими. К ним относятся проекты с большим количеством тегов, похожими названиями и копии проектов."
-    },
-    "collapse_blocks_title": {
-        "message": "Сворачивание блокоа"
-    },
-    "collapse_blocks_description": {
-        "message": "Контекстные меню позволяют свернуть выбранный блок."
-    },
-    "set_featured_project_title": {
-        "message": "Установка рекомендуемого проекта"
-    },
-    "set_featured_project_description": {
-        "message": "На странице любого проекта можно легко установить ваш рекомендуемый проект с помощью кнопки — можно выбрать даже скрытые"
-    },
-    "scratchformat_title": {
-        "message": "Форматирование комментариев"
-    },
-    "scratchformat_description": {
-        "message": "Форматируйте ваши комментарии с помощью жирного и наклонного текста, а также других функций! Все пользователи ScratchTools увидят форматирование."
-    },
-    "expand_editor_title": {
-        "message": "Увеличение редактора"
-    },
-    "expand_editor_description": {
-        "message": "Используйте Ctrl+E для быстрого переключения между редактором блоков по умолчанию и увеличенным за счёт скрытия сцены редактором!"
-    },
-    "list_sprites_title": {
-        "message": "Список спрайтов"
-    },
-    "list_sprites_description": {
-        "message": "Заменяет сетку спрайтов в редакторе на список, которые включает в себя количество блоков и позицию спрайта."
-    },
-    "check_if_trending_title": {
-        "message": "Проверка страницы трендов"
-    },
-    "check_if_trending_description": {
-        "message": "Если просматриваемый вами проект присутствует на странице трендов, его позиция будет показана рядом с датой опубликования на странице проекта."
-    },
-    "link_forum_activity_title": {
-        "message": "Имена пользователей в активности форума как ссылка"
-    },
-    "link_forum_activity_description": {
-        "message": "В секции последнего поста на форуме, делает имена пользователей ссылками на их профили."
-    },
-    "remove_topic_and_post_title": {
-        "message": "Спрятать счётчики форумов"
-    },
-    "remove_topic_and_post_description": {
-        "message": "Прячет счётчики на главной странице форумов."
-    },
-    "forum_homepage_emojis_title": {
-        "message": "Эмодзи категорий форумов"
-    },
-    "forum_homepage_emojis_description": {
-        "message": "Добавляет цветные эмодзи к категориям на главной странице форумов в зависимости от их темы."
-    },
-    "remove_collapse_buttons_title": {
-        "message": "Спрятать кнопки сворачиния на форумах"
-    },
-    "remove_collapse_buttons_description": {
-        "message": "Прячет кнопки \"свернуть\" на главных страницах форумов."
-    },
-    "pin_projects_title": {
-        "message": "Закрепление проектов в \"моих работах\""
-    },
-    "pin_projects_description": {
-        "message": "Закрепите один из своих проектов к верхней части страницы \"Мои работы\" одним нажатием кнопки! Вы можете убрать закрепление или поменять проект на другой!"
-    },
-    "last_key_pressed_title": {
-        "message": "Последняя нажатая клавиша"
-    },
-    "last_key_pressed_description": {
-        "message": "На странице любого проекта и редакторе вы можете просмотреть последнюю клавишу, которую вы нажали, находясь в этом проекте! Это  полезно для, например, платформеров."
-    },
-    "hide_signatures_title": {
-        "message": "Спрятать подписи на форумах"
-    },
-    "hide_signatures_description": {
-        "message": "Прячет все подписи на форумах и разделители для подписей."
-    },
-    "twemoji_in_forums_title": {
-        "message": "Улучшенные эмодзи на форумах"
-    },
-    "twemoji_in_forums_description": {
-        "message": "Заменяет текущие эмодзи форумов с низким разрешением на Twemoji"
-    },
-    "go_to_parent_title": {
-        "message": "Перейти на кнопку выше"
-    },
-    "go_to_parent_description": {
-        "message": "В редакторе для любого ремикса можно нажать на кнопку, чтобы перейти в редактор оригинального проекта."
-    },
-    "most_popular_project_title": {
-        "message": "Самый популярный проект"
-    },
-    "most_popular_project_description": {
-        "message": "Показывает самый популярный проект (по просмотрам) пользователя на профилях. Вы можете нажать на проект, чтобы посмотреть его."
-    },
-    "block_messages_title": {
-        "message": "Блокировка пользователей"
-    },
-    "block_messages_description": {
-        "message": "Прячет сообщения, созданные заблокированными пользователями (включает страницу блокировки)."
-    },
-    "editor_dark_mode_title": {
-        "message": "Тёмный режим в редакторе"
-    },
-    "editor_dark_mode_description": {
-        "message": "Светлая тема слишком яркая для редактора? Теперь вы можете наслаждаться темнотой в редакторе с этой красивой тёмной темой."
-    },
-    "hide_studio_group_icon_title": {
-        "message": "Спрятать иконку группы студий"
-    },
-    "hide_studio_group_icon_description": {
-        "message": "Прячет иконку группы студий, и оставляет только картинки студий."
-    },
-    "two_colors_title": {
-        "message": "Цвета блоков из 2.0"
-    },
-    "two_colors_description": {
-        "message": "Заменяет цвета блоков в редакторе на цвета из 2.0."
-    },
-    "colored_messages_title": {
-        "message": "Разноцветные сообщения"
-    },
-    "colored_messages_description": {
-        "message": "Раскрашивает ваши сообщения в зависимости от типа сообщения."
-    },
-    "full_title_title": {
-        "message": "Полное название проекта"
-    },
-    "full_title_description": {
-        "message": "Наведите на любое название проекта на профилях для показа полного названия."
-    },
-    "april_fools_title": {
-        "message": "1 апреля 2022"
-    },
-    "april_fools_description": {
-        "message": "Возвращает специальные режимы с 1 апреля 2022!"
-    },
-    "project_links_title": {
-        "message": "Ссылки на проект как названия"
-    },
-    "project_links_description": {
-        "message": "В комментариях профилей и проектов заменяет ссылки на проекты на их названия."
-    },
-    "fixed_box_title": {
-        "message": "Исправление секций"
-    },
-    "fixed_box_description": {
-        "message": "Делает все углы секций на сайте закруглёнными, а не только верхние."
-    },
-    "user_bio_title": {
-        "message": "Описание пользователя при наведении"
-    },
-    "user_bio_description": {
-        "message": "В комментариях профилей, наведите на любое имя пользователя для показа его описания."
-    },
-    "nfe_project_checker_title": {
-        "message": "Проверка NFE"
-    },
-    "nfe_project_checker_description": {
-        "message": "Показывает, как проект классифицирован (безопасно, неизвестно, или \"безопасно не для всех\"/NSFE) на его странице."
-    },
-    "advanced_search_title": {
-        "message": "Улучшенный поиск"
-    },
-    "advanced_search_description": {
-        "message": "Заменяет простой поиск Scratch на улучшенный и более умный."
-    },
-    "clone_counter_title": {
-        "message": "Счётчик клонов"
-    },
-    "clone_counter_description": {
-        "message": "Отображает полосу с процентом разрешенных клонов, активных в проекте."
-    },
-    "sprite_data_title": {
-        "message": "Показ информации спрайта"
-    },
-    "sprite_data_description": {
-        "message": "Показывает количество блоков, костюмов, и звуков во вкладках Код, Костюмы, и Звуки для каждого спрайта."
-    },
-    "box_shadows_title": {
-        "message": "Тени у секций"
-    },
-    "box_shadows_description": {
-        "message": "Добавляет тени ко всем секциям. При наводе на неё тень станет темнее."
-    },
-    "aviate_title": {
-        "message": "Статусы Aviate"
-    },
-    "aviate_description": {
-        "message": "Показывает статусы Aviate на профилях. Статус можно поставить на aviateapp.eu.org."
-    },
-    "idea_generator_title": {
-        "message": "Генератор идей проекта"
-    },
-    "idea_generator_description": {
-        "message": "На странице \"Идеи\" будет секция, где можно сгенерировать идеи для проекта, если они вам нужны!"
-    },
-    "hide_stickies_title": {
-        "message": "Спрятать закреплённые темы на форумах"
-    },
-    "hide_stickies_description": {
-        "message": "Прячет закреплённые темы на форумах."
-    },
-    "more_tutorials_title": {
-        "message": "Больше туториалов"
-    },
-    "more_tutorials_description": {
-        "message": "Добавляет дополнительные туториалы на страницу идей."
-    },
-    "nfe_search_title": {
-        "message": "Поиск NFE"
-    },
-    "nfe_search_description": {
-        "message": "Добавляет кнопку для поиска всех проектов, включая NFE"
-    },
-    "statistics_title": {
-        "message": "Статистика"
-    },
-    "statistics_description": {
-        "message": "Добавляет кнопку статистики на странице \"мои работы\", которая ведёт на вашу страницу ScratchStats."
-    },
-    "open_in_new_tab_title": {
-        "message": "Открывать в новой вкладке"
-    },
-    "open_in_new_tab_description": {
-        "message": "Автоматически открывает ссылки на страницах проектов в новых вкладках."
-    },
-    "plain_background_title": {
-        "message": "Чистый фон"
-    },
-    "plain_background_description": {
-        "message": "Убирает точки с фона редактора кода"
-    },
-    "unbold_site_text_title": {
-        "message": "Убрать жирный текст"
-    },
-    "unbold_site_text_description": {
-        "message": "Убирает весь жирный текст с сайта Scratch."
-    },
-    "compact_navbar_title": {
-        "message": "Компактная панель"
-    },
-    "compact_navbar_description": {
-        "message": "Освобождает место на панели навигации рядом с выпадающим меню профиля."
-    },
-    "delete_all_title": {
-        "message": "Удалить все спрайты."
-    },
-    "delete_all_description": {
-        "message": "Добавляет опцию в контекстном меню для спрайтов, которая удаляет все спрайты (после подтверждения)."
-    },
-    "round_profile_pictures_title": {
-        "message": "Закруглённые картинки профилей"
-    },
-    "round_profile_pictures_description": {
-        "message": "Все картинки профилей на сайте Scratch будут закруглены."
-    },
-    "sidebar_title": {
-        "message": "Боковая панель"
-    },
-    "sidebar_description": {
-        "message": "Заменяет навигационную панель наверху на боковую панель."
-    },
-    "ocular_link_title": {
-        "message": "Ссылки Ocular на форумах"
-    },
-    "ocular_link_description": {
-        "message": "Добавляет ссылку на страницу Ocular любого пользователя под их именем пользователя на форумах."
-    },
-    "forum_scratch_team_title": {
-        "message": "Символ Scratch команды на форумах"
-    },
-    "forum_scratch_team_description": {
-        "message": "На форумах также добавляется звёздочка (*) к имени членов команды Scratch, как и в других местах."
-    },
-    "message_count_title": {
-        "message": "Количество сообщений"
-    },
-    "message_count_description": {
-        "message": "Показывает количество сообщений пользователей на их профилях."
-    },
-    "remove_editor_icons_title": {
-        "message": "Убрать иконки в редакторе"
-    },
-    "remove_editor_icons_description": {
-        "message": "Убирает иконки со вкладок в редакторе"
-    },
-    "sprite_watermark_title": {
-        "message": "Убрать водяной знак спрайта"
-    },
-    "sprite_watermark_description": {
-        "message": "Убирает водяной знак спрайта, который показывается в редакторе."
-    },
-    "compact_editor_title": {
-        "message": "Компактный редактор"
-    },
-    "compact_editor_description": {
-        "message": "Делает информацию о спрайте и сцене более компактной."
-    },
-    "right_side_flag_title": {
-        "message": "Флаг справа"
-    },
-    "right_side_flag_description": {
-        "message": "Перемещает зелёный флаг и красную кнопку на правую сторону сцены."
-    },
-    "my_recent_projects_title": {
-        "message": "Заменить Новости Scratch на новые проекты"
-    },
-    "my_recent_projects_description": {
-        "message": "Заменяет секцию \"Новости Scratch\" на ваши недавно опубликованные проекты."
-    },
-    "hide_scratch_news_title": {
-        "message": "Спрятать новости Scratch"
-    },
-    "hide_scratch_news_description": {
-        "message": "Убирает секцию \"Новости Scratch\" на главной странице сайта Scratch. Конфликтует с \"Заменить Новости Scratch на новые проекты\", если тот включен."
-    },
-    "focus_mode_title": {
-        "message": "Режим фокуса"
-    },
-    "focus_mode_description": {
-        "message": "Убирает все комментарии, столбцы студий и ремиксов, заголовок и футер на страницах проектов при нажатии кнопки."
-    },
-    "terrible_title": {
-        "message": "Ужасная вещь"
-    },
-    "terrible_description": {
-        "message": "Не включайте"
-    }
+  "extName": {
+    "message": "ScratchTools"
+  },
+  "extDescription": {
+    "message": "ScratchTools полностью настраивается, имеет огромное количество возможностей — всё для того, чтобы сделать сайт Scratch лучше и удобнее в использовании!"
+  },
+  "search": {
+    "message": "принести"
+  },
+  "load_more_forum_posts_title": {
+    "message": "Загрузить больше постов"
+  },
+  "load_more_forum_posts_description": {
+    "message": "Загружайте больше постов на форуме без необходимости переключать страницы."
+  },
+  "unlisted_projects_title": {
+    "message": "Проекты с доступом по ссылке"
+  },
+  "unlisted_projects_description": {
+    "message": "Позволяет генерировать ссылки для публикования скрытых проектов в редакторе."
+  },
+  "scroll_project_titles_title": {
+    "message": "Прокрутка имён проектов"
+  },
+  "scroll_project_titles_description": {
+    "message": "Позволяет прокручивать и видеть целиком имена проектов, которыми вы не владеете."
+  },
+  "search_context_menus_title": {
+    "message": "Поиск в контекстных меню"
+  },
+  "search_context_menus_description": {
+    "message": "Удобный поиск в контекстных меню для быстрого выбора опций. Вы также можете нажать Enter для выбора верхней опции."
+  },
+  "hover_user_cards_title": {
+    "message": "Карточки при наведении на пользователи"
+  },
+  "hover_user_cards_description": {
+    "message": "Наведите на любое имя пользователя на сайте, чтобы показать аватар, имя пользователя, и количество подписчиков."
+  },
+  "exact_join_date_title": {
+    "message": "Точное время присоединения"
+  },
+  "exact_join_date_description": {
+    "message": "Показывает точное время присоединения пользователя на их профиле."
+  },
+  "start_stop_hotkeys_title": {
+    "message": "Горячие клавиши для запуска и остановки проектов"
+  },
+  "start_stop_hotkeys_description": {
+    "message": "Чтобы запустить и остановить проект вы можете использовать Ctrl+G или Command+G (для пользователей Mac)"
+  },
+  "upload_img_directly_title": {
+    "message": "Прямая загрузка изображений на форумы"
+  },
+  "upload_img_directly_description": {
+    "message": "Позволяет загружать изображения на форумы Scratch для постов и подписей без использования сторонних сервисов."
+  },
+  "leave_studio_title": {
+    "message": "Кнопка выхода из студии"
+  },
+  "leave_studio_description": {
+    "message": "Добавляет кнопку на страницу кураторов всех студий, которые вы курируете или управляете, которая позволяет легко покинуть студию. Сначала отображается подтверждение."
+  },
+  "user_stats_title": {
+    "message": "Показывать статистику пользователя"
+  },
+  "user_stats_description": {
+    "message": "Заменяет секцию \"Что я делал(а)\" в профилях на статистику пользователя"
+  },
+  "frontpage_curator_title": {
+    "message": "Имя куратора главной страницы как ссылка"
+  },
+  "frontpage_curator_description": {
+    "message": "Превращает имя куратора главной страницы в ссылку на их профиль."
+  },
+  "minimized_remix_credits_title": {
+    "message": "Уменьшенный размер благодарностей за ремикс"
+  },
+  "minimized_remix_credits_description": {
+    "message": "Поле для благодарностей ремикса проектов занимает место в Инструкциях проекта, поэтому этот аддон делает его меньше."
+  },
+  "follows_you_title": {
+    "message": "Показывать, подписан ли на вас пользователь, в профиле"
+  },
+  "follows_you_description": {
+    "message": "Если пользователь подписан на вас, это будет показано рядом с его именем пользователя, если вы зайдёте на его профиль."
+  },
+  "custom_studio_title": {
+    "message": "Секция пользовательской студии"
+  },
+  "custom_studio_description": {
+    "message": "На главной странице сайта проекты из выбранной вами студии будут отображаются выше секции \"Рекомендуемые проекты\"."
+  },
+  "highlight_unanswered_title": {
+    "message": "Подсвечивать не отвеченные темы на форумах"
+  },
+  "highlight_unanswered_description": {
+    "message": "Добавляет голубую подсветку к темам на форумах без ответов."
+  },
+  "hide_project_tags_title": {
+    "message": "Спрятать теги проектов"
+  },
+  "hide_project_tags_description": {
+    "message": "Прячет все теги в инструкциях и благодарностях проектов."
+  },
+  "hide_block_category_names_title": {
+    "message": "Спрятать имена категорий блоков"
+  },
+  "hide_block_category_names_description": {
+    "message": "Меняет категории блоков в редакторе для отображения только цветов категорий."
+  },
+  "search_assets_title": {
+    "message": "Поиск файлов"
+  },
+  "search_assets_description": {
+    "message": "Поиск по файлам костюмов и звуков в редакторе."
+  },
+  "block_count_in_mystuff_title": {
+    "message": "Количество блоков в \"Мои работы\""
+  },
+  "block_count_in_mystuff_description": {
+    "message": "Показывает количество блоков для проектов в \"Мои работы\"."
+  },
+  "block_studios_title": {
+    "message": "Блокировка уведомлений от конкретных студий"
+  },
+  "block_studios_description": {
+    "message": "Отключает уведомления об активности в конкретных студиях."
+  },
+  "pause_audio_title": {
+    "message": "Поставить аудио на паузу"
+  },
+  "pause_audio_description": {
+    "message": "Позволяет ставить на паузу и продолжать проигрывание аудио в звуковом редакторе Scratch проектов."
+  },
+  "display_message_count_in_icon_title": {
+    "message": "Показывать количество сообщений"
+  },
+  "display_message_count_in_icon_description": {
+    "message": "Показывает ваше текущее количество сообщений в иконке расширения ScratchTools."
+  },
+  "colored_context_menus_title": {
+    "message": "Цветные контекстные меню"
+  },
+  "colored_context_menus_description": {
+    "message": "Как в Scratch 2.0, цвета для контекстных меню основаны на цвете блока, для которого они предназначены."
+  },
+  "left_side_stage_title": {
+    "message": "Сцена слева"
+  },
+  "left_side_stage_description": {
+    "message": "Как в Scratch 2.0, перемещает сцену на левую сторону редактора."
+  },
+  "move_project_title_input_title": {
+    "message": "Название проекта над сценой"
+  },
+  "move_project_title_input_description": {
+    "message": "Располагает название проекта над сценой, как в Scratch 2.0. Применяется только в редакторе."
+  },
+  "hide_disabled_menu_options_title": {
+    "message": "Спрятать отключенные опции в контекстных меню"
+  },
+  "hide_disabled_menu_options_description": {
+    "message": "Опции контекстного меню в редакторе отображаются, даже если они отключены и не могут быть использованы. Эта функция скрывает их."
+  },
+  "dumpster_fire_title": {
+    "message": "Огненная мусорка"
+  },
+  "dumpster_fire_description": {
+    "message": "Главная страница Scratch врёт про секцию \"Рекомендуемые проекты\". Этот аддон меняет её имя на правильную форму, то есть \"Огненная мусорка\"."
+  },
+  "follower_count_title": {
+    "message": "Количество подписчиков создателя проекта"
+  },
+  "follower_count_description": {
+    "message": "Показывает количество подписчиков создателя проекта на его проектах"
+  },
+  "hide_studio_borders_title": {
+    "message": "Убрать рамки студий"
+  },
+  "hide_studio_borders_description": {
+    "message": "Удаляет странные рамки с изображений студий на страницах 2.0."
+  },
+  "hide_textarea_labels_title": {
+    "message": "Прятать заголовки \"Инструкции\" и \"Примечания и благодарности\""
+  },
+  "hide_textarea_labels_description": {
+    "message": "Заголовки \"Инструкции\" и \"Примечания и благодарности\" занимают довольно много места. Этот аддон убирает их."
+  },
+  "default_to_trending_title": {
+    "message": "Поиск в трендах по умолчанию"
+  },
+  "default_to_trending_description": {
+    "message": "На данный момент при поиске проектов на сайте Scratch вы автоматически ищете с фильтром \"популярные\", вместо \"тренды\"."
+  },
+  "infinite_backpack_scrolling_title": {
+    "message": "Бесконечная прокрутка рюкзака"
+  },
+  "infinite_backpack_scrolling_description": {
+    "message": "Позволяет прокручивать рюкзак до самого конца (загружается автоматически, но занимает время)."
+  },
+  "preview_textboxes_title": {
+    "message": "Превью текстовых полей"
+  },
+  "preview_textboxes_description": {
+    "message": "Позволяет предварительно просматривать ваши \"Обо мне\" и \"Над чем я работаю\", а также инструкции и \"Примечания и благодарности\" ваших проектов так, как другие пользователи их увидят."
+  },
+  "hide_studio_messages_title": {
+    "message": "Спрятать сообщения о действиях в студиях"
+  },
+  "hide_studio_messages_description": {
+    "message": "Прячет сообщения о действиях в студиях так как они могут мешать."
+  },
+  "default_to_local_title": {
+    "message": "Переменные локальные по умолчанию"
+  },
+  "default_to_local_description": {
+    "message": "При создании переменной ставит её на \"Только для этого спрайта\", а не на \"Для всех спрайтов\"."
+  },
+  "special_editor_fonts_title": {
+    "message": "Больше шрифтов в редакторе"
+  },
+  "special_editor_fonts_description": {
+    "message": "Добавляет больше шрифтов для выбора в редакторе Scratch. Они выглядят лучше и более современны."
+  },
+  "opacity_setter_title": {
+    "message": "Прозрачность в редакторе костюмов"
+  },
+  "opacity_setter_description": {
+    "message": "Добавляет ввод в редакторе костюмов для установки прозрачности элементов."
+  },
+  "get_project_tags_title": {
+    "message": "Показ тегов проекта"
+  },
+  "get_project_tags_description": {
+    "message": "Перечисляет все теги, используемые в описании проекта, ниже примечаний проекта."
+  },
+  "link_to_propose_title": {
+    "message": "\"Рекомендуемые проекты\" ссылается на студию"
+  },
+  "link_to_propose_description": {
+    "message": "Связывает секцию \"Рекомендуемые проекты\" на главной странице со студией \"Propose Projects to Be Featured\"."
+  },
+  "add_last_option_list_title": {
+    "message": "Выставить элемент списка на последний"
+  },
+  "add_last_option_list_description": {
+    "message": "Нажмите правой кнопкой мыши на блок 'элемент [число] в [список]', чтобы поставить номер самого последнего элемента в списке."
+  },
+  "cloud_scratchers_title": {
+    "message": "Пользователи Scratch онлайн в мультиплеер игре"
+  },
+  "cloud_scratchers_description": {
+    "message": "На страницах мультиплеер игр, показывает всех пользователей Scratch, которые на данный момент в неё играют."
+  },
+  "editor_in_two_title": {
+    "message": "Редактор из 2.0"
+  },
+  "editor_in_two_description": {
+    "message": "Заменяет редактор 3.0 по умолчанию на редактор 2.0. Ностальгия."
+  },
+  "comment_on_closed_profile_title": {
+    "message": "Комментируйте на профиле с закрытыми комментариями"
+  },
+  "comment_on_closed_profile_description": {
+    "message": "Если комментарии вашего профиля закрыты, теперь вы всё равно можете комментировать на своём профиле. Только вы можете это делать."
+  },
+  "hide_advertisements_title": {
+    "message": "Скрытие рекламы в комментариях"
+  },
+  "hide_advertisements_description": {
+    "message": "Скрывает рекламу в комментариях профилей, проектов и студий. Они могут занимать много места в комментариях."
+  },
+  "turbowarp_button_in_editor_title": {
+    "message": "Открыть в TurboWarp из редактора"
+  },
+  "turbowarp_button_in_editor_description": {
+    "message": "Добавляет кнопку в редактор для моментального открытия проекта в TurboWarp."
+  },
+  "sprite_clones_title": {
+    "message": "Счётчик клонов спрайта"
+  },
+  "sprite_clones_description": {
+    "message": "Показывает количество клонов каждого отдельного спрайта"
+  },
+  "block_log_title": {
+    "message": "Лог блоков"
+  },
+  "block_log_description": {
+    "message": "Логирует и показывает всю информацию для отмены в редакторе блоков когда вы нажимаете ctrl+shift+l."
+  },
+  "scrollable_list_items_title": {
+    "message": "Прокручиваемые элементы списков"
+  },
+  "scrollable_list_items_description": {
+    "message": "Элементы списка, значение которых шире самого списка, будут обрезаны. Теперь элементы списка можно прокручивать влево и вправо."
+  },
+  "admin_notifications_title": {
+    "message": "Индикатор сообщений красный для сообщений от команды Scratch."
+  },
+  "admin_notifications_description": {
+    "message": "Если у вас есть уведомления от команды Scratch, индикатор сообщений в строке навигации будет красным вместо оранжевого."
+  },
+  "rickroll_title": {
+    "message": "Рикролл"
+  },
+  "rickroll_description": {
+    "message": "Вы не узнаете пока не найдёте... На страницах проектов есть кнопка."
+  },
+  "custom_fonts_title": {
+    "message": "Пользовательский шрифт на сайте"
+  },
+  "custom_fonts_description": {
+    "message": "Вы можете поставить любой шрифт на сайте Scratch, если он есть на Google Fonts. Название должно точно совпадать."
+  },
+  "project_timer_title": {
+    "message": "Таймер проекта"
+  },
+  "project_timer_description": {
+    "message": "Показывает время в секундах, которое проект работал"
+  },
+  "colored_comments_title": {
+    "message": "Цветные комментарии в редакторе"
+  },
+  "colored_comments_description": {
+    "message": "Раскрашивает комментарии в редакторе в соответствии с цветом их родительского блока."
+  },
+  "recently_viewed_projects_title": {
+    "message": "Недавно просмотренные проекты"
+  },
+  "recently_viewed_projects_description": {
+    "message": "Добавляет вкладку на странице \"мои работы\", где можно увидеть список недавно посещённых проектов."
+  },
+  "anti_generic_title": {
+    "message": "Анти-повторяющиеся проекты"
+  },
+  "anti_generic_description": {
+    "message": "На страницах \"Исследуй\" и трендов эта бета-функция автоматически скрывает повторяющиеся проекты, а также проекты, которые, по ее мнению, являются похожими. К ним относятся проекты с большим количеством тегов, похожими названиями и копии проектов."
+  },
+  "collapse_blocks_title": {
+    "message": "Сворачивание блокоа"
+  },
+  "collapse_blocks_description": {
+    "message": "Контекстные меню позволяют свернуть выбранный блок."
+  },
+  "set_featured_project_title": {
+    "message": "Установка рекомендуемого проекта"
+  },
+  "set_featured_project_description": {
+    "message": "На странице любого проекта можно легко установить ваш рекомендуемый проект с помощью кнопки — можно выбрать даже скрытые"
+  },
+  "scratchformat_title": {
+    "message": "Форматирование комментариев"
+  },
+  "scratchformat_description": {
+    "message": "Форматируйте ваши комментарии с помощью жирного и наклонного текста, а также других функций! Все пользователи ScratchTools увидят форматирование."
+  },
+  "expand_editor_title": {
+    "message": "Увеличение редактора"
+  },
+  "expand_editor_description": {
+    "message": "Используйте Ctrl+E для быстрого переключения между редактором блоков по умолчанию и увеличенным за счёт скрытия сцены редактором!"
+  },
+  "list_sprites_title": {
+    "message": "Список спрайтов"
+  },
+  "list_sprites_description": {
+    "message": "Заменяет сетку спрайтов в редакторе на список, которые включает в себя количество блоков и позицию спрайта."
+  },
+  "check_if_trending_title": {
+    "message": "Проверка страницы трендов"
+  },
+  "check_if_trending_description": {
+    "message": "Если просматриваемый вами проект присутствует на странице трендов, его позиция будет показана рядом с датой опубликования на странице проекта."
+  },
+  "link_forum_activity_title": {
+    "message": "Имена пользователей в активности форума как ссылка"
+  },
+  "link_forum_activity_description": {
+    "message": "В секции последнего поста на форуме, делает имена пользователей ссылками на их профили."
+  },
+  "remove_topic_and_post_title": {
+    "message": "Спрятать счётчики форумов"
+  },
+  "remove_topic_and_post_description": {
+    "message": "Прячет счётчики на главной странице форумов."
+  },
+  "forum_homepage_emojis_title": {
+    "message": "Эмодзи категорий форумов"
+  },
+  "forum_homepage_emojis_description": {
+    "message": "Добавляет цветные эмодзи к категориям на главной странице форумов в зависимости от их темы."
+  },
+  "remove_collapse_buttons_title": {
+    "message": "Спрятать кнопки сворачиния на форумах"
+  },
+  "remove_collapse_buttons_description": {
+    "message": "Прячет кнопки \"свернуть\" на главных страницах форумов."
+  },
+  "pin_projects_title": {
+    "message": "Закрепление проектов в \"моих работах\""
+  },
+  "pin_projects_description": {
+    "message": "Закрепите один из своих проектов к верхней части страницы \"Мои работы\" одним нажатием кнопки! Вы можете убрать закрепление или поменять проект на другой!"
+  },
+  "last_key_pressed_title": {
+    "message": "Последняя нажатая клавиша"
+  },
+  "last_key_pressed_description": {
+    "message": "На странице любого проекта и редакторе вы можете просмотреть последнюю клавишу, которую вы нажали, находясь в этом проекте! Это  полезно для, например, платформеров."
+  },
+  "hide_signatures_title": {
+    "message": "Спрятать подписи на форумах"
+  },
+  "hide_signatures_description": {
+    "message": "Прячет все подписи на форумах и разделители для подписей."
+  },
+  "twemoji_in_forums_title": {
+    "message": "Улучшенные эмодзи на форумах"
+  },
+  "twemoji_in_forums_description": {
+    "message": "Заменяет текущие эмодзи форумов с низким разрешением на Twemoji"
+  },
+  "go_to_parent_title": {
+    "message": "Перейти на кнопку выше"
+  },
+  "go_to_parent_description": {
+    "message": "В редакторе для любого ремикса можно нажать на кнопку, чтобы перейти в редактор оригинального проекта."
+  },
+  "most_popular_project_title": {
+    "message": "Самый популярный проект"
+  },
+  "most_popular_project_description": {
+    "message": "Показывает самый популярный проект (по просмотрам) пользователя на профилях. Вы можете нажать на проект, чтобы посмотреть его."
+  },
+  "block_messages_title": {
+    "message": "Блокировка пользователей"
+  },
+  "block_messages_description": {
+    "message": "Прячет сообщения, созданные заблокированными пользователями (включает страницу блокировки)."
+  },
+  "editor_dark_mode_title": {
+    "message": "Тёмный режим в редакторе"
+  },
+  "editor_dark_mode_description": {
+    "message": "Светлая тема слишком яркая для редактора? Теперь вы можете наслаждаться темнотой в редакторе с этой красивой тёмной темой."
+  },
+  "hide_studio_group_icon_title": {
+    "message": "Спрятать иконку группы студий"
+  },
+  "hide_studio_group_icon_description": {
+    "message": "Прячет иконку группы студий, и оставляет только картинки студий."
+  },
+  "two_colors_title": {
+    "message": "Цвета блоков из 2.0"
+  },
+  "two_colors_description": {
+    "message": "Заменяет цвета блоков в редакторе на цвета из 2.0."
+  },
+  "colored_messages_title": {
+    "message": "Разноцветные сообщения"
+  },
+  "colored_messages_description": {
+    "message": "Раскрашивает ваши сообщения в зависимости от типа сообщения."
+  },
+  "full_title_title": {
+    "message": "Полное название проекта"
+  },
+  "full_title_description": {
+    "message": "Наведите на любое название проекта на профилях для показа полного названия."
+  },
+  "april_fools_title": {
+    "message": "1 апреля 2022"
+  },
+  "april_fools_description": {
+    "message": "Возвращает специальные режимы с 1 апреля 2022!"
+  },
+  "project_links_title": {
+    "message": "Ссылки на проект как названия"
+  },
+  "project_links_description": {
+    "message": "В комментариях профилей и проектов заменяет ссылки на проекты на их названия."
+  },
+  "fixed_box_title": {
+    "message": "Исправление секций"
+  },
+  "fixed_box_description": {
+    "message": "Делает все углы секций на сайте закруглёнными, а не только верхние."
+  },
+  "user_bio_title": {
+    "message": "Описание пользователя при наведении"
+  },
+  "user_bio_description": {
+    "message": "В комментариях профилей, наведите на любое имя пользователя для показа его описания."
+  },
+  "nfe_project_checker_title": {
+    "message": "Проверка NFE"
+  },
+  "nfe_project_checker_description": {
+    "message": "Показывает, как проект классифицирован (безопасно, неизвестно, или \"безопасно не для всех\"/NSFE) на его странице."
+  },
+  "advanced_search_title": {
+    "message": "Улучшенный поиск"
+  },
+  "advanced_search_description": {
+    "message": "Заменяет простой поиск Scratch на улучшенный и более умный."
+  },
+  "clone_counter_title": {
+    "message": "Счётчик клонов"
+  },
+  "clone_counter_description": {
+    "message": "Отображает полосу с процентом разрешенных клонов, активных в проекте."
+  },
+  "sprite_data_title": {
+    "message": "Показ информации спрайта"
+  },
+  "sprite_data_description": {
+    "message": "Показывает количество блоков, костюмов, и звуков во вкладках Код, Костюмы, и Звуки для каждого спрайта."
+  },
+  "box_shadows_title": {
+    "message": "Тени у секций"
+  },
+  "box_shadows_description": {
+    "message": "Добавляет тени ко всем секциям. При наводе на неё тень станет темнее."
+  },
+  "aviate_title": {
+    "message": "Статусы Aviate"
+  },
+  "aviate_description": {
+    "message": "Показывает статусы Aviate на профилях. Статус можно поставить на aviateapp.eu.org."
+  },
+  "idea_generator_title": {
+    "message": "Генератор идей проекта"
+  },
+  "idea_generator_description": {
+    "message": "На странице \"Идеи\" будет секция, где можно сгенерировать идеи для проекта, если они вам нужны!"
+  },
+  "hide_stickies_title": {
+    "message": "Спрятать закреплённые темы на форумах"
+  },
+  "hide_stickies_description": {
+    "message": "Прячет закреплённые темы на форумах."
+  },
+  "more_tutorials_title": {
+    "message": "Больше туториалов"
+  },
+  "more_tutorials_description": {
+    "message": "Добавляет дополнительные туториалы на страницу идей."
+  },
+  "nfe_search_title": {
+    "message": "Поиск NFE"
+  },
+  "nfe_search_description": {
+    "message": "Добавляет кнопку для поиска всех проектов, включая NFE"
+  },
+  "statistics_title": {
+    "message": "Статистика"
+  },
+  "statistics_description": {
+    "message": "Добавляет кнопку статистики на странице \"мои работы\", которая ведёт на вашу страницу ScratchStats."
+  },
+  "open_in_new_tab_title": {
+    "message": "Открывать в новой вкладке"
+  },
+  "open_in_new_tab_description": {
+    "message": "Автоматически открывает ссылки на страницах проектов в новых вкладках."
+  },
+  "plain_background_title": {
+    "message": "Чистый фон"
+  },
+  "plain_background_description": {
+    "message": "Убирает точки с фона редактора кода"
+  },
+  "unbold_site_text_title": {
+    "message": "Убрать жирный текст"
+  },
+  "unbold_site_text_description": {
+    "message": "Убирает весь жирный текст с сайта Scratch."
+  },
+  "compact_navbar_title": {
+    "message": "Компактная панель"
+  },
+  "compact_navbar_description": {
+    "message": "Освобождает место на панели навигации рядом с выпадающим меню профиля."
+  },
+  "delete_all_title": {
+    "message": "Удалить все спрайты."
+  },
+  "delete_all_description": {
+    "message": "Добавляет опцию в контекстном меню для спрайтов, которая удаляет все спрайты (после подтверждения)."
+  },
+  "round_profile_pictures_title": {
+    "message": "Закруглённые картинки профилей"
+  },
+  "round_profile_pictures_description": {
+    "message": "Все картинки профилей на сайте Scratch будут закруглены."
+  },
+  "sidebar_title": {
+    "message": "Боковая панель"
+  },
+  "sidebar_description": {
+    "message": "Заменяет навигационную панель наверху на боковую панель."
+  },
+  "ocular_link_title": {
+    "message": "Ссылки Ocular на форумах"
+  },
+  "ocular_link_description": {
+    "message": "Добавляет ссылку на страницу Ocular любого пользователя под их именем пользователя на форумах."
+  },
+  "forum_scratch_team_title": {
+    "message": "Символ Scratch команды на форумах"
+  },
+  "forum_scratch_team_description": {
+    "message": "На форумах также добавляется звёздочка (*) к имени членов команды Scratch, как и в других местах."
+  },
+  "message_count_title": {
+    "message": "Количество сообщений"
+  },
+  "message_count_description": {
+    "message": "Показывает количество сообщений пользователей на их профилях."
+  },
+  "remove_editor_icons_title": {
+    "message": "Убрать иконки в редакторе"
+  },
+  "remove_editor_icons_description": {
+    "message": "Убирает иконки со вкладок в редакторе"
+  },
+  "sprite_watermark_title": {
+    "message": "Убрать водяной знак спрайта"
+  },
+  "sprite_watermark_description": {
+    "message": "Убирает водяной знак спрайта, который показывается в редакторе."
+  },
+  "compact_editor_title": {
+    "message": "Компактный редактор"
+  },
+  "compact_editor_description": {
+    "message": "Делает информацию о спрайте и сцене более компактной."
+  },
+  "right_side_flag_title": {
+    "message": "Флаг справа"
+  },
+  "right_side_flag_description": {
+    "message": "Перемещает зелёный флаг и красную кнопку на правую сторону сцены."
+  },
+  "my_recent_projects_title": {
+    "message": "Заменить Новости Scratch на новые проекты"
+  },
+  "my_recent_projects_description": {
+    "message": "Заменяет секцию \"Новости Scratch\" на ваши недавно опубликованные проекты."
+  },
+  "hide_scratch_news_title": {
+    "message": "Спрятать новости Scratch"
+  },
+  "hide_scratch_news_description": {
+    "message": "Убирает секцию \"Новости Scratch\" на главной странице сайта Scratch. Конфликтует с \"Заменить Новости Scratch на новые проекты\", если тот включен."
+  },
+  "focus_mode_title": {
+    "message": "Режим фокуса"
+  },
+  "focus_mode_description": {
+    "message": "Убирает все комментарии, столбцы студий и ремиксов, заголовок и футер на страницах проектов при нажатии кнопки."
+  },
+  "terrible_title": {
+    "message": "Ужасная вещь"
+  },
+  "terrible_description": {
+    "message": "Не включайте"
+  }
 }
