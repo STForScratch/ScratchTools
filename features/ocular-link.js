@@ -1,11 +1,15 @@
-document.querySelectorAll("div.postleft").forEach(function (item2) {
-  var item = item2.querySelector("dt").querySelector("a");
-  if (item.href.includes("https://scratch.mit.edu/users/")) {
-    if (item.className === "black username") {
-      var test = item.parentNode.cloneNode(true);
-      test.firstChild.textContent = "Open in Ocular";
-      test.firstChild.href = `https://ocular.jeffalo.net/users/${item.textContent}/`;
-      item.parentNode.parentNode.appendChild(test);
+if (window.location.href.startsWith("https://scratch.mit.edu/discuss/")) {
+  document.querySelectorAll(".blockpost").forEach(function (post) {
+    if (!post.querySelector(".scratchtools-open-in-ocular")) {
+      var a = document.createElement("a");
+      a.textContent = "Open in Ocular";
+      a.style.display = "block";
+      a.href = `https://ocular.jeffalo.net/users/${post
+        .querySelector(".username")
+        .textContent.replaceAll("*", "")}/`;
+      a.className = "scratchtools-open-in-ocular black";
+      a.style.fontWeight = "bold";
+      post.querySelector(".postleft > dl").appendChild(a);
     }
-  }
-});
+  });
+}
