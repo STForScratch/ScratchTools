@@ -5,8 +5,17 @@
   "extDescription": {
     "message": "ScratchTools jest w pełni konfigurowalny oraz posiada mnóstwo funkcji, wszystko po to, aby sprawić by strona Scratch była lepsza i łatwiejsza w użyciu!"
   },
+  "welcome_to_settings": {
+    "message": "Witaj w ustawieniach! Możesz znaleźć tutaj wszystkie funkcje!"
+  },
   "search": {
-    "message": "aportować"
+    "message": "wyszukiwanie"
+  },
+  "credits_text": {
+    "message": "Twórcy"
+  },
+  "disabled_explanation": {
+    "message": "Ta funkcja została wyłączona przez ScratchTools. Wciąż możesz włączyć ją lub wyłączyć, ale ze względów bezpieczeństwa, nie będzie ona na razie działać."
   },
   "load_more_forum_posts_title": {
     "message": "Ładuj Więcej Postów"

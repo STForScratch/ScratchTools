@@ -5,14 +5,23 @@
   "extDescription": {
     "message": "ScratchTools is fully customizable with tons of features, all for making the Scratch website better and easier to use!"
   },
-  "search": {
-    "message": "search"
-  },
   "feature_load_more_forum_posts_loadmore": {
     "message": "Load more"
   },
   "newest_update_message": {
     "message": "This new version includes a few cool new features, as well as multiple bug fixes! One feature, Unlisted Projects, allows you to create special links for your unshared projects that allow other people to view them!"
+  },
+  "welcome_to_settings": {
+    "message": "Welcome to your settings! You can find all features here!"
+  },
+  "search": {
+    "message": "search"
+  },
+  "credits_text": {
+    "message": "Credits"
+  },
+  "disabled_explanation": {
+    "message": "This feature has been disabled remotely by ScratchTools. You can still enable/disable it, but, for safety reasons, it won't work for now."
   },
   "load_more_forum_posts_title": {
     "message": "Load More Posts"
