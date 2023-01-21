@@ -1,3 +1,5 @@
+document.querySelector(".welcome .count").textContent = chrome.i18n.getMessage("welcome_to_settings") || document.querySelector(".welcome .count").textContent
+
 document.querySelector(".searchbar").placeholder =
   chrome.i18n.getMessage("search") || "search";
 
@@ -459,7 +461,7 @@ function createFeature(
       description2.style.width = "250px";
       description2.textContent = description;
       var a = document.createElement("h3");
-      a.innerHTML = `<span>Credits: <span>`;
+      a.innerHTML = `<span>${chrome.i18n.getMessage("credits_text") || "Credits"}: <span>`;
       a.style.display = "inline-block";
       a.style.width = "15rem";
       credits.forEach(function (el, i) {
@@ -588,7 +590,7 @@ function createFeature(
         if (disabled && disabled.includes(id)) {
           var warning = document.createElement("div");
           warning.textContent =
-            "This feature has been disabled remotely by ScratchTools. You can still enable/disable it, but, for safety reasons, it won't work for now.";
+          chrome.i18n.getMessage("disabled_explanation") || "This feature has been disabled remotely by ScratchTools. You can still enable/disable it, but, for safety reasons, it won't work for now.";
           warning.className = "warning disabled";
           div23.insertBefore(warning, div23.querySelector("label"));
         }

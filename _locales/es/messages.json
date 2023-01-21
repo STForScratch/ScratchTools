@@ -5,13 +5,22 @@
   "extDescription": {
     "message": "ScratchTools es completamente personalizable con muchas funciones, todas para hacer el sitio Scratch mejor y más fácil de usar!"
   },
-  "search": {
-    "message": "buscar"
-  },
   "feature_load_more_forum_posts_loadmore": {
     "message": "Cargar más"
   },
   "newest_update_message": {
     "message": "Esta nueva versión incluye nuevas funciones geniales, además de varios arreglos de errores! Una función, Proyectos Ocultos, te permite crear enlaces especiales para tus proyectos no compartidos así otras personas pueden verlo!"
+  },
+  "welcome_to_settings": {
+    "message": "Bienvenido a tus opciones! Puedes encontrar todas las funciones aquí!"
+  },
+  "search": {
+    "message": "buscar"
+  },
+  "credits_text": {
+    "message": "Créditos"
+  },
+  "disabled_explanation": {
+    "message": "Esta función fue deshabilitada remotamente por ScratchTools. Todavía puedes prenderla/apagarla, pero, por razones de seguridad, no funcionará por ahora."
   }
 }

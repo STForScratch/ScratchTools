@@ -5,8 +5,14 @@
   "extDescription": {
     "message": "ScratchTools полностью настраивается, имеет огромное количество возможностей — всё для того, чтобы сделать сайт Scratch лучше и удобнее в использовании!"
   },
+  "welcome_to_settings": {
+    "message": "Добро пожаловать в настройки! Вы можете найти все функции здесь."
+  },
   "search": {
-    "message": "принести"
+    "message": "поиск"
+  },
+  "credits_text": {
+    "message": "Благодарности"
   },
   "load_more_forum_posts_title": {
     "message": "Загрузить больше постов"
