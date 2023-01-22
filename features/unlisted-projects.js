@@ -62,7 +62,7 @@ ScratchTools.waitForElements(
 async function createButton(el) {
   var el = el || document.querySelector("[class*='share-button_share-button']");
   el.onclick = createButton;
-  if (el.innerText === "Share") {
+  if (el.className.includes("share-button_share-button_")) {
     if (!document.querySelector(".scratchtools-unlisted")) {
       const classList = document.querySelector(
         "[class*='share-button_share-button']"
