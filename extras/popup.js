@@ -1,4 +1,6 @@
+if (document.querySelector(".welcome .count")) {
 document.querySelector(".welcome .count").textContent = chrome.i18n.getMessage("welcome_to_settings") || document.querySelector(".welcome .count").textContent
+}
 
 document.querySelector(".searchbar").placeholder =
   chrome.i18n.getMessage("search") || "search";
