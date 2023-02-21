@@ -6,7 +6,7 @@
   </a>
 
   <p align="center">
-    Extension for which makes Scratch much easier
+    Extension that makes Scratch much easier
     <br />
     <a href="https://github.com/STForScratch/ScratchTools"><strong>Explore the documents »</strong></a>
     <br />
