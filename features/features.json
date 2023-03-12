@@ -1,5 +1,15 @@
 [
   {
+    "title": "Nicknames",
+    "description": "Set nicknames for other Scratchers. Only you can see the nicknames, and their username will be replaced with the nickname when you see their name.",
+    "credits": ["rgantzos"],
+    "urls": ["https://scratch.mit.edu/users/rgantzos"],
+    "file": "nicknames",
+    "type": ["Website"],
+    "tags": ["New", "Featured"],
+    "dynamic": false
+  },
+  {
     "title": "Unlisted Projects",
     "description": "Allows you to generate share links for unshared projects in the editor.",
     "credits": ["rgantzos"],
