@@ -1,6 +1,13 @@
 var version = "2.23.0";
 
 chrome.runtime.onInstalled.addListener(async function (object) {
+  try {
+  var featureData = await (await fetch("/features/features.json")).json()
+} catch(err) {
+  chrome.tabs.create({
+    url: `data:text/plain,ScratchTools has crashed because the features.json file is configured incorrectly.`,
+  });
+}
   chrome.alarms.clearAll();
   chrome.alarms.create("displayMessageCount", {
     delayInMinutes: 0.5,
