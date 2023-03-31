@@ -26,12 +26,19 @@ if (
     createLink.textContent = name;
     createLink.style.color = "white";
     createLink.style.textDecoration = "none";
+    createLink.style.transition = "all .3s";
     create.style.marginTop = "3vh";
     create.style.listStyle = "none";
     create.appendChild(createLink);
     links.appendChild(create);
     create.style.fontSize = "1.5vw";
     createLink.style.fontSize = "1.5vw";
+    createLink.addEventListener("mouseenter", function() {
+      createLink.style.color = "orange";
+    })
+    createLink.addEventListener("mouseleave", function() {
+      createLink.style.color = "white";
+    })
     if (id === "username") {
       create.style.fontSize = "2vw";
       createLink.style.fontSize = "2vw";
@@ -203,11 +210,18 @@ if (
     createLink.href = href;
     createLink.textContent = name;
     createLink.style.color = "white";
+    createLink.style.transition = "all .3s";
     create.style.listStyle = "none";
     create.appendChild(createLink);
     links.appendChild(create);
     create.style.fontSize = "1.5vw";
     createLink.style.fontSize = "1.5vw";
+    createLink.addEventListener("mouseenter", function() {
+      createLink.style.color = "orange";
+    })
+    createLink.addEventListener("mouseleave", function() {
+      createLink.style.color = "white";
+    })
     if (id === "username") {
       create.style.fontSize = "2vw";
       createLink.style.fontSize = "2vw";
