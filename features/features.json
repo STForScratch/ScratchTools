@@ -1052,10 +1052,11 @@
   {
     "title": "Sidebar",
     "description": "Adds a sidebar to the Scratch website, rather than just the normal navigation bar at the top of the screen.",
-    "credits": ["Scratchfangs", "rgantzos"],
+    "credits": ["Scratchfangs", "rgantzos", "callumjt"],
     "urls": [
       "https://scratch.mit.edu/users/scratchfangs/",
-      "https://scratch.mit.edu/users/rgantzos/"
+      "https://scratch.mit.edu/users/rgantzos/",
+      "https://scratch.mit.edu/users/callumjt/"
     ],
     "file": "sidebar",
     "type": ["Website", "Theme"]
