@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/brand/SpaceGrotesk.ttf") format("ttf");
+}
+
+.center-perfectly {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: calc(100% - 4rem);
+}
+
+body {
+  background-image: url(./background.svg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.left {
+    width: calc(50% - 4rem);
+    float: left;
+    padding: 2rem;
+}
+
+.left h1 {
+    font-size: 4rem;
+}
+
+.right {
+    width: calc(50% - 4rem);
+    float: right;
+    padding: 2rem;
+}
+
+.right h3 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.right li {
+    font-size: 1rem;
+    position: relative;
+    left: -1rem;
+}
+
+.left {
+    text-align: right;
+}
