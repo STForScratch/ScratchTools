@@ -20,7 +20,7 @@
     <div class="section1">
       <hr style="border: none; height: 70px" />
       <div class="sectionwrap">
-        <div class="news"></div>
+        <div class="news"><div class="note blue"><h3>ScratchTools is Going Multilingual!</h3><span>ScratchTools is becoming available in even more languages! Our beta version supports Polish and Russian, and more languages such as Spanish, Turkish, German and Japanese are coming soon! If you know a language other than English, you can help translate and get credit for it <a href="https://explore.transifex.com/scratchtools/scratchtools/">here</a>!</span></div><div class="note yellow"><h3>v2.23.0 is Now Out!</h3><span>This new version adds multiple really cool features, including the ability to generate links for your own unshared projects!</span></div></div>
         <br />
         <div class="note purple blocked" style="display: none">
           <h3>Blocked Users</h3>
@@ -45,6 +45,18 @@
       margin: 0em;
       font-family: "Roboto", sans-serif;
     }
+
+    .switch {
+      position: relative;
+      top: -1rem;
+      right: -1rem;
+    }
+
+    .feature > input {
+      display: block;
+      margin-left: 0px !important;
+    }
+
 
     .feature button,
     .feature input {
@@ -71,6 +83,10 @@
       color: white;
       text-decoration: none;
     }
+    .feature a {
+  cursor: pointer;
+  color: #ff9f00 !important;
+}
     .section1 {
       border: 0px solid black;
       min-height: 100% !important;
@@ -227,6 +243,8 @@
       border-radius: .25rem;
       float: left;
       margin-left: 0px !important;
+      padding-left: 1.5rem !important;
+      padding-right: 1.5rem !important;
     }
     .feature h3[style="font-size: 1.5em;"] {
       font-weight: bold;
@@ -270,8 +288,8 @@
       right: 0;
       bottom: 0;
       background-color: #cccccc;
-      -webkit-transition: 0.4s;
-      transition: 0.4s;
+      -webkit-transition: 0.2s;
+      transition: 0.2s;
     }
 
     .slider:before {
@@ -282,8 +300,8 @@
       left: 4px;
       bottom: 4px;
       background-color: white;
-      -webkit-transition: 0.4s;
-      transition: 0.4s;
+      -webkit-transition: 0.2s;
+      transition: 0.2s;
     }
 
     input:checked + .slider {

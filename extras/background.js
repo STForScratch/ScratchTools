@@ -245,13 +245,24 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
               var world = "MAIN";
             }
           }
-          chrome.storage.sync.get("features", function (obj) {
-            if (obj["features"].includes(data[el]["file"])) {
-              chrome.scripting.executeScript({
-                target: { tabId: tabId },
-                files: [`/features/${data[el]["file"]}.js`],
-                world: world,
-              });
+          chrome.storage.sync.get("features", async function (obj) {
+            if (obj["features"].includes(data[el]["file"] || data[el].id)) {
+              if (data[el].version === 2) {
+                var newData = await (await fetch(`/features/${data[el].id}/data.json`)).json()
+                newData.scripts?.forEach(function(script) {
+                  chrome.scripting.executeScript({
+                    target: { tabId: tabId },
+                    files: [`/features/${data[el]["id"]}/${script}`],
+                    world: world,
+                  });
+                })
+              } else {
+                chrome.scripting.executeScript({
+                  target: { tabId: tabId },
+                  files: [`/features/${data[el]["file"]}.js`],
+                  world: world,
+                });
+              }
               ScratchTools.console.log("Injected feature: " + data[el].file);
             }
           });

@@ -4,9 +4,12 @@
     <title>ScratchTools</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+      body {
+        padding-bottom: 2rem;
+      }
       .feature {
         margin: 2em;
-        margin-top: 3em;
+        margin-bottom: 3rem;
       }
       .feature {
         border: 0px solid black;
@@ -38,7 +41,15 @@
 
       p {
         color: black;
-        width: 400px;
+      }
+
+      .featureTitle {
+        margin-bottom: .5rem;
+      }
+
+      .feature p {
+        width: calc(100% - 1.6rem);
+        opacity: .5;
       }
 
       li {
@@ -140,7 +151,10 @@
     }
     .feature {
       margin: 2em;
-      margin-top: 3em;
+      margin-top: 3rem;
+    }
+    .settings {
+      padding-bottom: 1rem;
     }
     .feature .featureTitle {
       border: 0px solid black;
@@ -155,6 +169,11 @@
     }
     .feature .featureTitle {
       color: #00000077;
+      width: calc(100% - 55px);
+    }
+
+    .feature > input {
+      display: block;
     }
 
     .navbar {
@@ -244,6 +263,11 @@
       margin-bottom: 1rem;
     }
 
+    .feature a {
+  cursor: pointer;
+  color: #ff9f00 !important;
+}
+
     .switch input {
       opacity: 0;
       width: 0;
@@ -258,8 +282,8 @@
       right: 0;
       bottom: 0;
       background-color: #cccccc;
-      -webkit-transition: 0.4s;
-      transition: 0.4s;
+      -webkit-transition: 0.2s;
+      transition: 0.2s;
     }
 
     .slider:before {
@@ -270,8 +294,8 @@
       left: 4px;
       bottom: 4px;
       background-color: white;
-      -webkit-transition: 0.4s;
-      transition: 0.4s;
+      -webkit-transition: 0.2s;
+      transition: 0.2s;
     }
 
     input:checked + .slider {
