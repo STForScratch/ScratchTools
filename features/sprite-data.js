@@ -13,29 +13,27 @@ function getSpriteData() {
     if (currentSpriteName.length !== 0) {
       var currentSpriteName = currentSpriteName[0];
       try {
-        document.querySelector("#react-tabs-0 > span").textContent = `Code (${
+        document.querySelectorAll("li[id^=react-tabs]")[0].textContent = `Code (${
           Object.keys(
             vm.runtime.getSpriteTargetByName(currentSpriteName).blocks._blocks
           ).length
         })`;
       } catch (err) {}
       try {
-        document.querySelector(
-          "#react-tabs-2 > span"
-        ).textContent = `Costumes (${
+        document.querySelectorAll("li[id^=react-tabs]")[1].textContent = `Costumes (${
           vm.runtime.getSpriteTargetByName(currentSpriteName).getCostumes()
             .length
         })`;
       } catch (err) {}
       try {
-        document.querySelector("#react-tabs-4 > span").textContent = `Sounds (${
+        document.querySelectorAll("li[id^=react-tabs]")[2].textContent = `Sounds (${
           vm.runtime.getSpriteTargetByName(currentSpriteName).getSounds().length
         })`;
       } catch (err) {}
     } else {
-      document.querySelector("#react-tabs-0 > span").textContent = `Code`;
-      document.querySelector("#react-tabs-2 > span").textContent = `Backdrops`;
-      document.querySelector("#react-tabs-4 > span").textContent = `Sounds`;
+      document.querySelectorAll("li[id^=react-tabs]")[0].textContent = `Code`;
+      document.querySelectorAll("li[id^=react-tabs]")[1].textContent = `Backdrops`;
+      document.querySelectorAll("li[id^=react-tabs]")[2].textContent = `Sounds`;
     }
   } catch (err) {}
   setTimeout(getSpriteData, 200);
