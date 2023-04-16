@@ -15,6 +15,7 @@ if (
   sidebar.style.width = "20vw";
   sidebar.style.height = "100vh";
   sidebar.style.position = "fixed";
+  sidebar.style.zIndex = "100";
 
   var links = document.createElement("ul");
 
@@ -25,12 +26,19 @@ if (
     createLink.textContent = name;
     createLink.style.color = "white";
     createLink.style.textDecoration = "none";
+    createLink.style.transition = "all .3s";
     create.style.marginTop = "3vh";
     create.style.listStyle = "none";
     create.appendChild(createLink);
     links.appendChild(create);
     create.style.fontSize = "1.5vw";
     createLink.style.fontSize = "1.5vw";
+    createLink.addEventListener("mouseenter", function() {
+      createLink.style.color = "orange";
+    })
+    createLink.addEventListener("mouseleave", function() {
+      createLink.style.color = "white";
+    })
     if (id === "username") {
       create.style.fontSize = "2vw";
       createLink.style.fontSize = "2vw";
@@ -70,9 +78,14 @@ if (
     } else {
       links.appendChild(create);
     }
+    if (id === "signout") {
+      createLink.onclick = () => {
+        logOut()
+      }
+    }
   }
 
-  session();
+  CheckLogin();
 
   async function session() {
     var response = await fetch("https://scratch.mit.edu/session/", {
@@ -135,7 +148,38 @@ if (
       links.appendChild(br3);
       createMenu("My Stuff", "https://scratch.mit.edu/mystuff/");
       createMenu("Settings", "https://scratch.mit.edu/accounts/settings/");
+      var br5 = document.createElement("br");
+      br5.height = "1vh";
+      links.append(br5);
+      createMenu("Sign Out", "#", "signout");
+    } 
+
+    sidebar.appendChild(links);
+  }
+
+  async function CheckLogin() {
+    if ((await ScratchTools.Session()).user) {
+      session();
+    } else {
+      NotLogged();
     }
+  }
+
+  function NotLogged() {
+    var br6 = document.createElement("br")
+    br6.height = "1vh";
+    links.appendChild(br6)
+  
+    createMenu("Home", "https://scratch.mit.edu/");
+    createMenu("Create", "https://scratch.mit.edu/projects/editor/");
+    createMenu("Explore", "https://scratch.mit.edu/explore/");
+    createMenu("Ideas", "https://scratch.mit.edu/ideas/");
+    createMenu("About", "https://scratch.mit.edu/about/");
+
+    var br7 = document.createElement("br")
+    br7.height = "1vh";
+    links.appendChild(br7)
+    createMenu("Log In", "https://scratch.mit.edu/login_retry/")
 
     sidebar.appendChild(links);
   }
@@ -148,7 +192,7 @@ if (
   document.querySelector("div.page").style.width = "80%";
   document.querySelector("div.page").style.float = "right";
   document.querySelector("div.page").style.right = "0px";
-  document.querySelector("div#view").style.marginTop = "0px";
+  document.querySelector("main#view").style.marginTop = "0px";
   document.querySelector("#navigation").remove();
   var sidebar = document.createElement("div");
   document.querySelector("div#app").prepend(sidebar);
@@ -166,11 +210,18 @@ if (
     createLink.href = href;
     createLink.textContent = name;
     createLink.style.color = "white";
+    createLink.style.transition = "all .3s";
     create.style.listStyle = "none";
     create.appendChild(createLink);
     links.appendChild(create);
     create.style.fontSize = "1.5vw";
     createLink.style.fontSize = "1.5vw";
+    createLink.addEventListener("mouseenter", function() {
+      createLink.style.color = "orange";
+    })
+    createLink.addEventListener("mouseleave", function() {
+      createLink.style.color = "white";
+    })
     if (id === "username") {
       create.style.fontSize = "2vw";
       createLink.style.fontSize = "2vw";
@@ -210,9 +261,14 @@ if (
     } else {
       links.appendChild(create);
     }
+    if (id === "signout") {
+      createLink.onclick = () => {
+        logOut()
+      }
+    }
   }
 
-  session();
+  CheckLogin();
 
   async function session() {
     var response = await fetch("https://scratch.mit.edu/session/", {
@@ -275,8 +331,50 @@ if (
       links.appendChild(br3);
       createMenu("My Stuff", "https://scratch.mit.edu/mystuff/");
       createMenu("Settings", "https://scratch.mit.edu/accounts/settings/");
-    }
+      var br5 = document.createElement("br");
+      br5.height = "1vh";
+      links.append(br5);
+      createMenu("Sign Out", "#", "signout");
+    } 
 
     sidebar.appendChild(links);
   }
+
+  function NotLogged() {
+    var br6 = document.createElement("br")
+    br6.height = "1vh";
+    links.appendChild(br6)
+  
+    createMenu("Home", "https://scratch.mit.edu/");
+    createMenu("Create", "https://scratch.mit.edu/projects/editor/");
+    createMenu("Explore", "https://scratch.mit.edu/explore/");
+    createMenu("Ideas", "https://scratch.mit.edu/ideas/");
+    createMenu("About", "https://scratch.mit.edu/about/");
+
+    var br7 = document.createElement("br")
+    br7.height = "1vh";
+    links.appendChild(br7)
+    createMenu("Log In", "https://scratch.mit.edu/login_retry/")
+
+    sidebar.appendChild(links);
+  }
+
+  async function CheckLogin() {
+    if ((await ScratchTools.Session()).user) {
+      session();
+    } else {
+      NotLogged();
+    }
+  }
+}
+
+
+async function logOut() {
+  var response = await fetch("https://scratch.mit.edu/accounts/logout/", {
+"headers": {
+  "x-csrftoken": ScratchTools.cookies.get("scratchcsrftoken"),
+},
+"method": "POST",
+});
+  window.location.href = "/"
 }
