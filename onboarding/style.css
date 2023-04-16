@@ -89,3 +89,8 @@ button:hover {
     padding-left: 2rem;
     padding-right: 2rem;
 }
+
+.feature p {
+    height: 5rem;
+    overflow-y: hidden;
+}
