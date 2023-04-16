@@ -1,0 +1,19 @@
+{
+  "title": "Original Buttons",
+  "description": "Returns the original love, favorite, remix, and view buttons to the Scratch project pages.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "dynamic": false,
+  "scripts": ["script.js"],
+  "resources": [
+    { "name": "fav-gray", "path": "/resources/fav-gray.svg" },
+    { "name": "fav-yellow", "path": "/resources/fav-yellow.svg" },
+    { "name": "love-gray", "path": "/resources/love-gray.svg" },
+    { "name": "love-red", "path": "/resources/love-red.svg" },
+    { "name": "remix-gray", "path": "/resources/remix-gray.svg" },
+    { "name": "views-gray", "path": "/resources/views-gray.svg" }
+  ]
+}

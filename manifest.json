@@ -21,6 +21,10 @@
     "48": "/extras/icon48.png",
     "128": "/extras/icon128.png"
   },
+  "web_accessible_resources": [{
+    "resources": ["features/*"],
+    "matches": ["https://scratch.mit.edu/*"]
+  }],
   "host_permissions": ["https://scratch.mit.edu/"],
   "browser_specific_settings": {
     "gecko": {

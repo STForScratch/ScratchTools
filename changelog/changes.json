@@ -1,12 +1,16 @@
 {
   "NOTE": "THERE IS NO NEED TO UPDATE THIS YOURSELF, IT WILL BE UPDATED WHEN RELEASED.",
   "version": "2.25.0-beta",
-  "new": ["Nicknames."],
+  "new": ["Nicknames.", "Revert project action buttons."],
   "enhanced": [
     "Better changelog notification.",
-    "Onboarding for new extension users."
+    "Onboarding for new extension users.",
+    "Better settings page."
   ],
   "fixed": [
-    "Fixed sidebar issues."
+    "Fixed sidebar issues.",
+    "Fix credit links on settings page.",
+    "Fix collapse blocks issue with custom block definitions.",
+    "Fix sprite data not working."
   ]
 }

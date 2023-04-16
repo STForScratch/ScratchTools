@@ -1,5 +1,6 @@
 var ScratchTools = {};
 ScratchTools.Storage = {};
+ScratchTools.Resources = {}
 console.log("ScratchTools API Created");
 if (
   window.location.href.startsWith("https://scratch.mit.edu/projects/") &&
