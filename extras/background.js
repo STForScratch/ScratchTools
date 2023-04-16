@@ -1,5 +1,3 @@
-var version = "2.23.0";
-
 chrome.runtime.onInstalled.addListener(async function (object) {
   try {
   var featureData = await (await fetch("/features/features.json")).json()
@@ -13,6 +11,19 @@ chrome.runtime.onInstalled.addListener(async function (object) {
     delayInMinutes: 0.5,
     periodInMinutes: 0.5,
   });
+  var version = chrome.runtime.getManifest().version_name
+  const changelogData = await (await fetch("/changelog/changes.json")).json()
+  if (changelogData.version === version) {
+    var storedVersion = (await chrome.storage.sync.get("version")).version
+    await chrome.storage.sync.set({
+      version: version
+    })
+    if (storedVersion && storedVersion !== version) {
+      await chrome.tabs.create({
+        url: "/changelog/index.html"
+      })
+    }
+  }
   if (
     chrome.runtime.getManifest().version_name.toLowerCase().includes("beta")
   ) {
@@ -244,19 +255,6 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
               ScratchTools.console.log("Injected feature: " + data[el].file);
             }
           });
-        }
-      });
-      await chrome.storage.sync.get("version", async function (obj) {
-        if (obj["version"] !== version) {
-          var tab = await chrome.tabs.get(tabId);
-          if (tab.url.includes("https://scratch.mit.edu")) {
-            chrome.storage.sync.set({ version: version });
-            chrome.scripting.executeScript({
-              target: { tabId: tabId },
-              files: [`/extras/new.js`],
-            });
-            ScratchTools.console.log("Injected version update info modal.");
-          }
         }
       });
     }
