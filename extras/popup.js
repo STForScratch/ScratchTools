@@ -469,11 +469,16 @@ function createFeature(
       credits.forEach(function (el, i) {
         var credit = document.createElement("a");
         credit.style.display = "inline-block";
-        credit.onclick = function () {
-          chrome.tabs.create({
-            url: urls[i],
-          });
-        };
+        var mainPage = document.querySelector("div.main-page")
+        if (mainPage) {
+          credit.href = urls[i]
+        } else {
+          credit.onclick = function () {
+            chrome.tabs.create({
+              url: urls[i],
+            });
+          };
+        }
         credit.textContent = el;
         credit.style.cursor = "pointer";
         a.appendChild(credit);
