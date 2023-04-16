@@ -264,6 +264,32 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
   }
 });
 
+chrome.runtime.onMessage.addListener(async function(msg, sender, sendResponse) {
+  if (msg.text === "get-logged-in-user") {
+  sendResponse(true);
+  const data = await (await fetch("https://scratch.mit.edu/session/", {
+    "headers": {
+      "accept": "*/*",
+      "accept-language": "en, en;q=0.8",
+      "sec-ch-ua": "\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "same-origin",
+      "x-requested-with": "XMLHttpRequest"
+    },
+    "referrer": "https://scratch.mit.edu/",
+    "referrerPolicy": "strict-origin-when-cross-origin",
+    "body": null,
+    "method": "GET",
+    "mode": "cors",
+    "credentials": "include"
+  })).json()
+    await chrome.tabs.sendMessage(sender.tab.id, data, function(response) {});
+}
+});
+
 chrome.alarms.onAlarm.addListener(async function () {
   chrome.alarms.clearAll();
   chrome.alarms.create("test", {
