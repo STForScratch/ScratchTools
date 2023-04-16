@@ -12,12 +12,12 @@ ScratchTools.styles.add(`
 
 .project-remixes:before {
     background-image: url(${ScratchTools.Resources["remix-gray"]});
-    opacity: .8;
+    opacity: .5;
 }
 
 .project-views:before {
     background-image: url(${ScratchTools.Resources["views-gray"]});
-    opacity: .8;
+    opacity: .5;
 }
 
 .project-loves.loved:before {
