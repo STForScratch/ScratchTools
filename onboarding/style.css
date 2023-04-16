@@ -1,0 +1,96 @@
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/brand/SpaceGrotesk.ttf") format("ttf");
+}
+
+.center-perfectly {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: calc(100% - 4rem);
+}
+
+body {
+  text-align: center;
+  background-image: url(./background.svg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.big {
+    font-size: 3rem;
+}
+
+button {
+    background-color: #ff9f00;
+    color: white;
+    min-width: 10rem;
+    font-family: "Space Grotesk", sans-serif;
+    padding: .5rem;
+    outline: none;
+    border: 0px;
+    border-radius: .25rem;
+    cursor: pointer;
+    position: relative;
+    top: 0px;
+    transition: top .3s;
+}
+
+button:hover {
+    top: .5rem;
+}
+
+.feature {
+    width: 20rem;
+    max-width: 20%;
+    display: inline-block;
+    background-color: white;
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: .5rem;
+    opacity: .6;
+    border: 3px solid #ff9f0000;
+    position: relative;
+    top: 0px;
+    transition: opacity .3s, border .3s, top .3s;
+}
+
+.feature:hover {
+    top: -.5rem;
+}
+
+.features {
+    text-align: center;
+}
+
+.feature span {
+    opacity: .5;
+}
+
+.feature div {
+    width: 100%;
+    height: 10rem;
+    background-position: center center;
+    background-size: cover;
+}
+
+.feature.enabled {
+    opacity: 1;
+    border: 3px solid #ff9f00;
+}
+
+.center-perfectly {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.feature p {
+    height: 5rem;
+    overflow-y: hidden;
+}
