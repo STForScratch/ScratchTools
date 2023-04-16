@@ -1,5 +1,9 @@
 [
   {
+    "version": 2,
+    "id": "original-buttons"
+  },
+  {
     "title": "Nicknames",
     "description": "Set nicknames for other Scratchers. Only you can see the nicknames, and their username will be replaced with the nickname when you see their name.",
     "credits": ["rgantzos"],
@@ -568,7 +572,7 @@
     "file": "custom-fonts",
     "tags": ["Featured"],
     "type": ["Website", "Theme"],
-    "options": [{ "id": "font", "name": "Font Name" }],
+    "options": [{ "id": "font", "name": "Font Name", "type": 0 }],
     "dynamic": true
   },
   {
@@ -1153,7 +1157,7 @@
   },
   {
     "title": "Terrible Feature",
-    "description": "do not enable",
+    "description": "Do not enable.",
     "credits": ["misty"],
     "urls": ["https://github.com/mistysloth"],
     "file": "terrible",

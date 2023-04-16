@@ -11,17 +11,17 @@ chrome.runtime.onInstalled.addListener(async function (object) {
     delayInMinutes: 0.5,
     periodInMinutes: 0.5,
   });
-  var version = chrome.runtime.getManifest().version_name
-  const changelogData = await (await fetch("/changelog/changes.json")).json()
+  var version = chrome.runtime.getManifest().version_name;
+  const changelogData = await (await fetch("/changelog/changes.json")).json();
   if (changelogData.version === version) {
-    var storedVersion = (await chrome.storage.sync.get("version")).version
+    var storedVersion = (await chrome.storage.sync.get("version")).version;
     await chrome.storage.sync.set({
-      version: version
-    })
+      version: version,
+    });
     if (storedVersion && storedVersion !== version) {
       await chrome.tabs.create({
-        url: "/changelog/index.html"
-      })
+        url: "/changelog/index.html",
+      });
     }
   }
   if (
@@ -169,6 +169,31 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
         ScratchTools.Features.data = dataFeatures;
       }
       addData();
+      for (var i in data) {
+        var feature = data[i];
+        if (feature.version === 2) {
+          var featureData = await (
+            await fetch(`/features/${feature.id}/data.json`)
+          ).json();
+          for (var resource in featureData.resources) {
+            console.log(featureData.resources[resource])
+            await chrome.scripting.executeScript({
+              args: [
+                featureData.resources[resource].name,
+                chrome.runtime.getURL(
+                  `/features/${feature.id}${featureData.resources[resource].path}`
+                ),
+              ],
+              target: { tabId: tabId },
+              func: injectResource,
+              world: "MAIN",
+            });
+            function injectResource(name, path) {
+                ScratchTools.Resources[name] = path;
+            }
+          }
+        }
+      }
       var langData = {};
       try {
         var langDataFetched = await (
@@ -241,14 +266,16 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
           chrome.storage.sync.get("features", async function (obj) {
             if (obj["features"].includes(data[el]["file"] || data[el].id)) {
               if (data[el].version === 2) {
-                var newData = await (await fetch(`/features/${data[el].id}/data.json`)).json()
-                newData.scripts?.forEach(function(script) {
+                var newData = await (
+                  await fetch(`/features/${data[el].id}/data.json`)
+                ).json();
+                newData.scripts?.forEach(function (script) {
                   chrome.scripting.executeScript({
                     target: { tabId: tabId },
                     files: [`/features/${data[el]["id"]}/${script}`],
-                    world: world,
+                    world: newData.world?.toUpperCase() || "MAIN",
                   });
-                })
+                });
               } else {
                 chrome.scripting.executeScript({
                   target: { tabId: tabId },
