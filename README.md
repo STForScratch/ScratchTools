@@ -6,9 +6,9 @@
   </a>
 
   <p align="center">
-    Extension for which makes Scratch much easier
+    The perfect extension for Scratch.
     <br />
-    <a href="https://github.com/STForScratch/ScratchTools"><strong>Explore the documents »</strong></a>
+    <a href="https://docs.scratchtools.app"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://youtu.be/xXuZAWTmXng">Feature Showcase</a>
