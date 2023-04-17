@@ -1,6 +1,6 @@
 {
   "NOTE": "THERE IS NO NEED TO UPDATE THIS YOURSELF, IT WILL BE UPDATED WHEN RELEASED.",
-  "version": "2.25.0-beta",
+  "version": "2.25.0",
   "new": ["Nicknames.", "Revert project action buttons."],
   "enhanced": [
     "Better changelog notification.",
