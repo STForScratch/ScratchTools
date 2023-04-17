@@ -6,8 +6,8 @@
   ],
   "type": ["Website"],
   "tags": ["New", "Featured"],
-  "dynamic": false,
-  "scripts": ["script.js"],
+  "dynamic": true,
+  "styles": ["style.css"],
   "resources": [
     { "name": "fav-gray", "path": "/resources/fav-gray.svg" },
     { "name": "fav-yellow", "path": "/resources/fav-yellow.svg" },
