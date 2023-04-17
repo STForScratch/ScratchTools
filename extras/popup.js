@@ -18,11 +18,35 @@ document.querySelector(".searchbar").addEventListener("input", function () {
 });
 
 if (document.querySelector(".settingsButton")) {
-  document.querySelector(".settingsButton").addEventListener("click", async function() {
-    chrome.tabs.create({
-      url: "/extras/index.html"
-    })
-  })
+  document
+    .querySelector(".settingsButton")
+    .addEventListener("click", async function () {
+      chrome.tabs.create({
+        url: "/extras/index.html",
+      });
+    });
+} else {
+  document.addEventListener("keydown", async function (e) {
+    if (e.which === 70 && e.altKey) {
+      var featuresData =
+        (await chrome.storage.sync.get("features")).features || "";
+      const data = await (
+        await fetch("https://data.scratchtools.app/create/", {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ features: featuresData }),
+        })
+      ).json();
+      if (data.error) {
+        alert("An error occurred:\n\n"+data.error);
+      } else {
+        alert("Copy this code:\n\n"+data.code);
+      }
+    }
+  });
 }
 
 async function getFeatures() {
@@ -47,7 +71,9 @@ async function getFeatures() {
     }
 
     var h3 = document.createElement("h3");
-    h3.textContent = chrome.i18n.getMessage(feature.id.replaceAll("-", "_") + "_title") || feature.title;
+    h3.textContent =
+      chrome.i18n.getMessage(feature.id.replaceAll("-", "_") + "_title") ||
+      feature.title;
     h3.className = "featureTitle";
     div.appendChild(h3);
 
@@ -82,8 +108,10 @@ async function getFeatures() {
     });
 
     var p = document.createElement("p");
-    p.textContent = chrome.i18n.getMessage(feature.id.replaceAll("-", "_") + "_description") ||
-    feature.description;
+    p.textContent =
+      chrome.i18n.getMessage(
+        feature.id.replaceAll("-", "_") + "_description"
+      ) || feature.description;
     div.appendChild(p);
 
     if (feature.options) {
@@ -105,7 +133,8 @@ async function getFeatures() {
     }
 
     var span = document.createElement("span");
-    span.textContent = (chrome.i18n.getMessage("credits_text") || "Credits")+": ";
+    span.textContent =
+      (chrome.i18n.getMessage("credits_text") || "Credits") + ": ";
 
     feature.credits.forEach(function (credit, i) {
       var a = document.createElement("a");
