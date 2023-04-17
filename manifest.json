@@ -22,7 +22,7 @@
     "128": "/extras/icon128.png"
   },
   "web_accessible_resources": [{
-    "resources": ["features/*"],
+    "resources": ["features/*", "/extras/feature/index.html"],
     "matches": ["https://scratch.mit.edu/*"]
   }],
   "host_permissions": ["https://scratch.mit.edu/"],

@@ -1,0 +1,75 @@
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/brand/SpaceGrotesk.ttf") format("ttf");
+}
+
+body {
+  padding: 3rem;
+  padding-top: 20rem;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.banner {
+  background-image: url(./banner.svg);
+  background-size: cover;
+  background-position: center center;
+  height: 20rem;
+  width: 100vw;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+button {
+  background-color: #ff9f00;
+  color: white;
+  min-width: 10rem;
+  font-family: "Space Grotesk", sans-serif;
+  padding: 0.5rem;
+  outline: none;
+  border: 0px;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  position: relative;
+  top: 0px;
+  transition: top 0.3s;
+}
+
+button:hover {
+  top: 0.5rem;
+}
+
+.credits {
+  margin-bottom: 1rem;
+  display: block;
+  opacity: 0.6;
+  font-size: 0.9rem;
+}
+
+.credits a {
+  text-decoration: none;
+  color: #ff9f00;
+}
+
+input {
+  height: 2rem;
+  margin-left: 0.5vw;
+  border-radius: 1rem;
+  outline: none;
+  border: 0px;
+  display: block;
+  margin-left: 0px !important;
+  color: black;
+  background-color: rgb(228, 228, 228);
+  padding-left: 1rem !important;
+  padding: 0.1vw;
+  font-family: "Space Grotesk", sans-serif;
+}
