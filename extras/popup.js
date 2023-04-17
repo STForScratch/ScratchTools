@@ -43,7 +43,7 @@ if (document.querySelector(".settingsButton")) {
       if (data.error) {
         alert("An error occurred:\n\n"+data.error);
       } else {
-        alert("Copy this code:\n\n"+data.code);
+        alert("Copy this code: "+data.code);
       }
     }
   });
