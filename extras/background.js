@@ -71,7 +71,26 @@ chrome.runtime.onInstalled.addListener(async function (object) {
   }
 });
 
-chrome.tabs.onUpdated.addListener(function (tabId, info) {
+chrome.tabs.onUpdated.addListener(async function (tabId, info) {
+  var tab = await chrome.tabs.get(tabId)
+  var listOfIds = []
+  var features = await (await fetch("/features/features.json")).json()
+  features.forEach(function(feature) {
+    listOfIds.push(feature.file || feature.id)
+  })
+  if (tab.url.startsWith("https://scratch.mit.edu/scratchtools/features/") && listOfIds.includes(tab.url.replace("https://scratch.mit.edu/scratchtools/features/", "").replaceAll("/", ""))) {
+    await chrome.scripting.executeScript({
+      args: [
+        chrome.runtime.getURL("/extras/feature/index.html")+"?feature="+tab.url.replace("https://scratch.mit.edu/scratchtools/features/", "").replaceAll("/", "")
+      ],
+      target: { tabId: tabId },
+      func: redirectToFeature,
+      world: "MAIN",
+    });
+    function redirectToFeature(url) {
+        window.location.href = url;
+    }
+  } else {
   if (info.status === "loading") {
     var ScratchTools = {};
     ScratchTools.console = {};
@@ -310,6 +329,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
     }
     getCurrentTab();
   }
+}
 });
 
 chrome.runtime.onMessage.addListener(async function (
