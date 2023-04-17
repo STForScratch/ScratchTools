@@ -1,0 +1,25 @@
+.project-loves:before {
+    background-image: var(--scratchtoolsresource-love-gray) !important;
+    opacity: .5;
+}
+
+.project-favorites:before {
+    background-image: var(--scratchtoolsresource-fav-gray) !important;
+    opacity: .5;
+}
+
+.project-remixes:before {
+    opacity: .5;
+}
+
+.project-views:before {
+    opacity: .5;
+}
+
+.project-loves.loved:before {
+    opacity: 1;
+}
+
+.project-favorites.favorited:before {
+    opacity: 1;
+}

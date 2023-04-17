@@ -176,7 +176,6 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
             await fetch(`/features/${feature.id}/data.json`)
           ).json();
           for (var resource in featureData.resources) {
-            console.log(featureData.resources[resource])
             await chrome.scripting.executeScript({
               args: [
                 featureData.resources[resource].name,
@@ -190,6 +189,11 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
             });
             function injectResource(name, path) {
                 ScratchTools.Resources[name] = path;
+                var style = document.createElement("style")
+                style.textContent = `:root {
+                  --scratchtoolsresource-${name}: url(${path});
+                }`
+                document.body.appendChild(style)
             }
           }
         }
@@ -276,6 +280,21 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
                     world: newData.world?.toUpperCase() || "MAIN",
                   });
                 });
+                newData.styles?.forEach(function(style) {
+                  chrome.scripting.executeScript({
+                    args: [data[el].id, chrome.runtime.getURL(`/features/${data[el]["id"]}/${style}`)],
+                    target: { tabId: tabId },
+                    func: insertCSS,
+                    world: "MAIN",
+                  });
+                  function insertCSS(feature, path) {
+                    var link = document.createElement("link")
+                    link.rel = "stylesheet"
+                    link.href = path
+                    link.dataset.feature = feature
+                    document.head.appendChild(link)
+                  }
+                })
               } else {
                 chrome.scripting.executeScript({
                   target: { tabId: tabId },

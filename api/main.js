@@ -132,28 +132,31 @@ ScratchTools.setDisable = function (feature, f) {
 };
 
 ScratchTools.disable = function (feature) {
+  ScratchTools.console.log(`Disabled ${feature}.`);
+  document.querySelectorAll(`link[data-feature=${feature}]`).forEach(function(el) {
+    el.remove()
+  })
   if (allDisableFunctions[feature]) {
     allDisableFunctions[feature]();
-    ScratchTools.console.log(`Disabled ${feature}.`);
   }
+};
 
-  ScratchTools.createProjectButton = function (text, callback, id) {
-    var button = document.createElement("button");
-    button.textContent = text;
-    button.className = "button action-button";
-    button.dataset.id = id;
-    ScratchTools.waitForElements(
-      ".flex-row.action-buttons",
-      function (el) {
-        el.appendChild(button);
-        button.onclick = function () {
-          callback(button);
-        };
-      },
-      "addProjectButton-" + id,
-      false
-    );
-  };
+ScratchTools.createProjectButton = function (text, callback, id) {
+  var button = document.createElement("button");
+  button.textContent = text;
+  button.className = "button action-button";
+  button.dataset.id = id;
+  ScratchTools.waitForElements(
+    ".flex-row.action-buttons",
+    function (el) {
+      el.appendChild(button);
+      button.onclick = function () {
+        callback(button);
+      };
+    },
+    "addProjectButton-" + id,
+    false
+  );
 };
 
 function GM_addStyle(styleData) {

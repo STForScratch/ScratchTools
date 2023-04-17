@@ -41,9 +41,9 @@ if (document.querySelector(".settingsButton")) {
         })
       ).json();
       if (data.error) {
-        alert("An error occurred:\n\n"+data.error);
+        alert("An error occurred:\n\n" + data.error);
       } else {
-        alert("Copy this code: "+data.code);
+        alert("Copy this code: " + data.code);
       }
     }
   });
@@ -194,7 +194,7 @@ async function dynamicEnable(id) {
       }
     } else if (feature.version === 2 && feature.id === id) {
       var featureData = await (
-        await fetch(`/features/${feature.file}/data.json`)
+        await fetch(`/features/${feature.id}/data.json`)
       ).json();
       if (featureData.dynamic) {
         featureData.scripts?.forEach(function (el) {
@@ -203,10 +203,29 @@ async function dynamicEnable(id) {
               try {
                 chrome.scripting.executeScript({
                   target: { tabId: tabs[i].id },
-                  files: [`/features/${feature.file}/${el}`],
+                  files: [`/features/${feature.id}/${el}`],
                   world: "MAIN",
                 });
               } catch (err) {}
+            }
+          });
+        });
+        featureData.styles?.forEach(function (style) {
+          chrome.tabs.query({}, function (tabs) {
+            for (var i = 0; i < tabs.length; i++) {
+              chrome.scripting.executeScript({
+                args: [feature.id, chrome.runtime.getURL(`/features/${feature.id}/${style}`)],
+                target: { tabId: tabs[i].id },
+                func: insertCSS,
+                world: "MAIN",
+              });
+              function insertCSS(feature, path) {
+                var link = document.createElement("link");
+                link.rel = "stylesheet";
+                link.href = path;
+                link.dataset.feature = feature;
+                document.head.appendChild(link);
+              }
             }
           });
         });
@@ -238,7 +257,7 @@ async function dynamicDisable(id) {
       }
     } else if (feature.version === 2 && feature.id === id) {
       var featureData = await (
-        await fetch(`/features/${feature.file}/data.json`)
+        await fetch(`/features/${feature.id}/data.json`)
       ).json();
       if (featureData.dynamic) {
         chrome.tabs.query({}, function (tabs) {
