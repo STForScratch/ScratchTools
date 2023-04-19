@@ -1,0 +1,12 @@
+{
+  "title": "Author Badge",
+  "description": "Adds a badge next to comments written by the author of the project.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "dynamic": true,
+  "styles": ["style.css"],
+  "scripts": ["script.js"]
+}

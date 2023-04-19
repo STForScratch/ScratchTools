@@ -1,6 +1,10 @@
 [
   {
     "version": 2,
+    "id": "creator-badge"
+  },
+  {
+    "version": 2,
     "id": "original-buttons"
   },
   {
