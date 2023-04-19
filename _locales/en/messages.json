@@ -5,12 +5,6 @@
   "extDescription": {
     "message": "ScratchTools is fully customizable with tons of features, all for making the Scratch website better and easier to use!"
   },
-  "feature_load_more_forum_posts_loadmore": {
-    "message": "Load more"
-  },
-  "newest_update_message": {
-    "message": "This new version includes a few cool new features, as well as multiple bug fixes! One feature, Unlisted Projects, allows you to create special links for your unshared projects that allow other people to view them!"
-  },
   "welcome_to_settings": {
     "message": "Welcome to your settings! You can find all features here!"
   },
