@@ -17,11 +17,17 @@
   "disabled_explanation": {
     "message": "Ta funkcja została wyłączona przez ScratchTools. Wciąż możesz włączyć ją lub wyłączyć, ale ze względów bezpieczeństwa, nie będzie ona na razie działać."
   },
-  "load_more_forum_posts_title": {
-    "message": "Ładuj Więcej Postów"
+  "original_buttons_title": {
+    "message": "Oryginalne Przyciski"
   },
-  "load_more_forum_posts_description": {
-    "message": "Ładuj więcej postów na forum bez konieczności zmieniania stron."
+  "original_buttons_description": {
+    "message": "Przywraca oryginalne ikony serca, gwiazdki, remiksów, oraz wyświetleń pod projektami."
+  },
+  "nicknames_title": {
+    "message": "Pseudonimy"
+  },
+  "nicknames_description": {
+    "message": "Ustaw pseudonimy dla innych Scratcherów. Faktyczne nazwy Scratcherówzostaną zastąpione ustawionymi pseudonimami. Tylko ty możesz je zobaczyć. "
   },
   "unlisted_projects_title": {
     "message": "Niepubliczne Projekty"
@@ -29,17 +35,23 @@
   "unlisted_projects_description": {
     "message": "Pozwala wygenerować link umożliwiający otwarcie w TurboWarp nieopublikowanych projektów."
   },
+  "load_more_forum_posts_title": {
+    "message": "Ładuj Więcej Postów"
+  },
+  "load_more_forum_posts_description": {
+    "message": "Ładuje więcej postów na forum bez konieczności zmieniania stron."
+  },
   "scroll_project_titles_title": {
-    "message": "Scrolluj Tytuły Projektów"
+    "message": "Scrollowalne Tytuły Projektów"
   },
   "scroll_project_titles_description": {
     "message": "Pozwala scrollować tytuły projektów innych użytkowników, aby móc zobaczyć je w całości."
   },
   "search_context_menus_title": {
-    "message": "Wyszukuj w Menu Kontekstowym"
+    "message": "Wyszukiwanie w Menu Kontekstowym"
   },
   "search_context_menus_description": {
-    "message": "Łatwo przeszukuj menu kontekstowe, by szybko znaleźć pożądaną opcję. Możesz również wcisnąć Enter, aby wybrać opcję na samej górze."
+    "message": "Łatwo przeszukuj menu kontekstowe, aby szybko znaleźć pożądaną opcję. Możesz również wcisnąć Enter, aby wybrać opcję na samej górze."
   },
   "hover_user_cards_title": {
     "message": "Tooltip Użytkownika"
@@ -51,7 +63,7 @@
     "message": "Dokładna Data Dołączenia"
   },
   "exact_join_date_description": {
-    "message": "Wyświetla na profilu dokładny czas, kiedy dany użytkownik dołączył do Scratch."
+    "message": "Wyświetla na profilu dokładny czas, w którym dany użytkownik dołączył do Scratch."
   },
   "start_stop_hotkeys_title": {
     "message": "Skróty Klawiszowe do Uruchamiania i Zatrzymywania Projektów"
@@ -84,7 +96,7 @@
     "message": "Zamienia nazwę Kuratora Strony Głównej na klikalny link do jego profilu."
   },
   "minimized_remix_credits_title": {
-    "message": "Zmniejszone Podziękowania Remiksów"
+    "message": "Uproszczone Podziękowania Remiksów"
   },
   "minimized_remix_credits_description": {
     "message": "Podziękowania Remiksów zabierają miejsce w instrukcjach projektu, ta opcja zmniejsza ich wielkość."
@@ -117,7 +129,7 @@
     "message": "Ukryj Nazwy Kategorii Bloków"
   },
   "hide_block_category_names_description": {
-    "message": "Zmienia kategorie bloków by pokazywały jedynie kolory, bez ich nazw."
+    "message": "Ukrywa nazwy kategorii bloków na panelu bocznym w edytorze."
   },
   "search_assets_title": {
     "message": "Przeszukuj Zasoby"
@@ -129,10 +141,10 @@
     "message": "Liczba Bloków w Moich Rzeczach"
   },
   "block_count_in_mystuff_description": {
-    "message": "Wyświetla liczbę bloków poszczególnych projektów na stronie Moje Rzeczy"
+    "message": "Wyświetla liczbę bloków poszczególnych projektów na stronie Moje Rzeczy."
   },
   "block_studios_title": {
-    "message": "Blokuj Aktywność Konkretnego Studia"
+    "message": "Blokuj Aktywność Ustalonego Studia"
   },
   "block_studios_description": {
     "message": "Ukryj wiadomości o aktywności wybranych studiów."
@@ -141,7 +153,7 @@
     "message": "Pauzuj Dźwięk"
   },
   "pause_audio_description": {
-    "message": "Pozwala pauzować i wznawiać dźwięk w edytorze dźwięku Scratch."
+    "message": "Pozwala pauzować i wznawiać dźwięk w edytorze dźwięku."
   },
   "display_message_count_in_icon_title": {
     "message": "Wyświetl Liczbę Wiadomości"
@@ -177,10 +189,10 @@
     "message": "Śmietnik"
   },
   "dumpster_fire_description": {
-    "message": "Strona główna Scratcha oszukuje z ich sekcją \"Wyróżnionych Projektów\". Ta opcja zmienia jej nazwę na \"Śmietnik\"."
+    "message": "Sekcja \"Wyróżnionych Projektów\" na stronie głównej Scratcha jest niekoniecznie sprawiedliwa. Ta opcja zmienia jej nazwę na \"Śmietnik\"."
   },
   "follower_count_title": {
-    "message": "Licznik Śledzi na Projektach"
+    "message": "Licznik Śledzi w Projektach"
   },
   "follower_count_description": {
     "message": "Wyświetla liczbę śledzi autora danego projektu."
@@ -195,7 +207,7 @@
     "message": "Ukryj \"Instrukcje\" oraz \"Notatki i Podziękowania\" ze Strony Projektu"
   },
   "hide_textarea_labels_description": {
-    "message": "\"Instrukcje\" oraz \"Notatki i Podziękowania\" zabierają trochę miejsca, gdzie mogłyby znajdować się inne informacje. Ta opcja je usuwa."
+    "message": "\"Instrukcje\" oraz \"Notatki i Podziękowania\" zabierają trochę miejsca, w którym mogłyby znajdować się inne informacje. Ta opcja je usuwa."
   },
   "default_to_trending_title": {
     "message": "Sortuj Domyślnie Wyszukiwania Według  \"Trendy\""
@@ -243,13 +255,13 @@
     "message": "Oddziel Tagi Projektu"
   },
   "get_project_tags_description": {
-    "message": "Umieszcza wszystkie tagi znalezione w opisie projektu, tuż pod \"Notatkami i Podziękowaniami\""
+    "message": "Umieszcza wszystkie tagi znalezione w opisie projektu, tuż pod \"Notatkami i Podziękowaniami\"."
   },
   "link_to_propose_title": {
     "message": "Skrót do Studia \"Propose Projects to Be Featured\" na Stronie Głównej."
   },
   "link_to_propose_description": {
-    "message": "Łączy pole \"Wyróżnione Projekty\" na stronie głównej ze studiem \"Propose Projects to Be Featured\"."
+    "message": "Ustawia tytuł sekcji \"Wyróżnione Projekty\" na stronie głównej, jako link do studia \"Propose Projects to Be Featured\"."
   },
   "add_last_option_list_title": {
     "message": "Ustaw Element Listy jako Ostatni"
@@ -267,7 +279,7 @@
     "message": "Edytor 2.0"
   },
   "editor_in_two_description": {
-    "message": "Zamienia domyślny edytor 3.0 ze starszym edytorem 2.0. Nostalgia..."
+    "message": "Zamienia domyślny edytor 3.0 na starszy edytor 2.0. Nostalgia..."
   },
   "comment_on_closed_profile_title": {
     "message": "Komentuj na Profilu z Wyłączonymi Komentarzami"
@@ -303,13 +315,16 @@
     "message": "Scrollowalne Elementy Listy"
   },
   "scrollable_list_items_description": {
-    "message": "Elementy listy, których wartość jest większa niż szerokość listy, są ucinane. Dzięki tej funkcji, możesz scrollować dany element listy w lewo lub prawo."
+    "message": "Elementy listy, których wartość jest większa niż szerokość listy są ucinane. Dzięki tej funkcji możesz scrollować dany element listy w lewo lub prawo."
   },
   "admin_notifications_title": {
-    "message": "Czerwona Ikona Wiadomości dla Informacji od Administratora."
+    "message": "Czerwona Ikona Wiadomości dla Informacji od Administratora"
   },
   "admin_notifications_description": {
     "message": "Jeśli dostaniesz powiadomienie ze Scratch Team, znacznik liczby wiadomości będzie w kolorze czerwonym, zamiast pomarańczowym."
+  },
+  "rickroll_title": {
+    "message": "Rickroll"
   },
   "rickroll_description": {
     "message": "Nie dowiesz się, dopóki sam nie odkryjesz... jest gdzieś pewien przycisk na stronach projektów."
@@ -330,13 +345,13 @@
     "message": "Kolorowe Komentarze w Edytorze"
   },
   "colored_comments_description": {
-    "message": "Komentarze w edytorze będą miały teraz kolor bloków do których są przyłączone."
+    "message": "Koloruje komentarze w edytorze na kolor bloków do których są przyłączone."
   },
   "recently_viewed_projects_title": {
     "message": "Ostatnio Przeglądane Projekty"
   },
   "recently_viewed_projects_description": {
-    "message": "Dodaje zakładkę do strony Moje Rzeczy z listą ostatnio przeglądanych projektów."
+    "message": "Dodaje zakładke do strony Moje Rzeczy gdzie możesz zobaczyć listę swoich ostatnio przeglądanych projektów."
   },
   "anti_generic_title": {
     "message": "Anty Generic"
@@ -355,6 +370,9 @@
   },
   "set_featured_project_description": {
     "message": "Z poziomu strony projektu, możesz jednym kliknięciem ustawić go, jako Wyróżniony Projekt na profilu, nawet nieudostępnione projekty."
+  },
+  "scratchformat_title": {
+    "message": "ScratchFormat"
   },
   "scratchformat_description": {
     "message": "Stylizuj swoje komentarze używając pogrubienia, kursywy, i wielu innych! Takie komentarze będą wyglądały świetnie dla innych użytkowników ScratchTools."
@@ -375,7 +393,7 @@
     "message": "Sprawdź Czy Jest na Trendach"
   },
   "check_if_trending_description": {
-    "message": "Jeśli projekt, który przeglądasz znajduje się na stronie Przeglądaj (na trendach), przy dacie udostępnienia, wyświetlone zostanie jego miejsce."
+    "message": "Jeśli projekt, który przeglądasz znajduje się na stronie Przeglądaj (na trendach), przy dacie udostępnienia, wyświetlone zostanie jego pozycja na trendach."
   },
   "link_forum_activity_title": {
     "message": "Linki do Profilów Użytkowników na Aktywności Forum"
@@ -384,16 +402,16 @@
     "message": "W sekcji \"Ostatnie Posty\" na forum, nazwy użytkowników linkować będą od teraz do ich profili."
   },
   "remove_topic_and_post_title": {
-    "message": "Ukryj Liczbę Wiadomości w Danych Kategoriach na Forum"
+    "message": "Ukryj Statystyki Kategorii na Forum"
   },
   "remove_topic_and_post_description": {
-    "message": "Ukrywa ile wiadomości znajduje się w danej kategorii na forum."
+    "message": "Ukrywa ile wiadomości i tematów znajduje się w danej kategorii na forum."
   },
   "forum_homepage_emojis_title": {
     "message": "Emoji Kategorii Forum"
   },
   "forum_homepage_emojis_description": {
-    "message": "Dodaje kolorowe emoji na forum Scratch, przy nazwach kategorii na bazie ich tematu."
+    "message": "Dodaje kolorowe emoji na forum, przy nazwach kategorii na bazie ich tematu."
   },
   "remove_collapse_buttons_title": {
     "message": "Ukryj Przycisk Zwijania na Forum"
@@ -423,13 +441,13 @@
     "message": "Lepsze Emoji na Forum"
   },
   "twemoji_in_forums_description": {
-    "message": "Podmienia aktualne emoji w niskiej jakości z Twemoji o wyższej rozdzielczości."
+    "message": "Podmienia aktualne emoji w niskiej jakości z Twemoji, które mają wyższą rozdzielczość."
   },
   "go_to_parent_title": {
     "message": "Przycisk \"Przejdź do Oryginalnego Projektu\""
   },
   "go_to_parent_description": {
-    "message": "W edytorze każdego projektu, który jest remiksem, możesz wcisnąć ten przycisk, aby przejść do projektu na którego bazie powstał remiks."
+    "message": "W edytorze każdego projektu, który jest remiksem, możesz wcisnąć ten przycisk, aby przejść do projektu na bazie którego powstał ten remiks."
   },
   "most_popular_project_title": {
     "message": "Najpopularniejszy Projekt"
@@ -438,10 +456,10 @@
     "message": "Wyświetla najpopularniejszy projekt (według wyświetleń) danego użytkownika na jego profilu. Możesz na niego kliknąć, aby go obejrzeć."
   },
   "block_messages_title": {
-    "message": "Blokuj Użytkowników"
+    "message": "Blokada Użytkowników"
   },
   "block_messages_description": {
-    "message": "Ukryj wiadomości na stronie Wiadomości, które stworzone są przez użytkowników których zablokowałeś."
+    "message": "Ukryj wiadomości na stronie Wiadomości, które stworzone są przez użytkowników, których zablokowałeś (dotyczy również strony blokad)."
   },
   "editor_dark_mode_title": {
     "message": "Ciemny Tryb Edytora"
@@ -465,7 +483,7 @@
     "message": "Kolorowe Wiadomości"
   },
   "colored_messages_description": {
-    "message": "Podświetla otrzymane wiadomości na podstawie ich typu, takie jak serca, gwiazdki, i zaproszenia do studiów!"
+    "message": "Podświetla na różny kolor otrzymane wiadomości na podstawie ich typu, np. serca, gwiazdki, i zaproszenia do studiów!"
   },
   "full_title_title": {
     "message": "Pełny Tytuł Projektu"
@@ -477,7 +495,7 @@
     "message": "Prima Aprilis 2022"
   },
   "april_fools_description": {
-    "message": "Przywróć z powrotem specjalne tryby z Prima Aprilis 2022!"
+    "message": "Przywraca z powrotem specjalne tryby z Prima Aprilis 2022!"
   },
   "project_links_title": {
     "message": "Link Projektu jako Tytuł"
@@ -501,7 +519,7 @@
     "message": "Oznaczaj Projekty jako NFE"
   },
   "nfe_project_checker_description": {
-    "message": "Na stronach projektów, pokazuj czy przeglądany projekt jest Bezpieczny, Niesprawdzony, Lub Nie Dla Każdego (NFE)."
+    "message": "Na stronach projektów, pokazuj czy przeglądany projekt jest Bezpieczny, Niesprawdzony, lub Nie Dla Każdego (NFE)."
   },
   "advanced_search_title": {
     "message": "Zaawansowane Wyszukiwanie"
@@ -543,7 +561,7 @@
     "message": "Ukryj Przypięte Tematy na Forum"
   },
   "hide_stickies_description": {
-    "message": "Ukrywa podstawowe przypięte tematy na forum."
+    "message": "Ukrywa podstawowe (domyślnie) przypięte tematy na forum."
   },
   "more_tutorials_title": {
     "message": "Więcej Poradników"
@@ -564,7 +582,7 @@
     "message": "Dodaje przycisk statystyk w Moich Rzeczach, który przekierowuje do informacji o twoim profilu na ScratchStats."
   },
   "open_in_new_tab_title": {
-    "message": "Otwórz w Nowej Karcie"
+    "message": "Otwieraj w Nowej Karcie"
   },
   "open_in_new_tab_description": {
     "message": "Automatycznie otwieraj zewnętrzne linki w nowej karcie."
@@ -576,7 +594,7 @@
     "message": "Usuwa kropki z tła edytora skryptów."
   },
   "unbold_site_text_title": {
-    "message": "Odtłuść Wszelki Tekst"
+    "message": "Odtłuść Tekst na Stronie "
   },
   "unbold_site_text_description": {
     "message": "Usuwa pogrubienie tekstu na całej stronie."
@@ -591,7 +609,7 @@
     "message": "Usuń Wszystkie Duszki"
   },
   "delete_all_description": {
-    "message": "Dodaje opcję w menu kontekstowym dla siatki duszków, pozwalającą usunąć wszystkie duszki na raz (zostanie wyświetlona prośba o potwierdzenie, aby upewnić się, że nie było to przez przypadek)."
+    "message": "Dodaje opcję w menu kontekstowym dla siatki duszków, pozwalającą usunąć wszystkie duszki na raz (zostanie wyświetlona prośba o potwierdzenie, aby upewnić się, że to nie przypadek)."
   },
   "round_profile_pictures_title": {
     "message": "Okrągłe Zdjęcia Profilowe"
@@ -648,7 +666,7 @@
     "message": "Przesuwa przyciski kontrolne projektu \"Zielona Flaga' i \"Znak Stop\" na prawą stronę."
   },
   "my_recent_projects_title": {
-    "message": "Zamień Wiadomości Scratch z Udostępnionymi Projektami"
+    "message": "Zamień Wiadomości Scratch na Udostępnione Projekty"
   },
   "my_recent_projects_description": {
     "message": "Zastępuje sekcję Scratch News na stronie głównej z Twoimi ostatnio udostępnionymi projektami."
@@ -669,6 +687,6 @@
     "message": "Okropna Funkcja"
   },
   "terrible_description": {
-    "message": "nie włączaj"
+    "message": "Nie włączaj."
   }
 }
