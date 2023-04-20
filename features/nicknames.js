@@ -1,4 +1,4 @@
-const nicknames = JSON.parse(localStorage.getItem("scratchtools-nicknames"));
+const nicknames = JSON.parse(localStorage.getItem("scratchtools-nicknames") || {});
 ScratchTools.waitForElements(
   "a[href^='/users/'], .activity-stream .actor, #profile-data .header-text h2",
   function (el) {
