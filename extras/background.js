@@ -78,7 +78,7 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
   features.forEach(function(feature) {
     listOfIds.push(feature.file || feature.id)
   })
-  if (tab.url.startsWith("https://scratch.mit.edu/scratchtools/features/") && listOfIds.includes(tab.url.replace("https://scratch.mit.edu/scratchtools/features/", "").replaceAll("/", ""))) {
+  if (tab.url?.startsWith("https://scratch.mit.edu/scratchtools/features/") && listOfIds.includes(tab.url.replace("https://scratch.mit.edu/scratchtools/features/", "").replaceAll("/", ""))) {
     await chrome.scripting.executeScript({
       args: [
         chrome.runtime.getURL("/extras/feature/index.html")+"?feature="+tab.url.replace("https://scratch.mit.edu/scratchtools/features/", "").replaceAll("/", "")
