@@ -6,7 +6,6 @@
   ],
   "type": ["Website"],
   "tags": ["New", "Featured"],
-  "dynamic": true,
   "scripts": ["script.js"],
   "styles": ["style.css"],
   "resources": [{ "name": "clones", "path": "/gobo.svg" }]
