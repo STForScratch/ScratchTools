@@ -1,0 +1,28 @@
+name: Bug Report
+description: Report a bug for ScratchTools, or something that doesn't work properly.
+labels: ["bug"]
+body:
+
+  - type: textarea
+    id: describe
+    attributes:
+      label: Describe the bug. What is going wrong?
+      description: We'd like to know what the bug is so that we can fix it very soon.
+      placeholder: Type here
+    validations:
+      required: true
+  
+  - type: textarea
+    id: why
+    attributes:
+      label: What is causing the bug?
+      description: Are there any actions that you take that could be causing a bug? For example, does it happen when you enter the editor or share a project?
+      placeholder: Type here
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: You can put more info here if you have any.
