@@ -95,10 +95,19 @@ async function createButton(el) {
         span.textContent = "Make Unlisted";
         btn.onclick = async function () {
           const data = await cacheProject();
-          alert(
-            "https://turbowarp.org/editor?project_url=https://unlisted.gantzos.com/cached/" +
-              data.id
-          );
+          ScratchTools.modals.create({
+            title: "Unlisted link",
+            description: "Here's the link to view your project.",
+            components: [
+              {
+                type: "code",
+                content: data.error
+                  ? "Project is not unlisted. You can make it unlisted from the editor. A project is not unlisted if it is shared."
+                  : "https://turbowarp.org/editor?project_url=https://unlisted.gantzos.com/cached/" +
+                    data.id,
+              },
+            ],
+          });
           btn.remove();
           createButton();
         };
@@ -109,14 +118,90 @@ async function createButton(el) {
 }
 
 if (window.location.href.startsWith("https://scratch.mit.edu/mystuff")) {
-    ScratchTools.waitForElements(".media-item-content", async function(el) {
-        var data = await (await fetch(`https://unlisted.gantzos.com/iscached/${new URL(el.querySelector(".title a").href).pathname.split("/")[2]}/`)).json()
-        if (data.isCached) {
-            var img = document.createElement("img")
-            img.src = ScratchTools.Resources["unlisted-star"]
-            img.className = "scratchtools-unlisted-star"
-            img.title = "This project is unlisted."
-            el.querySelector(".title").appendChild(img)
-        }
-    }, "show-if-unlisted", false)
+  ScratchTools.waitForElements(
+    ".media-item-content",
+    async function (el) {
+      var data = await (
+        await fetch(
+          `https://unlisted.gantzos.com/iscached/${
+            new URL(el.querySelector(".title a").href).pathname.split("/")[2]
+          }/`
+        )
+      ).json();
+      if (data.isCached) {
+        var img = document.createElement("img");
+        img.src = ScratchTools.Resources["unlisted-star"];
+        img.className = "scratchtools-unlisted-star";
+        img.title = "This project is unlisted.";
+        el.querySelector(".title").appendChild(img);
+      }
+    },
+    "show-if-unlisted",
+    false
+  );
 }
+
+ScratchTools.waitForElements(
+  "div.flex-row.action-buttons",
+  async function (el) {
+    if (
+      !el.querySelector(".scratchtools-copy-unlisted-link") &&
+      (
+        await (
+          await fetch(
+            `https://api.scratch.mit.edu/projects/${
+              ScratchTools.Scratch.scratchGui().projectState.projectId
+            }?token=${await getToken(
+              ScratchTools.Scratch.scratchGui().projectState.projectId
+            )}`
+          )
+        ).json()
+      ).code
+    ) {
+      var data = await (
+        await fetch(
+          `https://unlisted.gantzos.com/iscached/${
+            window.location.pathname.split("/")[2]
+          }/`
+        )
+      ).json();
+      if (data.isCached) {
+        var button = document.createElement("button");
+        button.className =
+          "button action-button scratchtools-copy-unlisted-link";
+        button.textContent = "Copy Unlisted";
+        button.addEventListener("click", async function () {
+          var data = await (
+            await fetch(
+              `https://unlisted.gantzos.com/getlink/${
+                ScratchTools.Scratch.scratchGui().projectState.projectId
+              }?token=${await getToken(
+                ScratchTools.Scratch.scratchGui().projectState.projectId
+              )}`
+            )
+          ).json();
+          ScratchTools.modals.create({
+            title: "Unlisted link",
+            description: "Here's the link to view your project.",
+            components: [
+              {
+                type: "code",
+                content: data.error
+                  ? "Project is not unlisted. You can make it unlisted from the editor. A project is not unlisted if it is shared."
+                  : "https://turbowarp.org/editor?project_url=https://unlisted.gantzos.com/cached/" +
+                    data.link,
+              },
+            ],
+          });
+        });
+        ScratchTools.appendToSharedSpace({
+          space: "beforeProjectActionButtons",
+          element: button,
+          order: 0.5,
+        });
+      }
+    }
+  },
+  "scratchtools-copy-unlisted-link",
+  false
+);

@@ -9,5 +9,5 @@
   "dynamic": false,
   "scripts": ["script.js"],
   "styles": ["style.css"],
-  "resources": [{ "name": "unlisted-star", "path": "/star.svg" }]
+  "resources": [{ "name": "unlisted-star", "path": "/star.svg" }, { "name": "unlisted-star-full", "path": "/star-full.svg" }]
 }

@@ -10,3 +10,17 @@
   display: inline-block;
   margin-bottom: -0.5rem;
 }
+
+.scratchtools-copy-unlisted-link::before {
+    background-image: var(--scratchtoolsresource-unlisted-star-full);
+    filter: brightness(0) invert(1);
+    display: inline-block;
+    margin-right: 0.25rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: bottom;
+    content: "";
+}
