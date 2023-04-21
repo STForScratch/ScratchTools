@@ -151,12 +151,13 @@ async function getFeatures() {
         }
       } else {
         a.textContent = credit;
+        a.dataset.url = feature.urls[i]
         if (document.querySelector(".main-page")) {
           a.href = feature.urls[i];
         } else {
           a.onclick = function () {
             chrome.tabs.create({
-              url: feature.urls[i],
+              url: this.dataset.url,
             });
           };
         }
