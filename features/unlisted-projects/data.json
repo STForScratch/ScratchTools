@@ -1,0 +1,13 @@
+{
+  "title": "Unlisted Projects",
+  "description": "Allows you to generate share links for unshared projects in the editor.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Editor"],
+  "tags": ["New", "Recommended"],
+  "dynamic": false,
+  "scripts": ["script.js"],
+  "styles": ["style.css"],
+  "resources": [{ "name": "unlisted-star", "path": "/star.svg" }]
+}

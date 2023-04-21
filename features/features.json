@@ -1,6 +1,10 @@
 [
   {
     "version": 2,
+    "id": "unlisted-projects"
+  },
+  {
+    "version": 2,
     "id": "stats-percentages"
   },
   {
@@ -27,16 +31,6 @@
     "file": "nicknames",
     "type": ["Website"],
     "tags": ["New", "Featured"],
-    "dynamic": false
-  },
-  {
-    "title": "Unlisted Projects",
-    "description": "Allows you to generate share links for unshared projects in the editor.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos"],
-    "file": "unlisted-projects",
-    "type": ["Editor"],
-    "tags": ["New", "Recommended"],
     "dynamic": false
   },
   {
