@@ -1,0 +1,18 @@
+.scratchtools-main-clone-counter {
+  position: relative;
+  top: 0.6rem;
+  margin-left: 1rem;
+  opacity: 0.8;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.scratchtools-main-clone-counter span {
+  position: relative;
+  top: -0.2rem;
+}
+
+.scratchtools-main-clone-counter img {
+  height: 1rem;
+  margin-right: 0.5rem;
+}

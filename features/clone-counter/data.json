@@ -1,0 +1,13 @@
+{
+  "title": "Clone Counter",
+  "description": "Displays the total number of clones in the project above, in the stage header.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "dynamic": true,
+  "scripts": ["script.js"],
+  "styles": ["style.css"],
+  "resources": [{ "name": "clones", "path": "/gobo.svg" }]
+}
