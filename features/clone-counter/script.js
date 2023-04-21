@@ -13,7 +13,7 @@ if (!document.querySelector(".scratchtools-main-clone-counter")) {
       ScratchTools.appendToSharedSpace({
         space: "afterStopButton",
         element: div,
-        order: 0,
+        order: 0.5,
       });
     },
     "clone-counter-above-stage",
@@ -40,9 +40,9 @@ if (!document.querySelector(".scratchtools-main-clone-counter")) {
       div.appendChild(img);
       div.appendChild(span);
       ScratchTools.appendToSharedSpace({
-        space: "stageHeader",
+        space: "afterStopButton",
         element: div,
-        order: 0,
+        order: 0.5,
       });
     }
   }, 100);
