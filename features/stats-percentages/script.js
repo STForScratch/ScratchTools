@@ -1,7 +1,7 @@
 var statsPercentagesEnabled = true;
 
 if (window.location.href.startsWith("https://scratch.mit.edu/mystuff/")) {
-  document.querySelectorAll("div.media-stats").forEach(function (project) {
+  ScratchTools.waitForElements("div.media-stats", function (project) {
     if (project.querySelector(".stat") && statsPercentagesEnabled) {
       var views = project.querySelectorAll(".stat")[0].textContent;
       getStatsForElement(project.querySelectorAll(".stat")[1]);
@@ -16,7 +16,7 @@ if (window.location.href.startsWith("https://scratch.mit.edu/mystuff/")) {
         el.title = percent;
       }
     }
-  });
+  }, "stats", false);
 }
 
 ScratchTools.setDisable("stats-percentages", function () {
