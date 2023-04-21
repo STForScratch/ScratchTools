@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
+.st-modal-blur-bg {
+  backdrop-filter: blur(5px) brightness(0.5);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 999999999999999;
+}
+
+.st-modal {
+  position: fixed;
+  top: 15rem;
+  width: calc(40% - 4rem);
+  padding: 2rem;
+  left: 30%;
+  background-color: #fafafa;
+  border-radius: 0.5rem;
+  padding-top: 3rem;
+  z-index: 999999999999999999999;
+}
+
+.st-modal h1 {
+  font-size: 1.5rem !important;
+}
+
+.st-modal * {
+  font-family: "Space Grotesk", sans-serif;
+  color: black;
+}
+
+.st-modal-header {
+  background-color: #ff9f00;
+  position: fixed;
+  top: 15rem;
+  width: 40%;
+  height: 1rem;
+  left: 30%;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.st-modal code {
+  overflow-wrap: break-word;
+    background-color: #e3e3e3;
+    padding: 0.4rem;
+    border-radius: 0.25rem;
+    line-height: 1.7rem;
+    display: block;
+}
+
+.st-modal button {
+  background-color: #ff9f00;
+  padding: 0.5rem;
+  outline: none;
+  border-radius: 0.25rem;
+  border: 0px;
+  color: white;
+  min-width: 6rem;
+  margin-top: 1rem;
+  position: relative;
+  top: 0px;
+  transition: top .15s;
+}
+
+.st-modal button:hover {
+  top: .4rem;
+}
