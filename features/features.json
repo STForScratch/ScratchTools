@@ -1,6 +1,10 @@
 [
   {
     "version": 2,
+    "id": "colored-shadows"
+  },
+  {
+    "version": 2,
     "id": "creator-badge"
   },
   {

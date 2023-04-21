@@ -1,0 +1,135 @@
+/* Custom block uses */
+
+.blocklyInsertionMarker .blocklyPath.blocklyBlockBackground[fill="#000000"] {
+  fill: rgb(255, 102, 128) !important;
+  fill-opacity: 0.4 !important;
+}
+
+/* Default blocks */
+
+.blocklyInsertionMarker[data-category="motion"]
+  .blocklyPath.blocklyBlockBackground[fill="#000000"] {
+  fill: rgb(76, 151, 255) !important;
+  fill-opacity: 0.4 !important;
+}
+
+.blocklyInsertionMarker[data-category="data"]
+  .blocklyPath.blocklyBlockBackground[fill="#000000"] {
+  fill: rgb(255, 140, 26) !important;
+  fill-opacity: 0.4 !important;
+}
+
+.blocklyInsertionMarker[data-category="looks"]
+  .blocklyPath.blocklyBlockBackground[fill="#000000"] {
+  fill: rgb(153, 102, 255) !important;
+  fill-opacity: 0.4 !important;
+}
+
+.blocklyInsertionMarker[data-category="operators"]
+  .blocklyPath.blocklyBlockBackground[fill="#000000"] {
+  fill: rgb(89, 192, 89) !important;
+  fill-opacity: 0.4 !important;
+}
+
+.blocklyInsertionMarker[data-category="control"]
+  .blocklyPath.blocklyBlockBackground[fill="#000000"] {
+  fill: rgb(255, 171, 25) !important;
+  fill-opacity: 0.4 !important;
+}
+
+.blocklyInsertionMarker[data-category="events"]
+  .blocklyPath.blocklyBlockBackground[fill="#000000"] {
+  fill: rgb(255, 191, 0) !important;
+  fill-opacity: 0.4 !important;
+}
+
+.blocklyInsertionMarker[data-category="sounds"]
+  .blocklyPath.blocklyBlockBackground[fill="#000000"] {
+  fill: rgb(207, 99, 207) !important;
+  fill-opacity: 0.4 !important;
+}
+
+.blocklyInsertionMarker[data-category="sensing"]
+  .blocklyPath.blocklyBlockBackground[fill="#000000"] {
+  fill: rgb(92, 177, 214) !important;
+  fill-opacity: 0.4 !important;
+}
+
+/* Custom block definitions */
+
+.blocklyInsertionMarker[data-shapes="c-block c-1 hat"]
+  .blocklyPath.blocklyBlockBackground[fill="#000000"] {
+  fill: rgb(255, 102, 128) !important;
+  fill-opacity: 0.4 !important;
+}
+
+/* Extensions */
+
+Makey Makey,
+Pen,
+Video Sensing,
+Text to Speech,
+Music,
+Translate,
+micro:bit,
+LEGO EV3,
+BOOST,
+WeDo 2.0,
+Force
+  and
+  Acceleration
+  .blocklyInsertionMarker[data-category="Makey Makey"]
+  .blocklyPath.blocklyBlockBackground[fill="#000000"] {
+  fill: rgb(15, 189, 140) !important;
+  fill-opacity: 0.4 !important;
+}
+.blocklyInsertionMarker[data-category="Pen"]
+  .blocklyPath.blocklyBlockBackground[fill="#000000"] {
+  fill: rgb(15, 189, 140) !important;
+  fill-opacity: 0.4 !important;
+}
+.blocklyInsertionMarker[data-category="Video Sensing"]
+  .blocklyPath.blocklyBlockBackground[fill="#000000"] {
+  fill: rgb(15, 189, 140) !important;
+  fill-opacity: 0.4 !important;
+}
+.blocklyInsertionMarker[data-category="Text to Speech"]
+  .blocklyPath.blocklyBlockBackground[fill="#000000"] {
+  fill: rgb(15, 189, 140) !important;
+  fill-opacity: 0.4 !important;
+}
+.blocklyInsertionMarker[data-category="Music"]
+  .blocklyPath.blocklyBlockBackground[fill="#000000"] {
+  fill: rgb(15, 189, 140) !important;
+  fill-opacity: 0.4 !important;
+}
+.blocklyInsertionMarker[data-category="Translate"]
+  .blocklyPath.blocklyBlockBackground[fill="#000000"] {
+  fill: rgb(15, 189, 140) !important;
+  fill-opacity: 0.4 !important;
+}
+.blocklyInsertionMarker[data-category="micro:bit"]
+  .blocklyPath.blocklyBlockBackground[fill="#000000"] {
+  fill: rgb(15, 189, 140) !important;
+  fill-opacity: 0.4 !important;
+}
+.blocklyInsertionMarker[data-category="LEGO EV3"]
+  .blocklyPath.blocklyBlockBackground[fill="#000000"] {
+  fill: rgb(15, 189, 140) !important;
+  fill-opacity: 0.4 !important;
+}
+.blocklyInsertionMarker[data-category="BOOST"]
+  .blocklyPath.blocklyBlockBackground[fill="#000000"] {
+  fill: rgb(15, 189, 140) !important;
+  fill-opacity: 0.4 !important;
+}
+.blocklyInsertionMarker[data-category="WeDo 2.0"]
+  .blocklyPath.blocklyBlockBackground[fill="#000000"] {
+  fill: rgb(15, 189, 140) !important;
+  fill-opacity: 0.4 !important;
+}
+.blocklyInsertionMarker[data-category="Force and Acceleration"]
+  .blocklyPath.blocklyBlockBackground[fill="#000000"] {
+  fill: rgb(15, 189, 140) !important;
+  fill-opacity: 0.4 !important;
+}
