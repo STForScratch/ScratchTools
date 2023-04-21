@@ -1,6 +1,10 @@
 [
   {
     "version": 2,
+    "id": "stats-percentages"
+  },
+  {
+    "version": 2,
     "id": "clone-counter"
   },
   {

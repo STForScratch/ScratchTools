@@ -1,0 +1,15 @@
+{
+  "title": "Show Percentages for Project Stats",
+  "description": "On the my stuff page, hover over the number of loves, favorites or remixes to view what percent of viewers performed the action.",
+  "credits": [
+    {
+      "username": "JefferyTheSuperKat",
+      "url": "https://scratch.mit.edu/users/JefferyTheSuperKat/"
+    },
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New"],
+  "dynamic": true,
+  "scripts": ["script.js"]
+}
