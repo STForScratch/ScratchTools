@@ -1,10 +1,21 @@
 {
   "NOTE": "THERE IS NO NEED TO UPDATE THIS YOURSELF, IT WILL BE UPDATED WHEN RELEASED.",
-  "version": "2.26.0-beta",
-  "new": [],
+  "version": "2.26.0",
+  "new": [
+    "Creator Badges.",
+    "Colored Shadows."
+  ],
   "enhanced": [
     "Generate data codes for feature sets.",
-    "Userstyle compatability."
+    "Userstyle compatability.",
+    "Resources for features.",
+    "Individual feature pages.",
+    "Update Polish translations."
   ],
-  "fixed": []
+  "fixed": [
+    "Remove old translation strings.",
+    "Fix nicknames feature.",
+    "Background JavaScript error fix.",
+    "Fix width on popup titles."
+  ]
 }
