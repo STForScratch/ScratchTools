@@ -208,7 +208,7 @@ ScratchTools.modals = {
     var orangeBar = document.createElement("div");
     orangeBar.className = "st-modal-header";
 
-    data.components.forEach(function(component) {
+    data.components?.forEach(function(component) {
       if (component.type === "code") {
         var code = document.createElement("code")
         code.textContent = component.content
