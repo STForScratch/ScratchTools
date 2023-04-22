@@ -8,7 +8,10 @@ ScratchTools.waitForElements(
         li.innerHTML = "<span>Open as JavaScript</span>";
         li.addEventListener("click", async function () {
           if (confirm("Are you sure? Make sure you save your project first!")) {
-            alert("Loading project... (it may take a minute)");
+            ScratchTools.modals.create({
+              title: "Loading project...",
+              description: "It may take a minute to load. When it's done, you'll be taken to the page."
+            })
             var response = await fetch(
               `https://scratchtools.app/leopard/${window.location.href
                 .toLowerCase()
