@@ -82,7 +82,7 @@ async function addStudioProjects(studioId) {
     .querySelector(".inner.mod-splash")
     .insertBefore(box, document.querySelector(".inner.mod-splash > .box"));
 }
-let alreadyStarted = false;
+alreadyStarted = false;
 ScratchTools.waitForElements(
   ".inner.mod-splash > .box",
   function () {
