@@ -2,7 +2,7 @@ if (window.location.href.startsWith("https://scratch.mit.edu/projects/")) {
   async function getFollowerCount(el) {
     var response = await fetch(
       "https://scratch.mit.edu/users/" +
-        el.querySelector("a").textContent +
+        el.querySelector("a")?.textContent +
         "/followers/"
     );
     var data = (await response.text())
