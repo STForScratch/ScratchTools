@@ -2,6 +2,22 @@ if (!document.querySelector(".scratchtools-main-clone-counter")) {
   ScratchTools.waitForElements(
     "div[class^='stage-header_stage-menu-wrapper']",
     function () {
+      document
+        .querySelector("div[class^='stage-header_stage-size-toggle-group_']")
+        .addEventListener("click", function (event) {
+          var counter = document.querySelector(
+            ".scratchtools-main-clone-counter span"
+          );
+          if (
+            event.target.closest("[class*='stage-header_stage-button-first']")
+          ) {
+            counter.style.display = "none";
+          } else if (
+            event.target.closest("[class*='stage-header_stage-button-last']")
+          ) {
+            counter.style.display = null;
+          }
+        });
       var div = document.createElement("div");
       div.className = "scratchtools-main-clone-counter";
       var img = document.createElement("img");
@@ -47,18 +63,3 @@ if (!document.querySelector(".scratchtools-main-clone-counter")) {
     }
   }, 100);
 }
-
-document
-  .querySelector("div[class^='stage-header_stage-size-toggle-group_']")
-  .addEventListener("click", function (event) {
-    var counter = document.querySelector(
-      ".scratchtools-main-clone-counter span"
-    );
-    if (event.target.closest("[class*='stage-header_stage-button-first']")) {
-      counter.style.display = "none";
-    } else if (
-      event.target.closest("[class*='stage-header_stage-button-last']")
-    ) {
-      counter.style.display = null;
-    }
-  });
