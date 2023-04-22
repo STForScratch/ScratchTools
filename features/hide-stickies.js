@@ -1,14 +1,13 @@
 function hideStickies() {
   document
     .querySelector("tbody")
-    .querySelectorAll("tr")
+    ?.querySelectorAll("tr")
     .forEach(function (el) {
       if (el.querySelector("div.isticky") !== null) {
         el.style.display = "none";
       }
     });
 }
-
 function showStickies() {
   document
     .querySelector("tbody")
@@ -24,12 +23,10 @@ if (document.querySelector(".scratchtoolsHideStickies") === null) {
   a.textContent = "Show Stickies";
   a.style.float = "right";
   a.className = "scratchtoolsHideStickies";
-  document.querySelector("div#vf").querySelector("div.box-head").appendChild(a);
+  document.querySelector("div#vf")?.querySelector("div.box-head").appendChild(a);
 }
-document
-  .querySelector("div#vf")
-  .querySelector("div.box-head")
-  .querySelector("h4").style.float = "left";
+var div = document.querySelector("div#vf")?.querySelector("div.box-head")?.querySelector("h4");
+if (div) {div.style.float = "left"}
 a.onclick = function () {
   if (a.textContent === "Show Stickies") {
     showStickies();
