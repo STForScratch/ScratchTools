@@ -14,7 +14,7 @@ ScratchTools.waitForElements(
       var input = document.createElement("input");
       input.className =
         "input_input-form_l9eYg project-title-input_title-field_en5Gd menu-bar_title-field-growable_3qr4G";
-      input.value = ScratchTools.Scratch.scratchGui().projectTitle;
+      input.value = window.newTitle || ScratchTools.Scratch.scratchGui().projectTitle;
       input.placeholder = "Title";
       input.style.width = "100%";
       input.style.color = "gray";
@@ -22,6 +22,7 @@ ScratchTools.waitForElements(
       input.style.marginLeft = ".2rem";
       input.style.marginRight = ".2rem";
       input.addEventListener("focusout", async function () {
+        var newName = input.value
         var data = await (
           await fetch(
             "https://api.scratch.mit.edu/projects/" +
@@ -42,12 +43,13 @@ ScratchTools.waitForElements(
             }
           )
         ).json();
-        console.log(data);
         if (data.code === "BadRequest") {
           ScratchTools.modals.create({
             title: "Oops!",
             description: "Please keep the title of the project appropriate.",
           });
+        } else {
+          window.newTitle = newName
         }
       });
       ScratchTools.appendToSharedSpace({
