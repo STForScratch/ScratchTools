@@ -518,9 +518,6 @@
   "clone_counter_title": {
     "message": "Clone Counter"
   },
-  "clone_counter_description": {
-    "message": "Displays a bar with the percentage of allowed clones active in the project."
-  },
   "sprite_data_title": {
     "message": "Display Sprite Data"
   },
