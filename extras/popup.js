@@ -41,9 +41,16 @@ if (document.querySelector(".settingsButton")) {
         })
       ).json();
       if (data.error) {
-        alert("An error occurred:\n\n" + data.error);
+        ScratchTools.modals.create({
+          title: "An error occurred",
+          description: "We were unable to generate a code for your features. They could be corrupt, or the server had an issue."
+        })
       } else {
-        alert("Copy this code: " + data.code);
+        ScratchTools.modals.create({
+          title: "Saved features",
+          description: "We've converted your feature set into a short code that you can save or use when reporting bugs. You can copy it from below.",
+          components: [{ type: "code", content: data.code }]
+        })
       }
     }
   });
@@ -151,7 +158,7 @@ async function getFeatures() {
         }
       } else {
         a.textContent = credit;
-        a.dataset.url = feature.urls[i]
+        a.dataset.url = feature.urls[i];
         if (document.querySelector(".main-page")) {
           a.href = feature.urls[i];
         } else {
@@ -215,7 +222,10 @@ async function dynamicEnable(id) {
           chrome.tabs.query({}, function (tabs) {
             for (var i = 0; i < tabs.length; i++) {
               chrome.scripting.executeScript({
-                args: [feature.id, chrome.runtime.getURL(`/features/${feature.id}/${style}`)],
+                args: [
+                  feature.id,
+                  chrome.runtime.getURL(`/features/${feature.id}/${style}`),
+                ],
                 target: { tabId: tabs[i].id },
                 func: insertCSS,
                 world: "MAIN",
@@ -280,3 +290,44 @@ async function dynamicDisable(id) {
     }
   });
 }
+
+var ScratchTools = ScratchTools || {};
+ScratchTools.modals = {
+  create: function (data) {
+    var div = document.createElement("div");
+    div.className = "st-modal-blur-bg";
+
+    var modal = document.createElement("div");
+    modal.className = "st-modal";
+
+    var h1 = document.createElement("h1");
+    h1.textContent = data.title;
+    modal.appendChild(h1);
+
+    var p = document.createElement("p");
+    p.textContent = data.description;
+    modal.appendChild(p);
+
+    var orangeBar = document.createElement("div");
+    orangeBar.className = "st-modal-header";
+
+    data.components?.forEach(function (component) {
+      if (component.type === "code") {
+        var code = document.createElement("code");
+        code.textContent = component.content;
+        modal.appendChild(code);
+      }
+    });
+
+    var closeButton = document.createElement("button");
+    closeButton.textContent = "Close";
+    closeButton.onclick = function () {
+      div.remove();
+    };
+    modal.appendChild(closeButton);
+
+    div.appendChild(modal);
+    modal.prepend(orangeBar);
+    document.body.appendChild(div);
+  },
+};

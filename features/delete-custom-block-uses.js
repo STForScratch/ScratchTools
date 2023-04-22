@@ -31,13 +31,15 @@ if (
                     }
                   }
                 });
-                alert(
-                  "Deleted all instances of the " +
-                    block.getProcCode() +
-                    " custom block."
-                );
+                ScratchTools.modals.create({
+                  title: "Deleted block",
+                  description: `Finished deleting all instances of the "${block.getProcCode()}" custom block.`
+                })
               } else {
-                alert("Canceled.");
+                ScratchTools.modals.create({
+                  title: "Canceled",
+                  description: "Not deleting block."
+                })
               }
             };
             el.push(deleteCustomBlocks);

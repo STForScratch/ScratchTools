@@ -159,7 +159,10 @@ function addNoCommentBox() {
         }
       );
       var closeData = await close.text();
-      alert(`Comment posted. Reloading page.`);
+      ScratchTools.modals.create({
+        title: "Comment posted",
+        description: "Reloading page..."
+      })
       window.location.href = window.location.href;
     }
   }

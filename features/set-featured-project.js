@@ -25,7 +25,10 @@ async function setFeaturedProject(project, user) {
     }
   );
   var data = await response.json();
-  alert("Set Featured Project.");
+  ScratchTools.modals.create({
+    title: "Pinned",
+    description: "Successfully pinned project to my stuff."
+  })
 
   function getCookie(name) {
     var value = `; ${document.cookie}`;
