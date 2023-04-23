@@ -26,8 +26,8 @@ body {
 }
 
 button {
-    background-color: #ff9f00;
-    color: white;
+    background-color: white;
+    color: #ff9f00;
     min-width: 10rem;
     font-family: "Space Grotesk", sans-serif;
     padding: .5rem;
@@ -38,7 +38,7 @@ button {
     position: relative;
     top: 0px;
     transition: top .3s;
-    border: 2px solid #00000029;
+    font-weight: bold;
 }
 
 button:hover {
