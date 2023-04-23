@@ -416,15 +416,6 @@
     "type": ["Editor"]
   },
   {
-    "title": "Opacity in Costume Editor",
-    "description": "Adds an input to the costume editor where you can set the opacity of elements.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "opacity-setter",
-    "tags": ["Recommended"],
-    "type": ["Editor"]
-  },
-  {
     "title": "Display Project Tags",
     "description": "Lists all of the tags used in the project description right below the project notes and credits.",
     "credits": ["rgantzos"],
