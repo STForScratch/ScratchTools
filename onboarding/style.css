@@ -10,6 +10,7 @@
 }
 
 body {
+  color: white;
   text-align: center;
   background-image: url(./background.svg);
   background-position: center center;
@@ -37,6 +38,7 @@ button {
     position: relative;
     top: 0px;
     transition: top .3s;
+    border: 2px solid #00000029;
 }
 
 button:hover {
@@ -56,6 +58,7 @@ button:hover {
     position: relative;
     top: 0px;
     transition: opacity .3s, border .3s, top .3s;
+    color: black;
 }
 
 .feature:hover {
