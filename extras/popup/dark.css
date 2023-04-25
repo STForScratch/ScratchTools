@@ -13,4 +13,5 @@
     --feature-slider-bg:#4b4b4b !important;
     --scrollbar-handle:#797979 !important;
     --scrollbar-handle-active:#656565 !important;
+    --theme-icon:url("/extras/icons/light.svg");
   }

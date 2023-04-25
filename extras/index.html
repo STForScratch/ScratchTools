@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Settings | ScratchTools</title>
-    <link rel="icon" href="/extras/icon128.png" />
+    <title>Settings - ScratchTools</title>
+    <link rel="icon" href="/extras/icons/icon128.png" />
     <link rel="stylesheet" href="/extras/modals.css">
+    <script src="/extras/popup/popup.js" defer></script>
   </head>
   <body>
     <div class="main-page"></div>
@@ -17,6 +18,7 @@
           type="submit"
         />
       </div>
+      <button class="theme" id="toggletheme" title="Toggle Theme"></button>
     </div>
     <div class="section1">
       <hr style="border: none; height: 70px" />
@@ -141,6 +143,18 @@
       margin-left: 1em;
       font-size: 1rem;
       font-weight: bold;
+    }
+    .theme{
+      height: 45px;
+      width: 45px;
+      background: var(--theme-icon);
+      background-color: var(--searchbar-bg);
+      border-radius:10px;
+      border:none;
+      background-size: 45px 45px;
+      cursor:pointer;
+      float:right;
+      margin-right: 14px;
     }
     .navbar {
       display: block;
@@ -331,6 +345,5 @@
       float: left;
     }
   </style>
-  <script src="/extras/popup/popup.js"></script>
   <script src="/extras/blocked.js"></script>
 </html>

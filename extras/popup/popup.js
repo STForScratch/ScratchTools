@@ -2,15 +2,30 @@ chrome.storage.sync.get("theme", function (obj) {
   var theme = obj.theme
 
   if (theme == "light"){
-    document.head.innerHTML += "<link rel='stylesheet' href='/extras/popup/light.css'>"
+    document.head.innerHTML += "<link rel='stylesheet' href='/extras/popup/light.css' id='themecss'>"
   }else if (theme == "dark"){
-    document.head.innerHTML += "<link rel='stylesheet' href='/extras/popup/dark.css'>"
+    document.head.innerHTML += "<link rel='stylesheet' href='/extras/popup/dark.css' id='themecss'>"
   }else{
-    document.head.innerHTML += "<link rel='stylesheet' href='/extras/popup/light.css'>" // default theme
+    document.head.innerHTML += "<link rel='stylesheet' href='/extras/popup/light.css' id='themecss'>" // default theme
     console.error(console.log("ScratchTools:"), " Theme not found. Defaulting to light theme.")
   }
 });
 
+document.getElementById("toggletheme").addEventListener("click", toggletheme);
+
+function toggletheme(){
+  var theme = document.getElementById("themecss")
+  if (theme.href.includes("light")){
+    theme.href = "/extras/popup/dark.css"
+    chrome.storage.sync.set({ theme: "dark" })
+  }else if (theme.href.includes("dark")){
+    theme.href = "/extras/popup/light.css"
+    chrome.storage.sync.set({ theme: "light" })
+  }else{
+    theme.href = "/extras/popup/light.css" // default theme
+    console.error(console.log("ScratchTools:"), " Theme not found. Defaulting to light theme.")
+  }
+}
 
 document.querySelector(".searchbar").placeholder =
   chrome.i18n.getMessage("search") || "search";
