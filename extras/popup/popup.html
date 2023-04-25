@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ScratchTools</title>
+  </head>
+  <body>
+    <div class="navwrap">
+      <div class="navbar">
+        <div class="wrap">
+          <input
+            class="searchbaricon"
+            value=""
+            type="submit"
+            style="margin-left: 1em"
+          /><input class="searchbar" placeholder="search" /><input
+            class="searchbarbutton"
+            value=""
+            type="submit"
+          />
+          <input class="settingsButton" type="submit" value="" />
+        </div>
+      </div>
+    </div>
+    <hr style="border: none; height: 70px" />
+    <div class="welcome">
+      <center>
+        <img src="/extras/icons/mini-logo.svg" class="minilogo" />
+        <h3 class="count">
+          Welcome to your settings! You can find all features here!
+        </h3>
+      </center>
+    </div>
+    <div class="settings"></div>
+  </body>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+    :root{
+      --theme:#ff9f00;
+      --background:#3F3F3F;
+      --primary-color:white;
+      --secondary-color:#ffffff77;
+      --searchbar-bg:#FFFFFF17;
+      --searchbar-gears:url("/extras/popup/settings.svg");
+      --box:#eeeeee;
+      --feature-bg:#343434;
+      --feature-input-bg:#545454;
+      --feature-slider-bg:#4b4b4b;
+    }
+    /*:root{
+      --theme:#ff9f00;
+      --background:white;
+      --primary-color:black;
+      --secondary-color:#00000077;
+      --searchbar-bg:#eeeeee;
+      --searchbar-gears:url("/extras/settings.svg");
+      --box:#eeeeee;
+      --feature-bg:#eeeeee75;
+      --feature-input-bg:#e4e4e4;
+    }*/
+    html {
+      --radius: 12px;
+      width: 400px;
+      font-family: "Space Grotesk", sans-serif;
+      height: 500px;
+    }
+    body {
+      padding-bottom: 2rem;
+      height: 500px;
+      width: 400px;
+      margin: none;
+      background: var(--background);
+    }
+    .settings {
+      padding-bottom: 1rem;
+      margin-left:-5px;
+    }
+    a:hover{
+        text-decoration: none;
+        color: var(--theme);
+      }
+
+    /* Welcome */
+    .welcome {
+        background-color: var(--feature-bg);
+        border-radius: var(--radius);
+        width: 80vw;
+        padding: 1rem;
+        position: relative;
+        left: 10vw;
+        margin-left: -1.5rem;
+        text-align: center;
+        color: var(--primary-color);
+      }
+      .welcome img,
+      .welcome h3 {
+        display: block;
+      }
+      .minilogo {
+        width: 2rem;
+        height: 2rem;
+      }
+
+    /* FEATURE */
+
+    .feature {
+      margin: 2em;
+      margin-top: 3rem;
+      margin: 2em;
+      margin-bottom: 3rem;
+      background: var(--feature-bg);
+      border-radius: 10px;
+      padding: 17px;
+      padding-top: 5px;
+      width: 330px;
+    }
+    .feature a {
+  cursor: pointer;
+  color: var(--theme) !important;
+}
+
+    .feature .switch {
+      float: right;
+      margin-top: -3em;
+      margin-right: 0.2em;
+    }
+    .feature h3 {
+      color: var(--primary-color);
+      margin-left: 0em;
+    }
+    .feature span {
+      color: var(--secondary-color);
+    }
+
+    .feature .featureTitle {
+      color: var(--primary-color);
+      width: calc(90% - 55px);
+      font-weight: bold;
+      font-size: 1.25rem !important;
+      margin-bottom: .5rem;
+    }
+    .feature p {
+      color: var(--secondary-color);
+      width: calc(100% - 1.6rem);
+        opacity: .5;
+    }
+
+    .feature > input {
+      display: block;
+    }
+
+    .feature button,
+      .feature input {
+        padding: 0.1vw;
+        height: 2rem;
+        margin-left: 0.5vw;
+        background-color: var(--theme);
+        border-radius: 1rem;
+        outline: none;
+        border: 0px;
+        color: white;
+      }
+
+      .feature input {
+        color: var(--color);
+        background-color: var(--feature-input-bg);
+        padding-left: 1rem !important;
+      }
+      .feature button {
+        cursor: pointer;
+      }
+
+    .stuff {
+        margin-left: 80px;
+        margin-right: 80px;
+        color: orange;
+    }
+    /*Navbar*/
+
+    .navbar {
+      height: 45px;
+      position: fixed;
+      background: var(--background);
+      top: 0;
+      margin-top: 1em;
+      z-index: 2;
+    }
+    .logo {
+        width: 80px;
+      }
+    .navwrap {
+      width: 100%;
+      background: var(--background);
+      height: 70px;
+      top: 0;
+      position: fixed;
+      z-index: 2;
+    }
+
+    .wrap {
+      position: relative;
+      height: 45px;
+    }
+
+    .searchbar {
+      border-radius: 0px 0px 0px 0px;
+      padding: 12px;
+      padding-left: 10px;
+      height: 21px;
+      width: 50%;
+      border: none;
+      background: var(--searchbar-bg);
+      outline: none;
+      vertical-align: middle;
+      position: initial;
+      margin-bottom: 2.9em;
+    }
+    .searchbarbutton {
+      border-radius: 0px var(--radius) var(--radius) 0px;
+      padding: 12px;
+      width: 45px;
+      height: 45px;
+      border: none;
+      background: var(--searchbar-bg);
+      outline: none;
+      background-image: url("/extras/icons/search.svg");
+      background-position: 47% 46%;
+      background-size: 20px 20px;
+      background-repeat: no-repeat;
+    }
+    .searchbaricon {
+      border-radius: var(--radius) 0px 0px var(--radius);
+      padding: 12px;
+      width: 45px;
+      height: 45px;
+      border: none;
+      background: var(--searchbar-bg);
+      outline: none;
+      background-image: url("/extras/icons/mini-logo.svg");
+      background-position: 80% 50%;
+      background-size: 30px 30px;
+      background-repeat: no-repeat;
+    }
+    .settingsButton {
+      padding: 12px;
+      width: 60px;
+      height: 50px;
+      border: none;
+      background: none;
+      outline: none;
+      background-image: var(--searchbar-gears);
+      background-position: 50% 50%;
+      background-size: 25px 25px;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      float: right;
+      margin-top: -6.5em;
+      margin-left: 3em;
+    }
+
+    /*Switch*/
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 55px;
+      height: 28px;
+      margin-bottom: 1rem;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--feature-slider-bg);
+      -webkit-transition: 0.2s;
+      transition: 0.2s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: 0.2s;
+      transition: 0.2s;
+    }
+
+    input:checked + .slider {
+      background-color: var(--theme);
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+
+
+    
+  </style>
+  <script src="/extras/popup/popup.js"></script>
+</html>

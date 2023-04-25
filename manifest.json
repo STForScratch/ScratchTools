@@ -12,14 +12,14 @@
   },
   "permissions": ["scripting", "storage", "alarms"],
   "action": {
-    "default_icon": "/extras/icon48.png",
-    "default_popup": "/extras/popup.html",
+    "default_icon": "/extras/icons/icon48.png",
+    "default_popup": "/extras/popup/popup.html",
     "default_title": "ScratchTools"
   },
   "icons": {
-    "16": "/extras/icon16.png",
-    "48": "/extras/icon48.png",
-    "128": "/extras/icon128.png"
+    "16": "/extras/icons/icon16.png",
+    "48": "/extras/icons/icon48.png",
+    "128": "/extras/icons/icon128.png"
   },
   "web_accessible_resources": [{
     "resources": ["features/*", "/extras/feature/index.html", "/api/*"],
