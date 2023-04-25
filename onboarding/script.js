@@ -48,7 +48,7 @@ async function themePage(){
     center.className = "center-perfectly"
 
     var h1 = document.createElement("h1");
-    h1.textContent = "Choose a Theme"; h1.className = "big"; h1.style.fontWeight = "400"
+    h1.textContent = "Choose a Theme"; h1.className = "big"; h1.style.fontWeight = "bold"
     center.append(h1)
     
     var themeSelection = document.createElement("div"); 
