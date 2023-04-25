@@ -94,3 +94,38 @@ button:hover {
     height: 5rem;
     overflow-y: hidden;
 }
+
+.theme-select{
+    border:3px solid #456EFF;
+  }
+  .theme-noselect{
+    border:3px solid #ff9f00;
+  }
+  .theme-circle{
+    height:50px; 
+    width:50px; 
+    border-radius:100%; 
+    cursor:pointer; 
+    margin-top:2.48px; 
+    margin-left:2.48px;
+    position: 
+  }
+  .theme-dark{
+      background:#3F3F3F; 
+  }
+  .theme-light{
+    background: white;
+  }
+  .theme-preview{
+    position:absolute;
+  
+  }
+  .themes{
+    display: flex;
+    margin-top:370px
+  }
+  .theme-selection{
+    height:450px;
+    display: flex;
+    justify-content: center;
+  }

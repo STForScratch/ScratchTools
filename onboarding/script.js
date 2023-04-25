@@ -16,7 +16,7 @@ await chrome.runtime.sendMessage({text: "get-logged-in-user"}, async function(re
   features.appendChild(await createFeature("search-context-menus"))
   features.appendChild(await createFeature("collapse-blocks"))
   features.appendChild(await createFeature("get-project-tags"))
-  button.onclick = messagesPage
+  button.onclick = themePage
   center.appendChild(h2);
   center.appendChild(p)
   center.appendChild(features)
@@ -40,6 +40,54 @@ async function messagesPage() {
         window.location.href = (window.user ? "https://scratch.mit.edu/users/"+window.user+"/" : "https://scratch.mit.edu")
     }
     center.appendChild(button)
+}
+
+async function themePage(){
+    document.querySelector(".center-perfectly").remove();
+    var center = createCenter();
+    center.className = "center-perfectly"
+
+    var h1 = document.createElement("h1");
+    h1.textContent = "Choose a Theme"; h1.className = "big"; h1.style.fontWeight = "400"
+    center.append(h1)
+    
+    var themeSelection = document.createElement("div"); 
+    themeSelection.className = "theme-selection"; 
+    center.append(themeSelection)
+
+    var themePreview = document.createElement("div");
+    themePreview.className = "theme-preview";
+    themeSelection.append(themePreview)
+    
+    var themePreviewImg = document.createElement("img");
+    themePreviewImg.src = "themes/light.svg";
+    themePreviewImg.id = "theme-preview"
+    themePreview.append(themePreviewImg)
+
+    var themeOptions = document.createElement("div");
+    themeOptions.className = "themes";
+    themeSelection.append(themeOptions)
+
+    var light = document.createElement("div");
+    light.className = "theme-circle theme-light theme-select";
+    light.id = "light"
+    light.onclick='theme("light")'
+    themeOptions.append(light)
+
+    var dark = document.createElement("div");
+    dark.className = "theme-circle theme-dark theme-noselect";
+    dark.id = "dark"
+    dark.onclick='theme("dark")'
+    themeOptions.append(dark)
+
+    var button = document.createElement("button")
+    button.textContent = "Continue"
+    button.onclick = messagesPage
+    center.appendChild(button)
+
+    
+
+
 }
 
 function createCenter() {
