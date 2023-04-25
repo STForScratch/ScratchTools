@@ -160,6 +160,18 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
         ScratchTools.console.log("Injected main API.");
         await chrome.scripting.executeScript({
           target: { tabId: tabId },
+          files: [`/api/modals.js`],
+          world: "MAIN",
+        });
+        ScratchTools.console.log("Injected modals API.");
+        await chrome.scripting.executeScript({
+          target: { tabId: tabId },
+          files: [`/api/feature.js`],
+          world: "MAIN",
+        });
+        ScratchTools.console.log("Injected feature API.");
+        await chrome.scripting.executeScript({
+          target: { tabId: tabId },
           files: [`/api/auth.js`],
           world: "MAIN",
         });
@@ -200,8 +212,41 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
           world: "MAIN",
         });
         ScratchTools.console.log("Injected protect mention script.");
+        var newFullData = [];
+        for (var i in data) {
+          var feature = data[i];
+          if (feature.version === 2) {
+            var featureData = await (
+              await fetch(`/features/${feature.id}/data.json`)
+            ).json();
+            featureData.id = feature.id;
+            featureData.version = feature.version;
+            if (featureData.locales) {
+              if (chrome.i18n.getUILanguage().includes("-")) {
+                var language = chrome.i18n.getUILanguage().split("-")[0];
+              } else {
+                var language = chrome.i18n.getUILanguage();
+              }
+              try {
+                var localesData = await (
+                  await fetch(
+                    `/features/--i18n/${language}/${featureData.id}.json`
+                  )
+                ).json();
+              } catch (err) {
+                var localesData = await (
+                  await fetch(`/features/--i18n/en/${featureData.id}.json`)
+                ).json();
+              }
+              featureData.localesData = localesData;
+            }
+            newFullData.push(featureData);
+          } else {
+            newFullData.push(feature);
+          }
+        }
         await chrome.scripting.executeScript({
-          args: [data],
+          args: [newFullData],
           target: { tabId: tabId },
           func: getFeaturesForAPI,
           world: "MAIN",
