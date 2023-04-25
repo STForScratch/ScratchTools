@@ -10,6 +10,7 @@
 }
 
 body {
+  color: white;
   text-align: center;
   background-image: url(./background.svg);
   background-position: center center;
@@ -25,8 +26,8 @@ body {
 }
 
 button {
-    background-color: #ff9f00;
-    color: white;
+    background-color: white;
+    color: #ff9f00;
     min-width: 10rem;
     font-family: "Space Grotesk", sans-serif;
     padding: .5rem;
@@ -37,6 +38,7 @@ button {
     position: relative;
     top: 0px;
     transition: top .3s;
+    font-weight: bold;
 }
 
 button:hover {
@@ -56,6 +58,7 @@ button:hover {
     position: relative;
     top: 0px;
     transition: opacity .3s, border .3s, top .3s;
+    color: black;
 }
 
 .feature:hover {
