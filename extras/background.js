@@ -29,10 +29,10 @@ chrome.runtime.onInstalled.addListener(async function (object) {
   ) {
     chrome.action.setIcon({
       path: {
-        default_icon: "/extras/purple.png",
-        16: "/extras/purple-16.png",
-        48: "/extras/purple-48.png",
-        128: "/extras/purple-128.png",
+        default_icon: "/extras/icons/purple.png",
+        16: "/extras/icons/purple-16.png",
+        48: "/extras/icons/purple-48.png",
+        128: "/extras/icons/purple-128.png",
       },
     });
   }
