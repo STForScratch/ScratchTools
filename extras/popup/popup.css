@@ -51,6 +51,7 @@ body {
 }
 .settings {
   padding-bottom: 1rem;
+  margin-left: -0.5rem;
 }
 a:hover{
     text-decoration: none;
@@ -87,7 +88,7 @@ a:hover{
   border-radius: 10px;
   padding: 17px;
   padding-top: 5px;
-  width: 310px;
+  width: calc(100% - 5.7rem);
 
 }
 .feature a {
