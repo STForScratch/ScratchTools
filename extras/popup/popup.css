@@ -87,6 +87,8 @@ a:hover{
   border-radius: 10px;
   padding: 17px;
   padding-top: 5px;
+  width: 310px;
+
 }
 .feature a {
 cursor: pointer;
