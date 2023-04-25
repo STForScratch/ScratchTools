@@ -1,0 +1,17 @@
+:root{
+    --theme:#ff9f00;
+    --background:#3F3F3F !important;
+    --primary-color:white !important;
+    --secondary-color:#ffffff77 !important;
+    --searchbar-bg:#FFFFFF17 !important;
+    --searchbar-gears: url("/extras/icons/gear-light.svg") !important;
+    --searchbar-search:url("/extras/icons/search-light.svg") !important;
+    --mini-logo: url("/extras/icons/mini-logo.svg");
+    --box:#eeeeee !important;
+    --feature-bg:#343434 !important;
+    --feature-input-bg:#545454 !important;
+    --feature-slider-bg:#4b4b4b !important;
+    --scrollbar-handle:#797979 !important;
+    --scrollbar-handle-active:#656565 !important;
+    --theme-icon:url("/extras/icons/light.svg");
+  }
