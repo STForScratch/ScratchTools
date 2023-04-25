@@ -1,29 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
-:root{
+/*:root{
   --theme:#ff9f00;
   --background:#3F3F3F;
   --primary-color:white;
   --secondary-color:#ffffff77;
   --searchbar-bg:#FFFFFF17;
-  --searchbar-gears: url("/extras/popup/gear-light.svg");
+  --searchbar-gears: url("/extras/icons/gear-light.svg");
   --searchbar-search:url("/extras/icons/search-light.svg");
   --mini-logo: url("/extras/icons/mini-logo.svg");
   --box:#eeeeee;
   --feature-bg:#343434;
   --feature-input-bg:#545454;
   --feature-slider-bg:#4b4b4b;
-}
-/*:root{
+  --scrollbar-handle:#797979;
+  --scrollbar-handle-active:#656565;
+}*/
+:root{
   --theme:#ff9f00;
   --background:white;
   --primary-color:black;
   --secondary-color:#00000077;
   --searchbar-bg:#eeeeee;
-  --searchbar-gears:url("/extras/settings.svg");
+    --searchbar-gears: url("/extras/icons/settings.svg");
+  --searchbar-search:url("/extras/icons/search.svg");
+  --mini-logo: url("/extras/icons/mini-logo.svg");
   --box:#eeeeee;
   --feature-bg:#eeeeee75;
   --feature-input-bg:#e4e4e4;
-}*/
+  --feature-slider-bg:#cccccc;
+  --scrollbar-handle:#c2bfbf;
+  --scrollbar-handle-active:#b2afaf;
+}
 html {
   --radius: 12px;
   width: 400px;
@@ -69,8 +76,8 @@ a:hover{
 /* FEATURE */
 
 .feature {
-  margin: 2em;
-  margin-bottom: 1rem;
+    margin: 2em;
+    margin-bottom: 1rem;
   background: var(--feature-bg);
   border-radius: 10px;
   padding: 17px;
@@ -276,3 +283,17 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+/*scroll bar*/
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-handle); 
+  }
+  
+  ::-webkit-scrollbar-thumb:active {
+    background: var(--scrollbar-handle-active); 
+  }
