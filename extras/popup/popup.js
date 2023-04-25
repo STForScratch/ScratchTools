@@ -11,6 +11,15 @@ chrome.storage.sync.get("theme", function (obj) {
   }
 });
 
+var version = chrome.runtime.getManifest().version_name;
+if (version.includes("beta")) {
+  document.head.innerHTML += "<link rel='stylesheet' href='/extras/popup/beta.css' id='betacss'>"
+  if (document.head.id == "Popup") {
+    document.getElementById('minilogo').src = "/extras/icons/mini-logo-beta.svg"
+    document.getElementById('popupnote').innerHTML = "Welcome to the beta verison of scratchtools! This version is not stable and may contain bugs. Please report any bugs you find <a href='https://github.com/STForScratch/ScratchTools/issues' target='_blank'>here</a>."
+  }
+}
+
 document.getElementById("toggletheme").addEventListener("click", toggletheme);
 
 function toggletheme(){
