@@ -1,40 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 
-@media (prefers-color-scheme: dark){
-    :root{
-        --theme:#ff9f00;
-        --background:#3F3F3F;
-        --primary-color:white;
-        --secondary-color:#ffffff77;
-        --searchbar-bg:#FFFFFF17;
-        --searchbar-gears: url("/extras/icons/gear-light.svg");
-        --searchbar-search:url("/extras/icons/search-light.svg");
-        --mini-logo: url("/extras/icons/mini-logo.svg");
-        --box:#eeeeee;
-        --feature-bg:#343434;
-        --feature-input-bg:#545454;
-        --feature-slider-bg:#4b4b4b;
-        --scrollbar-handle:#797979;
-        --scrollbar-handle-active:#656565;
-      }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme: #ff9f00;
+    --background: #3f3f3f;
+    --primary-color: white;
+    --secondary-color: #ffffff77;
+    --searchbar-bg: #ffffff17;
+    --searchbar-gears: url("/extras/icons/gear-light.svg");
+    --searchbar-search: url("/extras/icons/search-light.svg");
+    --mini-logo: url("/extras/icons/mini-logo.svg");
+    --box: #eeeeee;
+    --feature-bg: #343434;
+    --feature-input-bg: #545454;
+    --feature-slider-bg: #4b4b4b;
+    --scrollbar-handle: #797979;
+    --scrollbar-handle-active: #656565;
+  }
 }
-@media (prefers-color-scheme: light){
-    :root{
-        --theme:#ff9f00;
-        --background:white;
-        --primary-color:black;
-        --secondary-color:#00000077;
-        --searchbar-bg:#eeeeee;
-          --searchbar-gears: url("/extras/icons/settings.svg");
-        --searchbar-search:url("/extras/icons/search.svg");
-        --mini-logo: url("/extras/icons/mini-logo.svg");
-        --box:#eeeeee;
-        --feature-bg:#eeeeee75;
-        --feature-input-bg:#e4e4e4;
-        --feature-slider-bg:#cccccc;
-        --scrollbar-handle:#c2bfbf;
-        --scrollbar-handle-active:#b2afaf;
-      }
+@media (prefers-color-scheme: light) {
+  :root {
+    --theme: #ff9f00;
+    --background: white;
+    --primary-color: black;
+    --secondary-color: #00000077;
+    --searchbar-bg: #eeeeee;
+    --searchbar-gears: url("/extras/icons/settings.svg");
+    --searchbar-search: url("/extras/icons/search.svg");
+    --mini-logo: url("/extras/icons/mini-logo.svg");
+    --box: #eeeeee;
+    --feature-bg: #eeeeee75;
+    --feature-input-bg: #e4e4e4;
+    --feature-slider-bg: #cccccc;
+    --scrollbar-handle: #c2bfbf;
+    --scrollbar-handle-active: #b2afaf;
+  }
 }
 html {
   --radius: 12px;
@@ -53,51 +53,50 @@ body {
   padding-bottom: 1rem;
   margin-left: -0.5rem;
 }
-a:hover{
-    text-decoration: none;
-    color: var(--theme);
-  }
+a:hover {
+  text-decoration: none;
+  color: var(--theme);
+}
 
 /* Welcome */
 .welcome {
-    background-color: var(--feature-bg);
-    border-radius: var(--radius);
-    width: 80vw;
-    padding: 1rem;
-    position: relative;
-    left: 10vw;
-    margin-left: -1.5rem;
-    text-align: center;
-    color: var(--primary-color);
-  }
-  .welcome img,
-  .welcome h3 {
-    display: block;
-  }
-  .minilogo {
-    width: 2rem;
-    height: 2rem;
-  }
+  background-color: var(--feature-bg);
+  border-radius: var(--radius);
+  width: 80vw;
+  padding: 1rem;
+  position: relative;
+  left: 10vw;
+  margin-left: -1.5rem;
+  text-align: center;
+  color: var(--primary-color);
+}
+.welcome img,
+.welcome h3 {
+  display: block;
+}
+.minilogo {
+  width: 2rem;
+  height: 2rem;
+}
 
-a{
-    color:var(--theme);
+a {
+  color: var(--theme);
 }
 
 /* FEATURE */
 
 .feature {
-    margin: 2em;
-    margin-bottom: 1rem;
+  width: 80vw;
+  margin: 2em;
+  margin-bottom: 1rem;
   background: var(--feature-bg);
   border-radius: 10px;
   padding: 17px;
   padding-top: 5px;
-  width: calc(100% - 5.7rem);
-
 }
 .feature a {
-cursor: pointer;
-color: var(--theme) !important;
+  cursor: pointer;
+  color: var(--theme) !important;
 }
 
 .feature .switch {
@@ -118,12 +117,12 @@ color: var(--theme) !important;
   width: calc(90% - 55px);
   font-weight: bold;
   font-size: 1.25rem !important;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 .feature p {
   color: var(--primary-color);
   width: calc(100% - 1.6rem);
-    opacity: .5;
+  opacity: 0.5;
 }
 
 .feature > input {
@@ -131,30 +130,31 @@ color: var(--theme) !important;
 }
 
 .feature button,
-  .feature input {
-    padding: 0.1vw;
-    height: 2rem;
-    margin-left: 0.5vw;
-    background-color: var(--theme);
-    border-radius: 1rem;
-    outline: none;
-    border: 0px;
-    color: white;
-  }
+.feature input {
+  padding: 0.1vw;
+  height: 2rem;
+  margin-left: 0.5vw;
+  background-color: var(--theme);
+  border-radius: 1rem;
+  outline: none;
+  border: 0px;
+  color: white;
+}
 
-  .feature input {
-    color: var(--color);
-    background-color: var(--feature-input-bg);
-    padding-left: 1rem !important;
-  }
-  .feature button {
-    cursor: pointer;
-  }
+.feature input {
+  color: var(--color);
+  background-color: var(--feature-input-bg);
+  padding-left: 1rem !important;
+  margin-bottom: .5rem;
+}
+.feature button {
+  cursor: pointer;
+}
 
 .stuff {
-    margin-left: 80px;
-    margin-right: 80px;
-    color: orange;
+  margin-left: 80px;
+  margin-right: 80px;
+  color: orange;
 }
 /*Navbar*/
 
@@ -167,8 +167,8 @@ color: var(--theme) !important;
   z-index: 2;
 }
 .logo {
-    width: 80px;
-  }
+  width: 80px;
+}
 .navwrap {
   width: 100%;
   background: var(--background);
@@ -188,14 +188,14 @@ color: var(--theme) !important;
   padding: 12px;
   padding-left: 10px;
   height: 21px;
-  width: 50%;
+  width: calc(50% + 0.8rem);
   border: none;
   background: var(--searchbar-bg);
   outline: none;
   vertical-align: middle;
   position: initial;
   margin-bottom: 2.9em;
-  color:var(--primary-color)
+  color: var(--primary-color);
 }
 .searchbarbutton {
   border-radius: 0px var(--radius) var(--radius) 0px;
@@ -238,6 +238,19 @@ color: var(--theme) !important;
   float: right;
   margin-top: -6.5em;
   margin-left: 3em;
+  position: relative;
+  right: -1rem;
+}
+
+.feature input {
+  padding: 0.1vw;
+  height: 2rem;
+  margin-left: 0.5vw;
+  border-radius: 1rem;
+  outline: none;
+  border: 0px;
+  color: white;
+  background-color: var(--feature-input-bg);
 }
 
 /*Switch*/
@@ -300,13 +313,13 @@ input:checked + .slider:before {
 /*scroll bar*/
 
 ::-webkit-scrollbar {
-    width: 10px;
-  }
-   
-  ::-webkit-scrollbar-thumb {
-    background: var(--scrollbar-handle); 
-  }
-  
-  ::-webkit-scrollbar-thumb:active {
-    background: var(--scrollbar-handle-active); 
-  }
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-handle);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: var(--scrollbar-handle-active);
+}
