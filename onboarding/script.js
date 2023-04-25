@@ -58,9 +58,11 @@ async function themePage(){
     var themePreview = document.createElement("div");
     themePreview.className = "theme-preview";
     themeSelection.append(themePreview)
+
+    var currentTheme = ((await chrome.storage.sync.get("theme")).theme || "light")
     
     var themePreviewImg = document.createElement("img");
-    themePreviewImg.src = "themes/light.svg";
+    themePreviewImg.src = "themes/"+currentTheme+".svg";
     themePreviewImg.id = "theme-preview"
     themePreview.append(themePreviewImg)
 
@@ -69,25 +71,35 @@ async function themePage(){
     themeSelection.append(themeOptions)
 
     var light = document.createElement("div");
-    light.className = "theme-circle theme-light theme-select";
+    light.className = "theme-circle theme-light "+((currentTheme === "light") ? "theme-select" : "theme-noselect");
     light.id = "light"
-    light.onclick='theme("light")'
+    light.onclick = async function() {
+        themePreviewImg.src = `/onboarding/themes/light.svg`
+        light.classList.remove("theme-noselect")
+        light.classList.add("theme-select")
+        dark.classList.remove("theme-select")
+        dark.classList.add("theme-noselect")
+        await chrome.storage.sync.set({ theme: "light" })
+    }
     themeOptions.append(light)
 
     var dark = document.createElement("div");
-    dark.className = "theme-circle theme-dark theme-noselect";
+    dark.className = "theme-circle theme-dark "+((currentTheme === "dark") ? "theme-select" : "theme-noselect");
     dark.id = "dark"
-    dark.onclick='theme("dark")'
+    dark.onclick = async function() {
+        themePreviewImg.src = `/onboarding/themes/dark.svg`
+        dark.classList.remove("theme-noselect")
+        dark.classList.add("theme-select")
+        light.classList.remove("theme-select")
+        light.classList.add("theme-noselect")
+        await chrome.storage.sync.set({ theme: "dark" })
+    }
     themeOptions.append(dark)
 
     var button = document.createElement("button")
     button.textContent = "Continue"
     button.onclick = messagesPage
     center.appendChild(button)
-
-    
-
-
 }
 
 function createCenter() {
