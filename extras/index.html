@@ -45,6 +45,7 @@
     body {
       margin: 0em;
       font-family: "Roboto", sans-serif;
+      background-color: var(--background);
     }
 
     .switch {
@@ -64,7 +65,7 @@
       padding: 0.1vw;
       height: 2rem;
       margin-left: 0.5vw;
-      background-color: #ff9f00;
+      background-color: var(--theme);
       border-radius: 1rem;
       outline: none;
       border: 0px;
@@ -72,8 +73,8 @@
     }
 
     .feature input {
-      color: black;
-      background-color: rgb(228, 228, 228);
+      color: var(--primary-color);
+      background-color: var(--box);
       padding-left: 1rem !important;
     }
     .feature button {
@@ -86,7 +87,7 @@
     }
     .feature a {
   cursor: pointer;
-  color: #ff9f00 !important;
+  color: var(--theme) !important;
 }
     .section1 {
       border: 0px solid black;
@@ -146,7 +147,7 @@
       height: 45px;
       width: 100%;
       position: fixed;
-      background: white;
+      background: var(--background);
       top: 0;
       padding-top: 0.5em;
       padding-bottom: 0.5em;
@@ -161,7 +162,7 @@
       height: 21px;
       width: 200px;
       border: none;
-      background: #eeeeee;
+      background: var(--searchbar-bg);
       outline: none;
       vertical-align: middle;
       position: initial;
@@ -174,15 +175,15 @@
       width: 45px;
       height: 45px;
       border: none;
-      background: #eeeeee;
+      background: var(--searchbar-bg);
       outline: none;
-      background-image: url("https://cdn.glitch.global/0f8f769f-292b-4786-9a1c-54f5d051001b/searchiconImage24px.svg?v=1662106223454");
+      background-image: var(--searchbar-search);
       background-position: 47% 46%;
       background-size: 20px 20px;
       background-repeat: no-repeat;
       top: 1px;
       position: relative;
-      left: -1px;
+      left: 0px;
     }
     .searchbaricon {
       border-radius: var(--radius) 0px 0px var(--radius);
@@ -190,7 +191,7 @@
       width: 45px;
       height: 45px;
       border: none;
-      background: #eeeeee;
+      background: var(--searchbar-bg);
       outline: none;
       background-image: url("https://cdn.glitch.global/0f8f769f-292b-4786-9a1c-54f5d051001b/scratchtools24.svg?v=1662105850729");
       background-position: 80% 50%;
@@ -239,13 +240,14 @@
       width: 360px;
       display: block;
       width: 90%;
-      background-color: #eeeeee75;
+      background-color: var(--feature-bg);
       padding: .8rem !important;
       border-radius: .25rem;
       float: left;
       margin-left: 0px !important;
       padding-left: 1.5rem !important;
       padding-right: 1.5rem !important;
+      color: var(--primary-color)
     }
     .feature h3[style="font-size: 1.5em;"] {
       font-weight: bold;
@@ -255,10 +257,10 @@
     }
     .feature h3[style="margin-top: -20px; width: 250px;"] {
       margin-left: 0em;
-      color: #00000077;
+      color: var(--primary-color);
     }
     .feature span {
-      color: #00000077;
+      color: var(--primary-color);
     }
     .feature .switch {
       float: right;
@@ -288,7 +290,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: #cccccc;
+      background-color: var(--slider-bg);
       -webkit-transition: 0.2s;
       transition: 0.2s;
     }
@@ -306,7 +308,7 @@
     }
 
     input:checked + .slider {
-      background-color: #ff9f00;
+      background-color: var(--theme);
     }
 
     input:checked + .slider:before {
@@ -323,198 +325,11 @@
     .slider.round:before {
       border-radius: 50%;
     }
-    /*
-@media (max-width:1211px) { 
-    .section2{
-  border:0px solid black;
-  min-height: 100% !important;
-  height:100vh;
-  margin-left:0em;
-  min-width:0px;
-  max-width:100%;
-      width:500px;
-  overflow:auto;
-  float:left;
-}
-}
-
-@media (max-width:900px) { 
-    .section2{
-  border:0px solid black;
-  min-height: 100% !important;
-  height:100vh;
-  margin-left:0em;
-  min-width:0px;
-  max-width:100%;
-      width:100px;
-  overflow:auto;
-  float:left;
-}
-}*/
-
-    * {
-      font-family: "Space Grotesk", sans-serif;
-    }
-
-    .warning {
-      margin-left: 0.1rem;
-      background-color: #ff9f00;
-      padding: 0.4rem;
-      border-radius: 0.2rem;
-      border: 4px solid rgba(255, 157, 0, 0.5);
-      width: 250px;
-      font-family: "Space Grotesk", sans-serif;
-    }
-
-    .warning.disabled {
-      background-color: #ff006a;
-      color: white;
-      border: 4px solid #ff006a50;
-    }
-
-    .creditNames a:hover {
-      text-decoration: none;
-      color: #ff9f00;
-    }
-
-    .creditNames * {
-      color: #00000077;
-    }
-
-    .eastereggFeature {
-      display: none;
-    }
 
     .sticon {
       float: left;
     }
   </style>
-  <script src="/extras/popup.js"></script>
+  <script src="/extras/popup/popup.js"></script>
   <script src="/extras/blocked.js"></script>
-  <style disabled="true" class="easterEgg"></style>
-  <style>
-    .beta {
-      background-color: #f2420c;
-      border-radius: 0.4rem;
-      display: inline-block;
-      padding: 0.35rem;
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 0.8rem;
-      transition: box-shadow 0.3s;
-      cursor: default;
-    }
-
-    .beta:hover {
-      box-shadow: 3px 3px #f2420c80;
-    }
-
-    .betatab {
-      color: #f2420c;
-    }
-
-    .easter {
-      background-color: #f20cd3;
-      border-radius: 0.4rem;
-      display: inline-block;
-      padding: 0.35rem;
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 0.8rem;
-      transition: box-shadow 0.3s;
-      cursor: default;
-    }
-
-    .easter:hover {
-      box-shadow: 3px 3px #f20cd380;
-    }
-
-    .eastertab {
-      color: #f20cd3;
-    }
-
-    .recommended {
-      background-color: #f2ad0c;
-      border-radius: 0.4rem;
-      display: inline-block;
-      padding: 0.35rem;
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 0.8rem;
-      transition: box-shadow 0.3s;
-      cursor: default;
-    }
-
-    .recommended:hover {
-      box-shadow: 3px 3px #f2ad0c80;
-    }
-
-    .recommendedtab {
-      color: #f2ad0c;
-    }
-
-    .tabtype {
-      display: block;
-      background-color: #1b2126;
-      outline: none;
-      border: 0px;
-      font-size: 200%;
-      font-family: "Space Grotesk", sans-serif;
-      float: left;
-    }
-
-    .settingstab {
-      cursor: pointer;
-      border-radius: 0.4rem;
-      display: inline-block;
-      padding: 0.35rem;
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 0.8rem;
-    }
-
-    .new {
-      background-color: #0c5df2;
-      border-radius: 0.4rem;
-      display: inline-block;
-      padding: 0.35rem;
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 0.8rem;
-      transition: box-shadow 0.3s;
-      cursor: default;
-    }
-
-    .new:hover {
-      box-shadow: 3px 3px #0c5df280;
-    }
-
-    .newtab {
-      color: #0c5df2;
-    }
-
-    .featured {
-      background-color: #700cf2;
-      border-radius: 0.4rem;
-      display: inline-block;
-      padding: 0.35rem;
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 0.8rem;
-      transition: box-shadow 0.3s;
-      cursor: default;
-    }
-
-    .featured:hover {
-      box-shadow: 3px 3px #700cf280;
-    }
-
-    .featuredtab {
-      color: #700cf2;
-    }
-
-    .tag {
-      margin-left: 0.4rem;
-    }
-
-    .tags {
-      position: relative;
-      float: right;
-      top: -3rem;
-    }
-  </style>
 </html>

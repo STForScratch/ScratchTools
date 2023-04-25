@@ -1,3 +1,17 @@
+chrome.storage.sync.get("theme", function (obj) {
+  var theme = obj.theme
+
+  if (theme == "light"){
+    document.head.innerHTML += "<link rel='stylesheet' href='/extras/popup/light.css'>"
+  }else if (theme == "dark"){
+    document.head.innerHTML += "<link rel='stylesheet' href='/extras/popup/dark.css'>"
+  }else{
+    document.head.innerHTML += "<link rel='stylesheet' href='/extras/popup/light.css'>" // default theme
+    console.error(console.log("ScratchTools:"), " Theme not found. Defaulting to light theme.")
+  }
+});
+
+
 document.querySelector(".searchbar").placeholder =
   chrome.i18n.getMessage("search") || "search";
 
