@@ -70,9 +70,7 @@ a:hover{
 
 .feature {
   margin: 2em;
-  margin-top: 3rem;
-  margin: 2em;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   background: var(--feature-bg);
   border-radius: 10px;
   padding: 17px;
