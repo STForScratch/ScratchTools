@@ -1,21 +1,27 @@
 {
   "NOTE": "THERE IS NO NEED TO UPDATE THIS YOURSELF, IT WILL BE UPDATED WHEN RELEASED.",
-  "version": "2.26.0",
+  "version": "2.27.0",
   "new": [
-    "Creator Badges.",
-    "Colored Shadows."
+    "Stats percentages feature.",
+    "Dark mode on settings page.",
+    "Dark mode options during onboarding",
+    "Mark unlisted projects on My Stuff page.",
+    "View link to unlisted projects from project page.",
+    "Individual feature pages."
   ],
   "enhanced": [
-    "Generate data codes for feature sets.",
-    "Userstyle compatibility.",
+    "Better clone counter.",
+    "Improve unlisted projects feature.",
     "Resources for features.",
-    "Individual feature pages.",
-    "Update Polish translations."
+    "Update Polish translations.",
+    "Change onboarding colors.",
+    "More modal usage."
   ],
   "fixed": [
-    "Remove old translation strings.",
-    "Fix nicknames feature.",
-    "Background JavaScript error fix.",
-    "Fix width on popup titles."
+    "Fix minor popup bugs.",
+    "Remove old English translation data.",
+    "Change font system.",
+    "Fix bugs with project title above stage.",
+    "Remove opacity slider (temporarily)."
   ]
 }
