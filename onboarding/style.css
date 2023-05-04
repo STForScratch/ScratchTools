@@ -27,7 +27,7 @@ body {
 
 button {
     background-color: white;
-    color: #ff9f00;
+    color: #3FA9F5;
     min-width: 10rem;
     font-family: "Space Grotesk", sans-serif;
     padding: .5rem;
@@ -54,7 +54,7 @@ button:hover {
     margin: 1rem;
     border-radius: .5rem;
     opacity: .6;
-    border: 3px solid #ff9f0000;
+    border: 3px solid #3FA9F500;
     position: relative;
     top: 0px;
     transition: opacity .3s, border .3s, top .3s;
@@ -82,7 +82,7 @@ button:hover {
 
 .feature.enabled {
     opacity: 1;
-    border: 3px solid #ff9f00;
+    border: 3px solid #3FA9F5;
 }
 
 .center-perfectly {
@@ -99,7 +99,7 @@ button:hover {
     border:3px solid #456EFF;
   }
   .theme-noselect{
-    border:3px solid #ff9f00;
+    border:3px solid #3FA9F5;
   }
   .theme-circle{
     height:50px; 

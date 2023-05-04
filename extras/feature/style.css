@@ -26,7 +26,7 @@ p {
 }
 
 button {
-  background-color: #ff9f00;
+  background-color: #3FA9F5;
   color: white;
   min-width: 10rem;
   font-family: "Space Grotesk", sans-serif;
@@ -53,7 +53,7 @@ button:hover {
 
 .credits a {
   text-decoration: none;
-  color: #ff9f00;
+  color: #3FA9F5;
 }
 
 input {
