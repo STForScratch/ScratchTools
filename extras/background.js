@@ -61,10 +61,10 @@ chrome.runtime.onInstalled.addListener(async function (object) {
       );
       var data = await response.json();
       chrome.action.setBadgeText({ text: data.msg_count.toString() });
-      chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
+      chrome.action.setBadgeBackgroundColor({ color: "#3FA9F5" });
     } catch (err) {
       chrome.action.setBadgeText({ text: "?" });
-      chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
+      chrome.action.setBadgeBackgroundColor({ color: "#3FA9F5" });
     }
   } else {
     chrome.action.setBadgeText({ text: "" });
@@ -126,7 +126,7 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
       ScratchTools.console.error = function (text) {
         var styleArray = [
           "padding: 0.1rem",
-          "background-color: #ff9f00",
+          "background-color: #3FA9F5",
           "border-radius: 0.2rem",
           "color: black",
         ];
@@ -457,10 +457,10 @@ chrome.alarms.onAlarm.addListener(async function () {
       );
       var data = await response.json();
       chrome.action.setBadgeText({ text: data.msg_count.toString() });
-      chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
+      chrome.action.setBadgeBackgroundColor({ color: "#3FA9F5" });
     } catch (err) {
       chrome.action.setBadgeText({ text: "?" });
-      chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
+      chrome.action.setBadgeBackgroundColor({ color: "#3FA9F5" });
     }
   } else {
     chrome.action.setBadgeText({ text: "" });

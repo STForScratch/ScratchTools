@@ -2,7 +2,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --theme: #ff9f00;
+    --theme: #3FA9F5;
     --background: #3f3f3f;
     --primary-color: white;
     --secondary-color: #ffffff77;
@@ -20,7 +20,7 @@
 }
 @media (prefers-color-scheme: light) {
   :root {
-    --theme: #ff9f00;
+    --theme: #3FA9F5;
     --background: white;
     --primary-color: black;
     --secondary-color: #00000077;
