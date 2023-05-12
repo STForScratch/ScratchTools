@@ -173,11 +173,10 @@ div.feature {
 }
 
 .better-bugs > div > div {
-  transition: color 0.3s, background-image 0.3s;
+  transition: background-image 0.3s;
 }
 
 .better-bugs > div > div:hover {
-  color: black;
   background-image: var(--gradient) !important;
 }
 
@@ -202,25 +201,34 @@ div.feature {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 .dev-btn {
-    background-color: #3fa9f5;
-    color: white;
-    min-width: 10rem;
-    font-family: "Space Grotesk", sans-serif;
-    padding: 0.5rem;
-    outline: none;
-    border: 0px;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    position: relative;
-    top: 0px;
-    transition: top .3s;
-    font-weight: bold;
+  background-color: #3fa9f5;
+  color: white;
+  min-width: 10rem;
+  font-family: "Space Grotesk", sans-serif;
+  padding: 0.5rem;
+  outline: none;
+  border: 0px;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  position: relative;
+  top: 0px;
+  transition: top 0.3s;
+  font-weight: bold;
 }
 
 .dev-btn:hover {
-    top: .25rem;
+  top: 0.25rem;
+}
+
+.better-bugs::-webkit-scrollbar {
+  display: none;
+}
+
+.better-bugs {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
