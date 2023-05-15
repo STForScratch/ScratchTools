@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 body {
   padding: 3rem;
   padding-top: 20rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .banner {
@@ -29,7 +29,7 @@ button {
   background-color: #ff9f00;
   color: white;
   min-width: 10rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   padding: 0.5rem;
   outline: none;
   border: 0px;
@@ -68,5 +68,5 @@ input {
   background-color: rgb(228, 228, 228);
   padding-left: 1rem !important;
   padding: 0.1vw;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
 }

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 .center-perfectly {
   margin: 0;
@@ -18,7 +18,7 @@ body {
   background-repeat: no-repeat;
   height: 100vh;
   overflow: hidden;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .big {
@@ -29,7 +29,7 @@ button {
     background-color: white;
     color: #ff9f00;
     min-width: 10rem;
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Inter", sans-serif;
     padding: .5rem;
     outline: none;
     border: 0px;

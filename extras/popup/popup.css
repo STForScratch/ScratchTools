@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -39,7 +39,7 @@
 html {
   --radius: 12px;
   width: 400px;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   height: 500px;
 }
 body {

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 :root {
   --gradient: linear-gradient(45deg, #ff9f00, #ffad42);
@@ -15,7 +15,7 @@
 
 body {
   overflow-x: hidden;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   color: white;
   text-align: center;
   background-color: #3f3f3f !important;
@@ -208,7 +208,7 @@ div.feature {
   background-color: #3fa9f5;
   color: white;
   min-width: 10rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   padding: 0.5rem;
   outline: none;
   border: 0px;

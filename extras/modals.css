@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 .st-modal-blur-bg {
   backdrop-filter: blur(5px) brightness(0.5);
@@ -27,7 +27,7 @@
 }
 
 .st-modal * {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   color: black;
 }
 

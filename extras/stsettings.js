@@ -52,7 +52,7 @@ l2.rel = "preconnect";
 l2.href = "https://fonts.gstatic.com";
 document.head.appendChild(l2);
 var l3 = document.createElement("link");
-l3.href = "https://fonts.googleapis.com/css2?family=Roboto&display=swap";
+l3.href = "https://fonts.googleapis.com/css2?family=Inter&display=swap";
 l3.rel = "stylesheet";
 document.head.appendChild(l3);
 
