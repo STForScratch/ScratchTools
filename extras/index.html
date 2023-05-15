@@ -3,7 +3,7 @@
   <head>
     <title>Settings - ScratchTools</title>
     <link rel="icon" href="/extras/icons/icon128.png" />
-    <link rel="stylesheet" href="/extras/modals.css">
+    <link rel="stylesheet" href="/extras/modals.css" />
     <script src="/extras/popup/popup.js" defer></script>
   </head>
   <body>
@@ -11,19 +11,27 @@
     <div class="navbar">
       <div class="sticon"></div>
       <span></span>
-      <div style="float: left; margin-left: 1em">
-        <input class="searchbar" placeholder="search" /><input
-          class="searchbarbutton"
-          value=""
-          type="submit"
-        />
-      </div>
+      <div style="float: left; margin-left: 1em"></div>
       <button class="theme" id="toggletheme" title="Toggle Theme"></button>
     </div>
     <div class="section1">
       <hr style="border: none; height: 70px" />
       <div class="sectionwrap">
-        <div class="news"><div class="note blue"><h3>ScratchTools is Going Multilingual!</h3><span>ScratchTools is becoming available in even more languages! Our beta version supports Polish and Russian, and more languages such as Spanish, Turkish, German and Japanese are coming soon! If you know a language other than English, you can help translate and get credit for it <a href="https://explore.transifex.com/scratchtools/scratchtools/">here</a>!</span></div></div>
+        <div class="news">
+          <div class="note blue">
+            <h3>ScratchTools is Going Multilingual!</h3>
+            <span
+              >ScratchTools is becoming available in even more languages! Our
+              beta version supports Polish and Russian, and more languages such
+              as Spanish, Turkish, German and Japanese are coming soon! If you
+              know a language other than English, you can help translate and get
+              credit for it
+              <a href="https://explore.transifex.com/scratchtools/scratchtools/"
+                >here</a
+              >!</span
+            >
+          </div>
+        </div>
         <br />
         <div class="note purple blocked" style="display: none">
           <h3>Blocked Users</h3>
@@ -31,8 +39,12 @@
       </div>
     </div>
     <div class="section2" id="section2">
+      <input class="searchbar" placeholder="search" /><input
+        class="searchbarbutton"
+        value=""
+        type="submit"
+      />
       <div class="sectionwrap">
-        <hr style="border: none; height: 70px" />
         <div class="enabled"></div>
         <div class="settings"></div>
       </div>
@@ -60,7 +72,6 @@
       margin-left: 0px !important;
     }
 
-
     .feature button {
       padding: 0.1vw;
       height: 2rem;
@@ -74,12 +85,12 @@
 
     .feature h3 {
       font-size: 1.25rem !important;
-      margin-bottom: -.5rem;
+      margin-bottom: -0.5rem;
     }
 
     .feature p {
-      opacity: .5;
-      font-size: .8rem;
+      opacity: 0.5;
+      font-size: 0.8rem;
     }
 
     .feature input {
@@ -88,8 +99,8 @@
       margin-left: 0.5vw;
       border-radius: 1rem;
       outline: none;
-      padding-left:1rem;
-      margin-bottom: .5rem;
+      padding-left: 1rem;
+      margin-bottom: 0.5rem;
       border: 0px;
       color: white;
       background-color: var(--feature-input-bg);
@@ -104,9 +115,9 @@
       text-decoration: none;
     }
     .feature a {
-  cursor: pointer;
-  color: var(--theme) !important;
-}
+      cursor: pointer;
+      color: var(--theme) !important;
+    }
     .section1 {
       border: 0px solid black;
       min-height: 100% !important;
@@ -136,11 +147,11 @@
       scrollbar-width: none; /* Firefox */
     }
     .sticon {
-      width: 45px;
-      height: 45px;
-      background-image: url("https://cdn.glitch.global/0f8f769f-292b-4786-9a1c-54f5d051001b/scratchtools24.svg?v=1662105850729");
+      width: 2.5rem;
+      height: 2.5rem;
+      background-image: url("chrome-extension://mpffcbinpefmefjhclpmnpgjflbhhpjf/extras/icons/icontrans128.png");
       background-position: 50% 50%;
-      background-size: 40px 40px;
+      background-size: 2.5rem 2.5rem;
       background-repeat: no-repeat;
       display: inline-block;
     }
@@ -160,37 +171,49 @@
       font-size: 1rem;
       font-weight: bold;
     }
-    .theme{
-      height: 45px;
-      width: 45px;
+    .theme {
+      height: 2.5rem;
+      width: 2.5rem;
       background: var(--theme-icon);
       background-color: var(--searchbar-bg);
-      border-radius:10px;
-      border:none;
-      background-size: 45px 45px;
-      cursor:pointer;
-      float:right;
-      margin-right: 14px;
+      border-radius: .5rem;
+      border: none;
+      background-size: 2.5rem 2.5rem;
+      cursor: pointer;
+      float: right;
+      margin-right: 4rem;
     }
     .navbar {
       display: block;
-      height: 45px;
-      width: 100%;
       position: fixed;
-      background: var(--background);
+      background: linear-gradient(45deg, #ff9f00, #ffad42);
       top: 0;
       padding-top: 0.5em;
       padding-bottom: 0.5em;
       margin-left: 0.5em;
       z-index: 2;
       border: 0px solid black;
+      position: fixed;
+      left: 0px;
+      top: 0px;
+      width: 100vw;
+      margin: 0px;
+      padding-left: 2rem;
+    }
+    .settings-title {
+      font-size: 1.2rem;
+      margin-left: .8rem;
+      font-weight: 600;
+      color: white;
+      position: relative;
+      top: .5rem;
     }
     .searchbar {
       border-radius: 10px 0px 0px 10px;
-      padding: 12px;
-      padding-left: 20px;
-      height: 21px;
-      width: 200px;
+      padding: .5rem;
+      height: 1.75rem;
+      padding-left: 1rem;
+      width: calc(80% - 8.25rem);
       border: none;
       background: var(--searchbar-bg);
       outline: none;
@@ -198,13 +221,18 @@
       position: initial;
       margin-bottom: 2.75em;
       color: var(--primary-color);
+      margin-bottom: 0px;
+      margin-top: 7rem;
+      margin-left: 2rem;
+      position: relative;
+      bottom: -1rem;
     }
 
     .searchbarbutton {
       border-radius: 0px var(--radius) var(--radius) 0px;
       padding: 12px;
-      width: 45px;
-      height: 45px;
+      width: 2.75rem;
+      height: 2.75rem;
       border: none;
       background: var(--searchbar-bg);
       outline: none;
@@ -212,7 +240,7 @@
       background-position: 47% 46%;
       background-size: 20px 20px;
       background-repeat: no-repeat;
-      top: 1px;
+      top: 5.675rem;
       position: relative;
       left: 0px;
     }
@@ -270,18 +298,18 @@
       line-height: 25px;
       display: inline-block;
       width: calc(50% - 4rem);
-      margin: .5rem;
+      margin: 0.5rem;
       background-color: var(--feature-bg);
       margin-left: 0px !important;
       padding-left: 1.5rem !important;
       padding-right: 1.5rem !important;
       color: var(--primary-color);
       border-radius: 10px;
-    padding: 17px;
-    padding-top: 5px;
-    height: 13rem;
-    overflow-y: scroll;
-    margin-bottom: 0px;
+      padding: 17px;
+      padding-top: 5px;
+      height: 13rem;
+      overflow-y: scroll;
+      margin-bottom: 0px;
     }
 
     .feature h3 {
