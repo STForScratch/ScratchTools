@@ -550,18 +550,6 @@
     "type": ["Website"]
   },
   {
-    "title": "Rickroll",
-    "description": "You won't know until you find out... there's a button on project pages.",
-    "credits": ["rgantzos", "TimMcCool"],
-    "urls": [
-      "https://scratch.mit.edu/users/rgantzos/",
-      "https://scratch.mit.edu/users/TimMcCool/"
-    ],
-    "file": "rickroll",
-    "tags": ["Egg"],
-    "type": ["Website"]
-  },
-  {
     "title": "Custom Website Font",
     "description": "On the Scratch website, you can set the font to whatever font you want, as long as it is on the Google Fonts website. This is case-sensitive.",
     "credits": ["Scratchfangs", "devxan", "rgantzos"],
@@ -1145,14 +1133,5 @@
     "file": "focus-mode",
     "tags": [],
     "type": ["Website", "Theme"]
-  },
-  {
-    "title": "Terrible Feature",
-    "description": "Do not enable.",
-    "credits": ["misty"],
-    "urls": ["https://github.com/mistysloth"],
-    "file": "terrible",
-    "tags": ["Egg"],
-    "type": ["Website"]
   }
 ]
