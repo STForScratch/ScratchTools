@@ -23,7 +23,7 @@
     <div class="section1">
       <hr style="border: none; height: 70px" />
       <div class="sectionwrap">
-        <div class="news"><div class="note blue"><h3>ScratchTools is Going Multilingual!</h3><span>ScratchTools is becoming available in even more languages! Our beta version supports Polish and Russian, and more languages such as Spanish, Turkish, German and Japanese are coming soon! If you know a language other than English, you can help translate and get credit for it <a href="https://explore.transifex.com/scratchtools/scratchtools/">here</a>!</span></div><div class="note yellow"><h3>v2.23.0 is Now Out!</h3><span>This new version adds multiple really cool features, including the ability to generate links for your own unshared projects!</span></div></div>
+        <div class="news"><div class="note blue"><h3>ScratchTools is Going Multilingual!</h3><span>ScratchTools is becoming available in even more languages! Our beta version supports Polish and Russian, and more languages such as Spanish, Turkish, German and Japanese are coming soon! If you know a language other than English, you can help translate and get credit for it <a href="https://explore.transifex.com/scratchtools/scratchtools/">here</a>!</span></div></div>
         <br />
         <div class="note purple blocked" style="display: none">
           <h3>Blocked Users</h3>
@@ -52,7 +52,6 @@
 
     .switch {
       position: relative;
-      top: -1rem;
       right: -1rem;
     }
 
@@ -71,6 +70,16 @@
       outline: none;
       border: 0px;
       color: white;
+    }
+
+    .feature h3 {
+      font-size: 1.25rem !important;
+      margin-bottom: -.5rem;
+    }
+
+    .feature p {
+      opacity: .5;
+      font-size: .8rem;
     }
 
     .feature input {
@@ -224,13 +233,13 @@
       --radius: 12px;
     }
     .sectionwrap {
-      padding: 2em;
+      padding: 2rem;
       padding-right: 2.5em;
     }
     .section1 .note {
       color: rgba(0, 0, 0, 0.8);
       padding: 2em;
-      border-radius: 15px;
+      border-radius: 10px;
       margin-top: 1rem;
     }
     .section1 .note.yellow {
@@ -259,18 +268,26 @@
       margin-top: 2em;
       border: 0px solid black;
       line-height: 25px;
-      width: 360px;
-      display: block;
-      width: 90%;
+      display: inline-block;
+      width: calc(50% - 4rem);
+      margin: .5rem;
       background-color: var(--feature-bg);
-      padding: .8rem !important;
-      border-radius: .25rem;
-      float: left;
       margin-left: 0px !important;
       padding-left: 1.5rem !important;
       padding-right: 1.5rem !important;
-      color: var(--primary-color)
+      color: var(--primary-color);
+      border-radius: 10px;
+    padding: 17px;
+    padding-top: 5px;
+    height: 13rem;
+    overflow-y: scroll;
+    margin-bottom: 0px;
     }
+
+    .feature h3 {
+      width: 80%;
+    }
+
     .feature h3[style="font-size: 1.5em;"] {
       font-weight: bold;
     }
@@ -350,6 +367,10 @@
 
     .sticon {
       float: left;
+    }
+
+    .feature > span {
+      color: var(--secondary-color);
     }
   </style>
   <script src="/extras/blocked.js"></script>
