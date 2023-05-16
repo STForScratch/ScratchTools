@@ -140,10 +140,10 @@ border-bottom: 2px dotted gray;
       if (
         ScratchTools.Scratch.blockly.getMainWorkspace().undoStack_.length === 0
       ) {
-        var span = document.createElement("span");
-        span.innerHTML = "<i>Empty</i>";
-        div.querySelector(".content").appendChild(span);
-        span.style.opacity = "0.5";
+        let i = document.createElement("i");
+        i.textContent = "Empty";
+        div.querySelector(".content").appendChild(i);
+        i.style.opacity = "0.5";
       }
     }
   }

@@ -14,7 +14,7 @@ if (sf == undefined) {
         comment = comment.replace(/\</g, "&lt;");
         comment = comment.replace(/\>/g, "&gt;");
 
-        messages[i].innerHTML = sf.parse(comment);
+        messages[i].textContent = sf.parse(comment);
       }
     }
   }, 500);
@@ -359,7 +359,7 @@ var smod = {
 
     if (document.body.children[0].id == "pagewrapper") {
       var popupContent = document.createElement("div");
-      popupContent.innerHTML = obj.text;
+      popupContent.textContent = obj.text;
       this.dialog2(obj.title, popupContent);
     } else {
       this.dialog3(obj.title, obj.text);

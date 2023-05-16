@@ -14,11 +14,9 @@ function addKeyPressed() {
 }
 
 function addKeyPressedEditor() {
-  var div = document.createElement("div");
-  div.className = "menu-bar_file-group_1_CHX scratchtools navlastkey";
-  div.innerHTML = `
-<span>No Key Pressed</span>
-`;
+  var span = document.createElement("span");
+  span.className = "menu-bar_file-group_1_CHX scratchtools navlastkey";
+  span.textContent = "No Key Pressed";
   if (document.querySelector("div.scratchtools.navlastkey") === null) {
     document.querySelector("div.gui").childNodes.forEach(function (el) {
       if (el.className.startsWith("gui_menu-bar-position")) {

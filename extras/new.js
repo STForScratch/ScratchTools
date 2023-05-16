@@ -18,7 +18,7 @@ function update(updateVersion, updateDescription) {
     title.textContent = "What's New in ScratchTools " + updateVersion;
     title.style.color = "#575e75";
     var p = document.createElement("p");
-    p.innerHTML = updateDescription;
+    p.textContent = updateDescription;
     p.style.color = "#575e75";
     boxContent.appendChild(p);
     boxHeader.appendChild(title);

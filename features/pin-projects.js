@@ -12,9 +12,9 @@ if (window.location.href.startsWith("https://scratch.mit.edu/mystuff")) {
         'You pinned this project as part of the "Pin Projects to My Stuff" ScratchTools feature. Now, you can access it with just the click of a button.'
       );
       box.className = "box scratchtools";
-      var a = document.createElement("a");
-      a.className = "button small grey";
-      a.onclick = async function () {
+      const btn = document.createElement("button");
+      btn.className = "button small grey";
+      btn.onclick = async function () {
         if (confirm("Are you sure you want to unpin this project?")) {
           await chrome.storage.sync.set({
             pinned: null,
@@ -23,11 +23,11 @@ if (window.location.href.startsWith("https://scratch.mit.edu/mystuff")) {
           alert("Unpinned project.");
         }
       };
-      a.innerHTML = `<span class="text">Unpin</span>`;
-      a.style.position = "absolute";
-      a.style.right = "15px";
-      a.style.top = "6px";
-      box.firstChild.appendChild(a);
+      btn.textContent = "Unpin";
+      btn.style.position = "absolute";
+      btn.style.right = "15px";
+      btn.style.top = "6px";
+      box.firstChild.appendChild(btn);
       if (document.querySelector("div.box.scratchtools") === null) {
         document.querySelector("div.container#content").prepend(box);
       }

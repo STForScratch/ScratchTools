@@ -5,7 +5,7 @@ ScratchTools.waitForElements(
       if (el.firstChild.firstChild.textContent === "New") {
         var li = document.createElement("li");
         li.className = el.lastChild.className + " scratchtoolsOpenJs";
-        li.innerHTML = "<span>Open as JavaScript</span>";
+        li.textContent = "Open as JavaScript";
         li.addEventListener("click", async function () {
           if (confirm("Are you sure? Make sure you save your project first!")) {
             ScratchTools.modals.create({

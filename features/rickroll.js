@@ -20,7 +20,7 @@ var addRickrollButton = function (mutationList, observer) {
                 }
                 `;
         document.body.appendChild(style);
-        btn.innerHTML = "<span>RR</span>";
+        btn.textContent = "RR";
         btn.className = "button action-button scratchtools-rickroll-button";
         btn.onclick = function () {
           ScratchTools.Scratch.vm.downloadProjectId(526557379);

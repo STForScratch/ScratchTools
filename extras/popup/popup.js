@@ -1,20 +1,10 @@
 chrome.storage.sync.get("theme", function (obj) {
   var theme = obj.theme;
-
-  if (theme == "light") {
-    document.head.innerHTML +=
-      "<link rel='stylesheet' href='/extras/popup/light.css' id='themecss'>";
-  } else if (theme == "dark") {
-    document.head.innerHTML +=
-      "<link rel='stylesheet' href='/extras/popup/dark.css' id='themecss'>";
-  } else {
-    document.head.innerHTML +=
-      "<link rel='stylesheet' href='/extras/popup/light.css' id='themecss'>"; // default theme
-    console.error(
-      console.log("ScratchTools:"),
-      " Theme not found. Defaulting to light theme."
-    );
-  }
+  const themeLink = document.createElement("link");
+  themeLink.setAttribute("rel", "stylesheet");
+  themeLink.setAttribute("href", `/extras/popup/${theme}.css`);
+  themeLink.id = "themecss";
+  document.head.appendChild(themeLink);
 });
 
 if (document.querySelector(".more-settings-btn")) {
@@ -31,8 +21,11 @@ if (document.querySelector(".more-settings-btn")) {
 
 var version = chrome.runtime.getManifest().version_name;
 if (version.includes("beta")) {
-  document.head.innerHTML +=
-    "<link rel='stylesheet' href='/extras/popup/beta.css' id='betacss'>";
+  const betaCSS = document.createElement("link");
+  betaCSS.setAttribute("rel", "stylesheet");
+  betaCSS.setAttribute("href", "/extras/popup/beta.css");
+  betaCSS.id = "betacss";
+  document.head.appendChild(betaCSS);
   if (document.head.id == "Popup") {
     document.getElementById("minilogo").src =
       "/extras/icons/mini-logo-beta.svg";

@@ -65,7 +65,7 @@ ScratchTools.createModal = function (titleText, description, buttons) {
     title.textContent = titleText;
     title.style.color = "#575e75";
     var p = document.createElement("p");
-    p.innerHTML = description;
+    p.textContent = description;
     p.style.color = "#575e75";
     boxContent.appendChild(p);
     boxHeader.appendChild(title);

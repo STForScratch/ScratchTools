@@ -11,7 +11,7 @@ function checkForContextMenu() {
     div.role = "menuitem";
     div.tabindex = "-1";
     div.arialDisabled = "false";
-    div.innerHTML = `<span>delete all</span>`;
+    div.textContent = "delete all";
     document
       .querySelector("nav.react-contextmenu.react-contextmenu--visible")
       .appendChild(div);
