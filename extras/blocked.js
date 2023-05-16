@@ -19,14 +19,14 @@ function getBlocked() {
         };
         document.querySelector("div.blocked").appendChild(a);
         a.style.cursor = "pointer";
-        a.style.fontFamily = "'Space Grotesk', sans-serif";
+        a.style.fontFamily = "'Inter', sans-serif";
         if (i !== all.length - 1) {
           var a = document.createElement("span");
           a.textContent = ", ";
           a.style.marginRight = "2px";
           document.querySelector("div.blocked").appendChild(a);
           a.style.fontSize = "150%";
-          a.style.fontFamily = "'Space Grotesk', sans-serif";
+          a.style.fontFamily = "'Inter', sans-serif";
         }
       }
     });
@@ -35,7 +35,7 @@ function getBlocked() {
     a.style.marginRight = "2px";
     document.querySelector("div.blocked").appendChild(a);
     a.style.fontSize = "150%";
-    a.style.fontFamily = "'Space Grotesk', sans-serif";
+    a.style.fontFamily = "'Inter', sans-serif";
   });
 }
 

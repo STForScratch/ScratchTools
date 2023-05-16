@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
 
 body {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: #1b2126;
   color: white;
 }
@@ -11,7 +11,7 @@ body {
   border-radius: 0.4rem;
   display: inline-block;
   padding: 0.35rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.8rem;
   transition: box-shadow 0.3s;
   cursor: default;
@@ -30,7 +30,7 @@ body {
   border-radius: 0.4rem;
   display: inline-block;
   padding: 0.35rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.8rem;
   transition: box-shadow 0.3s;
   cursor: default;
@@ -49,7 +49,7 @@ body {
   border-radius: 0.4rem;
   display: inline-block;
   padding: 0.35rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.8rem;
   transition: box-shadow 0.3s;
   cursor: default;
@@ -69,7 +69,7 @@ body {
   outline: none;
   border: 0px;
   font-size: 200%;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   float: left;
 }
 
@@ -78,7 +78,7 @@ body {
   border-radius: 0.4rem;
   display: inline-block;
   padding: 0.35rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.8rem;
 }
 
@@ -87,7 +87,7 @@ body {
   border-radius: 0.4rem;
   display: inline-block;
   padding: 0.35rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.8rem;
   transition: box-shadow 0.3s;
   cursor: default;
@@ -106,7 +106,7 @@ body {
   border-radius: 0.4rem;
   display: inline-block;
   padding: 0.35rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.8rem;
   transition: box-shadow 0.3s;
   cursor: default;
@@ -229,14 +229,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 input {
   background-color: #262e3b;
   width: 90vw;
   height: 10vw;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   outline: none;
   border: 0px;
   color: white;
@@ -248,7 +248,7 @@ input {
 button {
   background-color: #262e3b;
   width: 90vw;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
   outline: none;
   border: 0px;
   color: white;
@@ -322,7 +322,7 @@ h3 {
 }
 
 .message {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .warning {
@@ -332,5 +332,5 @@ h3 {
   border-radius: 0.2rem;
   border: 4px solid rgba(255, 157, 0, 0.5);
   width: 250px;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Inter", sans-serif;
 }

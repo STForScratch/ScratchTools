@@ -1,38 +1,62 @@
 chrome.storage.sync.get("theme", function (obj) {
-  var theme = obj.theme
+  var theme = obj.theme;
 
-  if (theme == "light"){
-    document.head.innerHTML += "<link rel='stylesheet' href='/extras/popup/light.css' id='themecss'>"
-  }else if (theme == "dark"){
-    document.head.innerHTML += "<link rel='stylesheet' href='/extras/popup/dark.css' id='themecss'>"
-  }else{
-    document.head.innerHTML += "<link rel='stylesheet' href='/extras/popup/light.css' id='themecss'>" // default theme
-    console.error(console.log("ScratchTools:"), " Theme not found. Defaulting to light theme.")
+  if (theme == "light") {
+    document.head.innerHTML +=
+      "<link rel='stylesheet' href='/extras/popup/light.css' id='themecss'>";
+  } else if (theme == "dark") {
+    document.head.innerHTML +=
+      "<link rel='stylesheet' href='/extras/popup/dark.css' id='themecss'>";
+  } else {
+    document.head.innerHTML +=
+      "<link rel='stylesheet' href='/extras/popup/light.css' id='themecss'>"; // default theme
+    console.error(
+      console.log("ScratchTools:"),
+      " Theme not found. Defaulting to light theme."
+    );
   }
 });
 
+if (document.querySelector(".more-settings-btn")) {
+  var moreSettingsBtn = document.querySelector(".more-settings-btn");
+  moreSettingsBtn.addEventListener("click", function () {
+    ScratchTools.modals.create({
+      title: "More settings",
+      description:
+        "These are some additional settings that you can use to change other aspects of ScratchTools.",
+        components: [ { content: "Copy Feature Codes", type: "button", callback: returnFeatureCode, additonalClassNames: ["secondary-btn"] } ]
+    });
+  });
+}
+
 var version = chrome.runtime.getManifest().version_name;
 if (version.includes("beta")) {
-  document.head.innerHTML += "<link rel='stylesheet' href='/extras/popup/beta.css' id='betacss'>"
+  document.head.innerHTML +=
+    "<link rel='stylesheet' href='/extras/popup/beta.css' id='betacss'>";
   if (document.head.id == "Popup") {
-    document.getElementById('minilogo').src = "/extras/icons/mini-logo-beta.svg"
-    document.getElementById('popupnote').innerHTML = "Welcome to the beta verison of ScratchTools! This version is not stable and may contain bugs. Please report any bugs you find <a href='https://github.com/STForScratch/ScratchTools/issues' target='_blank'>here</a>."
+    document.getElementById("minilogo").src =
+      "/extras/icons/mini-logo-beta.svg";
+    document.getElementById("popupnote").innerHTML =
+      "Welcome to the beta verison of ScratchTools! This version is not stable and may contain bugs. Please report any bugs you find <a href='https://github.com/STForScratch/ScratchTools/issues' target='_blank'>here</a>.";
   }
 }
 
 document.getElementById("toggletheme").addEventListener("click", toggletheme);
 
-function toggletheme(){
-  var theme = document.getElementById("themecss")
-  if (theme.href.includes("light")){
-    theme.href = "/extras/popup/dark.css"
-    chrome.storage.sync.set({ theme: "dark" })
-  }else if (theme.href.includes("dark")){
-    theme.href = "/extras/popup/light.css"
-    chrome.storage.sync.set({ theme: "light" })
-  }else{
-    theme.href = "/extras/popup/light.css" // default theme
-    console.error(console.log("ScratchTools:"), " Theme not found. Defaulting to light theme.")
+function toggletheme() {
+  var theme = document.getElementById("themecss");
+  if (theme.href.includes("light")) {
+    theme.href = "/extras/popup/dark.css";
+    chrome.storage.sync.set({ theme: "dark" });
+  } else if (theme.href.includes("dark")) {
+    theme.href = "/extras/popup/light.css";
+    chrome.storage.sync.set({ theme: "light" });
+  } else {
+    theme.href = "/extras/popup/light.css"; // default theme
+    console.error(
+      console.log("ScratchTools:"),
+      " Theme not found. Defaulting to light theme."
+    );
   }
 }
 
@@ -64,34 +88,39 @@ if (document.querySelector(".settingsButton")) {
       });
     });
 } else {
-  document.addEventListener("keydown", async function (e) {
+  document.addEventListener("keydown", function (e) {
     if (e.which === 70 && e.altKey) {
-      var featuresData =
-        (await chrome.storage.sync.get("features")).features || "";
-      const data = await (
-        await fetch("https://data.scratchtools.app/create/", {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ features: featuresData }),
-        })
-      ).json();
-      if (data.error) {
-        ScratchTools.modals.create({
-          title: "An error occurred",
-          description: "We were unable to generate a code for your features. They could be corrupt, or the server had an issue."
-        })
-      } else {
-        ScratchTools.modals.create({
-          title: "Saved features",
-          description: "We've converted your feature set into a short code that you can save or use when reporting bugs. You can copy it from below.",
-          components: [{ type: "code", content: data.code }]
-        })
-      }
+      returnFeatureCode();
     }
   });
+}
+
+async function returnFeatureCode() {
+  var featuresData = (await chrome.storage.sync.get("features")).features || "";
+  const data = await (
+    await fetch("https://data.scratchtools.app/create/", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ features: featuresData }),
+    })
+  ).json();
+  if (data.error) {
+    ScratchTools.modals.create({
+      title: "An error occurred",
+      description:
+        "We were unable to generate a code for your features. They could be corrupt, or the server had an issue.",
+    });
+  } else {
+    ScratchTools.modals.create({
+      title: "Saved features",
+      description:
+        "We've converted your feature set into a short code that you can save or use when reporting bugs. You can copy it from below.",
+      components: [{ type: "code", content: data.code }],
+    });
+  }
 }
 
 async function getFeatures() {
@@ -350,11 +379,33 @@ ScratchTools.modals = {
     orangeBar.className = "st-modal-header";
 
     data.components?.forEach(function (component) {
+      var element
       if (component.type === "code") {
         var code = document.createElement("code");
         code.textContent = component.content;
         modal.appendChild(code);
+        element = code
       }
+      if (component.type === "button") {
+        var btn = document.createElement("button");
+        btn.textContent = component.content;
+        if (component.src) {
+        var linkToBtn = document.createElement("a");
+        linkToBtn.href = component.src;
+        linkToBtn.appendChild(btn);
+        modal.appendChild(linkToBtn);
+        } else if (component.callback) {
+          btn.addEventListener("click", component.callback)
+          modal.appendChild(btn)
+        }
+        btn.addEventListener("click", function () {
+          div.remove();
+        });
+        element = btn
+      }
+      component.additonalClassNames?.forEach(function(className) {
+        element.classList.add(className)
+      })
     });
 
     var closeButton = document.createElement("button");
@@ -367,5 +418,6 @@ ScratchTools.modals = {
     div.appendChild(modal);
     modal.prepend(orangeBar);
     document.body.appendChild(div);
+    return modal;
   },
 };
