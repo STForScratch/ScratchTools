@@ -1,6 +1,6 @@
 if (!document.querySelector(".scratchtools-main-clone-counter")) {
   ScratchTools.waitForElements(
-    "div[class^='stage-header_stage-menu-wrapper']",
+    "div[class^='stage-header_stage-size-toggle-group_']",
     function () {
       document
         .querySelector("div[class^='stage-header_stage-size-toggle-group_']")
@@ -45,7 +45,7 @@ if (!document.querySelector(".scratchtools-main-clone-counter")) {
       ).toString();
       counter.textContent = count + " clones";
     } else if (
-      document.querySelector("div[class^='stage-header_stage-menu-wrapper']")
+      document.querySelector("div[class^='stage-header_stage-size-toggle-group_']")
     ) {
       var div = document.createElement("div");
       div.className = "scratchtools-main-clone-counter";
