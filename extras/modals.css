@@ -64,6 +64,7 @@
   top: 0px !important;
   transition: top .15s !important;
   cursor: pointer !important;
+  margin-right: .5rem !important;
 }
 
 .st-modal button:hover {

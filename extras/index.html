@@ -49,6 +49,10 @@
         <div class="settings"></div>
       </div>
     </div>
+    <span class="more-settings-btn"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5917 1.16768C10.9622 -0.389226 8.75797 -0.389226 8.12856 1.16768C7.71313 2.1953 6.49932 2.63709 5.52053 2.11692C4.03762 1.32884 2.34905 2.74572 2.86765 4.34295C3.20995 5.3972 2.5641 6.51585 1.47995 6.74652C-0.162596 7.09602 -0.545364 9.2668 0.878593 10.157C1.81846 10.7446 2.04277 12.0167 1.36054 12.8902C0.326921 14.2138 1.42906 16.1227 3.09208 15.8894C4.18975 15.7353 5.17925 16.5656 5.21816 17.6734C5.27712 19.3516 7.34846 20.1055 8.4724 18.8578C9.21425 18.0342 10.506 18.0342 11.2478 18.8578C12.3718 20.1055 14.4431 19.3516 14.502 17.6734C14.541 16.5656 15.5305 15.7353 16.6281 15.8894C18.2912 16.1227 19.3933 14.2138 18.3597 12.8902C17.6774 12.0167 17.9017 10.7446 18.8416 10.157C20.2656 9.2668 19.8828 7.09602 18.2403 6.74652C17.1561 6.51585 16.5103 5.39719 16.8526 4.34295C17.3712 2.74572 15.6826 1.32884 14.1997 2.11692C13.2209 2.63709 12.0071 2.1953 11.5917 1.16768ZM9.8601 6.31501C7.83465 6.31501 6.19269 7.95697 6.19269 9.98243C6.19269 12.0079 7.83465 13.6498 9.8601 13.6498C11.8856 13.6498 13.5275 12.0079 13.5275 9.98243C13.5275 7.95697 11.8856 6.31501 9.8601 6.31501Z" fill="white"/>
+      </svg>
+       Additional settings</span>
   </body>
 
   <style>
@@ -60,6 +64,25 @@
       margin: 0em;
       font-family: "Inter", sans-serif;
       background-color: var(--background);
+    }
+
+    .more-settings-btn {
+      position: fixed;
+      left: 1rem;
+      bottom: 1rem;
+      color: var(--primary-color);
+      opacity: .75;
+      cursor: pointer;
+    }
+
+    .more-settings-btn svg {
+      height: 1rem;
+      position: relative;
+      top: .2rem;
+    }
+
+    .more-settings-btn path {
+      fill: var(--primary-color) !important;
     }
 
     .switch {
@@ -399,6 +422,11 @@
 
     .feature > span {
       color: var(--secondary-color);
+    }
+
+    button.secondary-btn {
+      background-color: var(--feature-input-bg) !important;
+      color: var(--primary-color) !important;
     }
   </style>
   <script src="/extras/blocked.js"></script>
