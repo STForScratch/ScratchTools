@@ -384,7 +384,7 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
                       link.rel = "stylesheet";
                       link.href = path;
                       link.dataset.feature = feature;
-                      document.head.appendChild(link);
+                      document.head.prepend(link);
                     }
                   });
                 } else {
