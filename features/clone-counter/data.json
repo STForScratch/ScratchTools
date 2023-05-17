@@ -6,7 +6,7 @@
   ],
   "type": ["Website"],
   "tags": ["New", "Featured"],
-  "scripts": ["script.js"],
-  "styles": ["style.css"],
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
   "resources": [{ "name": "clones", "path": "/gobo.svg" }]
 }

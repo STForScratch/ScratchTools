@@ -7,7 +7,7 @@
   "type": ["Website"],
   "tags": ["New", "Featured"],
   "dynamic": true,
-  "styles": ["style.css"],
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
   "resources": [
     { "name": "fav-gray", "path": "/resources/fav-gray.svg" },
     { "name": "fav-yellow", "path": "/resources/fav-yellow.svg" },
