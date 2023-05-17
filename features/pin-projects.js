@@ -71,7 +71,10 @@ if (window.location.href.startsWith("https://scratch.mit.edu/mystuff")) {
     }
   });
 }
-if (window.location.href.startsWith("https://scratch.mit.edu/projects/")) {
+if (window.location.href.startsWith("https://scratch.mit.edu/projects/") &&! 
+window.location.href.endsWith("editor/")&&!
+window.location.href.endsWith("fullscreen/")&&! 
+window.location.href.endsWith("remixtree/")) {
   var page = document.querySelector("div.page");
   if (
     document.querySelector(
@@ -148,6 +151,6 @@ if (window.location.href.startsWith("https://scratch.mit.edu/projects/")) {
       }
     };
     var observer = new MutationObserver(getSpot);
-    observer.observe(page, configure);
+    observer?.observe(page, configure);
   }
 }

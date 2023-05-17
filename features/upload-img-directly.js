@@ -1,17 +1,19 @@
 if (!document.querySelector(".scratchtoolsImgUpload")) {
   var button5 = document.querySelector(".markItUpButton5");
+  var btn5 = document.querySelector(".markItUpButton5 a[accesskey='P']");
   var bb5 = document.createElement("li");
   var img = document.createElement("img");
   img.src = "https://gh.vercte.net/forumoji/resources/forumoji/outbox-tray.png";
   img.alt = "upload image icon";
-  button5.before(bb5);
-  button5.title = "Import Image with link [CTRL+P]";
+  button5?.before(bb5);
+  if (btn5) {btn5.title = "Import image from a link [CTRL+P]";}
   bb5.classList.add("markItUpButton");
   bb5.classList.add("scratchtoolsImgUpload");
   bb5.appendChild(img);
   bb5.style.cursor = "pointer";
+  bb5.style.cursor = "pointer";
   bb5.style.marginRight = "5px";
-  bb5.title = "Upload Image [CTRL + Y]";
+  bb5.title = "Upload Image [CTRL+Y]";
   document.body.addEventListener(
     "keydown",
     function (ev) {

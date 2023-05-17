@@ -11,9 +11,7 @@
 
 var style = document.createElement("style");
 style.innerHTML = `
-.gui_target-wrapper_36Gbz {
-  padding-top: 0.25rem !important;
-}
+
 .sprite-info_row-primary_10JrS {
   margin-bottom: 0 !important;
 }
@@ -21,7 +19,10 @@ style.innerHTML = `
   width: 5rem !important;
 }
 .sprite-info_larger-input_1UEs0 input {
-  width: 3rem !important;
+  width: 2.5rem !important;
+}
+.label_input-group_2vTky{
+    margin-left: 0.3rem; !important;
 }
 .sprite-info_icon-wrapper_3Wbqq {
   width: calc(1.4rem + 2px) !important;
@@ -30,7 +31,10 @@ style.innerHTML = `
 }
 .sprite-info_sprite-info_3EyZh {
   padding: 0.4rem !important;
-  padding-bottom: 0.2rem !important;
+  padding-bottom: 0.1rem !important;
+}
+.sprite-info_radio-wrapper_1OHDS{
+  margin-left: 0.3rem;
 }
 div.sprite-info_row_1om5V:nth-child(1) > div:nth-child(1) > label:nth-child(1) > span:nth-child(1),
 div.sprite-info_row_1om5V:nth-child(1) > div:nth-child(2) > div:nth-child(1),
@@ -53,6 +57,9 @@ div.sprite-info_row_1om5V:nth-child(1) {
 }
 .sprite-selector_scroll-wrapper_3NNnc {
   height: 100% !important;
+}
+.scratchtoolsSpriteCloneCounter{
+ margin-left: 0.3rem;
 }
 `;
 document.body.appendChild(style);
