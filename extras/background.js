@@ -361,30 +361,34 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
                     await fetch(`/features/${data[el].id}/data.json`)
                   ).json();
                   newData.scripts?.forEach(function (script) {
+                    if (new URL(tab.url).pathname.match(script.runOn)) {
                     chrome.scripting.executeScript({
                       target: { tabId: tabId },
-                      files: [`/features/${data[el]["id"]}/${script}`],
+                      files: [`/features/${data[el]["id"]}/${script.file}`],
                       world: newData.world?.toUpperCase() || "MAIN",
                     });
+                  }
                   });
                   newData.styles?.forEach(function (style) {
-                    chrome.scripting.executeScript({
-                      args: [
-                        data[el].id,
-                        chrome.runtime.getURL(
-                          `/features/${data[el]["id"]}/${style}`
-                        ),
-                      ],
-                      target: { tabId: tabId },
-                      func: insertCSS,
-                      world: "MAIN",
-                    });
-                    function insertCSS(feature, path) {
-                      var link = document.createElement("link");
-                      link.rel = "stylesheet";
-                      link.href = path;
-                      link.dataset.feature = feature;
-                      document.head.prepend(link);
+                    if (new URL(tab.url).pathname.match(style.runOn)) {
+                      chrome.scripting.executeScript({
+                        args: [
+                          data[el].id,
+                          chrome.runtime.getURL(
+                            `/features/${data[el]["id"]}/${style.file}`
+                          ),
+                        ],
+                        target: { tabId: tabId },
+                        func: insertCSS,
+                        world: "MAIN",
+                      });
+                      function insertCSS(feature, path) {
+                        var link = document.createElement("link");
+                        link.rel = "stylesheet";
+                        link.href = path;
+                        link.dataset.feature = feature;
+                        document.head.prepend(link);
+                      }
                     }
                   });
                 } else {

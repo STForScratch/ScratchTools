@@ -24,7 +24,14 @@ if (document.querySelector(".more-settings-btn")) {
       title: "More settings",
       description:
         "These are some additional settings that you can use to change other aspects of ScratchTools.",
-        components: [ { content: "Copy Feature Codes", type: "button", callback: returnFeatureCode, additonalClassNames: ["secondary-btn"] } ]
+      components: [
+        {
+          content: "Copy Feature Codes",
+          type: "button",
+          callback: returnFeatureCode,
+          additonalClassNames: ["secondary-btn"],
+        },
+      ],
     });
   });
 }
@@ -276,11 +283,13 @@ async function dynamicEnable(id) {
           chrome.tabs.query({}, function (tabs) {
             for (var i = 0; i < tabs.length; i++) {
               try {
-                chrome.scripting.executeScript({
-                  target: { tabId: tabs[i].id },
-                  files: [`/features/${feature.id}/${el}`],
-                  world: "MAIN",
-                });
+                if (new URL(tabs[i].url).pathname.match(script.runOn)) {
+                  chrome.scripting.executeScript({
+                    target: { tabId: tabs[i].id },
+                    files: [`/features/${feature.id}/${el.file}`],
+                    world: "MAIN",
+                  });
+                }
               } catch (err) {}
             }
           });
@@ -288,22 +297,28 @@ async function dynamicEnable(id) {
         featureData.styles?.forEach(function (style) {
           chrome.tabs.query({}, function (tabs) {
             for (var i = 0; i < tabs.length; i++) {
-              chrome.scripting.executeScript({
-                args: [
-                  feature.id,
-                  chrome.runtime.getURL(`/features/${feature.id}/${style}`),
-                ],
-                target: { tabId: tabs[i].id },
-                func: insertCSS,
-                world: "MAIN",
-              });
-              function insertCSS(feature, path) {
-                var link = document.createElement("link");
-                link.rel = "stylesheet";
-                link.href = path;
-                link.dataset.feature = feature;
-                document.head.appendChild(link);
-              }
+              try {
+                if (new URL(tabs[i].url).pathname.match(style.runOn)) {
+                  chrome.scripting.executeScript({
+                    args: [
+                      feature.id,
+                      chrome.runtime.getURL(
+                        `/features/${feature.id}/${style.file}`
+                      ),
+                    ],
+                    target: { tabId: tabs[i].id },
+                    func: insertCSS,
+                    world: "MAIN",
+                  });
+                  function insertCSS(feature, path) {
+                    var link = document.createElement("link");
+                    link.rel = "stylesheet";
+                    link.href = path;
+                    link.dataset.feature = feature;
+                    document.head.appendChild(link);
+                  }
+                }
+              } catch (err) {}
             }
           });
         });
@@ -379,33 +394,33 @@ ScratchTools.modals = {
     orangeBar.className = "st-modal-header";
 
     data.components?.forEach(function (component) {
-      var element
+      var element;
       if (component.type === "code") {
         var code = document.createElement("code");
         code.textContent = component.content;
         modal.appendChild(code);
-        element = code
+        element = code;
       }
       if (component.type === "button") {
         var btn = document.createElement("button");
         btn.textContent = component.content;
         if (component.src) {
-        var linkToBtn = document.createElement("a");
-        linkToBtn.href = component.src;
-        linkToBtn.appendChild(btn);
-        modal.appendChild(linkToBtn);
+          var linkToBtn = document.createElement("a");
+          linkToBtn.href = component.src;
+          linkToBtn.appendChild(btn);
+          modal.appendChild(linkToBtn);
         } else if (component.callback) {
-          btn.addEventListener("click", component.callback)
-          modal.appendChild(btn)
+          btn.addEventListener("click", component.callback);
+          modal.appendChild(btn);
         }
         btn.addEventListener("click", function () {
           div.remove();
         });
-        element = btn
+        element = btn;
       }
-      component.additonalClassNames?.forEach(function(className) {
-        element.classList.add(className)
-      })
+      component.additonalClassNames?.forEach(function (className) {
+        element.classList.add(className);
+      });
     });
 
     var closeButton = document.createElement("button");
