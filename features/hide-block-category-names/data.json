@@ -1,0 +1,11 @@
+{
+  "title": "Hide Block Category Names",
+  "description": "Changes the block categories in the editor to only show the colors of the categories.",
+  "credits": [],
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+  "tags": ["Theme", "New"],
+  "type": ["Editor"],
+  "dynamic": true,
+  "options": [{ "id": "displayAsCircle", "name": "Display as Circle", "default": false, "type": 1 }]
+}
