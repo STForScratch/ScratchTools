@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "hide-block-category-names",
+    "versionAdded": "v2.28.0"
+  },
+  {
+    "version": 2,
     "id": "unlisted-projects"
   },
   {
@@ -191,16 +196,6 @@
     "file": "hide-project-tags",
     "type": ["Website"],
     "tags": ["New"],
-    "dynamic": true
-  },
-  {
-    "title": "Hide Block Category Names",
-    "description": "Changes the block categories in the editor to only show the colors of the categories.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "hide-block-category-names",
-    "tags": ["Theme", "New"],
-    "type": ["Editor"],
     "dynamic": true
   },
   {
