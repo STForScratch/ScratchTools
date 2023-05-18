@@ -318,6 +318,9 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
         async function addData() {
           var allStorage = {};
           await data.forEach(async function (el) {
+            if (el.version === 2) {
+              el.options = (await (await fetch(`/features/${el.id}/data.json`)).json()).options
+            }
             if (el.options !== undefined) {
               await el.options.forEach(async function (option) {
                 var test = await chrome.storage.sync.get(option.id);
@@ -398,7 +401,7 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
                     world: world,
                   });
                 }
-                ScratchTools.console.log("Injected feature: " + data[el].file);
+                ScratchTools.console.log("Injected feature: " + data[el].file || data[el].id);
               }
             });
           }
