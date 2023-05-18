@@ -1,0 +1,19 @@
+{
+  "title": "Fix Content Boxes",
+  "description": "Makes all sides of boxes on the pages rounded, rather than just the tops.",
+  "credits": [
+    {
+      "username": "Scratchfangs",
+      "url": "https://scratch.mit.edu/users/Scratchfangs"
+    },
+    {
+      "username": "rgantzos",
+      "url": "https://scratch.mit.edu/users/rgantzos/"
+    }
+  ],
+  "styles": [
+    "fixed-box.css"
+  ],
+  "tags": [],
+  "type": ["Website", "Theme"]
+}

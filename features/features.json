@@ -24,6 +24,14 @@
     "id": "original-buttons"
   },
   {
+    "version": 2,
+    "id": "two-colors"
+  },
+  {
+    "version": 2,
+    "id": "fixed-box"
+  },
+  {
     "title": "Nicknames",
     "description": "Set nicknames for other Scratchers. Only you can see the nicknames, and their username will be replaced with the nickname when you see their name.",
     "credits": ["rgantzos"],
@@ -807,15 +815,6 @@
     "type": ["Website"]
   },
   {
-    "title": "2.0 Block Colors",
-    "description": "Replaces the colors of the blocks in the editor with the blocks from the 2.0 version of the code editor.",
-    "credits": ["infinitytec"],
-    "urls": ["https://github.com/infinitytec"],
-    "file": "two-colors",
-    "tags": [],
-    "type": ["Editor", "Theme"]
-  },
-  {
     "title": "Colored Messages",
     "description": "Colors your messages based on the type of message, such as loves, favorites, and studio invites!",
     "credits": ["_nix"],
@@ -851,18 +850,6 @@
     "file": "project-links",
     "tags": [],
     "type": ["Website"]
-  },
-  {
-    "title": "Fix Content Boxes",
-    "description": "Makes all sides of boxes on the pages rounded, rather than just the tops.",
-    "credits": ["Scratchfangs", "rgantzos"],
-    "urls": [
-      "https://scratch.mit.edu/users/Scratchfangs",
-      "https://scratch.mit.edu/users/rgantzos"
-    ],
-    "file": "fixed-box",
-    "tags": [],
-    "type": ["Website", "Theme"]
   },
   {
     "title": "User Bio on Hover",
@@ -1135,3 +1122,4 @@
     "type": ["Website", "Theme"]
   }
 ]
+
