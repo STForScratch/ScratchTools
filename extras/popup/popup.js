@@ -200,54 +200,15 @@ async function getFeatures() {
         var option = feature.options[optionPlace];
         var input = document.createElement("input");
         input.dataset.id = option.id;
-        input.dataset.feature = feature.id;
         input.placeholder = option.name;
         input.type = ["text", "checkbox", "number", "color"][option.type || 0];
         var optionData = (await chrome.storage.sync.get(option.id))[option.id];
         input.value = optionData || "";
         div.appendChild(input);
-        if (input.type === "checkbox") {
-          var label = document.createElement("label");
-          label.textContent = option.name;
-          div.appendChild(label);
-          input.checked = optionData || false;
-        }
         input.addEventListener("input", async function () {
-          if (this.type !== "checkbox") {
-            finalValue = this.value;
-          } else {
-            var data = await chrome.storage.sync.get(this.dataset.id);
-            if (data[this.dataset.id]) {
-              this.checked = false;
-              finalValue = false;
-            } else {
-              this.checked = true;
-              finalValue = true;
-            }
-          }
           var saveData = {};
-          saveData[this.dataset.id] = finalValue;
+          saveData[this.dataset.id] = this.value;
           await chrome.storage.sync.set(saveData);
-          var featureToUpdate = this
-          chrome.tabs.query({}, function (tabs) {
-            for (var i = 0; i < tabs.length; i++) {
-              try {
-                chrome.scripting.executeScript({
-                  args: [featureToUpdate.dataset.feature, featureToUpdate.dataset.id, finalValue],
-                  target: { tabId: tabs[i].id },
-                  func: updateSettingsFunction,
-                  world: "MAIN",
-                });
-                function updateSettingsFunction(feature, name, value) {
-                  if (allSettingChangeFunctions[feature]) {
-                    allSettingChangeFunctions[feature](name, value);
-                  }
-                }
-              } catch (err) {
-                console.log(err);
-              }
-            }
-          });
         });
       }
     }

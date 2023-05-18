@@ -39,8 +39,6 @@ class Feature {
             }' is not dynamic. The disable function will not be triggered.`
           );
         }
-      } else if (event === "settingChange") {
-        allSettingChangeFunctions[this.data.id || this.data.file] = callback;
       } else if (event === "iceCream") {
         console.log("Yummy!");
       } else {

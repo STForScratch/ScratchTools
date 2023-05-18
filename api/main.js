@@ -125,8 +125,6 @@ ScratchTools.Features.get = function (search) {
   return all[search];
 };
 
-var allSettingChangeFunctions = {}
-
 var allDisableFunctions = {};
 ScratchTools.setDisable = function (feature, f) {
   allDisableFunctions[feature] = f;
