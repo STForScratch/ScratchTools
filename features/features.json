@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "hide-advertisements",
+    "versionAdded": "v2.28.0"
+  },
+  {
+    "version": 2,
     "id": "hide-block-category-names",
     "versionAdded": "v2.28.0"
   },
@@ -479,16 +484,6 @@
     "tags": ["Recommended"],
     "type": ["Website"],
     "default": true
-  },
-  {
-    "title": "Hide Advertisements in Comments",
-    "description": "Hides advertisements in the comments of profiles, projects, and studios. They can take up a lot of space in the comments.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "hide-advertisements",
-    "tags": ["Beta"],
-    "type": ["Website"],
-    "warning": "This feature uses an algorithm that ScratchTools developed. That does not mean that it will work every time."
   },
   {
     "title": "Open in TurboWarp from Editor",
