@@ -61,10 +61,10 @@ chrome.runtime.onInstalled.addListener(async function (object) {
       );
       var data = await response.json();
       chrome.action.setBadgeText({ text: data.msg_count.toString() });
-      chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
+      chrome.action.setBadgeBackgroundColor({ color: !chrome.runtime.getManifest().version_name.endsWith("-beta") ? "#ff9f00" : "#00a2ff" });
     } catch (err) {
       chrome.action.setBadgeText({ text: "?" });
-      chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
+      chrome.action.setBadgeBackgroundColor({ color: !chrome.runtime.getManifest().version_name.endsWith("-beta") ? "#ff9f00" : "#00a2ff" });
     }
   } else {
     chrome.action.setBadgeText({ text: "" });
@@ -464,10 +464,10 @@ chrome.alarms.onAlarm.addListener(async function () {
       );
       var data = await response.json();
       chrome.action.setBadgeText({ text: data.msg_count.toString() });
-      chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
+      !chrome.runtime.getManifest().version_name.endsWith("-beta") ? "#ff9f00" : "#00a2ff"
     } catch (err) {
       chrome.action.setBadgeText({ text: "?" });
-      chrome.action.setBadgeBackgroundColor({ color: "#ff9f00" });
+      !chrome.runtime.getManifest().version_name.endsWith("-beta") ? "#ff9f00" : "#00a2ff"
     }
   } else {
     chrome.action.setBadgeText({ text: "" });
