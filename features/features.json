@@ -836,16 +836,6 @@
     "type": ["Website"]
   },
   {
-    "title": "April Fools 2022",
-    "description": "Brings back the special modes from the 2022 April Fools Day!",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "april-fools",
-    "tags": ["Egg"],
-    "type": ["Editor", "Theme"],
-    "dynamic": true
-  },
-  {
     "title": "Project Link as Title",
     "description": "In profile and project comments, project links in comments are replaced with their titles.",
     "credits": ["rgantzos"],
