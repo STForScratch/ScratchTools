@@ -17,14 +17,36 @@ chrome.storage.sync.get("theme", function (obj) {
   }
 });
 
+async function getEnabledFeatureCount() {
+  var features = await (await fetch("/features/features.json")).json();
+  var count = 0;
+  var storageData = (await chrome.storage.sync.get("features"))?.features || "";
+  features.forEach(function (feature) {
+    if (storageData.includes(feature.file || feature.id)) {
+      count = count + 1;
+    }
+  });
+  return count;
+}
+
 if (document.querySelector(".more-settings-btn")) {
   var moreSettingsBtn = document.querySelector(".more-settings-btn");
-  moreSettingsBtn.addEventListener("click", function () {
+  moreSettingsBtn.addEventListener("click", async function () {
     ScratchTools.modals.create({
       title: "More settings",
       description:
         "These are some additional settings that you can use to change other aspects of ScratchTools.",
       components: [
+        {
+          content:
+            "Version: " +
+            chrome.runtime.getManifest().version_name +
+            "\nFeatures enabled: " +
+            (await getEnabledFeatureCount()).toString() +
+            "\nLanguage: " +
+            chrome.i18n.getUILanguage(),
+          type: "code",
+        },
         {
           content: "Copy Feature Codes",
           type: "button",
@@ -38,11 +60,13 @@ if (document.querySelector(".more-settings-btn")) {
 
 var version = chrome.runtime.getManifest().version_name;
 if (version.includes("beta")) {
+  if (document.querySelector("link[rel=icon]")) {
+    document.querySelector("link[rel=icon]").href = "/extras/icons/beta/beta.svg";
+  }
   document.head.innerHTML +=
     "<link rel='stylesheet' href='/extras/popup/beta.css' id='betacss'>";
   if (document.head.id == "Popup") {
-    document.getElementById("minilogo").src =
-      "/extras/icons/mini-logo-beta.svg";
+    document.getElementById("minilogo").src = "/extras/icons/beta/beta.svg";
     document.getElementById("popupnote").innerHTML =
       "Welcome to the beta verison of ScratchTools! This version is not stable and may contain bugs. Please report any bugs you find <a href='https://github.com/STForScratch/ScratchTools/issues' target='_blank'>here</a>.";
   }
@@ -228,12 +252,16 @@ async function getFeatures() {
           var saveData = {};
           saveData[this.dataset.id] = finalValue;
           await chrome.storage.sync.set(saveData);
-          var featureToUpdate = this
+          var featureToUpdate = this;
           chrome.tabs.query({}, function (tabs) {
             for (var i = 0; i < tabs.length; i++) {
               try {
                 chrome.scripting.executeScript({
-                  args: [featureToUpdate.dataset.feature, featureToUpdate.dataset.id, finalValue],
+                  args: [
+                    featureToUpdate.dataset.feature,
+                    featureToUpdate.dataset.id,
+                    finalValue,
+                  ],
                   target: { tabId: tabs[i].id },
                   func: updateSettingsFunction,
                   world: "MAIN",

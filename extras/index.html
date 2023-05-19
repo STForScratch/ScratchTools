@@ -56,6 +56,9 @@
   </body>
 
   <style>
+    :root {
+      --navbar-gradient: linear-gradient(45deg, #ff9f00, #ffad42);
+    }
     html {
       height: 100%;
     }
@@ -209,7 +212,7 @@
     .navbar {
       display: block;
       position: fixed;
-      background: linear-gradient(45deg, #ff9f00, #ffad42);
+      background: var(--navbar-gradient);
       top: 0;
       padding-top: 0.5em;
       padding-bottom: 0.5em;
