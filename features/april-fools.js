@@ -181,17 +181,15 @@ body {
     document.querySelector("div.nineties-mode_nineties-mode_3atEu").remove();
   }
 }
-waitforready();
 
 ScratchTools.setDisable("april-fools", function () {
   reset();
   document.querySelector(".stmodes").remove();
 });
 
-function waitforready() {
-  if (document.querySelector("div.menu-bar_main-menu_3wjWH") === null) {
-    setTimeout(waitforready, 100);
-  } else {
+ScratchTools.waitForElements(
+  "div[class^='menu-bar_file-group_1_']",
+  function (box) {
     if (document.querySelector("div.stmodes") === null) {
       var april = document
         .querySelector(
@@ -237,10 +235,8 @@ function waitforready() {
       };
     }
 
-    document
-      .querySelector(
-        "#app > div > div.gui_menu-bar-position_3U1T0.menu-bar_menu-bar_JcuHF.box_box_2jjDp > div.menu-bar_main-menu_3wjWH"
-      )
-      .appendChild(april);
-  }
-}
+    box.appendChild(april);
+  },
+  "aprilFools22",
+  false
+);
