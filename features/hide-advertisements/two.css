@@ -1,4 +1,4 @@
-body.colorComment .scratchtoolsAd .comment-bubble, .scratchtoolsAd .comment-bubble::before {
+body.colorComment .scratchtoolsAd > div[id^="comments-"] {
     background-color: #ffd0d0 !important;
 }
 

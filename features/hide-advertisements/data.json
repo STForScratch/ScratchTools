@@ -7,7 +7,11 @@
   "type": ["Website"],
   "tags": ["New", "Featured"],
   "dynamic": true,
-  "styles": [{ "file": "style.css", "runOn": "" }],
+  "styles": [
+    { "file": "style.css", "runOn": "/projects/*" },
+    { "file": "style.css", "runOn": "/studios/*" },
+    { "file": "two.css", "runOn": "/users/*" }
+  ],
   "scripts": [
     { "file": "three.js", "runOn": "/projects/*" },
     { "file": "three.js", "runOn": "/studios/*" },
