@@ -1,0 +1,698 @@
+{
+  "extName": {
+    "message": "ScratchTools"
+  },
+  "extDescription": {
+    "message": "ScratchTools は、Scratch Web サイトをより良く、使いやすくするための多くの機能で完全にカスタマイズ可能です。"
+  },
+  "welcome_to_settings": {
+    "message": "設定へようこそ！ここでは様々な機能を追加することができます。"
+  },
+  "search": {
+    "message": "検索"
+  },
+  "credits_text": {
+    "message": "クレジット"
+  },
+  "disabled_explanation": {
+    "message": "この機能はScratchToolsによって無効になっています。有効/無効を設定することはできますが、安全上の理由から動作しません。"
+  },
+  "hide_advertisements_title": {
+    "message": "コメント内の広告を隠す"
+  },
+  "original_buttons_title": {
+    "message": "昔のマーク"
+  },
+  "original_buttons_description": {
+    "message": "昔のハート、お気に入り、リミックス、参照マークに戻します。"
+  },
+  "nicknames_title": {
+    "message": "ニックネーム"
+  },
+  "nicknames_description": {
+    "message": "他のScratcherにニックネームを設定することができます。ニックネームは自分だけが見ることができ、相手のユーザーネームを見たときにユーザー名がニックネームに置き換えられます。"
+  },
+  "unlisted_projects_title": {
+    "message": "非共有のプロジェクトのリンクを生成"
+  },
+  "unlisted_projects_description": {
+    "message": "エディターで非共有のプロジェクトを共有するリンクを生成します。そのプロジェクトはリンクを知っている人しか見ることができません。"
+  },
+  "load_more_forum_posts_title": {
+    "message": "投稿を読み込む"
+  },
+  "load_more_forum_posts_description": {
+    "message": "ディスカッションフォーラムで、ページを切り替えることなく投稿を読み込むことができます。"
+  },
+  "scroll_project_titles_title": {
+    "message": "プロジェクトのタイトルをスクロール"
+  },
+  "scroll_project_titles_description": {
+    "message": "プロジェクトのタイトルをスクロールして見ることができます。"
+  },
+  "search_context_menus_title": {
+    "message": "検索コンテキストメニュー"
+  },
+  "search_context_menus_description": {
+    "message": "コンテキストメニューで検索欄を表示し、簡単かつ効率的にオプションを選択できます。Enterキーを押すことで一番上のオプションを選択できます。"
+  },
+  "hover_user_cards_title": {
+    "message": "カーソルを合わせてステータスを表示"
+  },
+  "hover_user_cards_description": {
+    "message": "青いユーザー名にマウスカーソルを合わせると、アイコンとユーザー名とフォロワー数が表示されます。"
+  },
+  "exact_join_date_title": {
+    "message": "詳細な参加した日時"
+  },
+  "exact_join_date_description": {
+    "message": "プロフィールにユーザーが参加した詳細な日時を表示します。"
+  },
+  "start_stop_hotkeys_title": {
+    "message": "プロジェクトの開始と停止のショートカット"
+  },
+  "start_stop_hotkeys_description": {
+    "message": "Ctrl+G(Macの場合はCommand+G)でプロジェクトの開始と停止を切り替えることができます。"
+  },
+  "upload_img_directly_title": {
+    "message": "フォーラムで画像を直接アップロード"
+  },
+  "upload_img_directly_description": {
+    "message": "サードパーティの画像アップロードサービスを使わなくても、フォーラムで画像を自分のパソコンのファイルから直接アップロードできます。"
+  },
+  "leave_studio_title": {
+    "message": "「スタジオを抜ける」ボタン"
+  },
+  "leave_studio_description": {
+    "message": "スタジオのキュレータータブにスタジオから退出することができるボタンを追加します。ボタンを押すと、確認画面が表示されます。"
+  },
+  "user_stats_title": {
+    "message": "ユーザーの統計情報"
+  },
+  "user_stats_description": {
+    "message": "プロフィールの「私が行ったこと」にユーザーの統計情報を表示します。"
+  },
+  "frontpage_curator_title": {
+    "message": "トップページのキュレーターの名前をリンク化"
+  },
+  "frontpage_curator_description": {
+    "message": "トップページの「○○が選んだプロジェクト」のユーザー名をクリックしてプロフィールに飛ぶことができます。"
+  },
+  "minimized_remix_credits_title": {
+    "message": "リミックスのクレジットの最小化"
+  },
+  "minimized_remix_credits_description": {
+    "message": "リミックスのクレジットを小さくすることができます。"
+  },
+  "follows_you_title": {
+    "message": "相互フォロー表示"
+  },
+  "follows_you_description": {
+    "message": "相互フォローしている場合、そのユーザーのプロフィールのユーザー名の隣に表示されます。"
+  },
+  "custom_studio_title": {
+    "message": "トップページに指定したスタジオを表示"
+  },
+  "custom_studio_description": {
+    "message": "トップページの「注目のプロジェクト」の上に指定したスタジオの最新のプロジェクトを表示します。"
+  },
+  "highlight_unanswered_title": {
+    "message": "未回答のフォーラムのトピックをハイライト表示"
+  },
+  "highlight_unanswered_description": {
+    "message": "フォーラムの返信されていないトピックに青いハイライトを追加します。"
+  },
+  "hide_project_tags_title": {
+    "message": "プロジェクトのタグの非表示"
+  },
+  "hide_project_tags_description": {
+    "message": "プロジェクトの「使い方」と「メモとクレジット」に書かれているリンクされているタグをすべて非表示にします。"
+  },
+  "hide_block_category_names_title": {
+    "message": "ブロックカテゴリーの名前の非表示"
+  },
+  "hide_block_category_names_description": {
+    "message": "エディターのブロックカテゴリーで、カテゴリーの色のみを表示します。"
+  },
+  "search_assets_title": {
+    "message": "アセット検索"
+  },
+  "search_assets_description": {
+    "message": "エディターでコスチュームや音を検索できます。"
+  },
+  "block_count_in_mystuff_title": {
+    "message": "「私の作品」でブロック数を表示"
+  },
+  "block_count_in_mystuff_description": {
+    "message": "「私の作品」でプロジェクトのブロック数を表示します。"
+  },
+  "block_studios_title": {
+    "message": "選択したスタジオからの通知の無効化"
+  },
+  "block_studios_description": {
+    "message": "選択したスタジオの活動内容のメッセージを無効化します。"
+  },
+  "pause_audio_title": {
+    "message": "音の一時停止"
+  },
+  "pause_audio_description": {
+    "message": "エディターの音エディターで音の一時停止と再生ができます。"
+  },
+  "display_message_count_in_icon_title": {
+    "message": "アイコンにメッセージ数を表示"
+  },
+  "display_message_count_in_icon_description": {
+    "message": "ScratchToolsの拡張機能のアイコンにメッセージ数を表示します。"
+  },
+  "colored_context_menus_title": {
+    "message": "色付きの右クリックメニュー"
+  },
+  "colored_context_menus_description": {
+    "message": "Scratch 2.0のように右クリックメニューにクリックしたブロックの色と同じ色をつけます。"
+  },
+  "left_side_stage_title": {
+    "message": "ステージを左に表示"
+  },
+  "left_side_stage_description": {
+    "message": "Scratch 2.0のようにステージをエディターの左側に表示します。"
+  },
+  "move_project_title_input_title": {
+    "message": "タイトルボックスの移動"
+  },
+  "move_project_title_input_description": {
+    "message": "Scratch 2.0のようにプロジェクトのタイトル入力ボックスを上のバーではなく、ステージの上に移動します。これはエディターにのみ適用されます。"
+  },
+  "hide_disabled_menu_options_title": {
+    "message": "無効な右クリックメニューを非表示"
+  },
+  "hide_disabled_menu_options_description": {
+    "message": "エディターに表示される右クリックメニューは無効の機能も表示されます。この機能により、無効の機能が非表示になります。"
+  },
+  "dumpster_fire_title": {
+    "message": "ゴミ捨て場の火災"
+  },
+  "dumpster_fire_description": {
+    "message": "ホームページの「注目のプロジェクト」という項目があり、嘘つきです。なので、この名称を「Dumpster Fire(ゴミ捨て場の火災)」という正しい名称に変更します。"
+  },
+  "follower_count_title": {
+    "message": "プロジェクトでフォロワー数を表示"
+  },
+  "follower_count_description": {
+    "message": "プロジェクトの作者名の隣にそのユーザーのフォロワー数を表示します。"
+  },
+  "hide_studio_borders_title": {
+    "message": "スタジオのアイコンの枠の非表示"
+  },
+  "hide_studio_borders_description": {
+    "message": "2.0版のスタジオの画像の周囲の枠を非表示にします。"
+  },
+  "hide_textarea_labels_title": {
+    "message": "「使い方」と「メモとクレジット」のラベルの非表示"
+  },
+  "hide_textarea_labels_description": {
+    "message": "使い方やメモとクレジットの枠の上の文字は枠内の情報を表示するのを妨げています。この機能はそれらを非表示にします。"
+  },
+  "default_to_trending_title": {
+    "message": "デフォルトで傾向を検索"
+  },
+  "default_to_trending_description": {
+    "message": "現在Scratchではプロジェクトを検索すると、人気のあるプロジェクトが表示されるようになっています。この機能はデフォルトで傾向のプロジェクトが表示されるようになります。"
+  },
+  "infinite_backpack_scrolling_title": {
+    "message": "バックパックの無限スクロール"
+  },
+  "infinite_backpack_scrolling_description": {
+    "message": "バックパックで一番古いものまでスクロールすることができます。（読み込みに少し時間がかかりますが、自動的に読み込まれます。）"
+  },
+  "preview_textboxes_title": {
+    "message": "テキストボックスのプレビュー表示"
+  },
+  "preview_textboxes_description": {
+    "message": "プロフィールの「私について」と「私が取り組んでいること」、そしてプロジェクトの「使い方」と「メモとクレジット」をプレビュー表示して、他のユーザーにどのように見えるかを確認できます。"
+  },
+  "hide_studio_messages_title": {
+    "message": "スタジオの活動内容の通知の非表示"
+  },
+  "hide_studio_messages_description": {
+    "message": "活動内容をメッセージのページで非表示にします。"
+  },
+  "default_to_local_title": {
+    "message": "デフォルトでローカル変数にする"
+  },
+  "default_to_local_description": {
+    "message": "変数を作った時に、デフォルトで「すべてのスプライト」ではなく「このスプライトのみ」に設定します。"
+  },
+  "special_editor_fonts_title": {
+    "message": "ペイントエディターで使えるフォントの追加"
+  },
+  "special_editor_fonts_description": {
+    "message": "ペイントエディターのテキストで使えるより美しく現代的なフォントを追加しました。"
+  },
+  "get_project_tags_title": {
+    "message": "プロジェクトのタグの別表示"
+  },
+  "get_project_tags_description": {
+    "message": "プロジェクトのメモとクレジットの下にそのプロジェクトで使われたすべてのタグを表示します。"
+  },
+  "link_to_propose_title": {
+    "message": "注目のプロジェクトをスタジオにリンク"
+  },
+  "link_to_propose_description": {
+    "message": "トップページの「注目のプロジェクト」と注目のプロジェクトを提案するスタジオをリンクさせます"
+  },
+  "add_last_option_list_title": {
+    "message": "リスト項目を最後に設定"
+  },
+  "add_last_option_list_description": {
+    "message": "「[リスト] の [番号] 番目」ブロックを右クリックして、選択したリストの最後の項目を選択できるように設定します。"
+  },
+  "cloud_scratchers_title": {
+    "message": "オンラインゲームに参加しているユーザーを表示"
+  },
+  "cloud_scratchers_description": {
+    "message": "オンラインゲームのプロジェクトに参加しているユーザーの一覧を表示します。"
+  },
+  "editor_in_two_title": {
+    "message": "2.0エディター"
+  },
+  "editor_in_two_description": {
+    "message": "デフォルトの3.0オンラインエディターを2.0エディターに置き換えます。"
+  },
+  "comment_on_closed_profile_title": {
+    "message": "閉じているコメント欄へのコメント"
+  },
+  "comment_on_closed_profile_description": {
+    "message": "自分のプロフィールのコメント欄が閉じていても、自分だけコメントすることができます。"
+  },
+  "hide_advertisements_description": {
+    "message": "プロフィール、プロジェクト、スタジオのコメント欄の広告コメントを非表示にします。広告コメントはコメント欄で無駄にスペースを占有します。"
+  },
+  "turbowarp_button_in_editor_title": {
+    "message": "エディターからTurbowarpで開く"
+  },
+  "turbowarp_button_in_editor_description": {
+    "message": "プロジェクトをすぐにTurboWarpで開くことができるように、エディターにボタンを追加します。"
+  },
+  "sprite_clones_title": {
+    "message": "スプライトのクローンカウンター"
+  },
+  "sprite_clones_description": {
+    "message": "それぞれのスプライトのクローン数を表示します。"
+  },
+  "block_log_title": {
+    "message": "ブロックの履歴"
+  },
+  "block_log_description": {
+    "message": "ctrl+shift+lを押したときにブロックエディターのすべてのブロックを履歴を表示します。"
+  },
+  "scrollable_list_items_title": {
+    "message": "スクロールできるリストの項目"
+  },
+  "scrollable_list_items_description": {
+    "message": "リスト自体の幅より長い値が書かれているリストの項目を左右にスクロールできるようになります。"
+  },
+  "admin_notifications_title": {
+    "message": "STからのメッセージを赤く表示"
+  },
+  "admin_notifications_description": {
+    "message": "Scratch Teamからの管理者通知がある場合、上のバーのメッセージボタンはオレンジ色ではなく、赤色に表示されます。"
+  },
+  "rickroll_title": {
+    "message": "リックロール"
+  },
+  "rickroll_description": {
+    "message": "見つけるまで分からない…。プロジェクトページにボタンがあります。"
+  },
+  "custom_fonts_title": {
+    "message": "サイトのフォントの変更"
+  },
+  "custom_fonts_description": {
+    "message": "Scratch上で表示されるフォントをGoogle Fontsのサイトにある好きなフォントに設定することができます。大文字と小文字は区別されます。"
+  },
+  "project_timer_title": {
+    "message": "プロジェクトのタイマー"
+  },
+  "project_timer_description": {
+    "message": "プロジェクトが実行されている時間(秒)を表示します。"
+  },
+  "colored_comments_title": {
+    "message": "色付けされたエディターのコメント"
+  },
+  "colored_comments_description": {
+    "message": "ブロックエディターのコメントをブロックの色と同じにします。"
+  },
+  "recently_viewed_projects_title": {
+    "message": "最近見たプロジェクト"
+  },
+  "recently_viewed_projects_description": {
+    "message": "私の作品のページに最近見たプロジェクトの一覧を表示するタブを追加します。"
+  },
+  "anti_generic_title": {
+    "message": "一般的なものの非表示"
+  },
+  "anti_generic_description": {
+    "message": "このベータ版機能では、検索ページと傾向ページにおいて、繰り返しの多いプロジェクトや、一般的と思われるプロジェクトを自動的に非表示にします。これには、タグが多いプロジェクト、一般的な名前のプロジェクト、プロジェクトの重複が含まれます。"
+  },
+  "collapse_blocks_title": {
+    "message": "折りたためるブロック"
+  },
+  "collapse_blocks_description": {
+    "message": "エディターの右クリックメニューに、選択したブロックを折りたたむためのボタンを追加します。"
+  },
+  "set_featured_project_title": {
+    "message": "注目のプロジェクトを設定"
+  },
+  "set_featured_project_description": {
+    "message": "プロジェクトページでボタンをクリックするだけで簡単に自分のプロフィールの注目のプロジェクトに設定することができます。"
+  },
+  "scratchformat_title": {
+    "message": "ScratchFormat"
+  },
+  "scratchformat_description": {
+    "message": "太字や斜体など、コメントの書式を設定できます。ScratchToolsを使用している人にのみ表示されます。"
+  },
+  "expand_editor_title": {
+    "message": "エディターの拡大"
+  },
+  "expand_editor_description": {
+    "message": "Ctrl+Eでデフォルトのブロックエディター表示と、ステージを隠す表示を簡単に切り替えられます。"
+  },
+  "list_sprites_title": {
+    "message": "スプライトリスト"
+  },
+  "list_sprites_description": {
+    "message": "エディタ内の全スプライトをスプライトのブロック数と位置を含むリストで表示します。"
+  },
+  "check_if_trending_title": {
+    "message": "傾向入りしているかを表示"
+  },
+  "check_if_trending_description": {
+    "message": "英語トレンドに入っている場合は、プロジェクトページの公開日の横に英語トレンドに入っている箇所数が表示されます。となります。"
+  },
+  "link_forum_activity_title": {
+    "message": "フォーラムのユーザー名のリンク化"
+  },
+  "link_forum_activity_description": {
+    "message": "フォーラムの最終投稿欄で、ユーザー名をユーザーのプロフィールにリンクします。"
+  },
+  "remove_topic_and_post_title": {
+    "message": "フォーラムのカテゴリの非表示"
+  },
+  "remove_topic_and_post_description": {
+    "message": "フォーラムのトップページのトピック数と投稿数を非表示にします。"
+  },
+  "forum_homepage_emojis_title": {
+    "message": "フォーラムのカテゴリごとの絵文字"
+  },
+  "forum_homepage_emojis_description": {
+    "message": "フォーラムのトップページに、トピックに基づいたカラフルな絵文字を追加します。"
+  },
+  "remove_collapse_buttons_title": {
+    "message": "フォーラムの折りたたみボタンの非表示"
+  },
+  "remove_collapse_buttons_description": {
+    "message": "フォーラムのトップページで折りたたみボタンを非表示にします。"
+  },
+  "pin_projects_title": {
+    "message": "プロジェクトを「私の作品」にピン留め"
+  },
+  "pin_projects_description": {
+    "message": "プロジェクトのページで「Pin」ボタンをクリックして、プロジェクトを「私の作品」ページのトップにピン留めできます。ピン留めしたプロジェクトを解除したり、別のプロジェクトに入れ替えることもできます。"
+  },
+  "last_key_pressed_title": {
+    "message": "最後に押されたキー"
+  },
+  "last_key_pressed_description": {
+    "message": "プロジェクトページとエディターで、そのプロジェクトで最後に押したキーを表示します。これはプラットフォーマーのようなゲームに適しています。"
+  },
+  "hide_signatures_title": {
+    "message": "フォーラムの署名の非表示"
+  },
+  "hide_signatures_description": {
+    "message": "フォーラムの署名と署名の区切り線を非表示にします。"
+  },
+  "twemoji_in_forums_title": {
+    "message": "フォーラムの絵文字の改善"
+  },
+  "twemoji_in_forums_description": {
+    "message": "低解像度のフォーラムの絵文字を、高画質のTwemojisに置き換えます。"
+  },
+  "go_to_parent_title": {
+    "message": "「リミックス元に移動」ボタン"
+  },
+  "go_to_parent_description": {
+    "message": "リミックスされたプロジェクトのエディターで、ボタンをクリックすると、リミックス元のプロジェクトのエディターに移動します。"
+  },
+  "most_popular_project_title": {
+    "message": "一番有名なプロジェクト"
+  },
+  "most_popular_project_description": {
+    "message": "プロフィールページに、そのユーザーの最も人気(参照数)のあるプロジェクトを表示します。プロジェクトをクリックすると表示されます。"
+  },
+  "block_messages_title": {
+    "message": "ブロック機能"
+  },
+  "block_messages_description": {
+    "message": "ブロックしたユーザーから送られてきたメッセージをメッセージページで非表示にします(ブロックページを含む)。"
+  },
+  "editor_dark_mode_title": {
+    "message": "エディターのダークモード"
+  },
+  "editor_dark_mode_description": {
+    "message": "エディターをダークテーマに切り替えます。"
+  },
+  "hide_studio_group_icon_title": {
+    "message": "スタジオのアイコンを非表示"
+  },
+  "hide_studio_group_icon_description": {
+    "message": "スタジオのアイコンを非表示にし、スタジオ名のみ表示します。"
+  },
+  "two_colors_title": {
+    "message": "2.0ブロックカラー"
+  },
+  "two_colors_description": {
+    "message": "エディターのブロックの色を、Scratch2.0で使われていた色に変更します。"
+  },
+  "colored_messages_title": {
+    "message": "色付きのメッセージ"
+  },
+  "colored_messages_description": {
+    "message": "好き、お気に入り、スタジオ招待など、メッセージの種類に応じて色を付けます。"
+  },
+  "full_title_title": {
+    "message": "全体のプロジェクト名"
+  },
+  "full_title_description": {
+    "message": "プロフィールでプロジェクト名にカーソルを合わせると、プロジェクト名の全文が表示されます。"
+  },
+  "project_links_title": {
+    "message": "プロジェクトへのリンクをプロジェクトの名前にする"
+  },
+  "project_links_description": {
+    "message": "コメントするときに、コメント中のScratchのプロジェクトへのリンクがプロジェクトの名前に置き換えられるようになりました。"
+  },
+  "fixed_box_title": {
+    "message": "右クリックメニューの修正"
+  },
+  "fixed_box_description": {
+    "message": "プロフィールなどのボックスの上の角だけでなく、すべての角を丸くします。"
+  },
+  "user_bio_title": {
+    "message": "カーソルを合わせてプロフィールの表示"
+  },
+  "user_bio_description": {
+    "message": "プロフィールのコメントで、ユーザー名にカーソルを合わせると、そのユーザーのプロフィールが表示されます。"
+  },
+  "nfe_project_checker_title": {
+    "message": "NFEプロジェクトチェッカー"
+  },
+  "nfe_project_checker_description": {
+    "message": "プロジェクトが「Safe（安全)」「Unreviewed（未審査)」「NSFE（万人むけでない）」のどれに評価されているかを表示します。"
+  },
+  "advanced_search_title": {
+    "message": "高度な検索"
+  },
+  "advanced_search_description": {
+    "message": "Scratchの検索を、より優れたスマートな検索に置き換えます。"
+  },
+  "clone_counter_title": {
+    "message": "クローンカウンター"
+  },
+  "clone_counter_description": {
+    "message": "ステージの上にクローンの総数を表示します。"
+  },
+  "colored_shadows_title": {
+    "message": "色付きの影"
+  },
+  "colored_shadows_description": {
+    "message": "ブロックを他のブロックの近くにドラッグしたときにできる影を、移動させるブロックの色に置き換えます。"
+  },
+  "creator_badge_title": {
+    "message": "制作者バッジ"
+  },
+  "creator_badge_description": {
+    "message": "プロジェクトのコメント欄で、そのプロジェクトの制作者によるコメントのアイコンの横に制作者バッジを表示します。"
+  },
+  "stats_percentages_title": {
+    "message": "プロジェクトのステータスのパーセンテージを表示"
+  },
+  "stats_percentages_description": {
+    "message": "「私の作品」で、好き、お気に入り、リミックスの数にカーソルを合わせると、参照数の何%がその反応をしたかが表示されます。"
+  },
+  "sprite_data_title": {
+    "message": "スプライトの情報を表示"
+  },
+  "sprite_data_description": {
+    "message": "各スプライトのコード、コスチューム、音タブに、スプライトのブロックの数、コスチュームの数、音の数が表示されます。"
+  },
+  "box_shadows_title": {
+    "message": "コンテンツボックスの影"
+  },
+  "box_shadows_description": {
+    "message": "すべてのコンテンツボックスに影を追加します。カーソルを合わせると、影が濃くなります。"
+  },
+  "aviate_title": {
+    "message": "Aviateのステータス"
+  },
+  "aviate_description": {
+    "message": "プロフィールページにAviateのステータスを表示します。ステータスはaviateapp.eu.orgで設定できます。"
+  },
+  "idea_generator_title": {
+    "message": "プロジェクトのアイデア生成器"
+  },
+  "idea_generator_description": {
+    "message": "Scratchのアイデアのページには、必要に応じてプロジェクトのアイデアを生成できるチュートリアルがあります。"
+  },
+  "hide_stickies_title": {
+    "message": "フォーラムのピン止めされたトピックのピン止めを外す"
+  },
+  "hide_stickies_description": {
+    "message": "フォーラムの一番上にあるピン止めされたトピックのピン止めを外します。"
+  },
+  "more_tutorials_title": {
+    "message": "チュートリアルの追加"
+  },
+  "more_tutorials_description": {
+    "message": "Scratchのアイデアのページにチュートリアルを追加します。"
+  },
+  "nfe_search_title": {
+    "message": "NFE検索"
+  },
+  "nfe_search_description": {
+    "message": "普段表示されないNFE（万人向けでないプロジェクト）を含む全プロジェクトを検索します。"
+  },
+  "statistics_title": {
+    "message": "統計情報"
+  },
+  "statistics_description": {
+    "message": "ユーザーのScratchStatsに飛ぶことができるボタンを「私の作品」ページに追加します。"
+  },
+  "open_in_new_tab_title": {
+    "message": "新しいタブで開く"
+  },
+  "open_in_new_tab_description": {
+    "message": "プロジェクトページ上のリンクを自動的に新しいタブで開きます。"
+  },
+  "plain_background_title": {
+    "message": "無地のコードエディターの背景"
+  },
+  "plain_background_description": {
+    "message": "コードエディターの背景からドットを削除します。"
+  },
+  "unbold_site_text_title": {
+    "message": "太字のテキストを通常のテキストにする"
+  },
+  "unbold_site_text_description": {
+    "message": "Scratchのすべての太字のテキストが通常のテキストになります。"
+  },
+  "compact_navbar_title": {
+    "message": "コンパクトなナビゲーションバー"
+  },
+  "compact_navbar_description": {
+    "message": "ナビゲーションバーを縮めて、プロフィールの下のスペースを広くします。"
+  },
+  "delete_all_title": {
+    "message": "全てのスプライトの削除"
+  },
+  "delete_all_description": {
+    "message": "スプライトの右クリックメニューにすべてのスプライトを削除するオプションを追加しました（確認画面が表示されます）。"
+  },
+  "round_profile_pictures_title": {
+    "message": "丸いプロフィールアイコン"
+  },
+  "round_profile_pictures_description": {
+    "message": "プロフィールのアイコンが丸くなります。"
+  },
+  "sidebar_title": {
+    "message": "サイドバー"
+  },
+  "sidebar_description": {
+    "message": "Scratchの画面上部のバーの位置を横に移動します。"
+  },
+  "ocular_link_title": {
+    "message": "フォーラムでのOcularへのリンク"
+  },
+  "ocular_link_description": {
+    "message": "投稿したユーザーのユーザー名の下にOcularページへのリンクを追加します。"
+  },
+  "forum_scratch_team_title": {
+    "message": "フォーラムでのScratch Teamのマーク"
+  },
+  "forum_scratch_team_description": {
+    "message": "フォーラムに参加しているScratch Teamのメンバーのユーザー名の横には、アスタリスク（*）が付けられます。"
+  },
+  "message_count_title": {
+    "message": "メッセージカウント"
+  },
+  "message_count_description": {
+    "message": "プロフィールの設定された国の横に、そのユーザーのメッセージ数を表示します。"
+  },
+  "remove_editor_icons_title": {
+    "message": "エディターのアイコンの非表示"
+  },
+  "remove_editor_icons_description": {
+    "message": "エディターの横に表示されているブロックカテゴリーのアイコンを削除します。"
+  },
+  "sprite_watermark_title": {
+    "message": "スプライトの透かしの非表示"
+  },
+  "sprite_watermark_description": {
+    "message": "コードエディターの右上に表示されているスプライトの透かしを非表示にします。"
+  },
+  "compact_editor_title": {
+    "message": "コンパクトなエディター"
+  },
+  "compact_editor_description": {
+    "message": "スプライトや背景の情報をよりコンパクトにします。"
+  },
+  "right_side_flag_title": {
+    "message": "緑の旗を右に表示する"
+  },
+  "right_side_flag_description": {
+    "message": "緑の旗と停止ボタンをステージの右側に移動させます。"
+  },
+  "my_recent_projects_title": {
+    "message": "Scratchニュースを最近のプロジェクトに置き換える"
+  },
+  "my_recent_projects_description": {
+    "message": "トップページのScratchニュースを最近のプロジェクトに置き換えます。"
+  },
+  "hide_scratch_news_title": {
+    "message": "Scratchニュースの非表示"
+  },
+  "hide_scratch_news_description": {
+    "message": "トップページにあるScratchニュースを非表示にします。この機能は、Scratchニュースを最近のプロジェクトに置き換える機能を有効にした場合、競合します。"
+  },
+  "focus_mode_title": {
+    "message": "フォーカスモード"
+  },
+  "focus_mode_description": {
+    "message": "ボタンをクリックすると、プロジェクトページのコメント、スタジオ、リミックス、ヘッダー、フッターを削除します。"
+  },
+  "terrible_title": {
+    "message": "恐ろしい機能"
+  },
+  "terrible_description": {
+    "message": "有効にしないでください。"
+  }
+}
