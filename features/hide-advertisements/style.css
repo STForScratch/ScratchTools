@@ -2,6 +2,10 @@ body.colorComment .scratchtoolsAd .comment-bubble, .scratchtoolsAd .comment-bubb
     background-color: #ffd0d0 !important;
 }
 
+body.colorComment .scratchtoolsAd > div[id^="comments-"] {
+    background-color: #ffd0d0 !important;
+}
+
 body.hideComment .scratchtoolsAd {
     display: none;
 }
