@@ -32,28 +32,41 @@ async function getEnabledFeatureCount() {
 if (document.querySelector(".more-settings-btn")) {
   var moreSettingsBtn = document.querySelector(".more-settings-btn");
   moreSettingsBtn.addEventListener("click", async function () {
+    var components = [
+      {
+        content:
+          "Version: " +
+          chrome.runtime.getManifest().version_name +
+          "\nFeatures enabled: " +
+          (await getEnabledFeatureCount()).toString() +
+          "\nLanguage: " +
+          chrome.i18n.getUILanguage(),
+        type: "code",
+      },
+      {
+        content: "Copy Feature Codes",
+        type: "button",
+        callback: returnFeatureCode,
+        additonalClassNames: ["secondary-btn"],
+      },
+    ];
+    if (chrome.runtime.getManifest().version_name.endsWith("-beta")) {
+      components.push({
+        content: "Report a Bug",
+        type: "button",
+        callback: function () {
+          chrome.tabs.create({
+            url: "https://github.com/STForScratch/ScratchTools/issues/new?assignees=&labels=bug&projects=&template=--bug.yml",
+          });
+        },
+        additonalClassNames: ["secondary-btn"],
+      });
+    }
     ScratchTools.modals.create({
       title: "More settings",
       description:
         "These are some additional settings that you can use to change other aspects of ScratchTools.",
-      components: [
-        {
-          content:
-            "Version: " +
-            chrome.runtime.getManifest().version_name +
-            "\nFeatures enabled: " +
-            (await getEnabledFeatureCount()).toString() +
-            "\nLanguage: " +
-            chrome.i18n.getUILanguage(),
-          type: "code",
-        },
-        {
-          content: "Copy Feature Codes",
-          type: "button",
-          callback: returnFeatureCode,
-          additonalClassNames: ["secondary-btn"],
-        },
-      ],
+      components: components,
     });
   });
 }
@@ -75,7 +88,8 @@ if (version.includes("beta")) {
     var newest = (
       await (
         await fetch(
-          "https://raw.githubusercontent.com/STForScratch/ScratchTools/beta/changelog/beta.json"
+          "https://raw.githubusercontent.com/STForScratch/ScratchTools/beta/changelog/beta.json?nocache=" +
+            Date.now().toString()
         )
       ).json()
     ).version;
