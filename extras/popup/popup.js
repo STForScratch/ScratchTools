@@ -61,7 +61,8 @@ if (document.querySelector(".more-settings-btn")) {
 var version = chrome.runtime.getManifest().version_name;
 if (version.includes("beta")) {
   if (document.querySelector("link[rel=icon]")) {
-    document.querySelector("link[rel=icon]").href = "/extras/icons/beta/beta.svg";
+    document.querySelector("link[rel=icon]").href =
+      "/extras/icons/beta/beta.svg";
   }
   document.head.innerHTML +=
     "<link rel='stylesheet' href='/extras/popup/beta.css' id='betacss'>";
@@ -70,6 +71,41 @@ if (version.includes("beta")) {
     document.getElementById("popupnote").innerHTML =
       "Welcome to the beta verison of ScratchTools! This version is not stable and may contain bugs. Please report any bugs you find <a href='https://github.com/STForScratch/ScratchTools/issues' target='_blank'>here</a>.";
   }
+  async function checkCurrentVersion() {
+    var newest = (
+      await (
+        await fetch(
+          "https://raw.githubusercontent.com/STForScratch/ScratchTools/beta/changelog/beta.json"
+        )
+      ).json()
+    ).version;
+    var current = (await (await fetch("/changelog/beta.json")).json()).version;
+    if (newest !== current) {
+      var lastUpdatedFor = await chrome.storage.sync.get(
+        "lastBetaNotification"
+      );
+      if (
+        lastUpdatedFor?.lastBetaNotification?.version !==
+          chrome.runtime.getManifest().version_name ||
+        lastUpdatedFor?.lastBetaNotification?.beta !== current
+      ) {
+        await chrome.storage.sync.set({
+          lastBetaNotification: {
+            beta: current,
+            version: chrome.runtime.getManifest().version_name,
+          },
+        });
+        alert(
+          "There is currently a newer version of the ScratchTools Beta available."
+        );
+      }
+      if (document.querySelector("#popupnote")) {
+        document.querySelector("#popupnote").textContent =
+          "There is currently a newer version of the ScratchTools Beta available.";
+      }
+    }
+  }
+  checkCurrentVersion();
 }
 
 document.getElementById("toggletheme").addEventListener("click", toggletheme);
