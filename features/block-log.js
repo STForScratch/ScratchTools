@@ -140,7 +140,7 @@ border-bottom: 2px dotted gray;
       if (
         ScratchTools.Scratch.blockly.getMainWorkspace().undoStack_.length === 0
       ) {
-        const i = document.createElement("i");
+        let i = document.createElement("i");
         i.textContent = "Empty";
         div.querySelector(".content").appendChild(i);
         i.style.opacity = "0.5";
