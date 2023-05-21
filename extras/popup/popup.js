@@ -63,16 +63,15 @@ if (document.querySelector(".more-settings-btn")) {
 
 var version = chrome.runtime.getManifest().version_name;
 if (version.includes("beta")) {
+  if (document.querySelector("link[rel=icon]")) {
+    document.querySelector("link[rel=icon]").href =
+      "/extras/icons/beta/beta.svg";
+  }
   const betaCSS = document.createElement("link");
   betaCSS.setAttribute("rel", "stylesheet");
   betaCSS.setAttribute("href", "/extras/popup/beta.css");
   betaCSS.id = "betacss";
   document.head.appendChild(betaCSS);
-  if (document.querySelector("link[rel=icon]")) {
-    document.querySelector("link[rel=icon]").href =
-      "/extras/icons/beta/beta.svg";
-  }
-  s;
   if (document.head.id == "Popup") {
     document.getElementById("minilogo").src = "/extras/icons/beta/beta.svg";
     document.getElementById("popupnote").innerHTML =
