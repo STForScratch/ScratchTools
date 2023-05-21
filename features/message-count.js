@@ -13,10 +13,20 @@ if (!document.querySelector(".location").className.includes(" scratchtools")) {
     var data = await response.json();
     console.log(data);
     var stuff = data["count"];
-    document.querySelector(".location").textContent = `${
-      document.querySelector(".location").textContent
-    } | ${stuff} Messages`;
-    document.querySelector(".location").className =
-      document.querySelector(".location").className + " scratchtools";
+    var span = document.createElement("span");
+    span.className = "ste-messagecount";
+    span.textContent = `${stuff} Messages`;
+    span.title = "This was added by ScratchTools.";
+    span.style.borderLeft = "1px solid #ccc"
+    span.style.paddingLeft = "5px"
+    span.style.marginLeft = "5px"
+
+    if (document.querySelector(".ste-isonline")) {
+      document
+        .querySelector(".location")
+        .insertBefore(span, document.querySelector(".ste-isonline"));
+    } else {
+      document.querySelector(".location").appendChild(span);
+    }
   }
 }

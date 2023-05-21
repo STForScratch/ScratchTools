@@ -61,10 +61,18 @@ chrome.runtime.onInstalled.addListener(async function (object) {
       );
       var data = await response.json();
       chrome.action.setBadgeText({ text: data.msg_count.toString() });
-      chrome.action.setBadgeBackgroundColor({ color: !chrome.runtime.getManifest().version_name.endsWith("-beta") ? "#ff9f00" : "#00a2ff" });
+      chrome.action.setBadgeBackgroundColor({
+        color: !chrome.runtime.getManifest().version_name.endsWith("-beta")
+          ? "#ff9f00"
+          : "#00a2ff",
+      });
     } catch (err) {
       chrome.action.setBadgeText({ text: "?" });
-      chrome.action.setBadgeBackgroundColor({ color: !chrome.runtime.getManifest().version_name.endsWith("-beta") ? "#ff9f00" : "#00a2ff" });
+      chrome.action.setBadgeBackgroundColor({
+        color: !chrome.runtime.getManifest().version_name.endsWith("-beta")
+          ? "#ff9f00"
+          : "#00a2ff",
+      });
     }
   } else {
     chrome.action.setBadgeText({ text: "" });
@@ -319,7 +327,9 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
           var allStorage = {};
           await data.forEach(async function (el) {
             if (el.version === 2) {
-              el.options = (await (await fetch(`/features/${el.id}/data.json`)).json()).options
+              el.options = (
+                await (await fetch(`/features/${el.id}/data.json`)).json()
+              ).options;
             }
             if (el.options !== undefined) {
               await el.options.forEach(async function (option) {
@@ -365,12 +375,12 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
                   ).json();
                   newData.scripts?.forEach(function (script) {
                     if (new URL(tab.url).pathname.match(script.runOn)) {
-                    chrome.scripting.executeScript({
-                      target: { tabId: tabId },
-                      files: [`/features/${data[el]["id"]}/${script.file}`],
-                      world: newData.world?.toUpperCase() || "MAIN",
-                    });
-                  }
+                      chrome.scripting.executeScript({
+                        target: { tabId: tabId },
+                        files: [`/features/${data[el]["id"]}/${script.file}`],
+                        world: newData.world?.toUpperCase() || "MAIN",
+                      });
+                    }
                   });
                   newData.styles?.forEach(function (style) {
                     if (new URL(tab.url).pathname.match(style.runOn)) {
@@ -401,7 +411,9 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
                     world: world,
                   });
                 }
-                ScratchTools.console.log("Injected feature: " + data[el].file || data[el].id);
+                ScratchTools.console.log(
+                  "Injected feature: " + data[el].file || data[el].id
+                );
               }
             });
           }
@@ -464,12 +476,54 @@ chrome.alarms.onAlarm.addListener(async function () {
       );
       var data = await response.json();
       chrome.action.setBadgeText({ text: data.msg_count.toString() });
-      !chrome.runtime.getManifest().version_name.endsWith("-beta") ? "#ff9f00" : "#00a2ff"
+      !chrome.runtime.getManifest().version_name.endsWith("-beta")
+        ? "#ff9f00"
+        : "#00a2ff";
     } catch (err) {
       chrome.action.setBadgeText({ text: "?" });
-      !chrome.runtime.getManifest().version_name.endsWith("-beta") ? "#ff9f00" : "#00a2ff"
+      !chrome.runtime.getManifest().version_name.endsWith("-beta")
+        ? "#ff9f00"
+        : "#00a2ff";
     }
   } else {
     chrome.action.setBadgeText({ text: "" });
+  }
+  if (obj.features && obj.features.includes("isonline")) {
+    try {
+      var loggedIn = await (
+        await fetch("https://scratch.mit.edu/session/", {
+          headers: {
+            accept: "*/*",
+            "accept-language": "en, en;q=0.8",
+            "sec-ch-ua":
+              '"Google Chrome";v="111", "Not(A:Brand";v="8", "Chromium";v="111"',
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": '"macOS"',
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "same-origin",
+            "x-requested-with": "XMLHttpRequest",
+          },
+          referrer: "https://scratch.mit.edu/",
+          referrerPolicy: "strict-origin-when-cross-origin",
+          body: null,
+          method: "GET",
+          mode: "cors",
+          credentials: "include",
+        })
+      ).json();
+      if (loggedIn?.user) {
+        var data = await (
+          await fetch("https://data.scratchtools.app/online/", {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ user: loggedIn.user.username }),
+          })
+        ).json();
+      }
+    } catch (err) {}
   }
 });

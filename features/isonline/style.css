@@ -1,0 +1,19 @@
+.ste-isonline {
+  border-left: 1px solid #ccc;
+  margin-left: 5px;
+  padding-left: 5px;
+}
+
+.ste-isonline.unsure {
+    font-style: italic;
+    color: #be650d;
+    opacity: .4;
+}
+
+.ste-isonline.ste-detect-online {
+    color: #0dbea1;
+}
+
+.ste-isonline.ste-detect-offline {
+    color: #be0d51;
+}
