@@ -14,7 +14,7 @@ function addKeyPressed() {
 }
 
 function addKeyPressedEditor() {
-  var span = document.createElement("span");
+  const span = document.createElement("span");
   span.className = "menu-bar_file-group_1_CHX scratchtools navlastkey";
   span.textContent = "No Key Pressed";
   if (document.querySelector("div.scratchtools.navlastkey") === null) {
