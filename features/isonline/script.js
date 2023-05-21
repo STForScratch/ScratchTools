@@ -16,12 +16,14 @@ async function checkUser() {
       (data.online ? "ste-detect-online" : "ste-detect-offline");
     span.textContent = data.online ? "Online" : "Offline";
     span.title = "This was added by ScratchTools.";
+    span.setScratchTools()
     document.querySelector(".location").appendChild(span);
   } else {
     var span = document.createElement("span");
     span.className = "ste-isonline unsure";
     span.textContent = "(Doesn't use ScratchTools online detection)";
     span.title = "This was added by ScratchTools.";
+    span.setScratchTools()
     document.querySelector(".location").appendChild(span);
   }
 }
