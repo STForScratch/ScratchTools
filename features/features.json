@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "plain-background",
+    "versionAdded": "v2.29.0"
+  },
+  {
+    "version": 2,
     "id": "isonline",
     "versionAdded": "v2.29.0"
   },
@@ -964,15 +969,6 @@
     "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "open-in-new-tab",
     "type": ["Website"]
-  },
-  {
-    "title": "Plain Background",
-    "description": "Removes the dots from the background of the code editor.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "plain-background",
-    "type": ["Editor", "Theme"],
-    "dynamic": true
   },
   {
     "title": "Unbold Site Text",

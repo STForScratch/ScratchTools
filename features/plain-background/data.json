@@ -1,0 +1,11 @@
+{
+  "title": "Plain Background",
+  "description": "Removes the dots from the background of the code editor.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "dynamic": true,
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }]
+}
