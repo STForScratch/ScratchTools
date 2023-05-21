@@ -1,3 +1,13 @@
+HTMLElement.prototype.setScratchTools = function () {
+  this.style.cursor = "pointer";
+  this.addEventListener("click", function () {
+    ScratchTools.modals.create({
+      title: "Added by ScratchTools",
+      description: "This element was added by a feature in ScratchTools.",
+    });
+  });
+};
+
 ScratchTools.modals = {
   create: function (data) {
     var div = document.createElement("div");
