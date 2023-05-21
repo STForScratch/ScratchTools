@@ -119,7 +119,7 @@ if (version.includes("beta")) {
       }
     }
   }
-  checkCurrentVersion();
+  // checkCurrentVersion();
 }
 
 document.getElementById("toggletheme").addEventListener("click", toggletheme);
@@ -246,13 +246,36 @@ async function getFeatures() {
     }
 
     input.addEventListener("input", async function () {
+      var allFeaturesList = await (
+        await fetch("/features/features.json")
+      ).json();
+      for (var i in allFeaturesList) {
+        ftr = allFeaturesList[i];
+        if (
+          ftr.id === this.parentNode.parentNode.dataset.id &&
+          ftr.version === 2
+        ) {
+          var finalFeatureData = await (
+            await fetch(`/features/${ftr.id}/data.json`)
+          ).json();
+        }
+      }
       var data = (await chrome.storage.sync.get("features")).features || "";
       if (!data.includes(this.parentNode.parentNode.dataset.id)) {
-        this.checked = true;
-        await chrome.storage.sync.set({
-          features: data + "." + this.parentNode.parentNode.dataset.id,
-        });
-        dynamicEnable(this.parentNode.parentNode.dataset.id);
+        if (finalFeatureData?.additionalAgreements) {
+          var ok = confirm(finalFeatureData.additionalAgreements);
+        } else {
+          var ok = true;
+        }
+        if (ok) {
+          this.checked = true;
+          await chrome.storage.sync.set({
+            features: data + "." + this.parentNode.parentNode.dataset.id,
+          });
+          dynamicEnable(this.parentNode.parentNode.dataset.id);
+        } else {
+          window.close()
+        }
       } else {
         this.checked = false;
         await chrome.storage.sync.set({
