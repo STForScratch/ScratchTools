@@ -81,6 +81,50 @@ chrome.runtime.onInstalled.addListener(async function (object) {
 
 chrome.tabs.onUpdated.addListener(async function (tabId, info) {
   var tab = await chrome.tabs.get(tabId);
+  if (tab?.url?.startsWith("https://scratch.mit.edu/")) {
+    var obj = await chrome.storage.sync.get("features");
+    if (obj.features && obj.features.includes("isonline")) {
+      var lastCached = await chrome.storage.sync.get("lastOnlineCached");
+      if ((lastCached.lastOnlineCached || 0) < Date.now() - 300000) {
+        try {
+          var loggedIn = await (
+            await fetch("https://scratch.mit.edu/session/", {
+              headers: {
+                accept: "*/*",
+                "accept-language": "en, en;q=0.8",
+                "sec-ch-ua":
+                  '"Google Chrome";v="111", "Not(A:Brand";v="8", "Chromium";v="111"',
+                "sec-ch-ua-mobile": "?0",
+                "sec-ch-ua-platform": '"macOS"',
+                "sec-fetch-dest": "empty",
+                "sec-fetch-mode": "cors",
+                "sec-fetch-site": "same-origin",
+                "x-requested-with": "XMLHttpRequest",
+              },
+              referrer: "https://scratch.mit.edu/",
+              referrerPolicy: "strict-origin-when-cross-origin",
+              body: null,
+              method: "GET",
+              mode: "cors",
+              credentials: "include",
+            })
+          ).json();
+          if (loggedIn?.user) {
+            var data = await (
+              await fetch("https://data.scratchtools.app/online/", {
+                method: "POST",
+                headers: {
+                  Accept: "application/json",
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ user: loggedIn.user.username }),
+              })
+            ).json();
+          }
+        } catch (err) {}
+      }
+    }
+  }
   var listOfIds = [];
   var features = await (await fetch("/features/features.json")).json();
   features.forEach(function (feature) {
@@ -487,43 +531,5 @@ chrome.alarms.onAlarm.addListener(async function () {
     }
   } else {
     chrome.action.setBadgeText({ text: "" });
-  }
-  if (obj.features && obj.features.includes("isonline")) {
-    try {
-      var loggedIn = await (
-        await fetch("https://scratch.mit.edu/session/", {
-          headers: {
-            accept: "*/*",
-            "accept-language": "en, en;q=0.8",
-            "sec-ch-ua":
-              '"Google Chrome";v="111", "Not(A:Brand";v="8", "Chromium";v="111"',
-            "sec-ch-ua-mobile": "?0",
-            "sec-ch-ua-platform": '"macOS"',
-            "sec-fetch-dest": "empty",
-            "sec-fetch-mode": "cors",
-            "sec-fetch-site": "same-origin",
-            "x-requested-with": "XMLHttpRequest",
-          },
-          referrer: "https://scratch.mit.edu/",
-          referrerPolicy: "strict-origin-when-cross-origin",
-          body: null,
-          method: "GET",
-          mode: "cors",
-          credentials: "include",
-        })
-      ).json();
-      if (loggedIn?.user) {
-        var data = await (
-          await fetch("https://data.scratchtools.app/online/", {
-            method: "POST",
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ user: loggedIn.user.username }),
-          })
-        ).json();
-      }
-    } catch (err) {}
   }
 });
