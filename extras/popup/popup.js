@@ -119,7 +119,7 @@ if (version.includes("beta")) {
       }
     }
   }
-  checkCurrentVersion();
+  // checkCurrentVersion();
 }
 
 document.getElementById("toggletheme").addEventListener("click", toggletheme);
