@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "isonline",
+    "versionAdded": "v2.29.0"
+  },
+  {
+    "version": 2,
     "id": "hide-advertisements",
     "versionAdded": "v2.28.0"
   },
