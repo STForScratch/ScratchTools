@@ -1,7 +1,7 @@
 ScratchTools.styles.add(
   `
 .project-title.no-edit {
-    overflow-x: scroll !important;
+    overflow-x: auto !important;
     text-overflow: clip !important;
 }`,
   "scroll project titles"
