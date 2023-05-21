@@ -1,6 +1,6 @@
 {
-  "name": "__MSG_extName__",
-  "short_name": "__MSG_extName__",
+  "name": "ScratchTools Beta",
+  "short_name": "ScratchTools Beta",
   "manifest_version": 3,
   "version": "2.29.0.1",
   "version_name": "2.29.0.1-beta",
@@ -12,14 +12,14 @@
   },
   "permissions": ["scripting", "storage", "alarms"],
   "action": {
-    "default_icon": "/extras/icons/icon48.png",
+    "default_icon": "/extras/icons/beta/icon48.png",
     "default_popup": "/extras/popup/popup.html",
     "default_title": "ScratchTools"
   },
   "icons": {
-    "16": "/extras/icons/icon16.png",
-    "48": "/extras/icons/icon48.png",
-    "128": "/extras/icons/icon128.png"
+    "16": "/extras/icons/beta/icon16.png",
+    "48": "/extras/icons/beta/icon48.png",
+    "128": "/extras/icons/beta/icon128.png"
   },
   "web_accessible_resources": [{
     "resources": ["features/*", "/extras/feature/index.html", "/api/*"],
