@@ -3,16 +3,16 @@
     "message": "ScratchTools"
   },
   "extDescription": {
-    "message": "ScratchTools jest w pełni konfigurowalny oraz posiada mnóstwo funkcji, wszystko po to, aby sprawić by strona Scratch była lepsza i łatwiejsza w użyciu!"
+    "message": "ScratchTools, tümü Scratch web sitesini daha iyi ve kullanımı daha kolay hale getirmek için tonlarca özellik ile tamamen özelleştirilebilir!"
   },
   "welcome_to_settings": {
     "message": "Witaj w ustawieniach! Możesz znaleźć tutaj wszystkie funkcje!"
   },
   "search": {
-    "message": "wyszukiwanie"
+    "message": "ara"
   },
   "credits_text": {
-    "message": "Twórcy"
+    "message": "Katkıda bulunanlar"
   },
   "disabled_explanation": {
     "message": "Ta funkcja została wyłączona przez ScratchTools. Wciąż możesz włączyć ją lub wyłączyć, ale ze względów bezpieczeństwa, nie będzie ona na razie działać."
@@ -282,10 +282,16 @@
     "message": "Profil yorumlarınız kapalıysa, artık kendi profilinize yorum yapabilirsiniz! Profile sadece siz yorum yapabilirsiniz."
   },
   "hide_advertisements_title": {
-    "message": "Ukryj reklamy w komentarzach"
+    "message": "Yorumlardaki Reklamları Gizle"
   },
   "hide_advertisements_description": {
     "message": "Profillerin, projelerin ve stüdyoların yorumlarındaki reklamları gizler. Yorumlarda çok yer kaplayabilirler."
+  },
+  "stats_percentages_title": {
+    "message": "Proje Durumu için Yüzdeleri Göster"
+  },
+  "stats_percentages_description": {
+    "message": "Kendiminkiler sayfasında, eylemi görüntüleyenlerin yüzde kaçının gerçekleştirdiğini görmek için kalplerin, favorilerin veya remixlerin sayısının üzerine gelin."
   },
   "turbowarp_button_in_editor_title": {
     "message": "Editörden turbowarp'ta Aç"
@@ -519,25 +525,19 @@
     "message": "Klon Sayacı"
   },
   "clone_counter_description": {
-    "message": "Wyświetla nad sceną całkowitą liczbę klonów aktywnych w projekcie."
-  },
-  "colored_shadows_title": {
-    "message": "Kolorowe Cienie"
-  },
-  "colored_shadows_description": {
-    "message": "Zastępuje cień utworzony podczas przeciągania bloku w pobliże innego bloku kolorem przenoszonego bloku."
+    "message": "Yukarıdaki projedeki toplam klon sayısını sahne alanı başlığında görüntüler."
   },
   "creator_badge_title": {
-    "message": "Odznaka Autora"
+    "message": "Yazar Rozeti"
   },
   "creator_badge_description": {
-    "message": "Dodaję odznakę obok komentartzy napisanych przez autora oglądanego projektu."
+    "message": "Projenin yazarı tarafından yazılan yorumların yanına bir rozet ekler."
   },
-  "stats_percentages_title": {
-    "message": "Pokaż wartości procentowe dla statystyk projektu"
+  "colored_shadows_title": {
+    "message": "Renkli Gölgeler"
   },
-  "stats_percentages_description": {
-    "message": "Na stronie z moimi rzeczami najedź kursorem na liczbę polubień, ulubionych lub remiksów, aby zobaczyć, jaki procent widzów wykonał czynność."
+  "colored_shadows_description": {
+    "message": "Bir bloğu başka bir bloğun yakınına sürüklediğinizde oluşturulan gölgeyi, taşınmakta olan bloğun rengiyle değiştirir."
   },
   "sprite_data_title": {
     "message": "Hareketli Grafik Verilerini Görüntüleme"

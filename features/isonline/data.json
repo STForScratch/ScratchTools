@@ -1,0 +1,14 @@
+{
+    "title": "Show if User is Online",
+    "description": "On profile pages, displays if a user is online. This will also let other users see if you are online.",
+    "credits": [
+      { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+    ],
+    "type": ["Website"],
+    "tags": ["New", "Featured"],
+    "dynamic": true,
+    "styles": [{ "file": "style.css", "runOn": "/users/*" }],
+    "scripts": [{ "file": "script.js", "runOn": "/users/*" }],
+    "additionalAgreements": "By enabling this feature, you understand that other users will be able to see if you are online or not."
+  }
+  

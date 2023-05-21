@@ -1,0 +1,21 @@
+{
+  "title": "Hide Ads in Comments",
+  "description": "Hides advertisements in the comments of profiles, projects, and studios. They can take up a lot of space in the comments.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "dynamic": true,
+  "styles": [
+    { "file": "style.css", "runOn": "/projects/*" },
+    { "file": "style.css", "runOn": "/studios/*" },
+    { "file": "two.css", "runOn": "/users/*" }
+  ],
+  "scripts": [
+    { "file": "three.js", "runOn": "/projects/*" },
+    { "file": "three.js", "runOn": "/studios/*" },
+    { "file": "two.js", "runOn": "/users/*" }
+  ],
+  "options": [{ "id": "colorComment", "name": "Highlight Comments", "type": 1 }]
+}

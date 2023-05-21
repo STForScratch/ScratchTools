@@ -27,11 +27,11 @@ async function messagesPage() {
     document.querySelector(".center-perfectly").remove();
     var center = createCenter();
     var h1 = document.createElement("h1");
-    h1.textContent = "Thank you.";
+    h1.textContent = chrome.runtime.getManifest().version_name.endsWith("-beta") ? "You're using the beta." : "Thank you.";
     h1.className = "big"
     var h3 = document.createElement("h2")
     h3.style.fontWeight = "400"
-    h3.textContent = "Dozens of developers have worked hard to make hundreds of features on ScratchTools, which is used by over 4,000 people worldwide."
+    h3.textContent = chrome.runtime.getManifest().version_name.endsWith("-beta") ? "If you find any bugs, just open up the full settings page, click on the \"Additional Settings\" button, and click \"Report a Bug\"." : "Dozens of developers have worked hard to make hundreds of features on ScratchTools, which is used by over 4,000 people worldwide."
     center.appendChild(h1)
     center.appendChild(h3)
     var button = document.createElement("button")

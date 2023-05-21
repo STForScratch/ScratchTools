@@ -7,7 +7,7 @@
   "type": ["Editor"],
   "tags": ["New", "Recommended"],
   "dynamic": false,
-  "scripts": ["script.js"],
-  "styles": ["style.css"],
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }, { "file": "mystuff.js", "runOn": "/mystuff/" }],
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }, { "file": "mystuff.css", "runOn": "/mystuff/" }],
   "resources": [{ "name": "unlisted-star", "path": "/star.svg" }, { "name": "unlisted-star-full", "path": "/star-full.svg" }]
 }

@@ -7,14 +7,56 @@ chrome.storage.sync.get("theme", function (obj) {
   document.head.appendChild(themeLink);
 });
 
+async function getEnabledFeatureCount() {
+  var features = await (await fetch("/features/features.json")).json();
+  var count = 0;
+  var storageData = (await chrome.storage.sync.get("features"))?.features || "";
+  features.forEach(function (feature) {
+    if (storageData.includes(feature.file || feature.id)) {
+      count = count + 1;
+    }
+  });
+  return count;
+}
+
 if (document.querySelector(".more-settings-btn")) {
   var moreSettingsBtn = document.querySelector(".more-settings-btn");
-  moreSettingsBtn.addEventListener("click", function () {
+  moreSettingsBtn.addEventListener("click", async function () {
+    var components = [
+      {
+        content:
+          "Version: " +
+          chrome.runtime.getManifest().version_name +
+          "\nFeatures enabled: " +
+          (await getEnabledFeatureCount()).toString() +
+          "\nLanguage: " +
+          chrome.i18n.getUILanguage(),
+        type: "code",
+      },
+      {
+        content: "Copy Feature Codes",
+        type: "button",
+        callback: returnFeatureCode,
+        additonalClassNames: ["secondary-btn"],
+      },
+    ];
+    if (chrome.runtime.getManifest().version_name.endsWith("-beta")) {
+      components.push({
+        content: "Report a Bug",
+        type: "button",
+        callback: function () {
+          chrome.tabs.create({
+            url: "https://github.com/STForScratch/ScratchTools/issues/new?assignees=&labels=bug&projects=&template=--bug.yml",
+          });
+        },
+        additonalClassNames: ["secondary-btn"],
+      });
+    }
     ScratchTools.modals.create({
       title: "More settings",
       description:
         "These are some additional settings that you can use to change other aspects of ScratchTools.",
-        components: [ { content: "Copy Feature Codes", type: "button", callback: returnFeatureCode, additonalClassNames: ["secondary-btn"] } ]
+      components: components,
     });
   });
 }
@@ -26,12 +68,52 @@ if (version.includes("beta")) {
   betaCSS.setAttribute("href", "/extras/popup/beta.css");
   betaCSS.id = "betacss";
   document.head.appendChild(betaCSS);
+  if (document.querySelector("link[rel=icon]")) {
+    document.querySelector("link[rel=icon]").href =
+      "/extras/icons/beta/beta.svg";
+  }
+  s;
   if (document.head.id == "Popup") {
-    document.getElementById("minilogo").src =
-      "/extras/icons/mini-logo-beta.svg";
+    document.getElementById("minilogo").src = "/extras/icons/beta/beta.svg";
     document.getElementById("popupnote").innerHTML =
       "Welcome to the beta verison of ScratchTools! This version is not stable and may contain bugs. Please report any bugs you find <a href='https://github.com/STForScratch/ScratchTools/issues' target='_blank'>here</a>.";
   }
+  async function checkCurrentVersion() {
+    var newest = (
+      await (
+        await fetch(
+          "https://raw.githubusercontent.com/STForScratch/ScratchTools/beta/changelog/beta.json?nocache=" +
+            Date.now().toString()
+        )
+      ).json()
+    ).version;
+    var current = (await (await fetch("/changelog/beta.json")).json()).version;
+    if (newest !== current) {
+      var lastUpdatedFor = await chrome.storage.sync.get(
+        "lastBetaNotification"
+      );
+      if (
+        lastUpdatedFor?.lastBetaNotification?.version !==
+          chrome.runtime.getManifest().version_name ||
+        lastUpdatedFor?.lastBetaNotification?.beta !== current
+      ) {
+        await chrome.storage.sync.set({
+          lastBetaNotification: {
+            beta: current,
+            version: chrome.runtime.getManifest().version_name,
+          },
+        });
+        alert(
+          "There is currently a newer version of the ScratchTools Beta available."
+        );
+      }
+      if (document.querySelector("#popupnote")) {
+        document.querySelector("#popupnote").textContent =
+          "There is currently a newer version of the ScratchTools Beta available.";
+      }
+    }
+  }
+  checkCurrentVersion();
 }
 
 document.getElementById("toggletheme").addEventListener("click", toggletheme);
@@ -158,13 +240,36 @@ async function getFeatures() {
     }
 
     input.addEventListener("input", async function () {
+      var allFeaturesList = await (
+        await fetch("/features/features.json")
+      ).json();
+      for (var i in allFeaturesList) {
+        ftr = allFeaturesList[i];
+        if (
+          ftr.id === this.parentNode.parentNode.dataset.id &&
+          ftr.version === 2
+        ) {
+          var finalFeatureData = await (
+            await fetch(`/features/${ftr.id}/data.json`)
+          ).json();
+        }
+      }
       var data = (await chrome.storage.sync.get("features")).features || "";
       if (!data.includes(this.parentNode.parentNode.dataset.id)) {
-        this.checked = true;
-        await chrome.storage.sync.set({
-          features: data + "." + this.parentNode.parentNode.dataset.id,
-        });
-        dynamicEnable(this.parentNode.parentNode.dataset.id);
+        if (finalFeatureData?.additionalAgreements) {
+          var ok = confirm(finalFeatureData.additionalAgreements);
+        } else {
+          var ok = true;
+        }
+        if (ok) {
+          this.checked = true;
+          await chrome.storage.sync.set({
+            features: data + "." + this.parentNode.parentNode.dataset.id,
+          });
+          dynamicEnable(this.parentNode.parentNode.dataset.id);
+        } else {
+          window.close();
+        }
       } else {
         this.checked = false;
         await chrome.storage.sync.set({
@@ -186,15 +291,58 @@ async function getFeatures() {
         var option = feature.options[optionPlace];
         var input = document.createElement("input");
         input.dataset.id = option.id;
+        input.dataset.feature = feature.id;
         input.placeholder = option.name;
         input.type = ["text", "checkbox", "number", "color"][option.type || 0];
         var optionData = (await chrome.storage.sync.get(option.id))[option.id];
         input.value = optionData || "";
         div.appendChild(input);
+        if (input.type === "checkbox") {
+          var label = document.createElement("label");
+          label.textContent = option.name;
+          div.appendChild(label);
+          input.checked = optionData || false;
+        }
         input.addEventListener("input", async function () {
+          if (this.type !== "checkbox") {
+            finalValue = this.value;
+          } else {
+            var data = await chrome.storage.sync.get(this.dataset.id);
+            if (data[this.dataset.id]) {
+              this.checked = false;
+              finalValue = false;
+            } else {
+              this.checked = true;
+              finalValue = true;
+            }
+          }
           var saveData = {};
-          saveData[this.dataset.id] = this.value;
+          saveData[this.dataset.id] = finalValue;
           await chrome.storage.sync.set(saveData);
+          var featureToUpdate = this;
+          chrome.tabs.query({}, function (tabs) {
+            for (var i = 0; i < tabs.length; i++) {
+              try {
+                chrome.scripting.executeScript({
+                  args: [
+                    featureToUpdate.dataset.feature,
+                    featureToUpdate.dataset.id,
+                    finalValue,
+                  ],
+                  target: { tabId: tabs[i].id },
+                  func: updateSettingsFunction,
+                  world: "MAIN",
+                });
+                function updateSettingsFunction(feature, name, value) {
+                  if (allSettingChangeFunctions[feature]) {
+                    allSettingChangeFunctions[feature](name, value);
+                  }
+                }
+              } catch (err) {
+                console.log(err);
+              }
+            }
+          });
         });
       }
     }
@@ -269,11 +417,13 @@ async function dynamicEnable(id) {
           chrome.tabs.query({}, function (tabs) {
             for (var i = 0; i < tabs.length; i++) {
               try {
-                chrome.scripting.executeScript({
-                  target: { tabId: tabs[i].id },
-                  files: [`/features/${feature.id}/${el}`],
-                  world: "MAIN",
-                });
+                if (new URL(tabs[i].url).pathname.match(script.runOn)) {
+                  chrome.scripting.executeScript({
+                    target: { tabId: tabs[i].id },
+                    files: [`/features/${feature.id}/${el.file}`],
+                    world: "MAIN",
+                  });
+                }
               } catch (err) {}
             }
           });
@@ -281,22 +431,28 @@ async function dynamicEnable(id) {
         featureData.styles?.forEach(function (style) {
           chrome.tabs.query({}, function (tabs) {
             for (var i = 0; i < tabs.length; i++) {
-              chrome.scripting.executeScript({
-                args: [
-                  feature.id,
-                  chrome.runtime.getURL(`/features/${feature.id}/${style}`),
-                ],
-                target: { tabId: tabs[i].id },
-                func: insertCSS,
-                world: "MAIN",
-              });
-              function insertCSS(feature, path) {
-                var link = document.createElement("link");
-                link.rel = "stylesheet";
-                link.href = path;
-                link.dataset.feature = feature;
-                document.head.appendChild(link);
-              }
+              try {
+                if (new URL(tabs[i].url).pathname.match(style.runOn)) {
+                  chrome.scripting.executeScript({
+                    args: [
+                      feature.id,
+                      chrome.runtime.getURL(
+                        `/features/${feature.id}/${style.file}`
+                      ),
+                    ],
+                    target: { tabId: tabs[i].id },
+                    func: insertCSS,
+                    world: "MAIN",
+                  });
+                  function insertCSS(feature, path) {
+                    var link = document.createElement("link");
+                    link.rel = "stylesheet";
+                    link.href = path;
+                    link.dataset.feature = feature;
+                    document.head.appendChild(link);
+                  }
+                }
+              } catch (err) {}
             }
           });
         });
@@ -372,33 +528,33 @@ ScratchTools.modals = {
     orangeBar.className = "st-modal-header";
 
     data.components?.forEach(function (component) {
-      var element
+      var element;
       if (component.type === "code") {
         var code = document.createElement("code");
         code.textContent = component.content;
         modal.appendChild(code);
-        element = code
+        element = code;
       }
       if (component.type === "button") {
         var btn = document.createElement("button");
         btn.textContent = component.content;
         if (component.src) {
-        var linkToBtn = document.createElement("a");
-        linkToBtn.href = component.src;
-        linkToBtn.appendChild(btn);
-        modal.appendChild(linkToBtn);
+          var linkToBtn = document.createElement("a");
+          linkToBtn.href = component.src;
+          linkToBtn.appendChild(btn);
+          modal.appendChild(linkToBtn);
         } else if (component.callback) {
-          btn.addEventListener("click", component.callback)
-          modal.appendChild(btn)
+          btn.addEventListener("click", component.callback);
+          modal.appendChild(btn);
         }
         btn.addEventListener("click", function () {
           div.remove();
         });
-        element = btn
+        element = btn;
       }
-      component.additonalClassNames?.forEach(function(className) {
-        element.classList.add(className)
-      })
+      component.additonalClassNames?.forEach(function (className) {
+        element.classList.add(className);
+      });
     });
 
     var closeButton = document.createElement("button");

@@ -1,6 +1,26 @@
 [
   {
     "version": 2,
+    "id": "plain-background",
+    "versionAdded": "v2.29.0"
+  },
+  {
+    "version": 2,
+    "id": "isonline",
+    "versionAdded": "v2.29.0"
+  },
+  {
+    "version": 2,
+    "id": "hide-advertisements",
+    "versionAdded": "v2.28.0"
+  },
+  {
+    "version": 2,
+    "id": "hide-block-category-names",
+    "versionAdded": "v2.28.0"
+  },
+  {
+    "version": 2,
     "id": "unlisted-projects"
   },
   {
@@ -199,16 +219,6 @@
     "file": "hide-project-tags",
     "type": ["Website"],
     "tags": ["New"],
-    "dynamic": true
-  },
-  {
-    "title": "Hide Block Category Names",
-    "description": "Changes the block categories in the editor to only show the colors of the categories.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "hide-block-category-names",
-    "tags": ["Theme", "New"],
-    "type": ["Editor"],
     "dynamic": true
   },
   {
@@ -492,16 +502,6 @@
     "tags": ["Recommended"],
     "type": ["Website"],
     "default": true
-  },
-  {
-    "title": "Hide Advertisements in Comments",
-    "description": "Hides advertisements in the comments of profiles, projects, and studios. They can take up a lot of space in the comments.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "hide-advertisements",
-    "tags": ["Beta"],
-    "type": ["Website"],
-    "warning": "This feature uses an algorithm that ScratchTools developed. That does not mean that it will work every time."
   },
   {
     "title": "Open in TurboWarp from Editor",
@@ -833,16 +833,6 @@
     "type": ["Website"]
   },
   {
-    "title": "April Fools 2022",
-    "description": "Brings back the special modes from the 2022 April Fools Day!",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "april-fools",
-    "tags": ["Egg"],
-    "type": ["Editor", "Theme"],
-    "dynamic": true
-  },
-  {
     "title": "Project Link as Title",
     "description": "In profile and project comments, project links in comments are replaced with their titles.",
     "credits": ["rgantzos"],
@@ -966,15 +956,6 @@
     "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "open-in-new-tab",
     "type": ["Website"]
-  },
-  {
-    "title": "Plain Background",
-    "description": "Removes the dots from the background of the code editor.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "plain-background",
-    "type": ["Editor", "Theme"],
-    "dynamic": true
   },
   {
     "title": "Unbold Site Text",

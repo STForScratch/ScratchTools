@@ -1,0 +1,12 @@
+.scratchtools-unlisted-star {
+  height: 1rem;
+  display: inline-block;
+  margin-left: 0.5rem;
+  position: relative;
+  top: 0.15rem;
+}
+
+.media-info-item.title a {
+  display: inline-block !important;
+  margin-bottom: -0.5rem;
+}
