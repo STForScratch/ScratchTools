@@ -76,8 +76,7 @@ function setBetaTheme() {
   betaCSS.setAttribute("href", "/extras/styles/beta.css");
   document.head.appendChild(betaCSS);
   if (document.head.id == "Popup") {
-    document.getElementById("minilogo").src =
-      "/extras/icons/mini-logo-beta.svg";
+    document.getElementById("minilogo").src = "/extras/icons/beta/beta.svg";
     document.getElementById("popupnote").innerHTML =
       "Welcome to the beta verison of ScratchTools! This version is not stable and may contain bugs. Please report any bugs you find <a href='https://github.com/STForScratch/ScratchTools/issues' target='_blank'>here</a>.";
   }
