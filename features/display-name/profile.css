@@ -1,0 +1,15 @@
+.ste-username {
+  margin-left: 0.25rem;
+  opacity: 0.5;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 1.25rem;
+}
+
+.ste-set-display-name {
+  margin-left: 1rem;
+  cursor: pointer;
+  font-weight: 400;
+  color: #1aa0d8;
+  font-size: 1rem;
+}
