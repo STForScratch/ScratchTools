@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "emoji-status",
+    "versionAdded": "v2.29.0"
+  },
+  {
+    "version": 2,
     "id": "display-name",
     "versionAdded": "v2.29.0"
   },
