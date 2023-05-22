@@ -1,0 +1,7 @@
+body.colorComment .scratchtoolsAd > div[id^="comments-"] {
+    background-color: #eccedf !important;
+}
+
+body.hideComment .scratchtoolsAd {
+    display: none;
+}

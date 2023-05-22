@@ -56,6 +56,9 @@
   </body>
 
   <style>
+    :root {
+      --navbar-gradient: linear-gradient(45deg, #ff9f00, #ffad42);
+    }
     html {
       height: 100%;
     }
@@ -172,7 +175,7 @@
     .sticon {
       width: 2.5rem;
       height: 2.5rem;
-      background-image: url("chrome-extension://mpffcbinpefmefjhclpmnpgjflbhhpjf/extras/icons/icontrans128.png");
+      background-image: url("/extras/icons/icontrans128.png");
       background-position: 50% 50%;
       background-size: 2.5rem 2.5rem;
       background-repeat: no-repeat;
@@ -209,7 +212,7 @@
     .navbar {
       display: block;
       position: fixed;
-      background: linear-gradient(45deg, #ff9f00, #ffad42);
+      background: var(--navbar-gradient);
       top: 0;
       padding-top: 0.5em;
       padding-bottom: 0.5em;
@@ -331,7 +334,7 @@
       padding: 17px;
       padding-top: 5px;
       height: 13rem;
-      overflow-y: scroll;
+      overflow-y: auto;
       margin-bottom: 0px;
     }
 
@@ -428,6 +431,23 @@
       background-color: var(--feature-input-bg) !important;
       color: var(--primary-color) !important;
     }
+
+    .feature label {
+  color: var(--primary-color);
+  position: relative;
+  top: -0.7rem;
+  margin-left: 0.5rem;
+}
+
+.feature input[type="checkbox"] {
+  display: inline-block;
+  width: 1.25rem;
+  cursor: pointer;
+}
+
+.feature > span {
+  display: block;
+}
   </style>
   <script src="/extras/blocked.js"></script>
 </html>

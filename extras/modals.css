@@ -70,3 +70,7 @@
 .st-modal button:hover {
   top: .4rem !important;
 }
+
+.st-modal code {
+  white-space: pre-wrap;
+}

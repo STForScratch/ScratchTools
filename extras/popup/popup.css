@@ -61,6 +61,23 @@ a {
   color: var(--theme) !important;
 }
 
+.feature label {
+  color: var(--primary-color);
+  position: relative;
+  top: -0.7rem;
+  margin-left: 0.5rem;
+}
+
+.feature input[type="checkbox"] {
+  display: inline-block;
+  width: 1.25rem;
+  cursor: pointer;
+}
+
+.feature > span {
+  display: block;
+}
+
 .feature .switch {
   float: right;
   margin-top: -3em;

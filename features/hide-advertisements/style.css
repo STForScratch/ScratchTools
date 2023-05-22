@@ -1,0 +1,7 @@
+body.colorComment .scratchtoolsAd .comment-bubble, .scratchtoolsAd .comment-bubble::before {
+    background-color: #eccedf !important;
+}
+
+body.hideComment .scratchtoolsAd {
+    display: none;
+}
