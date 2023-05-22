@@ -102,15 +102,7 @@ a {
   float: right;
   max-width: 60vw;
 }
-.section2::-webkit-scrollbar {
-  display: none;
-}
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.section2 {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
 .sticon {
   width: 2.5rem;
   height: 2.5rem;
