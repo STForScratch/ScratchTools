@@ -1,5 +1,7 @@
 chrome.storage.sync.get("theme", function (obj) {
-  var theme = obj.theme;
+  let theme = obj.theme;
+  if (!theme) theme = "light";
+
   const themeLink = document.createElement("link");
   themeLink.setAttribute("rel", "stylesheet");
   themeLink.setAttribute("href", `/extras/popup/${theme}.css`);
