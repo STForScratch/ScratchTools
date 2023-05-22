@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "display-name",
+    "versionAdded": "v2.29.0"
+  },
+  {
+    "version": 2,
     "id": "plain-background",
     "versionAdded": "v2.29.0"
   },
