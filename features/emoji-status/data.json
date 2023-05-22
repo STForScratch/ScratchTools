@@ -1,0 +1,11 @@
+{
+  "title": "Emoji Statuses",
+  "description": "Set the status on your profile to an emoji. Other ScratchTools users will be able to see this status.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "styles": [{ "file": "style.css", "runOn": "/users/*" }],
+  "scripts": [{ "file": "script.js", "runOn": "/users/*" }]
+}
