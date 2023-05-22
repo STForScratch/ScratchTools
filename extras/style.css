@@ -11,6 +11,11 @@ body {
   background-color: var(--background);
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
 .more-settings-btn {
   position: fixed;
   left: 1rem;
@@ -30,9 +35,24 @@ body {
   fill: var(--primary-color) !important;
 }
 
-.feature > input {
-  display: block;
+.feature {
+  margin-top: 2em;
+  border: 0px solid black;
+  line-height: 25px;
+  display: inline-block;
+  width: calc(50% - 4rem);
+  margin: 0.5rem;
+  background-color: var(--feature-bg);
   margin-left: 0px !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  color: var(--primary-color);
+  border-radius: 10px;
+  padding: 17px;
+  padding-top: 5px;
+  height: 13rem;
+  overflow-y: auto;
+  margin-bottom: 0px;
 }
 
 .feature button {
@@ -65,14 +85,59 @@ body {
   background-color: var(--feature-input-bg);
 }
 
-a {
-  color: white;
-  text-decoration: none;
+.feature input[type="checkbox"] {
+  display: inline-block;
+  width: 1.25rem;
+  cursor: pointer;
 }
+
+.feature > input {
+  display: block;
+  margin-left: 0px !important;
+}
+
+.feature h3 {
+  font-size: 1.25rem !important;
+  margin-bottom: -0.5rem;
+  width: 80%;
+}
+
+.feature h3[style="font-size: 1.5em;"] {
+  font-weight: bold;
+}
+.feature h3[style="margin-top: -20px; width: 250px;"] {
+  width: calc(95% - 55px) !important;
+}
+.feature h3[style="margin-top: -20px; width: 250px;"] {
+  margin-left: 0em;
+  color: var(--primary-color);
+}
+.feature span {
+  color: var(--primary-color);
+}
+.feature .switch {
+  float: right;
+  margin-top: -1.8em;
+  margin-right: 1em;
+}
+
 .feature a {
   cursor: pointer;
   color: var(--theme) !important;
 }
+
+.feature label {
+  color: var(--primary-color);
+  position: relative;
+  top: -0.7rem;
+  margin-left: 0.5rem;
+}
+
+.feature > span {
+  color: var(--secondary-color);
+  display: block;
+}
+
 .section1 {
   border: 0px solid black;
   min-height: 100% !important;
@@ -192,19 +257,6 @@ a {
   position: relative;
   left: 0px;
 }
-.searchbaricon {
-  border-radius: var(--radius) 0px 0px var(--radius);
-  padding: 12px;
-  width: 45px;
-  height: 45px;
-  border: none;
-  background: var(--searchbar-bg);
-  outline: none;
-  background-image: url("https://cdn.glitch.global/0f8f769f-292b-4786-9a1c-54f5d051001b/scratchtools24.svg?v=1662105850729");
-  background-position: 80% 50%;
-  background-size: 30px 30px;
-  background-repeat: no-repeat;
-}
 
 .sectionwrap {
   padding: 2rem;
@@ -236,51 +288,6 @@ a {
 }
 .section1 .note h3 {
   line-height: 10px;
-}
-
-.feature {
-  margin-top: 2em;
-  border: 0px solid black;
-  line-height: 25px;
-  display: inline-block;
-  width: calc(50% - 4rem);
-  margin: 0.5rem;
-  background-color: var(--feature-bg);
-  margin-left: 0px !important;
-  padding-left: 1.5rem !important;
-  padding-right: 1.5rem !important;
-  color: var(--primary-color);
-  border-radius: 10px;
-  padding: 17px;
-  padding-top: 5px;
-  height: 13rem;
-  overflow-y: auto;
-  margin-bottom: 0px;
-}
-
-.feature h3 {
-  font-size: 1.25rem !important;
-  margin-bottom: -0.5rem;
-  width: 80%;
-}
-
-.feature h3[style="font-size: 1.5em;"] {
-  font-weight: bold;
-}
-.feature h3[style="margin-top: -20px; width: 250px;"] {
-  width: calc(95% - 55px) !important;
-}
-.feature h3[style="margin-top: -20px; width: 250px;"] {
-  margin-left: 0em;
-  color: var(--primary-color);
-}
-.feature span {
-  color: var(--primary-color);
-}
-.feature .switch {
-  float: right;
-  margin-top: -1.8em;
-  margin-right: 1em;
 }
 
 /*Switch*/
@@ -342,25 +349,7 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.feature > span {
-  color: var(--secondary-color);
-  display: block;
-}
-
 button.secondary-btn {
   background-color: var(--feature-input-bg) !important;
   color: var(--primary-color) !important;
-}
-
-.feature label {
-  color: var(--primary-color);
-  position: relative;
-  top: -0.7rem;
-  margin-left: 0.5rem;
-}
-
-.feature input[type="checkbox"] {
-  display: inline-block;
-  width: 1.25rem;
-  cursor: pointer;
 }
