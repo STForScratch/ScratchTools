@@ -1,0 +1,15 @@
+{
+  "title": "Display Names",
+  "description": "Shows display names for Scratchers, and allows you to set your own display name. Display names show next to your username, and aren't limited like usernames are.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "scripts": [
+    { "file": "profile.js", "runOn": "/users/*" }
+  ],
+  "styles": [
+    { "file": "profile.css", "runOn": "/users/*" }
+  ]
+}
