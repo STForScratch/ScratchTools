@@ -14,7 +14,7 @@ async function getDisplayName() {
 
       var usernameSpan = document.createElement("span");
       usernameSpan.textContent =
-        "(@" + document.querySelector(".header-text h2").childNodes[0].textContent + ")";
+        "@" + document.querySelector(".header-text h2").childNodes[0].textContent;
       usernameSpan.className = "ste-username";
 
       document.querySelector(".header-text h2").childNodes[0].textContent = "";
