@@ -1,41 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --theme: #ff9f00;
-    --background: #3f3f3f;
-    --primary-color: white;
-    --secondary-color: #ffffff77;
-    --searchbar-bg: #ffffff17;
-    --searchbar-gears: url("/extras/icons/gear-light.svg");
-    --searchbar-search: url("/extras/icons/search-light.svg");
-    --mini-logo: url("/extras/icons/mini-logo.svg");
-    --box: #eeeeee;
-    --feature-bg: #343434;
-    --feature-input-bg: #545454;
-    --feature-slider-bg: #4b4b4b;
-    --scrollbar-handle: #797979;
-    --scrollbar-handle-active: #656565;
-  }
-}
-@media (prefers-color-scheme: light) {
-  :root {
-    --theme: #ff9f00;
-    --background: white;
-    --primary-color: black;
-    --secondary-color: #00000077;
-    --searchbar-bg: #eeeeee;
-    --searchbar-gears: url("/extras/icons/settings.svg");
-    --searchbar-search: url("/extras/icons/search.svg");
-    --mini-logo: url("/extras/icons/mini-logo.svg");
-    --box: #eeeeee;
-    --feature-bg: #eeeeee75;
-    --feature-input-bg: #e4e4e4;
-    --feature-slider-bg: #cccccc;
-    --scrollbar-handle: #c2bfbf;
-    --scrollbar-handle-active: #b2afaf;
-  }
-}
 html {
   --radius: 12px;
   width: 400px;
@@ -145,7 +107,7 @@ a {
   color: var(--color);
   background-color: var(--feature-input-bg);
   padding-left: 1rem !important;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 .feature button {
   cursor: pointer;
@@ -158,6 +120,10 @@ a {
 }
 /*Navbar*/
 
+.bar {
+  border: none;
+  height: 70px;
+}
 .navbar {
   height: 45px;
   position: fixed;
@@ -213,6 +179,7 @@ a {
 .searchbaricon {
   border-radius: var(--radius) 0px 0px var(--radius);
   padding: 12px;
+  margin-left: 1em;
   width: 45px;
   height: 45px;
   border: none;
