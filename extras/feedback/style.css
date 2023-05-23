@@ -1,0 +1,133 @@
+:root {
+  --navbar-gradient: linear-gradient(45deg, #ff9f00, #ffad42);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme: #ff9f00;
+    --background: #3f3f3f;
+    --primary-color: white;
+    --secondary-color: #ffffff77;
+    --searchbar-bg: #ffffff17;
+    --searchbar-gears: url("/extras/icons/gear-light.svg");
+    --searchbar-search: url("/extras/icons/search-light.svg");
+    --mini-logo: url("/extras/icons/mini-logo.svg");
+    --box: #eeeeee;
+    --feature-bg: #343434;
+    --feature-input-bg: #545454;
+    --feature-slider-bg: #4b4b4b;
+    --scrollbar-handle: #797979;
+    --scrollbar-handle-active: #656565;
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --theme: #ff9f00;
+    --background: white;
+    --primary-color: black;
+    --secondary-color: #00000077;
+    --searchbar-bg: #eeeeee;
+    --searchbar-gears: url("/extras/icons/settings.svg");
+    --searchbar-search: url("/extras/icons/search.svg");
+    --mini-logo: url("/extras/icons/mini-logo.svg");
+    --box: #eeeeee;
+    --feature-bg: #eeeeee75;
+    --feature-input-bg: #e4e4e4;
+    --feature-slider-bg: #cccccc;
+    --scrollbar-handle: #c2bfbf;
+    --scrollbar-handle-active: #b2afaf;
+  }
+}
+html {
+  --radius: 12px;
+  font-family: "Inter", sans-serif;
+  height: 500px;
+}
+body {
+  padding: 1rem;
+  padding-bottom: 2rem;
+  height: 500px;
+  margin: none;
+  background: var(--background);
+  color: var(--primary-color);
+  padding-top: 3.5rem;
+}
+
+.navbar {
+  display: block;
+  position: fixed;
+  background: var(--navbar-gradient);
+  top: 0;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-left: 0.5em;
+  z-index: 2;
+  border: 0px solid black;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  margin: 0px;
+  padding-left: 2rem;
+}
+
+.sticon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-image: url("/extras/icons/icontrans128.png");
+  background-position: 50% 50%;
+  background-size: 2.5rem 2.5rem;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+input {
+    background-color: var(--feature-input-bg);
+    color: var(--primary-color);
+    padding: .75rem;
+    outline: 0px;
+    border: 0px;
+    border-radius: .25rem;
+    width: 50%;
+    min-width: 20rem;
+    font-family: "Inter", sans-serif;
+}
+
+textarea {
+    background-color: var(--feature-input-bg);
+    color: var(--primary-color);
+    padding: .75rem;
+    outline: 0px;
+    border: 0px;
+    border-radius: .25rem;
+    width: 50%;
+    min-width: 20rem;
+    font-family: "Inter", sans-serif;
+    margin-top: 1rem;
+    min-height: 10rem;
+    resize: vertical;
+}
+
+button {
+    background-color: #ff9f00;
+    color: white;
+    min-width: 10rem;
+    font-family: "Inter", sans-serif;
+    padding: .5rem;
+    outline: none;
+    border: 0px;
+    border-radius: .25rem;
+    cursor: pointer;
+    position: relative;
+    top: 0px;
+    transition: top .3s;
+    font-weight: bold;
+    display: block;
+    margin-top: 1rem;
+}
+
+button:hover {
+    top: .5rem;
+}
