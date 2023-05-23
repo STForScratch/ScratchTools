@@ -1,0 +1,10 @@
+{
+  "title": "Highlight Unanswered Forum Topics",
+  "description": "Adds a blue highlight to topics in the forums that have no replies.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Recommended"],
+  "scripts": [{ "file": "script.js", "runOn": "/discuss/*" }]
+}
