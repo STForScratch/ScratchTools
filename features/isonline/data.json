@@ -8,6 +8,7 @@
     "tags": ["New", "Featured"],
     "styles": [{ "file": "style.css", "runOn": "/users/*" }],
     "scripts": [{ "file": "script.js", "runOn": "/users/*" }],
-    "additionalAgreements": "By enabling this feature, you understand that other users will be able to see if you are online or not."
+    "additionalAgreements": "By enabling this feature, you understand that other users will be able to see if you are online or not.",
+    "translations": ["en", "tr", "de", "es", "fr", "ru"]
   }
   
