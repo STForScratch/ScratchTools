@@ -1,4 +1,4 @@
-var roundness = ScratchTools.Storage["Round Percentage"];
+var roundness = ScratchTools.Storage["Rounding Percentage"];
 if (!roundness.includes("%")){roundness = roundness.concat("%");}
 function roundProfile() {
   document.querySelectorAll("img").forEach(function (el) {
