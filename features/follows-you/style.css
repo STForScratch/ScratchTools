@@ -1,6 +1,7 @@
 .scratchtoolsFollowsYou {
-	opacity: .5;
-	font-size: .8rem;
+	opacity: .6;
+	text-shadow: rgba(0, 0, 0, 0.5) 0 0 10px;
+	font-size: .9rem;
 }
 .header-text > h2 {
 	display: inline-block;
