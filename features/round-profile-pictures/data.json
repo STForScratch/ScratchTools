@@ -1,0 +1,14 @@
+{
+  "title": "Round Profile Pictures",
+  "description": "All profile pictures on the Scratch website will be rounded.",
+  "credits": [
+    { "username": "Scratchfangs", "url": "https://scratch.mit.edu/users/scratchfangs/" },
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website", "Theme"],
+  "tags": [],
+  "scripts": [{ "file": "script.js", "runOn": "/*" }],
+  "options": [
+    { "id": "Rounding Percentage", "name": "Rounding Percentage", "default": "50%" }
+  ]
+}
