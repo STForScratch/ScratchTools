@@ -7,6 +7,6 @@
     "type": ["Website"],
     "tags": ["New"],
     "dynamic": true,
-    "styles": [{ "file": "style.css", "runOn": "/projects/*" }]
+    "styles": [{ "file": "style.css", "runOn": "/*" }]
   }
   

@@ -17,6 +17,9 @@
   "disabled_explanation": {
     "message": "Ta funkcja została wyłączona przez ScratchTools. Wciąż możesz włączyć ją lub wyłączyć, ale ze względów bezpieczeństwa, nie będzie ona na razie działać."
   },
+  "additional_settings": {
+    "message": "Ek ayarlar"
+  },
   "original_buttons_title": {
     "message": "Orijinal Butonlar"
   },
@@ -694,5 +697,23 @@
   },
   "terrible_description": {
     "message": "Etkinleştirmeyin."
+  },
+  "isonline_title": {
+    "message": "Kullanıcının Çevrimiçi olup olmadığını Göster"
+  },
+  "isonline_description": {
+    "message": "Profil sayfalarında, bir kullanıcının çevrimiçi olup olmadığını görüntüler. Bu, diğer kullanıcıların çevrimiçi olup olmadığınızı görmelerini de sağlayacaktır."
+  },
+  "display_name_title": {
+    "message": "Görünen Adlar"
+  },
+  "display_name_description": {
+    "message": "Scratch'çiler için görünen adları gösterir ve kendi görünen adınızı ayarlamanıza olanak tanır. Görünen adlar kullanıcı adınızın yanında gösterilir ve kullanıcı adlarıyla sınırlı değildir."
+  },
+  "emoji_status_title": {
+    "message": "Emoji Durumları"
+  },
+  "emoji_status_description": {
+    "message": "Profilinizdeki durumu bir emoji olarak ayarlayın. Diğer ScratchTools kullanıcıları bu durumu görebilecekler."
   }
 }

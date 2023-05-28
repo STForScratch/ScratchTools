@@ -1,0 +1,12 @@
+.ste-status {
+  border-right: 1px solid #ccc;
+  margin-right: 5px;
+  padding-right: 5px;
+  cursor: pointer;
+  transition: opacity .3s;
+  opacity: 1;
+}
+
+.ste-status:hover {
+    opacity: .5;
+}

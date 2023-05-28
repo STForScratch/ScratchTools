@@ -209,6 +209,11 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
           files: [`/api/main.js`],
           world: "MAIN",
         });
+        await chrome.scripting.executeScript({
+          target: { tabId: tabId },
+          files: [`/api/verify.js`],
+          world: "MAIN",
+        });
         ScratchTools.console.log("Injected main API.");
         await chrome.scripting.executeScript({
           target: { tabId: tabId },
