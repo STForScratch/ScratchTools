@@ -33,7 +33,7 @@ async function submit() {
       })
     ).json();
     alert("Submitted feedback!");
-    window.close();
+    window.close()
     document.querySelector(".ste-submit").style.display = null;
   } else {
     alert(
@@ -42,4 +42,4 @@ async function submit() {
   }
 }
 
-document.querySelector(".ste-submit").addEventListener("click", submit)
+document.querySelector(".ste-submit").addEventListener("click", submit);

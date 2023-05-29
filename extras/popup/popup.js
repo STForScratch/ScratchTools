@@ -24,6 +24,16 @@ async function getEnabledFeatureCount() {
   return count;
 }
 
+if (document.querySelector(".feedback-btn")) {
+  document
+    .querySelector(".feedback-btn")
+    .addEventListener("click", function () {
+      chrome.tabs.create({
+        url: "/extras/feedback/index.html",
+      });
+    });
+}
+
 if (document.querySelector(".more-settings-btn")) {
   var moreSettingsBtn = document.querySelector(".more-settings-btn");
   moreSettingsBtn.addEventListener("click", async function () {
@@ -44,16 +54,6 @@ if (document.querySelector(".more-settings-btn")) {
         callback: returnFeatureCode,
         additonalClassNames: ["secondary-btn"],
       },
-      {
-      content: "Give Feedback",
-        type: "button",
-        callback: function () {
-          chrome.tabs.create({
-            url: "/extras/feedback/index.html",
-          });
-        },
-        additonalClassNames: ["secondary-btn"],
-      }
     ];
     if (chrome.runtime.getManifest().version_name.endsWith("-beta")) {
       components.push({

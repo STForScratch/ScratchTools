@@ -16,3 +16,10 @@
   --theme-icon: url("/extras/icons/dark.svg");
   --navbar-gradient: linear-gradient(45deg, #ff9f00, #ffad42);
 }
+
+.feedback-btn img {
+  height: 1rem;
+  position: relative;
+  top: 0.2rem;
+  filter: invert(1);
+}

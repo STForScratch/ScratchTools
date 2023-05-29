@@ -35,6 +35,23 @@ a {
   fill: var(--primary-color) !important;
 }
 
+.feedback-btn {
+  position: fixed;
+  left: 1rem;
+  bottom: 3rem;
+  color: var(--primary-color);
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.feedback-btn img {
+  height: 1rem;
+  position: relative;
+  top: 0.2rem;
+  margin-left: .2rem;
+  margin-right: .1rem;
+}
+
 .feature {
   margin-top: 2em;
   border: 0px solid black;
