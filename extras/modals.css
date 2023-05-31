@@ -16,7 +16,7 @@
   width: calc(40% - 4rem);
   padding: 2rem;
   left: 30%;
-  background-color: #fafafa;
+  background-color: var(--background);
   border-radius: 0.5rem;
   padding-top: 3rem;
   z-index: 999999999999999999999;
