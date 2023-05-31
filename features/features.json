@@ -179,8 +179,17 @@
     "type": ["Website"]
   },
   {
-    "version": 2,
-    "id": "follows-you"
+    "title": "Show if Following on Profile",
+    "description": "If a user is following you, it will show next to their username when you visit their profile.",
+    "credits": ["Bob the Potato with Drip", "TimMcCool"],
+    "urls": [
+      "https://scratch.mit.edu/users/JefferyTheSuperKat/",
+      "https://scratch.mit.edu/users/TimMcCool/"
+    ],
+    "file": "follows-you",
+    "type": ["Website"],
+    "tags": ["Featured"],
+    "dynamic": true
   },
   {
     "title": "Custom Studio Section",
@@ -194,9 +203,15 @@
       { "id": "Studio ID", "name": "Studio ID", "default": "27205657" }
     ]
   },
-    {
-    "version": 2,
-    "id": "highlight-unanswered"
+  {
+    "title": "Highlight Unanswered Forum Topics",
+    "description": "Adds a blue highlight to topics in the forums that have no replies.",
+    "credits": ["rgantzos"],
+    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
+    "file": "highlight-unanswered",
+    "type": ["Website"],
+    "tags": ["New", "Recommended"],
+    "dynamic": true
   },
   {
     "title": "Hide Project Tags",
@@ -749,8 +764,13 @@
     "type": ["Website"]
   },
   {
-    "version": 2,
-    "id": "go-to-parent"
+    "title": "Go to Parent Button",
+    "description": "In the editor for any project that is a remix, you can click a button to go to the editor in the parent project.",
+    "credits": ["rgantzos"],
+    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
+    "file": "go-to-parent",
+    "tags": [],
+    "type": ["Editor"]
   },
   {
     "title": "Most Popular Project",
@@ -993,8 +1013,8 @@
     "type": ["Editor"]
   },
   {
-    "version": 2,
-    "id": "round-profile-pictures"
+    "id": "round-profile-pictures",
+    "version": 2
   },
   {
     "title": "Sidebar",
