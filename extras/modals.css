@@ -44,7 +44,7 @@
 
 .st-modal code {
   overflow-wrap: break-word;
-    background-color: var(--background);
+    background-color: var(--searchbar-bg);
     padding: 0.4rem;
     border-radius: 0.25rem;
     line-height: 1.7rem;
