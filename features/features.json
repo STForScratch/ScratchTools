@@ -764,13 +764,8 @@
     "type": ["Website"]
   },
   {
-    "title": "Go to Parent Button",
-    "description": "In the editor for any project that is a remix, you can click a button to go to the editor in the parent project.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "go-to-parent",
-    "tags": [],
-    "type": ["Editor"]
+    "version": 2,
+    "id": "go-to-parent"
   },
   {
     "title": "Most Popular Project",
