@@ -203,9 +203,9 @@
       { "id": "Studio ID", "name": "Studio ID", "default": "27205657" }
     ]
   },
-    {
-    "version": 2,
-    "id": "highlight-unanswered"
+  {
+    "id": "highlight-unanswered",
+    "version": 2
   },
   {
     "title": "Hide Project Tags",
@@ -758,8 +758,13 @@
     "type": ["Website"]
   },
   {
-    "version": 2,
-    "id": "go-to-parent"
+    "title": "Go to Parent Button",
+    "description": "In the editor for any project that is a remix, you can click a button to go to the editor in the parent project.",
+    "credits": ["rgantzos"],
+    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
+    "file": "go-to-parent",
+    "tags": [],
+    "type": ["Editor"]
   },
   {
     "title": "Most Popular Project",
