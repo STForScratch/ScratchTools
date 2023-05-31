@@ -28,7 +28,7 @@
 
 .st-modal * {
   font-family: "Inter", sans-serif;
-  color: black;
+  color: var(--primary-color);
 }
 
 .st-modal-header {
@@ -44,7 +44,7 @@
 
 .st-modal code {
   overflow-wrap: break-word;
-    background-color: #e3e3e3;
+    background-color: var(--background);
     padding: 0.4rem;
     border-radius: 0.25rem;
     line-height: 1.7rem;
