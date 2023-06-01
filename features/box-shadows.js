@@ -9,7 +9,7 @@ box-shadow: 0 0 7px #999999;
   }
 `;
 style.className = "scratchtoolsBoxShadows";
-document.body.appendChild(style);
+document.head.appendChild(style);
 
 ScratchTools.setDisable("box-shadows", function () {
   document.querySelector(".scratchtoolsBoxShadows").remove();
