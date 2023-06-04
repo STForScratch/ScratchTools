@@ -1,0 +1,10 @@
+{
+  "title": "Content Box Shadows",
+  "description": "Adds shadows on all content boxes. When hovering one, the shadow will darken.",
+  "credits": [
+    { "username": "Scratchfangs", "url": "https://scratch.mit.edu/users/Scratchfangs/" }
+  ],
+  "tags": [],
+  "styles": [{ "file": "box-shadows.css", "runOn": "/*" }],
+  "dynamic": true
+}
