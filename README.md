@@ -1,7 +1,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/STForScratch/ScratchTools">
-    <img src="https://cdn.glitch.global/cb2bf217-ffc5-4d43-a8ef-956942c7aa4d/favicon.png?v=1655008522709" alt="Logo" width="100" height="100">
+    <img src="extras/icons/icon128.png" alt="Logo" width="130" height="130">
     <h1 align="center">Welcome to ScratchTools!</h1>
   </a>
 
