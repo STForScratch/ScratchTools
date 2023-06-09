@@ -4,9 +4,12 @@ chrome.storage.sync.get("theme", function (obj) {
 
   const themeLink = document.createElement("link");
   themeLink.setAttribute("rel", "stylesheet");
-  themeLink.setAttribute("href", `/extras/popup/${theme}.css`);
+  themeLink.setAttribute("href", `/extras/styles/${theme}.css`);
   themeLink.id = "themecss";
   document.head.appendChild(themeLink);
+
+  const version = chrome.runtime.getManifest().version_name;
+  if (version.includes("beta")) setBetaTheme();
 });
 
 async function getEnabledFeatureCount() {
@@ -19,6 +22,16 @@ async function getEnabledFeatureCount() {
     }
   });
   return count;
+}
+
+if (document.querySelector(".feedback-btn")) {
+  document
+    .querySelector(".feedback-btn")
+    .addEventListener("click", function () {
+      chrome.tabs.create({
+        url: "/extras/feedback/index.html",
+      });
+    });
 }
 
 if (document.querySelector(".more-settings-btn")) {
@@ -63,22 +76,21 @@ if (document.querySelector(".more-settings-btn")) {
   });
 }
 
-var version = chrome.runtime.getManifest().version_name;
-if (version.includes("beta")) {
+function setBetaTheme() {
   if (document.querySelector("link[rel=icon]")) {
     document.querySelector("link[rel=icon]").href =
       "/extras/icons/beta/beta.svg";
   }
   const betaCSS = document.createElement("link");
   betaCSS.setAttribute("rel", "stylesheet");
-  betaCSS.setAttribute("href", "/extras/popup/beta.css");
-  betaCSS.id = "betacss";
+  betaCSS.setAttribute("href", "/extras/styles/beta.css");
   document.head.appendChild(betaCSS);
   if (document.head.id == "Popup") {
     document.getElementById("minilogo").src = "/extras/icons/beta/beta.svg";
     document.getElementById("popupnote").innerHTML =
       "Welcome to the beta verison of ScratchTools! This version is not stable and may contain bugs. Please report any bugs you find <a href='https://github.com/STForScratch/ScratchTools/issues' target='_blank'>here</a>.";
   }
+
   async function checkCurrentVersion() {
     var newest = (
       await (
@@ -122,13 +134,13 @@ document.getElementById("toggletheme").addEventListener("click", toggletheme);
 function toggletheme() {
   var theme = document.getElementById("themecss");
   if (theme.href.includes("light")) {
-    theme.href = "/extras/popup/dark.css";
+    theme.href = "/extras/styles/dark.css";
     chrome.storage.sync.set({ theme: "dark" });
   } else if (theme.href.includes("dark")) {
-    theme.href = "/extras/popup/light.css";
+    theme.href = "/extras/styles/light.css";
     chrome.storage.sync.set({ theme: "light" });
   } else {
-    theme.href = "/extras/popup/light.css"; // default theme
+    theme.href = "/extras/styles/light.css"; // default theme
     console.error(
       console.log("ScratchTools:"),
       " Theme not found. Defaulting to light theme."

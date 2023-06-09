@@ -1,6 +1,6 @@
 {
   "NOTE": "THERE IS NO NEED TO UPDATE THIS YOURSELF, IT WILL BE UPDATED WHEN RELEASED.",
-  "version": "2.28.0",
+  "version": "2.29.0",
   "enhanced": [
     "Better changelog page.",
     "Remake settings page design.",
@@ -12,13 +12,19 @@
     "Remove a few \"Easter Egg\" features.",
     "Use regex for userscripts/userstyles to run on specific pages.",
     "Better hide advertisements/allow highlight.",
-    "Blue messages badge for beta version."
+    "Blue messages badge for beta version.",
+    "Feedback page in extension.",
+    "Better colored comments.",
+    "Clean up features."
   ],
   "fixed": [
     "Fix placement of settings button.",
     "Fix Original Buttons feature.",
     "Fix Clone Counter bugs.",
     "Fix options data not loading for Feature v2.",
-    "Temporarily remove April Fools 2022."
+    "Temporarily remove April Fools 2022.",
+    "Fix scrollbars.",
+    "Fix settings icon not showing.",
+    "Fix Plain Background."
   ]
 }

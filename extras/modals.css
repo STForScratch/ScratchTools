@@ -16,7 +16,7 @@
   width: calc(40% - 4rem);
   padding: 2rem;
   left: 30%;
-  background-color: #fafafa;
+  background-color: var(--background);
   border-radius: 0.5rem;
   padding-top: 3rem;
   z-index: 999999999999999999999;
@@ -28,7 +28,7 @@
 
 .st-modal * {
   font-family: "Inter", sans-serif;
-  color: black;
+  color: var(--primary-color);
 }
 
 .st-modal-header {
@@ -44,7 +44,7 @@
 
 .st-modal code {
   overflow-wrap: break-word;
-    background-color: #e3e3e3;
+    background-color: var(--searchbar-bg);
     padding: 0.4rem;
     border-radius: 0.25rem;
     line-height: 1.7rem;

@@ -8,7 +8,7 @@ class Feature {
     });
     this.data = finalFeature;
     this.getLocale = function (string) {
-      if (this.data.locales) {
+      if (this.data.translations) {
         return this.data.localesData[string];
       } else {
         throw new Error("Feature does not have locales set up.");

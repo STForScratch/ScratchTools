@@ -1,0 +1,18 @@
+:root {
+  --theme: #ff9f00;
+  --background: #3f3f3f;
+  --primary-color: white;
+  --secondary-color: #ffffff77;
+  --searchbar-bg: #ffffff17;
+  --searchbar-gears: url("/extras/icons/gear-light.svg");
+  --searchbar-search: url("/extras/icons/search-light.svg");
+  --mini-logo: url("/extras/icons/mini-logo.svg");
+  --box: #eeeeee;
+  --feature-bg: #343434;
+  --feature-input-bg: #545454;
+  --feature-slider-bg: #4b4b4b;
+  --scrollbar-handle: #797979;
+  --scrollbar-handle-active: #656565;
+  --theme-icon: url("/extras/icons/light.svg");
+  --navbar-gradient: linear-gradient(45deg, #ff9f00, #ffad42);
+}

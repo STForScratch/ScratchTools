@@ -1,4 +1,5 @@
 async function checkUser() {
+  var isOnlineFeature = new Feature({ id: "isonline" })
   if (document.querySelector(".ste-isonline")) {
     document.querySelector(".ste-isonline").remove();
   }
@@ -14,14 +15,14 @@ async function checkUser() {
     span.className =
       "ste-isonline " +
       (data.online ? "ste-detect-online" : "ste-detect-offline");
-    span.textContent = data.online ? "Online" : "Offline";
+    span.textContent = data.online ? isOnlineFeature.getLocale("online") : isOnlineFeature.getLocale("offline");
     span.title = "This was added by ScratchTools.";
     span.setScratchTools()
     document.querySelector(".location").appendChild(span);
   } else {
     var span = document.createElement("span");
     span.className = "ste-isonline unsure";
-    span.textContent = "(Doesn't use ScratchTools online detection)";
+    span.textContent = isOnlineFeature.getLocale("unavailable");
     span.title = "This was added by ScratchTools.";
     span.setScratchTools()
     document.querySelector(".location").appendChild(span);

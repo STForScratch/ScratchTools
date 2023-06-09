@@ -278,21 +278,21 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
             ).json();
             featureData.id = feature.id;
             featureData.version = feature.version;
-            if (featureData.locales) {
+            if (featureData.translations) {
               if (chrome.i18n.getUILanguage().includes("-")) {
                 var language = chrome.i18n.getUILanguage().split("-")[0];
               } else {
                 var language = chrome.i18n.getUILanguage();
               }
-              try {
+              if (featureData.translations.includes(language)) {
                 var localesData = await (
                   await fetch(
-                    `/features/--i18n/${language}/${featureData.id}.json`
+                    `/features/${featureData.id}/locales/${language}.json`
                   )
                 ).json();
-              } catch (err) {
+              } else {
                 var localesData = await (
-                  await fetch(`/features/--i18n/en/${featureData.id}.json`)
+                  await fetch(`/features/${featureData.id}/locales/en.json`)
                 ).json();
               }
               featureData.localesData = localesData;
