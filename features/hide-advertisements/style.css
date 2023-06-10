@@ -6,7 +6,7 @@ body.colorComment .scratchtoolsAd .comment-bubble, .scratchtoolsAd .comment-bubb
 body.colorComment .scratchtoolsAd .comment-bubble:before {
     border: 1px solid #ff6680;
     border-right: transparent;
-    background-color: #ffd0d0 !important;
+    background-color: #eccedf !important;
 }
 
 body.hideComment .scratchtoolsAd {
