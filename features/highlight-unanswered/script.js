@@ -11,7 +11,6 @@ if (
     }
   });
 }
-
 ScratchTools.setDisable("highlight-unanswered", function () {
   document.querySelectorAll("tbody > tr").forEach(function (el) {
     el.style.backgroundColor = null;
