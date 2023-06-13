@@ -125,7 +125,7 @@ ScratchTools.Features.get = function (search) {
   return all[search];
 };
 
-var allSettingChangeFunctions = {}
+var allSettingChangeFunctions = {};
 
 var allDisableFunctions = {};
 ScratchTools.setDisable = function (feature, f) {
@@ -189,4 +189,15 @@ ScratchTools.styles = {
         style.remove();
       });
   },
+};
+
+ScratchTools.saAddonEnabled = function (addon) {
+  if (typeof scratchAddons !== 'undefined') {
+    var i = scratchAddons.eventTargets.self.length;
+    while (i--) {
+      if(scratchAddons.eventTargets.self[i].id === addon) {
+        return true;
+      }
+    }
+  }
 };
