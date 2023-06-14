@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "simplify-editor-tabs",
+    "versionAdded": "v2.30.0"
+  },
+  {
+    "version": 2,
     "id": "emoji-status",
     "versionAdded": "v2.29.0"
   },
