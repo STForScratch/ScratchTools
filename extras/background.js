@@ -269,6 +269,26 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
           world: "MAIN",
         });
         ScratchTools.console.log("Injected protect mention script.");
+        await chrome.scripting.executeScript({
+          args: [chrome.runtime.id],
+          target: { tabId: tabId },
+          func: injectExtensionId,
+          world: "MAIN",
+        });
+        ScratchTools.console.log("Injected extension ID.");
+        function injectExtensionId(id) {
+          ScratchTools.id = id;
+        }
+        await chrome.scripting.executeScript({
+          args: [chrome.runtime.getURL("/extras/icons/icon128.png")],
+          target: { tabId: tabId },
+          func: injectExtensionIcon,
+          world: "MAIN",
+        });
+        ScratchTools.console.log("Injected extension icon.");
+        function injectExtensionIcon(icon) {
+          ScratchTools.icons = { main: icon };
+        }
         var newFullData = [];
         for (var i in data) {
           var feature = data[i];
@@ -473,12 +493,24 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
   }
 });
 
+chrome.runtime.onMessageExternal.addListener(async function (
+  msg,
+  sender,
+  sendResponse
+) {
+  if (msg === "openSettings") {
+    await chrome.tabs.create({
+      url: "/extras/index.html",
+    });
+  }
+});
+
 chrome.runtime.onMessage.addListener(async function (
   msg,
   sender,
   sendResponse
 ) {
-  if (msg.text === "get-logged-in-user") {
+  if (msg?.text === "get-logged-in-user") {
     sendResponse(true);
     const data = await (
       await fetch("https://scratch.mit.edu/session/", {
