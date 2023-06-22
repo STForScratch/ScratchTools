@@ -6,6 +6,11 @@
   },
   {
     "version": 2,
+    "id": "live-character-counts",
+    "versionAdded": "v2.30.0"
+  },
+  {
+    "version": 2,
     "id": "emoji-status",
     "versionAdded": "v2.29.0"
   },

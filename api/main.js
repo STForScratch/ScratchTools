@@ -125,7 +125,7 @@ ScratchTools.Features.get = function (search) {
   return all[search];
 };
 
-var allSettingChangeFunctions = {}
+var allSettingChangeFunctions = {};
 
 var allDisableFunctions = {};
 ScratchTools.setDisable = function (feature, f) {
@@ -190,3 +190,47 @@ ScratchTools.styles = {
       });
   },
 };
+
+ScratchTools.waitForElements(
+  "ul[class*='menu_menu_'][class*='menu_right_']",
+  function (ul) {
+    if (
+      ul.parentNode?.previousSibling?.previousSibling?.className.startsWith(
+        "settings-menu_dropdown-label_"
+      )
+    ) {
+      if (!ul.querySelector(".ste-menu-full-settings")) {
+        var li = document.createElement("li");
+        li.className =
+          "ste-menu-full-settings menu_menu-item_3EwYA menu_hoverable_3u9dt";
+
+        var div = document.createElement("div");
+        div.className = "settings-menu_option_3rMur";
+
+        var icon = document.createElement("img");
+        icon.src = ScratchTools.icons.main;
+        icon.style.width = "24px";
+
+        var span = document.createElement("span");
+        span.className = "settings-menu_submenu-label_r-gA3";
+
+        var label = document.createElement("span");
+        label.textContent = "ScratchTools Settings";
+
+        li.addEventListener("click", function () {
+          document.body.click();
+          chrome.runtime.sendMessage(ScratchTools.id, "openSettings");
+        });
+
+        li.appendChild(div);
+        div.appendChild(icon);
+        div.appendChild(span);
+        span.appendChild(label);
+
+        ul.appendChild(li);
+      }
+    }
+  },
+  "ste-full-settings-btn",
+  false
+);
