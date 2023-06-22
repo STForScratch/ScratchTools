@@ -30,3 +30,25 @@ ScratchTools.waitForElements(
   "liveCharacterCount",
   false
 );
+
+ScratchTools.waitForElements("input[id^='frc-title-']", function (el) {
+  if (!el.parentNode.querySelector(".ste-project-title-count")) {
+    var span = document.createElement("span");
+    span.classList.add("ste-project-title-count");
+    span.textContent = `${(100 - el.value.length).toString()} characters left`;
+    if (100 - el.value.length <= 10) {
+      span.classList.add("ste-lcc-low");
+    }
+    el.parentNode.appendChild(span);
+    el.addEventListener("input", function () {
+      span.textContent = `${(
+        100 - el.value.length
+      ).toString()} characters left`;
+      if (100 - el.value.length <= 10) {
+        span.classList.add("ste-lcc-low");
+      } else {
+        span.classList.remove("ste-lcc-low");
+      }
+    });
+  }
+}, "projectTitleCharacterCount", false);

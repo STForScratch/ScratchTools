@@ -12,7 +12,7 @@
 .ste-forum-char {
   opacity: 0.5;
   float: right;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .ste-studio-charcount {
@@ -20,4 +20,13 @@
   font-size: 0.8rem;
   opacity: 0.5;
   float: right;
+}
+
+.ste-project-title-count, .ste-stu-title-count {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  position: relative;
+  top: 0.25rem;
+  float: right;
+  font-weight: normal;
 }
