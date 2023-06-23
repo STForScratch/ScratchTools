@@ -1,0 +1,10 @@
+{
+  "title": "Go to Parent Button",
+  "description": "In the editor for any project that is a remix, you can click a button to go to the editor in the parent project.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Editor"],
+  "tags": [],
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }]
+}

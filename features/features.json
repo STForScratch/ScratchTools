@@ -6,6 +6,11 @@
   },
   {
     "version": 2,
+    "id": "simplify-editor-tabs",
+    "versionAdded": "v2.30.0"
+  },
+  {
+    "version": 2,
     "id": "live-character-counts",
     "versionAdded": "v2.30.0"
   },
@@ -62,6 +67,10 @@
   {
     "version": 2,
     "id": "original-buttons"
+  },
+  {
+    "version": 2,
+    "id": "box-shadows"
   },
   {
     "title": "Nicknames",
@@ -774,13 +783,8 @@
     "type": ["Website"]
   },
   {
-    "title": "Go to Parent Button",
-    "description": "In the editor for any project that is a remix, you can click a button to go to the editor in the parent project.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "go-to-parent",
-    "tags": [],
-    "type": ["Editor"]
+    "version": 2,
+    "id": "go-to-parent"
   },
   {
     "title": "Most Popular Project",
@@ -903,16 +907,6 @@
     "file": "sprite-data",
     "tags": [],
     "type": ["Editor"]
-  },
-  {
-    "title": "Content Box Shadows",
-    "description": "Adds shadows on all content boxes. When hovering one, the shadow will darken.",
-    "credits": ["Scratchfangs"],
-    "urls": ["https://scratch.mit.edu/users/Scratchfangs/"],
-    "file": "box-shadows",
-    "tags": [],
-    "type": ["Website", "Theme"],
-    "dynamic": true
   },
   {
     "title": "Aviate Statuses",

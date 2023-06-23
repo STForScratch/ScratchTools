@@ -1,0 +1,22 @@
+li[class^='react-tabs_react-tabs__tab'] > span {
+    display:none !important;
+}
+
+li[class^='react-tabs_react-tabs__tab'] > img {
+    width: 25px !important;
+    height: 25px !important;
+    bottom: .5px !important;
+    margin-right: 0 !important;
+    position: relative !important;
+}
+
+li[class^='react-tabs_react-tabs__tab'] {
+    width: 35px !important;
+    height: 35px !important;
+    min-height: 35px !important;
+    min-width: 35px !important;
+    padding: 0 !important;
+    flex-grow: 0 !important;
+    margin: 0px 0px 5.25px 10px !important;
+    border-radius: 100% !important;
+}

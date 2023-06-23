@@ -2,8 +2,8 @@
   "name": "__MSG_extName__",
   "short_name": "__MSG_extName__",
   "manifest_version": 3,
-  "version": "2.29.0",
-  "version_name": "2.29.0",
+  "version": "2.30.0",
+  "version_name": "2.30.0-beta",
   "default_locale": "en",
   "description": "__MSG_extDescription__",
   "author": "rgantzos",
@@ -22,7 +22,7 @@
     "128": "/extras/icons/icon128.png"
   },
   "web_accessible_resources": [{
-    "resources": ["features/*", "/extras/feature/index.html", "/api/*"],
+    "resources": ["features/*", "/extras/feature/index.html", "/api/*", "/extras/icons/*"],
     "matches": ["https://scratch.mit.edu/*"]
   }],
   "host_permissions": ["https://scratch.mit.edu/"],
@@ -31,5 +31,8 @@
       "id": "info@scratchtools.app",
       "strict_min_version": "42.0"
     }
+  },
+  "externally_connectable": {
+    "matches": ["https://scratch.mit.edu/*"]
   }
 }
