@@ -316,46 +316,72 @@ async function getFeatures() {
           div.appendChild(label);
           input.checked = optionData || false;
         }
+        input.dataset.validation = btoa(
+          JSON.stringify(option.validation || [])
+        );
         input.addEventListener("input", async function () {
-          if (this.type !== "checkbox") {
-            finalValue = this.value;
-          } else {
-            var data = await chrome.storage.sync.get(this.dataset.id);
-            if (data[this.dataset.id]) {
-              this.checked = false;
-              finalValue = false;
-            } else {
-              this.checked = true;
-              finalValue = true;
-            }
-          }
-          var saveData = {};
-          saveData[this.dataset.id] = finalValue;
-          await chrome.storage.sync.set(saveData);
-          var featureToUpdate = this;
-          chrome.tabs.query({}, function (tabs) {
-            for (var i = 0; i < tabs.length; i++) {
-              try {
-                chrome.scripting.executeScript({
-                  args: [
-                    featureToUpdate.dataset.feature,
-                    featureToUpdate.dataset.id,
-                    finalValue,
-                  ],
-                  target: { tabId: tabs[i].id },
-                  func: updateSettingsFunction,
-                  world: "MAIN",
-                });
-                function updateSettingsFunction(feature, name, value) {
-                  if (allSettingChangeFunctions[feature]) {
-                    allSettingChangeFunctions[feature](name, value);
-                  }
-                }
-              } catch (err) {
-                console.log(err);
+          var validation = JSON.parse(atob(this.dataset.validation));
+          var ready = true;
+          var input = this
+          validation.forEach(function (validate) {
+            if (ready) {
+              input.style.outline = "none"
+              if (input.nextSibling?.className?.includes("validation-explanation")) {
+                input.nextSibling.remove()
+              }
+              if (!new RegExp(validate.regex).test(input.value)) {
+                ready = false;
+                input.style.outline = "2px solid #f72f4a"
+                var explanation = document.createElement("span")
+                explanation.className = "validation-explanation"
+                explanation.textContent = validate.explanation
+                explanation.style.color = "#f72f4a"
+                explanation.style.marginBottom = "1rem"
+                input.insertAdjacentElement("afterend", explanation)
               }
             }
           });
+          if (ready) {
+            if (this.type !== "checkbox") {
+              finalValue = this.value;
+            } else {
+              var data = await chrome.storage.sync.get(this.dataset.id);
+              if (data[this.dataset.id]) {
+                this.checked = false;
+                finalValue = false;
+              } else {
+                this.checked = true;
+                finalValue = true;
+              }
+            }
+            var saveData = {};
+            saveData[this.dataset.id] = finalValue;
+            await chrome.storage.sync.set(saveData);
+            var featureToUpdate = this;
+            chrome.tabs.query({}, function (tabs) {
+              for (var i = 0; i < tabs.length; i++) {
+                try {
+                  chrome.scripting.executeScript({
+                    args: [
+                      featureToUpdate.dataset.feature,
+                      featureToUpdate.dataset.id,
+                      finalValue,
+                    ],
+                    target: { tabId: tabs[i].id },
+                    func: updateSettingsFunction,
+                    world: "MAIN",
+                  });
+                  function updateSettingsFunction(feature, name, value) {
+                    if (allSettingChangeFunctions[feature]) {
+                      allSettingChangeFunctions[feature](name, value);
+                    }
+                  }
+                } catch (err) {
+                  console.log(err);
+                }
+              }
+            });
+          }
         });
       }
     }
