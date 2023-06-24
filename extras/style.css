@@ -104,7 +104,7 @@ a {
   padding-left: 1rem;
   margin-bottom: 0.5rem;
   border: 0px;
-  color: white;
+  color: var(--primary-color);
   background-color: var(--feature-input-bg);
 }
 
