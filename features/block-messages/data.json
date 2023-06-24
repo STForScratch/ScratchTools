@@ -1,0 +1,26 @@
+{
+  "title": "Block Users",
+  "description": "Hide messages from users that you block. Other users won't see that you've blocked them.",
+  "credits": [
+    {
+      "username": "rgantzos",
+      "url": "https://scratch.mit.edu/users/rgantzos/"
+    },
+    {
+      "username": "Scratchfangs",
+      "url": "https://scratch.mit.edu/users/rgantzos/"
+    }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "scripts": [
+    { "file": "profile.js", "runOn": "/users/*" },
+    { "file": "messages.js", "runOn": "/messages*" }
+  ],
+  "styles": [
+    { "file": "profile.css", "runOn": "/users/*" },
+    { "file": "messages.css", "runOn": "/messages*" }
+  ],
+  "dynamic": true,
+  "similar": ["block-studios"]
+}

@@ -11,6 +11,19 @@ if (
   ScratchTools.type = "Website";
 }
 
+var storagePromises = []
+ScratchTools.storage = {
+  get: async function(key) {
+    chrome.runtime.sendMessage(ScratchTools.id, { message: "storageGet", key });
+    return new Promise((resolve, reject) => {
+      storagePromises.push({ key: key, resolve })
+    });
+  },
+  set: async function({ key, value }) {
+    chrome.runtime.sendMessage(ScratchTools.id, { message: "storageSet", key, value });
+  }
+}
+
 var allSelectors = {};
 var allCallbacksForWait = {};
 ScratchTools.waitForElements = function (selector, callback, id, rework) {

@@ -1,6 +1,16 @@
 [
   {
     "version": 2,
+    "id": "block-studios",
+    "versionAdded": "v2.30.0"
+  },
+  {
+    "version": 2,
+    "id": "block-messages",
+    "versionAdded": "v2.30.0"
+  },
+  {
+    "version": 2,
     "id": "two-colors",
     "versionAdded": "v2.30.0"
   },
@@ -281,19 +291,6 @@
     "file": "block-count-in-mystuff",
     "type": ["Website"],
     "tags": ["Recommended"],
-    "dynamic": true
-  },
-  {
-    "title": "Block Individual Studio Activity",
-    "description": "Disable studio activity messages from specific studios.",
-    "credits": ["Mario_best_games", "rgantzos"],
-    "urls": [
-      "https://scratch.mit.edu/users/Mario_best_games/",
-      "https://scratch.mit.edu/users/rgantzos/"
-    ],
-    "file": "block-studios",
-    "type": ["Website"],
-    "tags": [],
     "dynamic": true
   },
   {
@@ -812,20 +809,6 @@
     "file": "most-popular-project",
     "tags": [],
     "type": ["Website"]
-  },
-  {
-    "title": "Block Users",
-    "description": "Hide messages on the messages page that are created by users that you have blocked (includes a block page).",
-    "credits": ["rgantzos", "Scratchfangs"],
-    "urls": [
-      "https://scratch.mit.edu/users/rgantzos/",
-      "https://scratch.mit.edu/users/rgantzos/"
-    ],
-    "file": "block-messages",
-    "tags": [],
-    "world": "ISOLATED",
-    "type": ["Website"],
-    "dynamic": true
   },
   {
     "title": "Editor Dark Mode",
