@@ -7,5 +7,6 @@
   "type": ["Website"],
   "tags": ["New", "Featured"],
   "dynamic": true,
-  "styles": [{ "file": "style.css", "runOn": "/projects/*" }]
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
+  "similar": ["simplify-editor-tabs"]
 }
