@@ -1,0 +1,10 @@
+.ste-block-user {
+    color: rgba(255, 0, 0, 0.642);
+    opacity: .5;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.ste-block-user:hover {
+    opacity: 1;
+}

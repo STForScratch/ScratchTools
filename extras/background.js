@@ -503,6 +503,28 @@ chrome.runtime.onMessageExternal.addListener(async function (
       url: "/extras/index.html",
     });
   }
+  if (typeof msg === "object") {
+    if (msg.message === "storageSet") {
+      await chrome.storage.sync.set({ [msg.key]: msg.value });
+    }
+    if (msg.message === "storageGet") {
+      var data = (await chrome.storage.sync.get(msg.key))?.[msg.key] || null;
+      await chrome.scripting.executeScript({
+        args: [msg.key, data],
+        target: { tabId: sender.tab.id },
+        func: returnStorageValue,
+        world: "MAIN",
+      });
+      function returnStorageValue(key, value) {
+        storagePromises.forEach(function (promise) {
+          if (promise.key === key && !promise.resolved) {
+            promise.resolve(value);
+            promise.resolved = true
+          }
+        });
+      }
+    }
+  }
 });
 
 chrome.runtime.onMessage.addListener(async function (
