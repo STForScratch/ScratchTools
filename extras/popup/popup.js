@@ -1,3 +1,21 @@
+if (document.querySelector(".sparkle")) {
+  var sparkle = document.querySelector(".sparkle");
+  sparkle.addEventListener("mouseover", function () {
+    if (!sparkle.parentNode.querySelector(".tip")) {
+      var span = document.createElement("span");
+      span.textContent =
+        "These features are recommended for you based on other features you have enabled.";
+      span.className = "tip";
+      sparkle.parentNode.appendChild(span);
+    }
+  });
+  sparkle.addEventListener("mouseout", function () {
+    if (sparkle.parentNode.querySelector(".tip")) {
+      sparkle.parentNode.querySelector(".tip").remove();
+    }
+  });
+}
+
 async function getSuggestions() {
   var enabled = (await chrome.storage.sync.get("features"))?.features || "";
   var data = await (await fetch("/features/features.json")).json();
@@ -11,7 +29,10 @@ async function getSuggestions() {
         ).json();
         if (featureData.similar) {
           for (var i2 in featureData.similar) {
-            if (!suggested.includes(featureData.similar[i2]) && !enabled.includes(featureData.similar[i2])) {
+            if (
+              !suggested.includes(featureData.similar[i2]) &&
+              !enabled.includes(featureData.similar[i2])
+            ) {
               suggested.push(featureData.similar[i2]);
             }
           }
@@ -20,31 +41,39 @@ async function getSuggestions() {
     }
   }
   if (suggested.length) {
-    document.querySelector(".suggested").style.display = null
-    suggested.forEach(async function(suggestion) {
-      var data = await (await fetch(`/features/${suggestion}/data.json`)).json()
-      var div = document.createElement("div")
-      div.className = "feature-suggestion"
-      var h3 = document.createElement("h3")
-      h3.textContent = data.title
-      var p = document.createElement("p")
-      p.textContent = data.description
-      var span = document.createElement("span")
-      span.textContent = "Click to view feature."
-      div.appendChild(h3)
-      div.appendChild(p)
-      div.appendChild(span)
-      document.querySelector(".suggested-features").appendChild(div)
-      div.addEventListener("click", function() {
-        var feature = document.querySelector(`div.feature[data-id="${suggestion}"]`)
-        feature.style.display = null
-        feature.classList.add("scrolled")
-        feature.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-        setTimeout(function() {
-          feature.classList.remove("scrolled")
-        }, 2000)
-      })
-    })
+    document.querySelector(".suggested").style.display = null;
+    suggested.forEach(async function (suggestion) {
+      var data = await (
+        await fetch(`/features/${suggestion}/data.json`)
+      ).json();
+      var div = document.createElement("div");
+      div.className = "feature-suggestion";
+      var h3 = document.createElement("h3");
+      h3.textContent = data.title;
+      var p = document.createElement("p");
+      p.textContent = data.description;
+      var span = document.createElement("span");
+      span.textContent = "Click to view feature.";
+      div.appendChild(h3);
+      div.appendChild(p);
+      div.appendChild(span);
+      document.querySelector(".suggested-features").appendChild(div);
+      div.addEventListener("click", function () {
+        var feature = document.querySelector(
+          `div.feature[data-id="${suggestion}"]`
+        );
+        feature.style.display = null;
+        feature.classList.add("scrolled");
+        feature.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+          inline: "nearest",
+        });
+        setTimeout(function () {
+          feature.classList.remove("scrolled");
+        }, 2000);
+      });
+    });
   }
 }
 if (document.querySelector(".suggested")) {
