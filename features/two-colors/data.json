@@ -1,0 +1,14 @@
+{
+  "title": "2.0 Block Colors",
+  "description": "Replaces the colors of the blocks in the editor with the blocks from the 2.0 version of the code editor.",
+  "credits": [
+    {
+      "username": "infinitytec",
+      "url": "https://github.com/infinitytec"
+    }
+  ],
+  "type": ["Editor", "Theme"],
+  "tags": ["New"],
+  "dynamic": true,
+  "styles": [{ "file": "style.css", "runOn": "/projects/" }]
+}
