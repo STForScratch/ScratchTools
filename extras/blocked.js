@@ -1,8 +1,8 @@
 function getBlocked() {
   document.querySelector(".blocked").style.display = null;
-  chrome.storage.sync.get("blocked", function (obj) {
+  chrome.storage.sync.get("block", function (obj) {
     var all = [];
-    obj.blocked.forEach(function (el) {
+    obj.block.forEach(function (el) {
       if (el !== "") {
         all.push(el);
       }

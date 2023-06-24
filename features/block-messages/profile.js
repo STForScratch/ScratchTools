@@ -3,7 +3,7 @@ ScratchTools.waitForElements(
   async function (footer) {
     if (!document.querySelector(".ste-block-user")) {
       var user = window.location.pathname.split("/")[2];
-      var blocked = await ScratchTools.storage.get("blocked");
+      var blocked = await ScratchTools.storage.get("block");
       var isBlocked;
       if (blocked?.includes(user)) {
         isBlocked = true;
@@ -26,14 +26,14 @@ ScratchTools.waitForElements(
               }
             });
             blocked = newArray;
-            await ScratchTools.storage.set({ key: "blocked", value: blocked });
+            await ScratchTools.storage.set({ key: "block", value: blocked });
           } else {
             blocked.push(user);
-            await ScratchTools.storage.set({ key: "blocked", value: blocked });
+            await ScratchTools.storage.set({ key: "block", value: blocked });
           }
         } else {
           blocked = [user];
-          await ScratchTools.storage.set({ key: "blocked", value: blocked });
+          await ScratchTools.storage.set({ key: "block", value: blocked });
         }
       });
     }
