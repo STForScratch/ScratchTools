@@ -36,7 +36,7 @@ function addTags() {
         miniDiv.href = el.href;
         miniDiv.style.color = "white";
         miniDiv.style.padding = "0.1rem";
-        miniDiv.style.backgroundColor = "#4d97ff";
+        miniDiv.style.backgroundColor = "#855cd6";
         miniDiv.style.margin = "0.3rem";
         miniDiv.style.borderRadius = "0.3rem";
         divBottom.appendChild(miniDiv);
