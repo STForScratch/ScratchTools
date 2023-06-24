@@ -11,5 +11,6 @@
   ],
   "styles": [
     { "file": "profile.css", "runOn": "/users/*" }
-  ]
+  ],
+  "similar": ["isonline", "emoji-status"]
 }

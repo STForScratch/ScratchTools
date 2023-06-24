@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "two-colors",
+    "versionAdded": "v2.30.0"
+  },
+  {
+    "version": 2,
     "id": "studio-links",
     "versionAdded": "v2.30.0"
   },
@@ -839,15 +844,6 @@
     "file": "hide-studio-group-icon",
     "tags": [],
     "type": ["Website"]
-  },
-  {
-    "title": "2.0 Block Colors",
-    "description": "Replaces the colors of the blocks in the editor with the blocks from the 2.0 version of the code editor.",
-    "credits": ["infinitytec"],
-    "urls": ["https://github.com/infinitytec"],
-    "file": "two-colors",
-    "tags": [],
-    "type": ["Editor", "Theme"]
   },
   {
     "title": "Colored Messages",

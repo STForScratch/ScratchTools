@@ -8,5 +8,5 @@
   "tags": ["New"],
   "dynamic": true,
   "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
-  "similar": ["plain-background"]
+  "similar": ["plain-background", "hide-block-category-names"]
 }
