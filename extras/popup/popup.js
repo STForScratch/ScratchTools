@@ -1,3 +1,56 @@
+async function getSuggestions() {
+  var enabled = (await chrome.storage.sync.get("features"))?.features || "";
+  var data = await (await fetch("/features/features.json")).json();
+  var suggested = [];
+  for (var i in data) {
+    var feature = data[i];
+    if (feature.version === 2) {
+      if (enabled.includes(feature.id)) {
+        var featureData = await (
+          await fetch(`/features/${feature.id}/data.json`)
+        ).json();
+        if (featureData.similar) {
+          for (var i2 in featureData.similar) {
+            if (!suggested.includes(featureData.similar[i2]) && !enabled.includes(featureData.similar[i2])) {
+              suggested.push(featureData.similar[i2]);
+            }
+          }
+        }
+      }
+    }
+  }
+  if (suggested.length) {
+    document.querySelector(".suggested").style.display = null
+    suggested.forEach(async function(suggestion) {
+      var data = await (await fetch(`/features/${suggestion}/data.json`)).json()
+      var div = document.createElement("div")
+      div.className = "feature-suggestion"
+      var h3 = document.createElement("h3")
+      h3.textContent = data.title
+      var p = document.createElement("p")
+      p.textContent = data.description
+      var span = document.createElement("span")
+      span.textContent = "Click to view feature."
+      div.appendChild(h3)
+      div.appendChild(p)
+      div.appendChild(span)
+      document.querySelector(".suggested-features").appendChild(div)
+      div.addEventListener("click", function() {
+        var feature = document.querySelector(`div.feature[data-id="${suggestion}"]`)
+        feature.style.display = null
+        feature.classList.add("scrolled")
+        feature.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+        setTimeout(function() {
+          feature.classList.remove("scrolled")
+        }, 2000)
+      })
+    })
+  }
+}
+if (document.querySelector(".suggested")) {
+  getSuggestions();
+}
+
 chrome.storage.sync.get("theme", function (obj) {
   let theme = obj.theme;
   if (!theme) theme = "light";
@@ -322,22 +375,24 @@ async function getFeatures() {
         input.addEventListener("input", async function () {
           var validation = JSON.parse(atob(this.dataset.validation));
           var ready = true;
-          var input = this
+          var input = this;
           validation.forEach(function (validate) {
             if (ready) {
-              input.style.outline = "none"
-              if (input.nextSibling?.className?.includes("validation-explanation")) {
-                input.nextSibling.remove()
+              input.style.outline = "none";
+              if (
+                input.nextSibling?.className?.includes("validation-explanation")
+              ) {
+                input.nextSibling.remove();
               }
               if (!new RegExp(validate.regex).test(input.value)) {
                 ready = false;
-                input.style.outline = "2px solid #f72f4a"
-                var explanation = document.createElement("span")
-                explanation.className = "validation-explanation"
-                explanation.textContent = validate.explanation
-                explanation.style.color = "#f72f4a"
-                explanation.style.marginBottom = "1rem"
-                input.insertAdjacentElement("afterend", explanation)
+                input.style.outline = "2px solid #f72f4a";
+                var explanation = document.createElement("span");
+                explanation.className = "validation-explanation";
+                explanation.textContent = validate.explanation;
+                explanation.style.color = "#f72f4a";
+                explanation.style.marginBottom = "1rem";
+                input.insertAdjacentElement("afterend", explanation);
               }
             }
           });
