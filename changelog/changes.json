@@ -14,6 +14,7 @@
   ],
   "fixed": [
     "Fix settings page modals in dark mode.",
-    "Fix hide advertisements colors."
+    "Fix hide advertisements colors.",
+    "Fix odd sizing of features on settings page."
   ]
 }
