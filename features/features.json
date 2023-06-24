@@ -1,6 +1,26 @@
 [
   {
     "version": 2,
+    "id": "simplify-editor-tabs",
+    "versionAdded": "v2.30.0"
+  },
+  {
+    "version": 2,
+    "id": "live-character-counts",
+    "versionAdded": "v2.30.0"
+  },
+  {
+    "version": 2,
+    "id": "advanced-search",
+    "versionAdded": "v2.30.0"
+  },
+  {
+    "version": 2,
+    "id": "studio-links",
+    "versionAdded": "v2.30.0"
+  },
+  {
+    "version": 2,
     "id": "block-studios",
     "versionAdded": "v2.30.0"
   },
@@ -16,27 +36,7 @@
   },
   {
     "version": 2,
-    "id": "studio-links",
-    "versionAdded": "v2.30.0"
-  },
-  {
-    "version": 2,
     "id": "project-links",
-    "versionAdded": "v2.30.0"
-  },
-  {
-    "version": 2,
-    "id": "advanced-search",
-    "versionAdded": "v2.30.0"
-  },
-  {
-    "version": 2,
-    "id": "simplify-editor-tabs",
-    "versionAdded": "v2.30.0"
-  },
-  {
-    "version": 2,
-    "id": "live-character-counts",
     "versionAdded": "v2.30.0"
   },
   {
