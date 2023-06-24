@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "studio-links",
+    "versionAdded": "v2.30.0"
+  },
+  {
+    "version": 2,
     "id": "project-links",
     "versionAdded": "v2.30.0"
   },

@@ -1,0 +1,11 @@
+{
+    "title": "Studio Links as Titles",
+    "description": "Replaces studio links with their titles, all across the Scratch website.",
+    "credits": [
+      { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+    ],
+    "type": ["Website"],
+    "tags": ["New"],
+    "scripts": [{ "file": "script.js", "runOn": "/*" }]
+  }
+  
