@@ -13,7 +13,7 @@ if (window.location.href.startsWith("https://scratch.mit.edu/discuss/")) {
   //Categories
   document.querySelector(
     "#category_body_4 > div.box-content > table > tbody > tr:nth-child(1) > td.tcl > div > div.tclcon > h3 > a"
-  ).lastChild.textContent = "📢 Announcements";
+  ).textContent = "📢 Announcements";
   document.querySelector(
     "#category_body_4 > div.box-content > table > tbody > tr:nth-child(2) > td.tcl > div > div.tclcon > h3 > a"
   ).textContent = "👋 New Scratchers";
