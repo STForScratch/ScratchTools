@@ -64,6 +64,7 @@ function addBox(title, id, views, instructions) {
   box.appendChild(boxContent);
   var p = document.createElement("p");
   p.style.width = "500px";
+  p.style.whiteSpace = "pre-line";
   p.textContent = instructions;
   boxContent.appendChild(p);
   boxTitle.style.color = "#1aa0d8";
