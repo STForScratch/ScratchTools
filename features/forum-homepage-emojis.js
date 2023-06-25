@@ -1,19 +1,19 @@
 if (window.location.href.startsWith("https://scratch.mit.edu/discuss/")) {
   // Headers
-  document.querySelector("#category_head_4").textContent =
+  document.querySelector("#category_head_4").lastChild.textContent =
     "🙋‍♂️ Welcome to Scratch";
-  document.querySelector("#category_head_5").textContent =
+  document.querySelector("#category_head_5").lastChild.textContent =
     "🧑‍💻 Making Scratch Projects";
-  document.querySelector("#category_head_2").textContent = "😺 About Scratch";
-  document.querySelector("#category_head_7").textContent =
+  document.querySelector("#category_head_2").lastChild.textContent = "😺 About Scratch";
+  document.querySelector("#category_head_7").lastChild.textContent =
     "⚽ Interests Beyond Scratch";
-  document.querySelector("#category_head_6").textContent =
+  document.querySelector("#category_head_6").lastChild.textContent =
     "🌏 Scratch Around the World";
 
   //Categories
   document.querySelector(
     "#category_body_4 > div.box-content > table > tbody > tr:nth-child(1) > td.tcl > div > div.tclcon > h3 > a"
-  ).textContent = "📢 Announcements";
+  ).lastChild.textContent = "📢 Announcements";
   document.querySelector(
     "#category_body_4 > div.box-content > table > tbody > tr:nth-child(2) > td.tcl > div > div.tclcon > h3 > a"
   ).textContent = "👋 New Scratchers";
