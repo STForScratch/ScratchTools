@@ -76,6 +76,7 @@ function addBox(title, id, views, instructions) {
   thumbnail.style.width = "300px";
   p.style.textAlign = "left";
   p.style.float = "left";
+  p.style.whiteSpace = "pre";
   boxContent.style.height = "250px";
   boxContent.style.overflowY = "hidden";
   thumbnail.style.textAlign = "right";
