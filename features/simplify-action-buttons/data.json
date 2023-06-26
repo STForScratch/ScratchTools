@@ -8,5 +8,5 @@
     "tags": ["New"],
     "dynamic": true,
     "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
-    "similar": ["simpify-editor-tabs", "hide-block-category-names"]
+    "similar": ["simplify-editor-tabs", "hide-block-category-names"]
   }
