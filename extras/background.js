@@ -450,6 +450,7 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
                         world: newData.world?.toUpperCase() || "MAIN",
                       });
                     }
+                    }
                   });
                   newData.styles?.forEach(function (style) {
                     if (new URL(tab.url).pathname.match(style.runOn)) {
@@ -469,7 +470,7 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
                         link.rel = "stylesheet";
                         link.href = path;
                         link.dataset.feature = feature;
-                        document.head.prepend(link);
+                        document.querySelector(".scratchtools-styles-div").appendChild(link);
                       }
                     }
                   });

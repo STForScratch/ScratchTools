@@ -572,7 +572,7 @@ async function dynamicEnable(id) {
                     link.rel = "stylesheet";
                     link.href = path;
                     link.dataset.feature = feature;
-                    document.head.appendChild(link);
+                    document.querySelector(".scratchtools-styles-div").appendChild(link);
                   }
                 }
               } catch (err) {}
