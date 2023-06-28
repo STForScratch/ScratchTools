@@ -73,7 +73,7 @@ async function createButton(el) {
       let span = document.createElement("span");
       btn.role = "button";
       btn.className = "button";
-      span.style.backgroundColor = "#ff9f00";
+      span.style.backgroundColor = "#ff8c1a";
       btn.classList = classList;
       btn.style.display = "none";
       btn.classList.add("scratchtools-unlisted");
