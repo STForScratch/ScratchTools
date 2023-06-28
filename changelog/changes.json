@@ -1,30 +1,20 @@
 {
   "NOTE": "THERE IS NO NEED TO UPDATE THIS YOURSELF, IT WILL BE UPDATED WHEN RELEASED.",
-  "version": "2.29.0",
+  "version": "2.30.0",
   "enhanced": [
-    "Better changelog page.",
-    "Remake settings page design.",
-    "Update beta coloring.",
-    "Add \"Additional Settings\" button and modal.",
-    "Add checkbox settings functionality.",
-    "Add \"settingChange\" event.",
-    "Set icon to circle for Hide Block Category Names.",
-    "Remove a few \"Easter Egg\" features.",
-    "Use regex for userscripts/userstyles to run on specific pages.",
-    "Better hide advertisements/allow highlight.",
-    "Blue messages badge for beta version.",
-    "Feedback page in extension.",
-    "Better colored comments.",
-    "Clean up features."
+    "Update quite a few features to v2.",
+    "Change logo source.",
+    "Better onboarding.",
+    "Option validation.",
+    "Suggestions on settings page.",
+    "Add similar features key.",
+    "Add real storage API.",
+    "Add warning modal for new Scratch editor.",
+    "Update colors to match upcoming Scratch colors."
   ],
   "fixed": [
-    "Fix placement of settings button.",
-    "Fix Original Buttons feature.",
-    "Fix Clone Counter bugs.",
-    "Fix options data not loading for Feature v2.",
-    "Temporarily remove April Fools 2022.",
-    "Fix scrollbars.",
-    "Fix settings icon not showing.",
-    "Fix Plain Background."
+    "Fix settings page modals in dark mode.",
+    "Fix hide advertisements colors.",
+    "Fix odd sizing of features on settings page."
   ]
 }

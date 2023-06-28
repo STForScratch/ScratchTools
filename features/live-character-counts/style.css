@@ -1,0 +1,32 @@
+.ste-live-character-count {
+  font-weight: normal;
+  font-size: 0.8rem;
+  opacity: 0.5;
+  margin-left: 0.5rem;
+}
+
+.ste-lcc-low {
+  color: red;
+}
+
+.ste-forum-char {
+  opacity: 0.5;
+  float: right;
+  font-size: 0.8rem;
+}
+
+.ste-studio-charcount {
+  font-weight: normal;
+  font-size: 0.8rem;
+  opacity: 0.5;
+  float: right;
+}
+
+.ste-project-title-count, .ste-stu-title-count {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  position: relative;
+  top: 0.25rem;
+  float: right;
+  font-weight: normal;
+}

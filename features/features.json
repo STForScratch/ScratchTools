@@ -1,6 +1,46 @@
 [
   {
     "version": 2,
+    "id": "simplify-editor-tabs",
+    "versionAdded": "v2.30.0"
+  },
+  {
+    "version": 2,
+    "id": "live-character-counts",
+    "versionAdded": "v2.30.0"
+  },
+  {
+    "version": 2,
+    "id": "advanced-search",
+    "versionAdded": "v2.30.0"
+  },
+  {
+    "version": 2,
+    "id": "studio-links",
+    "versionAdded": "v2.30.0"
+  },
+  {
+    "version": 2,
+    "id": "block-studios",
+    "versionAdded": "v2.30.0"
+  },
+  {
+    "version": 2,
+    "id": "block-messages",
+    "versionAdded": "v2.30.0"
+  },
+  {
+    "version": 2,
+    "id": "two-colors",
+    "versionAdded": "v2.30.0"
+  },
+  {
+    "version": 2,
+    "id": "project-links",
+    "versionAdded": "v2.30.0"
+  },
+  {
+    "version": 2,
     "id": "emoji-status",
     "versionAdded": "v2.29.0"
   },
@@ -251,19 +291,6 @@
     "file": "block-count-in-mystuff",
     "type": ["Website"],
     "tags": ["Recommended"],
-    "dynamic": true
-  },
-  {
-    "title": "Block Individual Studio Activity",
-    "description": "Disable studio activity messages from specific studios.",
-    "credits": ["Mario_best_games", "rgantzos"],
-    "urls": [
-      "https://scratch.mit.edu/users/Mario_best_games/",
-      "https://scratch.mit.edu/users/rgantzos/"
-    ],
-    "file": "block-studios",
-    "type": ["Website"],
-    "tags": [],
     "dynamic": true
   },
   {
@@ -784,20 +811,6 @@
     "type": ["Website"]
   },
   {
-    "title": "Block Users",
-    "description": "Hide messages on the messages page that are created by users that you have blocked (includes a block page).",
-    "credits": ["rgantzos", "Scratchfangs"],
-    "urls": [
-      "https://scratch.mit.edu/users/rgantzos/",
-      "https://scratch.mit.edu/users/rgantzos/"
-    ],
-    "file": "block-messages",
-    "tags": [],
-    "world": "ISOLATED",
-    "type": ["Website"],
-    "dynamic": true
-  },
-  {
     "title": "Editor Dark Mode",
     "description": "Is light to bright in the editor? Now you can enjoy darkness in the editor, with a beautiful dark theme.",
     "credits": ["infinitytec"],
@@ -816,15 +829,6 @@
     "type": ["Website"]
   },
   {
-    "title": "2.0 Block Colors",
-    "description": "Replaces the colors of the blocks in the editor with the blocks from the 2.0 version of the code editor.",
-    "credits": ["infinitytec"],
-    "urls": ["https://github.com/infinitytec"],
-    "file": "two-colors",
-    "tags": [],
-    "type": ["Editor", "Theme"]
-  },
-  {
     "title": "Colored Messages",
     "description": "Colors your messages based on the type of message, such as loves, favorites, and studio invites!",
     "credits": ["_nix"],
@@ -839,15 +843,6 @@
     "credits": ["rgantzos"],
     "urls": ["https://scratch.mit.edu/users/rgantzos"],
     "file": "full-title",
-    "tags": [],
-    "type": ["Website"]
-  },
-  {
-    "title": "Project Link as Title",
-    "description": "In profile and project comments, project links in comments are replaced with their titles.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos"],
-    "file": "project-links",
     "tags": [],
     "type": ["Website"]
   },
@@ -883,16 +878,6 @@
     ],
     "file": "nfe-project-checker",
     "type": ["Website"]
-  },
-  {
-    "title": "Advanced Search",
-    "description": "Replaces the basic search that Scratch uses with a much better and smarter search.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "advanced-search",
-    "tags": ["Beta"],
-    "type": ["Website"],
-    "dynamic": true
   },
   {
     "title": "Display Sprite Data",

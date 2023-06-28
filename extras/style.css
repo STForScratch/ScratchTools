@@ -48,16 +48,16 @@ a {
   height: 1rem;
   position: relative;
   top: 0.2rem;
-  margin-left: .2rem;
-  margin-right: .1rem;
+  margin-left: 0.2rem;
+  margin-right: 0.1rem;
 }
 
 .feature {
-  margin-top: 2em;
   border: 0px solid black;
   line-height: 25px;
   display: inline-block;
-  width: calc(50% - 4rem);
+  width: 20rem;
+  max-width: 100%;
   margin: 0.5rem;
   background-color: var(--feature-bg);
   margin-left: 0px !important;
@@ -67,9 +67,20 @@ a {
   border-radius: 10px;
   padding: 17px;
   padding-top: 5px;
-  height: 13rem;
-  overflow-y: auto;
   margin-bottom: 0px;
+  outline: 2px solid #ff9f0000;
+  transition: outline 0.2s;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.settings {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.feature.scrolled {
+  outline: 2px solid var(--theme);
 }
 
 .feature button {
@@ -98,7 +109,7 @@ a {
   padding-left: 1rem;
   margin-bottom: 0.5rem;
   border: 0px;
-  color: white;
+  color: var(--primary-color);
   background-color: var(--feature-input-bg);
 }
 
@@ -159,7 +170,7 @@ a {
   border: 0px solid black;
   min-height: 100% !important;
   height: 100vh;
-  width: 500px;
+  width: 40%;
   margin: 0px;
   max-width: 40vw;
   float: left;
@@ -168,7 +179,7 @@ a {
   border: 0px solid black;
   min-height: 100% !important;
   height: 100vh;
-  width: 900px;
+  width: 60%;
   margin-left: 0em;
   overflow: auto;
   float: right;
@@ -369,4 +380,78 @@ input:checked + .slider:before {
 button.secondary-btn {
   background-color: var(--feature-input-bg) !important;
   color: var(--primary-color) !important;
+}
+
+.suggested-features {
+  overflow-x: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 3px;
+  position: relative;
+  left: -3px;
+}
+
+.feature-suggestion {
+  background-color: var(--feature-bg);
+  padding: 1rem;
+  width: 20rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin-right: 1rem;
+  outline: 3px solid #ff9f0000;
+  transition: outline 0.2s;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.feature-suggestion:hover {
+  outline: 2px solid var(--theme);
+}
+
+.feature-suggestion h3 {
+  margin-top: 0px;
+  margin-bottom: 0.25rem;
+}
+
+.feature-suggestion p {
+  margin-top: 0px;
+  opacity: 0.75;
+  height: 3rem;
+  overflow-y: hidden;
+}
+
+.feature-suggestion span {
+  opacity: 0.75;
+}
+
+.sparkle {
+  height: 2rem;
+  opacity: .5;
+  transition: opacity .2s;
+  position: relative;
+  top: .5rem;
+  right: .5rem;
+  cursor: pointer;
+}
+
+.sparkle path {
+  fill: var(--theme);
+}
+
+.sparkle:hover {
+  opacity: 1;
+  cursor: poiinter;
+}
+
+.tip {
+  position: absolute;
+  width: 15rem;
+  padding: .5rem;
+  border-radius: .25rem;
+    font-size: .8rem;
+    background-color: var(--searchbar-bg);
+    color: var(--primary-color);
+    font-weight: normal;
+    z-index:99999;
+    margin-top: -.5rem;
 }

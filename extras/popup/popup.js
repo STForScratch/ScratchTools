@@ -1,3 +1,85 @@
+if (document.querySelector(".sparkle")) {
+  var sparkle = document.querySelector(".sparkle");
+  sparkle.addEventListener("mouseover", function () {
+    if (!sparkle.parentNode.querySelector(".tip")) {
+      var span = document.createElement("span");
+      span.textContent =
+        "These features are recommended for you based on other features you have enabled.";
+      span.className = "tip";
+      sparkle.parentNode.appendChild(span);
+    }
+  });
+  sparkle.addEventListener("mouseout", function () {
+    if (sparkle.parentNode.querySelector(".tip")) {
+      sparkle.parentNode.querySelector(".tip").remove();
+    }
+  });
+}
+
+async function getSuggestions() {
+  var enabled = (await chrome.storage.sync.get("features"))?.features || "";
+  var data = await (await fetch("/features/features.json")).json();
+  var suggested = [];
+  for (var i in data) {
+    var feature = data[i];
+    if (feature.version === 2) {
+      if (enabled.includes(feature.id)) {
+        var featureData = await (
+          await fetch(`/features/${feature.id}/data.json`)
+        ).json();
+        if (featureData.similar) {
+          for (var i2 in featureData.similar) {
+            if (
+              !suggested.includes(featureData.similar[i2]) &&
+              !enabled.includes(featureData.similar[i2])
+            ) {
+              suggested.push(featureData.similar[i2]);
+            }
+          }
+        }
+      }
+    }
+  }
+  if (suggested.length) {
+    document.querySelector(".suggested").style.display = null;
+    suggested.forEach(async function (suggestion) {
+      var data = await (
+        await fetch(`/features/${suggestion}/data.json`)
+      ).json();
+      var div = document.createElement("div");
+      div.className = "feature-suggestion";
+      var h3 = document.createElement("h3");
+      h3.textContent = data.title;
+      var p = document.createElement("p");
+      p.textContent = data.description;
+      var span = document.createElement("span");
+      span.textContent = "Click to view feature.";
+      div.appendChild(h3);
+      div.appendChild(p);
+      div.appendChild(span);
+      document.querySelector(".suggested-features").appendChild(div);
+      div.addEventListener("click", function () {
+        var feature = document.querySelector(
+          `div.feature[data-id="${suggestion}"]`
+        );
+        feature.style.display = null;
+        feature.classList.add("scrolled");
+        feature.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+          inline: "nearest",
+        });
+        setTimeout(function () {
+          feature.classList.remove("scrolled");
+        }, 2000);
+      });
+    });
+  }
+}
+if (document.querySelector(".suggested")) {
+  getSuggestions();
+}
+
 chrome.storage.sync.get("theme", function (obj) {
   let theme = obj.theme;
   if (!theme) theme = "light";
@@ -316,46 +398,74 @@ async function getFeatures() {
           div.appendChild(label);
           input.checked = optionData || false;
         }
+        input.dataset.validation = btoa(
+          JSON.stringify(option.validation || [])
+        );
         input.addEventListener("input", async function () {
-          if (this.type !== "checkbox") {
-            finalValue = this.value;
-          } else {
-            var data = await chrome.storage.sync.get(this.dataset.id);
-            if (data[this.dataset.id]) {
-              this.checked = false;
-              finalValue = false;
-            } else {
-              this.checked = true;
-              finalValue = true;
-            }
-          }
-          var saveData = {};
-          saveData[this.dataset.id] = finalValue;
-          await chrome.storage.sync.set(saveData);
-          var featureToUpdate = this;
-          chrome.tabs.query({}, function (tabs) {
-            for (var i = 0; i < tabs.length; i++) {
-              try {
-                chrome.scripting.executeScript({
-                  args: [
-                    featureToUpdate.dataset.feature,
-                    featureToUpdate.dataset.id,
-                    finalValue,
-                  ],
-                  target: { tabId: tabs[i].id },
-                  func: updateSettingsFunction,
-                  world: "MAIN",
-                });
-                function updateSettingsFunction(feature, name, value) {
-                  if (allSettingChangeFunctions[feature]) {
-                    allSettingChangeFunctions[feature](name, value);
-                  }
-                }
-              } catch (err) {
-                console.log(err);
+          var validation = JSON.parse(atob(this.dataset.validation));
+          var ready = true;
+          var input = this;
+          validation.forEach(function (validate) {
+            if (ready) {
+              input.style.outline = "none";
+              if (
+                input.nextSibling?.className?.includes("validation-explanation")
+              ) {
+                input.nextSibling.remove();
+              }
+              if (!new RegExp(validate.regex).test(input.value)) {
+                ready = false;
+                input.style.outline = "2px solid #f72f4a";
+                var explanation = document.createElement("span");
+                explanation.className = "validation-explanation";
+                explanation.textContent = validate.explanation;
+                explanation.style.color = "#f72f4a";
+                explanation.style.marginBottom = "1rem";
+                input.insertAdjacentElement("afterend", explanation);
               }
             }
           });
+          if (ready) {
+            if (this.type !== "checkbox") {
+              finalValue = this.value;
+            } else {
+              var data = await chrome.storage.sync.get(this.dataset.id);
+              if (data[this.dataset.id]) {
+                this.checked = false;
+                finalValue = false;
+              } else {
+                this.checked = true;
+                finalValue = true;
+              }
+            }
+            var saveData = {};
+            saveData[this.dataset.id] = finalValue;
+            await chrome.storage.sync.set(saveData);
+            var featureToUpdate = this;
+            chrome.tabs.query({}, function (tabs) {
+              for (var i = 0; i < tabs.length; i++) {
+                try {
+                  chrome.scripting.executeScript({
+                    args: [
+                      featureToUpdate.dataset.feature,
+                      featureToUpdate.dataset.id,
+                      finalValue,
+                    ],
+                    target: { tabId: tabs[i].id },
+                    func: updateSettingsFunction,
+                    world: "MAIN",
+                  });
+                  function updateSettingsFunction(feature, name, value) {
+                    if (allSettingChangeFunctions[feature]) {
+                      allSettingChangeFunctions[feature](name, value);
+                    }
+                  }
+                } catch (err) {
+                  console.log(err);
+                }
+              }
+            });
+          }
         });
       }
     }
