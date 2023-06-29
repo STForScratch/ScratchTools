@@ -101,3 +101,26 @@ ScratchTools.Scratch.scratchGui = function () {
     return null;
   }
 };
+
+async function alertForUpdates() {
+  if (ScratchTools.Scratch.scratchGui().mode.hasEverEnteredEditor) {
+    var purple = await (
+      await fetch(
+        "https://raw.githubusercontent.com/STForScratch/data/main/purple.json"
+      )
+    ).json();
+    if (purple.purple) {
+      var alertedForPurple = await ScratchTools.storage.get("purpleAlert") || false;
+      if (!alertedForPurple) {
+        await ScratchTools.storage.set({ key: "purpleAlert", value: true });
+        ScratchTools.modals.create({
+          title: "Important ScratchTools Update",
+          description:
+            "Due to the new Scratch editor update, some ScratchTools features might not work as planned. Don't worry- they should all be fixed within the next few days, our developers are hard at work!",
+        });
+      }
+    }
+  }
+}
+
+ScratchTools.waitForElements("div[class^='gui_menu-bar-position_']", alertForUpdates, "purple-notification", false)

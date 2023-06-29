@@ -1,0 +1,15 @@
+{
+  "title": "Block Individual Studio Activity",
+  "description": "Disable studio activity messages from specific studios.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "scripts": [
+    { "file": "studios.js", "runOn": "/studios/*" },
+    { "file": "messages.js", "runOn": "/messages*" }
+  ],
+  "styles": [{ "file": "messages.css", "runOn": "/messages*" }],
+  "similar": ["block-messages"]
+}

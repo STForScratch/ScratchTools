@@ -1,0 +1,19 @@
+{
+  "title": "Live Character Counts",
+  "description": "On forum, studio, and project pages, displays the live character count for textboxes.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "styles": [
+    { "file": "style.css", "runOn": "/projects/*" },
+    { "file": "style.css", "runOn": "/discuss/settings/*" },
+    { "file": "style.css", "runOn": "/studios/*" }
+  ],
+  "scripts": [
+    { "file": "projects.js", "runOn": "/projects/*" },
+    { "file": "forums.js", "runOn": "/discuss/settings/*" },
+    { "file": "studios.js", "runOn": "/studios/*" }
+  ]
+}

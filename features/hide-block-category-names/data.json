@@ -9,5 +9,6 @@
   "tags": ["Theme", "New"],
   "type": ["Editor"],
   "dynamic": true,
-  "options": [{ "id": "displayAsCircle", "name": "Display as Circle", "default": false, "type": 1 }]
+  "options": [{ "id": "displayAsCircle", "name": "Display as Circle", "default": false, "type": 1 }],
+  "similar": ["simplify-editor-tabs", "plain-background"]
 }

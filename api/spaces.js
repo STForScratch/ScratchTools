@@ -197,6 +197,11 @@ ScratchTools.appendToSharedSpace = function ({ space, element, order, scope }) {
       },
       until: () => [],
     },
+    afterProfileLocation: {
+      element: () => q(".profile-details"),
+      from: () => [q(".location")],
+      until: () => [],
+    },
   };
 
   const spaceInfo = sharedSpaces[space];

@@ -7,5 +7,6 @@
   "type": ["Website"],
   "tags": ["New", "Featured"],
   "styles": [{ "file": "style.css", "runOn": "/users/*" }],
-  "scripts": [{ "file": "script.js", "runOn": "/users/*" }]
+  "scripts": [{ "file": "script.js", "runOn": "/users/*" }],
+  "similar": ["isonline", "display-name"]
 }

@@ -1,0 +1,11 @@
+{
+  "title": "Search Profiles",
+  "description": "When you search for a user, a link to their profile will be at the top of the page.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "scripts": [{ "file": "script.js", "runOn": "/search/projects*" }],
+  "styles": [{ "file": "style.css", "runOn": "/search/projects*" }]
+}

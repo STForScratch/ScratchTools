@@ -1,0 +1,12 @@
+{
+  "title": "Simplify Editor Tabs",
+  "description": "Changes editor tabs to icon-only and shows them as a circle",
+  "credits": [
+    { "username": "Wilamaxin", "url": "https://scratch.mit.edu/users/Wilamaxin/" }
+  ],
+  "type": ["Editor"],
+  "tags": ["New"],
+  "dynamic": true,
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
+  "similar": ["plain-background", "hide-block-category-names"]
+}
