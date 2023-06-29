@@ -1,3 +1,7 @@
+#topnav ul.account-nav .logged-in-user .dropdown-menu {
+    background-color: #4d97ff;
+}
+
 #comments .more-replies .pulldown {
     color: #4d97ff;
 }
