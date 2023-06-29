@@ -1,0 +1,42 @@
+.box-header h4 {
+    padding-left: 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 30px 35px;
+}
+.box-header h4 svg {
+    color : "red";
+}
+.box-header h4 {
+    background-image: url(./Icons/Undefined/QuestionMark.svg);
+}
+.STE-activity .box-header h4{
+    background-image: url(./Icons/Follow/WhatIsNew.svg);
+}
+.STE-scratchNews .box-header h4 {
+    background-image: url(./Icons/News/ScratchNews.svg);
+}
+.STE-featuredProject .box-header h4 {
+    background-image: url(./Icons/Project/FeaturedProjects.svg);
+}
+.STE-featuredStudios .box-header h4 {
+    background-image: url(./Icons/Studio/FeaturedStudios.svg);
+}
+.STE-scratch-design-studio .box-header h4 {
+    background-image: url(./Icons/Studio/ScratchDesignStudio.svg);
+}
+.STE-a-projectsLovedByScratchersFollowing .box-header h4 {
+    background-image: url(./Icons/Follow/LovedByScratchersImFollowing.svg);
+}
+.STE-communityRemixing .box-header h4 {
+    background-image: url(./Icons/Remix/WhatTheCommunityIsRemixing.svg);
+}
+.STE-communityLoving .box-header h4 {
+    background-image: url(./Icons/Love/WhatTheCommunityIsLoving.svg);
+}
+.scratchtoolsCustomStudio .box-header h4 {
+    background-image: url(./Icons/Extra/ScratchTools.svg);
+}
+.scratchtoolsOnline .box-head h4 {
+    background-image: url(./Icons/Extra/ScratchTools.svg);
+}

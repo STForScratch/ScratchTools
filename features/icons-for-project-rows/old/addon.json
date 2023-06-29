@@ -1,0 +1,46 @@
+{
+  "name": "Scratch 4.0",
+  "description": "Makes scratch be styled as \"scratch 4.0\"",
+  "tags": ["community", "recommended", "theme", "beta"],
+  "credits": [
+    {
+      "name": "stio_studio",
+      "link": "https://scratch.mit.edu/users/stio_studio/"
+    },
+    {
+      "name": "JloAu",
+      "link": "https://scratch.mit.edu/users/JloAu"
+    }
+  ],
+  "injectAsStyleElt": false,
+  "dynamicEnable": true,
+  "dynamicDisable": true,
+  "versionAdded": "1.32.0",
+  "settings": [
+  ],
+  "userscripts": [
+    {
+      "url": "pfp-to-username/code.js",
+      "matches": ["https://scratch.mit.edu/"],
+      "runAtComplete": false
+    }
+  ], 
+  "userstyles": [
+    {
+      "url": "var.css",
+      "matches": ["https://scratch.mit.edu/"],
+      "runAtComplete": false
+    },
+    {
+      "url": "pfp-to-username/style.css",
+      "matches": ["https://scratch.mit.edu/"],
+      "runAtComplete": false
+    },
+    {
+      "url": "better-rows/style.css",
+      "matches": ["https://scratch.mit.edu/"],
+      "runAtComplete": false
+    }
+  ],
+  "enabledByDefault": true
+}

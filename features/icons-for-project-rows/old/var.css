@@ -1,0 +1,82 @@
+:root {
+    --activity-box-content-max-hight: 450px;
+    --box-header-height: 47.594px;
+    --box-shadow: 0px 0px 20px -2px;
+    --text-shadow: 0px 0px 9px;
+}
+@media (prefers-color-scheme: light) {
+    :root{
+        --main-blue: #4081ff;
+        --footer-border-blue: #2a83ff;
+        --click-blue: #3367cc;
+        --scrollbar-gray: #aeb8cc;
+        --box-gray: #d9e5ff;
+        --background-color: white;
+        --button-text-color: #ffffff;
+        --footer-text-color: #ffffff;
+        --main-text-color: #000000;
+        --projects-color-a-1: #4081ff;
+        --projects-color-a-2: #d9e6ff;
+        --projects-color-a-3: #3a73e6;
+        --projects-color-a-4: #3367cc;
+        --projects-color-a-5: #3367cc70;
+        --projects-color-b-1: #ff6680;
+        --projects-color-b-2: #ffe0e6;
+        --projects-color-b-3: #e65c73;
+        --projects-color-b-4: #cc5266;
+        --projects-color-b-5: #cc526670;
+        --projects-color-c-1: #0fbd8c;
+        --projects-color-c-2: #cff2e8;
+        --projects-color-c-3: #0eaa7e;
+        --projects-color-c-4: #0c9770;
+        --projects-color-c-5: #0c977070;
+        --projects-color-d-1: #ffbf00;
+        --projects-color-d-2: #fff2cc;
+        --projects-color-d-3: #e6ac00;
+        --projects-color-d-4: #cc9900;
+        --projects-color-d-5: #cc990070;
+        --projects-color-e-1: #9966ff;
+        --projects-color-e-2: #ebe0ff;
+        --projects-color-e-3: #8352e5;
+        --projects-color-e-4: #7a52cc;
+        --projects-color-e-5: #7a52cc90;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    :root{
+        --main-blue: #4081ff;
+        --footer-border-blue: #216bff;
+        --click-blue: #3367cc;
+        --scrollbar-gray: #aeb8cc;
+        --box-gray: #0d1933;
+        --background-color: #010305;
+        --button-text-color: #ffffff;
+        --footer-text-color: #ffffff;
+        --main-text-color: #ffffff;
+        --projects-color-a-1: #4081ff;
+        --projects-color-a-2: #0d1a33;
+        --projects-color-a-3: #3a73e6;
+        --projects-color-a-4: #3366cc;
+        --projects-color-a-5: #3366cc90;
+        --projects-color-b-1: #ff6680;
+        --projects-color-b-2: #33141a;
+        --projects-color-b-3: #e65c73;
+        --projects-color-b-4: #cc5266;
+        --projects-color-b-5: #cc526690;
+        --projects-color-c-1: #0fbd8c;
+        --projects-color-c-2: #03261c;
+        --projects-color-c-3: #0eaa7e;
+        --projects-color-c-4: #0c9770;
+        --projects-color-c-5: #0c977090;
+        --projects-color-d-1: #ffbf00;
+        --projects-color-d-2: #332600;
+        --projects-color-d-3: #e6ac00;
+        --projects-color-d-4: #cc9900;
+        --projects-color-d-5: #cc990090;
+        --projects-color-e-1: #9966ff;
+        --projects-color-e-2: #1f1433;
+        --projects-color-e-3: #8352e5;
+        --projects-color-e-4: #7a52cc;
+        --projects-color-e-5: #7a52cc90;
+    }
+}

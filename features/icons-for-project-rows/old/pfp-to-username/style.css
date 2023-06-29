@@ -1,0 +1,26 @@
+.img-added .SA-a-project-user-image img {
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+}
+.img-added .SA-a-project-user-image {
+    display: inline-block !important;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.img-added.thumbnail-creator {
+    text-align: center;
+}
+.img-added.thumbnail-creator a:not(.SA-a-project-user-image) {
+    display: unset !important;
+    position: relative;
+    top: calc(-.8462em);
+}
+.box-content .carousel {
+    padding-bottom: 10px;
+}
+.thumbnail-image img{
+    border-radius: 10px;
+}

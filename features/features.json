@@ -1113,5 +1113,9 @@
     "file": "focus-mode",
     "tags": [],
     "type": ["Website", "Theme"]
+  },
+  {
+    "version": 2,
+    "id": "icons-for-project-rows"
   }
 ]

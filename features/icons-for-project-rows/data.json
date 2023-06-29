@@ -1,0 +1,25 @@
+{
+  "title": "Icons for project-rows",
+  "description": "On the project-rows this adds icons to the header on the project-rows.",
+  "credits": [
+    {
+      "username": "stio_studio",
+      "url": "https://scratch.mit.edu/users/stio_studio/"
+    }
+  ],
+  "type": ["Website"],
+  "tags": ["New"],
+  "dynamic": true,
+  "scripts": [
+    {
+      "file": "code.js",
+      "runOn": "/"
+    }
+  ],
+  "styles": [
+    {
+      "file": "style.css",
+      "runOn": "/"
+    }
+  ]
+}
