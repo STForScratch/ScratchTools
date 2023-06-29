@@ -26,8 +26,114 @@ try {
   ScratchTools.console.warn("Unable to load Blockly.");
 }
 
-ScratchTools.Scratch.contextMenus = {};
+ScratchTools.Scratch.scratchSound = function () {
+  try {
+    return document.querySelector("div.sound-editor_editor-container_iUSW-")[
+      Object.keys(
+        document.querySelector("div.sound-editor_editor-container_iUSW-")
+      ).find((key) => key.startsWith("__reactInternalInstance"))
+    ].return.return.return.stateNode;
+  } catch (err) {
+    return null;
+  }
+};
 
+ScratchTools.Scratch.scratchGui = function () {
+  try {
+    const app = document.querySelector("#app");
+    return app[
+      Object.keys(app).find((key) => key.startsWith("__reactContainer"))
+    ].child.stateNode.store.getState().scratchGui;
+  } catch (err) {
+    return null;
+  }
+};
+
+ScratchTools.traps = {
+  scratchGui: ScratchTools.Scratch.scratchGui,
+  scratchPaint: ScratchTools.Scratch.scratchPaint,
+  scratchSound: ScratchTools.Scratch.scratchSound,
+  getVm: function () {
+    return vm;
+  },
+  getBlockly: function () {
+    return Blockly;
+  },
+  getScratchBlocks,
+};
+
+let openContextMenus = [];
+
+const waitForContextMenu = function ({ id, callback, block, disabled, label }) {
+  var insertion = openContextMenus.push({
+    id,
+    block,
+    callback,
+    enabled: !disabled,
+    label,
+  });
+  return {
+    delete: function() {
+      delete openContextMenus[openContextMenus.indexOf(insertion)]
+    }
+  }
+};
+
+let handledProcedures = {};
+ScratchTools.waitForElements(
+  ".blocklyDraggable",
+  function (el) {
+    if (el.dataset.id) {
+      var block = ScratchTools.traps
+        .getBlockly()
+        .getMainWorkspace()
+        .getBlockById(el.dataset.id);
+      if (block) {
+        if (block.type === "procedures_definition") {
+          if (!handledProcedures[block.id]) {
+            handledProcedures[block.id] = block.customContextMenu;
+          }
+          block.customContextMenu = function (menu) {
+            handledProcedures[block.id](menu);
+            openContextMenus.forEach(function (option) {
+              if (option.block === block.id) {
+                menu.push({
+                  enabled: option.enabled,
+                  text: option.label,
+                  callback: function (e) {
+                    option.callback(e);
+                  },
+                });
+              }
+            });
+          };
+        } else {
+          if (!block.customContextMenu) {
+            block.customContextMenu = function (menu) {
+              openContextMenus.forEach(function (option) {
+                if (option.block === block.id) {
+                  menu.push({
+                    enabled: option.enabled,
+                    text: option.label,
+                    callback: function (e) {
+                      option.callback(e);
+                    },
+                  });
+                }
+              });
+            };
+          }
+        }
+      }
+    }
+  },
+  "custom-menu-manager",
+  false
+);
+
+ScratchTools.traps.createContextMenu = waitForContextMenu;
+
+ScratchTools.Scratch.contextMenus = {};
 ScratchTools.Scratch.waitForContextMenu = function (info) {
   if (ScratchTools.Scratch.contextMenus[info.block] !== undefined) {
     ScratchTools.Scratch.contextMenus[info.block][info.id] = info.callback;
@@ -79,29 +185,6 @@ ScratchTools.Scratch.scratchPaint = function () {
   }
 };
 
-ScratchTools.Scratch.scratchSound = function () {
-  try {
-    return document.querySelector("div.sound-editor_editor-container_iUSW-")[
-      Object.keys(
-        document.querySelector("div.sound-editor_editor-container_iUSW-")
-      ).find((key) => key.startsWith("__reactInternalInstance"))
-    ].return.return.return.stateNode;
-  } catch (err) {
-    return null;
-  }
-};
-
-ScratchTools.Scratch.scratchGui = function () {
-  try {
-    const app = document.querySelector("#app");
-    return app[
-      Object.keys(app).find((key) => key.startsWith("__reactContainer"))
-    ].child.stateNode.store.getState().scratchGui;
-  } catch (err) {
-    return null;
-  }
-};
-
 async function alertForUpdates() {
   if (ScratchTools.Scratch.scratchGui().mode.hasEverEnteredEditor) {
     var purple = await (
@@ -110,7 +193,8 @@ async function alertForUpdates() {
       )
     ).json();
     if (purple.purple) {
-      var alertedForPurple = await ScratchTools.storage.get("purpleAlert") || false;
+      var alertedForPurple =
+        (await ScratchTools.storage.get("purpleAlert")) || false;
       if (!alertedForPurple) {
         await ScratchTools.storage.set({ key: "purpleAlert", value: true });
         ScratchTools.modals.create({
@@ -123,4 +207,24 @@ async function alertForUpdates() {
   }
 }
 
-ScratchTools.waitForElements("div[class^='gui_menu-bar-position_']", alertForUpdates, "purple-notification", false)
+function getScratchBlocks() {
+  var blocksWrapper = document.querySelector(
+    'div[class^="gui_blocks-wrapper"]'
+  );
+  var key = Object.keys(blocksWrapper).find((key) =>
+    key.startsWith("__reactInternalInstance$")
+  );
+  const internal = blocksWrapper[key];
+  var recent = internal.child;
+  while (!recent.stateNode?.ScratchBlocks) {
+    recent = recent.child;
+  }
+  return recent.stateNode.ScratchBlocks || null;
+}
+
+ScratchTools.waitForElements(
+  "div[class^='gui_menu-bar-position_']",
+  alertForUpdates,
+  "purple-notification",
+  false
+);
