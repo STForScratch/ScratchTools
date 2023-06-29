@@ -1,0 +1,10 @@
+{
+    "title": "Revert To Original Colors",
+    "description": "Restores the website's colors to their original state before the high-contrast update.",
+    "credits": [
+      { "username": "MaterArc", "url": "https://scratch.mit.edu/users/MaterArc/" }
+    ],
+    "type": ["Website"],
+    "tags": ["New", "Featured"],
+    "styles": [{ "file": "style.css", "runOn": "/projects/*||/search||/explore||/ideas||/about||/projects||/studios||/forums||/messages||/mystuff||/frontpage||/FAQ||/contactus||/forparent||/foreducators||/download||/termsofus||/privacypolicy||/cookies||/DMCA/*" }]
+}
