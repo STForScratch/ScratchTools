@@ -1,3 +1,6 @@
+.banner-button span {
+    color: white !important;
+}
 .os-chooser .button.active {
     background-color: #4e97fe;
 }
@@ -52,9 +55,6 @@ h3 span {
 }
 .studio-follow-button {
     background-color:#4e97fe
-}
-.banner-button span {
-  color: #ffbf00 !important;   
 }
 
 #comments .comment .info .name a {
@@ -331,4 +331,3 @@ a:link, a:visited, a:active {
 }
 .studio-tab-nav .active>li {
     background-color: #4e97fe;
-}
