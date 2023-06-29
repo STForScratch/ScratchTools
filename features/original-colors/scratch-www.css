@@ -1,0 +1,153 @@
+:root {
+    --ste-blue: #4e97fe;
+    --explore-orange: #ffbf00;
+    --explore-green: #0fbd8c;
+    --scratchr2-blue: #278bbfff;
+}
+
+body, html {
+    background-color: var(--ste-blue);
+}
+
+nav#navigation, div[class^="gui_menu-bar-position"] {
+    background-color: var(--ste-blue);
+}
+
+button.button, button {
+    background-color: var(--ste-blue);
+}
+
+.news li h4, a:link, a:visited, a:active, a {
+    color: var(--ste-blue);
+}
+
+.outer .title-banner.masthead {
+    transition: none;
+    background-color: var(--explore-orange);
+}
+
+.outer .categories li {
+    border: 0px;
+    background-color: rgba(0,0,0,.1);
+    color: white;
+}
+
+.outer .categories li:hover, .outer .categories li.active:hover {
+    background-color: rgba(0,0,0,.2);
+}
+
+.outer .categories li.active {
+    background-color: var(--explore-green);
+}
+
+.outer .tabs button.active {
+    border-bottom: 3px solid var(--explore-green);
+}
+
+.dropdown {
+    background-color: var(--ste-blue);
+}
+
+.banner-button {
+    color: white;
+}
+
+.banner-wrapper {
+    background: var(--explore-orange) bottom right url("/images/ideas/right-juice.png") no-repeat
+}
+
+.subactions .action-buttons .action-button {
+    background-color: var(--ste-blue);
+}
+
+.comment .comment-body .comment-bottom-row .comment-reply:after {
+    background-image: var(--scratchtoolsresource-reply);
+}
+
+.comment .comment-body .comment-bottom-row .comment-reply {
+    color: var(--ste-blue);
+}
+
+.feature-banner .feature-learn-more, .feature-banner .feature-banner-image .feature-image-text {
+    color: var(--ste-blue);
+}
+
+#pagewrapper #topnav .innerwrap {
+    background-color: var(--scratchr2-blue);
+}
+
+#topnav ul.account-nav.logged-in>li {
+    border-color: #2d97ccff;
+}
+
+#topnav ul.site-nav li, #topnav ul.site-nav li.last {
+    border-color: #2d97ccff;
+}
+
+#topnav ul.account-nav.logged-in > li.dropdown {
+    background-color: var(--scratchr2-blue);
+}
+
+#topnav ul.account-nav .logged-in-user.dropdown.open {
+    background-color: #256185ff !important;
+}
+
+#topnav ul.account-nav .logged-in-user .dropdown-menu {
+    background-color: var(--scratchr2-blue);
+}
+
+#topnav li.logout.divider input {
+    background-color: var(--scratchr2-blue);
+}
+
+#topnav li.logout.divider input:hover {
+    background-color: #256185ff;
+}
+
+#topnav ul.account-nav.logged-in li:hover {
+    background-color: #256185ff;
+}
+
+#topnav ul.account-nav ul.user-nav li.logout.divider {
+    border-color: #2d97ccff;
+}
+
+#pagewrapper a:link, #pagewrapper a:visited, #pagewrapper a:active, #pagewrapper a {
+    color: #3397d9ff;
+}
+
+#pagewrapper button, #pagewrapper .button, #pagewrapper button.button {
+    color: white;
+    border-bottom-color: #2d86adff;
+    background-image: linear-gradient(#32b6faff, #2f9fdbff);
+    border-color: #3097c4ff;
+}
+
+#pagewrapper .button:hover, #pagewrapper button:hover {
+    background-color: var(--scratchr2-blue);
+    background-image: none;
+}
+
+#pagewrapper button a, #pagewrapper .button a, #pagewrapper button.button a {
+    color: white;
+}
+
+#pagewrapper .button.grey {
+    border-color: #999;
+    display: inline-block;
+    background-color: #e6e6e6;
+    background-image: none;
+}
+
+#pagewrapper .button.grey {
+    background-image: -webkit-linear-gradient(top,#fff,#ccc);
+    color: #666;
+}
+
+#pagewrapper .button.grey:hover {
+    background-image: -webkit-linear-gradient(#e6e6e6,#e6e6e6);
+}
+
+#pagewrapper .button.grey a, #pagewrapper button.button.grey a {
+    color: #666;
+}

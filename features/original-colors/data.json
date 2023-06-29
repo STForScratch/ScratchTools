@@ -1,0 +1,13 @@
+{
+    "title": "Revert to Blue",
+    "description": "Changes the block categories in the editor to only show the colors of the categories.",
+    "credits": [
+      { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+    ],
+    "styles": [{ "file": "scratch-www.css", "runOn": "/||/explore*||/search*||/ideas*||/community_guidelines*||/developers*||/educators*||/about*||/parents*||/credits*" }],
+    "tags": ["Theme", "New"],
+    "type": ["Website"],
+    "dynamic": true,
+    "resources": [{ "name": "reply", "path": "/reply.svg" }]
+  }
+  
