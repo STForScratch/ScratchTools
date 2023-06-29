@@ -40,6 +40,14 @@ ScratchTools.waitForElements = function (selector, callback, id, rework) {
   }
 };
 
+var stylesDiv = document.createElement("div");
+stylesDiv.className = "scratchtools-styles-div";
+document.head.appendChild(stylesDiv);
+ScratchTools.waitForElements("head > *", function (el) {
+  if (el !== stylesDiv) {
+    document.head.appendChild(stylesDiv);
+  }
+});
 function enableScratchToolsSelectorsMutationObserver() {
   var ScratchToolsSelectorsMutationObserver = new MutationObserver(
     returnScratchToolsSelectorsMutationObserverCallbacks
