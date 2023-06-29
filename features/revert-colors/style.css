@@ -1,3 +1,9 @@
+#comments .more-replies .pulldown {
+    color: #4d97ff;
+}
+.comments .grey {
+    background-color: #4d97ff;
+}
 .banner-button span {
     color: white !important;
 }
@@ -327,3 +333,4 @@ a:link, a:visited, a:active {
 }
 .studio-tab-nav .active>li {
     background-color: #4d97ff;
+}
