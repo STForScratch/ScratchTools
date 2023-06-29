@@ -1,4 +1,9 @@
+let cachedStorage;
+let cachedStyles;
+
 chrome.runtime.onInstalled.addListener(async function (object) {
+  cachedStorage = (await chrome.storage.sync.get("features"))?.features || "";
+  cachedStyles = await getEnabledStyles();
   try {
     var featureData = await (await fetch("/features/features.json")).json();
   } catch (err) {
@@ -76,6 +81,15 @@ chrome.runtime.onInstalled.addListener(async function (object) {
     }
   } else {
     chrome.action.setBadgeText({ text: "" });
+  }
+});
+
+chrome.storage.onChanged.addListener(async function (changes, namespace) {
+  for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
+    if (key === "features") {
+      cachedStorage = newValue;
+      cachedStyles = await getEnabledStyles();
+    }
   }
 });
 
@@ -450,29 +464,6 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
                         world: newData.world?.toUpperCase() || "MAIN",
                       });
                     }
-                    }
-                  });
-                  newData.styles?.forEach(function (style) {
-                    if (new URL(tab.url).pathname.match(style.runOn)) {
-                      chrome.scripting.executeScript({
-                        args: [
-                          data[el].id,
-                          chrome.runtime.getURL(
-                            `/features/${data[el]["id"]}/${style.file}`
-                          ),
-                        ],
-                        target: { tabId: tabId },
-                        func: insertCSS,
-                        world: "MAIN",
-                      });
-                      function insertCSS(feature, path) {
-                        var link = document.createElement("link");
-                        link.rel = "stylesheet";
-                        link.href = path;
-                        link.dataset.feature = feature;
-                        document.querySelector(".scratchtools-styles-div").appendChild(link);
-                      }
-                    }
                   });
                 } else {
                   chrome.scripting.executeScript({
@@ -520,7 +511,7 @@ chrome.runtime.onMessageExternal.addListener(async function (
         storagePromises.forEach(function (promise) {
           if (promise.key === key && !promise.resolved) {
             promise.resolve(value);
-            promise.resolved = true
+            promise.resolved = true;
           }
         });
       }
@@ -528,11 +519,34 @@ chrome.runtime.onMessageExternal.addListener(async function (
   }
 });
 
+async function getEnabledStyles() {
+  var allStyles = [];
+  var data = (await (await fetch(`/features/features.json`)).json()).filter(
+    (el) => el.version === 2 && cachedStorage.includes(el.id)
+  );
+  for (var i in data) {
+    var feature = data[i];
+    var styles = (
+      await (await fetch(`/features/${feature.id}/data.json`)).json()
+    ).styles;
+    if (styles) {
+      for (var i2 in styles) {
+        styles[i2].feature = feature
+        allStyles.push(styles[i2]);
+      }
+    }
+  }
+  return allStyles;
+}
+
 chrome.runtime.onMessage.addListener(async function (
   msg,
   sender,
   sendResponse
 ) {
+  if (msg.action === "getStyles") {
+    sendResponse({ data: cachedStyles });
+  }
   if (msg?.text === "get-logged-in-user") {
     sendResponse(true);
     const data = await (

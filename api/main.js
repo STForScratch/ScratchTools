@@ -46,9 +46,7 @@ ScratchTools.waitForElements = function (selector, callback, id, rework) {
   }
 };
 
-var stylesDiv = document.createElement("div");
-stylesDiv.className = "scratchtools-styles-div";
-document.head.appendChild(stylesDiv);
+var stylesDiv = document.querySelector("div.scratchtools-styles-div");
 ScratchTools.waitForElements("head > *", function (el) {
   if (el !== stylesDiv) {
     document.head.appendChild(stylesDiv);
