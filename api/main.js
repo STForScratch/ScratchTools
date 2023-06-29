@@ -11,18 +11,24 @@ if (
   ScratchTools.type = "Website";
 }
 
-var storagePromises = []
+var storagePromises = [];
 ScratchTools.storage = {
-  get: async function(key) {
+  get: async function (key) {
     chrome.runtime.sendMessage(ScratchTools.id, { message: "storageGet", key });
     return new Promise((resolve, reject) => {
-      storagePromises.push({ key: key, resolve })
+      storagePromises.push({ key: key, resolve });
     });
   },
-  set: async function({ key, value }) {
-    chrome.runtime.sendMessage(ScratchTools.id, { message: "storageSet", key, value });
-  }
-}
+  set: async function ({ key, value }) {
+    chrome.runtime.sendMessage(ScratchTools.id, {
+      message: "storageSet",
+      key,
+      value,
+    });
+  },
+};
+
+let waitForSingleElements = [];
 
 var allSelectors = {};
 var allCallbacksForWait = {};
@@ -48,6 +54,21 @@ ScratchTools.waitForElements("head > *", function (el) {
     document.head.appendChild(stylesDiv);
   }
 });
+
+ScratchTools.waitForElement = async function (selector) {
+  return new Promise((resolve) => {
+    if (document.querySelector(selector)) {
+      resolve(document.querySelector(selector));
+    } else {
+      waitForSingleElements.push({
+        selector: selector,
+        resolved: false,
+        resolve,
+      });
+    }
+  });
+};
+
 function enableScratchToolsSelectorsMutationObserver() {
   var ScratchToolsSelectorsMutationObserver = new MutationObserver(
     returnScratchToolsSelectorsMutationObserverCallbacks
@@ -70,6 +91,14 @@ function returnScratchToolsSelectorsMutationObserverCallbacks() {
       });
     });
   });
+  waitForSingleElements
+    .filter((promise) => !promise.resolved)
+    .forEach(function (promise) {
+      if (document.querySelector(promise.selector)) {
+        promise.resolved = true;
+        promise.resolve(document.querySelector(promise.selector));
+      }
+    });
 }
 
 ScratchTools.createModal = function (titleText, description, buttons) {
