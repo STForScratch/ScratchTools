@@ -1,0 +1,11 @@
+{
+    "title": "Original Editor Colors",
+    "description": "Changes the editor to it's original state prior to the accessibility update",
+    "credits": [
+      { "username": "MaterArc", "url": "https://scratch.mit.edu/users/MaterArc/" }
+    ],
+    "styles": [{ "file": "scratch-editor.css", "runOn": "/projects/*" }],
+    "tags": ["New"],
+    "type": ["Editor"],
+    "dynamic": true
+  }
