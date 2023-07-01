@@ -4,10 +4,10 @@
     "credits": [
       { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
     ],
-    "styles": [{ "file": "scratch-www.css", "runOn": "/||/explore*||/search*||/ideas*||/community_guidelines*||/developers*||/educators*||/about*||/parents*||/credits*" }],
+    "styles": [{ "file": "scratch-www.css", "runOn": "/*" }],
     "tags": ["Theme", "New"],
     "type": ["Website"],
     "dynamic": true,
-    "resources": [{ "name": "reply", "path": "/reply.svg" }]
+    "resources": [{ "name": "reply", "path": "/reply.svg" },{ "name": "tabs-code", "path": "/tabs/code.svg" }]
   }
   

@@ -151,3 +151,20 @@ button.button, button {
 #pagewrapper .button.grey a, #pagewrapper button.button.grey a {
     color: #666;
 }
+
+#topnav ul.site-nav li:hover {
+    background-color: #256185ff;
+}
+
+ul#tabs li a {
+    color: rgba(0, 0, 0, 0.45) !important;
+}
+
+ul#tabs li.active a {
+    color: white !important;
+}
+
+div[class^="gui_extension-button-container_"] {
+    background-color: var(--ste-blue);
+    border: 1px solid var(--ste-blue);
+}
