@@ -3,7 +3,7 @@
   "short_name": "__MSG_extName__",
   "manifest_version": 3,
   "version": "2.30.1",
-  "version_name": "2.30.1-beta",
+  "version_name": "2.30.1",
   "default_locale": "en",
   "description": "__MSG_extDescription__",
   "author": "rgantzos",

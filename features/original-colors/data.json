@@ -1,6 +1,6 @@
 {
     "title": "Revert to Blue",
-    "description": "Changes the block categories in the editor to only show the colors of the categories.",
+    "description": "Changes all of the Scratch website's colors back to the original coloring from 3.0, before purple.",
     "credits": [
       { "username": "MaterArc", "url": "https://scratch.mit.edu/users/materarc/" },
       { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }

@@ -1,20 +1,12 @@
 {
   "NOTE": "THERE IS NO NEED TO UPDATE THIS YOURSELF, IT WILL BE UPDATED WHEN RELEASED.",
-  "version": "2.30.0",
+  "version": "2.30.1",
   "enhanced": [
-    "Update quite a few features to v2.",
-    "Change logo source.",
-    "Better onboarding.",
-    "Option validation.",
-    "Suggestions on settings page.",
-    "Add similar features key.",
-    "Add real storage API.",
-    "Add warning modal for new Scratch editor.",
-    "Update colors to match upcoming Scratch colors."
+    "Inject styles faster.",
+    "Traps API.",
+    "waitForElement API.",
+    "Append style elements to new place.",
+    "Make unlisted button better match new colors."
   ],
-  "fixed": [
-    "Fix settings page modals in dark mode.",
-    "Fix hide advertisements colors.",
-    "Fix odd sizing of features on settings page."
-  ]
+  "fixed": ["Fix line breaks for most popular project."]
 }
