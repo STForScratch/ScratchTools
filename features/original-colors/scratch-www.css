@@ -1,7 +1,7 @@
 :root {
     --ste-blue: #4e97fe;
     --explore-orange: #ffbf00;
-    --explore-green: #0fbd8c;
+    --explore-green: #338553;
     --scratchr2-blue: #278bbfff;
 }
 
@@ -27,9 +27,9 @@ button.button, button {
 }
 
 .outer .categories li {
-    border: 0px;
+    border: 1.7px solid #6c6c6c;
     background-color: rgba(0,0,0,.1);
-    color: white;
+    color: #6e6e87;
 }
 
 .outer .categories li:hover, .outer .categories li.active:hover {
