@@ -1,0 +1,34 @@
+/* remix button */
+.preview .remix-button {
+    padding: 11px !important;
+}
+.preview .remix-button:before {
+    margin-right: 0 !important;
+}
+.preview .remix-button span {
+    display: none;
+}
+
+/* see inside button */
+.preview .see-inside-button {
+    padding: 11px !important;
+}
+.preview .see-inside-button:before {
+    margin-right: 0 !important;
+}
+.preview .see-inside-button span {
+    display: none;
+}
+
+/* turbo mode */
+.turbo-mode_turbo-label_-1oMs {
+    display: none;
+}
+
+/* action buttons */
+.action-button span {
+    display: none;
+}
+.action-button:before {
+    margin: 0 !important    ;
+}

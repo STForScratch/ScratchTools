@@ -1,42 +1,49 @@
-.box-header h4 {
-    padding-left: 50px;
+.box .box-header h4 {
+    padding: 8px 20px 8px 50px;
     background-repeat: no-repeat;
     background-position: 10px center;
     background-size: 30px 35px;
 }
-.box-header h4 svg {
-    color : "red";
+.box .box-header p {
+    padding: 8px 20px !important;
 }
+.box .box-header {
+    padding: 0 !important;
+    height: auto !important;
+}
+/* .box-header h4 svg {
+    color : "red";
+} */
 .box-header h4 {
-    background-image: url(./Icons/Undefined/QuestionMark.svg);
+    background-image: url(./img/QuestionMark.svg);
 }
 .STE-activity .box-header h4{
-    background-image: url(./Icons/Follow/WhatIsNew.svg);
+    background-image: url(./img/WhatIsNew.svg);
 }
 .STE-scratchNews .box-header h4 {
-    background-image: url(./Icons/News/ScratchNews.svg);
+    background-image: url(./img/ScratchNews.svg);
 }
 .STE-featuredProject .box-header h4 {
-    background-image: url(./Icons/Project/FeaturedProjects.svg);
+    background-image: url(./img/FeaturedProjects.svg);
 }
 .STE-featuredStudios .box-header h4 {
-    background-image: url(./Icons/Studio/FeaturedStudios.svg);
+    background-image: url(./img/FeaturedStudios.svg);
 }
 .STE-scratch-design-studio .box-header h4 {
-    background-image: url(./Icons/Studio/ScratchDesignStudio.svg);
+    background-image: url(./img/ScratchDesignStudio.svg);
 }
 .STE-a-projectsLovedByScratchersFollowing .box-header h4 {
-    background-image: url(./Icons/Follow/LovedByScratchersImFollowing.svg);
+    background-image: url(./img/LovedByScratchersImFollowing.svg);
 }
 .STE-communityRemixing .box-header h4 {
-    background-image: url(./Icons/Remix/WhatTheCommunityIsRemixing.svg);
+    background-image: url(./img/WhatTheCommunityIsRemixing.svg);
 }
 .STE-communityLoving .box-header h4 {
-    background-image: url(./Icons/Love/WhatTheCommunityIsLoving.svg);
+    background-image: url(./img/WhatTheCommunityIsLoving.svg);
 }
 .scratchtoolsCustomStudio .box-header h4 {
-    background-image: url(./Icons/Extra/ScratchTools.svg);
+    background-image: url(./img/ScratchTools.svg);
 }
 .scratchtoolsOnline .box-head h4 {
-    background-image: url(./Icons/Extra/ScratchTools.svg);
+    background-image: url(./img/ScratchTools.svg);
 }

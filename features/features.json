@@ -1102,5 +1102,9 @@
   {
     "version": 2,
     "id": "icons-for-project-rows"
+  },
+  {
+    "version": 2,
+    "id": "compact-buttons"
   }
 ]

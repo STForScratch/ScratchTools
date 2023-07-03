@@ -1,0 +1,41 @@
+/* settings, file, edit */
+.menu-bar_collapsible-label_o2tym, .settings-menu_dropdown-label_3f68c {
+    margin: 0 3px !important;
+}
+.menu-bar_collapsible-label_o2tym span, .settings-menu_dropdown-label_3f68c span {
+    display: none;
+}
+
+/* remox button */
+.menu-bar_remix-button_2LQQc .button_icon_77d8G {
+    margin-right: 0.4375rem;
+}
+.menu-bar_remix-button_2LQQc span {
+    display: none;
+}
+.menu-bar_remix-button_2LQQc  img {
+    margin-right: 0 !important;
+}
+
+/* see inside button */
+.community-button_community-button_2Lo_g img {
+    margin-right: 0 !important;
+}
+.community-button_community-button_2Lo_g .button_content_3jdgj {
+    display: none;
+}
+
+/* tab list */
+.react-tabs_react-tabs__tab-list_17Wee li span {
+    display: none;
+}
+
+/* turbo mode */
+.turbo-mode_turbo-label_-1oMs {
+    display: none;
+}
+
+/* turtorial */
+.menu-bar_tutorials-label_2tFBo {
+    display: none;
+}
