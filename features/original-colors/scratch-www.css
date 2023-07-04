@@ -329,3 +329,53 @@ button[class^="toggle-buttons_button_"][aria-pressed=true] {
 div[class^="stage-header_stage-size-toggle-group_"] > div > button > img {
     filter: grayscale(100%) opacity(.5);
 }
+
+.box-head a {
+    color: white !important;
+}
+
+.studio-project-tile .studio-project-title {
+    
+    color: var(--ste-blue);
+
+}
+
+a.social-messages-profile-link {
+    
+    color: #65657c;
+
+}
+
+.studio-info .studio-info-footer-report button {
+    
+    background-color: var(--ste-blue);
+
+}
+
+h3 span {
+   
+    color: var(--ste-blue);
+
+}
+
+.studio-tab-nav .active > li {
+    
+    background-color: var(--ste-blue);
+    
+}
+
+.studio-member-tile .studio-member-name {
+    
+    color: var(--ste-blue);
+    
+}
+
+.studio-activity .studio-activity-icon {
+    color: filter: sepia(300%) hue-rotate(185deg) saturate(450%)
+}
+
+.title-banner.mod-messages {
+    
+    background-color: var(--ste-blue);
+
+}
