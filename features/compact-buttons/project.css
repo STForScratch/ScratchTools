@@ -1,0 +1,63 @@
+/* remix button */
+.preview .remix-button {
+    padding: 11px !important;
+}
+.preview .remix-button:before {
+    margin-right: 0 !important;
+}
+.preview .remix-button span {
+    display: none;
+}
+
+/* see inside button */
+.preview .see-inside-button {
+    padding: 11px !important;
+}
+.preview .see-inside-button:before {
+    margin-right: 0 !important;
+}
+.preview .see-inside-button span {
+    display: none;
+}
+
+/* turbo mode */
+.turbo-mode_turbo-label_-1oMs {
+    display: none;
+}
+
+/* action buttons */
+.preview-row .action-button {
+    font-size: 0 !important;
+}
+.preview-row .action-button span {
+    display: none;
+}
+.preview-row .action-button:before {
+    margin: 0 !important    ;
+}
+
+/* share button */
+.banner-button {
+    padding: 0px 5px 0px 11px;
+    margin-top: 0;
+    border-radius: 0.25rem;
+    height: 2.5rem;
+    font-size: 0.875rem;
+    min-width: 0px;
+}
+.banner-button:before {
+    background-image: url(upload.svg);
+    display: inline-block;
+    margin-top: -2px;
+    margin-right: 0.4375rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 1.125rem;
+    height: 1.125rem;
+    vertical-align: middle;
+    content: "";
+}
+.banner-button span {
+    display: none;
+}
