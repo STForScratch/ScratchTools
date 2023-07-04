@@ -329,3 +329,7 @@ button[class^="toggle-buttons_button_"][aria-pressed=true] {
 div[class^="stage-header_stage-size-toggle-group_"] > div > button > img {
     filter: grayscale(100%) opacity(.5);
 }
+
+.box-head a {
+    color: white !important;
+}
