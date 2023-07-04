@@ -330,6 +330,10 @@ div[class^="stage-header_stage-size-toggle-group_"] > div > button > img {
     filter: grayscale(100%) opacity(.5);
 }
 
+.box-head a {
+    color: white !important;
+}
+
 .studio-project-tile .studio-project-title {
     
     color: var(--ste-blue);
