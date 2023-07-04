@@ -47,3 +47,31 @@
 .scratchtoolsOnline .box-head h4 {
     background-image: url(./img/ScratchTools.svg);
 }
+
+/* view all link on box (a) */
+.box-header a {
+    /* display: none ; */
+    background-image: url(${addon.self.dir}/img/ViewAll.svg);
+    height: 17.594px;
+    width: 17.594px;
+    border-radius: 100px;
+    padding: 15px;
+    font-size: 0px;
+    float: right;
+    height: 17.594px;
+    width: 17.594px;
+    border-radius: 100px;
+    padding: 15px;
+    font-size: 0px;
+    float: right;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 40px 40px;
+    background-color: var(--projects-color-c-3);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 40px 40px;
+}
+.box-header a:empty {
+    display: none;
+}
