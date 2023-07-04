@@ -347,39 +347,7 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
           ScratchTools.Features.data = dataFeatures;
         }
         addData();
-        cachedStyles = await getEnabledStyles();
-        var theStyles = [];
-        cachedStyles.forEach(function (el) {
-          el.url = chrome.runtime.getURL(
-            `/features/${style.feature.id}/${style.file}`
-          );
-          theStyles.push(el.url);
-        });
-        await chrome.scripting.executeScript({
-          args: [theStyles],
-          target: { tabId: tabId },
-          func: injectStyles,
-          world: "MAIN",
-        });
-        ScratchTools.console.log("Injected styles.");
-        function injectStyles(styles) {
-          if (!document.querySelector(".scratchtools-styles-div *")) {
-            var div = document.createElement("div");
-            div.className = "scratchtools-styles-div";
-            document.head.appendChild(div);
-            styles.forEach(function (style) {
-              if (new URL(tab.url).pathname.match(style.runOn)) {
-                var link = document.createElement("link");
-                link.rel = "stylesheet";
-                link.href = style.url;
-                link.dataset.feature = style.feature.id;
-                document
-                  .querySelector(".scratchtools-styles-div")
-                  .appendChild(link);
-              }
-            });
-          }
-        }
+        injectStyles(tabId);
         for (var i in data) {
           var feature = data[i];
           if (feature.version === 2) {
@@ -489,7 +457,9 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
                   var newData = await (
                     await fetch(`/features/${data[el].id}/data.json`)
                   ).json();
+                  console.log(data[el].id);
                   newData.scripts?.forEach(function (script) {
+                    console.log(script.file);
                     if (new URL(tab.url).pathname.match(script.runOn)) {
                       chrome.scripting.executeScript({
                         target: { tabId: tabId },
@@ -640,3 +610,37 @@ chrome.alarms.onAlarm.addListener(async function () {
     chrome.action.setBadgeText({ text: "" });
   }
 });
+
+async function injectStyles(tabId) {
+  cachedStyles = await getEnabledStyles();
+  var theStyles = [];
+  cachedStyles.forEach(function (el) {
+    el.url = chrome.runtime.getURL(
+      `/features/${style.feature.id}/${style.file}`
+    );
+    theStyles.push(el.url);
+  });
+  await chrome.scripting.executeScript({
+    args: [theStyles],
+    target: { tabId: tabId },
+    func: injectStyles,
+    world: "MAIN",
+  });
+  ScratchTools.console.log("Injected styles.");
+  function injectStyles(styles) {
+    if (!document.querySelector(".scratchtools-styles-div *")) {
+      var div = document.createElement("div");
+      div.className = "scratchtools-styles-div";
+      document.head.appendChild(div);
+      styles.forEach(function (style) {
+        if (new URL(tab.url).pathname.match(style.runOn)) {
+          var link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href = style.url;
+          link.dataset.feature = style.feature.id;
+          document.querySelector(".scratchtools-styles-div").appendChild(link);
+        }
+      });
+    }
+  }
+}
