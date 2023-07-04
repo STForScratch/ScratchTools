@@ -347,6 +347,39 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
           ScratchTools.Features.data = dataFeatures;
         }
         addData();
+        cachedStyles = await getEnabledStyles();
+        var theStyles = [];
+        cachedStyles.forEach(function (el) {
+          el.url = chrome.runtime.getURL(
+            `/features/${style.feature.id}/${style.file}`
+          );
+          theStyles.push(el.url);
+        });
+        await chrome.scripting.executeScript({
+          args: [theStyles],
+          target: { tabId: tabId },
+          func: injectStyles,
+          world: "MAIN",
+        });
+        ScratchTools.console.log("Injected styles.");
+        function injectStyles(styles) {
+          if (!document.querySelector(".scratchtools-styles-div *")) {
+            var div = document.createElement("div");
+            div.className = "scratchtools-styles-div";
+            document.head.appendChild(div);
+            styles.forEach(function (style) {
+              if (new URL(tab.url).pathname.match(style.runOn)) {
+                var link = document.createElement("link");
+                link.rel = "stylesheet";
+                link.href = style.url;
+                link.dataset.feature = style.feature.id;
+                document
+                  .querySelector(".scratchtools-styles-div")
+                  .appendChild(link);
+              }
+            });
+          }
+        }
         for (var i in data) {
           var feature = data[i];
           if (feature.version === 2) {
@@ -531,7 +564,7 @@ async function getEnabledStyles() {
     ).styles;
     if (styles) {
       for (var i2 in styles) {
-        styles[i2].feature = feature
+        styles[i2].feature = feature;
         allStyles.push(styles[i2]);
       }
     }
