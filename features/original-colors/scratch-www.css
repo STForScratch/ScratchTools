@@ -379,3 +379,9 @@ h3 span {
     background-color: var(--ste-blue);
 
 }
+
+.small .text {
+
+    color: #666;
+
+}
