@@ -68,6 +68,10 @@ button.button, button {
     color: var(--ste-blue);
 }
 
+#comments .comment .info:hover .name a:hover {
+    color: #3397d9;
+}
+
 .feature-banner .feature-learn-more, .feature-banner .feature-banner-image .feature-image-text {
     color: var(--ste-blue);
 }
