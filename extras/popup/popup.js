@@ -149,6 +149,12 @@ if (document.querySelector(".more-settings-btn")) {
         additonalClassNames: ["secondary-btn"],
       });
     }
+    if (!chrome.runtime.getManifest().version_name.endsWith("-beta")) {
+      await chrome.runtime.sendMessage(
+        { text: "get-logged-in-user" },
+        async function (response) {}
+      );
+    }
     ScratchTools.modals.create({
       title: "More settings",
       description:
@@ -157,6 +163,48 @@ if (document.querySelector(".more-settings-btn")) {
     });
   });
 }
+
+chrome.runtime.onMessage.addListener(async function (
+  msg,
+  sender,
+  sendResponse
+) {
+  if (msg?.user.username) {
+    var data = await (
+      await fetch(`https://data.scratchtools.app/isbeta/${msg.user.username}/`)
+    ).json();
+    if (data.beta && document.querySelector(".st-modal")) {
+      var btn = document.createElement("button");
+      btn.textContent = "Install Beta";
+      btn.className = "secondary-btn install-beta";
+      btn.addEventListener("click", function () {
+        document.querySelector(".st-modal-blur-bg")?.remove();
+        ScratchTools.modals.create({
+          title: "Beta installation",
+          description:
+            "You are currently enrolled in the ScratchTools beta program. Are you sure you would like to install the ScratchTools beta?",
+          components: [
+            {
+              content: "Install",
+              type: "button",
+              callback: function () {
+                chrome.tabs.create({
+                  url: "https://github.com/STForScratch/ScratchTools/zipball/master",
+                });
+              },
+              additonalClassNames: ["secondary-btn"],
+            },
+          ],
+        });
+      });
+      if (!document.querySelector(".st-modal").querySelector(".install-beta")) {
+        document
+          .querySelector(".st-modal")
+          .insertBefore(btn, document.querySelector(".st-modal").lastChild);
+      }
+    }
+  }
+});
 
 function setBetaTheme() {
   if (document.querySelector("link[rel=icon]")) {
@@ -572,7 +620,9 @@ async function dynamicEnable(id) {
                     link.rel = "stylesheet";
                     link.href = path;
                     link.dataset.feature = feature;
-                    document.querySelector(".scratchtools-styles-div").appendChild(link);
+                    document
+                      .querySelector(".scratchtools-styles-div")
+                      .appendChild(link);
                   }
                 }
               } catch (err) {}

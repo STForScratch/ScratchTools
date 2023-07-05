@@ -1,9 +1,65 @@
 let cachedStorage;
 let cachedStyles;
 
-chrome.runtime.onInstalled.addListener(async function (object) {
+async function cache() {
   cachedStorage = (await chrome.storage.sync.get("features"))?.features || "";
   cachedStyles = await getEnabledStyles();
+  return true
+}
+cache()
+
+async function checkBetaUpdates() {
+  var loggedIn = await (
+    await fetch("https://scratch.mit.edu/session/", {
+      headers: {
+        accept: "*/*",
+        "accept-language": "en, en;q=0.8",
+        "sec-ch-ua":
+          '"Google Chrome";v="111", "Not(A:Brand";v="8", "Chromium";v="111"',
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": '"macOS"',
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-origin",
+        "x-requested-with": "XMLHttpRequest",
+      },
+      referrer: "https://scratch.mit.edu/",
+      referrerPolicy: "strict-origin-when-cross-origin",
+      body: null,
+      method: "GET",
+      mode: "cors",
+      credentials: "include",
+    })
+  ).json();
+  if (loggedIn?.user) {
+    var isBeta = (
+      await (
+        await fetch(
+          `https://data.scratchtools.app/isbeta/${loggedIn.user.username}/`
+        )
+      ).json()
+    ).beta;
+    if (isBeta) {
+      var data = await (
+        await fetch("https://data.scratchtools.app/latest/")
+      ).json();
+      if (
+        data.version !== chrome.runtime.getManifest().version_name ||
+        (await (await fetch("/extras/beta/beta.json")).json()).beta !==
+          data.beta
+      ) {
+        chrome.tabs.create({
+          url: "/extras/beta/index.html",
+        });
+      }
+    }
+  }
+}
+if (chrome.runtime.getManifest().version_name.endsWith("-beta")) {
+  checkBetaUpdates();
+}
+
+chrome.runtime.onInstalled.addListener(async function (object) {
   try {
     var featureData = await (await fetch("/features/features.json")).json();
   } catch (err) {
@@ -87,8 +143,7 @@ chrome.runtime.onInstalled.addListener(async function (object) {
 chrome.storage.onChanged.addListener(async function (changes, namespace) {
   for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
     if (key === "features") {
-      cachedStorage = newValue;
-      cachedStyles = await getEnabledStyles();
+      await cache()
     }
   }
 });
@@ -612,28 +667,29 @@ chrome.alarms.onAlarm.addListener(async function () {
 });
 
 async function injectStyles(tabId) {
+  cachedStorage = (await chrome.storage.sync.get("features"))?.features || "";
   cachedStyles = await getEnabledStyles();
+  console.log(JSON.stringify(cachedStyles))
   var theStyles = [];
   cachedStyles.forEach(function (el) {
     el.url = chrome.runtime.getURL(
-      `/features/${style.feature.id}/${style.file}`
+      `/features/${el.feature.id}/${el.file}`
     );
-    theStyles.push(el.url);
+    theStyles.push(el);
   });
   await chrome.scripting.executeScript({
     args: [theStyles],
     target: { tabId: tabId },
-    func: injectStyles,
+    func: injectTheStyles,
     world: "MAIN",
   });
-  ScratchTools.console.log("Injected styles.");
-  function injectStyles(styles) {
+  function injectTheStyles(styles) {
     if (!document.querySelector(".scratchtools-styles-div *")) {
       var div = document.createElement("div");
       div.className = "scratchtools-styles-div";
       document.head.appendChild(div);
       styles.forEach(function (style) {
-        if (new URL(tab.url).pathname.match(style.runOn)) {
+        if (window.location.pathname.match(style.runOn)) {
           var link = document.createElement("link");
           link.rel = "stylesheet";
           link.href = style.url;
