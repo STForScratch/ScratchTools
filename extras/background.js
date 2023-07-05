@@ -1,6 +1,57 @@
 let cachedStorage;
 let cachedStyles;
 
+async function checkBetaUpdates() {
+  var loggedIn = await (
+    await fetch("https://scratch.mit.edu/session/", {
+      headers: {
+        accept: "*/*",
+        "accept-language": "en, en;q=0.8",
+        "sec-ch-ua":
+          '"Google Chrome";v="111", "Not(A:Brand";v="8", "Chromium";v="111"',
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": '"macOS"',
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-origin",
+        "x-requested-with": "XMLHttpRequest",
+      },
+      referrer: "https://scratch.mit.edu/",
+      referrerPolicy: "strict-origin-when-cross-origin",
+      body: null,
+      method: "GET",
+      mode: "cors",
+      credentials: "include",
+    })
+  ).json();
+  if (loggedIn?.user) {
+    var isBeta = (
+      await (
+        await fetch(
+          `https://data.scratchtools.app/isbeta/${loggedIn.user.username}/`
+        )
+      ).json()
+    ).beta;
+    if (isBeta) {
+      var data = await (
+        await fetch("https://data.scratchtools.app/latest/")
+      ).json();
+      if (
+        data.version !== chrome.runtime.getManifest().version_name ||
+        (await (await fetch("/extras/beta/beta.json")).json()).beta !==
+          data.beta
+      ) {
+        chrome.tabs.create({
+          url: "/extras/beta/index.html",
+        });
+      }
+    }
+  }
+}
+if (chrome.runtime.getManifest().version_name.endsWith("-beta")) {
+  checkBetaUpdates();
+}
+
 chrome.runtime.onInstalled.addListener(async function (object) {
   cachedStorage = (await chrome.storage.sync.get("features"))?.features || "";
   cachedStyles = await getEnabledStyles();
