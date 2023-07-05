@@ -154,13 +154,13 @@ if (document.querySelector(".more-settings-btn")) {
         { text: "get-logged-in-user" },
         async function (response) {}
       );
-      ScratchTools.modals.create({
-        title: "More settings",
-        description:
-          "These are some additional settings that you can use to change other aspects of ScratchTools.",
-        components: components,
-      });
     }
+    ScratchTools.modals.create({
+      title: "More settings",
+      description:
+        "These are some additional settings that you can use to change other aspects of ScratchTools.",
+      components: components,
+    });
   });
 }
 
