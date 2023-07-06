@@ -28,10 +28,17 @@
 /* action buttons */
 .preview-row .action-button {
     font-size: 0 !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 90% 40%;
 }
-.preview-row .action-button span {
-    display: none;
-}
+/* .preview-row .action-button span {
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: bottom;
+    content: "";
+} */
 .preview-row .action-button:before {
     margin: 0 !important    ;
 }
@@ -46,7 +53,7 @@
     min-width: 0px;
 }
 .banner-button:before {
-    background-image: url(upload.svg);
+    background-image: url(icons/upload.svg);
     display: inline-block;
     margin-top: -2px;
     margin-right: 0.4375rem;
@@ -60,4 +67,14 @@
 }
 .banner-button span {
     display: none;
+}
+
+/* preview button */
+.scratchtools-preview-button {
+    background-image: url(icons/preview.svg);
+    width: 38px;
+}
+.scratchtoolspin {
+    background-image: url(icons/pin.svg);
+    width: 38px;
 }
