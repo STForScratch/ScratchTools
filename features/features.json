@@ -1,7 +1,17 @@
 [
   {
     "version": 2,
+    "id": "compact-buttons",
+    "versionAdded": "v3.0.0"
+  },
+  {
+    "version": 2,
     "id": "hide-footer",
+    "versionAdded": "v3.0.0"
+  },
+  {
+    "version": 2,
+    "id": "more-icons",
     "versionAdded": "v3.0.0"
   },
   {
@@ -1108,13 +1118,5 @@
     "file": "focus-mode",
     "tags": [],
     "type": ["Website", "Theme"]
-  },
-  {
-    "version": 2,
-    "id": "more-icons"
-  },
-  {
-    "version": 2,
-    "id": "compact-buttons"
   }
 ]
