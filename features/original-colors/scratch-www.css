@@ -14,7 +14,7 @@ nav#navigation, div[class^="gui_menu-bar-position"] {
 }
 
 button.button, button {
-    background-color: var(--ste-blue);
+    background-color: none;
 }
 
 .news li h4, a:link, a:visited, a:active, a {
@@ -375,11 +375,28 @@ h3 span {
 }
 
 .studio-activity .studio-activity-icon {
-    color: filter: sepia(300%) hue-rotate(185deg) saturate(450%)
+    color: filter sepia(300%) hue-rotate(185deg) saturate(450%)
 }
 
 .title-banner.mod-messages {
     
     background-color: var(--ste-blue);
 
+}
+
+.intro-banner .intro-container {
+    background-color: var(--ste-blue);
+}
+
+.button {
+    background-color: var(--ste-blue);
+}
+.intro-banner .intro-button {
+    color: var(--ste-blue);
+}
+.menu_submenu_2Yzd1 > .menu_menu_3k7QT::-webkit-scrollbar-track {
+    background: hsla(215, 99%, 65%, 1);
+}
+.menu_submenu_2Yzd1 > .menu_menu_3k7QT::-webkit-scrollbar-thumb {
+    border: 3px solid hsla(215, 99%, 65%, 1);
 }
