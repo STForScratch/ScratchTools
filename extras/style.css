@@ -216,7 +216,7 @@ a {
   height: 2.5rem;
   width: 2.5rem;
   background: var(--theme-icon);
-  background-color: var(--searchbar-bg);
+  background-color: #ffffff17;
   border-radius: 0.5rem;
   border: none;
   background-size: 2.5rem 2.5rem;
