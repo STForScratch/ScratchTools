@@ -103,6 +103,16 @@
     "id": "box-shadows"
   },
   {
+    "title": "True Location",
+    "description": "View actual location for profiles with 'Location Not Given' country.",
+    "credits": ["userfriend"],
+    "urls": ["https://scratch.mit.edu/users/UserFriend-"],
+    "file": "true-location",
+    "type": ["Website"],
+    "tags": [],
+    "dynamic": false
+  },
+  {
     "title": "Nicknames",
     "description": "Set nicknames for other Scratchers. Only you can see the nicknames, and their username will be replaced with the nickname when you see their name.",
     "credits": ["rgantzos"],
