@@ -104,12 +104,12 @@
   },
   {
     "title": "True Location",
-    "description": "View actual location for profiles with 'Location Not Given' country.",
+    "description": "View actual location behind 'Location not given'.",
     "credits": ["userfriend"],
     "urls": ["https://scratch.mit.edu/users/UserFriend-"],
     "file": "true-location",
     "type": ["Website"],
-    "tags": [],
+    "tags": ["New"],
     "dynamic": false
   },
   {
