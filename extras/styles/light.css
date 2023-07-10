@@ -15,6 +15,7 @@
   --scrollbar-handle-active: #b2afaf;
   --theme-icon: url("/extras/icons/dark.svg");
   --navbar-gradient: linear-gradient(45deg, #ff9f00, #ffad42);
+  --campsite: url("/extras/icons/campsitelight.svg");
 }
 
 .feedback-btn img {
