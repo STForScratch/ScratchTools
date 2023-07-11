@@ -385,6 +385,18 @@ h3 span {
 
 }
 
+.studio-thumb-edit-button span {
+   
+    color: var(--ste-blue);
+    
+    
+}
+.studio-thumb-edit-img {
+    
+     filter: sepia(300%) hue-rotate(185deg) saturate(450%); 
+    
+}
+
 .intro-banner .intro-container {
     background-color: var(--ste-blue);
 }
