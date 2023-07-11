@@ -2,6 +2,7 @@
     --ste-blue: #4e97fe;
     --explore-orange: #ffbf00;
     --explore-green: #338553;
+    --ste-green: #0fbd8c;
     --scratchr2-blue: #278bbfff;
 }
 
@@ -14,7 +15,7 @@ nav#navigation, div[class^="gui_menu-bar-position"] {
 }
 
 button.button, button {
-    background-color: var(--ste-blue);
+    background-color: rgba(0,0,0,.1);
 }
 
 .news li h4, a:link, a:visited, a:active, a {
@@ -66,6 +67,10 @@ button.button, button {
 
 .comment .comment-body .comment-bottom-row .comment-reply {
     color: var(--ste-blue);
+}
+
+#comments .comment .info:hover .name a:hover {
+    color: #3397d9;
 }
 
 .feature-banner .feature-learn-more, .feature-banner .feature-banner-image .feature-image-text {
@@ -283,7 +288,7 @@ html, body {
     box-shadow: 0px 0px 0px 4px hsla(210, 100%, 80%, 1);
 }
 .delete-button_delete-button-visible_kym6v {
-    box-shadow: 0px 0px 0px 2px hsla(210, 100%, 80%, 1);
+    box-shadow: 0px 0px 0px 2px hsla(210, 100%, 80%, 0.35);
 }
 .action-menu_more-buttons-outer_3J9yZ {
     background: #4d97ff
@@ -292,13 +297,13 @@ html, body {
     background-color: #4d97ff;
 }
 .action-menu_button_1qbot {
-    background-color: #4d97ff !important;
+    background-color: #4d97ff ;
 }
 .action-menu_main-button_3ccfy {
-    box-shadow: 0 0 0 4px hsla(210, 100%, 80%, 1);
+    box-shadow: 0 0 0 4px hsla(210, 100%, 80%, .75);
 }
 .action-menu_expanded_JcMKp .action-menu_main-button_3ccfy {
-    box-shadow: 0px 0px 0px 2px hsla(210, 100%, 80%, 1);
+    box-shadow: 0px 0px 0px 5px hsla(210, 100%, 80%, .75);
 }
 
 div[class^="menu-bar_menu-bar-menu_"] > ul, div[class^="menu_submenu_"] > ul {
@@ -371,19 +376,13 @@ h3 span {
 }
 
 .studio-activity .studio-activity-icon {
-    color: filter: sepia(300%) hue-rotate(185deg) saturate(450%)
+    color: filter sepia(300%) hue-rotate(185deg) saturate(450%)
 }
 
 .title-banner.mod-messages {
     
     background-color: var(--ste-blue);
 
-}
-
-.studio-activity-icon {
-    
-     filter: sepia(300%) hue-rotate(185deg) saturate(450%); 
-    
 }
 
 .studio-thumb-edit-button span {
@@ -396,4 +395,37 @@ h3 span {
     
      filter: sepia(300%) hue-rotate(185deg) saturate(450%); 
     
+}
+
+.intro-banner .intro-container {
+    background-color: var(--ste-blue);
+}
+
+.button {
+    background-color: var(--ste-blue);
+}
+.intro-banner .intro-button {
+    color: var(--ste-blue);
+}
+.menu_submenu_2Yzd1 > .menu_menu_3k7QT::-webkit-scrollbar-track {
+    background: hsla(215, 99%, 65%, 1);
+}
+.menu_submenu_2Yzd1 > .menu_menu_3k7QT::-webkit-scrollbar-thumb {
+    border: 3px solid hsla(215, 99%, 65%, 1);
+}
+
+
+.library-item_library-item_1DcMO:hover {
+    border-color:var(--ste-blue)
+}
+
+.stage-selector_stage-selector_3oWOr:hover {
+    border-color:var(--ste-blue)
+}
+
+.action-menu_main-button_3ccfy:hover {
+    background: hsla(163, 85%, 40%, 1)
+}
+.action-menu_main-button_3ccfy:hover .action-menu_main-icon_1ktMc {
+    background: hsla(163, 85%, 40%, 1)
 }
