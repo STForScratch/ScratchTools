@@ -418,7 +418,7 @@ h3 span {
     background: hsla(163, 85%, 40%, 1)
 }
 button.button {
-    background-color: var(--ste-blue)
+    background-color: var(--ste-blue) !important;
 }
 .banner-button {
     background-color: #ffaa1a !important;
