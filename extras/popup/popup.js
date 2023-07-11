@@ -748,3 +748,10 @@ ScratchTools.modals = {
     return modal;
   },
 };
+
+document.getElementById("campsite").addEventListener("click", function () { 
+  // open new link in new tab
+  chrome.tabs.create({
+    url: "https://youtu.be/z54AmH9Yi78",
+  })
+});
