@@ -420,3 +420,6 @@ h3 span {
 button.button {
     background-color: var(--ste-blue)
 }
+.banner-button {
+    background-color: #ffaa1a !important;
+}
