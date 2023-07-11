@@ -282,6 +282,11 @@ document.querySelector(".searchbar").placeholder =
   chrome.i18n.getMessage("search") || "search";
 
 document.querySelector(".searchbar").addEventListener("input", function () {
+  if (document.querySelector(".searchbar").value) {
+    document.querySelector(".welcome").style.display = "none"
+  } else {
+    document.querySelector(".welcome").style.display = null
+  }
   document.querySelectorAll(".feature").forEach(function (el) {
     if (
       (

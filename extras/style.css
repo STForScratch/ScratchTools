@@ -2,7 +2,7 @@
 
 html {
   height: 100%;
-  --radius: 12px;
+  --radius: .35rem;
 }
 
 body {
@@ -216,13 +216,14 @@ a {
   height: 2.5rem;
   width: 2.5rem;
   background: var(--theme-icon);
-  background-color: var(--searchbar-bg);
-  border-radius: 0.5rem;
+  background-color: none;
   border: none;
-  background-size: 2.5rem 2.5rem;
+  background-size: 2rem 2rem;
+  background-position: center center;
   cursor: pointer;
   float: right;
   margin-right: 4rem;
+  background-repeat: no-repeat;
 }
 .navbar {
   display: block;
@@ -250,11 +251,11 @@ a {
   top: 0.5rem;
 }
 .searchbar {
-  border-radius: 10px 0px 0px 10px;
+  border-radius: .35rem 0px 0px .35rem;
   padding: 0.5rem;
   height: 1.75rem;
   padding-left: 1rem;
-  width: calc(80% - 8.25rem);
+  width: calc(60% - 8.25rem);
   border: none;
   background: var(--searchbar-bg);
   outline: none;

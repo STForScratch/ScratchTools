@@ -14,6 +14,6 @@
   --scrollbar-handle: #797979;
   --scrollbar-handle-active: #656565;
   --theme-icon: url("/extras/icons/light.svg");
-  --navbar-gradient: linear-gradient(45deg, #ff9f00, #ffad42);
+  --navbar-gradient: linear-gradient(0.25turn, #ff9f00, #ffb740);
   --campsite: url("/extras/icons/campsitedark.svg");
 }
