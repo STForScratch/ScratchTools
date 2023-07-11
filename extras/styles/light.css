@@ -14,7 +14,7 @@
   --scrollbar-handle: #c2bfbf;
   --scrollbar-handle-active: #b2afaf;
   --theme-icon: url("/extras/icons/dark.svg");
-  --navbar-gradient: linear-gradient(45deg, #ff9f00, #ffad42);
+  --navbar-gradient: linear-gradient(0.25turn, #ff9f00, #ffb740);
 }
 
 .feedback-btn img {
