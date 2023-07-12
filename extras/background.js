@@ -124,14 +124,14 @@ chrome.runtime.onInstalled.addListener(async function (object) {
       chrome.action.setBadgeText({ text: data.msg_count.toString() });
       chrome.action.setBadgeBackgroundColor({
         color: !chrome.runtime.getManifest().version_name.endsWith("-beta")
-          ? "#FFB02D"
+          ? "#ff9f00"
           : "#00a2ff",
       });
     } catch (err) {
       chrome.action.setBadgeText({ text: "?" });
       chrome.action.setBadgeBackgroundColor({
         color: !chrome.runtime.getManifest().version_name.endsWith("-beta")
-          ? "#FFB02D"
+          ? "#ff9f00"
           : "#00a2ff",
       });
     }
@@ -247,7 +247,7 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
       ScratchTools.console.error = function (text) {
         var styleArray = [
           "padding: 0.1rem",
-          "background-color: #FFB02D",
+          "background-color: #ff9f00",
           "border-radius: 0.2rem",
           "color: black",
         ];
@@ -653,12 +653,12 @@ chrome.alarms.onAlarm.addListener(async function () {
       var data = await response.json();
       chrome.action.setBadgeText({ text: data.msg_count.toString() });
       !chrome.runtime.getManifest().version_name.endsWith("-beta")
-        ? "#FFB02D"
+        ? "#ff9f00"
         : "#00a2ff";
     } catch (err) {
       chrome.action.setBadgeText({ text: "?" });
       !chrome.runtime.getManifest().version_name.endsWith("-beta")
-        ? "#FFB02D"
+        ? "#ff9f00"
         : "#00a2ff";
     }
   } else {

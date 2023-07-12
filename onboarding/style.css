@@ -27,7 +27,7 @@ body {
 
 button {
     background-color: white;
-    color: #FFB02D;
+    color: #ff9f00;
     min-width: 10rem;
     font-family: "Inter", sans-serif;
     padding: .5rem;
@@ -82,7 +82,7 @@ button:hover {
 
 .feature.enabled {
     opacity: 1;
-    border: 3px solid #FFB02D;
+    border: 3px solid #ff9f00;
 }
 
 .center-perfectly {
@@ -99,7 +99,7 @@ button:hover {
     border:3px solid #456EFF;
   }
   .theme-noselect{
-    border:3px solid #FFB02D;
+    border:3px solid #ff9f00;
   }
   .theme-circle{
     height:50px; 

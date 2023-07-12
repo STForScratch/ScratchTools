@@ -32,7 +32,7 @@
 }
 
 .st-modal-header {
-  background-color: #FFB02D;
+  background-color: #ff9f00;
   position: fixed;
   top: 15rem;
   width: 40%;
@@ -52,7 +52,7 @@
 }
 
 .st-modal button {
-  background: #FFB02D !important;
+  background: #ff9f00 !important;
   line-height: normal;
   font-weight: normal;
   text-shadow: none;

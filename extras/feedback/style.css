@@ -6,7 +6,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --theme: #FFB02D;
+    --theme: #ff9f00;
     --background: #3f3f3f;
     --primary-color: white;
     --secondary-color: #ffffff77;
@@ -24,7 +24,7 @@
 }
 @media (prefers-color-scheme: light) {
   :root {
-    --theme: #FFB02D;
+    --theme: #ff9f00;
     --background: white;
     --primary-color: black;
     --secondary-color: #00000077;
@@ -111,7 +111,7 @@ textarea {
 }
 
 button {
-    background-color: #FFB02D;
+    background-color: #ff9f00;
     color: white;
     min-width: 10rem;
     font-family: "Inter", sans-serif;
