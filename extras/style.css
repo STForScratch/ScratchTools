@@ -467,6 +467,8 @@ button.secondary-btn {
   display: inline-block;
   position: relative;
   top: 3.1rem;
+  border-left: 2px solid var(--searchbar-bg);
+    margin-left: 0.35rem;
 }
 
 .buttons button {
