@@ -1,5 +1,5 @@
 :root {
-  --theme: #FFB02D;
+  --theme: #FF9F00;
   --background: #3f3f3f;
   --primary-color: white;
   --secondary-color: #ffffff77;
@@ -14,6 +14,6 @@
   --scrollbar-handle: #797979;
   --scrollbar-handle-active: #656565;
   --theme-icon: url("/extras/icons/light.svg");
-  --navbar-gradient: linear-gradient(0.25turn, #ff9f00, #ffb740);
+  --navbar-gradient: linear-gradient(0.25turn, #ff8c2d, #ffb740);
   --campsite: url("/extras/icons/campsitedark.svg");
 }
