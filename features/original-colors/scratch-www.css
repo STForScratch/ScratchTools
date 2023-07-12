@@ -435,3 +435,6 @@ button.button {
 .banner-button {
     background-color: #ffaa1a !important;
 }
+.inner>ul>li.search .btn-search {
+    background-color: transparent !important;
+}
