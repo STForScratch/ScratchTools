@@ -2,7 +2,7 @@
 
 html {
   height: 100%;
-  --radius: .35rem;
+  --radius: 0.35rem;
 }
 
 body {
@@ -64,14 +64,15 @@ a {
   padding-left: 1.5rem !important;
   padding-right: 1.5rem !important;
   color: var(--primary-color);
-  border-radius: 10px;
-  padding: 17px;
+  border-radius: .35rem;
+  padding: 1rem;
   padding-top: 5px;
   margin-bottom: 0px;
-  outline: 2px solid #FFB02D00;
+  outline: 2px solid #ffb02d00;
   transition: outline 0.2s;
   flex-shrink: 0;
   flex-grow: 0;
+  position: relative;
 }
 
 .settings {
@@ -98,6 +99,7 @@ a {
 .feature p {
   opacity: 0.5;
   font-size: 0.8rem;
+  padding-right: 4rem;
 }
 
 .feature input {
@@ -147,6 +149,10 @@ a {
   float: right;
   margin-top: -1.8em;
   margin-right: 1em;
+  position: absolute;
+  top: 2.75rem;
+  right: 0.75rem;
+  transform: scale(90%);
 }
 
 .feature a {
@@ -251,7 +257,7 @@ a {
   top: 0.5rem;
 }
 .searchbar {
-  border-radius: .35rem 0px 0px .35rem;
+  border-radius: 0.35rem 0px 0px 0.35rem;
   padding: 0.5rem;
   height: 1.75rem;
   padding-left: 1rem;
@@ -294,7 +300,7 @@ a {
 .section1 .note {
   color: rgba(0, 0, 0, 0.8);
   padding: 2em;
-  border-radius: 10px;
+  border-radius: .35rem;
   margin-top: 1rem;
 }
 .section1 .note.yellow {
@@ -396,7 +402,7 @@ button.secondary-btn {
   background-color: var(--feature-bg);
   padding: 1rem;
   width: 20rem;
-  border-radius: 0.5rem;
+  border-radius: 0.35rem;
   display: inline-block;
   margin-right: 1rem;
   outline: 3px solid #ff9f0000;
@@ -427,11 +433,11 @@ button.secondary-btn {
 
 .sparkle {
   height: 2rem;
-  opacity: .5;
-  transition: opacity .2s;
+  opacity: 0.5;
+  transition: opacity 0.2s;
   position: relative;
-  top: .5rem;
-  right: .5rem;
+  top: 0.5rem;
+  right: 0.5rem;
   cursor: pointer;
 }
 
@@ -447,14 +453,14 @@ button.secondary-btn {
 .tip {
   position: absolute;
   width: 15rem;
-  padding: .5rem;
-  border-radius: .25rem;
-    font-size: .8rem;
-    background-color: var(--searchbar-bg);
-    color: var(--primary-color);
-    font-weight: normal;
-    z-index:99999;
-    margin-top: -.5rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  background-color: var(--searchbar-bg);
+  color: var(--primary-color);
+  font-weight: normal;
+  z-index: 99999;
+  margin-top: -0.5rem;
 }
 
 .buttons {
@@ -466,8 +472,8 @@ button.secondary-btn {
 .buttons button {
   background-color: var(--searchbar-bg);
   color: white;
-  padding: .85rem;
-  border-radius: .35rem;
+  padding: 0.85rem;
+  border-radius: 0.35rem;
   outline: 0px;
   border: 0px;
   font-family: "Inter", sans-serif;
@@ -475,14 +481,14 @@ button.secondary-btn {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   min-width: 7rem;
-  margin-left: .5rem;
-  opacity:1;
-  transition: opacity .2s, background-color .2s, color .2s;
+  margin-left: 0.5rem;
+  opacity: 1;
+  transition: opacity 0.2s, background-color 0.2s, color 0.2s;
   color: var(--primary-color);
 }
 
 .buttons button:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .buttons button.selected {
@@ -515,6 +521,7 @@ body[data-filter="Forums"] .feature[data-type*="Forums"] {
 }
 
 .end {
+  margin-top: 1rem;
   width: 100%;
   margin-bottom: 1rem;
   border-radius: 10px;
@@ -522,14 +529,14 @@ body[data-filter="Forums"] .feature[data-type*="Forums"] {
   text-align: center;
 }
 
-.campsite{
+.campsite {
   width: 100%;
   height: 90px;
   background: var(--campsite);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-.end span{
+.end span {
   color: var(--primary-color);
   opacity: 0.5;
   text-align: center;
@@ -537,8 +544,14 @@ body[data-filter="Forums"] .feature[data-type*="Forums"] {
   font-weight: 600;
 }
 
+.settings {
+  margin-bottom: 3rem;
+}
+
 @media (max-width: 71rem) {
-  body div.settings div.feature[data-type*="Editor"], body div.settings div.feature[data-type*="Website"], body div.settings div.feature[data-type*="Forums"] {
+  body div.settings div.feature[data-type*="Editor"],
+  body div.settings div.feature[data-type*="Website"],
+  body div.settings div.feature[data-type*="Forums"] {
     display: inline-block;
   }
 
@@ -567,7 +580,8 @@ body[data-filter="Forums"] .feature[data-type*="Forums"] {
     width: calc(100% - 8.25rem);
   }
 
-  .feedback-btn, .more-settings-btn {
+  .feedback-btn,
+  .more-settings-btn {
     right: 1rem;
     left: inherit;
   }
