@@ -56,9 +56,9 @@ a {
   border: 0px solid black;
   line-height: 25px;
   display: inline-block;
-  width: 20rem;
+  width: 24rem;
   max-width: 100%;
-  margin: 0.5rem;
+  margin: 1rem;
   background-color: var(--feature-bg);
   margin-left: 0px !important;
   padding-left: 1.5rem !important;
@@ -68,7 +68,7 @@ a {
   padding: 17px;
   padding-top: 5px;
   margin-bottom: 0px;
-  outline: 2px solid #ff9f0000;
+  outline: 2px solid #FFB02D00;
   transition: outline 0.2s;
   flex-shrink: 0;
   flex-grow: 0;
@@ -170,20 +170,20 @@ a {
   border: 0px solid black;
   min-height: 100% !important;
   height: 100vh;
-  width: 40%;
+  width: 30%;
   margin: 0px;
-  max-width: 40vw;
+  max-width: 30vw;
   float: left;
 }
 .section2 {
   border: 0px solid black;
   min-height: 100% !important;
   height: 100vh;
-  width: 60%;
+  width: 70%;
   margin-left: 0em;
   overflow: auto;
   float: right;
-  max-width: 60vw;
+  max-width: 70vw;
 }
 
 .sticon {
@@ -255,7 +255,7 @@ a {
   padding: 0.5rem;
   height: 1.75rem;
   padding-left: 1rem;
-  width: calc(60% - 8.25rem);
+  width: 12rem;
   border: none;
   background: var(--searchbar-bg);
   outline: none;
@@ -455,4 +455,61 @@ button.secondary-btn {
     font-weight: normal;
     z-index:99999;
     margin-top: -.5rem;
+}
+
+.buttons {
+  display: inline-block;
+  position: relative;
+  top: 3.1rem;
+}
+
+.buttons button {
+  background-color: var(--searchbar-bg);
+  color: white;
+  padding: .85rem;
+  border-radius: .35rem;
+  outline: 0px;
+  border: 0px;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  min-width: 7rem;
+  margin-left: .5rem;
+  opacity:1;
+  transition: opacity .2s, background-color .2s, color .2s;
+  color: var(--primary-color);
+}
+
+.buttons button:hover {
+  opacity: .8;
+}
+
+.buttons button.selected {
+  background-color: var(--theme);
+  color: white;
+}
+
+body[data-filter="Editor"] .feature {
+  display: none;
+}
+
+body[data-filter="Editor"] .feature[data-type="Editor"] {
+  display: inline-block;
+}
+
+body[data-filter="Website"] .feature {
+  display: none;
+}
+
+body[data-filter="Website"] .feature[data-type="Website"] {
+  display: inline-block;
+}
+
+body[data-filter="Forums"] .feature {
+  display: none;
+}
+
+body[data-filter="Forums"] .feature[data-type="Forums"] {
+  display: inline-block;
 }

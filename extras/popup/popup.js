@@ -354,6 +354,7 @@ async function getFeatures() {
 
     var div = document.createElement("div");
     div.className = "feature";
+    div.dataset.type = feature.type?.[0] || ""
 
     feature.id = feature.id || feature.file;
     div.dataset.id = feature.id;
@@ -749,9 +750,19 @@ ScratchTools.modals = {
   },
 };
 
-document.getElementById("campsite").addEventListener("click", function () { 
+document.getElementById("campsite")?.addEventListener("click", function () { 
   // open new link in new tab
   chrome.tabs.create({
     url: "https://youtu.be/z54AmH9Yi78",
   })
 });
+
+if (document.querySelector(".buttons")) {
+  document.querySelectorAll(".buttons button").forEach(function(el) {
+    el.addEventListener("click", function() {
+      document.body.dataset.filter = el.textContent
+      el.parentNode.querySelector(".selected").classList.remove("selected")
+      el.classList.add("selected")
+    })
+  })
+}
