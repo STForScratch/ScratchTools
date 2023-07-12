@@ -118,7 +118,7 @@
     "credits": ["rgantzos"],
     "urls": ["https://scratch.mit.edu/users/rgantzos"],
     "file": "load-more-forum-posts",
-    "type": ["Website"],
+    "type": ["Forums"],
     "tags": ["New"],
     "dynamic": false
   },
@@ -182,7 +182,7 @@
       "https://scratch.mit.edu/users/stickfiregames"
     ],
     "file": "upload-img-directly",
-    "type": ["Website"],
+    "type": ["Forums"],
     "tags": ["New", "Recommended"]
   },
   {
@@ -258,7 +258,7 @@
     "credits": ["rgantzos"],
     "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "highlight-unanswered",
-    "type": ["Website"],
+    "type": ["Forums"],
     "tags": ["New", "Recommended"],
     "dynamic": true
   },
@@ -727,7 +727,7 @@
     ],
     "file": "link-forum-activity",
     "tags": [],
-    "type": ["Website"]
+    "type": ["Forums"]
   },
   {
     "title": "Hide Forum Category Counts",
@@ -736,7 +736,7 @@
     "urls": ["https://scratch.mit.edu/users/Scratchfangs/"],
     "file": "remove-topic-and-post",
     "tags": [],
-    "type": ["Website"]
+    "type": ["Forums"]
   },
   {
     "title": "Forum Category Emojis",
@@ -745,7 +745,7 @@
     "urls": ["https://scratch.mit.edu/users/Scratchfangs/"],
     "file": "forum-homepage-emojis",
     "tags": [],
-    "type": ["Website"]
+    "type": ["Forums"]
   },
   {
     "title": "Hide Forum Collapse Buttons",
@@ -754,7 +754,7 @@
     "urls": ["https://scratch.mit.edu/users/Scratchfangs/"],
     "file": "remove-collapse-buttons",
     "tags": [],
-    "type": ["Website"]
+    "type": ["Forums"]
   },
   {
     "title": "Pin Projects to My Stuff",
@@ -785,7 +785,7 @@
     "urls": ["https://scratch.mit.edu/users/Scratchfangs/"],
     "file": "hide-signatures",
     "tags": [],
-    "type": ["Website", "Theme"]
+    "type": ["Forums", "Theme"]
   },
   {
     "title": "Better Forum Emojis",
@@ -797,7 +797,7 @@
     ],
     "file": "twemoji-in-forums",
     "tags": [],
-    "type": ["Website"]
+    "type": ["Forums"]
   },
   {
     "version": 2,
@@ -922,7 +922,7 @@
     "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "hide-stickies",
     "tags": [],
-    "type": ["Website"]
+    "type": ["Forums"]
   },
   {
     "title": "More Tutorials",
@@ -1020,7 +1020,7 @@
     "credits": ["rgantzos"],
     "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "ocular-link",
-    "type": ["Website"]
+    "type": ["Forums"]
   },
   {
     "title": "Scratch Team Symbol in Forums",
@@ -1028,7 +1028,7 @@
     "credits": ["rgantzos"],
     "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "forum-scratch-team",
-    "type": ["Website"]
+    "type": ["Forums"]
   },
   {
     "title": "Message Count",
