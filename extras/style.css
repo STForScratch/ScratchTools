@@ -536,3 +536,39 @@ body[data-filter="Forums"] .feature[data-type*="Forums"] {
   font-size: 1.5rem;
   font-weight: 600;
 }
+
+@media (max-width: 71rem) {
+  body div.settings div.feature[data-type*="Editor"], body div.settings div.feature[data-type*="Website"], body div.settings div.feature[data-type*="Forums"] {
+    display: inline-block;
+  }
+
+  .buttons {
+    display: none;
+  }
+
+  .section1 {
+    display: none;
+  }
+
+  .section2 {
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .feature {
+    width: 20rem;
+  }
+
+  div.settings {
+    padding-right: 8rem;
+  }
+
+  .searchbar {
+    width: calc(100% - 8.25rem);
+  }
+
+  .feedback-btn, .more-settings-btn {
+    right: 1rem;
+    left: inherit;
+  }
+}
