@@ -494,7 +494,7 @@ body[data-filter="Editor"] .feature {
   display: none;
 }
 
-body[data-filter="Editor"] .feature[data-type="Editor"] {
+body[data-filter="Editor"] .feature[data-type*="Editor"] {
   display: inline-block;
 }
 
@@ -502,7 +502,7 @@ body[data-filter="Website"] .feature {
   display: none;
 }
 
-body[data-filter="Website"] .feature[data-type="Website"] {
+body[data-filter="Website"] .feature[data-type*="Website"] {
   display: inline-block;
 }
 
@@ -510,6 +510,6 @@ body[data-filter="Forums"] .feature {
   display: none;
 }
 
-body[data-filter="Forums"] .feature[data-type="Forums"] {
+body[data-filter="Forums"] .feature[data-type*="Forums"] {
   display: inline-block;
 }

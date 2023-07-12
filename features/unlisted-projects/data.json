@@ -4,7 +4,7 @@
   "credits": [
     { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
   ],
-  "type": ["Editor"],
+  "type": ["Editor", "Website"],
   "tags": ["New", "Recommended"],
   "dynamic": false,
   "scripts": [{ "file": "script.js", "runOn": "/projects/*" }, { "file": "mystuff.js", "runOn": "/mystuff/" }],

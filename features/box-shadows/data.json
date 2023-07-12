@@ -6,5 +6,6 @@
   ],
   "tags": [],
   "styles": [{ "file": "box-shadows.css", "runOn": "/*" }],
-  "dynamic": true
+  "dynamic": true,
+  "type": ["Website"]
 }

@@ -282,10 +282,12 @@ document.querySelector(".searchbar").placeholder =
   chrome.i18n.getMessage("search") || "search";
 
 document.querySelector(".searchbar").addEventListener("input", function () {
-  if (document.querySelector(".searchbar").value) {
-    document.querySelector(".welcome").style.display = "none"
-  } else {
-    document.querySelector(".welcome").style.display = null
+  if (document.querySelector(".welcome")) {
+    if (document.querySelector(".searchbar").value) {
+      document.querySelector(".welcome").style.display = "none";
+    } else {
+      document.querySelector(".welcome").style.display = null;
+    }
   }
   document.querySelectorAll(".feature").forEach(function (el) {
     if (
@@ -354,7 +356,6 @@ async function getFeatures() {
 
     var div = document.createElement("div");
     div.className = "feature";
-    div.dataset.type = feature.type?.[0] || ""
 
     feature.id = feature.id || feature.file;
     div.dataset.id = feature.id;
@@ -367,6 +368,7 @@ async function getFeatures() {
       featureData.version = feature.version;
       feature = featureData;
     }
+    div.dataset.type = feature.type.join("");
 
     var h3 = document.createElement("h3");
     h3.textContent =
@@ -750,19 +752,19 @@ ScratchTools.modals = {
   },
 };
 
-document.getElementById("campsite")?.addEventListener("click", function () { 
+document.getElementById("campsite")?.addEventListener("click", function () {
   // open new link in new tab
   chrome.tabs.create({
     url: "https://youtu.be/z54AmH9Yi78",
-  })
+  });
 });
 
 if (document.querySelector(".buttons")) {
-  document.querySelectorAll(".buttons button").forEach(function(el) {
-    el.addEventListener("click", function() {
-      document.body.dataset.filter = el.textContent
-      el.parentNode.querySelector(".selected").classList.remove("selected")
-      el.classList.add("selected")
-    })
-  })
+  document.querySelectorAll(".buttons button").forEach(function (el) {
+    el.addEventListener("click", function () {
+      document.body.dataset.filter = el.textContent;
+      el.parentNode.querySelector(".selected").classList.remove("selected");
+      el.classList.add("selected");
+    });
+  });
 }
