@@ -429,20 +429,12 @@ h3 span {
 .action-menu_main-button_3ccfy:hover .action-menu_main-icon_1ktMc {
     background: hsla(163, 85%, 40%, 1)
 }
-.studio-activity-icon {
-
-     filter: sepia(300%) hue-rotate(185deg) saturate(450%); 
-
+button.button {
+    background-color: var(--ste-blue) !important;
 }
-
-.studio-thumb-edit-button span {
-
-    color: var(--ste-blue);
-
-
+.banner-button {
+    background-color: #ffaa1a !important;
 }
-.studio-thumb-edit-img {
-
-     filter: sepia(300%) hue-rotate(185deg) saturate(450%); 
-
+.inner>ul>li.search .btn-search {
+    background-color: transparent !important;
 }
