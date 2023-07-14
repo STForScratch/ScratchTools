@@ -385,6 +385,22 @@ h3 span {
 
 }
 
+.small .text {
+
+    color: #666;
+
+}
+
+.slider-carousel-container .box-head a {
+    
+    color: #3397D9 !important;
+
+}
+
+.box-head a {
+    
+    color: #3397D9 !important;
+
 .studio-thumb-edit-button span {
    
     color: var(--ste-blue);
