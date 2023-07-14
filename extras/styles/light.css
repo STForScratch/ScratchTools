@@ -24,3 +24,10 @@
   top: 0.2rem;
   filter: invert(1);
 }
+
+.support-btn img {
+  height: 1rem;
+  position: relative;
+  top: 0.2rem;
+  filter: invert(1);
+}

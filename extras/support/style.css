@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+html {
+  height: 100%;
+  --radius: 0.35rem;
+}
+
+body {
+  margin: 0em;
+  font-family: "Inter", sans-serif;
+  background-color: var(--background);
+  text-align: center;
+  padding-top: 5rem;
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+.topic {
+    background-color: var(--feature-bg);
+    border: 2px solid var(--searchbar-bg);
+    height: 4rem;
+    width: calc(15rem - 4px);
+    display: inline-block;
+    border-radius: .35rem;
+    text-align: left;
+    padding: 1rem;
+    margin: .75rem;
+    transform: none;
+    transition: transform .2s, opacity .2s;
+    opacity: 1;
+}
+
+.topic:hover {
+    opacity: .8;
+    transform: scale(105%);
+}
+
+.topics {
+    width: 56.1rem;
+    margin-left: calc(50% - calc(56.1rem / 2));
+}
+
+.topic p {
+    margin: 0px;
+    margin-top: .5rem;
+    opacity: .5;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.navbar {
+  display: block;
+  position: fixed;
+  background: var(--navbar-gradient);
+  top: 0;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-left: 0.5em;
+  z-index: 2;
+  border: 0px solid black;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  margin: 0px;
+  padding-left: 2rem;
+}
+
+.sticon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-image: url("/extras/icons/icontrans128.png");
+  background-position: 50% 50%;
+  background-size: 2.5rem 2.5rem;
+  background-repeat: no-repeat;
+  display: inline-block;
+  float: left;
+}
+
+.terms {
+  text-align: left;
+  margin-left: calc(50% - 20rem);
+  margin-right: calc(50% - 20rem);
+  background-color: var(--feature-bg);
+  padding: 1rem;
+  padding-top: 0rem;
+  border-radius: 0.35rem;
+  border: 2px solid var(--searchbar-bg);
+  margin-top: 2rem;
+}
+
+.terms p {
+  line-height: 1.5rem;
+}
+
+button {
+  background-color: var(--theme);
+  color: white;
+  padding: 0.85rem;
+  border-radius: 0.35rem;
+  outline: 0px;
+  border: 0px;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  min-width: 7rem;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.additional-support {
+    width: 56.1rem;
+    margin-left: calc(50% - calc(56.1rem / 2));
+}
+
+.additional-support div {
+    background-color: var(--feature-bg);
+    border: 2px solid var(--searchbar-bg);
+    padding: 1rem;
+    border-radius: .35rem;
+    text-align: left;
+    margin-bottom: 1rem;
+    transition: opacity .2s;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.additional-support div:hover {
+    opacity: .5;
+}
+
+.additional-support div h3, .additional-support div p {
+    margin: 0px;
+}
+
+.additional-support div h3 {
+    margin-bottom: .5rem;
+}
