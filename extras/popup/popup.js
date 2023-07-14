@@ -278,6 +278,12 @@ function toggletheme() {
   }
 }
 
+document.querySelector(".support-btn")?.addEventListener("click", function() {
+  chrome.tabs.create({
+    url: "/extras/support/index.html"
+  })
+})
+
 document.querySelector(".searchbar").placeholder =
   chrome.i18n.getMessage("search") || "search";
 
