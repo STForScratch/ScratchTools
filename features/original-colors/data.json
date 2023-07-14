@@ -7,8 +7,8 @@
     ],
     "styles": [{ "file": "scratch-www.css", "runOn": "/*" }],
     "tags": ["Theme", "New"],
-    "type": ["Website"],
+    "type": ["Website", "Editor"],
     "dynamic": true,
-    "resources": [{ "name": "reply", "path": "/reply.svg" },{ "name": "tabs-code", "path": "/tabs/code.svg" }]
+    "resources": [{ "name": "reply", "path": "/reply.svg" }]
   }
   
