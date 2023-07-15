@@ -620,7 +620,7 @@ body[data-filter="Forums"] .feature[data-type*="Forums"] {
     float: right;
     margin-top: 3.8em;
     right: -4.5em;
-    border-radius: 0px 0px 0.5rem 0.5rem;
+    border-radius: 0 0 var(--radius) var(--radius);
     overflow: hidden;
     border: 1.5px solid rgba(0,0,0,0.1);
     border-top: none;
@@ -639,6 +639,7 @@ body[data-filter="Forums"] .feature[data-type*="Forums"] {
   cursor: pointer;
   display: flex;
   align-items: center;
+  padding: 0.5em;
 }
 .themes-div .dropdown .item .circle{
   height: 1.5rem;
