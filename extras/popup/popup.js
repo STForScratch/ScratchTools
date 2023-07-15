@@ -258,7 +258,7 @@ function setBetaTheme() {
   }
   // checkCurrentVersion();
 }
-
+if(window.location.href.includes("extras/index.html")) {
 document.getElementById("themedropdown-btn").addEventListener("click", ()=>{
   if (document.getElementById("themedropdown").style.display == "block") {
     document.getElementById("themedropdown").style.display = "none";
@@ -281,6 +281,7 @@ document.getElementById("theme-purple").addEventListener("click", ()=>{
   setTheme("purple");
   document.getElementById("themedropdown").style.display = "none";
 });
+}
 
 function toggletheme() {
   var theme = document.getElementById("themecss");
