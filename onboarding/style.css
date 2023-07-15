@@ -116,6 +116,10 @@ button:hover {
   .theme-light{
     background: white;
   }
+
+  .theme-purple{
+    background: linear-gradient(0.37turn, #6a00ff, #2b0165);
+  }
   .theme-preview{
     position:absolute;
   
