@@ -567,7 +567,7 @@ chrome.runtime.onMessageExternal.addListener(async function (
   sender,
   sendResponse
 ) {
-  if (msg.msg = "openSupportChat") {
+  if (msg.msg === "openSupportChat") {
     await chrome.tabs.create({
       url: "/extras/support/chat/index.html?code="+msg.code
     })
