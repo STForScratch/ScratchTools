@@ -1,14 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Welcome to ScratchTools</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <div class="center-perfectly">
+
+<head>
+  <title>Welcome to ScratchTools</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <!-- Onboarding revamp by @Daniel4-Scratch, also hello there!-->
+  <div class="center-perfectly">
+    <div id="section_1">
       <h1 class="big" style="font-weight: 700">Welcome to ScratchTools</h1>
       <button data-function="start">Get Started</button>
     </div>
-  </body>
-  <script src="./script.js"></script>
+
+    <div id="section_2" class="hidden">
+      <h1>Here are some of our top features, enable some!</h1>
+      <p>There
+        are an additional 100+ features for you to choose from. You can change
+        your settings at any time from the extension popup.</p>
+      <div class="features-row"></div>
+      <button data-function="theme">Skip</button>
+    </div>
+
+    <div id="section_3" class="hidden">
+      <h1 class="big" style="font-weight: bold;">Choose a Theme</h1>
+      <div class="theme-selection">
+        <div class="theme-preview"><img src="themes/light.svg" id="theme-preview"></div>
+        <div class="themes">
+          <div class="theme-circle theme-light theme-select" id="light"></div>
+          <div class="theme-circle theme-dark theme-noselect" id="dark"></div>
+          
+        </div>
+      </div><button data-function="end">Continue</button>
+    </div>
+
+    <div id="section_4" class="hidden">
+      <h1 class="big" id="end_title">Thank you.</h1>
+      <h2 style="font-weight: 400;" id="end_text">Dozens of developers have worked hard to make hundreds of features on ScratchTools, which is used by over 6,000 people worldwide.
+      </h2><button id="end_button">Get Started</button>
+    </div>
+  </div>
+</body>
+<script src="./script2.js"></script>
+
 </html>

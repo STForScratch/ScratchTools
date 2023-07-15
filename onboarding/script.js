@@ -83,6 +83,8 @@ async function themePage() {
   themeOptions.className = "themes";
   themeSelection.append(themeOptions);
 
+  
+
   var light = document.createElement("div");
   light.className =
     "theme-circle theme-light " +

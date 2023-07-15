@@ -59,6 +59,7 @@ button:hover {
     top: 0px;
     transition: opacity .3s, border .3s, top .3s;
     color: black;
+    cursor: pointer;
 }
 
 .feature:hover {
@@ -115,6 +116,10 @@ button:hover {
   .theme-light{
     background: white;
   }
+
+  .theme-purple{
+    background: linear-gradient(0.37turn, #6a00ff, #2b0165);
+  }
   .theme-preview{
     position:absolute;
   
@@ -127,4 +132,9 @@ button:hover {
     height:450px;
     display: flex;
     justify-content: center;
+  }
+
+
+  .hidden{
+    display: none;
   }
