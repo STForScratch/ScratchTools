@@ -294,18 +294,9 @@ if(window.location.href.includes("extras/index.html")) {
   });
 }
 
-//when chrome theme updates, update the theme
-chrome.storage.onChanged.addListener(function (changes, namespace) {
-  for (var key in changes) {
-    if (key === "theme") {
-      setTheme(changes[key].newValue);
-    }
-  }
-});
-
     
 
-
+// Deprecated code 
 function toggletheme() {
   var theme = document.getElementById("themecss");
   if (theme.href.includes("light")) {
@@ -323,10 +314,10 @@ function toggletheme() {
   }
 }
 
-function setTheme(themetext) {
+async function setTheme(themetext) {
   var theme = document.getElementById("themecss");
   theme.href = `/extras/styles/${themetext}.css`;
-  chrome.storage.sync.set({ theme: themetext });
+  await chrome.storage.sync.set({ theme: themetext });
 }
 
 document.querySelector(".support-btn")?.addEventListener("click", function() {
