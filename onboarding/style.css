@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
+@media (prefers-color-scheme: dark) {
+  :root{
+    --preview-svg: url("./themes/dark.svg");
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root{
+    --preview-svg: url("./themes/light.svg");
+  }
+}
+
 .center-perfectly {
   margin: 0;
   position: absolute;
@@ -96,6 +107,14 @@ button:hover {
     overflow-y: hidden;
 }
 
+.theme-preview{
+  background: var(--preview-svg);
+  background-size: cover;
+  background-position: center center;
+  width: 275px;
+  height: 356px;
+}
+
 .theme-select{
     border:3px solid #456EFF;
   }
@@ -119,6 +138,11 @@ button:hover {
 
   .theme-purple{
     background: linear-gradient(0.37turn, #6a00ff, #2b0165);
+  }
+  .theme-system{
+    background:linear-gradient(135deg, rgba(255,255,255,1) 050%, rgba(63,63,63,1) 50%);
+    background-size: cover;
+  background-position: center center;
   }
   .theme-preview{
     position:absolute;

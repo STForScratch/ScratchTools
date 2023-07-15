@@ -21,7 +21,7 @@ async function theme() {
 
   const themes = {
     light: {
-      enabled: true,
+      enabled: false,
       element: gEBI("light"),
     },
     dark: {
@@ -31,12 +31,20 @@ async function theme() {
     purple:{
       enabled: false,
       element: gEBI("purple"),
+    },
+    system:{
+      enabled: true,
+      element: gEBI("system"),
     }
   };
 
   async function changeTheme(theme) {
     const themePreviewImg = gEBI("theme-preview");
-    themePreviewImg.src = `/onboarding/themes/${theme}.svg`;
+    if(theme !== "system"){
+      themePreviewImg.src = `/onboarding/themes/${theme}.svg`;
+    }else{
+      themePreviewImg.src = ``;
+    }
     themes[theme].element.classList.remove("theme-noselect");
     themes[theme].element.classList.add("theme-select");
     for (const themeName in themes) {
@@ -58,6 +66,9 @@ async function theme() {
   };
   themes.purple.element.onclick = async function () {
     await changeTheme("purple");
+  };
+  themes.system.element.onclick = async function () {
+    await changeTheme("system");
   };
 }
 

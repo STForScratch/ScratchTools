@@ -281,6 +281,10 @@ document.getElementById("theme-purple").addEventListener("click", ()=>{
   setTheme("purple");
   document.getElementById("themedropdown").style.display = "none";
 });
+document.getElementById("theme-system").addEventListener("click", ()=>{
+  setTheme("system");
+  document.getElementById("themedropdown").style.display = "none";
+});
 }
 
 function toggletheme() {
