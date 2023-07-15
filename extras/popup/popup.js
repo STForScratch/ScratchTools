@@ -259,33 +259,52 @@ function setBetaTheme() {
   // checkCurrentVersion();
 }
 if(window.location.href.includes("extras/index.html")) {
-document.getElementById("themedropdown-btn").addEventListener("click", ()=>{
-  if (document.getElementById("themedropdown").style.display == "block") {
+  window.addEventListener('click', function(e){   
+    if (document.getElementById('themedropdown').contains(e.target) || document.getElementById('themedropdown-btn').contains(e.target)){
+      // Clicked in box
+    } else{
+      document.getElementById('themedropdown').style.display = 'none';
+    }
+  });
+  document.getElementById("themedropdown-btn").addEventListener("click", ()=>{
+    if (document.getElementById("themedropdown").style.display == "block") {
+      document.getElementById("themedropdown").style.display = "none";
+    } else {
+      document.getElementById("themedropdown").style.display = "block";
+    }
+  });
+
+  document.getElementById("theme-light").addEventListener("click", ()=>{
+    setTheme("light");
     document.getElementById("themedropdown").style.display = "none";
-  } else {
-    document.getElementById("themedropdown").style.display = "block";
+  });
+
+  document.getElementById("theme-dark").addEventListener("click", ()=>{
+    setTheme("dark");
+    document.getElementById("themedropdown").style.display = "none";
+  });
+
+  document.getElementById("theme-purple").addEventListener("click", ()=>{
+    setTheme("purple");
+    document.getElementById("themedropdown").style.display = "none";
+  });
+  document.getElementById("theme-system").addEventListener("click", ()=>{
+    setTheme("system");
+    document.getElementById("themedropdown").style.display = "none";
+  });
+}
+
+//when chrome theme updates, update the theme
+chrome.storage.onChanged.addListener(function (changes, namespace) {
+  for (var key in changes) {
+    if (key === "theme") {
+      setTheme(changes[key].newValue);
+    }
   }
 });
 
-document.getElementById("theme-light").addEventListener("click", ()=>{
-  setTheme("light");
-  document.getElementById("themedropdown").style.display = "none";
-});
+    
 
-document.getElementById("theme-dark").addEventListener("click", ()=>{
-  setTheme("dark");
-  document.getElementById("themedropdown").style.display = "none";
-});
-
-document.getElementById("theme-purple").addEventListener("click", ()=>{
-  setTheme("purple");
-  document.getElementById("themedropdown").style.display = "none";
-});
-document.getElementById("theme-system").addEventListener("click", ()=>{
-  setTheme("system");
-  document.getElementById("themedropdown").style.display = "none";
-});
-}
 
 function toggletheme() {
   var theme = document.getElementById("themecss");

@@ -141,7 +141,7 @@ button:hover {
   }
   .theme-system{
     background:linear-gradient(135deg, rgba(255,255,255,1) 050%, rgba(63,63,63,1) 50%);
-    background-size: cover;
+    background-size: 100% 100%;
   background-position: center center;
   }
   .theme-preview{
