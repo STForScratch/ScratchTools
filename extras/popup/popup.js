@@ -259,7 +259,28 @@ function setBetaTheme() {
   // checkCurrentVersion();
 }
 
-document.getElementById("toggletheme").addEventListener("click", toggletheme);
+document.getElementById("themedropdown-btn").addEventListener("click", ()=>{
+  if (document.getElementById("themedropdown").style.display == "block") {
+    document.getElementById("themedropdown").style.display = "none";
+  } else {
+    document.getElementById("themedropdown").style.display = "block";
+  }
+});
+
+document.getElementById("theme-light").addEventListener("click", ()=>{
+  setTheme("light");
+  document.getElementById("themedropdown").style.display = "none";
+});
+
+document.getElementById("theme-dark").addEventListener("click", ()=>{
+  setTheme("dark");
+  document.getElementById("themedropdown").style.display = "none";
+});
+
+document.getElementById("theme-purple").addEventListener("click", ()=>{
+  setTheme("purple");
+  document.getElementById("themedropdown").style.display = "none";
+});
 
 function toggletheme() {
   var theme = document.getElementById("themecss");

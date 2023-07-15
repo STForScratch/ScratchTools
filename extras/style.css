@@ -238,7 +238,7 @@ a {
 .theme {
   height: 2.5rem;
   width: 2.5rem;
-  background: var(--theme-icon);
+  background: url("/extras/icons/palette-fill.svg");
   background-color: none;
   border: none;
   background-size: 2rem 2rem;
@@ -264,6 +264,7 @@ a {
   width: 100vw;
   margin: 0px;
   padding-left: 2rem;
+  height: 2.5rem;
 }
 .settings-title {
   font-size: 1.2rem;
@@ -604,4 +605,56 @@ body[data-filter="Forums"] .feature[data-type*="Forums"] {
     right: 1rem;
     left: inherit;
   }
+}
+
+
+.themes-div .dropdown{
+  position: relative;
+    display: inline-block;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    height: max-content;
+    width: 8.5rem;
+    box-sizing: border-box;
+    background: var(--theme);
+    float: right;
+    margin-top: 3.8em;
+    right: -4.5em;
+    border-radius: 0px 0px 0.5rem 0.5rem;
+    overflow: hidden;
+    border: 1.5px solid rgba(0,0,0,0.1);
+    border-top: none;
+    box-shadow: 0px 10px 20px -15px rgba(0, 0, 0, 0.5);
+}
+
+.themes-div .dropdown .item{
+  height: 2.5rem;
+  width: 8.5rem;
+  color:white;
+  font-size: 1rem;
+  background: var(--theme);
+  padding: 0.5rem;
+  box-sizing: border-box;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.themes-div .dropdown .item .circle{
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  background: black;
+  float: left;
+  margin-right: 0.5rem;
+  /* margin-top: 0.5rem;
+  margin-left: 0.5rem; */
+}
+
+.themes-div .dropdown .item#text{
+  float: left;
+  margin-top: 0.5rem;
+}
+.themes-div .dropdown .item:hover{
+  background:color-mix(in srgb, var(--theme) 95%, black);
 }
