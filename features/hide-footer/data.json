@@ -1,0 +1,17 @@
+{
+  "title": "Hide Footer",
+  "description": "The footer takes up a lot of unnecessary space. So hide it!",
+  "credits": [
+    { "username": "stio_studio", "url": "https://scratch.mit.edu/users/stio_studio/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "styles": [
+    {
+      "file": "style.css",
+      "runOn": "/*"
+    }
+  ],
+  "dynamic": true
+}
+  
