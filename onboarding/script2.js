@@ -27,11 +27,7 @@ async function theme() {
     dark: {
       enabled: false,
       element: gEBI("dark"),
-    },
-    purple: {
-      enabled: false,
-      element: gEBI("purple"),
-    },
+    }
   };
 
   async function changeTheme(theme) {
