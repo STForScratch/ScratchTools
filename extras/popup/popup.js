@@ -272,10 +272,16 @@ function toggletheme() {
   } else {
     theme.href = "/extras/styles/light.css"; // default theme
     console.error(
-      console.log("ScratchTools:"),
+      "ScratchTools:",
       " Theme not found. Defaulting to light theme."
     );
   }
+}
+
+function setTheme(themetext) {
+  var theme = document.getElementById("themecss");
+  theme.href = `/extras/styles/${themetext}.css`;
+  chrome.storage.sync.set({ theme: themetext });
 }
 
 document.querySelector(".support-btn")?.addEventListener("click", function() {

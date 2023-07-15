@@ -59,6 +59,7 @@ button:hover {
     top: 0px;
     transition: opacity .3s, border .3s, top .3s;
     color: black;
+    cursor: pointer;
 }
 
 .feature:hover {
@@ -127,4 +128,9 @@ button:hover {
     height:450px;
     display: flex;
     justify-content: center;
+  }
+
+
+  .hidden{
+    display: none;
   }
