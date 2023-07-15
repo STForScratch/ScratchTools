@@ -1,3 +1,8 @@
+// Theme.js by @Daniel4-Scratch
+// Theme.js is a file that is used to set the theme of the page.
+// Apply Theme.js to a page and it will apply the theme to the page.
+// It also dynamically changes the theme when it is changed in the settings.
+
 // Loads the theme from storage and applies it to the page
 chrome.storage.sync.get("theme", function (obj) {
   let theme = obj.theme;
