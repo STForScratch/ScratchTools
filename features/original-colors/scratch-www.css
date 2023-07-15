@@ -454,3 +454,9 @@ button.button {
 .inner>ul>li.search .btn-search {
     background-color: transparent !important;
 }
+.dropdown.with-arrow:before {
+    background-color: var(--ste-blue) !important;
+}
+.button.white {
+    color: var(--ste-blue) !important;
+}
