@@ -89,3 +89,43 @@ body {
 button.uninstall {
     background-color: #00000077 !important;
 }
+.navbar {
+    display: block;
+    position: fixed;
+    background: linear-gradient(0.25turn, #ff8c2d, #ffb740);
+    top: 0;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-left: 0.5em;
+    z-index: 2;
+    border: 0px solid black;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    margin: 0px;
+    padding-left: 2rem;
+    height: 3.5rem;
+    font-size: 18px;
+    box-sizing: border-box;
+    color: white;
+  }
+
+  .sticon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-image: url("/extras/icons/icontrans128.png");
+    background-position: 50% 50%;
+    background-size: 2.5rem 2.5rem;
+    background-repeat: no-repeat;
+    display: inline-block;
+    float: left;
+  }
+
+  .navbar span{
+    display: inline-block;
+    margin-left: 1rem;
+    margin-top: 0.4rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
