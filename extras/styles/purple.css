@@ -1,7 +1,7 @@
 :root {
     --theme: #6a00ff;
     --background: #13002e;
-    --primary-color: rgb(255, 255, 255);
+    --primary-color: #ffffff;
     --secondary-color: #ffffff77;
     --searchbar-bg: #00000080;
     --searchbar-gears: url("/extras/icons/gear-light.svg");
