@@ -1,5 +1,7 @@
 body {
     font-family: "Inter", sans-serif;
+    color: var(--primary-color);
+    background-color: var(--background);
 }
 
 .theme div {
@@ -29,7 +31,7 @@ body {
 }
 
 .theme {
-    background-color: #eeeeee75;
+    background-color: var(--feature-bg);
     padding: 1rem;
     display: inline-block;
     border-radius: .35rem;
@@ -92,7 +94,7 @@ button.uninstall {
 .navbar {
     display: block;
     position: fixed;
-    background: linear-gradient(0.25turn, #ff8c2d, #ffb740);
+    background: var(--navbar-gradient);
     top: 0;
     padding-top: 0.5em;
     padding-bottom: 0.5em;

@@ -1,51 +1,77 @@
-// Theme.js by @Daniel4-Scratch
-// Theme.js is a file that is used to set the theme of the page.
-// Apply Theme.js to a page and it will apply the theme to the page.
-// It also dynamically changes the theme when it is changed in the settings.
-
-// Loads the theme from storage and applies it to the page
-chrome.storage.sync.get("theme", function (obj) {
-  let theme = obj.theme;
-  if (!theme) theme = "light";
-
-  const themeLink = document.createElement("link");
-  themeLink.setAttribute("rel", "stylesheet");
-  themeLink.setAttribute("href", `/extras/styles/${theme}.css`);
-  themeLink.id = "themecss";
-  document.head.appendChild(themeLink);
-
-  const version = chrome.runtime.getManifest().version_name;
-  if (version.includes("beta")) setBetaTheme();
-});
-
-// Updates the theme when it is changed
-chrome.storage.onChanged.addListener(function (changes, namespace) {
-  for (var key in changes) {
-    if (key === "theme") {
-      document.getElementById("themecss").href = `/extras/styles/${changes[key].newValue}.css`;
-    }
-  }
-});
-
-// Sets the beta theme
-function setBetaTheme() {
-  if (document.querySelector("link[rel=icon]")) {
-    document.querySelector("link[rel=icon]").href =
-      "/extras/icons/beta/beta.svg";
-  }
-  const betaCSS = document.createElement("link");
-  betaCSS.setAttribute("rel", "stylesheet");
-  betaCSS.setAttribute("href", "/extras/styles/beta.css");
-  document.head.appendChild(betaCSS);
-  if (document.head.id == "Popup") {
-    document.getElementById("minilogo").src = "/extras/icons/beta/beta.svg";
-    document.getElementById("popupnote").innerHTML =
-      "Welcome to the beta verison of ScratchTools! This version is not stable and may contain bugs. Please report any bugs you find <a href='https://github.com/STForScratch/ScratchTools/issues' target='_blank'>here</a>.";
-  }
+async function setActiveTheme() {
+  var themes =
+    (await chrome.storage.sync.get("themes"))?.themes || defaultThemes;
+  setTheme(themes.find((el) => el.active).id);
 }
+setActiveTheme();
 
-async function setTheme(themetext) {
-  var theme = document.getElementById("themecss");
-  theme.href = `/extras/styles/${themetext}.css`;
-  await chrome.storage.sync.set({ theme: themetext });
+async function setTheme(themeId) {
+  var enabled =
+    (await chrome.storage.sync.get("themes"))?.themes || defaultThemes;
+  if (enabled.find((el) => !el.theme)) {
+    enabled = defaultThemes;
+    await chrome.storage.sync.set({
+      themes: enabled,
+    });
+  }
+  var active = enabled.find((el) => el.active);
+  var found = enabled.find((el) => el.id === themeId);
+  active.active = false;
+  found.active = true;
+  await chrome.storage.sync.set({
+    themes: enabled,
+  });
+  document.head.querySelector("style.theme")?.remove();
+  var style = document.createElement("style");
+  style.textContent = `
+  :root {
+    --theme: ${found.data.theme};
+    --background: ${found.data.background};
+    --primary-color: ${found.data.primary};
+    --secondary-color: ${found.data.secondary};
+    --searchbar-bg: ${found.data.searchbar};
+    --searchbar-gears: url("/extras/icons/settings.svg");
+    --searchbar-search: ${
+      found.theme === "light"
+        ? 'url("/extras/icons/search.svg")'
+        : 'url("/extras/icons/search-light.svg")'
+    };
+    --mini-logo: url("/extras/icons/mini-logo.svg");
+    --box: ${found.data.box};
+    --feature-bg: ${found.data.feature};
+    --feature-input-bg: ${found.data.input};
+    --feature-slider-bg: ${found.data.slider};
+    --scrollbar-handle: ${found.data.scrollbar};
+    --scrollbar-handle-active: ${found.data.scrollbar_active};
+    --theme-icon: url("/extras/icons/dark.svg");
+    --navbar-gradient: linear-gradient(0.25turn, ${found.data.gradient[0]}, ${
+    found.data.gradient[1]
+  });
+    --campsite: url("/extras/icons/campsitelight.svg");
+  }
+  `;
+  if (found.theme === "light") {
+    style.textContent += `
+    
+    .feedback-btn img {
+      height: 1rem;
+      position: relative;
+      top: 0.2rem;
+      filter: invert(1);
+    }
+    
+    .support-btn img {
+      height: 1rem;
+      position: relative;
+      top: 0.2rem;
+      filter: invert(1);
+    }`;
+  } else {
+    style.textContent += `
+    .settingsButton {
+      filter: brightness(0) invert(1);
+    }`;
+  }
+  style.className = "theme";
+  document.head.appendChild(style);
 }
