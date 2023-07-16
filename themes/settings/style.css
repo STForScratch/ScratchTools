@@ -1,0 +1,133 @@
+body {
+    font-family: "Inter", sans-serif;
+    color: var(--primary-color);
+    background-color: var(--background);
+}
+
+.theme div {
+    padding: 1rem;
+    width: 100%;
+    position: relative;
+    left: -1rem;
+    top: -1rem;
+    border-top-left-radius: .35rem;
+    border-top-right-radius: .35rem;
+    margin-bottom: -1rem;
+    text-align: center;
+}
+
+.themes-box {
+    width: fit-content;
+}
+
+.theme svg {
+    height: 8rem;
+}
+
+.theme p {
+    opacity: .5;
+    margin-top: -.5rem;
+    margin-bottom: 0rem;
+}
+
+.theme {
+    background-color: var(--feature-bg);
+    padding: 1rem;
+    display: inline-block;
+    border-radius: .35rem;
+    width: 18rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.theme button {
+    padding: .5rem;
+    width: 5rem;
+    float: right;
+    color: white;
+    outline: 0px;
+    border-radius: .35rem;
+    border: 0px;
+    font-family: "Inter", sans-serif;
+    margin-bottom: -4rem;
+    position: relative;
+    top: -2.35rem;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity .2s;
+}
+
+.theme button:hover {
+    opacity: .5;
+}
+
+.section {
+    padding: 1rem;
+    width: fit-content;
+}
+
+.section > p {
+    font-size: 1rem;
+    opacity: .75;
+    position: relative;
+    top: -.5rem;
+}
+
+.section > button {
+    padding: 1rem;
+    width: 100%;
+    color: white;
+    background-color: #ff9f00;
+    outline: 0px;
+    border-radius: .35rem;
+    border: 0px;
+    font-family: "Inter", sans-serif;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity .2s, color .2s, background-color .2s;
+    display: inline-block;
+}
+
+button.uninstall {
+    background-color: #00000077 !important;
+}
+.navbar {
+    display: block;
+    position: fixed;
+    background: var(--navbar-gradient);
+    top: 0;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-left: 0.5em;
+    z-index: 2;
+    border: 0px solid black;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    margin: 0px;
+    padding-left: 2rem;
+    height: 3.5rem;
+    font-size: 18px;
+    box-sizing: border-box;
+    color: white;
+  }
+
+  .sticon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-image: url("/extras/icons/icontrans128.png");
+    background-position: 50% 50%;
+    background-size: 2.5rem 2.5rem;
+    background-repeat: no-repeat;
+    display: inline-block;
+    float: left;
+  }
+
+  .navbar span{
+    display: inline-block;
+    margin-left: 1rem;
+    margin-top: 0.4rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }

@@ -1,3 +1,45 @@
+var defaultThemes = [
+  {
+    data: {
+      background: "#ffffff",
+      box: "#eeeeee",
+      feature: "#eeeeee75",
+      gradient: ["#ff8c2d", "#ffb740"],
+      input: "#e4e4e4",
+      primary: "#000000",
+      scrollbar: "#c2bfbf",
+      scrollbar_active: "#b2afaf",
+      searchbar: "#eeeeee",
+      secondary: "#00000077",
+      slider: "#cccccc",
+      theme: "#FF9F00",
+    },
+    id: "64b36b38785a4110e937ac30",
+    title: "Classic Light",
+    active: true,
+    theme: "light",
+  },
+  {
+    data: {
+      background: "#3f3f3f",
+      box: "#eeeeee",
+      feature: "#343434",
+      gradient: ["#ff8c2d", "#ffb740"],
+      input: "#545454",
+      primary: "#ffffff",
+      scrollbar: "#797979",
+      scrollbar_active: "#656565",
+      searchbar: "#ffffff17",
+      secondary: "#ffffff77",
+      slider: "#4b4b4b",
+      theme: "#FF9F00",
+    },
+    id: "64b36b38785a4110e937ac31",
+    title: "Classic Dark",
+    theme: "dark",
+  },
+];
+
 if (document.querySelector(".sparkle")) {
   var sparkle = document.querySelector(".sparkle");
   sparkle.addEventListener("mouseover", function () {
@@ -80,20 +122,6 @@ if (document.querySelector(".suggested")) {
   getSuggestions();
 }
 
-chrome.storage.sync.get("theme", function (obj) {
-  let theme = obj.theme;
-  if (!theme) theme = "light";
-
-  const themeLink = document.createElement("link");
-  themeLink.setAttribute("rel", "stylesheet");
-  themeLink.setAttribute("href", `/extras/styles/${theme}.css`);
-  themeLink.id = "themecss";
-  document.head.appendChild(themeLink);
-
-  const version = chrome.runtime.getManifest().version_name;
-  if (version.includes("beta")) setBetaTheme();
-});
-
 async function getEnabledFeatureCount() {
   var features = await (await fetch("/features/features.json")).json();
   var count = 0;
@@ -169,7 +197,7 @@ chrome.runtime.onMessage.addListener(async function (
   sender,
   sendResponse
 ) {
-  if (msg?.user.username) {
+  if (msg?.user?.username) {
     var data = await (
       await fetch(`https://data.scratchtools.app/isbeta/${msg.user.username}/`)
     ).json();
@@ -258,37 +286,159 @@ function setBetaTheme() {
   }
   // checkCurrentVersion();
 }
+if (window.location.href.includes("extras/index.html")) {
+  window.addEventListener("click", function (e) {
+    if (
+      document.getElementById("themedropdown").contains(e.target) ||
+      document.getElementById("themedropdown-btn").contains(e.target)
+    ) {
+      // Clicked in box
+    } else {
+      document.getElementById("themedropdown").style.display = "none";
+    }
+  });
+  document.getElementById("themedropdown-btn").addEventListener("click", () => {
+    if (document.getElementById("themedropdown").style.display == "block") {
+      document.getElementById("themedropdown").style.display = "none";
+    } else {
+      document.getElementById("themedropdown").style.display = "block";
+    }
+  });
 
-document.getElementById("toggletheme").addEventListener("click", toggletheme);
-
-function toggletheme() {
-  var theme = document.getElementById("themecss");
-  if (theme.href.includes("light")) {
-    theme.href = "/extras/styles/dark.css";
-    chrome.storage.sync.set({ theme: "dark" });
-  } else if (theme.href.includes("dark")) {
-    theme.href = "/extras/styles/light.css";
-    chrome.storage.sync.set({ theme: "light" });
-  } else {
-    theme.href = "/extras/styles/light.css"; // default theme
-    console.error(
-      "ScratchTools:",
-      " Theme not found. Defaulting to light theme."
-    );
+  if (document.querySelector(".dropdown")) {
+    getThemes();
   }
 }
 
-function setTheme(themetext) {
-  var theme = document.getElementById("themecss");
-  theme.href = `/extras/styles/${themetext}.css`;
-  chrome.storage.sync.set({ theme: themetext });
+async function getThemes() {
+  document.querySelectorAll(".dropdown > *").forEach(function (el) {
+    el.remove();
+  });
+  var themes =
+    (await chrome.storage.sync.get("themes"))?.themes || defaultThemes;
+  themes.forEach(function (theme) {
+    var div = document.createElement("div");
+    div.className = "item";
+    div.dataset.id = theme.id;
+    div.textContent = theme.title;
+    var circle = document.createElement("div");
+    circle.className = "circle";
+    circle.style.background = `linear-gradient(135deg, ${theme.data.theme} 050%, ${theme.data.background} 50%)`;
+    div.prepend(circle);
+    document.querySelector(".dropdown").appendChild(div);
+    div.addEventListener("click", async function () {
+      var enabled = (await chrome.storage.sync.get("themes")).themes
+      var active = enabled.find((el) => el.active);
+      var found = enabled.find((el) => el.id === theme.id);
+      active.active = false;
+      found.active = true;
+      await chrome.storage.sync.set({
+        themes: enabled,
+      });
+      document.getElementById("themedropdown").style.display = "none";
+    });
+  });
+  var div = document.createElement("div");
+  div.className = "item";
+  div.textContent = "Theme Store";
+  document.querySelector(".dropdown").appendChild(div);
+  div.addEventListener("click", async function () {
+    document.getElementById("themedropdown").style.display = "none";
+    chrome.tabs.create({
+      url: "/themes/settings/index.html",
+    });
+  });
 }
 
-document.querySelector(".support-btn")?.addEventListener("click", function() {
+chrome.runtime.onMessage.addListener(async function (
+  msg,
+  sender,
+  sendResponse
+) {
+  if (msg.msg === "installedThemesUpdate") {
+    getThemes();
+  } else if (msg.msg === "themeUpdate") {
+    setTheme(msg.value.id);
+  }
+});
+
+async function setActiveTheme() {
+  var themes =
+    (await chrome.storage.sync.get("themes"))?.themes || defaultThemes;
+  setTheme(themes.find((el) => el.active).id);
+}
+setActiveTheme();
+
+async function setTheme(themeId) {
+  var enabled =
+    (await chrome.storage.sync.get("themes"))?.themes || defaultThemes;
+  if (enabled.find((el) => !el.theme)) {
+    enabled = defaultThemes;
+    await chrome.storage.sync.set({
+      themes: enabled,
+    });
+  }
+  var found = enabled.find((el) => el.id === themeId);
+  document.head.querySelector("style.theme")?.remove();
+  var style = document.createElement("style");
+  style.textContent = `
+  :root {
+    --theme: ${found.data.theme};
+    --background: ${found.data.background};
+    --primary-color: ${found.data.primary};
+    --secondary-color: ${found.data.secondary};
+    --searchbar-bg: ${found.data.searchbar};
+    --searchbar-gears: url("/extras/icons/settings.svg");
+    --searchbar-search: ${
+      found.theme === "light"
+        ? 'url("/extras/icons/search.svg")'
+        : 'url("/extras/icons/search-light.svg")'
+    };
+    --mini-logo: url("/extras/icons/mini-logo.svg");
+    --box: ${found.data.box};
+    --feature-bg: ${found.data.feature};
+    --feature-input-bg: ${found.data.input};
+    --feature-slider-bg: ${found.data.slider};
+    --scrollbar-handle: ${found.data.scrollbar};
+    --scrollbar-handle-active: ${found.data.scrollbar_active};
+    --theme-icon: url("/extras/icons/dark.svg");
+    --navbar-gradient: linear-gradient(0.25turn, ${found.data.gradient[0]}, ${
+    found.data.gradient[1]
+  });
+    --campsite: url("/extras/icons/campsitelight.svg");
+  }
+  `;
+  if (found.theme === "light") {
+    style.textContent += `
+    
+    .feedback-btn img {
+      height: 1rem;
+      position: relative;
+      top: 0.2rem;
+      filter: invert(1);
+    }
+    
+    .support-btn img {
+      height: 1rem;
+      position: relative;
+      top: 0.2rem;
+      filter: invert(1);
+    }`;
+  } else {
+    style.textContent += `
+    .settingsButton {
+      filter: brightness(0) invert(1);
+    }`;
+  }
+  style.className = "theme";
+  document.head.appendChild(style);
+}
+
+document.querySelector(".support-btn")?.addEventListener("click", function () {
   chrome.tabs.create({
-    url: "/extras/support/index.html"
-  })
-})
+    url: "/extras/support/index.html",
+  });
+});
 
 document.querySelector(".searchbar").placeholder =
   chrome.i18n.getMessage("search") || "search";

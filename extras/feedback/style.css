@@ -111,7 +111,7 @@ textarea {
 }
 
 button {
-    background-color: #ff9f00;
+    background-color: var(--theme);
     color: white;
     min-width: 10rem;
     font-family: "Inter", sans-serif;
