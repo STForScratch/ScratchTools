@@ -2,7 +2,7 @@
 
 html {
   height: 100%;
-  --radius: 0.35rem;
+  --radius: 0.5rem;
 }
 
 body {
@@ -83,7 +83,7 @@ a {
   padding-left: 1.5rem !important;
   padding-right: 1.5rem !important;
   color: var(--primary-color);
-  border-radius: .35rem;
+  border-radius: .5rem;
   padding: 1rem;
   padding-top: 5px;
   margin-bottom: 0px;
@@ -278,7 +278,7 @@ a {
   top: 0.5rem;
 }
 .searchbar {
-  border-radius: 0.35rem 0px 0px 0.35rem;
+  border-radius: 0.5rem 0px 0px 0.5rem;
   padding: 0.5rem;
   height: 1.75rem;
   padding-left: 1rem;
@@ -321,7 +321,7 @@ a {
 .section1 .note {
   color: rgba(0, 0, 0, 0.8);
   padding: 2em;
-  border-radius: .35rem;
+  border-radius: .5rem;
   margin-top: 1rem;
 }
 .section1 .note.yellow {
@@ -423,7 +423,7 @@ button.secondary-btn {
   background-color: var(--feature-bg);
   padding: 1rem;
   width: 20rem;
-  border-radius: 0.35rem;
+  border-radius: 0.5rem;
   display: inline-block;
   margin-right: 1rem;
   outline: 3px solid #ff9f0000;
@@ -489,14 +489,14 @@ button.secondary-btn {
   position: relative;
   top: 3.1rem;
   border-left: 2px solid var(--searchbar-bg);
-    margin-left: 0.35rem;
+    margin-left: 0.5rem;
 }
 
 .buttons button {
   background-color: var(--searchbar-bg);
   color: white;
   padding: 0.85rem;
-  border-radius: 0.35rem;
+  border-radius: 0.5rem;
   outline: 0px;
   border: 0px;
   font-family: "Inter", sans-serif;

@@ -2,7 +2,7 @@
 
 html {
   height: 100%;
-  --radius: 0.35rem;
+  --radius: 0.5rem;
 }
 
 body {
@@ -25,7 +25,7 @@ h1 {
     height: 4rem;
     width: calc(15rem - 4px);
     display: inline-block;
-    border-radius: .35rem;
+    border-radius: .5rem;
     text-align: left;
     padding: 1rem;
     margin: .75rem;
@@ -91,7 +91,7 @@ a {
   background-color: var(--feature-bg);
   padding: 1rem;
   padding-top: 0rem;
-  border-radius: 0.35rem;
+  border-radius: 0.5rem;
   border: 2px solid var(--searchbar-bg);
   margin-top: 2rem;
 }
@@ -104,7 +104,7 @@ button {
   background-color: var(--theme);
   color: white;
   padding: 0.85rem;
-  border-radius: 0.35rem;
+  border-radius: 0.5rem;
   outline: 0px;
   border: 0px;
   font-family: "Inter", sans-serif;
@@ -129,7 +129,7 @@ button:hover {
     background-color: var(--feature-bg);
     border: 2px solid var(--searchbar-bg);
     padding: 1rem;
-    border-radius: .35rem;
+    border-radius: .5rem;
     text-align: left;
     margin-bottom: 1rem;
     transition: opacity .2s;

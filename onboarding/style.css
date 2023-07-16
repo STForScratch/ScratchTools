@@ -141,7 +141,7 @@ button:hover {
   .themes {
     background-color: #ffffff50;
     padding: 1rem;
-    border-radius: 0.35rem;
+    border-radius: 0.5rem;
   }
 
   button[data-function=end] {

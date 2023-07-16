@@ -2,7 +2,7 @@
 
 html {
   height: 100%;
-  --radius: 0.35rem;
+  --radius: 0.5rem;
 }
 
 body {
@@ -70,7 +70,7 @@ h1 {
   background-color: var(--searchbar-bg);
   color: var(--primary-color);
   padding: 0.5rem;
-  border-radius: 0.35rem;
+  border-radius: 0.5rem;
 }
 
 .messages div.sent {
@@ -82,14 +82,14 @@ h1 {
   background-color: var(--theme);
   color: white;
   padding: 0.5rem;
-  border-radius: 0.35rem;
+  border-radius: 0.5rem;
 }
 
 .messages div.error div {
   background-color: #f24d41;
   color: white;
   padding: 0.5rem;
-  border-radius: 0.35rem;
+  border-radius: 0.5rem;
 }
 
 .messages div.error {
@@ -104,7 +104,7 @@ h1 {
 }
 
 input {
-  border-radius: 0.35rem;
+  border-radius: 0.5rem;
   padding: 0.5rem;
   height: 1.75rem;
   padding-left: 1rem;
@@ -119,7 +119,7 @@ input {
 }
 
 button {
-  border-radius: 0.35rem;
+  border-radius: 0.5rem;
   padding: 0.5rem;
   width: 6rem;
   background-color: var(--theme);

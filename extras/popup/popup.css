@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 html {
-  --radius: .35rem;
+  --radius: .5rem;
   width: 400px;
   font-family: "Inter", sans-serif;
   height: 500px;
@@ -54,7 +54,7 @@ a {
   margin: 2em;
   margin-bottom: 1rem;
   background: var(--feature-bg);
-  border-radius: .35rem;
+  border-radius: .5rem;
   padding: 17px;
   padding-top: 5px;
   position: relative;
