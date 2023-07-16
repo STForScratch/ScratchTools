@@ -148,14 +148,6 @@ if (document.querySelector(".more-settings-btn")) {
         },
         additonalClassNames: ["secondary-btn"],
       });
-      components.push({
-        content: "Open Theme Editor",
-        type: "button",
-        callback: function () {
-          themeEditor.open()
-        },
-        additonalClassNames: ["secondary-btn"],
-      });
     }
     if (!chrome.runtime.getManifest().version_name.endsWith("-beta")) {
       await chrome.runtime.sendMessage(
