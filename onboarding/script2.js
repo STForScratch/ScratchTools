@@ -1,3 +1,43 @@
+var defaultThemes = [
+  {
+    data: {
+      background: "#ffffff",
+      box: "#eeeeee",
+      feature: "#eeeeee75",
+      gradient: ["#ff8c2d", "#ffb740"],
+      input: "#e4e4e4",
+      primary: "#000000",
+      scrollbar: "#c2bfbf",
+      scrollbar_active: "#b2afaf",
+      searchbar: "#eeeeee",
+      secondary: "#00000077",
+      slider: "#cccccc",
+      theme: "#FF9F00",
+    },
+    id: "64b36b38785a4110e937ac30",
+    title: "Classic Light",
+    active: true,
+  },
+  {
+    data: {
+      background: "#3f3f3f",
+      box: "#eeeeee",
+      feature: "#343434",
+      gradient: ["#ff8c2d", "#ffb740"],
+      input: "#545454",
+      primary: "#ffffff",
+      scrollbar: "#797979",
+      scrollbar_active: "#656565",
+      searchbar: "#ffffff17",
+      secondary: "#ffffff77",
+      slider: "#4b4b4b",
+      theme: "#FF9F00",
+    },
+    id: "64b36b38785a4110e937ac31",
+    title: "Classic Dark",
+  },
+];
+
 function gEBI(id) {
   return document.getElementById(id);
 }
@@ -13,63 +53,72 @@ async function start() {
   section[2].classList.remove("hidden");
 }
 async function theme() {
-  section[2].classList.add("hidden");
-  section[3].classList.remove("hidden");
-
-  const light = gEBI("light");
-  const dark = gEBI("dark");
-
-  const themes = {
-    light: {
-      enabled: false,
-      element: gEBI("light"),
-    },
-    dark: {
-      enabled: false,
-      element: gEBI("dark"),
-    },
-    purple:{
-      enabled: false,
-      element: gEBI("purple"),
-    },
-    system:{
-      enabled: true,
-      element: gEBI("system"),
-    }
-  };
-
-  async function changeTheme(theme) {
-    const themePreviewImg = gEBI("theme-preview");
-    if(theme !== "system"){
-      themePreviewImg.src = `/onboarding/themes/${theme}.svg`;
-    }else{
-      themePreviewImg.src = ``;
-    }
-    themes[theme].element.classList.remove("theme-noselect");
-    themes[theme].element.classList.add("theme-select");
-    for (const themeName in themes) {
-      if (themeName !== theme) {
-        themes[themeName].element.classList.remove("theme-select");
-        themes[themeName].element.classList.add("theme-noselect");
-      }
-    }
-
-    await chrome.storage.sync.set({ theme: theme });
+  document.querySelector("#section_2").classList.add("hidden");
+  document.querySelector("#section_3").classList.remove("hidden");
+  var installed =
+    (await chrome.storage.sync.get("themes"))?.themes || defaultThemes;
+  if (installed === defaultThemes) {
+    await chrome.storage.sync.set({
+      themes: defaultThemes,
+    });
   }
+  installed.forEach(function (el) {
+    var div = document.createElement("div");
+    div.className = "circle theme";
+    if (el.active) {
+      div.classList.add("theme-select");
+    }
+    div.addEventListener("click", async function() {
+      installed =
+      (await chrome.storage.sync.get("themes"))?.themes || defaultThemes;
+      if (installed.find((theme) => theme.id === el.id)) {
+        var found = installed.find((theme) => theme.id === el.id)
+        var active = installed.find((theme) => theme.active)
+        active.active = false
+        found.active = true
+        await chrome.storage.sync.set({
+          themes: installed,
+        })
+        div.parentNode.querySelector(".theme-select").classList.remove("theme-select")
+        div.classList.add("theme-select")
+        generatePreview(found.id)
+      } else {
+        div.remove()
+      }
+    })
+    div.style.background = `linear-gradient(135deg, ${el.data.theme} 50%, ${el.data.background} 50%`;
+    document.querySelector(".themes").appendChild(div);
+  });
+  var activeTheme = installed.find((el) => el.active);
+  generatePreview(activeTheme.id);
+}
 
-  const themePreviewImg = gEBI("theme-preview");
-  themes.light.element.onclick = async function () {
-    await changeTheme("light");
-  };
-  themes.dark.element.onclick = async function () {
-    await changeTheme("dark");
-  };
-  themes.purple.element.onclick = async function () {
-    await changeTheme("purple");
-  };
-  themes.system.element.onclick = async function () {
-    await changeTheme("system");
-  };
+async function generatePreview(activeThemeId) {
+  var svgData = await (await fetch("/themes/settings/svgData.svg")).text();
+  document.querySelector(".theme-preview").innerHTML = svgData;
+  var svg = document.querySelector(".theme-preview")
+  var activeTheme = (await chrome.storage.sync.get("themes")).themes
+    .find((el) => el.id === activeThemeId);
+
+    [
+      "theme",
+      "background",
+      "primary",
+      "secondary",
+      "searchbar",
+      "feature",
+      "slider"
+    ].forEach(function (el) {
+      svg.querySelectorAll(`[fill="var(--${el})"]`).forEach(function (element) {
+        element.style.fill = activeTheme.data[el];
+      });
+      svg.querySelectorAll(`[fill="var(--icon)"]`).forEach(function (el) {
+        el.style.fill = activeTheme.theme === "dark" ? "white" : "#3D3D3D";
+      });
+      svg.querySelectorAll(`[stroke="var(--icon)"]`).forEach(function (el) {
+        el.style.stroke = activeTheme.theme === "dark" ? "white" : "#3D3D3D";
+      });
+    });
 }
 
 async function end() {
@@ -149,7 +198,7 @@ async function createFeature(id) {
         });
       } else {
         await chrome.storage.sync.set({
-          features: (featureData.file || featureData.id),
+          features: featureData.file || featureData.id,
         });
       }
     }
