@@ -17,6 +17,7 @@ var defaultThemes = [
     id: "64b36b38785a4110e937ac30",
     title: "Classic Light",
     active: true,
+    theme: "light",
   },
   {
     data: {
@@ -35,6 +36,7 @@ var defaultThemes = [
     },
     id: "64b36b38785a4110e937ac31",
     title: "Classic Dark",
+    theme: "dark",
   },
 ];
 
@@ -119,20 +121,6 @@ async function getSuggestions() {
 if (document.querySelector(".suggested")) {
   getSuggestions();
 }
-
-chrome.storage.sync.get("theme", function (obj) {
-  let theme = obj.theme;
-  if (!theme) theme = "light";
-
-  const themeLink = document.createElement("link");
-  themeLink.setAttribute("rel", "stylesheet");
-  themeLink.setAttribute("href", `/extras/styles/${theme}.css`);
-  themeLink.id = "themecss";
-  document.head.appendChild(themeLink);
-
-  const version = chrome.runtime.getManifest().version_name;
-  if (version.includes("beta")) setBetaTheme();
-});
 
 async function getEnabledFeatureCount() {
   var features = await (await fetch("/features/features.json")).json();
@@ -351,23 +339,6 @@ if (window.location.href.includes("extras/index.html")) {
   }
 }
 
-// Deprecated code
-function toggletheme() {
-  var theme = document.getElementById("themecss");
-  if (theme.href.includes("light")) {
-    theme.href = "/extras/styles/dark.css";
-    chrome.storage.sync.set({ theme: "dark" });
-  } else if (theme.href.includes("dark")) {
-    theme.href = "/extras/styles/light.css";
-    chrome.storage.sync.set({ theme: "light" });
-  } else {
-    theme.href = "/extras/styles/light.css"; // default theme
-    console.error(
-      "ScratchTools:",
-      " Theme not found. Defaulting to light theme."
-    );
-  }
-}
 
 async function setActiveTheme() {
   var themes =
@@ -378,6 +349,12 @@ setActiveTheme()
 
 async function setTheme(themeId) {
   var enabled = (await chrome.storage.sync.get("themes"))?.themes || defaultThemes
+  if (enabled.find((el) => !el.theme)) {
+    enabled = defaultThemes
+    await chrome.storage.sync.set({
+      themes: enabled,
+    })
+  }
   var active = enabled.find((el) => el.active)
   var found = enabled.find((el) => el.id === themeId)
   active.active = false
@@ -423,6 +400,11 @@ async function setTheme(themeId) {
       position: relative;
       top: 0.2rem;
       filter: invert(1);
+    }`
+  } else {
+    style.textContent += `
+    .settingsButton {
+      filter: brightness(0) invert(.75);
     }`
   }
   style.className = "theme"

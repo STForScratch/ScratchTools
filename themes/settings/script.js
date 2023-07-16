@@ -119,6 +119,7 @@ function createScratchToolsTheme(data) {
           title: data.title,
           id: data._id,
           data: data.colors,
+          theme: data.theme,
         });
         await chrome.storage.sync.set({
           themes: enabled,
