@@ -306,39 +306,42 @@ if (window.location.href.includes("extras/index.html")) {
   });
 
   if (document.querySelector(".dropdown")) {
-    async function getThemes() {
-      var themes =
-        (await chrome.storage.sync.get("themes"))?.themes || defaultThemes;
-      themes.forEach(function (theme) {
-        var div = document.createElement("div");
-        div.className = "item";
-        div.dataset.id = theme.id;
-        div.textContent = theme.title;
-        var circle = document.createElement("div");
-        circle.className = "circle";
-        circle.style.background = `linear-gradient(135deg, ${theme.data.theme} 050%, ${theme.data.background} 50%)`;
-        div.prepend(circle);
-        document.querySelector(".dropdown").appendChild(div);
-        div.addEventListener("click", async function () {
-          document.getElementById("themedropdown").style.display = "none";
-          setTheme(theme.id)
-        });
-      });
-      var div = document.createElement("div");
-        div.className = "item";
-        div.textContent = "Theme Store";
-        document.querySelector(".dropdown").appendChild(div);
-        div.addEventListener("click", async function () {
-          document.getElementById("themedropdown").style.display = "none";
-          chrome.tabs.create({
-            url: "/themes/settings/index.html"
-          })
-        });
-    }
-    getThemes();
+    getThemes()
   }
 }
 
+async function getThemes() {
+  document.querySelectorAll(".dropdown > *").forEach(function(el) {
+    el.remove()
+  })
+  var themes =
+    (await chrome.storage.sync.get("themes"))?.themes || defaultThemes;
+  themes.forEach(function (theme) {
+    var div = document.createElement("div");
+    div.className = "item";
+    div.dataset.id = theme.id;
+    div.textContent = theme.title;
+    var circle = document.createElement("div");
+    circle.className = "circle";
+    circle.style.background = `linear-gradient(135deg, ${theme.data.theme} 050%, ${theme.data.background} 50%)`;
+    div.prepend(circle);
+    document.querySelector(".dropdown").appendChild(div);
+    div.addEventListener("click", async function () {
+      document.getElementById("themedropdown").style.display = "none";
+      setTheme(theme.id)
+    });
+  });
+  var div = document.createElement("div");
+    div.className = "item";
+    div.textContent = "Theme Store";
+    document.querySelector(".dropdown").appendChild(div);
+    div.addEventListener("click", async function () {
+      document.getElementById("themedropdown").style.display = "none";
+      chrome.tabs.create({
+        url: "/themes/settings/index.html"
+      })
+    });
+}
 
 async function setActiveTheme() {
   var themes =
