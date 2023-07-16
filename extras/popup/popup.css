@@ -106,7 +106,7 @@ a {
   margin-bottom: 0.5rem;
 }
 .feature p {
-  color: var(--primary-color);
+  color: var(--secondary-color);
   opacity: 0.5;
   padding-right: 4rem;
 }

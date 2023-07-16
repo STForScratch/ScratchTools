@@ -25,10 +25,12 @@ a {
   cursor: pointer;
 }
 
-.more-settings-btn svg {
+.more-settings-btn svg, .feedback-btn svg, .support-btn svg {
   height: 1rem;
   position: relative;
   top: 0.2rem;
+  margin-right: .5rem;
+  width: 1rem;
 }
 
 .more-settings-btn path {
@@ -117,6 +119,7 @@ a {
   opacity: 0.5;
   font-size: 0.8rem;
   padding-right: 4rem;
+  color: var(--secondary-color);
 }
 
 .feature input {

@@ -405,26 +405,10 @@ async function setTheme(themeId) {
     --navbar-gradient: linear-gradient(0.25turn, ${found.data.gradient[0]}, ${
     found.data.gradient[1]
   });
-    --campsite: url("/extras/icons/campsitelight.svg");
+    ${found.theme === "light" ? '--campsite: url("/extras/icons/campsitelight.svg");' : '--campsite: url("/extras/icons/campsitedark.svg");'}
   }
   `;
-  if (found.theme === "light") {
-    style.textContent += `
-    
-    .feedback-btn img {
-      height: 1rem;
-      position: relative;
-      top: 0.2rem;
-      filter: invert(1);
-    }
-    
-    .support-btn img {
-      height: 1rem;
-      position: relative;
-      top: 0.2rem;
-      filter: invert(1);
-    }`;
-  } else {
+  if (found.theme !== "light") {
     style.textContent += `
     .settingsButton {
       filter: brightness(0) invert(1);
