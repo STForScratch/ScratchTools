@@ -375,7 +375,7 @@ async function setTheme(themeId) {
     --secondary-color: ${found.data.secondary};
     --searchbar-bg: ${found.data.searchbar};
     --searchbar-gears: url("/extras/icons/settings.svg");
-    --searchbar-search: url("/extras/icons/search.svg");
+    --searchbar-search: ${found.theme === "light" ? 'url("/extras/icons/search.svg")' : 'url("/extras/icons/search-light.svg")'};
     --mini-logo: url("/extras/icons/mini-logo.svg");
     --box: ${found.data.box};
     --feature-bg: ${found.data.feature};
@@ -407,7 +407,7 @@ async function setTheme(themeId) {
   } else {
     style.textContent += `
     .settingsButton {
-      filter: brightness(0) invert(.75);
+      filter: brightness(0) invert(1);
     }`
   }
   style.className = "theme"
