@@ -197,7 +197,7 @@ chrome.runtime.onMessage.addListener(async function (
   sender,
   sendResponse
 ) {
-  if (msg?.user.username) {
+  if (msg?.user?.username) {
     var data = await (
       await fetch(`https://data.scratchtools.app/isbeta/${msg.user.username}/`)
     ).json();
