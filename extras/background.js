@@ -145,6 +145,20 @@ chrome.storage.onChanged.addListener(async function (changes, namespace) {
     if (key === "features") {
       await cache();
     }
+    if (key === "themes") {
+      if (oldValue.length !== newValue.length) {
+        chrome.runtime.sendMessage({
+          msg: "installedThemesUpdate",
+          value: newValue,
+        })
+      }
+      if (oldValue.find((el) => el.active) !== newValue.find((el) => el.active)) {
+        chrome.runtime.sendMessage({
+          msg: "themeUpdate",
+          value: newValue.find((el) => el.active),
+        })
+      }
+    }
   }
 });
 
@@ -621,7 +635,6 @@ async function getEnabledStyles() {
   }
   return allStyles;
 }
-
 chrome.runtime.onMessage.addListener(async function (
   msg,
   sender,

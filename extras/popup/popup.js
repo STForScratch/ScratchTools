@@ -306,14 +306,14 @@ if (window.location.href.includes("extras/index.html")) {
   });
 
   if (document.querySelector(".dropdown")) {
-    getThemes()
+    getThemes();
   }
 }
 
 async function getThemes() {
-  document.querySelectorAll(".dropdown > *").forEach(function(el) {
-    el.remove()
-  })
+  document.querySelectorAll(".dropdown > *").forEach(function (el) {
+    el.remove();
+  });
   var themes =
     (await chrome.storage.sync.get("themes"))?.themes || defaultThemes;
   themes.forEach(function (theme) {
@@ -327,46 +327,60 @@ async function getThemes() {
     div.prepend(circle);
     document.querySelector(".dropdown").appendChild(div);
     div.addEventListener("click", async function () {
+      var enabled = (await chrome.storage.sync.get("themes")).themes
+      var active = enabled.find((el) => el.active);
+      var found = enabled.find((el) => el.id === theme.id);
+      active.active = false;
+      found.active = true;
+      await chrome.storage.sync.set({
+        themes: enabled,
+      });
       document.getElementById("themedropdown").style.display = "none";
-      setTheme(theme.id)
     });
   });
   var div = document.createElement("div");
-    div.className = "item";
-    div.textContent = "Theme Store";
-    document.querySelector(".dropdown").appendChild(div);
-    div.addEventListener("click", async function () {
-      document.getElementById("themedropdown").style.display = "none";
-      chrome.tabs.create({
-        url: "/themes/settings/index.html"
-      })
+  div.className = "item";
+  div.textContent = "Theme Store";
+  document.querySelector(".dropdown").appendChild(div);
+  div.addEventListener("click", async function () {
+    document.getElementById("themedropdown").style.display = "none";
+    chrome.tabs.create({
+      url: "/themes/settings/index.html",
     });
+  });
 }
+
+chrome.runtime.onMessage.addListener(async function (
+  msg,
+  sender,
+  sendResponse
+) {
+  if (msg.msg === "installedThemesUpdate") {
+    getThemes();
+  } else if (msg.msg === "themeUpdate") {
+    setTheme(msg.value.id);
+  }
+});
 
 async function setActiveTheme() {
   var themes =
-        (await chrome.storage.sync.get("themes"))?.themes || defaultThemes;
-  setTheme(themes.find((el) => el.active).id)
+    (await chrome.storage.sync.get("themes"))?.themes || defaultThemes;
+  setTheme(themes.find((el) => el.active).id);
 }
-setActiveTheme()
+setActiveTheme();
 
 async function setTheme(themeId) {
-  var enabled = (await chrome.storage.sync.get("themes"))?.themes || defaultThemes
+  var enabled =
+    (await chrome.storage.sync.get("themes"))?.themes || defaultThemes;
   if (enabled.find((el) => !el.theme)) {
-    enabled = defaultThemes
+    enabled = defaultThemes;
     await chrome.storage.sync.set({
       themes: enabled,
-    })
+    });
   }
-  var active = enabled.find((el) => el.active)
-  var found = enabled.find((el) => el.id === themeId)
-  active.active = false
-  found.active = true
-  await chrome.storage.sync.set({
-    themes: enabled,
-  })
-  document.head.querySelector("style.theme")?.remove()
-  var style = document.createElement("style")
+  var found = enabled.find((el) => el.id === themeId);
+  document.head.querySelector("style.theme")?.remove();
+  var style = document.createElement("style");
   style.textContent = `
   :root {
     --theme: ${found.data.theme};
@@ -375,7 +389,11 @@ async function setTheme(themeId) {
     --secondary-color: ${found.data.secondary};
     --searchbar-bg: ${found.data.searchbar};
     --searchbar-gears: url("/extras/icons/settings.svg");
-    --searchbar-search: ${found.theme === "light" ? 'url("/extras/icons/search.svg")' : 'url("/extras/icons/search-light.svg")'};
+    --searchbar-search: ${
+      found.theme === "light"
+        ? 'url("/extras/icons/search.svg")'
+        : 'url("/extras/icons/search-light.svg")'
+    };
     --mini-logo: url("/extras/icons/mini-logo.svg");
     --box: ${found.data.box};
     --feature-bg: ${found.data.feature};
@@ -384,10 +402,12 @@ async function setTheme(themeId) {
     --scrollbar-handle: ${found.data.scrollbar};
     --scrollbar-handle-active: ${found.data.scrollbar_active};
     --theme-icon: url("/extras/icons/dark.svg");
-    --navbar-gradient: linear-gradient(0.25turn, ${found.data.gradient[0]}, ${found.data.gradient[1]});
+    --navbar-gradient: linear-gradient(0.25turn, ${found.data.gradient[0]}, ${
+    found.data.gradient[1]
+  });
     --campsite: url("/extras/icons/campsitelight.svg");
   }
-  `
+  `;
   if (found.theme === "light") {
     style.textContent += `
     
@@ -403,15 +423,15 @@ async function setTheme(themeId) {
       position: relative;
       top: 0.2rem;
       filter: invert(1);
-    }`
+    }`;
   } else {
     style.textContent += `
     .settingsButton {
       filter: brightness(0) invert(1);
-    }`
+    }`;
   }
-  style.className = "theme"
-    document.head.appendChild(style)
+  style.className = "theme";
+  document.head.appendChild(style);
 }
 
 document.querySelector(".support-btn")?.addEventListener("click", function () {

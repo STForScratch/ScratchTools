@@ -38,7 +38,7 @@ var defaultThemes = [
   },
 ];
 
-async function getThemes() {
+async function getAvailableThemes() {
   var steThemes = await (
     await fetch("https://data.scratchtools.app/themes/scratchtools/")
   ).json();
@@ -60,7 +60,7 @@ async function getSvgData() {
     themes: enabled,
   });
   svgData = data;
-  getThemes();
+  getAvailableThemes();
 }
 getSvgData();
 
