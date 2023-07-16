@@ -377,7 +377,7 @@ async function setActiveTheme() {
 setActiveTheme()
 
 async function setTheme(themeId) {
-  var enabled = (await chrome.storage.sync.get("themes"))?.themes
+  var enabled = (await chrome.storage.sync.get("themes"))?.themes || defaultThemes
   var active = enabled.find((el) => el.active)
   var found = enabled.find((el) => el.id === themeId)
   active.active = false
