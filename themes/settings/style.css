@@ -82,9 +82,10 @@ body {
     font-family: "Inter", sans-serif;
     cursor: pointer;
     opacity: 1;
-    transition: opacity .2s;
+    transition: opacity .2s, color .2s, background-color .2s;
     display: inline-block;
 }
 
-position: relative;
-top: -2.35rem;
+button.uninstall {
+    background-color: #00000077 !important;
+}

@@ -614,7 +614,7 @@ body[data-filter="Forums"] .feature[data-type*="Forums"] {
     margin-left: 1rem;
     margin-right: 1rem;
     height: max-content;
-    width: 8.5rem;
+    width: 12.5rem;
     box-sizing: border-box;
     background: var(--theme);
     float: right;
@@ -629,7 +629,7 @@ body[data-filter="Forums"] .feature[data-type*="Forums"] {
 
 .themes-div .dropdown .item{
   height: 2.5rem;
-  width: 8.5rem;
+  width: 12.5rem;
   color:white;
   font-size: 1rem;
   background: var(--theme);
