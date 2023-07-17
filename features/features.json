@@ -144,7 +144,7 @@
   },
   {
     "title": "Search Context Menus",
-    "description": "Easily search context menus to select an option efficiently. You can also press enter to select the top option.",
+    "description": "Type and search context menus to select an option efficiently. You can also press enter to select the top option.",
     "credits": ["Bingus the Bingus", "rgantzos"],
     "urls": [
       "https://scratch.mit.edu/users/JefferyTheSuperKat/",
@@ -183,8 +183,8 @@
     "tags": ["New"]
   },
   {
-    "title": "Direct image uploads in the forums",
-    "description": "Allows you to easily upload images to the Scratch forums for posts and signatures without having to use third party image uploading services.",
+    "title": "Direct Image Uploads",
+    "description": "Allows you to upload images to the Scratch forums for posts and signatures without having to use third party image uploading services.",
     "credits": ["ISTILLMAKESTUFF", "TheGlassPenguin", "StickFireGames"],
     "urls": [
       "https://scratch.mit.edu/users/ISTILLMAKESTUFF",
@@ -197,7 +197,7 @@
   },
   {
     "title": "Leave Studio Button",
-    "description": "Adds a button to the curators page of any studios you curate or manage that allows you to easily leave the studio. A confirmation shows first.",
+    "description": "Adds a button to the curators page of any studios you curate or manage that allows you to leave the studio. A confirmation shows first.",
     "credits": ["veloce-vasta", "rgantzos"],
     "urls": [
       "https://github.com/veloce-vasta",
@@ -284,7 +284,7 @@
   },
   {
     "title": "Search Assets",
-    "description": "Easily search through costume and sound assets in the editor.",
+    "description": "Search through costume and sound assets in the editor.",
     "credits": ["Mario_best_games", "rgantzos"],
     "urls": [
       "https://scratch.mit.edu/users/Mario_best_games/",
@@ -436,7 +436,7 @@
   },
   {
     "title": "Preview Textboxes",
-    "description": "Preview your profile About Me and What I'm Working On, and your projects' Instructions and Notes and Credits, so that you can see what it will look like to other users!",
+    "description": "Preview your profile About Me and What I'm Working On, and your projects' Instructions and Notes and Credits, so that you can see what it will look like to other users.",
     "credits": ["rgantzos", "Giolaboman"],
     "urls": [
       "https://scratch.mit.edu/users/rgantzos/",
@@ -540,7 +540,7 @@
   },
   {
     "title": "Comment On Profile With Comments Closed",
-    "description": "If your profile comments are closed, you can now comment on your own profile anyways! Only you can comment on the profile.",
+    "description": "If your profile comments are closed, you can now comment on your own profile anyways. Only you can comment on the profile.",
     "credits": ["7pace", "rgantzos"],
     "urls": [
       "https://scratch.mit.edu/users/7pace/",
@@ -680,7 +680,7 @@
   },
   {
     "title": "Set Featured Project",
-    "description": "On any project page, you can easily set your profile's featured project with the click of a button- even unshared projects.",
+    "description": "On any project page, you can set your profile's featured project with the click of a button- even unshared projects.",
     "credits": ["rgantzos"],
     "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "set-featured-project",
@@ -689,7 +689,7 @@
   },
   {
     "title": "ScratchFormat",
-    "description": "Format your comments with bold, italic, and more! The comments will look amazing to everyone using ScratchTools.",
+    "description": "Format your comments with bold, italic, and more. The comments will be styled to everyone using ScratchTools.",
     "credits": ["petabyt", "Daniel4-Scratch"],
     "urls": ["https://danielc.dev/", "https://github.com/Daniel4-Scratch"],
     "file": "scratchformat",
@@ -698,7 +698,7 @@
   },
   {
     "title": "Expand Editor",
-    "description": "Use the ctrl+e to easily switch between the default block editor view and one that hides the stage to expand editor itself!",
+    "description": "Use the ctrl+e to switch between the default block editor view and one that hides the stage to expand editor itself.",
     "credits": ["Jazza", "rgantzos"],
     "urls": [
       "https://github.com/Jazza-231",
@@ -768,7 +768,7 @@
   },
   {
     "title": "Pin Projects to My Stuff",
-    "description": "Pin one of your projects to the top of your My Stuff page with the click of a button! You can unpin your pinned project or switch out your pinned project for another one as well!",
+    "description": "Pin one of your projects to the top of your My Stuff page with the click of a button. You can unpin your pinned project or switch out your pinned project for another one as well.",
     "credits": ["Scratchfangs", "rgantzos"],
     "urls": [
       "https://scratch.mit.edu/users/Scratchfangs/",
@@ -781,7 +781,7 @@
   },
   {
     "title": "Last Key Pressed",
-    "description": "On any project page and in the editor, you can view the last key that you have pressed while on that project, according to the project itself! This is good for games such as platformers.",
+    "description": "On any project page and in the editor, you can view the last key that you have pressed while on that project, according to the project itself. This is good for games such as platformers.",
     "credits": ["rgantzos"],
     "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "last-key-pressed",
@@ -827,7 +827,7 @@
   },
   {
     "title": "Editor Dark Mode",
-    "description": "Is light to bright in the editor? Now you can enjoy darkness in the editor, with a beautiful dark theme.",
+    "description": "Switches the editor's light color scheme to a darker one.",
     "credits": ["infinitytec"],
     "urls": ["https://github.com/infinitytec"],
     "file": "editor-dark-mode",
@@ -845,7 +845,7 @@
   },
   {
     "title": "Colored Messages",
-    "description": "Colors your messages based on the type of message, such as loves, favorites, and studio invites!",
+    "description": "Colors your messages based on the type of message, such as loves, favorites, and studio invites.",
     "credits": ["_nix"],
     "urls": ["https://scratch.mit.edu/users/_nix/"],
     "file": "colored-messages",
@@ -918,7 +918,7 @@
   },
   {
     "title": "Project Idea Generator",
-    "description": "On the Scratch Ideas page, there will be a section where you can generate project ideas if you need some!",
+    "description": "On the Scratch Ideas page, there will be a section where you can generate project ideas if you need some.",
     "credits": ["Lasted10"],
     "urls": ["https://scratch.mit.edu/users/Lasted10_Forever/"],
     "file": "idea-generator",
@@ -971,7 +971,7 @@
   },
   {
     "title": "Unbold Site Text",
-    "description": "Makes it so that all text across Scratch is unbolded, and just normal text!",
+    "description": "Makes it so that all text across Scratch is unbolded, and just normal text.",
     "credits": ["Scratchfangs", "rgantzos"],
     "urls": [
       "https://scratch.mit.edu/users/scratchfangs/",
