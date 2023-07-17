@@ -60,7 +60,7 @@ async function getImportantMessages(messages) {
   var box = await ScratchTools.waitForElement(
     ".messages-details.inner > .messages-social"
   );
-  if (data) {
+  if (data.length !== 0) {
     var div = document.createElement("div");
     div.className = "ste-important";
     var h4 = document.createElement("h4");
