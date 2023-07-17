@@ -139,7 +139,7 @@ if (document.querySelector(".feedback-btn")) {
     .querySelector(".feedback-btn")
     .addEventListener("click", function () {
       chrome.tabs.create({
-        url: "/extras/feedback/index.html",
+        url: "https://scratch.mit.edu/scratchtools/feedback/auth/",
       });
     });
 }
@@ -327,7 +327,7 @@ async function getThemes() {
     div.prepend(circle);
     document.querySelector(".dropdown").appendChild(div);
     div.addEventListener("click", async function () {
-      var enabled = (await chrome.storage.sync.get("themes")).themes
+      var enabled = (await chrome.storage.sync.get("themes")).themes;
       var active = enabled.find((el) => el.active);
       var found = enabled.find((el) => el.id === theme.id);
       active.active = false;
@@ -359,6 +359,8 @@ chrome.runtime.onMessage.addListener(async function (
     getThemes();
   } else if (msg.msg === "themeUpdate") {
     setTheme(msg.value.id);
+  }
+  if (msg.msg === "returnedUser") {
   }
 });
 
@@ -405,7 +407,11 @@ async function setTheme(themeId) {
     --navbar-gradient: linear-gradient(0.25turn, ${found.data.gradient[0]}, ${
     found.data.gradient[1]
   });
-    ${found.theme === "light" ? '--campsite: url("/extras/icons/campsitelight.svg");' : '--campsite: url("/extras/icons/campsitedark.svg");'}
+    ${
+      found.theme === "light"
+        ? '--campsite: url("/extras/icons/campsitelight.svg");'
+        : '--campsite: url("/extras/icons/campsitedark.svg");'
+    }
   }
   `;
   if (found.theme !== "light") {
@@ -913,4 +919,36 @@ if (document.querySelector(".buttons")) {
       el.classList.add("selected");
     });
   });
+}
+
+async function getUser() {
+  try {
+    var data = await (
+      await fetch("https://scratch.mit.edu/session/", {
+        headers: {
+          "x-requested-with": "XMLHttpRequest",
+        },
+      })
+    ).json();
+    return data?.user;
+  } catch (err) {
+    return null;
+  }
+}
+
+async function getNotifications() {
+  var user = await getUser()
+  if (user) {
+    var data = await (await fetch(`https://data.scratchtools.app/messages/${user.username}/count/`)).json()
+    if (data.count !== 0) {
+      var span = document.createElement("span")
+      span.textContent = data.count.toString()
+      span.className = "notification"
+      document.querySelector(".feedback-btn").appendChild(span)
+      document.querySelector(".feedback-btn").style.bottom = "2.5rem"
+    }
+  }
+}
+if (document.querySelector(".feedback-btn")) {
+  getNotifications();
 }
