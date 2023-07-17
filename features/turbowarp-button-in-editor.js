@@ -10,10 +10,29 @@ if (
         outerDiv.className =
           "menu-bar_menu-bar-item_oLDa- scratchtoolsTurbowarp";
         var a = document.createElement("a");
-        a.href = window.location.href.replace(
-          "https://scratch.mit.edu/projects/",
-          "https://turbowarp.org/"
-        );
+        a.addEventListener("click", async function () {
+          let projectToken = (
+            await (
+              await fetch(
+                `https://api.scratch.mit.edu/projects/${
+                  window.location.pathname.split("/")[2]
+                }?nocache=${Date.now()}`,
+                {
+                  headers: {
+                    "x-token": ScratchTools.Auth.user.token,
+                  },
+                }
+              )
+            ).json()
+          ).project_token;
+          window.location.href =
+            window.location.href.replace(
+              "https://scratch.mit.edu/projects/",
+              "https://turbowarp.org/"
+            ) +
+            "?token=" +
+            projectToken;
+        });
         var outerSpan = document.createElement("span");
         outerSpan.className =
           "button_outlined-button_1bS__ menu-bar_menu-bar-button_3IDN0 community-button_community-button_2Lo_g";
