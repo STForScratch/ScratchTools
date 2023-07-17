@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "important-messages",
+    "versionAdded": "v3.0.0"
+  },
+  {
+    "version": 2,
     "id": "hide-footer",
     "versionAdded": "v3.0.0"
   },
