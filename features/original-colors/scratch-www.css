@@ -462,3 +462,7 @@ h3 span {
 button.button.see-inside-button {
   background-color: var(--ste-blue);
 }
+
+.creator-badge {
+    background-color: var(--ste-blue) !important;
+}
