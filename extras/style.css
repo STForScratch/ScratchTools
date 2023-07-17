@@ -662,3 +662,16 @@ body[data-filter="Forums"] .feature[data-type*="Forums"] {
 .themes-div .dropdown .item:hover{
   background:color-mix(in srgb, var(--theme) 95%, black);
 }
+
+.feedback-btn .notification {
+  background: var(--theme);
+  padding: 0.5rem;
+  color: var(--primary-color);
+  margin: 0px;
+  margin-left: 0.25rem;
+  border-radius: 1rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  transform: scale(80%);
+  display: inline-block;
+}

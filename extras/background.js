@@ -255,6 +255,25 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
         world: "MAIN",
       });
     }
+  } else if (
+    tab.url?.startsWith("https://scratch.mit.edu/scratchtools/feedback/auth/")
+  ) {
+    if (info.status === "loading") {
+      await chrome.scripting.executeScript({
+        args: [chrome.runtime.id],
+        target: { tabId: tabId },
+        func: injectExtensionPageUrl,
+        world: "MAIN",
+      });
+      function injectExtensionPageUrl(id) {
+        window.steSupportId = id;
+      }
+      await chrome.scripting.executeScript({
+        target: { tabId: tabId },
+        files: [`/extras/feedback/page.js`],
+        world: "MAIN",
+      });
+    }
   } else {
     if (info.status === "loading") {
       var ScratchTools = {};
@@ -584,6 +603,12 @@ chrome.runtime.onMessageExternal.addListener(async function (
   if (msg.msg === "openSupportChat") {
     await chrome.tabs.create({
       url: "/extras/support/chat/index.html?code="+msg.code
+    })
+    chrome.tabs.remove(sender.tab.id, function() { });
+  }
+  if (msg.msg === "openFeedbackPage") {
+    await chrome.tabs.create({
+      url: "/extras/feedback/index.html?code="+msg.code
     })
     chrome.tabs.remove(sender.tab.id, function() { });
   }
