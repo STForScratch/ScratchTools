@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "shared-clipboard",
+    "versionAdded": "v3.0.0"
+  },
+  {
+    "version": 2,
     "id": "important-messages",
     "versionAdded": "v3.0.0"
   },
