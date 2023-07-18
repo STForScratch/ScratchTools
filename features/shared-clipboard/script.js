@@ -1,10 +1,10 @@
 var interval;
 
 async function loadSharedClipboard() {
-  var preLoadedClipboard = await ScratchTools.storage.get("sharedClipboard");
   await ScratchTools.waitForElement(
     "div[class^='paint-editor_mode-selector_']"
   );
+  var preLoadedClipboard = await ScratchTools.storage.get("sharedClipboard");
   var lastClipboard = ScratchTools.Scratch.scratchPaint().clipboard.items;
   if (preLoadedClipboard) {
     lastClipboard = preLoadedClipboard;
@@ -13,7 +13,8 @@ async function loadSharedClipboard() {
       pasteOffset: 0,
     };
   }
-  setInterval(async function () {
+  fetchClipboardData();
+  async function fetchClipboardData() {
     if (ScratchTools.Scratch.scratchPaint()) {
       var loadedClipboard = await ScratchTools.storage.get("sharedClipboard");
       var currentClipboard =
@@ -31,6 +32,7 @@ async function loadSharedClipboard() {
         lastClipboard = currentClipboard;
       }
     }
-  }, 1000);
+    setTimeout(fetchClipboardData, 500);
+  }
 }
 loadSharedClipboard();
