@@ -24,6 +24,7 @@ async function loadSharedClipboard() {
         });
         lastClipboard = currentClipboard;
       } else if (
+        loadedClipboard &&
         JSON.stringify(lastClipboard) !== JSON.stringify(loadedClipboard)
       ) {
         ScratchTools.Scratch.scratchPaint().clipboard.items = loadedClipboard;
