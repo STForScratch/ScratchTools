@@ -23,13 +23,23 @@ function checkIfElementHasClass(_element) {
     }
     return [false];
 }
-ScratchTools.waitForElements(".preview-row .action-button", function(e) {
+// ScratchTools.waitForElements(".preview-row .action-button", function(e) {
+//     let rem = checkIfElementHasClass(e)
+//     if (rem[0]) {
+//         e.title = e.title + " (" + rem[1] + ")"
+//         savedElement.push([e, " (" + rem[1] + ")"])
+//     }
+// }, "title=text", false)
+
+var actionButtonWait = ScratchTools.waitForElements(".preview-row .action-button", function(e) {
+    console.log(e)
     let rem = checkIfElementHasClass(e)
     if (rem[0]) {
         e.title = e.title + " (" + rem[1] + ")"
         savedElement.push([e, " (" + rem[1] + ")"])
     }
-}, "title=text", false)
+})
+
 ScratchTools.setDisable("compact-buttons", function() {
     const savedElementLength = savedElement.length
     for (let i = 0; i < savedElementLength; i++) {
