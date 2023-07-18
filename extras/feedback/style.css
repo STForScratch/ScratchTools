@@ -74,12 +74,12 @@ p {
 
 .msg {
   border-bottom: 2px solid var(--theme);
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .msg h3 {
   font-size: 1.2rem;
-  margin-top: .75rem;
+  margin-top: 0.75rem;
 }
 
 .msg.unread h3 {
@@ -92,7 +92,7 @@ textarea.feedback {
   padding: 1rem;
   resize: vertical;
   max-height: calc(100% - 25rem);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   border: 0px;
   color: var(--primary-color);
   font-family: "Inter", sans-serif;
@@ -101,23 +101,23 @@ textarea.feedback {
 
 button.submit {
   background-color: var(--theme);
-  width: 100%;;
+  width: 100%;
   display: block;
   margin-top: 1rem;
-  padding: .75rem;
-  border-radius: .5rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
   border: 0px;
   outline: none;
   color: white;
   font-family: "Inter", sans-serif;
   cursor: pointer;
-  transition: top .2s;
+  transition: top 0.2s;
   position: relative;
   top: 0px;
 }
 
 button.submit:hover {
-  top: .25rem;
+  top: 0.25rem;
 }
 
 .submission-successful {
@@ -125,6 +125,12 @@ button.submit:hover {
   color: white;
   font-size: 1rem;
   margin-top: 1rem;
-  padding: .75rem;
-  border-radius: .5rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+.msg p {
+  white-space: pre;
+  text-wrap: wrap;
+  word-break: break-word;
 }
