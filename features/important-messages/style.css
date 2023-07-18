@@ -1,0 +1,33 @@
+.ste-important > div > div {
+    padding: 1rem;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.ste-important > div {
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    background-color: rgb(255, 241, 241);
+    margin-top: 1rem;
+}
+
+.ste-important {
+    margin-bottom: 2rem;
+}
+
+.ste-important-content {
+    background-color: white;
+    padding: 1rem;
+    line-height: 1.3rem;
+    width: fit-content;
+    max-width: 100%;
+    margin-top: 1rem;
+    border-radius: 5px;
+    border: 1px solid #d9d9d9;
+}
+
+.ste-important h4 span {
+    font-style: italic;
+    opacity: .5;
+    margin-left: .5rem;
+    font-weight: 400;
+}

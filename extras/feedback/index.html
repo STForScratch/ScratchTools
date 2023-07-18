@@ -3,6 +3,7 @@
     <head>
         <title>Feedback | ScratchTools</title>
         <link rel="stylesheet" href="/extras/feedback/style.css">
+        <script src="/extras/styles/theme.js" defer></script> 
     </head>
     <body>
         <div class="navbar">
@@ -10,11 +11,18 @@
             <span></span>
             <div style="float: left; margin-left: 1em"></div>
           </div>
-        <h1>Feedback</h1>
-        <h3>We appreciate feedback for the extension, it helps us make it even better. Please try to keep all feedback constructive.</h3>
-        <input class="ste-username-input" type="text" placeholder="Username">
-        <textarea class="ste-feedback-input" placeholder="Feedback goes here..."></textarea>
-        <button class="ste-submit">Submit Feedback</button>
+          <div class="split split-left">
+        <h1>Feedback Center</h1>
+        <p>Here, you can submit feedback to ScratchTools developers.</p>
+        <textarea class="feedback" placeholder="Type feedback here..."></textarea>
+        <button class="submit">Submit</button>
+        <div class="submission-successful" style="display: none;">Your feedback has been successfully submitted. Developers will be able to review it. If more information is needed, you will be notified via the extension.</div>
+    </div>
+    <div class="split split-right">
+        <h1>Messages</h1>
+        <p>Messages from ScratchTools appear here. Unread messages are highlighted.</p>
+        <div class="messages"></div>
+    </divc>
     </body>
     <script src="/extras/feedback/script.js"></script>
 </html>

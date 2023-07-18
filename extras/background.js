@@ -4,9 +4,9 @@ let cachedStyles;
 async function cache() {
   cachedStorage = (await chrome.storage.sync.get("features"))?.features || "";
   cachedStyles = await getEnabledStyles();
-  return true
+  return true;
 }
-cache()
+cache();
 
 async function checkBetaUpdates() {
   var loggedIn = await (
@@ -143,7 +143,21 @@ chrome.runtime.onInstalled.addListener(async function (object) {
 chrome.storage.onChanged.addListener(async function (changes, namespace) {
   for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
     if (key === "features") {
-      await cache()
+      await cache();
+    }
+    if (key === "themes") {
+      if (oldValue.length !== newValue.length) {
+        chrome.runtime.sendMessage({
+          msg: "installedThemesUpdate",
+          value: newValue,
+        })
+      }
+      if (oldValue.find((el) => el.active) !== newValue.find((el) => el.active)) {
+        chrome.runtime.sendMessage({
+          msg: "themeUpdate",
+          value: newValue.find((el) => el.active),
+        })
+      }
     }
   }
 });
@@ -221,6 +235,44 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
     });
     function redirectToFeature(url) {
       window.location.href = url;
+    }
+  } else if (
+    tab.url?.startsWith("https://scratch.mit.edu/scratchtools/support/auth/")
+  ) {
+    if (info.status === "loading") {
+      await chrome.scripting.executeScript({
+        args: [chrome.runtime.id],
+        target: { tabId: tabId },
+        func: injectExtensionPageUrl,
+        world: "MAIN",
+      });
+      function injectExtensionPageUrl(id) {
+        window.steSupportId = id;
+      }
+      await chrome.scripting.executeScript({
+        target: { tabId: tabId },
+        files: [`/extras/support/page.js`],
+        world: "MAIN",
+      });
+    }
+  } else if (
+    tab.url?.startsWith("https://scratch.mit.edu/scratchtools/feedback/auth/")
+  ) {
+    if (info.status === "loading") {
+      await chrome.scripting.executeScript({
+        args: [chrome.runtime.id],
+        target: { tabId: tabId },
+        func: injectExtensionPageUrl,
+        world: "MAIN",
+      });
+      function injectExtensionPageUrl(id) {
+        window.steSupportId = id;
+      }
+      await chrome.scripting.executeScript({
+        target: { tabId: tabId },
+        files: [`/extras/feedback/page.js`],
+        world: "MAIN",
+      });
     }
   } else {
     if (info.status === "loading") {
@@ -548,6 +600,18 @@ chrome.runtime.onMessageExternal.addListener(async function (
   sender,
   sendResponse
 ) {
+  if (msg.msg === "openSupportChat") {
+    await chrome.tabs.create({
+      url: "/extras/support/chat/index.html?code="+msg.code
+    })
+    chrome.tabs.remove(sender.tab.id, function() { });
+  }
+  if (msg.msg === "openFeedbackPage") {
+    await chrome.tabs.create({
+      url: "/extras/feedback/index.html?code="+msg.code
+    })
+    chrome.tabs.remove(sender.tab.id, function() { });
+  }
   if (msg === "openSettings") {
     await chrome.tabs.create({
       url: "/extras/index.html",
@@ -596,12 +660,16 @@ async function getEnabledStyles() {
   }
   return allStyles;
 }
-
 chrome.runtime.onMessage.addListener(async function (
   msg,
   sender,
   sendResponse
 ) {
+  if (msg.msg === "openSupportAuth") {
+    chrome.tabs.create({
+      url: "https://scratch.mit.edu/scratchtools/support/auth/",
+    })
+  }
   if (msg.action === "getStyles") {
     sendResponse({ data: cachedStyles });
   }
@@ -669,12 +737,10 @@ chrome.alarms.onAlarm.addListener(async function () {
 async function injectStyles(tabId) {
   cachedStorage = (await chrome.storage.sync.get("features"))?.features || "";
   cachedStyles = await getEnabledStyles();
-  console.log(JSON.stringify(cachedStyles))
+  console.log(JSON.stringify(cachedStyles));
   var theStyles = [];
   cachedStyles.forEach(function (el) {
-    el.url = chrome.runtime.getURL(
-      `/features/${el.feature.id}/${el.file}`
-    );
+    el.url = chrome.runtime.getURL(`/features/${el.feature.id}/${el.file}`);
     theStyles.push(el);
   });
   await chrome.scripting.executeScript({

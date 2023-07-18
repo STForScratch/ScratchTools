@@ -1,0 +1,19 @@
+:root {
+    --theme: #6a00ff;
+    --background: #13002e;
+    --primary-color: #ffffff;
+    --secondary-color: #ffffff77;
+    --searchbar-bg: #00000080;
+    --searchbar-gears: url("/extras/icons/gear-light.svg");
+    --searchbar-search: url("/extras/icons/search-light.svg");
+    --mini-logo: url("/extras/icons/mini-logo.svg");
+    --box: #00000080;
+    --feature-bg: #00000080;
+    --feature-input-bg: #44444475;
+    --feature-slider-bg: #44444475;
+    --scrollbar-handle: #00000080;
+    --scrollbar-handle-active: #38383880;
+    --theme-icon: url("/extras/icons/light.svg");
+    --navbar-gradient: linear-gradient(0.25turn, #6a00ff, #9447ff);
+    --campsite: url("/extras/icons/campsitedark.svg");
+}

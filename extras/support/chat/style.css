@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+html {
+  height: 100%;
+  --radius: 0.5rem;
+}
+
+body {
+  padding: 3rem;
+  margin: 0em;
+  font-family: "Inter", sans-serif;
+  background-color: var(--background);
+  text-align: left;
+  padding-top: 4rem;
+  font-size: 1rem;
+  overflow-y: hidden;
+  color: var(--primary-color);
+}
+
+h1 {
+  font-size: 2.25rem;
+  margin-bottom: 0px;
+}
+
+.navbar {
+  display: block;
+  position: fixed;
+  background: var(--navbar-gradient);
+  top: 0;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-left: 0.5em;
+  z-index: 2;
+  border: 0px solid black;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  margin: 0px;
+  padding-left: 2rem;
+}
+
+.sticon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-image: url("/extras/icons/icontrans128.png");
+  background-position: 50% 50%;
+  background-size: 2.5rem 2.5rem;
+  background-repeat: no-repeat;
+  display: inline-block;
+  float: left;
+}
+
+.messages > div {
+  display: block;
+  padding: 0.5rem;
+}
+
+.messages > div > div {
+    max-width: 80%;
+    display: inline-block;
+}
+
+.messages div.received {
+  text-align: left;
+  padding-left: 0px;
+}
+
+.messages div.received div {
+  background-color: var(--searchbar-bg);
+  color: var(--primary-color);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.messages div.sent {
+  text-align: right;
+  padding-right: 0px;
+}
+
+.messages div.sent div {
+  background-color: var(--theme);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.messages div.error div {
+  background-color: #f24d41;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.messages div.error {
+  text-align: left;
+  padding-left: 0px;
+}
+
+.chat {
+  width: 40rem;
+  max-width: 100%;
+  font-size: 1rem;
+}
+
+input {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  height: 1.75rem;
+  padding-left: 1rem;
+  width: calc(100% - 8rem);
+  margin-top: 1rem;
+  border: none;
+  background: var(--searchbar-bg);
+  outline: none;
+  margin-bottom: 2.75em;
+  color: var(--primary-color);
+  font-family: "Inter", sans-serif;
+}
+
+button {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: 6rem;
+  background-color: var(--theme);
+  color: white;
+  font-family: "Inter", sans-serif;
+  border: none;
+  outline: none;
+  margin-left: 0.5rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+  transition: opacity .2s, background-color .2s, color .2s;
+  opacity: 1;
+}
+
+
+button.send.no-content {
+    opacity: .5;
+    color: var(--primary-color);
+    background-color: var(--searchbar-bg);
+}
+
+button.send:hover {
+    opacity: .5;
+}
+
+.chat {
+    position: relative;
+    height: calc(100vh - 5rem);
+}
+
+input, button.send {
+    position: absolute;
+    bottom: 0px;
+}
+
+input {
+    left: 0px;
+}
+
+button.send {
+    right: 0px;
+    bottom: 2.25rem;
+    cursor: pointer;
+}
+
+.messages {
+    height: calc(100% - 12rem);
+    overflow-y: scroll;
+}
+
+.error a {
+    color: white;
+}
