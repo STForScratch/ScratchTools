@@ -19,17 +19,17 @@ async function loadSharedClipboard() {
       var loadedClipboard = await ScratchTools.storage.get("sharedClipboard");
       var currentClipboard =
         ScratchTools.Scratch.scratchPaint().clipboard.items;
-      if (JSON.stringify(lastClipboard) !== JSON.stringify(loadedClipboard)) {
-        ScratchTools.Scratch.scratchPaint().clipboard.items = loadedClipboard;
-        lastClipboard = loadedClipboard;
-      } else if (
-        JSON.stringify(lastClipboard) !== JSON.stringify(currentClipboard)
-      ) {
+      if (JSON.stringify(lastClipboard) !== JSON.stringify(currentClipboard)) {
         await ScratchTools.storage.set({
           key: "sharedClipboard",
           value: currentClipboard,
         });
         lastClipboard = currentClipboard;
+      } else if (
+        JSON.stringify(lastClipboard) !== JSON.stringify(loadedClipboard)
+      ) {
+        ScratchTools.Scratch.scratchPaint().clipboard.items = loadedClipboard;
+        lastClipboard = loadedClipboard;
       }
     }
     setTimeout(fetchClipboardData, 500);
