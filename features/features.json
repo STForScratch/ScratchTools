@@ -1,6 +1,12 @@
 [
   {
     "version": 2,
+    "id": "simplify-action-buttons",
+    "versionAdded": "v3.0.0"
+  },
+  {
+  {
+    "version": 2,
     "id": "important-messages",
     "versionAdded": "v3.0.0"
   },
