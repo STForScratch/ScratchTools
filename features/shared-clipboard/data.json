@@ -6,6 +6,5 @@
   ],
   "type": ["Editor"],
   "tags": ["New"],
-  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
-  "similar": []
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }]
 }

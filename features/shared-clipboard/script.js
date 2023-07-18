@@ -1,11 +1,9 @@
-var interval;
-
 async function loadSharedClipboard() {
   await ScratchTools.waitForElement(
     "div[class^='paint-editor_mode-selector_']"
   );
-  var preLoadedClipboard = await ScratchTools.storage.get("sharedClipboard");
-  var lastClipboard = ScratchTools.Scratch.scratchPaint().clipboard.items;
+  let preLoadedClipboard = await ScratchTools.storage.get("sharedClipboard");
+  let lastClipboard = ScratchTools.Scratch.scratchPaint().clipboard.items;
   if (preLoadedClipboard) {
     lastClipboard = preLoadedClipboard;
     ScratchTools.Scratch.scratchPaint().clipboard = {
@@ -16,8 +14,8 @@ async function loadSharedClipboard() {
   fetchClipboardData();
   async function fetchClipboardData() {
     if (ScratchTools.Scratch.scratchPaint()) {
-      var loadedClipboard = await ScratchTools.storage.get("sharedClipboard");
-      var currentClipboard =
+      let loadedClipboard = await ScratchTools.storage.get("sharedClipboard");
+      let currentClipboard =
         ScratchTools.Scratch.scratchPaint().clipboard.items;
       if (JSON.stringify(lastClipboard) !== JSON.stringify(currentClipboard)) {
         await ScratchTools.storage.set({
