@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
+@media (prefers-color-scheme: dark) {
+  :root{
+    --preview-svg: url("./themes/dark.svg");
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root{
+    --preview-svg: url("./themes/light.svg");
+  }
+}
+
 .center-perfectly {
   margin: 0;
   position: absolute;
@@ -59,6 +70,7 @@ button:hover {
     top: 0px;
     transition: opacity .3s, border .3s, top .3s;
     color: black;
+    cursor: pointer;
 }
 
 .feature:hover {
@@ -95,25 +107,8 @@ button:hover {
     overflow-y: hidden;
 }
 
-.theme-select{
-    border:3px solid #456EFF;
-  }
-  .theme-noselect{
-    border:3px solid #ff9f00;
-  }
-  .theme-circle{
-    height:50px; 
-    width:50px; 
-    border-radius:100%; 
-    cursor:pointer; 
-    margin-top:2.48px; 
-    margin-left:2.48px;
-  }
-  .theme-dark{
-      background:#3F3F3F; 
-  }
-  .theme-light{
-    background: white;
+.circle.theme-select{
+    border:3px solid white;
   }
   .theme-preview{
     position:absolute;
@@ -121,10 +116,38 @@ button:hover {
   }
   .themes{
     display: flex;
-    margin-top:370px
+    margin-top:23rem;
   }
   .theme-selection{
-    height:450px;
+    height:30.25rem;
     display: flex;
     justify-content: center;
+  }
+
+
+  .hidden{
+    display: none;
+  }
+
+  .circle {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 2.5rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    border: 3px solid #ff9f00;
+  }
+
+  .themes {
+    background-color: #ffffff50;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  button[data-function=end] {
+    margin-top: 1rem;
+  }
+
+  .theme-preview svg {
+    height: 22rem;
   }

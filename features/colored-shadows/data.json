@@ -4,7 +4,7 @@
     "credits": [
       { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
     ],
-    "type": ["Website"],
+    "type": ["Editor"],
     "tags": ["New"],
     "dynamic": true,
     "styles": [{ "file": "style.css", "runOn": "/*" }]

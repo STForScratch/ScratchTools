@@ -1,0 +1,13 @@
+{
+    "title": "Important Messages",
+    "description": "Separate important messages on the messages page.",
+    "credits": [
+      { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+    ],
+    "type": ["Website"],
+    "tags": ["New", "Featured"],
+    "scripts": [{ "file": "script.js", "runOn": "/messages*" }],
+    "styles": [{ "file": "style.css", "runOn": "/messages*" }],
+    "similar": ["block-messages", "hide-advertisements"]
+  }
+  

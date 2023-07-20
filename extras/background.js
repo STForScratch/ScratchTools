@@ -1,3 +1,64 @@
+let cachedStorage;
+let cachedStyles;
+
+async function cache() {
+  cachedStorage = (await chrome.storage.sync.get("features"))?.features || "";
+  cachedStyles = await getEnabledStyles();
+  return true;
+}
+cache();
+
+async function checkBetaUpdates() {
+  var loggedIn = await (
+    await fetch("https://scratch.mit.edu/session/", {
+      headers: {
+        accept: "*/*",
+        "accept-language": "en, en;q=0.8",
+        "sec-ch-ua":
+          '"Google Chrome";v="111", "Not(A:Brand";v="8", "Chromium";v="111"',
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": '"macOS"',
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-origin",
+        "x-requested-with": "XMLHttpRequest",
+      },
+      referrer: "https://scratch.mit.edu/",
+      referrerPolicy: "strict-origin-when-cross-origin",
+      body: null,
+      method: "GET",
+      mode: "cors",
+      credentials: "include",
+    })
+  ).json();
+  if (loggedIn?.user) {
+    var isBeta = (
+      await (
+        await fetch(
+          `https://data.scratchtools.app/isbeta/${loggedIn.user.username}/`
+        )
+      ).json()
+    ).beta;
+    if (isBeta) {
+      var data = await (
+        await fetch("https://data.scratchtools.app/latest/")
+      ).json();
+      if (
+        data.version !== chrome.runtime.getManifest().version_name ||
+        (await (await fetch("/extras/beta/beta.json")).json()).beta !==
+          data.beta
+      ) {
+        chrome.tabs.create({
+          url: "/extras/beta/index.html",
+        });
+      }
+    }
+  }
+}
+if (chrome.runtime.getManifest().version_name.endsWith("-beta")) {
+  checkBetaUpdates();
+}
+
 chrome.runtime.onInstalled.addListener(async function (object) {
   try {
     var featureData = await (await fetch("/features/features.json")).json();
@@ -79,6 +140,28 @@ chrome.runtime.onInstalled.addListener(async function (object) {
   }
 });
 
+chrome.storage.onChanged.addListener(async function (changes, namespace) {
+  for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
+    if (key === "features") {
+      await cache();
+    }
+    if (key === "themes") {
+      if (oldValue.length !== newValue.length) {
+        chrome.runtime.sendMessage({
+          msg: "installedThemesUpdate",
+          value: newValue,
+        })
+      }
+      if (oldValue.find((el) => el.active) !== newValue.find((el) => el.active)) {
+        chrome.runtime.sendMessage({
+          msg: "themeUpdate",
+          value: newValue.find((el) => el.active),
+        })
+      }
+    }
+  }
+});
+
 chrome.tabs.onUpdated.addListener(async function (tabId, info) {
   var tab = await chrome.tabs.get(tabId);
   if (tab?.url?.startsWith("https://scratch.mit.edu/")) {
@@ -152,6 +235,44 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
     });
     function redirectToFeature(url) {
       window.location.href = url;
+    }
+  } else if (
+    tab.url?.startsWith("https://scratch.mit.edu/scratchtools/support/auth/")
+  ) {
+    if (info.status === "loading") {
+      await chrome.scripting.executeScript({
+        args: [chrome.runtime.id],
+        target: { tabId: tabId },
+        func: injectExtensionPageUrl,
+        world: "MAIN",
+      });
+      function injectExtensionPageUrl(id) {
+        window.steSupportId = id;
+      }
+      await chrome.scripting.executeScript({
+        target: { tabId: tabId },
+        files: [`/extras/support/page.js`],
+        world: "MAIN",
+      });
+    }
+  } else if (
+    tab.url?.startsWith("https://scratch.mit.edu/scratchtools/feedback/auth/")
+  ) {
+    if (info.status === "loading") {
+      await chrome.scripting.executeScript({
+        args: [chrome.runtime.id],
+        target: { tabId: tabId },
+        func: injectExtensionPageUrl,
+        world: "MAIN",
+      });
+      function injectExtensionPageUrl(id) {
+        window.steSupportId = id;
+      }
+      await chrome.scripting.executeScript({
+        target: { tabId: tabId },
+        files: [`/extras/feedback/page.js`],
+        world: "MAIN",
+      });
     }
   } else {
     if (info.status === "loading") {
@@ -333,6 +454,7 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
           ScratchTools.Features.data = dataFeatures;
         }
         addData();
+        injectStyles(tabId);
         for (var i in data) {
           var feature = data[i];
           if (feature.version === 2) {
@@ -442,35 +564,15 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
                   var newData = await (
                     await fetch(`/features/${data[el].id}/data.json`)
                   ).json();
+                  console.log(data[el].id);
                   newData.scripts?.forEach(function (script) {
+                    console.log(script.file);
                     if (new URL(tab.url).pathname.match(script.runOn)) {
                       chrome.scripting.executeScript({
                         target: { tabId: tabId },
                         files: [`/features/${data[el]["id"]}/${script.file}`],
                         world: newData.world?.toUpperCase() || "MAIN",
                       });
-                    }
-                  });
-                  newData.styles?.forEach(function (style) {
-                    if (new URL(tab.url).pathname.match(style.runOn)) {
-                      chrome.scripting.executeScript({
-                        args: [
-                          data[el].id,
-                          chrome.runtime.getURL(
-                            `/features/${data[el]["id"]}/${style.file}`
-                          ),
-                        ],
-                        target: { tabId: tabId },
-                        func: insertCSS,
-                        world: "MAIN",
-                      });
-                      function insertCSS(feature, path) {
-                        var link = document.createElement("link");
-                        link.rel = "stylesheet";
-                        link.href = path;
-                        link.dataset.feature = feature;
-                        document.head.prepend(link);
-                      }
                     }
                   });
                 } else {
@@ -498,6 +600,18 @@ chrome.runtime.onMessageExternal.addListener(async function (
   sender,
   sendResponse
 ) {
+  if (msg.msg === "openSupportChat") {
+    await chrome.tabs.create({
+      url: "/extras/support/chat/index.html?code="+msg.code
+    })
+    chrome.tabs.remove(sender.tab.id, function() { });
+  }
+  if (msg.msg === "openFeedbackPage") {
+    await chrome.tabs.create({
+      url: "/extras/feedback/index.html?code="+msg.code
+    })
+    chrome.tabs.remove(sender.tab.id, function() { });
+  }
   if (msg === "openSettings") {
     await chrome.tabs.create({
       url: "/extras/index.html",
@@ -519,7 +633,7 @@ chrome.runtime.onMessageExternal.addListener(async function (
         storagePromises.forEach(function (promise) {
           if (promise.key === key && !promise.resolved) {
             promise.resolve(value);
-            promise.resolved = true
+            promise.resolved = true;
           }
         });
       }
@@ -527,11 +641,38 @@ chrome.runtime.onMessageExternal.addListener(async function (
   }
 });
 
+async function getEnabledStyles() {
+  var allStyles = [];
+  var data = (await (await fetch(`/features/features.json`)).json()).filter(
+    (el) => el.version === 2 && cachedStorage.includes(el.id)
+  );
+  for (var i in data) {
+    var feature = data[i];
+    var styles = (
+      await (await fetch(`/features/${feature.id}/data.json`)).json()
+    ).styles;
+    if (styles) {
+      for (var i2 in styles) {
+        styles[i2].feature = feature;
+        allStyles.push(styles[i2]);
+      }
+    }
+  }
+  return allStyles;
+}
 chrome.runtime.onMessage.addListener(async function (
   msg,
   sender,
   sendResponse
 ) {
+  if (msg.msg === "openSupportAuth") {
+    chrome.tabs.create({
+      url: "https://scratch.mit.edu/scratchtools/support/auth/",
+    })
+  }
+  if (msg.action === "getStyles") {
+    sendResponse({ data: cachedStyles });
+  }
   if (msg?.text === "get-logged-in-user") {
     sendResponse(true);
     const data = await (
@@ -592,3 +733,36 @@ chrome.alarms.onAlarm.addListener(async function () {
     chrome.action.setBadgeText({ text: "" });
   }
 });
+
+async function injectStyles(tabId) {
+  cachedStorage = (await chrome.storage.sync.get("features"))?.features || "";
+  cachedStyles = await getEnabledStyles();
+  console.log(JSON.stringify(cachedStyles));
+  var theStyles = [];
+  cachedStyles.forEach(function (el) {
+    el.url = chrome.runtime.getURL(`/features/${el.feature.id}/${el.file}`);
+    theStyles.push(el);
+  });
+  await chrome.scripting.executeScript({
+    args: [theStyles],
+    target: { tabId: tabId },
+    func: injectTheStyles,
+    world: "MAIN",
+  });
+  function injectTheStyles(styles) {
+    if (!document.querySelector(".scratchtools-styles-div *")) {
+      var div = document.createElement("div");
+      div.className = "scratchtools-styles-div";
+      document.head.appendChild(div);
+      styles.forEach(function (style) {
+        if (window.location.pathname.match(style.runOn)) {
+          var link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href = style.url;
+          link.dataset.feature = style.feature.id;
+          document.querySelector(".scratchtools-styles-div").appendChild(link);
+        }
+      });
+    }
+  }
+}

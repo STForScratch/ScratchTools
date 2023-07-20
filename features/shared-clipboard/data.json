@@ -1,0 +1,10 @@
+{
+  "title": "Shared Clipboard",
+  "description": "Allows you to copy and paste items between paint editors in different projects.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Editor"],
+  "tags": ["New"],
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }]
+}

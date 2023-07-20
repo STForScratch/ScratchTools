@@ -1,0 +1,14 @@
+{
+    "title": "Revert to Blue",
+    "description": "Changes all of the Scratch website's colors back to the original coloring from 3.0, before purple.",
+    "credits": [
+      { "username": "MaterArc", "url": "https://scratch.mit.edu/users/materarc/" },
+      { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+    ],
+    "styles": [{ "file": "scratch-www.css", "runOn": "/*" }],
+    "tags": ["Theme", "New"],
+    "type": ["Website", "Editor"],
+    "dynamic": true,
+    "resources": [{ "name": "reply", "path": "/reply.svg" }]
+  }
+  

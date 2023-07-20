@@ -11,33 +11,70 @@ if (
   ScratchTools.type = "Website";
 }
 
-var storagePromises = []
+var storagePromises = [];
 ScratchTools.storage = {
-  get: async function(key) {
+  get: async function (key) {
     chrome.runtime.sendMessage(ScratchTools.id, { message: "storageGet", key });
     return new Promise((resolve, reject) => {
-      storagePromises.push({ key: key, resolve })
+      storagePromises.push({ key: key, resolve });
     });
   },
-  set: async function({ key, value }) {
-    chrome.runtime.sendMessage(ScratchTools.id, { message: "storageSet", key, value });
-  }
-}
+  set: async function ({ key, value }) {
+    chrome.runtime.sendMessage(ScratchTools.id, {
+      message: "storageSet",
+      key,
+      value,
+    });
+  },
+};
 
-var allSelectors = {};
-var allCallbacksForWait = {};
-ScratchTools.waitForElements = function (selector, callback, id, rework) {
-  if (allCallbacksForWait[selector] === undefined) {
-    allCallbacksForWait[selector] = [{ callback: callback, id: id }];
-  } else {
-    allCallbacksForWait[selector].push({ callback: callback, id: id });
+let waitForSingleElements = [];
+
+var allWaitInstances = {};
+let totalRunners = 0;
+ScratchTools.waitForElements = function (selector, callback) {
+  totalRunners += 1;
+  var thisRunner = "wait-"+(totalRunners - 1).toString();
+  while (allWaitInstances[thisRunner]) {
+    totalRunners += 1;
+    thisRunner = "wait-"+(totalRunners - 1).toString();
   }
-  if (rework) {
-    allSelectors[id] = [document.querySelectorAll(selector)];
-  } else {
-    allSelectors[id] = [];
-    returnScratchToolsSelectorsMutationObserverCallbacks();
+  document.querySelectorAll(selector).forEach(function (el) {
+    callback(el);
+  });
+  allWaitInstances[thisRunner] = {
+    selector,
+    callback,
+    elements: [],
+  };
+  returnScratchToolsSelectorsMutationObserverCallbacks()
+  return {
+    id: thisRunner,
+    remove: function() {
+      allWaitInstances[thisRunner].removed = true
+    }
   }
+};
+
+var stylesDiv = document.querySelector("div.scratchtools-styles-div");
+ScratchTools.waitForElements("head > *", function (el) {
+  if (el !== stylesDiv) {
+    document.head.appendChild(stylesDiv);
+  }
+});
+
+ScratchTools.waitForElement = async function (selector) {
+  return new Promise((resolve) => {
+    if (document.querySelector(selector)) {
+      resolve(document.querySelector(selector));
+    } else {
+      waitForSingleElements.push({
+        selector: selector,
+        resolved: false,
+        resolve,
+      });
+    }
+  });
 };
 
 function enableScratchToolsSelectorsMutationObserver() {
@@ -52,16 +89,25 @@ function enableScratchToolsSelectorsMutationObserver() {
 enableScratchToolsSelectorsMutationObserver();
 
 function returnScratchToolsSelectorsMutationObserverCallbacks() {
-  Object.keys(allCallbacksForWait).forEach(function (el) {
-    document.querySelectorAll(el).forEach(function (element) {
-      allCallbacksForWait[el].forEach(function (el2) {
-        if (!allSelectors[el2.id].includes(element)) {
-          allSelectors[el2.id].push(element);
-          el2.callback(element);
+  Object.keys(allWaitInstances).forEach(function (key) {
+    var waitInstance = allWaitInstances[key];
+    if (!waitInstance.removed) {
+      document.querySelectorAll(waitInstance.selector).forEach(function (el) {
+        if (!waitInstance.elements.includes(el)) {
+          allWaitInstances[key].elements.push(el);
+          waitInstance.callback(el);
         }
       });
-    });
+    }
   });
+  waitForSingleElements
+    .filter((promise) => !promise.resolved)
+    .forEach(function (promise) {
+      if (document.querySelector(promise.selector)) {
+        promise.resolved = true;
+        promise.resolve(document.querySelector(promise.selector));
+      }
+    });
 }
 
 ScratchTools.createModal = function (titleText, description, buttons) {

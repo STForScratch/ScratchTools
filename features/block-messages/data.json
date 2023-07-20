@@ -22,5 +22,5 @@
     { "file": "messages.css", "runOn": "/messages*" }
   ],
   "dynamic": true,
-  "similar": ["block-studios"]
+  "similar": ["block-studios", "important-messages"]
 }

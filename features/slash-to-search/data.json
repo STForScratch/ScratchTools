@@ -1,0 +1,10 @@
+{
+  "title": "Slash to Search",
+  "description": "Click the slash key (/) to select the search bar and start typing.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New"],
+  "scripts": [{ "file": "script.js", "runOn": "/*" }]
+}
