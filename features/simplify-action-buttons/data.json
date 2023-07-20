@@ -1,6 +1,6 @@
 {
    "title":"Simplify Action Buttons",
-   "description":"Changes the buttons under a project to icon-only",
+   "description":"Displays project action buttons underneath Notes and Credits as their icons.",
    "credits":[
       {
          "username":"MaterArc",
