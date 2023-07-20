@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "simplify-action-buttons",
+    "versionAdded": "v3.0.0"
+  },
+  {
+    "version": 2,
     "id": "slash-to-search",
     "versionAdded": "v3.0.0"
   },
