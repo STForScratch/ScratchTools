@@ -389,7 +389,7 @@ h3 span {
 }
 
 .studio-activity .studio-activity-icon {
-  color: filter sepia(300%) hue-rotate(185deg) saturate(450%);
+  filter: sepia(300%) hue-rotate(185deg) saturate(450%);
 }
 
 .title-banner.mod-messages {
