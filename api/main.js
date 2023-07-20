@@ -39,9 +39,6 @@ ScratchTools.waitForElements = function (selector, callback) {
     totalRunners += 1;
     thisRunner = "wait-"+(totalRunners - 1).toString();
   }
-  document.querySelectorAll(selector).forEach(function (el) {
-    callback(el);
-  });
   allWaitInstances[thisRunner] = {
     selector,
     callback,
@@ -93,7 +90,7 @@ function returnScratchToolsSelectorsMutationObserverCallbacks() {
     var waitInstance = allWaitInstances[key];
     if (!waitInstance.removed) {
       document.querySelectorAll(waitInstance.selector).forEach(function (el) {
-        if (!waitInstance.elements.includes(el)) {
+        if (!waitInstance.elements?.includes(el)) {
           allWaitInstances[key].elements.push(el);
           waitInstance.callback(el);
         }
