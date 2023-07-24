@@ -159,9 +159,15 @@ if (document.querySelector(".more-settings-btn")) {
         type: "code",
       },
       {
-        content: "Copy Feature Codes",
+        content: "Export Settings",
         type: "button",
-        callback: returnFeatureCode,
+        callback: downloadSettings,
+        additonalClassNames: ["secondary-btn"],
+      },
+      {
+        content: "Import Settings",
+        type: "button",
+        callback: importSettingsInput,
         additonalClassNames: ["secondary-btn"],
       },
     ];
@@ -937,18 +943,103 @@ async function getUser() {
 }
 
 async function getNotifications() {
-  var user = await getUser()
+  var user = await getUser();
   if (user) {
-    var data = await (await fetch(`https://data.scratchtools.app/messages/${user.username}/count/`)).json()
+    var data = await (
+      await fetch(
+        `https://data.scratchtools.app/messages/${user.username}/count/`
+      )
+    ).json();
     if (data.count !== 0) {
-      var span = document.createElement("span")
-      span.textContent = data.count.toString()
-      span.className = "notification"
-      document.querySelector(".feedback-btn").appendChild(span)
-      document.querySelector(".feedback-btn").style.bottom = "2.5rem"
+      var span = document.createElement("span");
+      span.textContent = data.count.toString();
+      span.className = "notification";
+      document.querySelector(".feedback-btn").appendChild(span);
+      document.querySelector(".feedback-btn").style.bottom = "2.5rem";
     }
   }
 }
 if (document.querySelector(".feedback-btn")) {
   getNotifications();
+}
+
+async function downloadSettings() {
+  var allFeatures = await (await fetch("/features/features.json")).json();
+  for (var i in allFeatures) {
+    var feature = allFeatures[i];
+    if (feature.version === 2) {
+      var featureId = feature.id;
+      feature = await (await fetch(`/features/${feature.id}/data.json`)).json();
+      feature.file = featureId;
+      feature.version = 2;
+    }
+    allFeatures[i] = feature;
+  }
+  var data = {
+    features: {},
+    options: {},
+  };
+  var storage = (await chrome.storage.sync.get("features"))?.features || "";
+  for (var i in allFeatures) {
+    var feature = allFeatures[i];
+    data.features[feature.file] = storage.includes(feature.file);
+    if (feature.options && storage.includes(feature.file)) {
+      for (var optionI in feature.options) {
+        var option = feature.options[optionI];
+        var optionData = (await chrome.storage.sync.get(option.id))?.[
+          option.id
+        ];
+        data.options[option.id] = optionData;
+      }
+    }
+  }
+  var dataStr =
+    "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data));
+  var dlAnchorElem = document.querySelector(".download-file");
+  dlAnchorElem.setAttribute("href", dataStr);
+  dlAnchorElem.setAttribute("download", "scratchtools-settings.json");
+  dlAnchorElem.click();
+}
+
+async function loadFromJson(data) {
+  await chrome.storage.sync.set({
+    features: Object.keys(data.features)
+      .filter((el) => data.features[el])
+      .join("."),
+  });
+  for (var i in Object.keys(data.options)) {
+    await chrome.storage.sync.set({
+      [Object.keys(data.options)[i]]:
+        data.options[Object.keys(data.options)[i]],
+    });
+  }
+  window.location.href = window.location.href;
+}
+
+document.querySelector(".settings-load-input").addEventListener("input", async function() {
+  var input = document.querySelector(".settings-load-input")
+  if (input.files[0].type === "application/json") {
+    var data = await parseFile(input.files[0])
+    if (Object.keys(data).length === 2 && data.features && data.options) {
+      loadFromJson(data)
+    } else {
+      alert("Invalid file.")
+    }
+  } else {
+    alert("Invalid file.")
+  }
+})
+
+async function parseFile(file) {
+  return new Promise((resolve, reject) => {
+    const fileReader = new FileReader()
+    fileReader.onload = event => resolve(JSON.parse(event.target.result))
+    fileReader.onerror = error => reject(error)
+    fileReader.readAsText(file)
+  })
+}
+
+function importSettingsInput() {
+  var input = document.querySelector(".settings-load-input")
+  input.click()
 }

@@ -43,6 +43,9 @@ socket.onmessage = async function (event) {
       features: data.features,
     });
   }
+  if (data.type === "downloadSettings") {
+    await downloadSettings()
+  }
   if (data.error) {
     var div = document.createElement("div");
     div.classList.add("error");
@@ -123,4 +126,42 @@ function send() {
       });
     }
   }
+}
+
+async function downloadSettings() {
+  var allFeatures = await (await fetch("/features/features.json")).json();
+  for (var i in allFeatures) {
+    var feature = allFeatures[i];
+    if (feature.version === 2) {
+      var featureId = feature.id;
+      feature = await (await fetch(`/features/${feature.id}/data.json`)).json();
+      feature.file = featureId;
+      feature.version = 2;
+    }
+    allFeatures[i] = feature;
+  }
+  var data = {
+    features: {},
+    options: {},
+  };
+  var storage = (await chrome.storage.sync.get("features"))?.features || "";
+  for (var i in allFeatures) {
+    var feature = allFeatures[i];
+    data.features[feature.file] = storage.includes(feature.file);
+    if (feature.options && storage.includes(feature.file)) {
+      for (var optionI in feature.options) {
+        var option = feature.options[optionI];
+        var optionData = (await chrome.storage.sync.get(option.id))?.[
+          option.id
+        ];
+        data.options[option.id] = optionData;
+      }
+    }
+  }
+  var dataStr =
+    "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data));
+  var dlAnchorElem = document.querySelector(".download-file");
+  dlAnchorElem.setAttribute("href", dataStr);
+  dlAnchorElem.setAttribute("download", "scratchtools-settings.json");
+  dlAnchorElem.click();
 }
