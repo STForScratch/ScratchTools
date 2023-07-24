@@ -464,9 +464,14 @@ button.button.see-inside-button {
 }
 
 .creator-badge {
-    background-color: var(--ste-blue) !important;
+  background-color: var(--ste-blue) !important;
 }
 
-.studio-tab-nav a.active.nav_link:hover>li {
+.studio-tab-nav a.active.nav_link:hover > li {
   background-color: #488ce4;
+}
+
+.inplace-textarea:focus {
+  box-shadow: 0 0 0 4px rgba(92, 149, 214, 0.25);
+  border: 2px solid var(--ste-blue);
 }
