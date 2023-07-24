@@ -464,10 +464,10 @@ button.button.see-inside-button {
 }
 
 .creator-badge {
-    background-color: var(--ste-blue) !important;
+  background-color: var(--ste-blue) !important;
 }
 
-.studio-tab-nav a.active.nav_link:hover>li {
+.studio-tab-nav a.active.nav_link:hover > li {
   background-color: #488ce4;
 }
 
