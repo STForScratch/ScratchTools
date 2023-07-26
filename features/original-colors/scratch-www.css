@@ -475,3 +475,15 @@ button.button.see-inside-button {
   box-shadow: 0 0 0 4px rgba(92, 149, 214, 0.25);
   border: 2px solid var(--ste-blue);
 }
+
+a#go-back-link {
+  color: white !important;
+}
+
+div.box.v-tabs > div.tabs-index li > a {
+  color: #888 !important;
+}
+
+#content > div.cols > div.col-4 > div > div > ul > li.first.active > a {
+  color: white !important;
+}
