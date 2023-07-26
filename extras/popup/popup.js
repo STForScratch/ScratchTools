@@ -963,6 +963,8 @@ if (document.querySelector(".feedback-btn")) {
   getNotifications();
 }
 
+document.querySelector(".searchbar")?.focus()
+
 async function downloadSettings() {
   var allFeatures = await (await fetch("/features/features.json")).json();
   for (var i in allFeatures) {
