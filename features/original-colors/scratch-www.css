@@ -487,3 +487,25 @@ div.box.v-tabs > div.tabs-index li > a {
 #content > div.cols > div.col-4 > div > div > ul > li.first.active > a {
   color: white !important;
 }
+
+#login-dropdown, .join-scratch {
+  background-color: var(--scratchr2-blue);
+  border-color: #2d97ccff !important;
+}
+
+#topnav ul.account-nav>li.sign-in:hover, #topnav ul.account-nav>li.sign-in.open {
+  background-color: #256185ff !important;
+}
+
+#topnav ul.account-nav .sign-in .popover {
+  background-color: var(--scratchr2-blue) !important;
+  border-color: #256185ff !important;
+}
+
+#topnav ul.account-nav .sign-in .popover .arrow:after {
+  border-bottom-color:var(--scratchr2-blue) !important;
+}
+
+#topnav ul.account-nav .sign-in .popover .arrow {
+  border-bottom-color: #256185ff !important;
+}
