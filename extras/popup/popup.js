@@ -1045,3 +1045,20 @@ function importSettingsInput() {
   var input = document.querySelector(".settings-load-input")
   input.click()
 }
+
+if (document.querySelector(".news")) {
+  getNews()
+}
+
+async function getNews() {
+  var data = await (await fetch("https://data.scratchtools.app/news/")).json()
+  var note = document.createElement("div")
+  note.className = "note blue"
+  var h3 = document.createElement("h3")
+  h3.textContent = data.title
+  var span = document.createElement("span")
+  span.innerHTML = data.description
+  note.appendChild(h3)
+  note.appendChild(span)
+  document.querySelector(".news").appendChild(note)
+}
