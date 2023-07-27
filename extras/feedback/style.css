@@ -133,4 +133,5 @@ button.submit:hover {
   white-space: pre;
   text-wrap: wrap;
   word-break: break-word;
+  line-height: 1.5rem;
 }
