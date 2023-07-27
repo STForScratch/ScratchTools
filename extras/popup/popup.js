@@ -1018,7 +1018,7 @@ async function loadFromJson(data) {
   window.location.href = window.location.href;
 }
 
-document.querySelector(".settings-load-input").addEventListener("input", async function() {
+document.querySelector(".settings-load-input")?.addEventListener("input", async function() {
   var input = document.querySelector(".settings-load-input")
   if (input.files[0].type === "application/json") {
     var data = await parseFile(input.files[0])
