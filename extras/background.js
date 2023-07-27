@@ -80,9 +80,15 @@ chrome.runtime.onInstalled.addListener(async function (object) {
       version: version,
     });
     if (storedVersion && storedVersion !== version) {
-      await chrome.tabs.create({
-        url: "/changelog/index.html",
-      });
+      if (version === "3.0.0") {
+        await chrome.tabs.create({
+          url: "/changelog/3/index.html",
+        });
+      } else {
+        await chrome.tabs.create({
+          url: "/changelog/index.html",
+        });
+      }
     }
   }
   if (
@@ -150,13 +156,15 @@ chrome.storage.onChanged.addListener(async function (changes, namespace) {
         chrome.runtime.sendMessage({
           msg: "installedThemesUpdate",
           value: newValue,
-        })
+        });
       }
-      if (oldValue.find((el) => el.active) !== newValue.find((el) => el.active)) {
+      if (
+        oldValue.find((el) => el.active) !== newValue.find((el) => el.active)
+      ) {
         chrome.runtime.sendMessage({
           msg: "themeUpdate",
           value: newValue.find((el) => el.active),
-        })
+        });
       }
     }
   }
@@ -602,15 +610,15 @@ chrome.runtime.onMessageExternal.addListener(async function (
 ) {
   if (msg.msg === "openSupportChat") {
     await chrome.tabs.create({
-      url: "/extras/support/chat/index.html?code="+msg.code
-    })
-    chrome.tabs.remove(sender.tab.id, function() { });
+      url: "/extras/support/chat/index.html?code=" + msg.code,
+    });
+    chrome.tabs.remove(sender.tab.id, function () {});
   }
   if (msg.msg === "openFeedbackPage") {
     await chrome.tabs.create({
-      url: "/extras/feedback/index.html?code="+msg.code
-    })
-    chrome.tabs.remove(sender.tab.id, function() { });
+      url: "/extras/feedback/index.html?code=" + msg.code,
+    });
+    chrome.tabs.remove(sender.tab.id, function () {});
   }
   if (msg === "openSettings") {
     await chrome.tabs.create({
@@ -668,7 +676,7 @@ chrome.runtime.onMessage.addListener(async function (
   if (msg.msg === "openSupportAuth") {
     chrome.tabs.create({
       url: "https://scratch.mit.edu/scratchtools/support/auth/",
-    })
+    });
   }
   if (msg.action === "getStyles") {
     sendResponse({ data: cachedStyles });
