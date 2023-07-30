@@ -71,13 +71,7 @@ async function getMessages() {
       var h3 = document.createElement("h3");
       h3.textContent = `${
         el.unread ? "Unread Message" : "Message"
-      } from ${new Date(el.time).toLocaleDateString()} at ${
-        new Date(el.time).toLocaleTimeString().split(":")[0] +
-        ":" +
-        new Date(el.time).toLocaleTimeString().split(":")[1] +
-        " " +
-        new Date(el.time).toLocaleTimeString().split(" ")[1]
-      }`;
+      } from ${new Date(el.time).toLocaleString()}`;
       div.appendChild(h3);
 
       var p = document.createElement("p");

@@ -59,5 +59,13 @@ var verifyUser = async function (callback) {
 };
 
 verifyUser(function (code) {
-    chrome.runtime.sendMessage(steSupportId, { msg: "openSupportChat", code });
+  chrome.runtime.sendMessage(steSupportId, { msg: "openSupportChat", code });
 });
+
+if (Scratch?.INIT_DATA?.LOGGED_IN_USER?.model?.username) {
+  verifyUser(function (code) {
+    chrome.runtime.sendMessage(steSupportId, { msg: "openFeedbackPage", code });
+  });
+} else {
+  window.location.href = "/login/";
+}

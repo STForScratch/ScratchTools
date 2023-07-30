@@ -389,7 +389,7 @@ h3 span {
 }
 
 .studio-activity .studio-activity-icon {
-  color: filter sepia(300%) hue-rotate(185deg) saturate(450%);
+  filter: sepia(300%) hue-rotate(185deg) saturate(450%);
 }
 
 .title-banner.mod-messages {
@@ -464,5 +464,48 @@ button.button.see-inside-button {
 }
 
 .creator-badge {
-    background-color: var(--ste-blue) !important;
+  background-color: var(--ste-blue) !important;
+}
+
+.studio-tab-nav a.active.nav_link:hover > li {
+  background-color: #488ce4;
+}
+
+.inplace-textarea:focus {
+  box-shadow: 0 0 0 4px rgba(92, 149, 214, 0.25);
+  border: 2px solid var(--ste-blue);
+}
+
+a#go-back-link {
+  color: white !important;
+}
+
+div.box.v-tabs > div.tabs-index li > a {
+  color: #888 !important;
+}
+
+#content > div.cols > div.col-4 > div > div > ul > li.first.active > a {
+  color: white !important;
+}
+
+#login-dropdown, .join-scratch {
+  background-color: var(--scratchr2-blue);
+  border-color: #2d97ccff !important;
+}
+
+#topnav ul.account-nav>li.sign-in:hover, #topnav ul.account-nav>li.sign-in.open {
+  background-color: #256185ff !important;
+}
+
+#topnav ul.account-nav .sign-in .popover {
+  background-color: var(--scratchr2-blue) !important;
+  border-color: #256185ff !important;
+}
+
+#topnav ul.account-nav .sign-in .popover .arrow:after {
+  border-bottom-color:var(--scratchr2-blue) !important;
+}
+
+#topnav ul.account-nav .sign-in .popover .arrow {
+  border-bottom-color: #256185ff !important;
 }

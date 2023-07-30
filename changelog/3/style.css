@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --brand: #ff9f00;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  padding-bottom: 10rem;
+}
+
+.banner {
+  background-image: url(./bg.svg);
+  background-size: cover;
+  width: calc(100vw - 4rem);
+  height: 30rem;
+  background-position: center center;
+  color: white;
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+  border-radius: 1.5rem;
+  text-align: center;
+}
+
+.banner h1 {
+  margin-top: 13rem;
+  font-size: 4rem;
+}
+
+.content {
+  margin-top: 34.5rem;
+}
+
+.content > h1 {
+  font-size: 2.5rem;
+}
+
+.feature {
+  background-color: #e8e8e880;
+  padding: 1rem;
+  text-align: left;
+  margin: 1rem;
+  width: 22rem;
+  display: inline-block;
+  min-height: 15rem;
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+  flex-grow: 0;
+  position: relative;
+  padding-bottom: 15rem;
+}
+
+.feature-image {
+  height: 15rem;
+  width: calc(100% - 2rem);
+  border-radius: 0.5rem;
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  bottom: 1rem;
+}
+
+.feature-content {
+  display: block;
+  padding: 1rem;
+}
+
+.feature-image[data-feature="shared-clipboard"] {
+  background-image: url(./images/shared-clipboard.png);
+}
+
+.feature-image[data-feature="important-messages"] {
+  background-image: url(./images/important-messages.png);
+}
+
+.feature-image[data-feature="slash-to-search"] {
+  background-image: url(./images/slash-to-search.png);
+}
+
+.feature-image[data-feature="hide-footer"] {
+  background-image: url(./images/hide-footer.png);
+}
+
+.feature-image[data-feature="simplify-action-buttons"] {
+  background-image: url(./images/simplify-action-buttons.png);
+}
+
+.feature h1 {
+  margin-top: 0px;
+}
+
+.feature p {
+  margin: 0px;
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.theme-img {
+  width: 50rem;
+  max-width: 100%;
+}
+
+.content > p {
+  padding-left: 20rem;
+  padding-right: 20rem;
+  line-height: 1.4rem;
+}
+
+.img-row {
+  padding-left: 5rem;
+  padding-right: 5rem;
+  display: inline-block;
+}
+
+.img-row img {
+  display: inline-block;
+  width: calc(50% - 4rem);
+  margin: 1rem;
+}
+
+.content > h1 {
+  margin-top: 5rem;
+}
+
+.notification {
+  background: #ff9f00;
+  padding: 0.5rem;
+  color: white;
+  margin: 0px;
+  border-radius: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transform: scale(80%);
+  display: inline-block;
+}
+
+.peace {
+    width: 5rem;
+}

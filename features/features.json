@@ -1,6 +1,21 @@
 [
   {
     "version": 2,
+    "id": "more-tutorials",
+    "versionAdded": "v3.0.0"
+  },
+  {
+    "version": 2,
+    "id": "simplify-action-buttons",
+    "versionAdded": "v3.0.0"
+  },
+  {
+    "version": 2,
+    "id": "slash-to-search",
+    "versionAdded": "v3.0.0"
+  },
+  {
+    "version": 2,
     "id": "shared-clipboard",
     "versionAdded": "v3.0.0"
   },
@@ -948,14 +963,6 @@
     "file": "hide-stickies",
     "tags": [],
     "type": ["Forums"]
-  },
-  {
-    "title": "More Tutorials",
-    "description": "Adds extra tutorials to the ideas page.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "more-tutorials",
-    "type": ["Website"]
   },
   {
     "title": "NFE Search",
