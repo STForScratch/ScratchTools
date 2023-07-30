@@ -1,0 +1,22 @@
+{
+  "title": "Preview Textboxes",
+  "description": "Preview your profile About Me and What I'm Working On, and your projects' Instructions and Notes and Credits, so that you can see what it will look like to other users.",
+  "credits": [
+    {
+      "username": "rgantzos",
+      "url": "https://scratch.mit.edu/users/rgantzos/"
+    },
+    {
+      "username": "Giolaboman",
+      "url": "https://scratch.mit.edu/users/Giolaboman/"
+    }
+  ],
+  "styles": [{ "file": "projects.css", "runOn": "/projects/*" }],
+  "scripts": [
+    { "file": "projects.js", "runOn": "/projects/*" },
+    { "file": "profiles.js", "runOn": "/users/*" }
+  ],
+  "tags": ["New"],
+  "type": ["Website"],
+  "resources": [{ "name": "preview-icon", "path": "/preview.svg" }]
+}
