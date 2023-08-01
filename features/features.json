@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "preview-textboxes",
+    "versionAdded": "v3.1.0"
+  },
+  {
+    "version": 2,
     "id": "more-tutorials",
     "versionAdded": "v3.0.0"
   },
@@ -463,18 +468,6 @@
     "tags": ["Recommended"],
     "type": ["Editor"],
     "dynamic": true
-  },
-  {
-    "title": "Preview Textboxes",
-    "description": "Preview your profile About Me and What I'm Working On, and your projects' Instructions and Notes and Credits, so that you can see what it will look like to other users.",
-    "credits": ["rgantzos", "Giolaboman"],
-    "urls": [
-      "https://scratch.mit.edu/users/rgantzos/",
-      "https://scratch.mit.edu/users/Giolaboman/"
-    ],
-    "file": "preview-textboxes",
-    "tags": ["Recommended"],
-    "type": ["Website"]
   },
   {
     "title": "Hide Studio Activity Messages",
