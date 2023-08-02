@@ -1,0 +1,19 @@
+{
+    "title": "Steal Game",
+    "description": "Changes the remix button's text to 'Steal game'.",
+    "credits": [
+      {
+        "username": "callumjt",
+        "url": "https://github.com/callumjt"
+      }
+    ],
+    "type": ["Website"],
+    "tags": ["New", "Egg"],
+    "dynamic": true,
+    "scripts": [{ "file": "script.js", "runOn": "/projects/" }],
+    "styles": [{ "file": "style.css", "runOn": "/projects/" }],
+    "resources": [
+        { "name": "trash-remix", "path": "/resources/trash.svg" }
+    ]
+}
+  

@@ -1,0 +1,3 @@
+.remix-button::before {
+    background-image: var(--scratchtoolsresource-trash-remix) !important;
+}

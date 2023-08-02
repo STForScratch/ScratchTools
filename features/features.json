@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "steal-game",
+    "versionAdded": "v3.2.0"
+  },
+  {
+    "version": 2,
     "id": "preview-textboxes",
     "versionAdded": "v3.1.0"
   },
