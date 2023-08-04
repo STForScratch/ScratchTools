@@ -10,12 +10,6 @@
   "type": ["Website"],
   "tags": ["New", "Featured"],
   "dynamic": true,
-  "scripts": [
-    {
-      "file": "code.js",
-      "runOn": "/projects/*"
-    }
-  ],
   "styles": [
     {
       "file": "editor.css",
