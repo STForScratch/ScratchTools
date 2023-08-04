@@ -25,24 +25,6 @@
     display: none;
 }
 
-/* action buttons */
-/* .preview-row .action-button {
-    font-size: 0 !important;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 90% 40%;
-} */
-/* .preview-row .action-button span {
-    display: inline-block;
-    width: 0.875rem;
-    height: 0.875rem;
-    vertical-align: bottom;
-    content: "";
-} */
-/* .preview-row .action-button:before {
-    margin: 0 !important    ;
-} */
-
 /* share button */
 .banner-button {
     padding: 0px 5px 0px 11px;
@@ -68,13 +50,3 @@
 .banner-button span {
     display: none;
 }
-
-/* preview button */
-/* .scratchtools-preview-button {
-    background-image: url(icons/preview.svg);
-    width: 38px;
-}
-.scratchtoolspin {
-    background-image: url(icons/pin.svg);
-    width: 38px;
-} */
