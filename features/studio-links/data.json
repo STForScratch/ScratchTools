@@ -2,7 +2,8 @@
   "title": "Studio Links as Titles",
   "description": "Replaces studio links with their titles, all across the Scratch website.",
   "credits": [
-    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" },
+    { "username": "palindromos", "url": "https://scratch.mit.edu/users/palindromos/" }
   ],
   "type": ["Website"],
   "tags": ["New"],
