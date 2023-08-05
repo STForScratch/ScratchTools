@@ -1,4 +1,4 @@
-async function checkUser() {
+export default async function({ feature }) {
   var isOnlineFeature = new Feature({ id: "isonline" })
   if (document.querySelector(".ste-isonline")) {
     document.querySelector(".ste-isonline").remove();
@@ -36,4 +36,3 @@ async function checkUser() {
     });
   }
 }
-checkUser();
