@@ -30,7 +30,7 @@ if (!document.querySelector(".scratchtools-main-clone-counter")) {
         ScratchTools.appendToSharedSpace({
           space: "afterStopButton",
           element: div,
-          order: 0.5,
+          order: 0,
         });
       }
     },
@@ -63,7 +63,7 @@ if (!document.querySelector(".scratchtools-main-clone-counter")) {
         ScratchTools.appendToSharedSpace({
           space: "afterStopButton",
           element: div,
-          order: 0.5,
+          order: 0,
         });
       }
     }

@@ -173,7 +173,7 @@ ScratchTools.waitForElements(
         ScratchTools.appendToSharedSpace({
           space: "beforeProjectActionButtons",
           element: button,
-          order: 0.5,
+          order: 0,
         });
       }
     }

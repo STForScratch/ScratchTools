@@ -23,13 +23,11 @@ if (!document.querySelector(".location").className.includes(" scratchtools")) {
       span.style.marginLeft = "5px";
       span.setScratchTools();
 
-      if (document.querySelector(".ste-isonline")) {
-        document
-          .querySelector(".location")
-          .insertBefore(span, document.querySelector(".ste-isonline"));
-      } else {
-        document.querySelector(".location").appendChild(span);
-      }
+      ScratchTools.appendToSharedSpace({
+        space: "afterProfileCountry",
+        element: span,
+        order: 0,
+      });
     }
   }
 }
