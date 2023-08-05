@@ -509,3 +509,17 @@ div.box.v-tabs > div.tabs-index li > a {
 #topnav ul.account-nav .sign-in .popover .arrow {
   border-bottom-color: #256185ff !important;
 }
+
+.blockpost .box-head {
+  background-color: #3397d9ff;
+  color: white;
+}
+
+.blockpost .box-head a {
+  color: white !important;
+}
+
+.blockpost div.box {
+  background-color: #3397d9ff;
+  border-top-color: #2d97ccff;
+}
