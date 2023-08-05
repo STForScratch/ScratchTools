@@ -1,3 +1,45 @@
+var defaultThemes = [
+  {
+    data: {
+      background: "#ffffff",
+      box: "#eeeeee",
+      feature: "#eeeeee75",
+      gradient: ["#ff8c2d", "#ffb740"],
+      input: "#e4e4e4",
+      primary: "#000000",
+      scrollbar: "#c2bfbf",
+      scrollbar_active: "#b2afaf",
+      searchbar: "#eeeeee",
+      secondary: "#00000077",
+      slider: "#cccccc",
+      theme: "#FF9F00",
+    },
+    id: "64b36b38785a4110e937ac30",
+    title: "Classic Light",
+    active: true,
+    theme: "light",
+  },
+  {
+    data: {
+      background: "#3f3f3f",
+      box: "#eeeeee",
+      feature: "#343434",
+      gradient: ["#ff8c2d", "#ffb740"],
+      input: "#545454",
+      primary: "#ffffff",
+      scrollbar: "#797979",
+      scrollbar_active: "#656565",
+      searchbar: "#ffffff17",
+      secondary: "#ffffff77",
+      slider: "#4b4b4b",
+      theme: "#FF9F00",
+    },
+    id: "64b36b38785a4110e937ac31",
+    title: "Classic Dark",
+    theme: "dark",
+  },
+];
+
 if (document.querySelector(".sparkle")) {
   var sparkle = document.querySelector(".sparkle");
   sparkle.addEventListener("mouseover", function () {
@@ -80,20 +122,6 @@ if (document.querySelector(".suggested")) {
   getSuggestions();
 }
 
-chrome.storage.sync.get("theme", function (obj) {
-  let theme = obj.theme;
-  if (!theme) theme = "light";
-
-  const themeLink = document.createElement("link");
-  themeLink.setAttribute("rel", "stylesheet");
-  themeLink.setAttribute("href", `/extras/styles/${theme}.css`);
-  themeLink.id = "themecss";
-  document.head.appendChild(themeLink);
-
-  const version = chrome.runtime.getManifest().version_name;
-  if (version.includes("beta")) setBetaTheme();
-});
-
 async function getEnabledFeatureCount() {
   var features = await (await fetch("/features/features.json")).json();
   var count = 0;
@@ -111,7 +139,7 @@ if (document.querySelector(".feedback-btn")) {
     .querySelector(".feedback-btn")
     .addEventListener("click", function () {
       chrome.tabs.create({
-        url: "/extras/feedback/index.html",
+        url: "https://scratch.mit.edu/scratchtools/feedback/auth/",
       });
     });
 }
@@ -131,9 +159,15 @@ if (document.querySelector(".more-settings-btn")) {
         type: "code",
       },
       {
-        content: "Copy Feature Codes",
+        content: "Export Settings",
         type: "button",
-        callback: returnFeatureCode,
+        callback: downloadSettings,
+        additonalClassNames: ["secondary-btn"],
+      },
+      {
+        content: "Import Settings",
+        type: "button",
+        callback: importSettingsInput,
         additonalClassNames: ["secondary-btn"],
       },
     ];
@@ -149,6 +183,12 @@ if (document.querySelector(".more-settings-btn")) {
         additonalClassNames: ["secondary-btn"],
       });
     }
+    if (!chrome.runtime.getManifest().version_name.endsWith("-beta")) {
+      await chrome.runtime.sendMessage(
+        { text: "get-logged-in-user" },
+        async function (response) {}
+      );
+    }
     ScratchTools.modals.create({
       title: "More settings",
       description:
@@ -157,6 +197,48 @@ if (document.querySelector(".more-settings-btn")) {
     });
   });
 }
+
+chrome.runtime.onMessage.addListener(async function (
+  msg,
+  sender,
+  sendResponse
+) {
+  if (msg?.user?.username) {
+    var data = await (
+      await fetch(`https://data.scratchtools.app/isbeta/${msg.user.username}/`)
+    ).json();
+    if (data.beta && document.querySelector(".st-modal")) {
+      var btn = document.createElement("button");
+      btn.textContent = "Install Beta";
+      btn.className = "secondary-btn install-beta";
+      btn.addEventListener("click", function () {
+        document.querySelector(".st-modal-blur-bg")?.remove();
+        ScratchTools.modals.create({
+          title: "Beta installation",
+          description:
+            "You are currently enrolled in the ScratchTools beta program. Are you sure you would like to install the ScratchTools beta?",
+          components: [
+            {
+              content: "Install",
+              type: "button",
+              callback: function () {
+                chrome.tabs.create({
+                  url: "https://github.com/STForScratch/ScratchTools/zipball/master",
+                });
+              },
+              additonalClassNames: ["secondary-btn"],
+            },
+          ],
+        });
+      });
+      if (!document.querySelector(".st-modal").querySelector(".install-beta")) {
+        document
+          .querySelector(".st-modal")
+          .insertBefore(btn, document.querySelector(".st-modal").lastChild);
+      }
+    }
+  }
+});
 
 function setBetaTheme() {
   if (document.querySelector("link[rel=icon]")) {
@@ -210,30 +292,161 @@ function setBetaTheme() {
   }
   // checkCurrentVersion();
 }
+if (window.location.href.includes("extras/index.html")) {
+  window.addEventListener("click", function (e) {
+    if (
+      document.getElementById("themedropdown").contains(e.target) ||
+      document.getElementById("themedropdown-btn").contains(e.target)
+    ) {
+      // Clicked in box
+    } else {
+      document.getElementById("themedropdown").style.display = "none";
+    }
+  });
+  document.getElementById("themedropdown-btn").addEventListener("click", () => {
+    if (document.getElementById("themedropdown").style.display == "block") {
+      document.getElementById("themedropdown").style.display = "none";
+    } else {
+      document.getElementById("themedropdown").style.display = "block";
+    }
+  });
 
-document.getElementById("toggletheme").addEventListener("click", toggletheme);
-
-function toggletheme() {
-  var theme = document.getElementById("themecss");
-  if (theme.href.includes("light")) {
-    theme.href = "/extras/styles/dark.css";
-    chrome.storage.sync.set({ theme: "dark" });
-  } else if (theme.href.includes("dark")) {
-    theme.href = "/extras/styles/light.css";
-    chrome.storage.sync.set({ theme: "light" });
-  } else {
-    theme.href = "/extras/styles/light.css"; // default theme
-    console.error(
-      console.log("ScratchTools:"),
-      " Theme not found. Defaulting to light theme."
-    );
+  if (document.querySelector(".dropdown")) {
+    getThemes();
   }
 }
+
+async function getThemes() {
+  document.querySelectorAll(".dropdown > *").forEach(function (el) {
+    el.remove();
+  });
+  var themes =
+    (await chrome.storage.sync.get("themes"))?.themes || defaultThemes;
+  themes.forEach(function (theme) {
+    var div = document.createElement("div");
+    div.className = "item";
+    div.dataset.id = theme.id;
+    div.textContent = theme.title;
+    var circle = document.createElement("div");
+    circle.className = "circle";
+    circle.style.background = `linear-gradient(135deg, ${theme.data.theme} 050%, ${theme.data.background} 50%)`;
+    div.prepend(circle);
+    document.querySelector(".dropdown").appendChild(div);
+    div.addEventListener("click", async function () {
+      var enabled = (await chrome.storage.sync.get("themes")).themes;
+      var active = enabled.find((el) => el.active);
+      var found = enabled.find((el) => el.id === theme.id);
+      active.active = false;
+      found.active = true;
+      await chrome.storage.sync.set({
+        themes: enabled,
+      });
+      document.getElementById("themedropdown").style.display = "none";
+    });
+  });
+  var div = document.createElement("div");
+  div.className = "item";
+  div.textContent = "Theme Store";
+  document.querySelector(".dropdown").appendChild(div);
+  div.addEventListener("click", async function () {
+    document.getElementById("themedropdown").style.display = "none";
+    chrome.tabs.create({
+      url: "/themes/settings/index.html",
+    });
+  });
+}
+
+chrome.runtime.onMessage.addListener(async function (
+  msg,
+  sender,
+  sendResponse
+) {
+  if (msg.msg === "installedThemesUpdate") {
+    getThemes();
+  } else if (msg.msg === "themeUpdate") {
+    setTheme(msg.value.id);
+  }
+  if (msg.msg === "returnedUser") {
+  }
+});
+
+async function setActiveTheme() {
+  var themes =
+    (await chrome.storage.sync.get("themes"))?.themes || defaultThemes;
+  setTheme(themes.find((el) => el.active).id);
+}
+setActiveTheme();
+
+async function setTheme(themeId) {
+  var enabled =
+    (await chrome.storage.sync.get("themes"))?.themes || defaultThemes;
+  if (enabled.find((el) => !el.theme)) {
+    enabled = defaultThemes;
+    await chrome.storage.sync.set({
+      themes: enabled,
+    });
+  }
+  var found = enabled.find((el) => el.id === themeId);
+  document.head.querySelector("style.theme")?.remove();
+  var style = document.createElement("style");
+  style.textContent = `
+  :root {
+    --theme: ${found.data.theme};
+    --background: ${found.data.background};
+    --primary-color: ${found.data.primary};
+    --secondary-color: ${found.data.secondary};
+    --searchbar-bg: ${found.data.searchbar};
+    --searchbar-gears: url("/extras/icons/settings.svg");
+    --searchbar-search: ${
+      found.theme === "light"
+        ? 'url("/extras/icons/search.svg")'
+        : 'url("/extras/icons/search-light.svg")'
+    };
+    --mini-logo: url("/extras/icons/mini-logo.svg");
+    --box: ${found.data.box};
+    --feature-bg: ${found.data.feature};
+    --feature-input-bg: ${found.data.input};
+    --feature-slider-bg: ${found.data.slider};
+    --scrollbar-handle: ${found.data.scrollbar};
+    --scrollbar-handle-active: ${found.data.scrollbar_active};
+    --theme-icon: url("/extras/icons/dark.svg");
+    --navbar-gradient: linear-gradient(0.25turn, ${found.data.gradient[0]}, ${
+    found.data.gradient[1]
+  });
+    ${
+      found.theme === "light"
+        ? '--campsite: url("/extras/icons/campsitelight.svg");'
+        : '--campsite: url("/extras/icons/campsitedark.svg");'
+    }
+  }
+  `;
+  if (found.theme !== "light") {
+    style.textContent += `
+    .settingsButton {
+      filter: brightness(0) invert(1);
+    }`;
+  }
+  style.className = "theme";
+  document.head.appendChild(style);
+}
+
+document.querySelector(".support-btn")?.addEventListener("click", function () {
+  chrome.tabs.create({
+    url: "/extras/support/index.html",
+  });
+});
 
 document.querySelector(".searchbar").placeholder =
   chrome.i18n.getMessage("search") || "search";
 
 document.querySelector(".searchbar").addEventListener("input", function () {
+  if (document.querySelector(".welcome")) {
+    if (document.querySelector(".searchbar").value) {
+      document.querySelector(".welcome").style.display = "none";
+    } else {
+      document.querySelector(".welcome").style.display = null;
+    }
+  }
   document.querySelectorAll(".feature").forEach(function (el) {
     if (
       (
@@ -313,6 +526,7 @@ async function getFeatures() {
       featureData.version = feature.version;
       feature = featureData;
     }
+    div.dataset.type = feature.type.join("");
 
     var h3 = document.createElement("h3");
     h3.textContent =
@@ -572,7 +786,9 @@ async function dynamicEnable(id) {
                     link.rel = "stylesheet";
                     link.href = path;
                     link.dataset.feature = feature;
-                    document.querySelector(".scratchtools-styles-div").appendChild(link);
+                    document
+                      .querySelector(".scratchtools-styles-div")
+                      .appendChild(link);
                   }
                 }
               } catch (err) {}
@@ -693,3 +909,156 @@ ScratchTools.modals = {
     return modal;
   },
 };
+
+document.getElementById("campsite")?.addEventListener("click", function () {
+  // open new link in new tab
+  chrome.tabs.create({
+    url: "https://youtu.be/z54AmH9Yi78",
+  });
+});
+
+if (document.querySelector(".buttons")) {
+  document.querySelectorAll(".buttons button").forEach(function (el) {
+    el.addEventListener("click", function () {
+      document.body.dataset.filter = el.textContent;
+      el.parentNode.querySelector(".selected").classList.remove("selected");
+      el.classList.add("selected");
+    });
+  });
+}
+
+async function getUser() {
+  try {
+    var data = await (
+      await fetch("https://scratch.mit.edu/session/", {
+        headers: {
+          "x-requested-with": "XMLHttpRequest",
+        },
+      })
+    ).json();
+    return data?.user;
+  } catch (err) {
+    return null;
+  }
+}
+
+async function getNotifications() {
+  var user = await getUser();
+  if (user) {
+    var data = await (
+      await fetch(
+        `https://data.scratchtools.app/messages/${user.username}/count/`
+      )
+    ).json();
+    if (data.count !== 0) {
+      var span = document.createElement("span");
+      span.textContent = data.count.toString();
+      span.className = "notification";
+      document.querySelector(".feedback-btn").appendChild(span);
+      document.querySelector(".feedback-btn").style.bottom = "2.5rem";
+    }
+  }
+}
+if (document.querySelector(".feedback-btn")) {
+  getNotifications();
+}
+
+document.querySelector(".searchbar")?.focus()
+
+async function downloadSettings() {
+  var allFeatures = await (await fetch("/features/features.json")).json();
+  for (var i in allFeatures) {
+    var feature = allFeatures[i];
+    if (feature.version === 2) {
+      var featureId = feature.id;
+      feature = await (await fetch(`/features/${feature.id}/data.json`)).json();
+      feature.file = featureId;
+      feature.version = 2;
+    }
+    allFeatures[i] = feature;
+  }
+  var data = {
+    features: {},
+    options: {},
+  };
+  var storage = (await chrome.storage.sync.get("features"))?.features || "";
+  for (var i in allFeatures) {
+    var feature = allFeatures[i];
+    data.features[feature.file] = storage.includes(feature.file);
+    if (feature.options && storage.includes(feature.file)) {
+      for (var optionI in feature.options) {
+        var option = feature.options[optionI];
+        var optionData = (await chrome.storage.sync.get(option.id))?.[
+          option.id
+        ];
+        data.options[option.id] = optionData;
+      }
+    }
+  }
+  var dataStr =
+    "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data));
+  var dlAnchorElem = document.querySelector(".download-file");
+  dlAnchorElem.setAttribute("href", dataStr);
+  dlAnchorElem.setAttribute("download", "scratchtools-settings.json");
+  dlAnchorElem.click();
+}
+
+async function loadFromJson(data) {
+  await chrome.storage.sync.set({
+    features: Object.keys(data.features)
+      .filter((el) => data.features[el])
+      .join("."),
+  });
+  for (var i in Object.keys(data.options)) {
+    await chrome.storage.sync.set({
+      [Object.keys(data.options)[i]]:
+        data.options[Object.keys(data.options)[i]],
+    });
+  }
+  window.location.href = window.location.href;
+}
+
+document.querySelector(".settings-load-input")?.addEventListener("input", async function() {
+  var input = document.querySelector(".settings-load-input")
+  if (input.files[0].type === "application/json") {
+    var data = await parseFile(input.files[0])
+    if (Object.keys(data).length === 2 && data.features && data.options) {
+      loadFromJson(data)
+    } else {
+      alert("Invalid file.")
+    }
+  } else {
+    alert("Invalid file.")
+  }
+})
+
+async function parseFile(file) {
+  return new Promise((resolve, reject) => {
+    const fileReader = new FileReader()
+    fileReader.onload = event => resolve(JSON.parse(event.target.result))
+    fileReader.onerror = error => reject(error)
+    fileReader.readAsText(file)
+  })
+}
+
+function importSettingsInput() {
+  var input = document.querySelector(".settings-load-input")
+  input.click()
+}
+
+if (document.querySelector(".news")) {
+  getNews()
+}
+
+async function getNews() {
+  var data = await (await fetch("https://data.scratchtools.app/news/")).json()
+  var note = document.createElement("div")
+  note.className = "note blue"
+  var h3 = document.createElement("h3")
+  h3.textContent = data.title
+  var span = document.createElement("span")
+  span.innerHTML = data.description
+  note.appendChild(h3)
+  note.appendChild(span)
+  document.querySelector(".news").appendChild(note)
+}

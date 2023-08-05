@@ -1,0 +1,31 @@
+{
+   "title":"Simplify Action Buttons",
+   "description":"Displays project action buttons underneath Notes and Credits as their icons.",
+   "credits":[
+      {
+         "username":"MaterArc",
+         "url":"https://scratch.mit.edu/users/MaterArc/"
+      },
+      {
+         "username":"syesjohnny",
+         "url":"https://scratch.mit.edu/users/0920613562/"
+      }
+   ],
+   "type":[
+      "Website"
+   ],
+   "tags":[
+      "New"
+   ],
+   "dynamic":true,
+   "styles":[
+      {
+         "file":"style.css",
+         "runOn":"/projects/*"
+      }
+   ],
+   "similar":[
+      "simplify-editor-tabs",
+      "hide-block-category-names"
+   ]
+}

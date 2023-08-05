@@ -1,0 +1,7 @@
+.copy-link-button span, .studio-button span, .report-button span, .scratchtools-preview-button span {
+    display: none !important; 
+}
+
+.report-button::before, .studio-button::before, .copy-link-button::before, .scratchtools-preview-button::before{
+    margin-left: 3px;
+}

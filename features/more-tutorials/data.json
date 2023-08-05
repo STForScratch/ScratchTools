@@ -1,0 +1,12 @@
+{
+  "title": "More Tutorials",
+  "description": "On the Ideas page, you can view additional tutorials from other Scratchers.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "scripts": [
+    { "file": "script.js", "runOn": "/ideas*" }
+  ]
+}

@@ -4,47 +4,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --theme: #ff9f00;
-    --background: #3f3f3f;
-    --primary-color: white;
-    --secondary-color: #ffffff77;
-    --searchbar-bg: #ffffff17;
-    --searchbar-gears: url("/extras/icons/gear-light.svg");
-    --searchbar-search: url("/extras/icons/search-light.svg");
-    --mini-logo: url("/extras/icons/mini-logo.svg");
-    --box: #eeeeee;
-    --feature-bg: #343434;
-    --feature-input-bg: #545454;
-    --feature-slider-bg: #4b4b4b;
-    --scrollbar-handle: #797979;
-    --scrollbar-handle-active: #656565;
-  }
-}
-@media (prefers-color-scheme: light) {
-  :root {
-    --theme: #ff9f00;
-    --background: white;
-    --primary-color: black;
-    --secondary-color: #00000077;
-    --searchbar-bg: #eeeeee;
-    --searchbar-gears: url("/extras/icons/settings.svg");
-    --searchbar-search: url("/extras/icons/search.svg");
-    --mini-logo: url("/extras/icons/mini-logo.svg");
-    --box: #eeeeee;
-    --feature-bg: #eeeeee75;
-    --feature-input-bg: #e4e4e4;
-    --feature-slider-bg: #cccccc;
-    --scrollbar-handle: #c2bfbf;
-    --scrollbar-handle-active: #b2afaf;
-  }
-}
-html {
-  --radius: 12px;
-  font-family: "Inter", sans-serif;
-  height: 500px;
-}
 body {
   padding: 1rem;
   padding-bottom: 2rem;
@@ -53,6 +12,7 @@ body {
   background: var(--background);
   color: var(--primary-color);
   padding-top: 3.5rem;
+  overflow-y: hidden;
 }
 
 .navbar {
@@ -83,51 +43,95 @@ body {
   display: inline-block;
 }
 
-input {
-    background-color: var(--feature-input-bg);
-    color: var(--primary-color);
-    padding: .75rem;
-    outline: 0px;
-    border: 0px;
-    border-radius: .25rem;
-    width: 50%;
-    min-width: 20rem;
-    font-family: "Inter", sans-serif;
+.split {
+  width: calc(50% - 2rem);
+  padding: 1rem;
+  display: inline-block;
+  height: calc(100% - 5rem);
+  overflow-y: scroll;
 }
 
-textarea {
-    background-color: var(--feature-input-bg);
-    color: var(--primary-color);
-    padding: .75rem;
-    outline: 0px;
-    border: 0px;
-    border-radius: .25rem;
-    width: 50%;
-    min-width: 20rem;
-    font-family: "Inter", sans-serif;
-    margin-top: 1rem;
-    min-height: 10rem;
-    resize: vertical;
+.split-left {
+  position: absolute;
+  top: 3rem;
+  left: 0px;
 }
 
-button {
-    background-color: #ff9f00;
-    color: white;
-    min-width: 10rem;
-    font-family: "Inter", sans-serif;
-    padding: .5rem;
-    outline: none;
-    border: 0px;
-    border-radius: .25rem;
-    cursor: pointer;
-    position: relative;
-    top: 0px;
-    transition: top .3s;
-    font-weight: bold;
-    display: block;
-    margin-top: 1rem;
+.split-right {
+  position: absolute;
+  top: 3rem;
+  right: 0px;
+  border-left: 2px solid var(--feature-input-bg);
 }
 
-button:hover {
-    top: .5rem;
+p {
+  font-size: 1rem;
+}
+
+.messages {
+  border-top: 2px solid var(--theme);
+}
+
+.msg {
+  border-bottom: 2px solid var(--theme);
+  padding: 0.5rem;
+}
+
+.msg h3 {
+  font-size: 1.2rem;
+  margin-top: 0.75rem;
+}
+
+.msg.unread h3 {
+  color: var(--theme);
+}
+
+textarea.feedback {
+  background-color: var(--searchbar-bg);
+  width: calc(100% - 2rem);
+  padding: 1rem;
+  resize: vertical;
+  max-height: calc(100% - 25rem);
+  border-radius: 0.5rem;
+  border: 0px;
+  color: var(--primary-color);
+  font-family: "Inter", sans-serif;
+  min-height: 7.5rem;
+}
+
+button.submit {
+  background-color: var(--theme);
+  width: 100%;
+  display: block;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 0px;
+  outline: none;
+  color: white;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: top 0.2s;
+  position: relative;
+  top: 0px;
+}
+
+button.submit:hover {
+  top: 0.25rem;
+}
+
+.submission-successful {
+  background-color: var(--theme);
+  color: white;
+  font-size: 1rem;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+.msg p {
+  white-space: pre;
+  text-wrap: wrap;
+  word-break: break-word;
+  line-height: 1.5rem;
 }

@@ -30,19 +30,26 @@ ScratchTools.storage = {
 
 let waitForSingleElements = [];
 
-var allSelectors = {};
-var allCallbacksForWait = {};
-ScratchTools.waitForElements = function (selector, callback, id, rework) {
-  if (allCallbacksForWait[selector] === undefined) {
-    allCallbacksForWait[selector] = [{ callback: callback, id: id }];
-  } else {
-    allCallbacksForWait[selector].push({ callback: callback, id: id });
+var allWaitInstances = {};
+let totalRunners = 0;
+ScratchTools.waitForElements = function (selector, callback) {
+  totalRunners += 1;
+  var thisRunner = "wait-"+(totalRunners - 1).toString();
+  while (allWaitInstances[thisRunner]) {
+    totalRunners += 1;
+    thisRunner = "wait-"+(totalRunners - 1).toString();
   }
-  if (rework) {
-    allSelectors[id] = [document.querySelectorAll(selector)];
-  } else {
-    allSelectors[id] = [];
-    returnScratchToolsSelectorsMutationObserverCallbacks();
+  allWaitInstances[thisRunner] = {
+    selector,
+    callback,
+    elements: [],
+  };
+  returnScratchToolsSelectorsMutationObserverCallbacks()
+  return {
+    id: thisRunner,
+    remove: function() {
+      allWaitInstances[thisRunner].removed = true
+    }
   }
 };
 
@@ -79,15 +86,16 @@ function enableScratchToolsSelectorsMutationObserver() {
 enableScratchToolsSelectorsMutationObserver();
 
 function returnScratchToolsSelectorsMutationObserverCallbacks() {
-  Object.keys(allCallbacksForWait).forEach(function (el) {
-    document.querySelectorAll(el).forEach(function (element) {
-      allCallbacksForWait[el].forEach(function (el2) {
-        if (!allSelectors[el2.id].includes(element)) {
-          allSelectors[el2.id].push(element);
-          el2.callback(element);
+  Object.keys(allWaitInstances).forEach(function (key) {
+    var waitInstance = allWaitInstances[key];
+    if (!waitInstance.removed) {
+      document.querySelectorAll(waitInstance.selector).forEach(function (el) {
+        if (!waitInstance.elements?.includes(el)) {
+          allWaitInstances[key].elements.push(el);
+          waitInstance.callback(el);
         }
       });
-    });
+    }
   });
   waitForSingleElements
     .filter((promise) => !promise.resolved)

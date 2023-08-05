@@ -20,7 +20,6 @@ function replacealllinks() {
 
     // Storing data in form of JSON
     var data = await response.json();
-    console.log(data);
     if (data.hasOwnProperty("title")) {
       var stuff = data["title"];
       item.textContent = stuff;
@@ -35,7 +34,6 @@ function replacealllinks() {
 
     // Storing data in form of JSON
     var data = await response5.json();
-    console.log(data);
     if (data.hasOwnProperty("profile")) {
       var stuff = data["profile"]["bio"];
       item.title = stuff;

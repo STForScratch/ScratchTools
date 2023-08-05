@@ -26,11 +26,13 @@ if (!document.querySelector(".scratchtools-main-clone-counter")) {
       span.textContent = "0 clones";
       div.appendChild(img);
       div.appendChild(span);
-      ScratchTools.appendToSharedSpace({
-        space: "afterStopButton",
-        element: div,
-        order: 0.5,
-      });
+      if (!document.querySelector(".scratchtools-main-clone-counter")) {
+        ScratchTools.appendToSharedSpace({
+          space: "afterStopButton",
+          element: div,
+          order: 0.5,
+        });
+      }
     },
     "clone-counter-above-stage",
     false
@@ -45,7 +47,9 @@ if (!document.querySelector(".scratchtools-main-clone-counter")) {
       ).toString();
       counter.textContent = count + " clones";
     } else if (
-      document.querySelector("div[class^='stage-header_stage-size-toggle-group_']")
+      document.querySelector(
+        "div[class^='stage-header_stage-size-toggle-group_']"
+      )
     ) {
       var div = document.createElement("div");
       div.className = "scratchtools-main-clone-counter";
@@ -55,11 +59,13 @@ if (!document.querySelector(".scratchtools-main-clone-counter")) {
       span.textContent = "0 clones";
       div.appendChild(img);
       div.appendChild(span);
-      ScratchTools.appendToSharedSpace({
-        space: "afterStopButton",
-        element: div,
-        order: 0.5,
-      });
+      if (!document.querySelector(".scratchtools-main-clone-counter")) {
+        ScratchTools.appendToSharedSpace({
+          space: "afterStopButton",
+          element: div,
+          order: 0.5,
+        });
+      }
     }
   }, 100);
 }

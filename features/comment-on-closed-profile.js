@@ -1,7 +1,7 @@
 function addNoCommentBox() {
   if (
-    Scratch.INIT_DATA.PROFILE.model.username !==
-    Scratch.INIT_DATA.LOGGED_IN_USER.model.username
+    Scratch?.INIT_DATA?.PROFILE?.model?.username !==
+    Scratch?.INIT_DATA?.LOGGED_IN_USER?.model?.username
   ) {
     waitForNoCommentsObserver.disconnect();
   } else {
