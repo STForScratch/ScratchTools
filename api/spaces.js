@@ -1,6 +1,7 @@
 // We are temporarily using Scratch Addons' appendToSharedSpace method for compatibility reasons.
 
 ScratchTools.appendToSharedSpace = function ({ space, element, order, scope }) {
+  order += .5
   const q = document.querySelector.bind(document);
   const sharedSpaces = {
     stageHeader: {

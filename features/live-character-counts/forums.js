@@ -24,6 +24,6 @@ if (!document.querySelector(".ste-forum-char")) {
   ScratchTools.appendToSharedSpace({
     space: "forumToolbarTools",
     element: span,
-    order: 0.5,
+    order: 0,
   });
 }

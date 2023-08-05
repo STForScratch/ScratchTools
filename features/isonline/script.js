@@ -18,14 +18,22 @@ async function checkUser() {
     span.textContent = data.online ? isOnlineFeature.getLocale("online") : isOnlineFeature.getLocale("offline");
     span.title = "This was added by ScratchTools.";
     span.setScratchTools()
-    document.querySelector(".location").appendChild(span);
+    ScratchTools.appendToSharedSpace({
+      space: "afterProfileCountry",
+      element: span,
+      order: 1,
+    });
   } else {
     var span = document.createElement("span");
     span.className = "ste-isonline unsure";
     span.textContent = isOnlineFeature.getLocale("unavailable");
     span.title = "This was added by ScratchTools.";
     span.setScratchTools()
-    document.querySelector(".location").appendChild(span);
+    ScratchTools.appendToSharedSpace({
+      space: "afterProfileCountry",
+      element: span,
+      order: 1,
+    });
   }
 }
 checkUser();
