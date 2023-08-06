@@ -6,189 +6,183 @@ function cleanUp() {
         .querySelector("div.thumbnail-title")
         .firstChild.textContent.toLowerCase();
       if (title.includes("part ")) {
-        console.log(title);
         el.style.display = "none";
       }
       if (title.includes("#trending")) {
-        console.log(title);
         el.style.display = "none";
       }
       if (title.includes("test")) {
-        console.log(title);
         el.style.display = "none";
       }
       if (title.includes("gf")) {
-        console.log(title);
         el.style.display = "none";
       }
       if (title.includes("bf")) {
-        console.log(title);
         el.style.display = "none";
       }
       if (title.includes("girlfriend")) {
-        console.log(title);
         el.style.display = "none";
       }
       if (title.includes("boyfriend")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("doors")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("scp")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("speedrun platformer")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("cave platformer")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("dark platformer")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("jungle platformer")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("platformer 1")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("platformer 2")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("platformer 3")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("fnf")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("funkin")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("vs")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("Add yourself")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("your oc")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("scratch's smooth saturday")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("dave")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("bambi")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("fnf vs")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("friday night funkin")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("funk")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("sarvente")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("singing")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("ays")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("ays/oc")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("friday night")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("scratched out")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("dave and bambi")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("dark") && title.includes("platformer")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("friday night") && title.includes("funkin")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("dave") && title.includes("bambi")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("fnf") && title.includes("vs")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("funkin") && title.includes("vs")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("generic") && title.includes("platformer")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("jungle") && title.includes("platformer")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("night") && title.includes("platformer")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("OST")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (countInstances(title, "#") > 3) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       if (title.includes("alphabet") && title.includes("lore")) {
-        console.log(title);
+        
         el.style.display = "none";
       }
       titles.forEach(function (el2) {
         if (similarity(el2, title) > 0.5) {
           if (el !== undefined && el !== null) {
-            console.log(title);
+            
             el.style.display = "none";
           }
         }

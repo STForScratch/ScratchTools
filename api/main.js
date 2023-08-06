@@ -1,3 +1,5 @@
+var steConsoleData = []
+
 var ste = {
   console: {
     log: function (content, title) {
@@ -18,6 +20,12 @@ var ste = {
         styleArray.join(";"),
         title + "\n\n" + content
       );
+      steConsoleData.push({
+        script: title,
+        data: content,
+        time: Date.now(),
+        type: "log",
+      })
     },
     warn: function (content, title) {
       var styleArray = [
@@ -37,6 +45,12 @@ var ste = {
         styleArray.join(";"),
         title + "\n\n" + content
       );
+      steConsoleData.push({
+        script: title,
+        data: content,
+        time: Date.now(),
+        type: "warn",
+      })
     },
     error: function (content, title) {
       var styleArray = [
@@ -56,6 +70,12 @@ var ste = {
         styleArray.join(";"),
         title + "\n\n" + content
       );
+      steConsoleData.push({
+        script: title,
+        data: content,
+        time: Date.now(),
+        type: "error",
+      })
     },
   },
 };
@@ -63,7 +83,7 @@ var ste = {
 var ScratchTools = {};
 ScratchTools.Storage = {};
 ScratchTools.Resources = {};
-console.log("ScratchTools API Created");
+ste.console.log("ScratchTools API Created", "ste-main");
 if (
   window.location.href.startsWith("https://scratch.mit.edu/projects/") &&
   window.location.href.includes("/editor")
@@ -249,11 +269,11 @@ var allDisableFunctions = {};
 var allEnableFunctions = {};
 ScratchTools.setDisable = function (feature, f) {
   allDisableFunctions[feature] = f;
-  ScratchTools.console.log(`Set disable function for ${feature}.`);
+  ste.console.log(`Set disable function for ${feature}.`, "ste-main");
 };
 
 ScratchTools.disable = function (feature) {
-  ScratchTools.console.log(`Disabled ${feature}.`);
+  ste.console.log(`Disabled ${feature}.`, "ste-main");
   document
     .querySelectorAll(`link[data-feature=${feature}]`)
     .forEach(function (el) {

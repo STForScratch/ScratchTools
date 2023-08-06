@@ -14,6 +14,13 @@ class Feature {
         throw new Error("Feature does not have locales set up.");
       }
     };
+    this.msg = function (string) {
+      if (this.data.translations) {
+        return this.data.localesData[string];
+      } else {
+        throw new Error("Feature does not have locales set up.");
+      }
+    };
     this.getActiveUserstyles = function () {
       var styles = document.head.querySelectorAll(
         `link[data-feature=${this.data.id || this.data.file}]`
@@ -70,6 +77,13 @@ class Feature {
         return settings;
       }
     };
+    this.tab = {
+      path: window.location.pathname,
+      scratch: document.querySelector("#app") ? 3 : 2,
+    }
+    this.redux = document.querySelector("#app")?.[
+        Object.keys(app).find((key) => key.startsWith("__reactContainer"))
+      ].child.stateNode.store
     if (finalFeature.version !== 2) {
       console.warn(
         `'${finalFeature.file}' does not use Feature v2. It is recommended that you use the newest version.`
