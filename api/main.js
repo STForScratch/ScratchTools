@@ -1,3 +1,65 @@
+var ste = {
+  console: {
+    log: function (content, title) {
+      var styleArray = [
+        "padding: 0.2rem",
+        "padding-left: .5rem",
+        "padding-right: .4rem",
+        "background-color: #ff9f00",
+        "border-radius: 0.75rem",
+        "color: white",
+        "border-top-right-radius: 0rem",
+        "border-bottom-right-radius: 0rem",
+        "font-family: Inter",
+        "width: 2rem",
+      ];
+      console.log(
+        "%cScratchTools",
+        styleArray.join(";"),
+        title + "\n\n" + content
+      );
+    },
+    warn: function (content, title) {
+      var styleArray = [
+        "padding: 0.2rem",
+        "padding-left: .5rem",
+        "padding-right: .4rem",
+        "background-color: yellow",
+        "border-radius: 0.75rem",
+        "color: black",
+        "border-top-right-radius: 0rem",
+        "border-bottom-right-radius: 0rem",
+        "font-family: Inter",
+        "width: 2rem",
+      ];
+      console.log(
+        "%cScratchTools",
+        styleArray.join(";"),
+        title + "\n\n" + content
+      );
+    },
+    error: function (content, title) {
+      var styleArray = [
+        "padding: 0.2rem",
+        "padding-left: .5rem",
+        "padding-right: .4rem",
+        "background-color: red",
+        "border-radius: 0.75rem",
+        "color: white",
+        "border-top-right-radius: 0rem",
+        "border-bottom-right-radius: 0rem",
+        "font-family: Inter",
+        "width: 2rem",
+      ];
+      console.log(
+        "%cScratchTools",
+        styleArray.join(";"),
+        title + "\n\n" + content
+      );
+    },
+  },
+};
+
 var ScratchTools = {};
 ScratchTools.Storage = {};
 ScratchTools.Resources = {};
@@ -34,23 +96,23 @@ var allWaitInstances = {};
 let totalRunners = 0;
 ScratchTools.waitForElements = function (selector, callback) {
   totalRunners += 1;
-  var thisRunner = "wait-"+(totalRunners - 1).toString();
+  var thisRunner = "wait-" + (totalRunners - 1).toString();
   while (allWaitInstances[thisRunner]) {
     totalRunners += 1;
-    thisRunner = "wait-"+(totalRunners - 1).toString();
+    thisRunner = "wait-" + (totalRunners - 1).toString();
   }
   allWaitInstances[thisRunner] = {
     selector,
     callback,
     elements: [],
   };
-  returnScratchToolsSelectorsMutationObserverCallbacks()
+  returnScratchToolsSelectorsMutationObserverCallbacks();
   return {
     id: thisRunner,
-    remove: function() {
-      allWaitInstances[thisRunner].removed = true
-    }
-  }
+    remove: function () {
+      allWaitInstances[thisRunner].removed = true;
+    },
+  };
 };
 
 var stylesDiv = document.querySelector("div.scratchtools-styles-div");
@@ -184,6 +246,7 @@ ScratchTools.Features.get = function (search) {
 var allSettingChangeFunctions = {};
 
 var allDisableFunctions = {};
+var allEnableFunctions = {};
 ScratchTools.setDisable = function (feature, f) {
   allDisableFunctions[feature] = f;
   ScratchTools.console.log(`Set disable function for ${feature}.`);

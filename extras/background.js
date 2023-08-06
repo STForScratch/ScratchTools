@@ -437,7 +437,7 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
           ScratchTools.Features.data = dataFeatures;
         }
         await chrome.scripting.executeScript({
-          args: [cachedScripts],
+          args: [cachedScripts.filter((el) => new URL(tab.url).pathname.match(el.runOn))],
           target: { tabId: tabId },
           func: injectCachedModules,
           world: "MAIN",

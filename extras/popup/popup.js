@@ -575,7 +575,7 @@ async function getFeatures() {
           await chrome.storage.sync.set({
             features: data + "." + this.parentNode.parentNode.dataset.id,
           });
-          dynamicEnable(this.parentNode.parentNode.dataset.id);
+          await dynamicEnable(this.parentNode.parentNode.dataset.id);
         } else {
           window.close();
         }
@@ -754,12 +754,28 @@ async function dynamicEnable(id) {
           chrome.tabs.query({}, function (tabs) {
             for (var i = 0; i < tabs.length; i++) {
               try {
-                if (new URL(tabs[i].url).pathname.match(script.runOn)) {
+                if (new URL(tabs[i].url).pathname.match(el.runOn)) {
+                  if (el.module) {
+                    el.file = chrome.runtime.getURL(`/features/${feature.id}/${el.file}`)
+                    el.feature = feature
+                    chrome.scripting.executeScript({
+                      args: [
+                        el
+                      ],
+                      target: { tabId: tabs[i].id },
+                      func: injectModuleScript,
+                      world: "MAIN",
+                    });
+                    function injectModuleScript(script) {
+                      ScratchTools.injectModule(script)
+                    }
+                  } else {
                   chrome.scripting.executeScript({
                     target: { tabId: tabs[i].id },
                     files: [`/features/${feature.id}/${el.file}`],
                     world: "MAIN",
                   });
+                }
                 }
               } catch (err) {}
             }
