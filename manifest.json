@@ -1,6 +1,6 @@
 {
   "name": "__MSG_extName__",
-  "short_name": "__MSG_extName__",
+  "short_name": "ScratchTools",
   "manifest_version": 3,
   "version": "3.0.0",
   "version_name": "3.0.0-beta",

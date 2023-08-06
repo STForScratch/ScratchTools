@@ -58,7 +58,18 @@ if (document.querySelector(".sparkle")) {
   });
 }
 
+async function getFeatureLanguageData() {
+  var language = chrome.i18n.getUILanguage()?.includes("-") ? chrome.i18n.getUILanguage().split("-")[0] : chrome.i18n.getUILanguage()
+  var response = await fetch("/extras/feature-locales/"+language+".json")
+  if (response.ok) {
+    return response.json()
+  } else {
+    return {}
+  }
+}
+
 async function getSuggestions() {
+  var languageData = await getFeatureLanguageData()
   var enabled = (await chrome.storage.sync.get("features"))?.features || "";
   var data = await (await fetch("/features/features.json")).json();
   var suggested = [];
@@ -91,11 +102,11 @@ async function getSuggestions() {
       var div = document.createElement("div");
       div.className = "feature-suggestion";
       var h3 = document.createElement("h3");
-      h3.textContent = data.title;
+      h3.textContent = languageData[suggestion+"/title"]?.message || data.title;
       var p = document.createElement("p");
-      p.textContent = data.description;
+      p.textContent = languageData[suggestion+"/description"]?.message || data.description;
       var span = document.createElement("span");
-      span.textContent = "Click to view feature.";
+      span.textContent = chrome.i18n.getMessage("viewFeature") || "Click to view feature.";
       div.appendChild(h3);
       div.appendChild(p);
       div.appendChild(span);
@@ -346,7 +357,7 @@ async function getThemes() {
   });
   var div = document.createElement("div");
   div.className = "item";
-  div.textContent = "Theme Store";
+  div.textContent = chrome.i18n.getMessage("themeStore") || "Theme Store";
   document.querySelector(".dropdown").appendChild(div);
   div.addEventListener("click", async function () {
     document.getElementById("themedropdown").style.display = "none";
@@ -507,6 +518,7 @@ async function returnFeatureCode() {
 }
 
 async function getFeatures() {
+  var languageData = await getFeatureLanguageData()
   const settings = (await chrome.storage.sync.get("features")).features || "";
   const data = await (await fetch("/features/features.json")).json();
   for (var featurePlace in data) {
@@ -530,7 +542,7 @@ async function getFeatures() {
 
     var h3 = document.createElement("h3");
     h3.textContent =
-      chrome.i18n.getMessage(feature.id.replaceAll("-", "_") + "_title") ||
+      languageData[(feature.id+"/title")]?.message ||
       feature.title;
     h3.className = "featureTitle";
     div.appendChild(h3);
@@ -590,9 +602,7 @@ async function getFeatures() {
 
     var p = document.createElement("p");
     p.textContent =
-      chrome.i18n.getMessage(
-        feature.id.replaceAll("-", "_") + "_description"
-      ) || feature.description;
+      languageData[(feature.id+"/description")]?.message || feature.description;
     div.appendChild(p);
 
     if (feature.options) {
@@ -686,7 +696,7 @@ async function getFeatures() {
 
     var span = document.createElement("span");
     span.textContent =
-      (chrome.i18n.getMessage("credits_text") || "Credits") + ": ";
+      (chrome.i18n.getMessage("creditsText") || "Credits") + ": ";
 
     feature.credits.forEach(function (credit, i) {
       var a = document.createElement("a");
@@ -1080,3 +1090,56 @@ async function getNews() {
   note.appendChild(span);
   document.querySelector(".news").appendChild(note);
 }
+
+var localizationSelectors = [
+  {
+    selector: "#section2 > div.buttons > button:nth-child(1)",
+    key: "featuresFilterAll"
+  },
+  {
+    selector: "#section2 > div.buttons > button:nth-child(2)",
+    key: "featuresFilterWebsite"
+  },
+  {
+    selector: "#section2 > div.buttons > button:nth-child(3)",
+    key: "featuresFilterEditor"
+  },
+  {
+    selector: "#section2 > div.buttons > button:nth-child(4)",
+    key: "featuresFilterForums"
+  },
+  {
+    selector: "#section2 > div.sectionwrap > div.suggested > h1:nth-child(1)",
+    key: "forYouHeader"
+  },
+  {
+    selector: "#section2 > div.sectionwrap > div.suggested > h1:nth-child(3)",
+    key: "allFeaturesHeader"
+  },
+  {
+    selector: "input.searchbar",
+    key: "searchPlaceholder",
+    attribute: "placeholder"
+  },
+  {
+    selector: "body > span.support-btn > span",
+    key: "supportButton"
+  },
+  {
+    selector: "body > span.feedback-btn > span",
+    key: "feedbackButton"
+  },
+  {
+    selector: "body > span.more-settings-btn > span",
+    key: "settingsButton"
+  },
+]
+
+localizationSelectors.forEach(function(item) {
+  if (!chrome.i18n.getMessage(item.key) || !document.querySelector(item.selector)) return;
+  if (item.attribute) {
+    document.querySelector(item.selector)[item.attribute] = chrome.i18n.getMessage(item.key)
+  } else {
+  document.querySelector(item.selector).textContent = chrome.i18n.getMessage(item.key)
+  }
+})
