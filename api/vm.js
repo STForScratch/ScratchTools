@@ -11,19 +11,19 @@ try {
         Object.keys(app).find((key) => key.startsWith("__reactContainer"))
       ].child.stateNode.store.getState().scratchGui.vm;
     })();
-  ScratchTools.console.log("Able to load Virtual Machine.");
+  ste.console.log("Able to load Virtual Machine.", "ste-traps");
 } catch (err) {
-  ScratchTools.console.warn("Unable to load Virtual Machine.");
+  ste.console.warn("Unable to load Virtual Machine.", "ste-traps");
 }
 try {
   if (Blockly !== undefined) {
     ScratchTools.Scratch.blockly = Blockly;
-    ScratchTools.console.log("Able to load Blockly.");
+    ste.console.log("Able to load Blockly.", "ste-traps");
   } else {
-    ScratchTools.console.warn("Unable to load Blockly.");
+    ste.console.warn("Unable to load Blockly.", "ste-traps");
   }
 } catch (err) {
-  ScratchTools.console.warn("Unable to load Blockly.");
+  ste.console.warn("Unable to load Blockly.", "ste-traps");
 }
 
 ScratchTools.Scratch.scratchSound = function () {

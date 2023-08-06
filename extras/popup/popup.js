@@ -754,28 +754,28 @@ async function dynamicEnable(id) {
           chrome.tabs.query({}, function (tabs) {
             for (var i = 0; i < tabs.length; i++) {
               try {
-                if (new URL(tabs[i].url).pathname.match(el.runOn)) {
-                  if (el.module) {
-                    el.file = chrome.runtime.getURL(`/features/${feature.id}/${el.file}`)
-                    el.feature = feature
-                    chrome.scripting.executeScript({
-                      args: [
-                        el
-                      ],
-                      target: { tabId: tabs[i].id },
-                      func: injectModuleScript,
-                      world: "MAIN",
-                    });
-                    function injectModuleScript(script) {
-                      ScratchTools.injectModule(script)
-                    }
-                  } else {
+                if (el.module) {
+                  if (!el.file.startsWith(chrome.runtime.getURL("/"))) {
+                    el.file = chrome.runtime.getURL(
+                      `/features/${feature.id}/${el.file}`
+                    );
+                  }
+                  el.feature = feature;
+                  chrome.scripting.executeScript({
+                    args: [el],
+                    target: { tabId: tabs[i].id },
+                    func: injectModuleScript,
+                    world: "MAIN",
+                  });
+                  function injectModuleScript(script) {
+                    ScratchTools.injectModule(script);
+                  }
+                } else {
                   chrome.scripting.executeScript({
                     target: { tabId: tabs[i].id },
                     files: [`/features/${feature.id}/${el.file}`],
                     world: "MAIN",
                   });
-                }
                 }
               } catch (err) {}
             }
@@ -979,7 +979,7 @@ if (document.querySelector(".feedback-btn")) {
   getNotifications();
 }
 
-document.querySelector(".searchbar")?.focus()
+document.querySelector(".searchbar")?.focus();
 
 async function downloadSettings() {
   var allFeatures = await (await fetch("/features/features.json")).json();
@@ -1034,47 +1034,49 @@ async function loadFromJson(data) {
   window.location.href = window.location.href;
 }
 
-document.querySelector(".settings-load-input")?.addEventListener("input", async function() {
-  var input = document.querySelector(".settings-load-input")
-  if (input.files[0].type === "application/json") {
-    var data = await parseFile(input.files[0])
-    if (Object.keys(data).length === 2 && data.features && data.options) {
-      loadFromJson(data)
+document
+  .querySelector(".settings-load-input")
+  ?.addEventListener("input", async function () {
+    var input = document.querySelector(".settings-load-input");
+    if (input.files[0].type === "application/json") {
+      var data = await parseFile(input.files[0]);
+      if (Object.keys(data).length === 2 && data.features && data.options) {
+        loadFromJson(data);
+      } else {
+        alert("Invalid file.");
+      }
     } else {
-      alert("Invalid file.")
+      alert("Invalid file.");
     }
-  } else {
-    alert("Invalid file.")
-  }
-})
+  });
 
 async function parseFile(file) {
   return new Promise((resolve, reject) => {
-    const fileReader = new FileReader()
-    fileReader.onload = event => resolve(JSON.parse(event.target.result))
-    fileReader.onerror = error => reject(error)
-    fileReader.readAsText(file)
-  })
+    const fileReader = new FileReader();
+    fileReader.onload = (event) => resolve(JSON.parse(event.target.result));
+    fileReader.onerror = (error) => reject(error);
+    fileReader.readAsText(file);
+  });
 }
 
 function importSettingsInput() {
-  var input = document.querySelector(".settings-load-input")
-  input.click()
+  var input = document.querySelector(".settings-load-input");
+  input.click();
 }
 
 if (document.querySelector(".news")) {
-  getNews()
+  getNews();
 }
 
 async function getNews() {
-  var data = await (await fetch("https://data.scratchtools.app/news/")).json()
-  var note = document.createElement("div")
-  note.className = "note blue"
-  var h3 = document.createElement("h3")
-  h3.textContent = data.title
-  var span = document.createElement("span")
-  span.innerHTML = data.description
-  note.appendChild(h3)
-  note.appendChild(span)
-  document.querySelector(".news").appendChild(note)
+  var data = await (await fetch("https://data.scratchtools.app/news/")).json();
+  var note = document.createElement("div");
+  note.className = "note blue";
+  var h3 = document.createElement("h3");
+  h3.textContent = data.title;
+  var span = document.createElement("span");
+  span.innerHTML = data.description;
+  note.appendChild(h3);
+  note.appendChild(span);
+  document.querySelector(".news").appendChild(note);
 }
