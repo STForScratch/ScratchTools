@@ -1,5 +1,4 @@
-export default async function({ feature }) {
-  var isOnlineFeature = new Feature({ id: "isonline" })
+export default async function({ feature, console }) {
   if (document.querySelector(".ste-isonline")) {
     document.querySelector(".ste-isonline").remove();
   }
@@ -15,7 +14,7 @@ export default async function({ feature }) {
     span.className =
       "ste-isonline " +
       (data.online ? "ste-detect-online" : "ste-detect-offline");
-    span.textContent = data.online ? isOnlineFeature.getLocale("online") : isOnlineFeature.getLocale("offline");
+    span.textContent = data.online ? feature.getLocale("online") : feature.getLocale("offline");
     span.title = "This was added by ScratchTools.";
     span.setScratchTools()
     ScratchTools.appendToSharedSpace({
@@ -26,7 +25,7 @@ export default async function({ feature }) {
   } else {
     var span = document.createElement("span");
     span.className = "ste-isonline unsure";
-    span.textContent = isOnlineFeature.getLocale("unavailable");
+    span.textContent = feature.getLocale("unavailable");
     span.title = "This was added by ScratchTools.";
     span.setScratchTools()
     ScratchTools.appendToSharedSpace({
@@ -35,4 +34,14 @@ export default async function({ feature }) {
       order: 1,
     });
   }
+
+  feature.addEventListener("disabled", async function() {
+    var span = await ScratchTools.waitForElement(".ste-isonline")
+    span.style.display = "none"
+  })
+
+  feature.addEventListener("enabled", async function() {
+    var span = await ScratchTools.waitForElement(".ste-isonline")
+    span.style.display = null
+  })
 }
