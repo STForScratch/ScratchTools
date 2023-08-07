@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "message-count",
+    "versionAdded": "v3.1.0"
+  },
+  {
+    "version": 2,
     "id": "move-share-button",
     "versionAdded": "v3.1.0"
   },
@@ -1049,14 +1054,6 @@
     "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "forum-scratch-team",
     "type": ["Forums"]
-  },
-  {
-    "title": "Message Count",
-    "description": "On profiles, displays the user's message count next to their country.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos"],
-    "file": "message-count",
-    "type": ["Website"]
   },
   {
     "title": "Remove Editor Icons",

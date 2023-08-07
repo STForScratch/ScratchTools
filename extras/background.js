@@ -585,23 +585,7 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
             }
             chrome.storage.sync.get("features", async function (obj) {
               if (obj["features"].includes(data[el]["file"] || data[el].id)) {
-                if (data[el].version === 2) {
-                  var newData = await (
-                    await fetch(`/features/${data[el].id}/data.json`)
-                  ).json();
-                  console.log(data[el].id);
-                  newData.scripts
-                    ?.filter((el) => !el.module)
-                    ?.forEach(function (script) {
-                      if (new URL(tab.url).pathname.match(script.runOn)) {
-                        chrome.scripting.executeScript({
-                          target: { tabId: tabId },
-                          files: [`/features/${data[el]["id"]}/${script.file}`],
-                          world: newData.world?.toUpperCase() || "MAIN",
-                        });
-                      }
-                    });
-                } else {
+                if (data[el].version !== 2) {
                   chrome.scripting.executeScript({
                     target: { tabId: tabId },
                     files: [`/features/${data[el]["file"]}.js`],
@@ -696,7 +680,7 @@ async function getModules() {
     var scripts =
       (
         await (await fetch(`/features/${feature.id}/data.json`)).json()
-      ).scripts?.filter((el) => el.module) || [];
+      ).scripts || [];
     if (scripts) {
       for (var i2 in scripts) {
         scripts[i2].feature = feature;
