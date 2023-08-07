@@ -1,7 +1,7 @@
 // We are temporarily using Scratch Addons' appendToSharedSpace method for compatibility reasons.
 
 ScratchTools.appendToSharedSpace = function ({ space, element, order, scope }) {
-  order += .5
+  order += 0.5;
   const q = document.querySelector.bind(document);
   const sharedSpaces = {
     stageHeader: {
@@ -199,7 +199,19 @@ ScratchTools.appendToSharedSpace = function ({ space, element, order, scope }) {
       until: () => [],
     },
     afterProfileCountry: {
-      element: () => q("p.profile-details > .location"),
+      element: () =>
+        q(".shared-after-country-space") ||
+        (() => {
+          const wrapper = Object.assign(document.createElement("div"), {
+            className: "shared-after-country-space",
+          });
+
+          wrapper.style.display = "inline-block";
+
+          document.querySelector(".location").appendChild(wrapper)
+
+          return wrapper;
+        })(),
       from: () => [],
       until: () => [],
     },
