@@ -14,7 +14,7 @@ export default async function({ feature, console }) {
     span.className =
       "ste-isonline " +
       (data.online ? "ste-detect-online" : "ste-detect-offline");
-    span.textContent = data.online ? feature.getLocale("online") : feature.getLocale("offline");
+    span.textContent = data.online ? feature.msg("online") : feature.msg("offline");
     span.title = "This was added by ScratchTools.";
     span.setScratchTools()
     ScratchTools.appendToSharedSpace({
@@ -25,7 +25,7 @@ export default async function({ feature, console }) {
   } else {
     var span = document.createElement("span");
     span.className = "ste-isonline unsure";
-    span.textContent = feature.getLocale("unavailable");
+    span.textContent = feature.msg("unavailable");
     span.title = "This was added by ScratchTools.";
     span.setScratchTools()
     ScratchTools.appendToSharedSpace({

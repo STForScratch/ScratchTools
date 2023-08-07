@@ -1,6 +1,7 @@
 let alreadyInjected = [];
 
 ScratchTools.modules.forEach(async function (script) {
+  var feature = await import(ScratchTools.dir+"/api/feature/index.js")
   var shouldBeRun = true;
   if (script.runOn) {
     shouldBeRun = !!new URL(window.location.href).pathname.match(script.runOn);
@@ -14,7 +15,7 @@ ScratchTools.modules.forEach(async function (script) {
       alreadyInjected.push(script.file);
       var fun = await import(script.file);
       fun.default({
-        feature: new Feature(script.feature),
+        feature: feature.default(script.feature),
         console: {
           log: function (content) {
             ste.console.log(content, script.feature.id);
@@ -32,6 +33,7 @@ ScratchTools.modules.forEach(async function (script) {
 });
 
 ScratchTools.injectModule = async function (script) {
+  var feature = await import(ScratchTools.dir+"/api/feature/index.js")
   var shouldBeRun = true;
   if (script.runOn) {
     shouldBeRun = !!new URL(window.location.href).pathname.match(script.runOn);
@@ -45,7 +47,7 @@ ScratchTools.injectModule = async function (script) {
       alreadyInjected.push(script.file);
       var fun = await import(script.file);
       fun.default({
-        feature: new Feature(script.feature),
+        feature: feature.default(script.feature),
         console: {
           log: function (content) {
             ste.console.log(content, script.feature.id);
