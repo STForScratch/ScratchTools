@@ -427,13 +427,14 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
           }
         }
         await chrome.scripting.executeScript({
-          args: [newFullData],
+          args: [newFullData, chrome.runtime.getURL("").slice(0, chrome.runtime.getURL("").length-1)],
           target: { tabId: tabId },
           func: getFeaturesForAPI,
           world: "MAIN",
         });
         ScratchTools.console.log("Injected features API.");
-        function getFeaturesForAPI(dataFeatures) {
+        function getFeaturesForAPI(dataFeatures, dir) {
+          ScratchTools.dir = dir
           ScratchTools.Features.data = dataFeatures;
         }
         await chrome.scripting.executeScript({
