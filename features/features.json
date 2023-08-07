@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "statistics",
+    "versionAdded": "v3.1.0"
+  },
+  {
+    "version": 2,
     "id": "echo-effect",
     "versionAdded": "v3.1.0"
   },
@@ -981,14 +986,6 @@
       "https://scratch.mit.edu/users/rgantzos/"
     ],
     "file": "nfe-search",
-    "type": ["Website"]
-  },
-  {
-    "title": "Statistics",
-    "description": "Adds a statistics button on the my stuff page that leads to the user's ScratchStats profile.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "statistics",
     "type": ["Website"]
   },
   {
