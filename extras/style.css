@@ -149,7 +149,7 @@ a {
 .feature h3 {
   font-size: 1.25rem !important;
   margin-bottom: -0.5rem;
-  width: 80%;
+  max-width: calc(90% - 6rem);
 }
 
 .feature h3[style="font-size: 1.5em;"] {
@@ -673,5 +673,32 @@ body[data-filter="Forums"] .feature[data-type*="Forums"] {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   transform: scale(80%);
+  display: inline-block;
+}
+
+.feature span.new-feature-tag {
+  background-color: var(--theme);
+  color: white;
+  padding: .25rem;
+  display: inline-block;
+  margin-left: .5rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  border-radius: .75rem;
+  position: relative;
+  top: -.15rem;
+  line-height: normal;
+  user-select: none;
+  transition: opacity .3s, transform .3s;
+  opacity: 1;
+  transform: none;
+}
+
+.feature span.new-feature-tag:hover {
+  opacity: .75;
+  transform: scale(105%);
+}
+
+.feature > h3 {
   display: inline-block;
 }
