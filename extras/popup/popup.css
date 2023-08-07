@@ -365,3 +365,7 @@ input:checked + .slider:before {
 .feature > h3 {
   display: inline-block;
 }
+
+.ste-easter-egg {
+  display: none !important;
+}

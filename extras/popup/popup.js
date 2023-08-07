@@ -1,3 +1,5 @@
+var clicks = 0
+
 var defaultThemes = [
   {
     data: {
@@ -539,7 +541,8 @@ async function getFeatures() {
       const featureData = await (
         await fetch("/features/" + feature.id + "/data.json")
       ).json();
-      featureData.versionAdded = feature.versionAdded
+      featureData.versionAdded = feature.versionAdded;
+      featureData.versionUpdated = feature.versionUpdated;
       featureData.id = feature.id;
       featureData.version = feature.version;
       feature = featureData;
@@ -552,11 +555,23 @@ async function getFeatures() {
     h3.className = "featureTitle";
     div.appendChild(h3);
 
-    if (feature.versionAdded?.replace("v", "") === chrome.runtime.getManifest().version.toString()) {
-      var span = document.createElement("span")
-      span.textContent = "New"
-      span.className = "new-feature-tag"
-      div.appendChild(span)
+    if (
+      feature.versionAdded?.replace("v", "") ===
+      chrome.runtime.getManifest().version.toString()
+    ) {
+      var span = document.createElement("span");
+      span.textContent = "New";
+      span.className = "new-feature-tag";
+      div.classList.add("new-feature");
+      div.appendChild(span);
+    } else if (
+      feature.versionUpdated?.replace("v", "") ===
+      chrome.runtime.getManifest().version.toString()
+    ) {
+      var span = document.createElement("span");
+      span.textContent = "Updated";
+      span.className = "new-feature-tag updated";
+      div.appendChild(span);
     }
 
     var label = document.createElement("label");
@@ -570,6 +585,9 @@ async function getFeatures() {
     div.appendChild(label);
     if (settings.includes(feature.id)) {
       input.checked = true;
+    }
+    if (feature.type.includes("Egg") && !settings.includes(feature.id)) {
+      div.classList.add("ste-easter-egg")
     }
 
     input.addEventListener("input", async function () {
@@ -595,6 +613,7 @@ async function getFeatures() {
           var ok = true;
         }
         if (ok) {
+          this.parentNode.parentNode.style.display = null
           this.checked = true;
           await chrome.storage.sync.set({
             features: data + "." + this.parentNode.parentNode.dataset.id,
@@ -745,7 +764,37 @@ async function getFeatures() {
     });
     div.appendChild(span);
 
-    document.querySelector(".settings").appendChild(div);
+    if (
+      feature.versionAdded?.replace("v", "") ===
+      chrome.runtime.getManifest().version.toString()
+    ) {
+      document.querySelector(".settings").prepend(div);
+    } else if (
+      feature.versionUpdated?.replace("v", "") ===
+      chrome.runtime.getManifest().version.toString()
+    ) {
+      if (
+        document.querySelector(".settings > .feature.new-feature") &&
+        document.querySelectorAll(".settings > .feature.new-feature")[
+          document.querySelectorAll(".settings > .feature.new-feature").length -
+            1
+        ]?.nextSibling
+      ) {
+        document
+          .querySelector(".settings")
+          .insertBefore(
+            div,
+            document.querySelectorAll(".settings > .feature.new-feature")[
+              document.querySelectorAll(".settings > .feature.new-feature")
+                .length - 1
+            ].nextSibling
+          );
+      } else {
+        document.querySelector(".settings").appendChild(div);
+      }
+    } else {
+      document.querySelector(".settings").appendChild(div);
+    }
   }
 }
 getFeatures();
@@ -947,11 +996,23 @@ document.getElementById("campsite")?.addEventListener("click", function () {
   });
 });
 
+if (document.querySelector(".main-page")) {
+  var logo = document.querySelector("div.sticon")
+  logo.addEventListener("click", function() {
+    clicks += 1
+    if (clicks > 4) {
+      clicks = 0
+      document.querySelector(".buttons .selected").classList.remove("selected")
+      document.body.dataset.filter = "Egg";
+    }
+  })
+}
+
 if (document.querySelector(".buttons")) {
   document.querySelectorAll(".buttons button").forEach(function (el) {
     el.addEventListener("click", function () {
       document.body.dataset.filter = el.textContent;
-      el.parentNode.querySelector(".selected").classList.remove("selected");
+      el.parentNode.querySelector(".selected")?.classList.remove("selected");
       el.classList.add("selected");
     });
   });
