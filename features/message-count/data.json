@@ -1,0 +1,12 @@
+{
+  "title": "Message Count",
+  "description": "Displays the user's message count on their profile next to the country.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "dynamic": true,
+  "scripts": [{ "file": "script.js", "runOn": "/users/*", "module": true }],
+  "translations": ["en"]
+}

@@ -4,6 +4,7 @@ let cachedStyles;
 async function cache() {
   cachedStorage = (await chrome.storage.sync.get("features"))?.features || "";
   cachedStyles = await getEnabledStyles();
+  cachedScripts = await getModules();
   return true;
 }
 cache();
@@ -391,33 +392,7 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
           files: [`/api/spaces.js`],
           world: "MAIN",
         });
-        ScratchTools.console.log("Injected protect spaces API.");
-        await chrome.scripting.executeScript({
-          target: { tabId: tabId },
-          files: [`/extras/protect-mention.js`],
-          world: "MAIN",
-        });
-        ScratchTools.console.log("Injected protect mention script.");
-        await chrome.scripting.executeScript({
-          args: [chrome.runtime.id],
-          target: { tabId: tabId },
-          func: injectExtensionId,
-          world: "MAIN",
-        });
-        ScratchTools.console.log("Injected extension ID.");
-        function injectExtensionId(id) {
-          ScratchTools.id = id;
-        }
-        await chrome.scripting.executeScript({
-          args: [chrome.runtime.getURL("/extras/icons/icon128.png")],
-          target: { tabId: tabId },
-          func: injectExtensionIcon,
-          world: "MAIN",
-        });
-        ScratchTools.console.log("Injected extension icon.");
-        function injectExtensionIcon(icon) {
-          ScratchTools.icons = { main: icon };
-        }
+        ScratchTools.console.log("Injected spaces API.");
         var newFullData = [];
         for (var i in data) {
           var feature = data[i];
@@ -452,14 +427,50 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
           }
         }
         await chrome.scripting.executeScript({
-          args: [newFullData],
+          args: [newFullData, chrome.runtime.getURL("").slice(0, chrome.runtime.getURL("").length-1)],
           target: { tabId: tabId },
           func: getFeaturesForAPI,
           world: "MAIN",
         });
         ScratchTools.console.log("Injected features API.");
-        function getFeaturesForAPI(dataFeatures) {
+        function getFeaturesForAPI(dataFeatures, dir) {
+          ScratchTools.dir = dir
           ScratchTools.Features.data = dataFeatures;
+        }
+        await chrome.scripting.executeScript({
+          args: [cachedScripts],
+          target: { tabId: tabId },
+          func: injectCachedModules,
+          world: "MAIN",
+        });
+        function injectCachedModules(data) {
+          ScratchTools.modules = data;
+        }
+        await chrome.scripting.executeScript({
+          target: { tabId: tabId },
+          files: [`/extras/protect-mention.js`],
+          world: "MAIN",
+        });
+        ScratchTools.console.log("Injected protect mention script.");
+        await chrome.scripting.executeScript({
+          args: [chrome.runtime.id],
+          target: { tabId: tabId },
+          func: injectExtensionId,
+          world: "MAIN",
+        });
+        ScratchTools.console.log("Injected extension ID.");
+        function injectExtensionId(id) {
+          ScratchTools.id = id;
+        }
+        await chrome.scripting.executeScript({
+          args: [chrome.runtime.getURL("/extras/icons/icon128.png")],
+          target: { tabId: tabId },
+          func: injectExtensionIcon,
+          world: "MAIN",
+        });
+        ScratchTools.console.log("Injected extension icon.");
+        function injectExtensionIcon(icon) {
+          ScratchTools.icons = { main: icon };
         }
         addData();
         injectStyles(tabId);
@@ -552,6 +563,12 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
             storage[Object.keys(storage)[0]];
         }
         ScratchTools.console.log("Injected storage API.");
+        await chrome.scripting.executeScript({
+          target: { tabId: tabId },
+          files: [`/api/module.js`],
+          world: "MAIN",
+        });
+        ScratchTools.console.log("Injected module API.");
         Object.keys(data).forEach(async function (el) {
           var disabled = (await chrome.storage.sync.get("autoDisabled"))
             .autoDisabled;
@@ -568,22 +585,7 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
             }
             chrome.storage.sync.get("features", async function (obj) {
               if (obj["features"].includes(data[el]["file"] || data[el].id)) {
-                if (data[el].version === 2) {
-                  var newData = await (
-                    await fetch(`/features/${data[el].id}/data.json`)
-                  ).json();
-                  console.log(data[el].id);
-                  newData.scripts?.forEach(function (script) {
-                    console.log(script.file);
-                    if (new URL(tab.url).pathname.match(script.runOn)) {
-                      chrome.scripting.executeScript({
-                        target: { tabId: tabId },
-                        files: [`/features/${data[el]["id"]}/${script.file}`],
-                        world: newData.world?.toUpperCase() || "MAIN",
-                      });
-                    }
-                  });
-                } else {
+                if (data[el].version !== 2) {
                   chrome.scripting.executeScript({
                     target: { tabId: tabId },
                     files: [`/features/${data[el]["file"]}.js`],
@@ -667,6 +669,29 @@ async function getEnabledStyles() {
     }
   }
   return allStyles;
+}
+async function getModules() {
+  var allScripts = [];
+  var data = (await (await fetch(`/features/features.json`)).json()).filter(
+    (el) => el.version === 2 && cachedStorage.includes(el.id)
+  );
+  for (var i in data) {
+    var feature = data[i];
+    var scripts =
+      (
+        await (await fetch(`/features/${feature.id}/data.json`)).json()
+      ).scripts || [];
+    if (scripts) {
+      for (var i2 in scripts) {
+        scripts[i2].feature = feature;
+        scripts[i2].file = chrome.runtime.getURL(
+          `/features/${feature.id}/${scripts[i2].file}`
+        );
+        allScripts.push(scripts[i2]);
+      }
+    }
+  }
+  return allScripts;
 }
 chrome.runtime.onMessage.addListener(async function (
   msg,

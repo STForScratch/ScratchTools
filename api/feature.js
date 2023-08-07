@@ -7,7 +7,7 @@ class Feature {
       }
     });
     this.data = finalFeature;
-    this.getLocale = function (string) {
+    this.msg = function (string) {
       if (this.data.translations) {
         return this.data.localesData[string];
       } else {
@@ -39,6 +39,16 @@ class Feature {
             }' is not dynamic. The disable function will not be triggered.`
           );
         }
+      } else if (event === "enabled") {
+        if (this.data.dynamic) {
+          allEnableFunctions[this.data.id || this.data.file] = callback;
+        } else {
+          console.error(
+            `'${
+              this.data.id || this.data.file
+            }' is not dynamic. The enable function will not be triggered.`
+          );
+        }
       } else if (event === "settingChange") {
         allSettingChangeFunctions[this.data.id || this.data.file] = callback;
       } else if (event === "iceCream") {
@@ -60,6 +70,13 @@ class Feature {
         return settings;
       }
     };
+    this.tab = {
+      path: window.location.pathname,
+      scratch: document.querySelector("#app") ? 3 : 2,
+    }
+    this.redux = document.querySelector("#app")?.[
+        Object.keys(app).find((key) => key.startsWith("__reactContainer"))
+      ].child.stateNode.store
     if (finalFeature.version !== 2) {
       console.warn(
         `'${finalFeature.file}' does not use Feature v2. It is recommended that you use the newest version.`

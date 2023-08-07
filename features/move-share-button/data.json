@@ -1,0 +1,12 @@
+{
+  "title": "Move Share Button",
+  "description": "On project pages, moves the share button next to the See Inside button.",
+  "credits": [
+    { "username": "stio_studio", "url": "https://scratch.mit.edu/users/stio_studio/" },
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "dynamic": true,
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*", "module": true }]
+}
