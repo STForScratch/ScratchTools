@@ -2,7 +2,7 @@
   {
     "version": 2,
     "id": "statistics",
-    "versionAdded": "v3.1.0"
+    "versionUpdated": "v3.1.0"
   },
   {
     "version": 2,
@@ -17,16 +17,11 @@
   {
     "version": 2,
     "id": "message-count",
-    "versionAdded": "v3.1.0"
+    "versionUpdated": "v3.1.0"
   },
   {
     "version": 2,
     "id": "move-share-button",
-    "versionAdded": "v3.1.0"
-  },
-  {
-    "version": 2,
-    "id": "preview-textboxes",
     "versionAdded": "v3.1.0"
   },
   {

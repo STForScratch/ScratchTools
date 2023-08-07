@@ -539,6 +539,7 @@ async function getFeatures() {
       const featureData = await (
         await fetch("/features/" + feature.id + "/data.json")
       ).json();
+      featureData.versionAdded = feature.versionAdded
       featureData.id = feature.id;
       featureData.version = feature.version;
       feature = featureData;
@@ -550,6 +551,13 @@ async function getFeatures() {
       languageData[feature.id + "/title"]?.message || feature.title;
     h3.className = "featureTitle";
     div.appendChild(h3);
+
+    if (feature.versionAdded?.replace("v", "") === chrome.runtime.getManifest().version.toString()) {
+      var span = document.createElement("span")
+      span.textContent = "New"
+      span.className = "new-feature-tag"
+      div.appendChild(span)
+    }
 
     var label = document.createElement("label");
     label.className = "switch";
