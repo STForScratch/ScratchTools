@@ -2,12 +2,37 @@
   {
     "version": 2,
     "id": "steal-game",
+    "versionUpdated": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "statistics",
+    "versionUpdated": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "echo-effect",
+    "versionAdded": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "compact-buttons",
+    "versionAdded": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "message-count",
+    "versionUpdated": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "move-share-button",
     "versionAdded": "v3.1.0"
   },
   {
     "version": 2,
     "id": "preview-textboxes",
-    "versionAdded": "v3.1.0"
+    "versionAdded": "v3.0.0"
   },
   {
     "version": 2,
@@ -408,8 +433,7 @@
       "https://scratch.mit.edu/users/rgantzos/"
     ],
     "file": "dumpster-fire",
-    "type": ["Website"],
-    "tags": ["Egg"],
+    "type": ["Website", "Egg"],
     "dynamic": true
   },
   {
@@ -964,14 +988,6 @@
     "type": ["Website"]
   },
   {
-    "title": "Statistics",
-    "description": "Adds a statistics button on the my stuff page that leads to the user's ScratchStats profile.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "statistics",
-    "type": ["Website"]
-  },
-  {
     "title": "Open in New Tab",
     "description": "Automatically opens links on project pages in a new tab.",
     "credits": ["rgantzos"],
@@ -1049,14 +1065,6 @@
     "urls": ["https://scratch.mit.edu/users/rgantzos/"],
     "file": "forum-scratch-team",
     "type": ["Forums"]
-  },
-  {
-    "title": "Message Count",
-    "description": "On profiles, displays the user's message count next to their country.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos"],
-    "file": "message-count",
-    "type": ["Website"]
   },
   {
     "title": "Remove Editor Icons",

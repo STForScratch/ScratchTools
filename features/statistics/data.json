@@ -1,0 +1,12 @@
+{
+  "title": "Statistics",
+  "description": "Adds a statistics button on the my stuff page that leads to your ScratchStats profile.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "dynamic": true,
+  "scripts": [{ "file": "script.js", "runOn": "/mystuff*" }],
+  "translations": ["en"]
+}

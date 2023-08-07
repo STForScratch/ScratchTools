@@ -100,7 +100,7 @@ a {
 
 .feature .featureTitle {
   color: var(--primary-color);
-  width: calc(90% - 55px);
+  max-width: calc(90% - 6rem);
   font-weight: bold;
   font-size: 1.25rem !important;
   margin-bottom: 0.5rem;
@@ -338,4 +338,34 @@ input:checked + .slider:before {
   color: var(--primary-color);
   opacity: 0.5;
   text-align: center;
+}
+
+.feature span.new-feature-tag {
+  background-color: var(--theme);
+  color: white;
+  padding: .25rem;
+  display: inline-block;
+  margin-left: .5rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  border-radius: .75rem;
+  position: relative;
+  top: -.15rem;
+  user-select: none;
+  transition: opacity .3s, transform .3s;
+  opacity: 1;
+  transform: none;
+}
+
+.feature span.new-feature-tag:hover {
+  opacity: .75;
+  transform: scale(105%);
+}
+
+.feature > h3 {
+  display: inline-block;
+}
+
+.ste-easter-egg {
+  display: none !important;
 }
