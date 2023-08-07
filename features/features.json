@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "echo-effect",
+    "versionAdded": "v3.1.0"
+  },
+  {
+    "version": 2,
     "id": "message-count",
     "versionAdded": "v3.1.0"
   },
