@@ -1,0 +1,9 @@
+.splash-header > .news ul {
+    height: 23rem;
+    overflow-y: scroll;
+}
+
+button.button.ste-load-more-news {
+    width: 100%;
+    padding: .4rem;
+}

@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "more-news",
+    "versionAdded": "v3.1.0"
+  },
+  {
+    "version": 2,
     "id": "steal-game",
     "versionAdded": "v3.1.0"
   },
