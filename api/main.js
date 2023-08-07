@@ -273,6 +273,9 @@ ScratchTools.setDisable = function (feature, f) {
 };
 
 ScratchTools.disable = function (feature) {
+  allFeatures.filter((el) => el.self.id === feature).forEach(function(el) {
+    el.self.enabled = false
+  })
   ste.console.log(`Disabled ${feature}.`, "ste-main");
   document
     .querySelectorAll(`link[data-feature=${feature}]`)

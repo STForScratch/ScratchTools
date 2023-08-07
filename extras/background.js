@@ -448,12 +448,6 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
         }
         await chrome.scripting.executeScript({
           target: { tabId: tabId },
-          files: [`/api/module.js`],
-          world: "MAIN",
-        });
-        ScratchTools.console.log("Injected module API.");
-        await chrome.scripting.executeScript({
-          target: { tabId: tabId },
           files: [`/extras/protect-mention.js`],
           world: "MAIN",
         });
@@ -569,6 +563,12 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
             storage[Object.keys(storage)[0]];
         }
         ScratchTools.console.log("Injected storage API.");
+        await chrome.scripting.executeScript({
+          target: { tabId: tabId },
+          files: [`/api/module.js`],
+          world: "MAIN",
+        });
+        ScratchTools.console.log("Injected module API.");
         Object.keys(data).forEach(async function (el) {
           var disabled = (await chrome.storage.sync.get("autoDisabled"))
             .autoDisabled;

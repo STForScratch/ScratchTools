@@ -1,3 +1,4 @@
+let allFeatures = []
 let alreadyInjected = [];
 
 ScratchTools.modules.forEach(async function (script) {
@@ -15,8 +16,10 @@ ScratchTools.modules.forEach(async function (script) {
       alreadyInjected.push(script.file);
       var fun = await import(script.file);
       if (fun.default) {
+        var featureGenerated = feature.default(script.feature)
+        allFeatures.push(featureGenerated)
         fun.default({
-          feature: feature.default(script.feature),
+          feature: featureGenerated,
           console: {
             log: function (content) {
               ste.console.log(content, script.feature.id);
@@ -49,8 +52,10 @@ ScratchTools.injectModule = async function (script) {
       alreadyInjected.push(script.file);
       var fun = await import(script.file);
       if (fun.default) {
+        var featureGenerated = feature.default(script.feature)
+        allFeatures.push(featureGenerated)
         fun.default({
-          feature: feature.default(script.feature),
+          feature: featureGenerated,
           console: {
             log: function (content) {
               ste.console.log(content, script.feature.id);
@@ -65,6 +70,9 @@ ScratchTools.injectModule = async function (script) {
         });
       }
     } else {
+      allFeatures.filter((el) => el.self.id === script.feature.id).forEach(function(el) {
+        el.self.enabled = true
+      })
       allEnableFunctions[script.feature.id]?.();
     }
   }
