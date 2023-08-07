@@ -6,6 +6,11 @@
   },
   {
     "version": 2,
+    "id": "compact-buttons",
+    "versionAdded": "v3.1.0"
+  },
+  {
+    "version": 2,
     "id": "message-count",
     "versionAdded": "v3.1.0"
   },
@@ -18,6 +23,11 @@
     "version": 2,
     "id": "preview-textboxes",
     "versionAdded": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "preview-textboxes",
+    "versionAdded": "v3.0.0"
   },
   {
     "version": 2,
