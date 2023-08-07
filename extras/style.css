@@ -543,6 +543,18 @@ body[data-filter="Forums"] .feature[data-type*="Forums"] {
   display: inline-block;
 }
 
+.ste-easter-egg {
+  display: none !important;
+}
+
+body[data-filter="Egg"] .feature {
+  display: none;
+}
+
+body[data-filter="Egg"] .feature[data-type*="Egg"] {
+  display: inline-block !important;
+}
+
 .end {
   margin-top: 1rem;
   width: 100%;

@@ -428,8 +428,7 @@
       "https://scratch.mit.edu/users/rgantzos/"
     ],
     "file": "dumpster-fire",
-    "type": ["Website"],
-    "tags": ["Egg"],
+    "type": ["Website", "Egg"],
     "dynamic": true
   },
   {
