@@ -4,6 +4,16 @@ export default function (id) {
     id,
     data: feature,
     enabled: true,
+    hideOnDisable: function(element) {
+      ScratchTools.managedElements.push({
+        element,
+        feature: feature.id,
+        previousDisplay: element.style.display,
+      })
+      if (!this.enabled) {
+        element.style.display = "none"
+      }
+    },
     dir: ScratchTools.dir + `/features/${id}/`,
     getResource: function (resource) {
       if (!feature.resources.find((el) => el.name === resource)) return;

@@ -81,6 +81,7 @@ var ste = {
 };
 
 var ScratchTools = {};
+ScratchTools.managedElements = []
 ScratchTools.Storage = {};
 ScratchTools.Resources = {};
 ste.console.log("ScratchTools API Created", "ste-main");
@@ -275,6 +276,10 @@ ScratchTools.setDisable = function (feature, f) {
 ScratchTools.disable = function (feature) {
   allFeatures.filter((el) => el.self.id === feature).forEach(function(el) {
     el.self.enabled = false
+  })
+  ScratchTools.managedElements.filter((el) => el.feature === feature).forEach(function(el) {
+    el.previousDisplay = el.element.style.display
+    el.element.style.display = "none"
   })
   ste.console.log(`Disabled ${feature}.`, "ste-main");
   document

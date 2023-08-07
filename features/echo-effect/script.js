@@ -1,5 +1,4 @@
 export default function ({ feature, console }) {
-  window.feature = feature;
   ScratchTools.waitForElements(
     "div[class^='sound-editor_row_'][class*='sound-editor_row-reverse_']",
     function (container) {
@@ -9,9 +8,7 @@ export default function ({ feature, console }) {
         "icon-button_container_278u5 sound-editor_effect-button_2zuzT ste-echo";
       button.role = "button";
 
-      if (!feature.self.enabled) {
-        button.style.display = "none"
-      }
+      feature.self.hideOnDisable(button)
 
       button.addEventListener("click", function() {
         feature.traps.sound().handleEffect("echo")
@@ -28,17 +25,5 @@ export default function ({ feature, console }) {
       button.appendChild(title);
 
       container.appendChild(button)
-    })
-
-    feature.addEventListener("disabled", function() {
-        if (document.querySelector(".ste-echo")) {
-            document.querySelector(".ste-echo").style.display = "none"
-        }
-    })
-
-    feature.addEventListener("enabled", function() {
-        if (document.querySelector(".ste-echo")) {
-            document.querySelector(".ste-echo").style.display = null
-        }
     })
 }

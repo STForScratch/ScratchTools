@@ -73,6 +73,9 @@ ScratchTools.injectModule = async function (script) {
       allFeatures.filter((el) => el.self.id === script.feature.id).forEach(function(el) {
         el.self.enabled = true
       })
+      ScratchTools.managedElements.filter((el) => el.feature === script.feature.id).forEach(function(el) {
+        el.element.style.display = el.previousDisplay || null
+      })
       allEnableFunctions[script.feature.id]?.();
     }
   }
