@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "dumpster-fire",
+    "versionUpdated": "v3.1.0"
+  },
+  {
+    "version": 2,
     "id": "steal-game",
     "versionAdded": "v3.1.0"
   },
@@ -422,18 +427,6 @@
     "file": "hide-disabled-menu-options",
     "type": ["Editor"],
     "tags": [],
-    "dynamic": true
-  },
-  {
-    "title": "Dumpster Fire",
-    "description": "The Scratch homepage is a liar with their \"Featured Projects\" section. This changes the name to the proper form, which is \"Dumpster Fire\".",
-    "credits": ["Kuzyn_Official", "rgantzos"],
-    "urls": [
-      "https://scratch.mit.edu/users/Kuzyn_Official/",
-      "https://scratch.mit.edu/users/rgantzos/"
-    ],
-    "file": "dumpster-fire",
-    "type": ["Website", "Egg"],
     "dynamic": true
   },
   {

@@ -1,0 +1,14 @@
+{
+  "title": "Dumpster Fire",
+  "description": "The Scratch homepage is a liar with their \"Featured Projects\" section. This changes the name to the proper form, which is \"Dumpster Fire\".",
+  "credits": [
+    {
+      "username": "Kuzyn_Official",
+      "url": "https://scratch.mit.edu/users/Kuzyn_Official/"
+    },
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website", "Egg"],
+  "dynamic": true,
+  "scripts": [{ "file": "script.js", "runOn": "/" }]
+}
