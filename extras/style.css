@@ -92,6 +92,7 @@ a {
   flex-shrink: 0;
   flex-grow: 0;
   position: relative;
+  border-bottom: 3px solid var(--feature-input-bg);
 }
 
 .settings {
@@ -430,6 +431,7 @@ button.secondary-btn {
   transition: outline 0.2s;
   cursor: pointer;
   flex-shrink: 0;
+  border-bottom: 3px solid var(--feature-input-bg);
 }
 
 .feature-suggestion:hover {
