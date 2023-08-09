@@ -457,6 +457,25 @@ document.querySelector(".support-btn")?.addEventListener("click", function () {
 document.querySelector(".searchbar").placeholder =
   chrome.i18n.getMessage("search") || "search";
 
+function getWords(text, search) {
+  if (!search) return true;
+  if (!search.includes(" ")) return text.toLowerCase().includes(search.toLowerCase());
+  text = text.replaceAll("\n", " ").replaceAll("Credits:", "").replaceAll("Updated", "").replaceAll("New", "").toLowerCase()
+  search = search.toLowerCase()
+  while (text.includes("  ")) {
+    text = text.replaceAll("  ", " ")
+  }
+  var oneWords = text.includes(" ") ? text.split(" ") : [text]
+  
+  var twoWords = search.includes(" ") ? search.split(" ") : [search]
+
+  var matchWords = oneWords.filter((el) => twoWords.includes(el)).length
+
+  var matchedPercentage = matchWords / twoWords.length
+
+  return matchedPercentage > .3
+}
+
 document.querySelector(".searchbar").addEventListener("input", function () {
   if (document.querySelector(".welcome")) {
     if (document.querySelector(".searchbar").value) {
@@ -467,11 +486,7 @@ document.querySelector(".searchbar").addEventListener("input", function () {
   }
   document.querySelectorAll(".feature").forEach(function (el) {
     if (
-      (
-        el.querySelector("h3").textContent.toLowerCase() +
-        el.querySelector("p").textContent.toLowerCase() +
-        el.querySelector("span").textContent.toLowerCase()
-      ).includes(document.querySelector(".searchbar").value.toLowerCase())
+      getWords(el.innerText, document.querySelector(".searchbar").value)
     ) {
       el.style.display = null;
     } else {
