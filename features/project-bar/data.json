@@ -1,0 +1,22 @@
+{
+  "title": "Project Bar",
+  "description": "Continue to view the information for a project, even after you scroll down past the notes and credits.",
+  "credits": [
+    {
+      "username": "callumjt",
+      "url": "https://scratch.mit.edu/users/callumjt/"
+    },
+    {
+      "username": "rgantzos",
+      "url": "https://scratch.mit.edu/users/rgantzos/"
+    }
+  ],
+  "dynamic": true,
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
+  "scripts": [
+    { "file": "script.js", "runOn": "/projects/*" }
+  ],
+  "tags": ["New"],
+  "type": ["Website"],
+  "resources": [{ "name": "up-arrow-icon", "path": "/arrow.svg" }]
+}
