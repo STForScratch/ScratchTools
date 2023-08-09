@@ -1,0 +1,48 @@
+.ste-project-bar {
+    background-color: white;
+    position: fixed;
+    right: 3rem;
+    top: 5rem;
+    z-index: 9999999999999;
+    width: 40rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: 2px solid rgba(183, 183, 183, 0.577);
+}
+
+.ste-project-bar > a > img {
+    height: 4rem;
+    border-radius: .35rem;
+}
+
+.ste-project-bar > a {
+    height: 4rem;
+    display: inline-block;
+}
+
+.ste-project-bar > .ste-project-title {
+    display: inline-block;
+    margin-left: 1rem;
+    height: 4rem;
+    width: calc(100% - 8.5rem);
+    overflow-x: scroll;
+}
+
+.ste-project-bar > .ste-project-title h2 {
+    margin-top: 0px;
+}
+
+.ste-project-bar .ste-arrow-icon {
+    display: inline-block;
+    width: 3rem;
+    opacity: .5;
+    position: relative;
+    top: -0.4rem;
+    transition: transform .2s;
+    transform: scale(60%);
+    cursor: pointer;
+}
+
+.ste-project-bar .ste-arrow-icon:hover {
+    transform: scale(80%);
+}
