@@ -46,7 +46,7 @@ async function checkBetaUpdates() {
       ).json();
       if (
         data.version !== chrome.runtime.getManifest().version_name ||
-        (await (await fetch("/extras/beta/beta.json")).json()).beta !==
+        (await (await fetch("/changelog/beta.json")).json()).beta !==
           data.beta
       ) {
         chrome.tabs.create({
