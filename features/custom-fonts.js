@@ -8,7 +8,7 @@ style.innerHTML = `
   .replaceAll("}", "")
   .replaceAll(" ", "+")}:wght@200;300;400;500;600;700&display=swap');
 
-* {
+:not(code) {
     font-family: '${name
       .replaceAll("\\", "")
       .replaceAll("'", "")
