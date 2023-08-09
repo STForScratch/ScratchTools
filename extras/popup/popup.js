@@ -473,7 +473,7 @@ function getWords(text, search) {
 
   var matchedPercentage = matchWords / twoWords.length
 
-  return matchedPercentage > .3
+  return matchedPercentage > .5
 }
 
 document.querySelector(".searchbar").addEventListener("input", function () {
