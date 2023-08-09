@@ -42,7 +42,7 @@ async function checkBetaUpdates() {
     ).beta;
     if (isBeta) {
       var data = await (
-        await fetch("https://data.scratchtools.app/latest/")
+        await fetch("https://data.scratchtools.app/latest/?nocache="+Date.now().toString())
       ).json();
       if (
         data.version !== chrome.runtime.getManifest().version_name ||
