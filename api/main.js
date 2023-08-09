@@ -273,6 +273,13 @@ ScratchTools.setDisable = function (feature, f) {
   ste.console.log(`Set disable function for ${feature}.`, "ste-main");
 };
 
+Element.prototype.applyStyles = function(data) {
+  var element = this
+  Object.keys(data).forEach(function(el) {
+      element.style[el] = data[el]
+  })
+}
+
 ScratchTools.disable = function (feature) {
   allFeatures.filter((el) => el.self.id === feature).forEach(function(el) {
     el.self.enabled = false
