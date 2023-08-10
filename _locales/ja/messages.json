@@ -1,0 +1,47 @@
+{
+  "extName": {
+    "message": "ScratchのためのScratchTools"
+  },
+  "extDescription": {
+    "message": "ScratchToolsは、Scratchのウェブサイトをより良く、より使いやすくするためのたくさんの拡張機能があり、様々なカスタマイズができます！"
+  },
+  "supportButton": {
+    "message": "サポートを受ける"
+  },
+  "feedbackButton": {
+    "message": "フィードバックを送る"
+  },
+  "settingsButton": {
+    "message": "詳細設定"
+  },
+  "featuresFilterAll": {
+    "message": "すべて"
+  },
+  "featuresFilterWebsite": {
+    "message": "ウェブサイト"
+  },
+  "featuresFilterEditor": {
+    "message": "エディター"
+  },
+  "featuresFilterForums": {
+    "message": "フォーラム"
+  },
+  "allFeaturesHeader": {
+    "message": "全ての機能"
+  },
+  "forYouHeader": {
+    "message": "あなたにおすすめ"
+  },
+  "searchPlaceholder": {
+    "message": "検索"
+  },
+  "creditsText": {
+    "message": "クレジット"
+  },
+  "viewFeature": {
+    "message": "クリックして機能を表示"
+  },
+  "themeStore": {
+    "message": "テーマストア"
+  }
+}
