@@ -9,8 +9,6 @@ export default async function ({ feature, console }) {
     ).json()
   ).profile.country;
 
-  window.feature = feature;
-
   ScratchTools.waitForElements("div.thumbnail.project", detectCountry);
 
   async function detectCountry(element) {
