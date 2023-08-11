@@ -726,8 +726,9 @@ async function getFeatures() {
                     world: "MAIN",
                   });
                   function updateSettingsFunction(feature, name, value) {
+                    ScratchTools.Storage[name] = value
                     if (allSettingChangeFunctions[feature]) {
-                      allSettingChangeFunctions[feature](name, value);
+                      allSettingChangeFunctions[feature]({key: name, value});
                     }
                   }
                 } catch (err) {

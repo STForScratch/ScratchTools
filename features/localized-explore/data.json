@@ -1,16 +1,20 @@
 {
   "title": "Projects from Country",
-  "description": "On the explore page, hides projects from other countries. This is to only show projects in languages that you understand.",
+  "description": "On the explore page, makes projects from other countries less visible. This is to only show projects in languages that you understand.",
   "credits": [
-    { "url": "https://scratch.mit.edu/users/rgantzos/" }
+    { "username": "EiramC", "url": "https://scratch.mit.edu/users/EiramC/" },
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
   ],
   "type": ["Website"],
   "tags": ["New", "Featured"],
   "dynamic": true,
   "scripts": [
-    { "file": "script.js", "runOn": "/explore/projects/*" }
+    { "file": "script.js", "runOn": "/explore/projects/*" },
+    { "file": "script.js", "runOn": "/search/projects*" }
   ],
   "styles": [
-    { "file": "style.css", "runOn": "/explore/projects/*" }
-  ]
+    { "file": "style.css", "runOn": "/explore/projects/*" },
+    { "file": "style.css", "runOn": "/search/projects*" }
+  ],
+  "options": [{ "id": "hide-completely", "name": "Hide Projects", "type": 1 }]
 }

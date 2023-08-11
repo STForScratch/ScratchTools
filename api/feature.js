@@ -57,6 +57,30 @@ class Feature {
         console.error("ScratchTools feature event not found.");
       }
     };
+    var id = this.data.id || this.data.file
+    var options = this.data.options || []
+    this.settings = {
+      get: function (key) {
+        var settings = {};
+        options.forEach(function (el) {
+          if (ScratchTools.Storage[el.id]) {
+            settings[el.id] = ScratchTools.Storage[el.id];
+          }
+        });
+        if (key) {
+          return settings[key];
+        } else {
+          return settings;
+        }
+      },
+      addEventListener: function (event, callback) {
+        if (event === "changed") {
+          allSettingChangeFunctions[id] = callback;
+        } else {
+          console.error("ScratchTools feature event not found.");
+        }
+      }
+    }
     this.getSettings = function (key) {
       var settings = {};
       this.data.options?.forEach(function (el) {

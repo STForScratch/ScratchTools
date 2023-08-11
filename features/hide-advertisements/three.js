@@ -7,7 +7,7 @@ if (ScratchTools.Storage.colorComment) {
 }
 
 var hideAds = new Feature({ id: "hide-advertisements" });
-hideAds.addEventListener("settingChange", function (name, value) {
+hideAds.settings.addEventListener("changed", function ({key: name, value}) {
   if (name === "colorComment") {
     if (value) {
       document.body.classList.add("colorComment");
