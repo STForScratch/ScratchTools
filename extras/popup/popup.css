@@ -102,10 +102,10 @@ a {
 
 .feature .featureTitle {
   color: var(--primary-color);
-  max-width: calc(90% - 6rem);
+  max-width: calc(90% - 5rem);
   font-weight: bold;
-  font-size: 1.25rem !important;
-  margin-bottom: 0.5rem;
+  font-size: 1.2rem !important;
+  margin-bottom: 0rem;
 }
 .feature p {
   color: var(--secondary-color);

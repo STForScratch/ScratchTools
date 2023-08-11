@@ -148,9 +148,9 @@ a {
 }
 
 .feature h3 {
-  font-size: 1.25rem !important;
-  margin-bottom: -0.5rem;
-  max-width: calc(90% - 6rem);
+  font-size: 1.2rem !important;
+  margin-bottom: 0rem;
+  max-width: calc(90% - 5rem);
 }
 
 .feature h3[style="font-size: 1.5em;"] {
