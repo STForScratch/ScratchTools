@@ -1,0 +1,16 @@
+{
+  "title": "Projects from Country",
+  "description": "On the explore page, hides projects from other countries. This is to only show projects in languages that you understand.",
+  "credits": [
+    { "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "dynamic": true,
+  "scripts": [
+    { "file": "script.js", "runOn": "/explore/projects/*" }
+  ],
+  "styles": [
+    { "file": "style.css", "runOn": "/explore/projects/*" }
+  ]
+}
