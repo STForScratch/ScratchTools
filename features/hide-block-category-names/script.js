@@ -8,7 +8,7 @@ if (ScratchTools.Storage.displayAsCircle) {
     document.body.classList.remove("st-category-circle")
 }
 
-hideBlockCategoryNames.addEventListener("settingChange", function(name, value) {
+hideBlockCategoryNames.settings.addEventListener("changed", function({key: name, value}) {
     console.log(name)
     console.log(value)
     if (name === "displayAsCircle") {
