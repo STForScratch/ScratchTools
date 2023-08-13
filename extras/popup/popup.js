@@ -1,4 +1,4 @@
-var clicks = 0
+var clicks = 0;
 
 var defaultThemes = [
   {
@@ -64,7 +64,11 @@ async function getFeatureLanguageData() {
   var language = chrome.i18n.getUILanguage()?.includes("-")
     ? chrome.i18n.getUILanguage().split("-")[0]
     : chrome.i18n.getUILanguage();
-  var response = await fetch("/extras/feature-locales/" + language + ".json");
+  try {
+    var response = await fetch("/extras/feature-locales/" + language + ".json");
+  } catch (err) {
+    return {};
+  }
   if (response.ok) {
     return response.json();
   } else {
@@ -459,21 +463,27 @@ document.querySelector(".searchbar").placeholder =
 
 function getWords(text, search) {
   if (!search) return true;
-  if (!search.includes(" ")) return text.toLowerCase().includes(search.toLowerCase());
-  text = text.replaceAll("\n", " ").replaceAll("Credits:", "").replaceAll("Updated", "").replaceAll("New", "").toLowerCase()
-  search = search.toLowerCase()
+  if (!search.includes(" "))
+    return text.toLowerCase().includes(search.toLowerCase());
+  text = text
+    .replaceAll("\n", " ")
+    .replaceAll("Credits:", "")
+    .replaceAll("Updated", "")
+    .replaceAll("New", "")
+    .toLowerCase();
+  search = search.toLowerCase();
   while (text.includes("  ")) {
-    text = text.replaceAll("  ", " ")
+    text = text.replaceAll("  ", " ");
   }
-  var oneWords = text.includes(" ") ? text.split(" ") : [text]
-  
-  var twoWords = search.includes(" ") ? search.split(" ") : [search]
+  var oneWords = text.includes(" ") ? text.split(" ") : [text];
 
-  var matchWords = oneWords.filter((el) => twoWords.includes(el)).length
+  var twoWords = search.includes(" ") ? search.split(" ") : [search];
 
-  var matchedPercentage = matchWords / twoWords.length
+  var matchWords = oneWords.filter((el) => twoWords.includes(el)).length;
 
-  return matchedPercentage > .5
+  var matchedPercentage = matchWords / twoWords.length;
+
+  return matchedPercentage > 0.5;
 }
 
 document.querySelector(".searchbar").addEventListener("input", function () {
@@ -485,9 +495,7 @@ document.querySelector(".searchbar").addEventListener("input", function () {
     }
   }
   document.querySelectorAll(".feature").forEach(function (el) {
-    if (
-      getWords(el.innerText, document.querySelector(".searchbar").value)
-    ) {
+    if (getWords(el.innerText, document.querySelector(".searchbar").value)) {
       el.style.display = null;
     } else {
       el.style.display = "none";
@@ -602,7 +610,7 @@ async function getFeatures() {
       input.checked = true;
     }
     if (feature.type.includes("Egg") && !settings.includes(feature.id)) {
-      div.classList.add("ste-easter-egg")
+      div.classList.add("ste-easter-egg");
     }
 
     input.addEventListener("input", async function () {
@@ -628,7 +636,7 @@ async function getFeatures() {
           var ok = true;
         }
         if (ok) {
-          this.parentNode.parentNode.style.display = null
+          this.parentNode.parentNode.style.display = null;
           this.checked = true;
           await chrome.storage.sync.set({
             features: data + "." + this.parentNode.parentNode.dataset.id,
@@ -726,9 +734,9 @@ async function getFeatures() {
                     world: "MAIN",
                   });
                   function updateSettingsFunction(feature, name, value) {
-                    ScratchTools.Storage[name] = value
+                    ScratchTools.Storage[name] = value;
                     if (allSettingChangeFunctions[feature]) {
-                      allSettingChangeFunctions[feature]({key: name, value});
+                      allSettingChangeFunctions[feature]({ key: name, value });
                     }
                   }
                 } catch (err) {
@@ -1013,15 +1021,15 @@ document.getElementById("campsite")?.addEventListener("click", function () {
 });
 
 if (document.querySelector(".main-page")) {
-  var logo = document.querySelector("div.sticon")
-  logo.addEventListener("click", function() {
-    clicks += 1
+  var logo = document.querySelector("div.sticon");
+  logo.addEventListener("click", function () {
+    clicks += 1;
     if (clicks > 4) {
-      clicks = 0
-      document.querySelector(".buttons .selected").classList.remove("selected")
+      clicks = 0;
+      document.querySelector(".buttons .selected").classList.remove("selected");
       document.body.dataset.filter = "Egg";
     }
-  })
+  });
 }
 
 if (document.querySelector(".buttons")) {
