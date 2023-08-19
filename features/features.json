@@ -1139,5 +1139,14 @@
     "file": "focus-mode",
     "tags": [],
     "type": ["Website", "Theme"]
+  },
+  {
+    "title": "Organized Chaos",
+    "description": "hmm. i should enable this.",
+    "credits": ["Misty"],
+    "urls": ["https://github.com/mistysloth/"],
+    "file": "organized-chaos",
+    "tags": ["Easter Egg"],
+    "type": ["Website", "Theme", "Easter Egg"]
   }
 ]
