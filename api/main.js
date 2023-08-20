@@ -18,7 +18,8 @@ var ste = {
       console.log(
         "%cScratchTools",
         styleArray.join(";"),
-        title + "\n\n" + content
+        title,
+        content
       );
       steConsoleData.push({
         script: title,
@@ -43,7 +44,8 @@ var ste = {
       console.log(
         "%cScratchTools",
         styleArray.join(";"),
-        title + "\n\n" + content
+        title,
+        content
       );
       steConsoleData.push({
         script: title,
@@ -68,7 +70,8 @@ var ste = {
       console.log(
         "%cScratchTools",
         styleArray.join(";"),
-        title + "\n\n" + content
+        title,
+        content
       );
       steConsoleData.push({
         script: title,
