@@ -2,6 +2,7 @@
   "title": "More Studios",
   "description": "Allows you to add projects to more studios instead of just 20.",
   "credits": [
+    { "username": "Oldcoinmania", "url": "https://scratch.mit.edu/users/Oldcoinmania/" },
     { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
   ],
   "type": ["Website"],
