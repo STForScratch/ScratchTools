@@ -1,5 +1,4 @@
 export default async function ({ feature, console }) {
-  window.feature = feature;
   ScratchTools.waitForElements(
     ".mod-addToStudio .studio-list-container",
     async function (modal) {
