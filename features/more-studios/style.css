@@ -1,0 +1,6 @@
+.ste-load-more-studios {
+  width: calc(100% - 1.46875rem);
+  margin-left: 1.46875rem;
+  position: relative;
+  top: -1rem;
+}
