@@ -716,3 +716,8 @@ body[data-filter="Egg"] .feature[data-type*="Egg"] {
 .feature > h3 {
   display: inline-block;
 }
+
+span.new-feature-tag.beta {
+  background-color: #fc8c4f;
+  cursor: pointer !important;
+}

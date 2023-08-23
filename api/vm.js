@@ -50,9 +50,9 @@ ScratchTools.Scratch.scratchGui = function () {
 };
 
 ScratchTools.traps = {
-  scratchGui: ScratchTools.Scratch.scratchGui,
-  scratchPaint: ScratchTools.Scratch.scratchPaint,
-  scratchSound: ScratchTools.Scratch.scratchSound,
+  scratchGui: ScratchTools.Scratch.scratchGui || null,
+  scratchPaint: ScratchTools.Scratch.scratchPaint || null,
+  scratchSound: ScratchTools.Scratch.scratchSound || null,
   getVm: function () {
     return vm;
   },
@@ -179,7 +179,7 @@ ScratchTools.Scratch.scratchPaint = function () {
   if (app !== null) {
     return app[
       Object.keys(app).find((key) => key.startsWith("__reactInternalInstance"))
-    ].child.stateNode.store.getState().scratchPaint;
+    ].child.stateNode.store.getState()?.scratchPaint || null;
   } else {
     return null;
   }

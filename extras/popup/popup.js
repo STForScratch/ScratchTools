@@ -596,6 +596,19 @@ async function getFeatures() {
       span.className = "new-feature-tag updated";
       div.appendChild(span);
     }
+    if (feature.tags?.includes("Beta")) {
+      var span = document.createElement("span");
+      span.textContent = "Beta";
+      span.className = "new-feature-tag beta";
+      div.appendChild(span);
+      div.addEventListener("click", function() {
+        ScratchTools.modals.create({
+          title: "Beta feature",
+          description:
+            "This feature is currently in a beta stage, and may have small bugs that weren't noticed during testing. There may also be changes/improvements to come soon.",
+        });
+      })
+    }
 
     var label = document.createElement("label");
     label.className = "switch";

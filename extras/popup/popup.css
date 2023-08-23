@@ -371,3 +371,8 @@ input:checked + .slider:before {
 .ste-easter-egg {
   display: none !important;
 }
+
+span.new-feature-tag.beta {
+  background-color: #fc8c4f;
+  cursor: pointer !important;
+}
