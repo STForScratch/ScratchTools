@@ -1,6 +1,7 @@
 export default function ({ feature, console }) {
   ScratchTools.waitForElements(".Popover-body", function (body) {
     if (!feature.traps.paint().modals.fillColor) return;
+    if (!feature.traps.paint().selectedItems[0]) return;
     if (feature.traps.paint().format.startsWith("BITMAP")) return;
     body = body.firstChild;
     window.feature = feature;
@@ -20,8 +21,9 @@ export default function ({ feature, console }) {
 
     let value = document.createElement("span");
     value.className = "color-picker_label-readout_9vjb2";
-    value.textContent =
-      Math.floor((feature.traps.paint().selectedItems[0]?.opacity || 1) * 100)?.toString()
+    value.textContent = Math.floor(
+      (feature.traps.paint().selectedItems[0]?.opacity || 1) * 100
+    )?.toString();
 
     data.appendChild(name);
     data.appendChild(value);
@@ -39,7 +41,7 @@ export default function ({ feature, console }) {
     slider.appendChild(sliderBg);
 
     let handle = document.createElement("div");
-    handleSlider(handle, value)
+    handleSlider(handle, value);
     handle.className = "ste-opacity-handle slider_handle_3f0xk";
     handle.style.left = "124px";
     if (feature.traps.paint().selectedItems[0]?.opacity) {
@@ -86,11 +88,11 @@ export default function ({ feature, console }) {
           // Ensure the handle stays within the slider's range
           newLeft = Math.max(0, Math.min(124, newLeft));
 
-          feature.traps.paint().selectedItems.forEach(function(item) {
-            item.setOpacity(newLeft / 124)
-          })
+          feature.traps.paint().selectedItems.forEach(function (item) {
+            item.setOpacity(newLeft / 124);
+          });
 
-          value.textContent = Math.floor((newLeft / 124) * 100).toString()
+          value.textContent = Math.floor((newLeft / 124) * 100).toString();
 
           handle.style.left = newLeft + "px";
         }
@@ -119,11 +121,11 @@ export default function ({ feature, console }) {
 
           newLeft = Math.max(0, Math.min(124, newLeft));
 
-          feature.traps.paint().selectedItems.forEach(function(item) {
-            item.setOpacity(newLeft / 124)
-          })
+          feature.traps.paint().selectedItems.forEach(function (item) {
+            item.setOpacity(newLeft / 124);
+          });
 
-          value.textContent = Math.floor((newLeft / 124) * 100).toString()
+          value.textContent = Math.floor((newLeft / 124) * 100).toString();
 
           handle.style.left = newLeft + "px";
         }
