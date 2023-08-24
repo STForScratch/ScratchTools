@@ -2,6 +2,7 @@
   "title": "Opacity Slider",
   "description": "Change the opacity of objects in the paint editor.",
   "credits": [
+    { "username": "IncognitoOrange", "url": "https://scratch.mit.edu/users/IncognitoOrange/" },
     { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
   ],
   "type": ["Editor"],
