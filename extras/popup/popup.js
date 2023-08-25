@@ -682,11 +682,34 @@ async function getFeatures() {
         input.type = ["text", "checkbox", "number", "color"][option.type || 0];
         var optionData = (await chrome.storage.sync.get(option.id))[option.id];
         input.value = optionData || "";
-        div.appendChild(input);
         if (input.type === "checkbox") {
+          var specialLabel = document.createElement("label");
+          specialLabel.className = "special-switch";
+          input.className = "checkbox"
+          var span = document.createElement("span");
+          span.className = "slider round";
+          specialLabel.appendChild(input);
+          specialLabel.appendChild(span);
+        } else {
+        div.appendChild(input);
+        }
+        if (input.type === "checkbox") {
+          let table = document.createElement("table")
+          let tr = document.createElement("tr")
+          table.appendChild(tr)
+
+          let td1 = document.createElement("td")
+          tr.appendChild(td1)
+          let td2 = document.createElement("td")
+          tr.appendChild(td2)
+
+          div.appendChild(table)
+
           var label = document.createElement("label");
           label.textContent = option.name;
-          div.appendChild(label);
+          label.style.marginLeft = "0px"
+          td1.appendChild(label);
+          td2.appendChild(specialLabel)
           input.checked = optionData || false;
         }
         input.dataset.validation = btoa(
