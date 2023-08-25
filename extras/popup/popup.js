@@ -762,6 +762,8 @@ async function getFeatures() {
       }
     }
 
+    div.appendChild(generateComponents(feature.components || []));
+
     var span = document.createElement("span");
     span.textContent =
       (chrome.i18n.getMessage("creditsText") || "Credits") + ": ";
@@ -801,8 +803,6 @@ async function getFeatures() {
     });
     div.appendChild(span);
 
-    div.appendChild(generateComponents(feature.components || []));
-
     if (
       feature.versionAdded?.replace("v", "") ===
       chrome.runtime.getManifest().version.toString()
@@ -835,6 +835,7 @@ async function getFeatures() {
       document.querySelector(".settings").appendChild(div);
     }
   }
+  getTrending()
 }
 getFeatures();
 
@@ -1293,22 +1294,48 @@ function generateComponents(components) {
             value = true;
           }
         }
+        if (cond.type === "version") {
+          if (cond.value === chrome.runtime.getManifest().version) {
+            value = true;
+          }
+        }
         conditions.push(value);
       });
 
       if (el.if.type === "any") {
-        if (!!conditions.find((cond) => cond)) {
-          div.appendChild(element);
+        if (!conditions.find((cond) => cond)) {
+          div.style.display = "none"
         }
       } else if (el.if.type === "all") {
-        if (conditions.find((cond) => !cond) === undefined) {
-          div.appendChild(element);
+        if (conditions.find((cond) => !cond) !== undefined) {
+          div.style.display = "none"
         }
       }
-    } else {
-      div.appendChild(element);
     }
+    div.appendChild(element);
   });
 
   return div;
+}
+
+async function getTrending() {
+  let data = await (await fetch("https://data.scratchtools.app/trending/")).json()
+
+  data.forEach(function(el) {
+    if (!document.querySelector(`div.feature[data-id='${el}']`)) return;
+
+    let icon = document.createElement("span")
+    icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="m122-218-67-67 321-319 167 167 203-205H628v-95h278v278h-94v-115L542-303 375-470 122-218Z" fill="var(--theme)"/></svg>'
+    icon.className = "icon"
+
+    icon.addEventListener("click", function () {
+      ScratchTools.modals.create({
+        title: "Trending feature",
+        description:
+          "This feature is especially popular among ScratchTools users. Try it out!",
+      });
+    });
+
+    document.querySelector(`div.feature[data-id='${el}'] > h3`).prepend(icon)
+  })
 }

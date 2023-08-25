@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 html {
-  --radius: .5rem;
+  --radius: 0.5rem;
   width: 400px;
   font-family: "Inter", sans-serif;
   height: 500px;
@@ -55,7 +55,7 @@ a {
   margin: 2em;
   margin-bottom: 1rem;
   background: var(--feature-bg);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   padding: 17px;
   padding-top: 5px;
   position: relative;
@@ -345,22 +345,22 @@ input:checked + .slider:before {
 .feature span.new-feature-tag {
   background-color: var(--theme);
   color: white;
-  padding: .25rem;
+  padding: 0.25rem;
   display: inline-block;
-  margin-left: .5rem;
-  padding-left: .5rem;
-  padding-right: .5rem;
-  border-radius: .75rem;
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 0.75rem;
   position: relative;
-  top: -.15rem;
+  top: -0.15rem;
   user-select: none;
-  transition: opacity .3s, transform .3s;
+  transition: opacity 0.3s, transform 0.3s;
   opacity: 1;
   transform: none;
 }
 
 .feature span.new-feature-tag:hover {
-  opacity: .75;
+  opacity: 0.75;
   transform: scale(105%);
 }
 
@@ -380,11 +380,11 @@ span.new-feature-tag.beta {
 .warning-component {
   background-color: #fc8c4f20;
   border: 1.5px solid #fc8c4f;
-  border-radius: .5rem;
-  padding: .5rem;
-  font-size: .8rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  margin-top: .5rem;
+  margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
   border-bottom-width: 3px;
@@ -402,10 +402,10 @@ span.new-feature-tag.beta {
 .info-component {
   background-color: #fcd44f20;
   border: 1.5px solid #fcd44f;
-  border-radius: .5rem;
-  padding: .5rem;
-  font-size: .8rem;
-  margin-top: .5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
   border-bottom-width: 3px;
@@ -418,4 +418,14 @@ span.new-feature-tag.beta {
   margin-right: 0.5rem;
   margin-inline-end: 10px;
   transform: scale(1.15);
+}
+
+.feature h3 .icon svg {
+  height: 1rem;
+  width: 1rem;
+  margin-right: 1.5rem;
+  position: relative;
+  left: 0.6rem;
+  transform: scale(1.5);
+  top: 0.1rem;
 }
