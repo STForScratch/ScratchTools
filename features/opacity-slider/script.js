@@ -4,7 +4,6 @@ export default function ({ feature, console }) {
     if (!feature.traps.paint().selectedItems[0]) return;
     if (feature.traps.paint().format.startsWith("BITMAP")) return;
     body = body.firstChild;
-    window.feature = feature;
     if (body.querySelector(".ste-opacity-slider")) return;
 
     let div = document.createElement("div");

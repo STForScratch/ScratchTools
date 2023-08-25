@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "start-stop-hotkeys",
+    "versionUpdated": "v3.2.0"
+  },
+  {
+    "version": 2,
     "id": "opacity-slider",
     "versionAdded": "v3.2.0"
   },
@@ -256,15 +261,6 @@
     "urls": ["https://scratch.mit.edu/users/rgantzos"],
     "file": "exact-join-date",
     "type": ["Website"],
-    "tags": ["New"]
-  },
-  {
-    "title": "Shortcuts for Starting and Stopping Projects",
-    "description": "To start and stop a project you can use Control+G or Command+G (for Mac users).",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "start-stop-hotkeys",
-    "type": ["Website", "Editor"],
     "tags": ["New"]
   },
   {
