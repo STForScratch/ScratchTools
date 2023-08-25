@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "opacity-slider",
+    "versionAdded": "v3.2.0"
+  },
+  {
+    "version": 2,
     "id": "more-studios",
     "versionAdded": "v3.2.0"
   },

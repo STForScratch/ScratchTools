@@ -371,3 +371,51 @@ input:checked + .slider:before {
 .ste-easter-egg {
   display: none !important;
 }
+
+span.new-feature-tag.beta {
+  background-color: #fc8c4f;
+  cursor: pointer !important;
+}
+
+.warning-component {
+  background-color: #fc8c4f20;
+  border: 1.5px solid #fc8c4f;
+  border-radius: .5rem;
+  padding: .5rem;
+  font-size: .8rem;
+  font-weight: 600;
+  margin-top: .5rem;
+  display: flex;
+  align-items: center;
+  border-bottom-width: 3px;
+  line-height: 1.2rem;
+  color: var(--primary-color);
+}
+
+.warning-component img {
+  height: 1rem;
+  margin-right: 0.5rem;
+  margin-inline-end: 10px;
+  transform: scale(1.15);
+}
+
+.info-component {
+  background-color: #fcd44f20;
+  border: 1.5px solid #fcd44f;
+  border-radius: .5rem;
+  padding: .5rem;
+  font-size: .8rem;
+  margin-top: .5rem;
+  display: flex;
+  align-items: center;
+  border-bottom-width: 3px;
+  line-height: 1.2rem;
+  color: var(--primary-color);
+}
+
+.info-component img {
+  height: 1rem;
+  margin-right: 0.5rem;
+  margin-inline-end: 10px;
+  transform: scale(1.15);
+}
