@@ -783,3 +783,29 @@ span.new-feature-tag.beta {
   transform: scale(1.8);
   cursor: pointer;
 }
+
+.special-switch {
+  position: relative;
+  width: 55px;
+  height: 28px;
+  margin: 0px;
+  transform: scale(80%);
+  float: right;
+  position: relative;
+  top: -0.25rem;
+}
+
+.feature table,
+.feature table tr {
+  width: 100%;
+}
+
+.special-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.feature table {
+  margin-top: .5rem;
+}
