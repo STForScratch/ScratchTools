@@ -63,5 +63,10 @@
     "matches": [
       "https://scratch.mit.edu/*"
     ]
-  }
+  },
+  "options_ui": {
+    "page": "extras/index.html",
+    "open_in_tab": true
+  },
+  "homepage_url": "https://scratchtools.app"
 }
