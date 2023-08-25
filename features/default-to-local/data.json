@@ -1,0 +1,11 @@
+{
+  "title": "Default to Local",
+  "description": "When creating a variable, sets the default to For This Sprite Only, rather than For All Sprites.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+  "type": ["Editor"],
+  "tags": ["New", "Featured"],
+  "dynamic": true
+}
