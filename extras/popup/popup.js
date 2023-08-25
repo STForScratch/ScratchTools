@@ -601,13 +601,13 @@ async function getFeatures() {
       span.textContent = "Beta";
       span.className = "new-feature-tag beta";
       div.appendChild(span);
-      div.addEventListener("click", function() {
+      span.addEventListener("click", function () {
         ScratchTools.modals.create({
           title: "Beta feature",
           description:
             "This feature is currently in a beta stage, and may have small bugs that weren't noticed during testing. There may also be changes/improvements to come soon.",
         });
-      })
+      });
     }
 
     var label = document.createElement("label");
@@ -800,6 +800,8 @@ async function getFeatures() {
       }
     });
     div.appendChild(span);
+
+    div.appendChild(generateComponents(feature.components || []));
 
     if (
       feature.versionAdded?.replace("v", "") ===
@@ -1252,3 +1254,61 @@ localizationSelectors.forEach(function (item) {
     );
   }
 });
+
+function generateComponents(components) {
+  let div = document.createElement("div");
+  div.classList.add("feature-components");
+
+  components?.forEach(function (el) {
+    let element = document.createElement("div");
+    if (el.type === "warning") {
+      element.className = "warning-component";
+
+      let img = document.createElement("img");
+      img.src = "/extras/icons/warning.svg";
+
+      element.textContent = el.content;
+
+      element.prepend(img);
+    }
+
+    if (el.type === "info") {
+      element.className = "info-component";
+
+      let img = document.createElement("img");
+      img.src = "/extras/icons/info.svg";
+
+      element.textContent = el.content;
+
+      element.prepend(img);
+    }
+
+    if (el.if) {
+      let conditions = [];
+
+      el.if.conditions?.forEach(function (cond) {
+        let value = false;
+        if (cond.type === "os") {
+          if (navigator.userAgent.includes(cond.value)) {
+            value = true;
+          }
+        }
+        conditions.push(value);
+      });
+
+      if (el.if.type === "any") {
+        if (!!conditions.find((cond) => cond)) {
+          div.appendChild(element);
+        }
+      } else if (el.if.type === "all") {
+        if (conditions.find((cond) => !cond) === undefined) {
+          div.appendChild(element);
+        }
+      }
+    } else {
+      div.appendChild(element);
+    }
+  });
+
+  return div;
+}

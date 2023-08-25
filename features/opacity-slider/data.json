@@ -2,12 +2,21 @@
   "title": "Opacity Slider",
   "description": "Change the opacity of objects in the paint editor.",
   "credits": [
-    { "username": "IncognitoOrange", "url": "https://scratch.mit.edu/users/IncognitoOrange/" },
+    {
+      "username": "IncognitoOrange",
+      "url": "https://scratch.mit.edu/users/IncognitoOrange/"
+    },
     { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
   ],
   "type": ["Editor"],
   "tags": ["New", "Featured", "Beta"],
   "dynamic": true,
   "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
-  "styles": [{ "file": "style.css", "runOn": "/projects/*" }]
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
+  "components": [
+    {
+      "type": "warning",
+      "content": "The slider, although located in the fill modal, controls the opacity of the entire shape, including the outline."
+    }
+  ]
 }
