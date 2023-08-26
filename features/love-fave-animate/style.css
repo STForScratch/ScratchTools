@@ -1,0 +1,23 @@
+.project-favorites.favorited:before {
+  animation-duration: 0.5s;
+  animation-name: popButton;
+}
+
+.project-loves.loved:before {
+  animation-duration: 0.5s;
+  animation-name: popButton;
+}
+
+@keyframes popButton {
+  from {
+    transform: scale(100%) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(150%) rotate(200deg);
+  }
+
+  to {
+    transform: scale(100%) rotate(360deg);
+  }
+}

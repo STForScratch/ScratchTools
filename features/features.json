@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "love-fave-animate",
+    "versionAdded": "v3.2.0"
+  },
+  {
+    "version": 2,
     "id": "default-to-local",
     "versionUpdated": "v3.2.0"
   },
