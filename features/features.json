@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "right-side-flag",
+    "versionUpdated": "v3.2.0"
+  },
+  {
+    "version": 2,
     "id": "love-fave-animate",
     "versionAdded": "v3.2.0"
   },
@@ -1105,14 +1110,6 @@
     "urls": ["https://scratch.mit.edu/users/GarboMuffin"],
     "file": "compact-editor",
     "type": ["Editor"]
-  },
-  {
-    "title": "Right Side Flag",
-    "description": "Moves the green flag and the red stop sign to the right side of the stage.",
-    "credits": ["GarboMuffin"],
-    "urls": ["https://scratch.mit.edu/users/GarboMuffin/"],
-    "file": "right-side-flag",
-    "type": ["Theme"]
   },
   {
     "title": "Replace Scratch News with Recent Projects",

@@ -1,0 +1,13 @@
+{
+  "title": "Right Side Flag",
+  "description": "Moves the green flag and the red stop sign to the right side of the stage.",
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
+  "credits": [
+    {
+      "url": "https://scratch.mit.edu/users/garbomuffin/",
+      "username": "GarboMuffin"
+    }
+  ],
+  "type": ["Editor", "Website"],
+  "dynamic": true
+}

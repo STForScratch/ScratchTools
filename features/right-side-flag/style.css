@@ -1,0 +1,3 @@
+div[class^='stage-header_stage-menu-wrapper'] {
+  flex-direction: row-reverse !important;
+}
