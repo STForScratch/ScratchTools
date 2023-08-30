@@ -1,0 +1,18 @@
+{
+  "title": "Red Admin Message Indicator",
+  "description": "If you have an admin notification from the Scratch Team, the message indicator in the navigation bar will display red instead of orange.",
+  "credits": [
+    {
+      "username": "rgantzos",
+      "url": "https://scratch.mit.edu/users/rgantzos"
+    }
+  ],
+  "scripts": [
+    {
+      "file": "script.js",
+      "runOn": "/*"
+    }
+  ],
+  "tags": [],
+  "type": ["Website"]
+}
