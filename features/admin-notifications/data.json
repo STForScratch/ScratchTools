@@ -13,6 +13,13 @@
       "runOn": "/*"
     }
   ],
+  "styles": [
+    {
+      "file": "style.css",
+      "runOn": "/*"
+    }
+  ],
   "tags": [],
-  "type": ["Website"]
+  "type": ["Website"],
+  "dynamic": "true"
 }

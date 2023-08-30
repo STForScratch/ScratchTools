@@ -15,11 +15,11 @@ export default async function ({ feature, console }) {
 
   if (data.length > 0) {
     if (feature.tab.scratch === 2) {
-      document.querySelector(".notificationsCount").style.backgroundColor =
-        "#ff1a1a";
+      document
+        .querySelector(".notificationsCount")
+        .classList.add("ste-red-alert");
     } else {
-      document.querySelector(".message-count").style.backgroundColor =
-        "#ff1a1a";
+      document.querySelector(".message-count").classList.add("ste-red-alert");
     }
   }
 }
