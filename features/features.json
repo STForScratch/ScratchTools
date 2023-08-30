@@ -213,6 +213,10 @@
     "id": "box-shadows"
   },
   {
+    "version": 2,
+    "id": "admin-notifications"
+  },
+  {
     "title": "Nicknames",
     "description": "Set nicknames for other Scratchers. Only you can see the nicknames, and their username will be replaced with the nickname when you see their name.",
     "credits": ["rgantzos"],
@@ -651,10 +655,6 @@
     "tags": ["Recommended"],
     "type": ["Website", "Editor"],
     "dynamic": true
-  },
-  {
-    "version": 2,
-    "id": "admin-notifications"
   },
   {
     "title": "Custom Website Font",
