@@ -1,4 +1,28 @@
 {
+  "love-fave-animate/title": { "message": "「好き」ボタンのアニメーション" },
+  "love-fave-animate/description": {
+    "message": "プロジェクトページ上の「いいね」ボタンと「お気に入り」ボタンのクリックしたときの動作をアニメーション化します。"
+  },
+  "default-to-local/title": { "message": "デフォルトでローカル変数にする" },
+  "default-to-local/description": {
+    "message": "変数を作った時に、デフォルトで「すべてのスプライト」ではなく「このスプライトのみ」に設定します。"
+  },
+  "start-stop-hotkeys/title": { "message": "緑の旗のホットキー" },
+  "start-stop-hotkeys/description": {
+    "message": "プロジェクトが実行中かどうかに応じて、Ctrl+Gキーを押すことで、プロジェクトを実行または停止することができます。"
+  },
+  "opacity-slider/title": { "message": "透明度スライダー" },
+  "opacity-slider/description": {
+    "message": "ペイントエディターでオブジェクトの透明度を変更できるようになります。"
+  },
+  "more-studios/title": { "message": "スタジオの追加" },
+  "more-studios/description": {
+    "message": "20個よりも多くのスタジオにプロジェクトを追加できるようにします。"
+  },
+  "localized-explore/title": { "message": "国内のプロジェクト" },
+  "localized-explore/description": {
+    "message": "検索ページで、他の国のプロジェクトをあまり表示しないようにします。これは、あなたが理解できる言語のプロジェクトだけを表示するためです。"
+  },
   "project-bar/title": { "message": "プロジェクトバー" },
   "project-bar/description": {
     "message": "メモとクレジットより下へスクロールした後も、プロジェクトの情報を表示し続けることができます。"
@@ -185,12 +209,6 @@
   "exact-join-date/description": {
     "message": "プロフィールにユーザーが参加した詳細な日時を表示します。"
   },
-  "start-stop-hotkeys/title": {
-    "message": "プロジェクトの開始と停止のショートカット"
-  },
-  "start-stop-hotkeys/description": {
-    "message": "Ctrl+G（Macの場合はCommand+G）でプロジェクトの開始と停止を切り替えることができます。"
-  },
   "upload-img-directly/title": { "message": "画像を直接アップロード" },
   "upload-img-directly/description": {
     "message": "サードパーティ製の画像アップロードサービスを使わなくても、フォーラムで画像を自分のパソコンのファイルから直接アップロードできるようになります。"
@@ -300,10 +318,6 @@
   },
   "hide-studio-messages/description": {
     "message": "活動内容をメッセージのページで非表示にします。"
-  },
-  "default-to-local/title": { "message": "デフォルトでローカル変数にする" },
-  "default-to-local/description": {
-    "message": "変数を作った時に、デフォルトで「すべてのスプライト」ではなく「このスプライトのみ」に設定します。"
   },
   "special-editor-fonts/title": {
     "message": "ペイントエディターで使えるフォントの追加"
