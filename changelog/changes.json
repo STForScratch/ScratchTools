@@ -1,6 +1,13 @@
 {
   "NOTE": "THERE IS NO NEED TO UPDATE THIS YOURSELF, IT WILL BE UPDATED WHEN RELEASED.",
-  "version": "3.1.0",
-  "enhanced": [],
-  "fixed": []
+  "version": "3.2.0",
+  "enhanced": [
+    "Trending features.",
+    "Improve settings page checkboxes.",
+    "Add more extension info.",
+    "Better logging.",
+    "Bring back tags.",
+    "Improved message components."
+  ],
+  "fixed": ["Fix Default to For This Sprite Only for compatibility."]
 }
