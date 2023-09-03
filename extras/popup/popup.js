@@ -1363,6 +1363,7 @@ async function getTrending() {
     document.querySelector(`div.feature[data-id='${el}'] > h3`).prepend(icon)
   })
 }async function getCommit() {
+async function getCommit() {
   if (!chrome.runtime.getManifest().version_name.endsWith("-beta")) return;
   if (!document.querySelector(".searchbar")) return;
 
