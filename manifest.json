@@ -53,6 +53,7 @@
   "host_permissions": [
     "https://scratch.mit.edu/"
   ],
+  "optional_host_permissions": ["https://api.scratch.mit.edu/"],
   "browser_specific_settings": {
     "gecko": {
       "id": "info@scratchtools.app",
