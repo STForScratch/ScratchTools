@@ -89,3 +89,7 @@
 .messaging {
     border-radius: .5rem;
 }
+
+.enable-messaging {
+    color: var(--primary-color);
+}
