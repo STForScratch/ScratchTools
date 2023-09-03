@@ -460,6 +460,7 @@ document.querySelector(".support-btn")?.addEventListener("click", function () {
 
 document.querySelector(".searchbar").placeholder =
   chrome.i18n.getMessage("search") || "search";
+getCommit();
 
 function getWords(text, search) {
   if (!search) return true;
@@ -1361,4 +1362,14 @@ async function getTrending() {
 
     document.querySelector(`div.feature[data-id='${el}'] > h3`).prepend(icon)
   })
+}async function getCommit() {
+async function getCommit() {
+  if (!chrome.runtime.getManifest().version_name.endsWith("-beta")) return;
+  if (!document.querySelector(".searchbar")) return;
+
+  let commit = await (await fetch("/.git/ORIG_HEAD")).text();
+  document.querySelector(".searchbar").placeholder += ` (${commit.slice(
+    0,
+    7
+  )})`;
 }
