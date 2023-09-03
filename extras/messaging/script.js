@@ -372,6 +372,7 @@ function createElements(...elements) {
     let element = document.createElement(el.type);
     if (el.type === "a") {
       element.href = el.href;
+      element.target = "_blank"
     }
     element.textContent = el.content;
     list.push(element);
