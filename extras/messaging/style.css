@@ -67,3 +67,25 @@
 .enable-messaging button:hover {
     opacity: .5;
 }
+
+.container {
+    border-bottom: 2px solid var(--searchbar-bg);
+}
+
+.container[data-type="follows"] {
+    padding-bottom: 1rem;
+}
+
+.container[data-type="follows"] .msg {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: .5rem;
+}
+
+.messages h3, .msg .comment {
+    color: var(--primary-color);
+}
+
+.messaging {
+    border-radius: .5rem;
+}

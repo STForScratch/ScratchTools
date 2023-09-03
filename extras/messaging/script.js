@@ -19,6 +19,19 @@ function getOffsetLimits(count) {
 }
 
 async function getMessages() {
+  let collapsed = false;
+  document
+    .querySelector(".collapse-btn")
+    .addEventListener("click", function () {
+      if (collapsed) {
+        document.querySelector(".collapse-btn").textContent = "(collapse)";
+        document.querySelector(".container .content").style.display = "none";
+      } else {
+        document.querySelector(".collapse-btn").textContent = "(uncollapse)";
+        document.querySelector(".container .content").style.display = null;
+      }
+      collapsed = !collapsed;
+    });
   document.querySelector(".enable-messaging").remove();
   let session = await (
     await fetch("https://scratch.mit.edu/session/", {
@@ -99,21 +112,19 @@ async function requestPermissions() {
 function createMessage(data) {
   let div = document.createElement("div");
   div.classList.add("msg");
+  let container = document.querySelector(".messages");
 
   if (data.type === "followuser") {
+    container = document.querySelector("div[data-type=follows]");
     div.append(
-      ...createElements(
-        {
-          type: "a",
-          content: data.actor_username,
-          href: returnProfileURL(data.actor_username),
-        },
-        {
-          type: "span",
-          content: " just followed you.",
-        }
-      )
+      ...createElements({
+        type: "a",
+        content: data.actor_username,
+        href: returnProfileURL(data.actor_username),
+      })
     );
+    div.style.display = "inline-block";
+    div.style.marginleft = ".5rem";
   } else if (data.type === "loveproject") {
     div.append(
       ...createElements(
@@ -137,6 +148,7 @@ function createMessage(data) {
         }
       )
     );
+    container = getContainer("project", data.project_id, data.title);
   } else if (data.type === "favoriteproject") {
     div.append(
       ...createElements(
@@ -160,6 +172,7 @@ function createMessage(data) {
         }
       )
     );
+    container = getContainer("project", data.project_id, data.project_title);
   } else if (data.type === "addcomment") {
     div.append(
       ...createElements(
@@ -170,7 +183,7 @@ function createMessage(data) {
         },
         {
           type: "span",
-          content: " just commented on ",
+          content: " commented on ",
         },
         {
           type: "a",
@@ -189,6 +202,16 @@ function createMessage(data) {
       )
     );
     div.appendChild(createComment(data.comment_fragment));
+
+    if (data.comment_type === 1) {
+      container = document.querySelector("div[data-type=profile]");
+    } else {
+      container = getContainer(
+        ["project", "profile", "studio"][data.comment_type],
+        data.comment_obj_id,
+        data.comment_obj_title
+      );
+    }
   } else if (data.type === "curatorinvite") {
     div.append(
       ...createElements(
@@ -212,6 +235,7 @@ function createMessage(data) {
         }
       )
     );
+    container = document.querySelector("div[data-type=curators]");
   } else if (data.type === "remixproject") {
     div.append(
       ...createElements(
@@ -244,6 +268,7 @@ function createMessage(data) {
         }
       )
     );
+    container = document.querySelector("div[data-type=remixes]");
   } else if (data.type === "studioactivity") {
     div.append(
       ...createElements(
@@ -262,6 +287,7 @@ function createMessage(data) {
         }
       )
     );
+    container = document.querySelector("div[data-type=activity]");
   } else if (data.type === "forumpost") {
     div.append(
       ...createElements(
@@ -303,6 +329,7 @@ function createMessage(data) {
         }
       )
     );
+    container = document.querySelector("div[data-type=curators]");
   } else if (data.type === "becomehoststudio") {
     div.append(
       ...createElements(
@@ -326,11 +353,17 @@ function createMessage(data) {
         }
       )
     );
+    container = document.querySelector("div[data-type=curators]");
   }
 
   if (!div.querySelector("*")) return;
 
-  document.querySelector(".messages").appendChild(div);
+  container.style.display = null;
+  if (container.dataset.type === "activity") {
+    container.querySelector(".content").appendChild(div);
+  } else {
+    container.appendChild(div);
+  }
 }
 
 function createElements(...elements) {
@@ -378,4 +411,28 @@ function decodeHtmlEntities(html) {
     "text/html"
   ).body.textContent;
   return decodedString;
+}
+
+function getContainer(type, id, name) {
+  if (
+    document.querySelector(
+      `.messaging .container[data-type='${type}'][data-id='${id}']`
+    )
+  ) {
+    return document.querySelector(
+      `.messaging .container[data-type='${type}'][data-id='${id}']`
+    );
+  } else {
+    let div = document.createElement("div");
+    div.className = "container";
+    div.dataset.type = type;
+    div.dataset.id = id;
+
+    let h3 = document.createElement("h3");
+    h3.textContent = name;
+    div.appendChild(h3);
+
+    document.querySelector(".messages").appendChild(div);
+    return div;
+  }
 }
