@@ -2,10 +2,17 @@
 <html lang="en">
   <head>
     <title>Settings - ScratchTools</title>
+
     <link rel="icon" href="/extras/icons/icon128.png" />
+
     <link rel="stylesheet" href="/extras/style.css" />
+
     <link rel="stylesheet" href="/extras/modals.css" />
+
     <script src="/extras/popup/popup.js" defer></script>
+
+    <link rel="stylesheet" href="/extras/messaging/style.css" />
+    <script src="/extras/messaging/script.js"></script>
   </head>
   <body data-filter="All">
     <div class="main-page"></div>
@@ -21,8 +28,20 @@
     <div class="section1">
       <hr style="border: none; height: 1.5rem" />
       <div class="sectionwrap">
-        <div class="news"></div>
+        <div class="messaging">
+          <div class="messaging-header">
+            <h2>Messages</h2>
+          </div>
+          <div class="messages">
+            <div class="enable-messaging">
+              <h3>Would you like to enable messaging?</h3>
+              <p>You will be able to read your messages from here.</p>
+              <button>Enable</button>
+            </div>
+          </div>
+        </div>
         <br />
+        <div class="news"></div>
         <div class="note purple blocked" style="display: none">
           <h3>Blocked Users</h3>
           <ul></ul>
@@ -125,6 +144,7 @@
       type="file"
       multiple="false"
     />
+    <div class="btn-bg"></div>
   </body>
   <script src="/extras/blocked.js"></script>
 </html>
