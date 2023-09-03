@@ -48,6 +48,33 @@ async function getMessages() {
 
   let messages = [];
 
+  if (count === 0) {
+    document.querySelector(".no-unread").style.display = null;
+    document
+      .querySelector(".no-unread button")
+      .addEventListener("click", async function () {
+        document.querySelector(".no-unread").style.display = "none";
+        let data = await (
+          await fetch(
+            "https://api.scratch.mit.edu/users/" +
+              session.user.username +
+              "/messages?limit=40&offset=0",
+            {
+              headers: {
+                "x-token": session.user.token,
+              },
+            }
+          )
+        ).json();
+        data.forEach(function (el) {
+          createMessage(el);
+        });
+        if (data.length === 0) {
+          document.querySelector(".no-unread").style.display = null;
+        }
+      });
+  }
+
   if (getOffsetLimits(count).turns) {
     for (let i = 0; i < getOffsetLimits(count).turns; i++) {
       var data = await (
@@ -192,8 +219,8 @@ function createMessage(data) {
           href: [
             returnProjectURL(data.comment_obj_id),
             returnProfileURL(data.comment_obj_title),
-            returnStudioURL(data.comment_obj_id),
-          ][data.comment_type],
+            returnStudioURL(data.comment_obj_id)+"comments",
+          ][data.comment_type]+`#comments-${data.comment_id}`,
         },
         {
           type: "span",
@@ -372,7 +399,7 @@ function createElements(...elements) {
     let element = document.createElement(el.type);
     if (el.type === "a") {
       element.href = el.href;
-      element.target = "_blank"
+      element.target = "_blank";
     }
     element.textContent = el.content;
     list.push(element);
