@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "watch-later",
+    "versionAdded": "v3.3.0"
+  },
+  {
+    "version": 2,
     "id": "remove-project-button",
     "versionAdded": "v3.3.0"
   },
