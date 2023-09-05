@@ -1,0 +1,16 @@
+{
+  "title": "Remove Project Button",
+  "description": "Adds a button to projects in studios that allows you to easily remove it from the studio without opening the menu.",
+  "credits": [
+    {
+      "username": "rgantzos",
+      "url": "https://scratch.mit.edu/users/rgantzos/"
+    }
+  ],
+  "dynamic": true,
+  "styles": [{ "file": "style.css", "runOn": "/studios/*" }],
+  "scripts": [{ "file": "script.js", "runOn": "/studios/*" }],
+  "tags": ["New"],
+  "type": ["Website"],
+  "resources": [{ "name": "remove-project-trash", "path": "/remove.svg" }]
+}
