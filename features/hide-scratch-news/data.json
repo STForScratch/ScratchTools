@@ -1,0 +1,16 @@
+{
+  "title": "Hide Scratch News",
+  "description": "Hides the Scratch News section on the homepage of the Scratch website.",
+  "credits": [
+    { "username": "JefferyTheSuperKat", "url": "https://scratch.mit.edu/users/JefferyTheSuperKat/" },
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New"],
+  "styles": [{ "file": "style.css", "runOn": "/" }],
+  "dynamic": true,
+  "components": [{
+    "type": "warning",
+    "content": "This feature will override the \"Replace Scratch News with Recent Projects\" feature."
+  }]
+}
