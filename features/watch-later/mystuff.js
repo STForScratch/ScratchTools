@@ -6,7 +6,7 @@ export default async function ({ feature, console }) {
     a.className = "button small grey"
 
     let span = document.createElement("span")
-    span.textContent = "Watch Later"
+    span.textContent = feature.msg("watch-later")
     span.className = "text"
     a.appendChild(span)
 
