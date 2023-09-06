@@ -1,0 +1,47 @@
+{
+  "extName": {
+    "message": "Scratch için ScratchTools"
+  },
+  "extDescription": {
+    "message": "ScratchTools, Scratch web sitesini daha iyi ve kullanımı daha kolay hale getirmek için birçok özellikle tamamen özelleştirilebilir bir araçtır!"
+  },
+  "supportButton": {
+    "message": "Destek Ekibi"
+  },
+  "feedbackButton": {
+    "message": "Geri Bildirim Bırak"
+  },
+  "settingsButton": {
+    "message": "Ek Ayarlar"
+  },
+  "featuresFilterAll": {
+    "message": "Tümü"
+  },
+  "featuresFilterWebsite": {
+    "message": "Web Site"
+  },
+  "featuresFilterEditor": {
+    "message": "Düzenleyici"
+  },
+  "featuresFilterForums": {
+    "message": "Forumlar"
+  },
+  "allFeaturesHeader": {
+    "message": "Tüm özellikler"
+  },
+  "forYouHeader": {
+    "message": "Sizin için"
+  },
+  "searchPlaceholder": {
+    "message": "Ara"
+  },
+  "creditsText": {
+    "message": "Krediler"
+  },
+  "viewFeature": {
+    "message": "Özelliği görüntülemek için tıklayın."
+  },
+  "themeStore": {
+    "message": "Tema Mağazası"
+  }
+}
