@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "wrap-lists",
+    "versionAdded": "v3.3.0"
+  },
+  {
+    "version": 2,
     "id": "live-stats",
     "versionAdded": "v3.3.0"
   },
