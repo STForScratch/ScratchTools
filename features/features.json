@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "live-stats",
+    "versionAdded": "v3.3.0"
+  },
+  {
+    "version": 2,
     "id": "hide-scratch-news",
     "versionUpdated": "v3.3.0"
   },

@@ -1,0 +1,20 @@
+{
+  "title": "Live Stats",
+  "description": "Updates the loves, favorites, remixes, and views on a project live, without having to reload to view the new counts.",
+  "credits": [
+    {
+      "username": "RowanMoonBoy",
+      "url": "https://scratch.mit.edu/users/RowanMoonBoy/"
+    },
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "scripts": [
+    {
+      "file": "script.js",
+      "runOn": "/projects/*"
+    }
+  ],
+  "dynamic": true,
+  "type": ["Website"],
+  "tags": ["New", "Featured"]
+}
