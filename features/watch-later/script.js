@@ -9,8 +9,8 @@ export default function ({ feature, console }) {
       button.textContent = saved.includes(
         window.location.pathname.split("/")[2]
       )
-        ? "Remove from Watch Later"
-        : "Watch Later";
+        ? feature.msg("unsave")
+        : feature.msg("save");
 
       feature.self.hideOnDisable(button);
 
@@ -39,8 +39,8 @@ export default function ({ feature, console }) {
         button.textContent = saved.includes(
           window.location.pathname.split("/")[2]
         )
-          ? "Remove from Watch Later"
-          : "Watch Later";
+          ? feature.msg("unsave")
+          : feature.msg("save");
       });
 
       row.appendChild(button);

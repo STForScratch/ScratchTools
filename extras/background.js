@@ -445,25 +445,30 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
             ).json();
             featureData.id = feature.id;
             featureData.version = feature.version;
-            if (featureData.translations) {
-              if (chrome.i18n.getUILanguage().includes("-")) {
-                var language = chrome.i18n.getUILanguage().split("-")[0];
-              } else {
-                var language = chrome.i18n.getUILanguage();
-              }
-              if (featureData.translations.includes(language)) {
-                var localesData = await (
-                  await fetch(
-                    `/features/${featureData.id}/locales/${language}.json`
-                  )
-                ).json();
-              } else {
-                var localesData = await (
-                  await fetch(`/features/${featureData.id}/locales/en.json`)
-                ).json();
-              }
-              featureData.localesData = localesData;
+            if (chrome.i18n.getUILanguage().includes("-")) {
+              var language = chrome.i18n.getUILanguage().split("-")[0];
+            } else {
+              var language = chrome.i18n.getUILanguage();
             }
+            let localesData = {};
+            try {
+              localesData = await (
+                await fetch(
+                  `/feature-locales/${featureData.id}/${language}.json`
+                )
+              ).json();
+            } catch (err) {
+              try {
+                localesData = await (
+                  await fetch(`/feature-locales/${featureData.id}/en.json`)
+                ).json();
+              } catch (err) {}
+            }
+            let locales = {};
+            Object.keys(localesData).forEach(function (el) {
+              locales[`${featureData.id}/${el}`] = localesData[el];
+            });
+            featureData.localesData = locales;
             newFullData.push(featureData);
           } else {
             newFullData.push(feature);

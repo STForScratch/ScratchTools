@@ -10,7 +10,6 @@
     "styles": [{ "file": "style.css", "runOn": "/users/*" }],
     "scripts": [{ "file": "script.js", "runOn": "/users/*", "module": true }],
     "additionalAgreements": "By enabling this feature, you understand that other users will be able to see if you are online or not.",
-    "translations": ["en", "tr", "de", "es", "fr", "ru"],
     "similar": ["display-name", "emoji-status"]
   }
   
