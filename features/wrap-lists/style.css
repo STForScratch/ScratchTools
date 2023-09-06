@@ -1,0 +1,19 @@
+div[class^="monitor_list-row_"] {
+    position: static !important;
+    height: fit-content !important;
+}
+
+div[class^="monitor_list-row_"] div[class^="monitor_value-inner_"] {
+    text-overflow: initial !important;
+    text-wrap: wrap !important;
+}
+
+div[class^="monitor_list-row_"] div[class^="monitor_list-value_"] {
+    height: fit-content !important;
+}
+
+div.ReactVirtualized__Grid__innerScrollContainer {
+    overflow-y: visible !important;
+    height: fit-content !important;
+    max-height: fit-content !important;
+}

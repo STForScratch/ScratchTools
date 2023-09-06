@@ -1,0 +1,11 @@
+{
+  "title": "Wrap List Items",
+  "description": "Displays text in list items normally without cutting them off if they're too long.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Editor"],
+  "tags": ["New", "Featured", "Beta"],
+  "dynamic": true,
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }]
+}
