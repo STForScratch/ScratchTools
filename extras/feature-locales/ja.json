@@ -1,4 +1,28 @@
 {
+  "wrap-lists/title": { "message": "リストの項目を省略しない" },
+  "wrap-lists/description": {
+    "message": "リスト内のテキストが長すぎる場合でも、それを省略せずに表示します。"
+  },
+  "live-stats/title": { "message": "ステータスをリアルタイムで更新" },
+  "live-stats/description": {
+    "message": "ページを再読み込みすることなく、プロジェクトの好き、お気に入り、リミックス、参照数をリアルタイムで更新します。"
+  },
+  "hide-scratch-news/title": { "message": "Scratchニュースの非表示" },
+  "hide-scratch-news/description": {
+    "message": "トップページにあるScratchニュースを非表示にします。"
+  },
+  "watch-later/title": { "message": "プロジェクトを後で見る" },
+  "watch-later/description": {
+    "message": "後で見たいプロジェクトとして保存したものを、「後で見る」ページに表示します。"
+  },
+  "remove-project-button/title": { "message": "プロジェクト削除ボタン" },
+  "remove-project-button/description": {
+    "message": "スタジオ内のプロジェクトを簡単に削除するためのボタンを追加します。メニューを開かずに削除することができます。"
+  },
+  "right-side-flag/title": { "message": "緑の旗を右に表示する" },
+  "right-side-flag/description": {
+    "message": "緑の旗と停止ボタンをステージの右側に移動させます。"
+  },
   "love-fave-animate/title": { "message": "「好き」ボタンのアニメーション" },
   "love-fave-animate/description": {
     "message": "プロジェクトページ上の「いいね」ボタンと「お気に入り」ボタンのクリックしたときの動作をアニメーション化します。"
@@ -182,6 +206,10 @@
   "box-shadows/title": { "message": "コンテンツボックスの影" },
   "box-shadows/description": {
     "message": "すべてのコンテンツボックスに影を追加します。カーソルを合わせると、影が濃くなります。"
+  },
+  "admin-notifications/title": { "message": "STからのメッセージを赤く表示" },
+  "admin-notifications/description": {
+    "message": "Scratch Teamからの管理者通知がある場合、上のバーのメッセージボタンはオレンジ色ではなく、赤色に表示されます。"
   },
   "nicknames/title": { "message": "ニックネーム" },
   "nicknames/description": {
@@ -373,10 +401,6 @@
   "scrollable-list-items/description": {
     "message": "リスト自体の幅より長い値が書かれているリストの項目を左右にスクロールできるようになります。"
   },
-  "admin-notifications/title": { "message": "STからのメッセージを赤く表示" },
-  "admin-notifications/description": {
-    "message": "Scratch Teamからの管理者通知がある場合、上のバーのメッセージボタンはオレンジ色ではなく、赤色に表示されます。"
-  },
   "custom-fonts/title": { "message": "サイトのフォントの変更" },
   "custom-fonts/description": {
     "message": "Scratch上で表示されるフォントをGoogle Fontsのサイトにある好きなフォントに設定することができます。大文字と小文字は区別されます。"
@@ -565,19 +589,11 @@
   "compact-editor/description": {
     "message": "スプライトや背景の情報をよりコンパクトにします。"
   },
-  "right-side-flag/title": { "message": "緑の旗を右に表示する" },
-  "right-side-flag/description": {
-    "message": "緑の旗と停止ボタンをステージの右側に移動させます。"
-  },
   "my-recent-projects/title": {
     "message": "Scratchニュースを最近のプロジェクトに置き換える"
   },
   "my-recent-projects/description": {
     "message": "トップページのScratchニュースを最近のプロジェクトに置き換えます。"
-  },
-  "hide-scratch-news/title": { "message": "Scratchニュースの非表示" },
-  "hide-scratch-news/description": {
-    "message": "トップページにあるScratchニュースを非表示にします。この機能は、Scratchニュースを最近のプロジェクトに置き換える機能を有効にした場合、競合します。"
   },
   "focus-mode/title": { "message": "フォーカスモード" },
   "focus-mode/description": {
