@@ -338,6 +338,15 @@ if (window.location.href.includes("extras/index.html")) {
   }
 }
 
+async function setDefaultThemes() {
+  if (!(await chrome.storage.sync.get("themes"))?.themes) {
+    await chrome.storage.sync.set({
+      themes: defaultThemes,
+    });
+  }
+}
+setDefaultThemes();
+
 async function getThemes() {
   document.querySelectorAll(".dropdown > *").forEach(function (el) {
     el.remove();
@@ -1365,12 +1374,14 @@ async function getTrending() {
 }
 
 async function getCommit() {
-  if (!chrome.runtime.getManifest().version_name.endsWith("-beta")) return;
-  if (!document.querySelector(".searchbar")) return;
+  try {
+    if (!chrome.runtime.getManifest().version_name.endsWith("-beta")) return;
+    if (!document.querySelector(".searchbar")) return;
 
-  let commit = await (await fetch("/.git/ORIG_HEAD")).text();
-  document.querySelector(".searchbar").placeholder += ` (${commit.slice(
-    0,
-    7
-  )})`;
+    let commit = await (await fetch("/.git/ORIG_HEAD")).text();
+    document.querySelector(".searchbar").placeholder += ` (${commit.slice(
+      0,
+      7
+    )})`;
+  } catch (err) {}
 }
