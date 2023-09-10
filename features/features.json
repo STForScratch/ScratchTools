@@ -1,6 +1,150 @@
 [
   {
     "version": 2,
+    "id": "True-Location",
+    "versionAdded": "v3.4.0"
+  {
+    "version": 2,
+    "id": "wrap-lists",
+    "versionAdded": "v3.3.0"
+  },
+  {
+    "version": 2,
+    "id": "live-stats",
+    "versionAdded": "v3.3.0"
+  },
+  {
+    "version": 2,
+    "id": "hide-scratch-news",
+    "versionUpdated": "v3.3.0"
+  },
+  {
+    "version": 2,
+    "id": "watch-later",
+    "versionAdded": "v3.3.0"
+  },
+  {
+    "version": 2,
+    "id": "remove-project-button",
+    "versionAdded": "v3.3.0"
+  },
+  {
+    "version": 2,
+    "id": "right-side-flag",
+    "versionUpdated": "v3.2.0"
+  },
+  {
+    "version": 2,
+    "id": "love-fave-animate",
+    "versionAdded": "v3.2.0"
+  },
+  {
+    "version": 2,
+    "id": "default-to-local",
+    "versionUpdated": "v3.2.0"
+  },
+  {
+    "version": 2,
+    "id": "start-stop-hotkeys",
+    "versionUpdated": "v3.2.0"
+  },
+  {
+    "version": 2,
+    "id": "opacity-slider",
+    "versionAdded": "v3.2.0"
+  },
+  {
+    "version": 2,
+    "id": "more-studios",
+    "versionAdded": "v3.2.0"
+  },
+  {
+    "version": 2,
+    "id": "localized-explore",
+    "versionAdded": "v3.2.0"
+  },
+  {
+    "version": 2,
+    "id": "project-bar",
+    "versionAdded": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "more-news",
+    "versionAdded": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "dumpster-fire",
+    "versionUpdated": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "steal-game",
+    "versionAdded": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "statistics",
+    "versionUpdated": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "echo-effect",
+    "versionAdded": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "compact-buttons",
+    "versionAdded": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "message-count",
+    "versionUpdated": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "move-share-button",
+    "versionAdded": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "preview-textboxes",
+    "versionUpdated": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "more-tutorials",
+    "versionAdded": "v3.0.0"
+  },
+  {
+    "version": 2,
+    "id": "simplify-action-buttons",
+    "versionAdded": "v3.0.0"
+  },
+  {
+    "version": 2,
+    "id": "slash-to-search",
+    "versionAdded": "v3.0.0"
+  },
+  {
+    "version": 2,
+    "id": "shared-clipboard",
+    "versionAdded": "v3.0.0"
+  },
+  {
+    "version": 2,
+    "id": "important-messages",
+    "versionAdded": "v3.0.0"
+  },
+  {
+    "version": 2,
+    "id": "hide-footer",
+    "versionAdded": "v3.0.0"
+  },
+  {
+    "version": 2,
     "id": "original-colors",
     "versionAdded": "v2.30.1"
   },
