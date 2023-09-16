@@ -21,7 +21,7 @@ export default function ({ feature, console }) {
 
       let title = document.createElement("div");
       title.className = "icon-button_title_36ChS";
-      title.textContent = "Echo";
+      title.textContent = feature.msg("echo");
       button.appendChild(title);
 
       container.appendChild(button)
