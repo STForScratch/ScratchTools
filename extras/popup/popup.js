@@ -1084,7 +1084,7 @@ if (document.querySelector(".main-page")) {
 if (document.querySelector(".buttons")) {
   document.querySelectorAll(".buttons button").forEach(function (el) {
     el.addEventListener("click", function () {
-      document.body.dataset.filter = el.textContent;
+      document.body.dataset.filter = el.dataset.type;
       el.parentNode.querySelector(".selected")?.classList.remove("selected");
       el.classList.add("selected");
     });
