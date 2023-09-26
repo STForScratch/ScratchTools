@@ -1,6 +1,21 @@
 [
   {
     "version": 2,
+    "id": "wrap-lists",
+    "versionAdded": "v3.3.0"
+  },
+  {
+    "version": 2,
+    "id": "live-stats",
+    "versionAdded": "v3.3.0"
+  },
+  {
+    "version": 2,
+    "id": "hide-scratch-news",
+    "versionUpdated": "v3.3.0"
+  },
+  {
+    "version": 2,
     "id": "watch-later",
     "versionAdded": "v3.3.0"
   },
@@ -236,6 +251,10 @@
   {
     "version": 2,
     "id": "box-shadows"
+  },
+  {
+    "version": 2,
+    "id": "admin-notifications"
   },
   {
     "title": "Nicknames",
@@ -676,15 +695,6 @@
     "tags": ["Recommended"],
     "type": ["Website", "Editor"],
     "dynamic": true
-  },
-  {
-    "title": "Message Indicator Red for Admin Messages",
-    "description": "If you have an admin notification from the Scratch Team, the message indicator in the navigation bar will display red instead of orange.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "admin-notifications",
-    "tags": [],
-    "type": ["Website"]
   },
   {
     "title": "Custom Website Font",
@@ -1141,18 +1151,6 @@
     ],
     "file": "my-recent-projects",
     "type": ["Website"]
-  },
-  {
-    "title": "Hide Scratch News",
-    "description": "Hides the Scratch News section on the homepage of the Scratch website. This feature will interfere with the Replace Scratch News with Recent Projects feature if enabled.",
-    "credits": ["Bob the Potato wit Drip Jr.", "rgantzos"],
-    "urls": [
-      "https://scratch.mit.edu/users/JefferyTheSuperKat/",
-      "https://scratch.mit.edu/users/rgantzos/"
-    ],
-    "file": "hide-scratch-news",
-    "tags": [],
-    "type": ["Website", "Theme"]
   },
   {
     "title": "Focus Mode",

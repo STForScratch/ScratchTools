@@ -7,6 +7,5 @@
   "type": ["Website"],
   "tags": ["New", "Featured"],
   "dynamic": true,
-  "scripts": [{ "file": "script.js", "runOn": "/mystuff*" }],
-  "translations": ["en"]
+  "scripts": [{ "file": "script.js", "runOn": "/mystuff*" }]
 }
