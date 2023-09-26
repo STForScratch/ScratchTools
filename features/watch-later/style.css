@@ -1,0 +1,12 @@
+.ste-watch-later::before {
+    display: inline-block;
+    margin-right: 0.25rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: bottom;
+    content: "";
+    background-image: var(--scratchtoolsresource-watch-later-icon);
+}

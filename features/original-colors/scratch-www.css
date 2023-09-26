@@ -509,3 +509,43 @@ div.box.v-tabs > div.tabs-index li > a {
 #topnav ul.account-nav .sign-in .popover .arrow {
   border-bottom-color: #256185ff !important;
 }
+
+.blockpost .box-head {
+  background-color: #3397d9ff;
+  color: white;
+}
+
+.blockpost .box-head a {
+  color: white !important;
+}
+
+.blockpost div.box {
+  background-color: #3397d9ff;
+  border-top-color: #2d97ccff;
+}
+
+button[class^="record-modal_ok-button_"] {
+  background-color: var(--ste-blue) !important;
+}
+
+button[class^="record-modal_main-button_"] img:not([src^="data:image/svg+xml;base64,"]) {
+  filter: sepia(300%) hue-rotate(185deg) saturate(450%);
+}
+
+span[class^="record-modal_playing-text_"] {
+  color: var(--ste-blue) !important;
+}
+
+button[class^="record-modal_rerecord-button_"] {
+  color: var(--ste-blue) !important;
+}
+
+button[class^="record-modal_rerecord-button_"] img {
+  filter: sepia(300%) hue-rotate(185deg) saturate(450%);
+}
+
+input[class^="input_input-form_"]:focus {
+  box-shadow: 0 0 0 0.25rem #4e97fe35 !important;
+  -webkit-box-shadow: 0 0 0 0.25rem #4e97fe35 !important;
+  border-color: var(--ste-blue) !important;
+}

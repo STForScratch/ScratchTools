@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 html {
-  --radius: .5rem;
+  --radius: 0.5rem;
   width: 400px;
   font-family: "Inter", sans-serif;
   height: 500px;
@@ -33,6 +33,7 @@ a:hover {
   margin-left: -1.5rem;
   text-align: center;
   color: var(--primary-color);
+  border-bottom: 3px solid var(--feature-input-bg);
 }
 .welcome img,
 .welcome h3 {
@@ -54,10 +55,11 @@ a {
   margin: 2em;
   margin-bottom: 1rem;
   background: var(--feature-bg);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   padding: 17px;
   padding-top: 5px;
   position: relative;
+  border-bottom: 3px solid var(--feature-input-bg);
 }
 .feature a {
   cursor: pointer;
@@ -100,10 +102,10 @@ a {
 
 .feature .featureTitle {
   color: var(--primary-color);
-  width: calc(90% - 55px);
+  max-width: calc(90% - 5rem);
   font-weight: bold;
-  font-size: 1.25rem !important;
-  margin-bottom: 0.5rem;
+  font-size: 1.2rem !important;
+  margin-bottom: 0rem;
 }
 .feature p {
   color: var(--secondary-color);
@@ -338,4 +340,118 @@ input:checked + .slider:before {
   color: var(--primary-color);
   opacity: 0.5;
   text-align: center;
+}
+
+.feature span.new-feature-tag {
+  background-color: var(--theme);
+  color: white;
+  padding: 0.25rem;
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 0.75rem;
+  position: relative;
+  top: -0.15rem;
+  user-select: none;
+  transition: opacity 0.3s, transform 0.3s;
+  opacity: 1;
+  transform: none;
+}
+
+.feature span.new-feature-tag:hover {
+  opacity: 0.75;
+  transform: scale(105%);
+}
+
+.feature > h3 {
+  display: inline-block;
+}
+
+.ste-easter-egg {
+  display: none !important;
+}
+
+span.new-feature-tag.beta {
+  background-color: #fc8c4f;
+  cursor: pointer !important;
+}
+
+.warning-component {
+  background-color: #fc8c4f20;
+  border: 1.5px solid #fc8c4f;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  border-bottom-width: 3px;
+  line-height: 1.2rem;
+  color: var(--primary-color);
+}
+
+.warning-component img {
+  height: 1rem;
+  margin-right: 0.5rem;
+  margin-inline-end: 10px;
+  transform: scale(1.15);
+}
+
+.info-component {
+  background-color: #fcd44f20;
+  border: 1.5px solid #fcd44f;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  border-bottom-width: 3px;
+  line-height: 1.2rem;
+  color: var(--primary-color);
+}
+
+.info-component img {
+  height: 1rem;
+  margin-right: 0.5rem;
+  margin-inline-end: 10px;
+  transform: scale(1.15);
+}
+
+.feature h3 .icon svg {
+  height: 1rem;
+  width: 1rem;
+  margin-right: 1.5rem;
+  position: relative;
+  left: 0.6rem;
+  transform: scale(1.5);
+  top: 0.1rem;
+}
+
+.special-switch {
+  position: relative;
+  width: 55px;
+  height: 28px;
+  transform: scale(80%);
+  float: right;
+  position: relative;
+  top: -0.25rem;
+  margin: 0px;
+}
+
+.feature table,
+.feature table tr {
+  width: 100%;
+}
+
+.feature table {
+  margin-top: .5rem;
+}
+
+.special-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }

@@ -1,3 +1,5 @@
+var clicks = 0;
+
 var defaultThemes = [
   {
     data: {
@@ -58,7 +60,24 @@ if (document.querySelector(".sparkle")) {
   });
 }
 
+async function getFeatureLanguageData() {
+  var language = chrome.i18n.getUILanguage()?.includes("-")
+    ? chrome.i18n.getUILanguage().split("-")[0]
+    : chrome.i18n.getUILanguage();
+  try {
+    var response = await fetch("/extras/feature-locales/" + language + ".json");
+  } catch (err) {
+    return {};
+  }
+  if (response.ok) {
+    return response.json();
+  } else {
+    return {};
+  }
+}
+
 async function getSuggestions() {
+  var languageData = await getFeatureLanguageData();
   var enabled = (await chrome.storage.sync.get("features"))?.features || "";
   var data = await (await fetch("/features/features.json")).json();
   var suggested = [];
@@ -91,11 +110,14 @@ async function getSuggestions() {
       var div = document.createElement("div");
       div.className = "feature-suggestion";
       var h3 = document.createElement("h3");
-      h3.textContent = data.title;
+      h3.textContent =
+        languageData[suggestion + "/title"]?.message || data.title;
       var p = document.createElement("p");
-      p.textContent = data.description;
+      p.textContent =
+        languageData[suggestion + "/description"]?.message || data.description;
       var span = document.createElement("span");
-      span.textContent = "Click to view feature.";
+      span.textContent =
+        chrome.i18n.getMessage("viewFeature") || "Click to view feature.";
       div.appendChild(h3);
       div.appendChild(p);
       div.appendChild(span);
@@ -346,7 +368,7 @@ async function getThemes() {
   });
   var div = document.createElement("div");
   div.className = "item";
-  div.textContent = "Theme Store";
+  div.textContent = chrome.i18n.getMessage("themeStore") || "Theme Store";
   document.querySelector(".dropdown").appendChild(div);
   div.addEventListener("click", async function () {
     document.getElementById("themedropdown").style.display = "none";
@@ -438,6 +460,32 @@ document.querySelector(".support-btn")?.addEventListener("click", function () {
 
 document.querySelector(".searchbar").placeholder =
   chrome.i18n.getMessage("search") || "search";
+getCommit();
+
+function getWords(text, search) {
+  if (!search) return true;
+  if (!search.includes(" "))
+    return text.toLowerCase().includes(search.toLowerCase());
+  text = text
+    .replaceAll("\n", " ")
+    .replaceAll("Credits:", "")
+    .replaceAll("Updated", "")
+    .replaceAll("New", "")
+    .toLowerCase();
+  search = search.toLowerCase();
+  while (text.includes("  ")) {
+    text = text.replaceAll("  ", " ");
+  }
+  var oneWords = text.includes(" ") ? text.split(" ") : [text];
+
+  var twoWords = search.includes(" ") ? search.split(" ") : [search];
+
+  var matchWords = oneWords.filter((el) => twoWords.includes(el)).length;
+
+  var matchedPercentage = matchWords / twoWords.length;
+
+  return matchedPercentage > 0.5;
+}
 
 document.querySelector(".searchbar").addEventListener("input", function () {
   if (document.querySelector(".welcome")) {
@@ -448,13 +496,7 @@ document.querySelector(".searchbar").addEventListener("input", function () {
     }
   }
   document.querySelectorAll(".feature").forEach(function (el) {
-    if (
-      (
-        el.querySelector("h3").textContent.toLowerCase() +
-        el.querySelector("p").textContent.toLowerCase() +
-        el.querySelector("span").textContent.toLowerCase()
-      ).includes(document.querySelector(".searchbar").value.toLowerCase())
-    ) {
+    if (getWords(el.innerText, document.querySelector(".searchbar").value)) {
       el.style.display = null;
     } else {
       el.style.display = "none";
@@ -507,6 +549,7 @@ async function returnFeatureCode() {
 }
 
 async function getFeatures() {
+  var languageData = await getFeatureLanguageData();
   const settings = (await chrome.storage.sync.get("features")).features || "";
   const data = await (await fetch("/features/features.json")).json();
   for (var featurePlace in data) {
@@ -522,6 +565,8 @@ async function getFeatures() {
       const featureData = await (
         await fetch("/features/" + feature.id + "/data.json")
       ).json();
+      featureData.versionAdded = feature.versionAdded;
+      featureData.versionUpdated = feature.versionUpdated;
       featureData.id = feature.id;
       featureData.version = feature.version;
       feature = featureData;
@@ -530,10 +575,41 @@ async function getFeatures() {
 
     var h3 = document.createElement("h3");
     h3.textContent =
-      chrome.i18n.getMessage(feature.id.replaceAll("-", "_") + "_title") ||
-      feature.title;
+      languageData[feature.id + "/title"]?.message || feature.title;
     h3.className = "featureTitle";
     div.appendChild(h3);
+
+    if (
+      feature.versionAdded?.replace("v", "") ===
+      chrome.runtime.getManifest().version.toString()
+    ) {
+      var span = document.createElement("span");
+      span.textContent = "New";
+      span.className = "new-feature-tag";
+      div.classList.add("new-feature");
+      div.appendChild(span);
+    } else if (
+      feature.versionUpdated?.replace("v", "") ===
+      chrome.runtime.getManifest().version.toString()
+    ) {
+      var span = document.createElement("span");
+      span.textContent = "Updated";
+      span.className = "new-feature-tag updated";
+      div.appendChild(span);
+    }
+    if (feature.tags?.includes("Beta")) {
+      var span = document.createElement("span");
+      span.textContent = "Beta";
+      span.className = "new-feature-tag beta";
+      div.appendChild(span);
+      span.addEventListener("click", function () {
+        ScratchTools.modals.create({
+          title: "Beta feature",
+          description:
+            "This feature is currently in a beta stage, and may have small bugs that weren't noticed during testing. There may also be changes/improvements to come soon.",
+        });
+      });
+    }
 
     var label = document.createElement("label");
     label.className = "switch";
@@ -546,6 +622,9 @@ async function getFeatures() {
     div.appendChild(label);
     if (settings.includes(feature.id)) {
       input.checked = true;
+    }
+    if (feature.type.includes("Egg") && !settings.includes(feature.id)) {
+      div.classList.add("ste-easter-egg");
     }
 
     input.addEventListener("input", async function () {
@@ -571,11 +650,12 @@ async function getFeatures() {
           var ok = true;
         }
         if (ok) {
+          this.parentNode.parentNode.style.display = null;
           this.checked = true;
           await chrome.storage.sync.set({
             features: data + "." + this.parentNode.parentNode.dataset.id,
           });
-          dynamicEnable(this.parentNode.parentNode.dataset.id);
+          await dynamicEnable(this.parentNode.parentNode.dataset.id);
         } else {
           window.close();
         }
@@ -590,9 +670,7 @@ async function getFeatures() {
 
     var p = document.createElement("p");
     p.textContent =
-      chrome.i18n.getMessage(
-        feature.id.replaceAll("-", "_") + "_description"
-      ) || feature.description;
+      languageData[feature.id + "/description"]?.message || feature.description;
     div.appendChild(p);
 
     if (feature.options) {
@@ -605,11 +683,34 @@ async function getFeatures() {
         input.type = ["text", "checkbox", "number", "color"][option.type || 0];
         var optionData = (await chrome.storage.sync.get(option.id))[option.id];
         input.value = optionData || "";
-        div.appendChild(input);
         if (input.type === "checkbox") {
+          var specialLabel = document.createElement("label");
+          specialLabel.className = "special-switch";
+          input.className = "checkbox"
+          var span = document.createElement("span");
+          span.className = "slider round";
+          specialLabel.appendChild(input);
+          specialLabel.appendChild(span);
+        } else {
+        div.appendChild(input);
+        }
+        if (input.type === "checkbox") {
+          let table = document.createElement("table")
+          let tr = document.createElement("tr")
+          table.appendChild(tr)
+
+          let td1 = document.createElement("td")
+          tr.appendChild(td1)
+          let td2 = document.createElement("td")
+          tr.appendChild(td2)
+
+          div.appendChild(table)
+
           var label = document.createElement("label");
           label.textContent = option.name;
-          div.appendChild(label);
+          label.style.marginLeft = "0px"
+          td1.appendChild(label);
+          td2.appendChild(specialLabel)
           input.checked = optionData || false;
         }
         input.dataset.validation = btoa(
@@ -670,8 +771,9 @@ async function getFeatures() {
                     world: "MAIN",
                   });
                   function updateSettingsFunction(feature, name, value) {
+                    ScratchTools.Storage[name] = value;
                     if (allSettingChangeFunctions[feature]) {
-                      allSettingChangeFunctions[feature](name, value);
+                      allSettingChangeFunctions[feature]({ key: name, value });
                     }
                   }
                 } catch (err) {
@@ -684,9 +786,11 @@ async function getFeatures() {
       }
     }
 
+    div.appendChild(generateComponents(feature.components || []));
+
     var span = document.createElement("span");
     span.textContent =
-      (chrome.i18n.getMessage("credits_text") || "Credits") + ": ";
+      (chrome.i18n.getMessage("creditsText") || "Credits") + ": ";
 
     feature.credits.forEach(function (credit, i) {
       var a = document.createElement("a");
@@ -723,8 +827,39 @@ async function getFeatures() {
     });
     div.appendChild(span);
 
-    document.querySelector(".settings").appendChild(div);
+    if (
+      feature.versionAdded?.replace("v", "") ===
+      chrome.runtime.getManifest().version.toString()
+    ) {
+      document.querySelector(".settings").prepend(div);
+    } else if (
+      feature.versionUpdated?.replace("v", "") ===
+      chrome.runtime.getManifest().version.toString()
+    ) {
+      if (
+        document.querySelector(".settings > .feature.new-feature") &&
+        document.querySelectorAll(".settings > .feature.new-feature")[
+          document.querySelectorAll(".settings > .feature.new-feature").length -
+            1
+        ]?.nextSibling
+      ) {
+        document
+          .querySelector(".settings")
+          .insertBefore(
+            div,
+            document.querySelectorAll(".settings > .feature.new-feature")[
+              document.querySelectorAll(".settings > .feature.new-feature")
+                .length - 1
+            ].nextSibling
+          );
+      } else {
+        document.querySelector(".settings").appendChild(div);
+      }
+    } else {
+      document.querySelector(".settings").appendChild(div);
+    }
   }
+  getTrending()
 }
 getFeatures();
 
@@ -754,12 +889,20 @@ async function dynamicEnable(id) {
           chrome.tabs.query({}, function (tabs) {
             for (var i = 0; i < tabs.length; i++) {
               try {
-                if (new URL(tabs[i].url).pathname.match(script.runOn)) {
-                  chrome.scripting.executeScript({
-                    target: { tabId: tabs[i].id },
-                    files: [`/features/${feature.id}/${el.file}`],
-                    world: "MAIN",
-                  });
+                if (!el.file.startsWith(chrome.runtime.getURL("/"))) {
+                  el.file = chrome.runtime.getURL(
+                    `/features/${feature.id}/${el.file}`
+                  );
+                }
+                el.feature = feature;
+                chrome.scripting.executeScript({
+                  args: [el],
+                  target: { tabId: tabs[i].id },
+                  func: injectModuleScript,
+                  world: "MAIN",
+                });
+                function injectModuleScript(script) {
+                  ScratchTools.injectModule(script);
                 }
               } catch (err) {}
             }
@@ -917,11 +1060,23 @@ document.getElementById("campsite")?.addEventListener("click", function () {
   });
 });
 
+if (document.querySelector(".main-page")) {
+  var logo = document.querySelector("div.sticon");
+  logo.addEventListener("click", function () {
+    clicks += 1;
+    if (clicks > 4) {
+      clicks = 0;
+      document.querySelector(".buttons .selected").classList.remove("selected");
+      document.body.dataset.filter = "Egg";
+    }
+  });
+}
+
 if (document.querySelector(".buttons")) {
   document.querySelectorAll(".buttons button").forEach(function (el) {
     el.addEventListener("click", function () {
       document.body.dataset.filter = el.textContent;
-      el.parentNode.querySelector(".selected").classList.remove("selected");
+      el.parentNode.querySelector(".selected")?.classList.remove("selected");
       el.classList.add("selected");
     });
   });
@@ -963,7 +1118,7 @@ if (document.querySelector(".feedback-btn")) {
   getNotifications();
 }
 
-document.querySelector(".searchbar")?.focus()
+document.querySelector(".searchbar")?.focus();
 
 async function downloadSettings() {
   var allFeatures = await (await fetch("/features/features.json")).json();
@@ -1018,47 +1173,204 @@ async function loadFromJson(data) {
   window.location.href = window.location.href;
 }
 
-document.querySelector(".settings-load-input")?.addEventListener("input", async function() {
-  var input = document.querySelector(".settings-load-input")
-  if (input.files[0].type === "application/json") {
-    var data = await parseFile(input.files[0])
-    if (Object.keys(data).length === 2 && data.features && data.options) {
-      loadFromJson(data)
+document
+  .querySelector(".settings-load-input")
+  ?.addEventListener("input", async function () {
+    var input = document.querySelector(".settings-load-input");
+    if (input.files[0].type === "application/json") {
+      var data = await parseFile(input.files[0]);
+      if (Object.keys(data).length === 2 && data.features && data.options) {
+        loadFromJson(data);
+      } else {
+        alert("Invalid file.");
+      }
     } else {
-      alert("Invalid file.")
+      alert("Invalid file.");
     }
-  } else {
-    alert("Invalid file.")
-  }
-})
+  });
 
 async function parseFile(file) {
   return new Promise((resolve, reject) => {
-    const fileReader = new FileReader()
-    fileReader.onload = event => resolve(JSON.parse(event.target.result))
-    fileReader.onerror = error => reject(error)
-    fileReader.readAsText(file)
-  })
+    const fileReader = new FileReader();
+    fileReader.onload = (event) => resolve(JSON.parse(event.target.result));
+    fileReader.onerror = (error) => reject(error);
+    fileReader.readAsText(file);
+  });
 }
 
 function importSettingsInput() {
-  var input = document.querySelector(".settings-load-input")
-  input.click()
+  var input = document.querySelector(".settings-load-input");
+  input.click();
 }
 
 if (document.querySelector(".news")) {
-  getNews()
+  getNews();
 }
 
 async function getNews() {
-  var data = await (await fetch("https://data.scratchtools.app/news/")).json()
-  var note = document.createElement("div")
-  note.className = "note blue"
-  var h3 = document.createElement("h3")
-  h3.textContent = data.title
-  var span = document.createElement("span")
-  span.innerHTML = data.description
-  note.appendChild(h3)
-  note.appendChild(span)
-  document.querySelector(".news").appendChild(note)
+  var data = await (await fetch("https://data.scratchtools.app/news/")).json();
+  var note = document.createElement("div");
+  note.className = "note blue";
+  var h3 = document.createElement("h3");
+  h3.textContent = data.title;
+  var span = document.createElement("span");
+  span.innerHTML = data.description;
+  note.appendChild(h3);
+  note.appendChild(span);
+  document.querySelector(".news").appendChild(note);
+}
+
+var localizationSelectors = [
+  {
+    selector: "#section2 > div.buttons > button:nth-child(1)",
+    key: "featuresFilterAll",
+  },
+  {
+    selector: "#section2 > div.buttons > button:nth-child(2)",
+    key: "featuresFilterWebsite",
+  },
+  {
+    selector: "#section2 > div.buttons > button:nth-child(3)",
+    key: "featuresFilterEditor",
+  },
+  {
+    selector: "#section2 > div.buttons > button:nth-child(4)",
+    key: "featuresFilterForums",
+  },
+  {
+    selector: "#section2 > div.sectionwrap > div.suggested > h1:nth-child(1)",
+    key: "forYouHeader",
+  },
+  {
+    selector: "#section2 > div.sectionwrap > div.suggested > h1:nth-child(3)",
+    key: "allFeaturesHeader",
+  },
+  {
+    selector: "input.searchbar",
+    key: "searchPlaceholder",
+    attribute: "placeholder",
+  },
+  {
+    selector: "body > span.support-btn > span",
+    key: "supportButton",
+  },
+  {
+    selector: "body > span.feedback-btn > span",
+    key: "feedbackButton",
+  },
+  {
+    selector: "body > span.more-settings-btn > span",
+    key: "settingsButton",
+  },
+];
+
+localizationSelectors.forEach(function (item) {
+  if (
+    !chrome.i18n.getMessage(item.key) ||
+    !document.querySelector(item.selector)
+  )
+    return;
+  if (item.attribute) {
+    document.querySelector(item.selector)[item.attribute] =
+      chrome.i18n.getMessage(item.key);
+  } else {
+    document.querySelector(item.selector).textContent = chrome.i18n.getMessage(
+      item.key
+    );
+  }
+});
+
+function generateComponents(components) {
+  let div = document.createElement("div");
+  div.classList.add("feature-components");
+
+  components?.forEach(function (el) {
+    let element = document.createElement("div");
+    if (el.type === "warning") {
+      element.className = "warning-component";
+
+      let img = document.createElement("img");
+      img.src = "/extras/icons/warning.svg";
+
+      element.textContent = el.content;
+
+      element.prepend(img);
+    }
+
+    if (el.type === "info") {
+      element.className = "info-component";
+
+      let img = document.createElement("img");
+      img.src = "/extras/icons/info.svg";
+
+      element.textContent = el.content;
+
+      element.prepend(img);
+    }
+
+    if (el.if) {
+      let conditions = [];
+
+      el.if.conditions?.forEach(function (cond) {
+        let value = false;
+        if (cond.type === "os") {
+          if (navigator.userAgent.includes(cond.value)) {
+            value = true;
+          }
+        }
+        if (cond.type === "version") {
+          if (cond.value === chrome.runtime.getManifest().version) {
+            value = true;
+          }
+        }
+        conditions.push(value);
+      });
+
+      if (el.if.type === "any") {
+        if (!conditions.find((cond) => cond)) {
+          div.style.display = "none"
+        }
+      } else if (el.if.type === "all") {
+        if (conditions.find((cond) => !cond) !== undefined) {
+          div.style.display = "none"
+        }
+      }
+    }
+    div.appendChild(element);
+  });
+
+  return div;
+}
+
+async function getTrending() {
+  let data = await (await fetch("https://data.scratchtools.app/trending/")).json()
+
+  data.forEach(function(el) {
+    if (!document.querySelector(`div.feature[data-id='${el}']`)) return;
+
+    let icon = document.createElement("span")
+    icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="m122-218-67-67 321-319 167 167 203-205H628v-95h278v278h-94v-115L542-303 375-470 122-218Z" fill="var(--theme)"/></svg>'
+    icon.className = "icon"
+
+    icon.addEventListener("click", function () {
+      ScratchTools.modals.create({
+        title: "Trending feature",
+        description:
+          "This feature is especially popular among ScratchTools users. Try it out!",
+      });
+    });
+
+    document.querySelector(`div.feature[data-id='${el}'] > h3`).prepend(icon)
+  })
+}
+
+async function getCommit() {
+  if (!chrome.runtime.getManifest().version_name.endsWith("-beta")) return;
+  if (!document.querySelector(".searchbar")) return;
+
+  let commit = await (await fetch("/.git/ORIG_HEAD")).text();
+  document.querySelector(".searchbar").placeholder += ` (${commit.slice(
+    0,
+    7
+  )})`;
 }

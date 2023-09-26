@@ -1,14 +1,47 @@
 {
   "extName": {
-    "message": "ScratchTools"
+    "message": "ScratchTools for Scratch"
   },
   "extDescription": {
     "message": "ScratchTools is fully customizable with tons of features, all for making the Scratch website better and easier to use!"
   },
-  "welcome_to_settings": {
-    "message": "Welcome to your settings! You can find all features here!"
+  "supportButton": {
+    "message": "Get support"
   },
-  "search": {
-    "message": "search"
+  "feedbackButton": {
+    "message": "Give feedback"
+  },
+  "settingsButton": {
+    "message": "Additional settings"
+  },
+  "featuresFilterAll": {
+    "message": "All"
+  },
+  "featuresFilterWebsite": {
+    "message": "Website"
+  },
+  "featuresFilterEditor": {
+    "message": "Editor"
+  },
+  "featuresFilterForums": {
+    "message": "Forums"
+  },
+  "allFeaturesHeader": {
+    "message": "All features"
+  },
+  "forYouHeader": {
+    "message": "For you"
+  },
+  "searchPlaceholder": {
+    "message": "Search"
+  },
+  "creditsText": {
+    "message": "Credits"
+  },
+  "viewFeature": {
+    "message": "Click to view feature."
+  },
+  "themeStore": {
+    "message": "Theme Store"
   }
 }

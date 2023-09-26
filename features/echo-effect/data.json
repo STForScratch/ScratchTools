@@ -1,0 +1,16 @@
+{
+  "title": "Echo Effect",
+  "description": "Adds the echo effect back to the Scratch sound editor.",
+  "credits": [
+    {
+      "username": "Numberblock891011",
+      "url": "https://scratch.mit.edu/users/Numberblock891011/"
+    },
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Editor"],
+  "tags": ["New", "Featured"],
+  "dynamic": true,
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+  "resources": [{ "name": "echo-effect-btn", "path": "/echo.svg" }]
+}

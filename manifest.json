@@ -1,16 +1,20 @@
 {
   "name": "__MSG_extName__",
-  "short_name": "__MSG_extName__",
+  "short_name": "ScratchTools",
   "manifest_version": 3,
-  "version": "3.1.0",
-  "version_name": "3.1.0-beta",
+  "version": "3.3.0",
+  "version_name": "3.3.0-beta",
   "default_locale": "en",
   "description": "__MSG_extDescription__",
   "author": "rgantzos",
   "background": {
     "service_worker": "/extras/background.js"
   },
-  "permissions": ["scripting", "storage", "alarms"],
+  "permissions": [
+    "scripting",
+    "storage",
+    "alarms"
+  ],
   "action": {
     "default_icon": "/extras/icons/icon48.png",
     "default_popup": "/extras/popup/popup.html",
@@ -23,9 +27,13 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://scratch.mit.edu/*"],
+      "matches": [
+        "https://scratch.mit.edu/*"
+      ],
       "run_at": "document_start",
-      "js": ["extras/inject-styles.js"],
+      "js": [
+        "extras/inject-styles.js"
+      ],
       "all_frames": true
     }
   ],
@@ -37,10 +45,15 @@
         "/api/*",
         "/extras/icons/*"
       ],
-      "matches": ["https://scratch.mit.edu/*"]
+      "matches": [
+        "https://scratch.mit.edu/*"
+      ]
     }
   ],
-  "host_permissions": ["https://scratch.mit.edu/"],
+  "host_permissions": [
+    "https://scratch.mit.edu/"
+  ],
+  "optional_host_permissions": ["https://api.scratch.mit.edu/"],
   "browser_specific_settings": {
     "gecko": {
       "id": "info@scratchtools.app",
@@ -48,6 +61,13 @@
     }
   },
   "externally_connectable": {
-    "matches": ["https://scratch.mit.edu/*"]
-  }
+    "matches": [
+      "https://scratch.mit.edu/*"
+    ]
+  },
+  "options_ui": {
+    "page": "extras/index.html",
+    "open_in_tab": true
+  },
+  "homepage_url": "https://scratchtools.app"
 }

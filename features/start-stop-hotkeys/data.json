@@ -1,0 +1,26 @@
+{
+  "title": "Green Flag Hotkeys",
+  "description": "Use Control + G to start or stop a project, depending on whether or not it is running.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New"],
+  "dynamic": true,
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+  "components": [
+    {
+      "type": "info",
+      "content": "For Mac users, use Command + G to start and stop the project.",
+      "if": {
+        "type": "all",
+        "conditions": [
+          {
+            "type": "os",
+            "value": "Macintosh"
+          }
+        ]
+      }
+    }
+  ]
+}

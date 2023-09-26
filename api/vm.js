@@ -11,19 +11,19 @@ try {
         Object.keys(app).find((key) => key.startsWith("__reactContainer"))
       ].child.stateNode.store.getState().scratchGui.vm;
     })();
-  ScratchTools.console.log("Able to load Virtual Machine.");
+  ste.console.log("Able to load Virtual Machine.", "ste-traps");
 } catch (err) {
-  ScratchTools.console.warn("Unable to load Virtual Machine.");
+  ste.console.warn("Unable to load Virtual Machine.", "ste-traps");
 }
 try {
   if (Blockly !== undefined) {
     ScratchTools.Scratch.blockly = Blockly;
-    ScratchTools.console.log("Able to load Blockly.");
+    ste.console.log("Able to load Blockly.", "ste-traps");
   } else {
-    ScratchTools.console.warn("Unable to load Blockly.");
+    ste.console.warn("Unable to load Blockly.", "ste-traps");
   }
 } catch (err) {
-  ScratchTools.console.warn("Unable to load Blockly.");
+  ste.console.warn("Unable to load Blockly.", "ste-traps");
 }
 
 ScratchTools.Scratch.scratchSound = function () {
@@ -50,9 +50,9 @@ ScratchTools.Scratch.scratchGui = function () {
 };
 
 ScratchTools.traps = {
-  scratchGui: ScratchTools.Scratch.scratchGui,
-  scratchPaint: ScratchTools.Scratch.scratchPaint,
-  scratchSound: ScratchTools.Scratch.scratchSound,
+  scratchGui: ScratchTools.Scratch.scratchGui || null,
+  scratchPaint: ScratchTools.Scratch.scratchPaint || null,
+  scratchSound: ScratchTools.Scratch.scratchSound || null,
   getVm: function () {
     return vm;
   },
@@ -179,7 +179,7 @@ ScratchTools.Scratch.scratchPaint = function () {
   if (app !== null) {
     return app[
       Object.keys(app).find((key) => key.startsWith("__reactInternalInstance"))
-    ].child.stateNode.store.getState().scratchPaint;
+    ].child.stateNode.store.getState()?.scratchPaint || null;
   } else {
     return null;
   }

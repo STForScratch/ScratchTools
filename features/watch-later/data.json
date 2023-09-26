@@ -1,0 +1,29 @@
+{
+  "title": "Save to Watch Later",
+  "description": "Save projects you want to view later and they'll appear on a watch later page.",
+  "credits": [
+    {
+      "username": "syesjohnny_owo",
+      "url": "https://scratch.mit.edu/users/syesjohnny_owo/"
+    },
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "dynamic": true,
+  "scripts": [
+    { "file": "script.js", "runOn": "/projects/*" },
+    { "file": "mystuff.js", "runOn": "/mystuff*" }
+  ],
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
+  "resources": [
+    { "name": "watch-later-page", "path": "/page/index.html" },
+    { "name": "watch-later-icon", "path": "/watch-later.svg" }
+  ],
+  "components": [
+    {
+      "type": "info",
+      "content": "You can save a project to watch later on the project page. You can view your saved projects on the My Stuff page."
+    }
+  ]
+}

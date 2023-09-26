@@ -1,0 +1,8 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": ["/features/*/data.json"],
+      "url": "https://raw.githubusercontent.com/STForScratch/schema/main/feature.json"
+    }
+  ]
+}

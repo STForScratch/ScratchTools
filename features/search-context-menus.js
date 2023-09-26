@@ -73,6 +73,7 @@ var style = ScratchTools.styles.add(`
       border: 0px;
       padding-left: 28px;
       margin-bottom: 5px;
+      color: black !important;
       }
   `);
 

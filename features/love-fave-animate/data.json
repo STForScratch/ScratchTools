@@ -1,0 +1,10 @@
+{
+  "title": "Love Animations",
+  "description": "Animates the clicking of the love and favorite buttons on project pages.",
+  "credits": [
+    { "username": "NcTV-", "url": "https://scratch.mit.edu/users/NcTV-/" },
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website", "Egg"],
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }]
+}

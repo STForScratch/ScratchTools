@@ -1,8 +1,98 @@
 [
   {
     "version": 2,
-    "id": "preview-textboxes",
+    "id": "watch-later",
+    "versionAdded": "v3.3.0"
+  },
+  {
+    "version": 2,
+    "id": "remove-project-button",
+    "versionAdded": "v3.3.0"
+  },
+  {
+    "version": 2,
+    "id": "right-side-flag",
+    "versionUpdated": "v3.2.0"
+  },
+  {
+    "version": 2,
+    "id": "love-fave-animate",
+    "versionAdded": "v3.2.0"
+  },
+  {
+    "version": 2,
+    "id": "default-to-local",
+    "versionUpdated": "v3.2.0"
+  },
+  {
+    "version": 2,
+    "id": "start-stop-hotkeys",
+    "versionUpdated": "v3.2.0"
+  },
+  {
+    "version": 2,
+    "id": "opacity-slider",
+    "versionAdded": "v3.2.0"
+  },
+  {
+    "version": 2,
+    "id": "more-studios",
+    "versionAdded": "v3.2.0"
+  },
+  {
+    "version": 2,
+    "id": "localized-explore",
+    "versionAdded": "v3.2.0"
+  },
+  {
+    "version": 2,
+    "id": "project-bar",
     "versionAdded": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "more-news",
+    "versionAdded": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "dumpster-fire",
+    "versionUpdated": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "steal-game",
+    "versionAdded": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "statistics",
+    "versionUpdated": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "echo-effect",
+    "versionAdded": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "compact-buttons",
+    "versionAdded": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "message-count",
+    "versionUpdated": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "move-share-button",
+    "versionAdded": "v3.1.0"
+  },
+  {
+    "version": 2,
+    "id": "preview-textboxes",
+    "versionUpdated": "v3.1.0"
   },
   {
     "version": 2,
@@ -209,15 +299,6 @@
     "tags": ["New"]
   },
   {
-    "title": "Shortcuts for Starting and Stopping Projects",
-    "description": "To start and stop a project you can use Control+G or Command+G (for Mac users).",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "start-stop-hotkeys",
-    "type": ["Website", "Editor"],
-    "tags": ["New"]
-  },
-  {
     "title": "Direct Image Uploads",
     "description": "Allows you to upload images to the Scratch forums for posts and signatures without having to use third party image uploading services.",
     "credits": ["ISTILLMAKESTUFF", "TheGlassPenguin", "StickFireGames"],
@@ -405,19 +486,6 @@
     "dynamic": true
   },
   {
-    "title": "Dumpster Fire",
-    "description": "The Scratch homepage is a liar with their \"Featured Projects\" section. This changes the name to the proper form, which is \"Dumpster Fire\".",
-    "credits": ["Kuzyn_Official", "rgantzos"],
-    "urls": [
-      "https://scratch.mit.edu/users/Kuzyn_Official/",
-      "https://scratch.mit.edu/users/rgantzos/"
-    ],
-    "file": "dumpster-fire",
-    "type": ["Website"],
-    "tags": ["Egg"],
-    "dynamic": true
-  },
-  {
     "title": "Follower Count on Projects",
     "description": "Displays the follower count of the project creator on their projects.",
     "credits": ["rgantzos"],
@@ -480,16 +548,6 @@
     "file": "hide-studio-messages",
     "tags": [],
     "type": ["Website"],
-    "dynamic": true
-  },
-  {
-    "title": "Default to Local",
-    "description": "When creating a variable, sets the default to For This Sprite Only, rather than For All Sprites.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "default-to-local",
-    "tags": [],
-    "type": ["Editor"],
     "dynamic": true
   },
   {
@@ -969,14 +1027,6 @@
     "type": ["Website"]
   },
   {
-    "title": "Statistics",
-    "description": "Adds a statistics button on the my stuff page that leads to the user's ScratchStats profile.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "statistics",
-    "type": ["Website"]
-  },
-  {
     "title": "Open in New Tab",
     "description": "Automatically opens links on project pages in a new tab.",
     "credits": ["rgantzos"],
@@ -1056,14 +1106,6 @@
     "type": ["Forums"]
   },
   {
-    "title": "Message Count",
-    "description": "On profiles, displays the user's message count next to their country.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos"],
-    "file": "message-count",
-    "type": ["Website"]
-  },
-  {
     "title": "Remove Editor Icons",
     "description": "Removes the icons from the tabs in the editor.",
     "credits": ["rgantzos"],
@@ -1088,14 +1130,6 @@
     "urls": ["https://scratch.mit.edu/users/GarboMuffin"],
     "file": "compact-editor",
     "type": ["Editor"]
-  },
-  {
-    "title": "Right Side Flag",
-    "description": "Moves the green flag and the red stop sign to the right side of the stage.",
-    "credits": ["GarboMuffin"],
-    "urls": ["https://scratch.mit.edu/users/GarboMuffin/"],
-    "file": "right-side-flag",
-    "type": ["Theme"]
   },
   {
     "title": "Replace Scratch News with Recent Projects",

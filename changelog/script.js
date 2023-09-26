@@ -6,7 +6,7 @@ async function getChanges() {
   var newFeatures = await (await fetch("/features/features.json")).json();
   for (var i in newFeatures) {
     var feature = newFeatures[i];
-    if (feature.versionAdded === "v" + version) {
+    if (feature.versionAdded === "v" + version || feature.versionUpdated === "v" + version) {
       var div = document.createElement("div");
       var h2 = document.createElement("h2");
       if (feature.version === 2) {

@@ -1,0 +1,12 @@
+{
+  "title": "More Scratch News",
+  "description": "On the main page, scroll through the Scratch News section and load more results.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "dynamic": true,
+  "scripts": [{ "file": "script.js", "runOn": "/" }],
+  "styles": [{ "file": "style.css", "runOn": "/" }]
+}

@@ -64,10 +64,9 @@ async function createButton(el) {
   el.onclick = createButton;
   if (el.className.includes("share-button_share-button_")) {
     if (!document.querySelector(".scratchtools-unlisted")) {
-      const classList = document.querySelector(
+      let classList = document.querySelector(
         "[class*='share-button_share-button']"
       ).parentNode.classList;
-      classList.length = 2;
 
       let btn = document.createElement("div");
       let span = document.createElement("span");
@@ -173,7 +172,7 @@ ScratchTools.waitForElements(
         ScratchTools.appendToSharedSpace({
           space: "beforeProjectActionButtons",
           element: button,
-          order: 0.5,
+          order: 0,
         });
       }
     }

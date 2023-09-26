@@ -55,7 +55,7 @@ ScratchTools.waitForElements(
       ScratchTools.appendToSharedSpace({
         space: "stageHeader",
         element: input,
-        order: 0.5,
+        order: 0,
       });
     }
   },

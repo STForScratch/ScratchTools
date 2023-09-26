@@ -1,0 +1,215 @@
+/* CSS code from Scratch website */
+
+/* Navigation */
+
+#navigation {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+  background-color: #855cd6;
+  width: 100%;
+  height: 50px;
+}
+
+#navigation .inner > ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  list-style: none;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+ul {
+  padding-left: 20px;
+  line-height: 1.5em;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+#navigation .inner > ul > li {
+  display: inline-block;
+  position: relative;
+  float: left;
+  margin: 0;
+  height: 100%;
+  align-self: flex-start;
+}
+
+#navigation .logo a {
+  display: block;
+  transition: 0.15s ease all;
+  margin: 0 6px 0 0;
+  border: 0;
+  background-image: url(https://scratch.mit.edu/images/logo_sm.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 95%;
+  width: 81px;
+  height: 50px;
+}
+
+.inner {
+  margin: 0 auto;
+  width: 942px;
+}
+
+#navigation .logo a:hover {
+  transition: 0.15s ease all;
+  background-size: 100%;
+}
+
+/* Project boxes */
+
+.projects .thumbnail.project {
+  height: 208px;
+}
+.projects .thumbnail {
+  margin: 7px;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding-bottom: 4px;
+  width: 220px;
+}
+
+.flex-row {
+  margin: 0 auto;
+  padding: 12px 0;
+  width: 58.75em;
+  justify-content: flex-start;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  padding: 12px 0;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.thumbnail.project .thumbnail-image {
+  height: 152px;
+}
+.thumbnail .thumbnail-image {
+  margin: 8px auto;
+  width: 204px;
+}
+.thumbnail .thumbnail-image {
+  display: block;
+}
+
+.thumbnail.project .thumbnail-image img {
+  margin: 0 auto;
+  border: 0;
+  border-radius: 4px;
+  width: 204px;
+  height: 152px;
+}
+
+.thumbnail .thumbnail-info {
+  margin: 0 auto;
+  width: 204px;
+}
+
+.thumbnail .thumbnail-info .creator-image {
+  float: left;
+}
+
+.thumbnail .thumbnail-info .creator-image img {
+  margin-right: 8px;
+  border-radius: 4px;
+  width: 32px;
+  height: 32px;
+  display: block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+.thumbnail-creator {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #575e75;
+  font-size: 0.8462em;
+}
+
+.thumbnail .thumbnail-info .thumbnail-title .thumbnail-creator a {
+  color: #575e75;
+}
+
+.thumbnail .thumbnail-title a {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.thumbnail .thumbnail-info .thumbnail-title {
+  float: left;
+  max-width: 164px;
+  text-align: left;
+}
+.thumbnail .thumbnail-title {
+  margin-bottom: 1px;
+  font-size: 0.923em;
+  font-weight: 800;
+}
+
+.thumbnail-title {
+  line-height: 1.2em;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: #855cd6;
+}
+a {
+  cursor: pointer;
+  color: #855cd6;
+  font-weight: bold;
+}
+
+.thumbnail-title {
+  margin-bottom: 1px;
+  font-size: 0.923rem;
+  font-weight: 800;
+}
+
+.thumbnail-title > a {
+  font-size: 0.923rem;
+  margin-bottom: 0.3rem;
+}
+
+.thumbnail .thumbnail-info .thumbnail-title .thumbnail-creator a {
+  color: #575e75;
+}
+.thumbnail .thumbnail-creator a {
+  display: inline;
+  font-size: 0.78104375rem;
+}
+
+/* CSS code for ScratchTools */
+
+body {
+  padding-top: 4rem;
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+}
+
+p {
+  font-size: 0.8rem;
+}
