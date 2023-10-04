@@ -288,7 +288,8 @@ ScratchTools.disable = function (feature) {
     el.self.enabled = false
   })
   ScratchTools.managedElements.filter((el) => el.feature === feature).forEach(function(el) {
-    el.previousDisplay = el.element.style.display
+    if (!el.element) return;
+    el.previousDisplay = el.element?.style.display
     el.element.style.display = "none"
   })
   ste.console.log(`Disabled ${feature}.`, "ste-main");

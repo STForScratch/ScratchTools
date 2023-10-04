@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "relevant-forum-posts",
+    "versionAdded": "v3.4.0"
+  },
+  {
+    "version": 2,
     "id": "wrap-lists",
     "versionAdded": "v3.3.0"
   },

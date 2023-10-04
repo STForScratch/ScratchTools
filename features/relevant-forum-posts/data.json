@@ -1,0 +1,12 @@
+{
+  "title": "Show Relevant Forum Posts",
+  "description": "When creating a new forum topic, shows other topics that may be similar to what you are creating.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Forums"],
+  "tags": ["New"],
+  "dynamic": true,
+  "scripts": [{ "file": "script.js", "runOn": "/discuss/*" }],
+  "styles": [{ "file": "style.css", "runOn": "/discuss/*" }]
+}
