@@ -1,0 +1,26 @@
+.ste-relevant-posts {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.ste-relevant-posts > a {
+  width: 20rem;
+  display: inline-block;
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin-right: 0.8rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.ste-relevant-posts *:hover {
+    text-decoration: none;
+}
+
+.ste-relevant-category {
+    color: #55474790;
+    margin-top: .5rem;
+}
