@@ -1,4 +1,4 @@
-var steConsoleData = []
+var steConsoleData = [];
 
 var ste = {
   console: {
@@ -15,18 +15,13 @@ var ste = {
         "font-family: Inter",
         "width: 2rem",
       ];
-      console.log(
-        "%cScratchTools",
-        styleArray.join(";"),
-        title,
-        content
-      );
+      console.log("%cScratchTools", styleArray.join(";"), title, content);
       steConsoleData.push({
         script: title,
         data: content,
         time: Date.now(),
         type: "log",
-      })
+      });
     },
     warn: function (content, title) {
       var styleArray = [
@@ -41,18 +36,13 @@ var ste = {
         "font-family: Inter",
         "width: 2rem",
       ];
-      console.log(
-        "%cScratchTools",
-        styleArray.join(";"),
-        title,
-        content
-      );
+      console.log("%cScratchTools", styleArray.join(";"), title, content);
       steConsoleData.push({
         script: title,
         data: content,
         time: Date.now(),
         type: "warn",
-      })
+      });
     },
     error: function (content, title) {
       var styleArray = [
@@ -67,24 +57,19 @@ var ste = {
         "font-family: Inter",
         "width: 2rem",
       ];
-      console.log(
-        "%cScratchTools",
-        styleArray.join(";"),
-        title,
-        content
-      );
+      console.log("%cScratchTools", styleArray.join(";"), title, content);
       steConsoleData.push({
         script: title,
         data: content,
         time: Date.now(),
         type: "error",
-      })
+      });
     },
   },
 };
 
 var ScratchTools = {};
-ScratchTools.managedElements = []
+ScratchTools.managedElements = [];
 ScratchTools.Storage = {};
 ScratchTools.Resources = {};
 ste.console.log("ScratchTools API Created", "ste-main");
@@ -276,22 +261,26 @@ ScratchTools.setDisable = function (feature, f) {
   ste.console.log(`Set disable function for ${feature}.`, "ste-main");
 };
 
-Element.prototype.applyStyles = function(data) {
-  var element = this
-  Object.keys(data).forEach(function(el) {
-      element.style[el] = data[el]
-  })
-}
+Element.prototype.applyStyles = function (data) {
+  var element = this;
+  Object.keys(data).forEach(function (el) {
+    element.style[el] = data[el];
+  });
+};
 
 ScratchTools.disable = function (feature) {
-  allFeatures.filter((el) => el.self.id === feature).forEach(function(el) {
-    el.self.enabled = false
-  })
-  ScratchTools.managedElements.filter((el) => el.feature === feature).forEach(function(el) {
-    if (!el.element) return;
-    el.previousDisplay = el.element?.style.display
-    el.element.style.display = "none"
-  })
+  allFeatures
+    .filter((el) => el.self.id === feature)
+    .forEach(function (el) {
+      el.self.enabled = false;
+    });
+  ScratchTools.managedElements
+    .filter((el) => el.feature === feature)
+    .forEach(function (el) {
+      if (!el.element) return;
+      el.previousDisplay = el.element?.style.display;
+      el.element.style.display = "none";
+    });
   ste.console.log(`Disabled ${feature}.`, "ste-main");
   document
     .querySelectorAll(`link[data-feature=${feature}]`)
@@ -392,3 +381,14 @@ ScratchTools.waitForElements(
   "ste-full-settings-btn",
   false
 );
+
+async function blockliveDetection() {
+  let gui = document
+    .querySelector("#app")
+    [
+      Object.keys(app).find((key) => key.startsWith("__reactContainer"))
+    ].child.stateNode.store.getState()?.scratchGui;
+  if (!gui?.projectState) return;
+  let detectBlocklive = await import("./blocklive-detection/blocklive-detect.js");
+  detectBlocklive.default();
+}

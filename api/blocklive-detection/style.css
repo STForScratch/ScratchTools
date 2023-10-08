@@ -1,0 +1,64 @@
+.ste-bl-together-bg {
+    width: 20rem;
+    height: 20rem;
+    border-radius: .5rem;
+    z-index: 99999999999;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    background: linear-gradient(90deg, #cf63cf, #cf63cf20, #ff9f00, #ff9f0020);
+    text-align: center;
+    padding: .25rem;
+    animation: rotateBackground 4s linear infinite;
+    box-shadow: 0px 0px 10px #0000004d;
+}
+
+.ste-bl-together {
+    padding: 1rem;
+    padding-top: 2rem;
+    background-color: white;
+    border-radius: .25rem;
+    height: calc(100% - 3rem);
+    box-shadow: 0px 0px 10px linear-gradient(90deg, #cf63cf, #cf63cf20, #ff9f00, #ff9f0020);
+    font-family: "Inter", sans-serif !important;
+    overflow-y: auto;
+}
+
+body .ste-bl-together * {
+    font-family: "Inter", sans-serif !important;
+}
+
+.ste-bl-together h3 span {
+    color: black;
+    font-weight: 600;
+}
+
+.ste-bl-together h3 {
+    font-size: 1.25rem;
+    line-height: 1.6rem;
+    margin-top: .5rem;
+    color: black;
+}
+
+.ste-bl-together img {
+    width: 7rem;
+}
+
+.ste-bl-together button {
+    background-color: hsla(260, 60%, 60%, 1);
+    color: white;
+    padding: .5rem;
+    border-radius: .25rem;
+    font-family: "Inter", sans-serif !important;
+    outline: none;
+    border: 0px;
+    font-size: .9rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    transition: opacity .2s, transform .2s;
+}
+
+.ste-bl-together button:hover {
+    transform: scale(104%);
+    opacity: .8;
+}
