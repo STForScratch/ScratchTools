@@ -2,7 +2,7 @@ async function getToken(projectId) {
   let projectToken = (
     await (
       await fetch(
-        `https://api.scratch.mit.edu/projects/${projectId}?nocache=${Date.now()}`,
+        `https://api.scratch.mit.edu/projects/${projectId}?avoid_cache=${Date.now()}`,
         {
           headers: {
             "x-token": ScratchTools.Auth.user.token,

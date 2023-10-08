@@ -16,7 +16,7 @@ export default function ({ feature, console }) {
           await fetch(
             `https://api.scratch.mit.edu/projects/${
               window.location.pathname.split("/")[2]
-            }/?nocache=${Date.now().toString()}`
+            }/?avoid_cache=${Date.now().toString()}`
           )
         ).json();
 
