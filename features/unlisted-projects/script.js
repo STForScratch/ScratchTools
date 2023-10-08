@@ -102,8 +102,7 @@ async function createButton(el) {
                 type: "code",
                 content: data.error
                   ? "Project is not unlisted. You can make it unlisted from the editor. A project is not unlisted if it is shared."
-                  : "https://turbowarp.org/editor?project_url=https://unlisted.gantzos.com/cached/" +
-                    data.id,
+                  : data.url,
               },
             ],
           });
