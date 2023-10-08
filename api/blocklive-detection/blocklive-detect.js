@@ -52,7 +52,7 @@ export default async function () {
     document.head.appendChild(link)
 
     setInterval(function() {
-      div.style.backgroundImage = `linear-gradient(${Math.round(Date.now() / 10) - (Math.floor(Math.round(Date.now() / 10) / 360) * 360).toString()}deg, #cf63cf, #cf63cf20, #ff9f00, #ff9f0020)`
+      div.style.backgroundImage = `linear-gradient(${Math.round(Date.now() / 20) - (Math.floor(Math.round(Date.now() / 20) / 360) * 360).toString()}deg, #cf63cf, #cf63cf20, #ff9f00, #ff9f0020)`
     }, 10)
   }
 }
