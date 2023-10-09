@@ -991,7 +991,7 @@
   },
   {
     "title": "Aviate Statuses",
-    "description": "Displays Aviate statuses on profile pages. You can set your status at aviateapp.eu.org.",
+    "description": "Displays Aviate statuses on profile pages. You can set your status at https://aviate.scratchers.tech/.",
     "credits": ["MystPi", "rgantzos"],
     "urls": [
       "https://github.com/MystPi/",
