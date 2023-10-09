@@ -2,7 +2,7 @@ async function getTheUser() {
   var user = window.location.href
     .replace("https://scratch.mit.edu/users/", "")
     .replaceAll("/", "");
-  var response = await fetch("https://aviateapp.eu.org/api/" + user);
+  var response = await fetch("https://aviate.scratchers.tech/api/" + user);
   var data = await response.json();
   if (data.success === true && data.status !== null) {
     if (document.querySelector("i.aviate.scratchtools") === null) {
