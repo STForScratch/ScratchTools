@@ -1,4 +1,52 @@
 {
+  "wrap-lists/title": { "message": "リストの項目を省略しない" },
+  "wrap-lists/description": {
+    "message": "リスト内のテキストが長すぎる場合でも、それを省略せずに表示します。"
+  },
+  "live-stats/title": { "message": "ステータスをリアルタイムで更新" },
+  "live-stats/description": {
+    "message": "ページを再読み込みすることなく、プロジェクトの好き、お気に入り、リミックス、参照数をリアルタイムで更新します。"
+  },
+  "hide-scratch-news/title": { "message": "Scratchニュースの非表示" },
+  "hide-scratch-news/description": {
+    "message": "トップページにあるScratchニュースを非表示にします。"
+  },
+  "watch-later/title": { "message": "プロジェクトを後で見る" },
+  "watch-later/description": {
+    "message": "後で見たいプロジェクトとして保存したものを、「後で見る」ページに表示します。"
+  },
+  "remove-project-button/title": { "message": "プロジェクト削除ボタン" },
+  "remove-project-button/description": {
+    "message": "スタジオ内のプロジェクトを簡単に削除するためのボタンを追加します。メニューを開かずに削除することができます。"
+  },
+  "right-side-flag/title": { "message": "緑の旗を右に表示する" },
+  "right-side-flag/description": {
+    "message": "緑の旗と停止ボタンをステージの右側に移動させます。"
+  },
+  "love-fave-animate/title": { "message": "「好き」ボタンのアニメーション" },
+  "love-fave-animate/description": {
+    "message": "プロジェクトページ上の「いいね」ボタンと「お気に入り」ボタンのクリックしたときの動作をアニメーション化します。"
+  },
+  "default-to-local/title": { "message": "デフォルトでローカル変数にする" },
+  "default-to-local/description": {
+    "message": "変数を作った時に、デフォルトで「すべてのスプライト」ではなく「このスプライトのみ」に設定します。"
+  },
+  "start-stop-hotkeys/title": { "message": "緑の旗のホットキー" },
+  "start-stop-hotkeys/description": {
+    "message": "プロジェクトが実行中かどうかに応じて、Ctrl+Gキーを押すことで、プロジェクトを実行または停止することができます。"
+  },
+  "opacity-slider/title": { "message": "透明度スライダー" },
+  "opacity-slider/description": {
+    "message": "ペイントエディターでオブジェクトの透明度を変更できるようになります。"
+  },
+  "more-studios/title": { "message": "スタジオの追加" },
+  "more-studios/description": {
+    "message": "20個よりも多くのスタジオにプロジェクトを追加できるようにします。"
+  },
+  "localized-explore/title": { "message": "国内のプロジェクト" },
+  "localized-explore/description": {
+    "message": "検索ページで、他の国のプロジェクトをあまり表示しないようにします。これは、あなたが理解できる言語のプロジェクトだけを表示するためです。"
+  },
   "project-bar/title": { "message": "プロジェクトバー" },
   "project-bar/description": {
     "message": "メモとクレジットより下へスクロールした後も、プロジェクトの情報を表示し続けることができます。"
@@ -159,6 +207,10 @@
   "box-shadows/description": {
     "message": "すべてのコンテンツボックスに影を追加します。カーソルを合わせると、影が濃くなります。"
   },
+  "admin-notifications/title": { "message": "STからのメッセージを赤く表示" },
+  "admin-notifications/description": {
+    "message": "Scratch Teamからの管理者通知がある場合、上のバーのメッセージボタンはオレンジ色ではなく、赤色に表示されます。"
+  },
   "nicknames/title": { "message": "ニックネーム" },
   "nicknames/description": {
     "message": "他のScratcherにニックネームを設定することができます。ニックネームは自分だけが見ることができ、相手のユーザーネームを見たときにユーザー名がニックネームに置き換えられます。"
@@ -184,12 +236,6 @@
   "exact-join-date/title": { "message": "詳細な参加した日時" },
   "exact-join-date/description": {
     "message": "プロフィールにユーザーが参加した詳細な日時を表示します。"
-  },
-  "start-stop-hotkeys/title": {
-    "message": "プロジェクトの開始と停止のショートカット"
-  },
-  "start-stop-hotkeys/description": {
-    "message": "Ctrl+G（Macの場合はCommand+G）でプロジェクトの開始と停止を切り替えることができます。"
   },
   "upload-img-directly/title": { "message": "画像を直接アップロード" },
   "upload-img-directly/description": {
@@ -301,10 +347,6 @@
   "hide-studio-messages/description": {
     "message": "活動内容をメッセージのページで非表示にします。"
   },
-  "default-to-local/title": { "message": "デフォルトでローカル変数にする" },
-  "default-to-local/description": {
-    "message": "変数を作った時に、デフォルトで「すべてのスプライト」ではなく「このスプライトのみ」に設定します。"
-  },
   "special-editor-fonts/title": {
     "message": "ペイントエディターで使えるフォントの追加"
   },
@@ -358,10 +400,6 @@
   "scrollable-list-items/title": { "message": "スクロールできるリストの項目" },
   "scrollable-list-items/description": {
     "message": "リスト自体の幅より長い値が書かれているリストの項目を左右にスクロールできるようになります。"
-  },
-  "admin-notifications/title": { "message": "STからのメッセージを赤く表示" },
-  "admin-notifications/description": {
-    "message": "Scratch Teamからの管理者通知がある場合、上のバーのメッセージボタンはオレンジ色ではなく、赤色に表示されます。"
   },
   "custom-fonts/title": { "message": "サイトのフォントの変更" },
   "custom-fonts/description": {
@@ -551,19 +589,11 @@
   "compact-editor/description": {
     "message": "スプライトや背景の情報をよりコンパクトにします。"
   },
-  "right-side-flag/title": { "message": "緑の旗を右に表示する" },
-  "right-side-flag/description": {
-    "message": "緑の旗と停止ボタンをステージの右側に移動させます。"
-  },
   "my-recent-projects/title": {
     "message": "Scratchニュースを最近のプロジェクトに置き換える"
   },
   "my-recent-projects/description": {
     "message": "トップページのScratchニュースを最近のプロジェクトに置き換えます。"
-  },
-  "hide-scratch-news/title": { "message": "Scratchニュースの非表示" },
-  "hide-scratch-news/description": {
-    "message": "トップページにあるScratchニュースを非表示にします。この機能は、Scratchニュースを最近のプロジェクトに置き換える機能を有効にした場合、競合します。"
   },
   "focus-mode/title": { "message": "フォーカスモード" },
   "focus-mode/description": {

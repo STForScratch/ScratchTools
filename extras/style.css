@@ -23,6 +23,7 @@ a {
   color: var(--primary-color);
   opacity: 0.75;
   cursor: pointer;
+  z-index: 999;
 }
 
 .more-settings-btn svg,
@@ -46,6 +47,7 @@ a {
   color: var(--primary-color);
   opacity: 0.75;
   cursor: pointer;
+  z-index: 999;
 }
 
 .feedback-btn img {
@@ -63,6 +65,7 @@ a {
   color: var(--primary-color);
   opacity: 0.75;
   cursor: pointer;
+  z-index: 999;
 }
 
 .support-btn img {
@@ -808,4 +811,28 @@ span.new-feature-tag.beta {
 
 .feature table {
   margin-top: .5rem;
+}
+
+.btn-bg {
+  background: linear-gradient(45deg, var(--background), transparent);
+  height: 10rem;
+  width: 15rem;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  border-top-right-radius: 50%;
+  filter: blur(1rem);
+}
+
+.section1 .news {
+  margin-bottom: calc(100vh - 30rem);
+}
+
+.section1 .sectionwrap {
+  height: calc(100vh - 6rem);
+  overflow-y: auto;
+}
+
+body {
+  overflow-y: hidden;
 }

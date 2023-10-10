@@ -1,6 +1,14 @@
 {
   "NOTE": "THERE IS NO NEED TO UPDATE THIS YOURSELF, IT WILL BE UPDATED WHEN RELEASED.",
-  "version": "3.1.0",
-  "enhanced": [],
-  "fixed": []
+  "version": "3.3.0",
+  "enhanced": [
+    "Messages on the settings page.",
+    "Display last commit for beta.",
+    "Uninstall logging.",
+    "Port hide-scratch-news to v2.",
+    "Port admin-notifications to v2.",
+    "Improve localization for features.",
+    "Translated into Turkish."
+],
+  "fixed": ["Fix themes for first-time users."]
 }

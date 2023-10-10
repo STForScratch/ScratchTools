@@ -338,6 +338,15 @@ if (window.location.href.includes("extras/index.html")) {
   }
 }
 
+async function setDefaultThemes() {
+  if (!(await chrome.storage.sync.get("themes"))?.themes) {
+    await chrome.storage.sync.set({
+      themes: defaultThemes,
+    });
+  }
+}
+setDefaultThemes();
+
 async function getThemes() {
   document.querySelectorAll(".dropdown > *").forEach(function (el) {
     el.remove();
@@ -460,6 +469,7 @@ document.querySelector(".support-btn")?.addEventListener("click", function () {
 
 document.querySelector(".searchbar").placeholder =
   chrome.i18n.getMessage("search") || "search";
+getCommit();
 
 function getWords(text, search) {
   if (!search) return true;
@@ -1074,7 +1084,7 @@ if (document.querySelector(".main-page")) {
 if (document.querySelector(".buttons")) {
   document.querySelectorAll(".buttons button").forEach(function (el) {
     el.addEventListener("click", function () {
-      document.body.dataset.filter = el.textContent;
+      document.body.dataset.filter = el.dataset.type;
       el.parentNode.querySelector(".selected")?.classList.remove("selected");
       el.classList.add("selected");
     });
@@ -1361,4 +1371,17 @@ async function getTrending() {
 
     document.querySelector(`div.feature[data-id='${el}'] > h3`).prepend(icon)
   })
+}
+
+async function getCommit() {
+  try {
+    if (!chrome.runtime.getManifest().version_name.endsWith("-beta")) return;
+    if (!document.querySelector(".searchbar")) return;
+
+    let commit = await (await fetch("/.git/ORIG_HEAD")).text();
+    document.querySelector(".searchbar").placeholder += ` (${commit.slice(
+      0,
+      7
+    )})`;
+  } catch (err) {}
 }

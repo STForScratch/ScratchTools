@@ -8,11 +8,7 @@ class Feature {
     });
     this.data = finalFeature;
     this.msg = function (string) {
-      if (this.data.translations) {
-        return this.data.localesData[string];
-      } else {
-        throw new Error("Feature does not have locales set up.");
-      }
+      return this.data.localesData[`${this.data.id}/`+string] || `ScratchTools.${this.data.id}.${string}`;
     };
     this.getActiveUserstyles = function () {
       var styles = document.head.querySelectorAll(

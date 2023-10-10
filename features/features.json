@@ -1,6 +1,46 @@
 [
   {
     "version": 2,
+    "id": "anti-generic",
+    "versionUpdated": "v3.4.0"
+  },
+  {
+    "version": 2,
+    "id": "better-trending-thumbnails",
+    "versionAdded": "v3.4.0"
+  },
+  {
+    "version": 2,
+    "id": "relevant-forum-posts",
+    "versionAdded": "v3.4.0"
+  },
+  {
+    "version": 2,
+    "id": "wrap-lists",
+    "versionAdded": "v3.3.0"
+  },
+  {
+    "version": 2,
+    "id": "live-stats",
+    "versionAdded": "v3.3.0"
+  },
+  {
+    "version": 2,
+    "id": "hide-scratch-news",
+    "versionUpdated": "v3.3.0"
+  },
+  {
+    "version": 2,
+    "id": "watch-later",
+    "versionAdded": "v3.3.0"
+  },
+  {
+    "version": 2,
+    "id": "remove-project-button",
+    "versionAdded": "v3.3.0"
+  },
+  {
+    "version": 2,
     "id": "right-side-flag",
     "versionUpdated": "v3.2.0"
   },
@@ -219,8 +259,8 @@
   },
   {
     "version": 2,
-    "id": "anti-generic"
-},
+    "id": "admin-notifications"
+  },
   {
     "title": "Nicknames",
     "description": "Set nicknames for other Scratchers. Only you can see the nicknames, and their username will be replaced with the nickname when you see their name.",
@@ -662,15 +702,6 @@
     "dynamic": true
   },
   {
-    "title": "Message Indicator Red for Admin Messages",
-    "description": "If you have an admin notification from the Scratch Team, the message indicator in the navigation bar will display red instead of orange.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "admin-notifications",
-    "tags": [],
-    "type": ["Website"]
-  },
-  {
     "title": "Custom Website Font",
     "description": "On the Scratch website, you can set the font to whatever font you want, as long as it is on the Google Fonts website. This is case-sensitive.",
     "credits": ["Scratchfangs", "devxan", "rgantzos"],
@@ -955,7 +986,7 @@
   },
   {
     "title": "Aviate Statuses",
-    "description": "Displays Aviate statuses on profile pages. You can set your status at aviateapp.eu.org.",
+    "description": "Displays Aviate statuses on profile pages. You can set your status at aviate.scratchers.tech.",
     "credits": ["MystPi", "rgantzos"],
     "urls": [
       "https://github.com/MystPi/",
@@ -1110,18 +1141,6 @@
     ],
     "file": "my-recent-projects",
     "type": ["Website"]
-  },
-  {
-    "title": "Hide Scratch News",
-    "description": "Hides the Scratch News section on the homepage of the Scratch website. This feature will interfere with the Replace Scratch News with Recent Projects feature if enabled.",
-    "credits": ["Bob the Potato wit Drip Jr.", "rgantzos"],
-    "urls": [
-      "https://scratch.mit.edu/users/JefferyTheSuperKat/",
-      "https://scratch.mit.edu/users/rgantzos/"
-    ],
-    "file": "hide-scratch-news",
-    "tags": [],
-    "type": ["Website", "Theme"]
   },
   {
     "title": "Focus Mode",

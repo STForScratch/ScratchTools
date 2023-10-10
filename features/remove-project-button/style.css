@@ -1,0 +1,19 @@
+.overflow-menu-container .overflow-menu-trigger {
+    display: none;
+}
+
+.ste-remove-project {
+    height: 2rem;
+    position: relative;
+    top: 0.35rem;
+    cursor: pointer;
+    transition: transform .3s, opacity .3s;
+    opacity: .6;
+    transform: scale(90%);
+    margin-right: .5rem;
+}
+
+.ste-remove-project:hover {
+    transform: scale(95%);
+    opacity: 1;
+}

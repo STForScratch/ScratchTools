@@ -42,7 +42,10 @@ async function checkBetaUpdates() {
     ).beta;
     if (isBeta) {
       var data = await (
-        await fetch("https://data.scratchtools.app/latest/?nocache="+Date.now().toString())
+        await fetch(
+          "https://data.scratchtools.app/latest/?nocache=" +
+            Date.now().toString()
+        )
       ).json();
       if (
         data.version !== chrome.runtime.getManifest().version_name ||
@@ -105,7 +108,9 @@ chrome.runtime.onInstalled.addListener(async function (object) {
     });
   }
   if (object.reason === chrome.runtime.OnInstalledReason.INSTALL) {
-    chrome.runtime.setUninstallURL("https://scratchtools.app/goodbye");
+    await chrome.storage.sync.set({
+      timeInstalled: Date.now(),
+    });
     chrome.tabs.create({ url: "/onboarding/index.html" });
     var response = await fetch("/features/features.json");
     var data = await response.json();
@@ -120,6 +125,31 @@ chrome.runtime.onInstalled.addListener(async function (object) {
         chrome.storage.sync.set({ features: str });
       }
     });
+    let features = await getFeaturesCode();
+    let username = await getUsername();
+    chrome.runtime.setUninstallURL(
+      "https://scratchtools.app/goodbye?installed=" +
+        Date.now().toString() +
+        "&code=" +
+        features +
+        (username ? "&username=" + username : "") +
+        "&version=" +
+        chrome.runtime.getManifest().version_name
+    );
+  } else {
+    let features = await getFeaturesCode();
+    let username = await getUsername();
+    let time =
+      (await chrome.storage.sync.get("timeInstalled"))?.timeInstalled || 0;
+    chrome.runtime.setUninstallURL(
+      "https://scratchtools.app/goodbye?installed=" +
+        time.toString() +
+        "&code=" +
+        features +
+        (username ? "&username=" + username : "") +
+        "&version=" +
+        chrome.runtime.getManifest().version_name
+    );
   }
   var obj = await chrome.storage.sync.get("features");
   if (obj.features && obj.features.includes("display-message-count-in-icon")) {
@@ -151,6 +181,19 @@ chrome.storage.onChanged.addListener(async function (changes, namespace) {
   for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
     if (key === "features") {
       await cache();
+      let features = await getFeaturesCode();
+      let username = await getUsername();
+      let time =
+        (await chrome.storage.sync.get("timeInstalled"))?.timeInstalled || 0;
+      chrome.runtime.setUninstallURL(
+        "https://scratchtools.app/goodbye?installed=" +
+          time.toString() +
+          "&code=" +
+          features +
+          (username ? "&username=" + username : "") +
+          "&version=" +
+          chrome.runtime.getManifest().version_name
+      );
     }
     if (key === "themes") {
       if (oldValue.length !== newValue.length) {
@@ -402,39 +445,49 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
             ).json();
             featureData.id = feature.id;
             featureData.version = feature.version;
-            if (featureData.translations) {
-              if (chrome.i18n.getUILanguage().includes("-")) {
-                var language = chrome.i18n.getUILanguage().split("-")[0];
-              } else {
-                var language = chrome.i18n.getUILanguage();
-              }
-              if (featureData.translations.includes(language)) {
-                var localesData = await (
-                  await fetch(
-                    `/features/${featureData.id}/locales/${language}.json`
-                  )
-                ).json();
-              } else {
-                var localesData = await (
-                  await fetch(`/features/${featureData.id}/locales/en.json`)
-                ).json();
-              }
-              featureData.localesData = localesData;
+            if (chrome.i18n.getUILanguage().includes("-")) {
+              var language = chrome.i18n.getUILanguage().split("-")[0];
+            } else {
+              var language = chrome.i18n.getUILanguage();
             }
+            let localesData = {};
+            try {
+              localesData = await (
+                await fetch(
+                  `/feature-locales/${featureData.id}/${language}.json`
+                )
+              ).json();
+            } catch (err) {
+              try {
+                localesData = await (
+                  await fetch(`/feature-locales/${featureData.id}/en.json`)
+                ).json();
+              } catch (err) {}
+            }
+            let locales = {};
+            Object.keys(localesData).forEach(function (el) {
+              locales[`${featureData.id}/${el}`] = localesData[el];
+            });
+            featureData.localesData = locales;
             newFullData.push(featureData);
           } else {
             newFullData.push(feature);
           }
         }
         await chrome.scripting.executeScript({
-          args: [newFullData, chrome.runtime.getURL("").slice(0, chrome.runtime.getURL("").length-1)],
+          args: [
+            newFullData,
+            chrome.runtime
+              .getURL("")
+              .slice(0, chrome.runtime.getURL("").length - 1),
+          ],
           target: { tabId: tabId },
           func: getFeaturesForAPI,
           world: "MAIN",
         });
         ScratchTools.console.log("Injected features API.");
         function getFeaturesForAPI(dataFeatures, dir) {
-          ScratchTools.dir = dir
+          ScratchTools.dir = dir;
           ScratchTools.Features.data = dataFeatures;
         }
         await chrome.scripting.executeScript({
@@ -461,6 +514,7 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
         ScratchTools.console.log("Injected extension ID.");
         function injectExtensionId(id) {
           ScratchTools.id = id;
+          blockliveDetection();
         }
         await chrome.scripting.executeScript({
           args: [chrome.runtime.getURL("/extras/icons/icon128.png")],
@@ -678,9 +732,8 @@ async function getModules() {
   for (var i in data) {
     var feature = data[i];
     var scripts =
-      (
-        await (await fetch(`/features/${feature.id}/data.json`)).json()
-      ).scripts || [];
+      (await (await fetch(`/features/${feature.id}/data.json`)).json())
+        .scripts || [];
     if (scripts) {
       for (var i2 in scripts) {
         scripts[i2].feature = feature;
@@ -798,4 +851,31 @@ async function injectStyles(tabId) {
       });
     }
   }
+}
+
+async function getUsername() {
+  let data = await (
+    await fetch("https://scratch.mit.edu/session/", {
+      headers: {
+        "x-requested-with": "XMLHttpRequest",
+      },
+    })
+  ).json();
+  return data?.user?.username || null;
+}
+
+async function getFeaturesCode() {
+  let featuresData =
+    (await chrome.storage.sync.get("features"))?.features || "";
+  let data = await (
+    await fetch("https://data.scratchtools.app/create/", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ features: featuresData }),
+    })
+  ).json();
+  return data.code;
 }
