@@ -1,6 +1,16 @@
 [
   {
     "version": 2,
+    "id": "anti-generic",
+    "versionUpdated": "v3.4.0"
+  },
+  {
+    "version": 2,
+    "id": "better-trending-thumbnails",
+    "versionAdded": "v3.4.0"
+  },
+  {
+    "version": 2,
     "id": "relevant-forum-posts",
     "versionAdded": "v3.4.0"
   },
@@ -737,21 +747,6 @@
     "type": ["Website"]
   },
   {
-    "title": "Anti Generic",
-    "description": "On the explore and trending pages, this beta feature automatically hides repetitive projects, along with projects that it expects are generic. This includes projects with a lot of tags, common names, and project duplicates.",
-    "credits": ["Bob the Potato wit Drip Jr.", "rgantzos", "mrfurretguy"],
-    "urls": [
-      "https://scratch.mit.edu/users/JefferyTheSuperKat/",
-      "https://scratch.mit.edu/users/rgantzos/",
-      "https://scratch.mit.edu/users/MrAK2006/"
-    ],
-    "file": "anti-generic",
-    "tags": ["Beta", "Featured"],
-    "type": ["Website", "Theme"],
-    "dynamic": true,
-    "warning": "This feature uses an algorithm that ScratchTools developed. That does not mean that it will work every time."
-  },
-  {
     "title": "Collapse Blocks",
     "description": "Right-click block menus in the editor include a button that will let you collapse the selected block.",
     "credits": ["rgantzos", "romadillo"],
@@ -991,7 +986,7 @@
   },
   {
     "title": "Aviate Statuses",
-    "description": "Displays Aviate statuses on profile pages. You can set your status at aviateapp.eu.org.",
+    "description": "Displays Aviate statuses on profile pages. You can set your status at aviate.scratchers.tech.",
     "credits": ["MystPi", "rgantzos"],
     "urls": [
       "https://github.com/MystPi/",

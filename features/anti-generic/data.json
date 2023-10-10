@@ -1,0 +1,28 @@
+{
+  "title": "Anti Generic",
+  "description": "On the explore and trending pages, this beta feature automatically hides repetitive projects, along with projects that it expects are generic. This includes projects with a lot of tags, common names, and project duplicates.",
+  "credits": [
+    {
+      "username": "Bob the Potato wit Drip Jr.",
+      "url": "https://scratch.mit.edu/users/JefferyTheSuperKat/"
+    },
+    {
+      "username": "rgantzos",
+      "url": "https://scratch.mit.edu/users/rgantzos/"
+    },
+    {
+      "username": "mrfurretguy",
+      "url": "https://scratch.mit.edu/users/MrAK2006/"
+    }
+  ],
+  "scripts": [
+    {
+      "file": "script.js",
+      "runOn": "/explore/*"
+    }
+  ],
+  "tags": ["Beta", "Featured"],
+  "type": ["Website", "Theme"],
+  "dynamic": true,
+  "warning": "This feature uses an algorithm that ScratchTools developed, so it may not work every time."
+}
