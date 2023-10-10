@@ -1,6 +1,6 @@
 {
-    "title": "Full Size Trending Projects",
-    "description": "Displays the full thumbnail of a project without the white border on the edges.",
+    "title": "Larger Thumbnails",
+    "description": "Updates thumbnails on the trending and search pages to be larger and better fit the project box.",
     "credits": [
       { "username": "MaterArc", "url": "https://scratch.mit.edu/users/MaterArc/" }
     ],
