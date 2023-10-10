@@ -4,6 +4,8 @@ export default function (id) {
     id,
     data: feature,
     enabled: true,
+    waitForElement: ScratchTools.waitForElement,
+    waitForElements: ScratchTools.waitForElements,
     hideOnDisable: function(element) {
       ScratchTools.managedElements.push({
         element,
