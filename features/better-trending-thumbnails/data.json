@@ -7,5 +7,5 @@
     "type": ["Website"],
     "tags": ["New"],
     "dynamic": true,
-    "styles": [{ "file": "style.css", "runOn": "/explore/projects/*||/search/projects*" }]
+    "styles": [{ "file": "style.css", "runOn": "/explore/projects/*" },{ "file": "style.css", "runOn": "/search/projects*" }]
   }
