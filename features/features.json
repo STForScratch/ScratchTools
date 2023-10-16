@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "specific-replies",
+    "versionAdded": "v3.4.0"
+  },
+  {
+    "version": 2,
     "id": "anti-generic",
     "versionUpdated": "v3.4.0"
   },
