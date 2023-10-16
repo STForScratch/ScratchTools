@@ -16,7 +16,7 @@ if (
               await fetch(
                 `https://api.scratch.mit.edu/projects/${
                   window.location.pathname.split("/")[2]
-                }?nocache=${Date.now()}`,
+                }?avoid_cache=${Date.now()}`,
                 {
                   headers: {
                     "x-token": ScratchTools.Auth.user.token,

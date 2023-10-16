@@ -549,3 +549,7 @@ input[class^="input_input-form_"]:focus {
   -webkit-box-shadow: 0 0 0 0.25rem #4e97fe35 !important;
   border-color: var(--ste-blue) !important;
 }
+
+.ste-bl-together button {
+  background-color: var(--ste-blue);
+}
