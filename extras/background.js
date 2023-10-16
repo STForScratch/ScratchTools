@@ -52,9 +52,9 @@ async function checkBetaUpdates() {
         (await (await fetch("/changelog/beta.json")).json()).beta !==
           data.beta
       ) {
-        chrome.tabs.create({
-          url: "/extras/beta/index.html",
-        });
+        // chrome.tabs.create({
+        //   url: "/extras/beta/index.html",
+        // });
       }
     }
   }
