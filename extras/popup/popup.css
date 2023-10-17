@@ -455,3 +455,10 @@ span.new-feature-tag.beta {
   width: 0;
   height: 0;
 }
+.welcome p {
+  font-size: .85rem;
+}
+.welcome {
+  background-color: #fc8c4f20;
+  border-bottom-color: #fc8c4f;
+}
