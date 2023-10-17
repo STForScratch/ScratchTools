@@ -553,3 +553,7 @@ input[class^="input_input-form_"]:focus {
 .ste-bl-together button {
   background-color: var(--ste-blue);
 }
+
+.scratchtoolsTag {
+  background-color: var(--ste-blue) !important;
+}
