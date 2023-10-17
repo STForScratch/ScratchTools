@@ -1,6 +1,6 @@
 export default function ({ feature, console }) {
   ScratchTools.waitForElements(
-    ".flex-row.action-buttons",
+    ".preview .inner .flex-row.action-buttons",
     async function (row) {
       let saved = (await ScratchTools.storage.get("watchLater")) || [];
 
