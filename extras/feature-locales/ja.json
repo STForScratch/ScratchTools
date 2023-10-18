@@ -1,4 +1,20 @@
 {
+  "specific-replies/title": { "message": "メッセージで返信先を表示" },
+  "specific-replies/description": {
+    "message": "コメントに関するメッセージで、そのコメントが誰に返信したものかを表示する。"
+  },
+  "better-trending-thumbnails/title": { "message": "より大きいサムネイル" },
+  "better-trending-thumbnails/description": {
+    "message": "傾向と検索したときに表示されるプロジェクトのサムネイルを大きくし、プロジェクトの枠によりぴったりになるようにします。"
+  },
+  "relevant-forum-posts/title": { "message": "似ているトピックを表示" },
+  "relevant-forum-posts/description": {
+    "message": "フォーラムで新しいトピックを作成したときに、そのトピックに似ている他のトピックが表示されます。"
+  },
+  "anti-generic/title": { "message": "一般的なものの非表示" },
+  "anti-generic/description": {
+    "message": "このベータ版機能では、検索ページと傾向ページにおいて、繰り返しの多いプロジェクトや、一般的と思われるプロジェクトを自動的に非表示にします。これには、タグが多いプロジェクト、一般的な名前のプロジェクト、プロジェクトの重複が含まれます。"
+  },
   "wrap-lists/title": { "message": "リストの項目を省略しない" },
   "wrap-lists/description": {
     "message": "リスト内のテキストが長すぎる場合でも、それを省略せずに表示します。"
@@ -417,10 +433,6 @@
   "recently-viewed-projects/description": {
     "message": "私の作品のページに最近見たプロジェクトの一覧を表示するタブを追加します。"
   },
-  "anti-generic/title": { "message": "一般的なものの非表示" },
-  "anti-generic/description": {
-    "message": "このベータ版機能では、検索ページと傾向ページにおいて、繰り返しの多いプロジェクトや、一般的と思われるプロジェクトを自動的に非表示にします。これには、タグが多いプロジェクト、一般的な名前のプロジェクト、プロジェクトの重複が含まれます。"
-  },
   "collapse-blocks/title": { "message": "折りたためるブロック" },
   "collapse-blocks/description": {
     "message": "エディターの右クリックメニューに、選択したブロックを折りたたむためのボタンを追加します。"
@@ -525,7 +537,7 @@
   },
   "aviate/title": { "message": "Aviateのステータス" },
   "aviate/description": {
-    "message": "プロフィールページにAviateのステータスを表示します。ステータスはaviateapp.eu.orgで設定できます。"
+    "message": "プロフィールページにAviateのステータスを表示します。ステータスはaviate.scratchers.techで設定できます。"
   },
   "idea-generator/title": { "message": "プロジェクトのアイデア生成器" },
   "idea-generator/description": {
