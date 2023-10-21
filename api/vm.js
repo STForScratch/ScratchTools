@@ -53,6 +53,7 @@ ScratchTools.traps = {
   scratchGui: ScratchTools.Scratch.scratchGui || null,
   scratchPaint: ScratchTools.Scratch.scratchPaint || null,
   scratchSound: ScratchTools.Scratch.scratchSound || null,
+  paper: ScratchTools.Scratch.getPaper || null,
   getVm: function () {
     return vm;
   },
@@ -73,10 +74,10 @@ const waitForContextMenu = function ({ id, callback, block, disabled, label }) {
     label,
   });
   return {
-    delete: function() {
-      delete openContextMenus[openContextMenus.indexOf(insertion)]
-    }
-  }
+    delete: function () {
+      delete openContextMenus[openContextMenus.indexOf(insertion)];
+    },
+  };
 };
 
 let handledProcedures = {};
@@ -177,11 +178,43 @@ ScratchTools.Scratch.waitForContextMenu = function (info) {
 ScratchTools.Scratch.scratchPaint = function () {
   var app = document.querySelector(".paint-editor_mode-selector_28iiQ");
   if (app !== null) {
-    return app[
-      Object.keys(app).find((key) => key.startsWith("__reactInternalInstance"))
-    ].child.stateNode.store.getState()?.scratchPaint || null;
+    return (
+      app[
+        Object.keys(app).find((key) =>
+          key.startsWith("__reactInternalInstance")
+        )
+      ].child.stateNode.store.getState()?.scratchPaint || null
+    );
   } else {
     return null;
+  }
+};
+
+ScratchTools.Scratch.getPaper = function () {
+  let paintElement = document.querySelector(
+    "[class*='paint-editor_mode-selector']"
+  );
+  let paintState =
+    paintElement[
+      Object.keys(paintElement).find((key) =>
+        key.startsWith("__reactInternalInstance")
+      )
+    ].child;
+  let tool;
+  while (paintState) {
+    let paintIn = paintState.child?.stateNode;
+    if (paintIn?.tool) {
+      tool = paintIn.tool;
+      break;
+    }
+    if (paintIn?.blob && paintIn?.blob.tool) {
+      tool = paintIn.blob.tool;
+      break;
+    }
+    paintState = paintState.sibling;
+  }
+  if (tool) {
+    return tool._scope;
   }
 };
 
