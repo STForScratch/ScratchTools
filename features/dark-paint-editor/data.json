@@ -1,0 +1,15 @@
+{
+  "title": "Switch Paint Background",
+  "description": "Adds a button next to the zoom controls in the paint editor that allows you to switch the background color of the paint editor between light and dark.",
+  "credits": [
+    { "username": "GarboMuffin", "url": "https://scratch.mit.edu/users/GarboMuffin/" },
+    { "username": "Mechanical_coding", "url": "https://scratch.mit.edu/users/Mechanical_coding/" },
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Editor"],
+  "tags": ["New", "Featured"],
+  "dynamic": true,
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
+  "resources": [{ "name": "dark-paint-btn", "path": "/dark.svg" }]
+}

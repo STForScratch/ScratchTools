@@ -6,5 +6,6 @@ export default function () {
     paint: ScratchTools.Scratch.scratchPaint,
     sound: ScratchTools.Scratch.scratchSound,
     blocks: ScratchTools.traps.getScratchBlocks,
+    getPaper: ScratchTools.Scratch.getPaper,
   };
 }
