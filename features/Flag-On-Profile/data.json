@@ -1,0 +1,11 @@
+{
+    "title": "Country Flag on Profile",
+    "description": "Adds flag emojis near selected locations on profile pages.",
+    "credits": [
+      { "username": "MaterArc", "url": "https://scratch.mit.edu/users/MaterArc/" }
+    ],
+    "type": ["Website"],
+    "tags": ["New"],
+    "dynamic": true,
+    "styles": [{ "file": "flag.js", "runOn": "/users/*" }]
+  }
