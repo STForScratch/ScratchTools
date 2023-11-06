@@ -24,5 +24,8 @@
   "tags": ["Beta", "Featured"],
   "type": ["Website", "Theme"],
   "dynamic": true,
-  "warning": "This feature uses an algorithm that ScratchTools developed, so it may not work every time."
+  "components": [{
+    "type": "warning",
+    "content": "This feature uses an algorithm that ScratchTools developed, so it may not work every time."
+  }]
 }

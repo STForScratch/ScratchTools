@@ -1,8 +1,13 @@
 [
   {
     "version": 2,
-    "id": "anti-generic",
-    "versionUpdated": "v3.4.0"
+    "id": "dark-paint-editor",
+    "versionAdded": "v3.5.0"
+  },
+  {
+    "version": 2,
+    "id": "specific-replies",
+    "versionAdded": "v3.4.0"
   },
   {
     "version": 2,
@@ -13,6 +18,11 @@
     "version": 2,
     "id": "relevant-forum-posts",
     "versionAdded": "v3.4.0"
+  },
+  {
+    "version": 2,
+    "id": "anti-generic",
+    "versionUpdated": "v3.4.0"
   },
   {
     "version": 2,

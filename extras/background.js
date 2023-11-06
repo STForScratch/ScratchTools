@@ -52,9 +52,9 @@ async function checkBetaUpdates() {
         (await (await fetch("/changelog/beta.json")).json()).beta !==
           data.beta
       ) {
-        chrome.tabs.create({
-          url: "/extras/beta/index.html",
-        });
+        // chrome.tabs.create({
+        //   url: "/extras/beta/index.html",
+        // });
       }
     }
   }
@@ -514,7 +514,6 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
         ScratchTools.console.log("Injected extension ID.");
         function injectExtensionId(id) {
           ScratchTools.id = id;
-          blockliveDetection();
         }
         await chrome.scripting.executeScript({
           args: [chrome.runtime.getURL("/extras/icons/icon128.png")],

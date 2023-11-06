@@ -1,4 +1,24 @@
 {
+  "specific-replies/title": { "message": "Özel Yanıt Mesajları" },
+  "specific-replies/description": {
+    "message": "Yorumlara ilişkin iletilerde, bir yorumun hangi kişiye yanıt olduğunu belirtir."
+  },
+  "better-trending-thumbnails/title": {
+    "message": "Daha büyük resim önizlemeleri"
+  },
+  "better-trending-thumbnails/description": {
+    "message": "Trend ve arama sayfalarındaki resim önizlemelerini büyüterek ve projeyi kutuya daha iyi uyacak şekilde günceller."
+  },
+  "relevant-forum-posts/title": {
+    "message": "İlgili forum gönderilerini görüntüle."
+  },
+  "relevant-forum-posts/description": {
+    "message": "Yeni bir forum konusu oluştururken, oluşturduğunuz konuyla benzer olabilecek diğer konuları gösterir."
+  },
+  "anti-generic/title": { "message": "Anti Jenerik" },
+  "anti-generic/description": {
+    "message": "Keşfet ve trend sayfalarında, bu beta özelliği, genel olmasını beklediği projelerle birlikte tekrarlayan projeleri otomatik olarak gizler. Bu, çok sayıda etiket, ortak ad ve proje kopyası içeren projeleri içerir."
+  },
   "wrap-lists/title": { "message": "Kaydırılabilen Liste Öğeleri" },
   "wrap-lists/description": {
     "message": "Liste öğelerinde metni normal olarak görüntüler eğer çok uzunlarsa kesmeden gösterir."
@@ -421,10 +441,6 @@
   "recently-viewed-projects/description": {
     "message": "Son görüntülediğiniz projelerin listesini görebileceğiniz Kendiminkiler sayfasına bir sekme ekler."
   },
-  "anti-generic/title": { "message": "Anti Jenerik" },
-  "anti-generic/description": {
-    "message": "Keşfet ve trend sayfalarında, bu beta özelliği, genel olmasını beklediği projelerle birlikte tekrarlayan projeleri otomatik olarak gizler. Bu, çok sayıda etiket, ortak ad ve proje kopyası içeren projeleri içerir."
-  },
   "collapse-blocks/title": { "message": "Blokları Daralt" },
   "collapse-blocks/description": {
     "message": "Düzenleyicideki blok menülerine sağ tıkla, seçilen bloğu daraltmanıza izin verecek bir düğme içerir."
@@ -531,7 +547,7 @@
   },
   "aviate/title": { "message": "Havacılık Durumları" },
   "aviate/description": {
-    "message": "Profil sayfalarında değişiklik durumlarını görüntüler. Durumunuzu şu adresten ayarlayabilirsiniz: aviateapp.eu.org"
+    "message": "Profil sayfalarında Aviate durumlarını görüntüler. Durumunuzu aviate.scratchers.tech adresinde ayarlayabilirsiniz."
   },
   "idea-generator/title": { "message": "Proje Fikir Üreteci" },
   "idea-generator/description": {

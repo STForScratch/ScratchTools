@@ -170,6 +170,31 @@ ScratchTools.appendToSharedSpace = function ({ space, element, order, scope }) {
         );
       },
     },
+    paintEditorZoomControls: {
+      element: () => {
+        return (
+          q(".sa-paintEditorZoomControls-wrapper") ||
+          (() => {
+            const wrapper = Object.assign(document.createElement("div"), {
+              className: "sa-paintEditorZoomControls-wrapper",
+            });
+
+            wrapper.style.display = "flex";
+            wrapper.style.flexDirection = "row-reverse";
+            wrapper.style.height = "calc(1.95rem + 2px)";
+
+            const zoomControls = q("[class^='paint-editor_zoom-controls']");
+
+            zoomControls.replaceWith(wrapper);
+            wrapper.appendChild(zoomControls);
+
+            return wrapper;
+          })()
+        );
+      },
+      from: () => [],
+      until: () => [],
+    },
     assetContextMenuAfterDelete: {
       element: () => scope,
       from: () => {

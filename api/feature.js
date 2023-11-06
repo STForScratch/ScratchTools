@@ -77,19 +77,6 @@ class Feature {
         }
       }
     }
-    this.getSettings = function (key) {
-      var settings = {};
-      this.data.options?.forEach(function (el) {
-        if (ScratchTools.Storage[el.id]) {
-          settings[el.id] = ScratchTools.Storage[el.id];
-        }
-      });
-      if (key) {
-        return settings[key];
-      } else {
-        return settings;
-      }
-    };
     this.tab = {
       path: window.location.pathname,
       scratch: document.querySelector("#app") ? 3 : 2,

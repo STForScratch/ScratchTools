@@ -1,4 +1,5 @@
 export default async function () {
+  if (document.querySelector(".ste-bl-together-bg")) return;
   let alertedBefore = await ScratchTools.storage.get("steBlAlert");
   await ScratchTools.storage.set({ key: "steBlAlert", value: false });
   await ScratchTools.waitForElement("script.blocklive-ext");

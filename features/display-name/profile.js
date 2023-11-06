@@ -33,6 +33,8 @@ if (
     span.textContent = "Set Display Name";
     span.className = "ste-set-display-name";
     span.addEventListener("click", function () {
+      alert("Due to issues with Scratch's cloud data system, the ability to set your display name is temporarily unavailable at this time.")
+      return;
       var newDisplayName = prompt(
         "Please enter in your desired display name.\n\nPlease make sure that it's appropriate, other users will see it too. Leave this blank if you wish to change your mind. Set the display name to your username if you want to delete your display name."
       );

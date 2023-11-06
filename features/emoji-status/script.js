@@ -16,6 +16,8 @@ async function getStatus() {
     Scratch.INIT_DATA.PROFILE.model.username === ScratchTools.Auth.user.username
   ) {
     span.addEventListener("click", async function () {
+      alert("Due to issues with Scratch's cloud data system, the ability to set your emoji status is temporarily unavailable at this time.")
+      return;
       if (confirm("Would you like to set your emoji status?")) {
         var status = prompt(
           "What would you like your status to be?\n\nIt must be one single emoji."
