@@ -209,8 +209,8 @@ a {
 }
 .section2 {
   border: 0px solid black;
-  min-height: 100% !important;
-  height: 100vh;
+  min-height: calc(100% - 2.5rem - 0.5em - 0.5em) !important;
+  height: calc(100vh - 2.5rem - 0.5em - 0.5em);
   width: 70%;
   margin-left: 0em;
   overflow: auto;
@@ -275,6 +275,13 @@ a {
   padding-left: 2rem;
   height: 2.5rem;
 }
+
+.main-page {
+  height: 2.5rem;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
 .settings-title {
   font-size: 1.2rem;
   margin-left: 0.8rem;
@@ -297,10 +304,10 @@ a {
   margin-bottom: 2.75em;
   color: var(--primary-color);
   margin-bottom: 0px;
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
   margin-left: 2rem;
   position: relative;
-  bottom: -1rem;
+  /* bottom: -1rem; */
 }
 
 .searchbarbutton {
@@ -315,9 +322,10 @@ a {
   background-position: 47% 46%;
   background-size: 20px 20px;
   background-repeat: no-repeat;
-  top: 4.175rem;
+  bottom: 0px;
   position: relative;
   left: 0px;
+  margin-bottom: 0px;
 }
 
 .sectionwrap {
@@ -494,7 +502,7 @@ button.secondary-btn {
 .buttons {
   display: inline-block;
   position: relative;
-  top: 3.1rem;
+  /* top: 3.1rem; */
   border-left: 2px solid var(--searchbar-bg);
   margin-left: 0.5rem;
 }
