@@ -15,3 +15,18 @@
 .thumbnail.project {
     position: relative;
 }
+
+.grid .thumbnail.gallery .thumbnail-image img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left:0;
+    width: 100% !important;
+    width: 100% !important;
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+.thumbnail.gallery {
+    position: relative;
+}
