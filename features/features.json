@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "consolidate-project-tags",
+    "versionAdded": "v3.5.0"
+  },
+  {
+    "version": 2,
     "id": "dark-paint-editor",
     "versionAdded": "v3.5.0"
   },
