@@ -28,7 +28,7 @@
   - [Scratch APIs](#scratch-apis)
     - [Basics](#basics)
     - [Blockly Context Menus](#blockly-context-menus)
-    - [Sound, GUI and Paint-Mode](#sound-gui-and-paint-mode)
+    - [Sound, GUI and Paint-Mode](#sound--gui-and-paint-mode)
   - [Logging](#logging)
 - [How to Support without Code](#how-to-support-without-code)
 
