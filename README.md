@@ -38,7 +38,7 @@ We're a browser extension for the Scratch website that makes Scratch look, work,
 ### Installing
 There are multiple ways of installing.
 - Chrome: You can download from Chrome's Extension Webstore [here](https://chrome.google.com/webstore/detail/scratchtools/jjnpbalpllpfdpgplpbcbadkgdmleopm). Then just press the Add to Chrome button, and you've downloaded ScratchTools!
-- > [!NOTE]
+> [!NOTE]
 > If you are using a browser based on Chromium (eg. Vivaldi), then this is your way of installing unless your browser has it's own extension store.
 - Firefox/Mozilla: You can download from Firefox Addons (Works on Firefox forks) [here](https://addons.mozilla.org/en-US/firefox/addon/scratchtools/). You can then just add it to Firefox, and then you have ScratchTools!
 > [!NOTE]
