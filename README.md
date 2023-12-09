@@ -28,7 +28,7 @@
   - [Scratch APIs](#scratch-apis)
     - [Basics](#basics)
     - [Blockly Context Menus](#blockly-context-menus)
-    - [Sound , GUI and Paint-Mode](#sound-gui-and-paint-mode)
+    - [Sound, GUI and Paint-Mode](#sound-gui-and-paint-mode)
   - [Logging](#logging)
 - [How to Support without Code](#how-to-support-without-code)
 
@@ -46,7 +46,10 @@ There are multiple ways of installing.
 
 - Microsoft edge: You can download from Edge's addon webstore [here](https://microsoftedge.microsoft.com/addons/detail/scratchtools/aaidjeidbnhpjhblbianjeghjopbimmk). You can then just add it to Edge, and then you have ScratchTools!
 - Safari (macOS, iPadOS and iOS): You can build the extension by typing `make` for macOS, and `make ios` for the iOS app (you will have to sign it on Xcode), make sure you have enabled Developer mode and allowed unsigned extensions.
-- GitHub: Download from GitHub [here](https://github.com/STForScratch/ScratchTools/zipball/master). If it downloads a `.zip` file, unpack it. Then, with the folder, go to `chrome://extensions`, make sure you have developer mode enabled (switch in the top right corner), and drag the downloaded folder onto the page. Make sure you've disabled other versions of ScratchTools.
+- GitHub (Chrome/Chromium): Download from GitHub [here](https://github.com/STForScratch/ScratchTools/zipball/master). If it downloads a `.zip` file, unpack it. Then, with the folder, go to `chrome://extensions` (On Chromium forks, you will have to replace "chrome" with your browser's name. (eg. `vivaldi://extensions`)), make sure you have developer mode enabled (switch in the top right corner), and drag the downloaded folder onto the page. Make sure you've disabled other versions of ScratchTools.
+- GitHub (Firefox & Firefox Forks): Download from GitHub [here](https://github.com/STForScratch/ScratchTools/zipball/master). If it downloads a `.zip` file, unpack it. Then, with the folder, go to `about:debugging`, click "This Firefox" and click "Load temporary extension".
+> [!WARNING]
+> Extensions loaded this way are indeed temporal, once you close the window, it will be gone - ScratchTools is still outdated on Firefox at the time of writing this, thus the extension will have failures and won't load, this was still put in ahead of time so this warning can be removed later on rather than having to write this out.
 
 ### Building a Feature
 It's not very hard to build a feature, and if you're ever having trouble, our developers are always here to help you! For ideas, code help, beta testing for your features, and more, you can [join our Discord server](https://discord.gg/5AkUsCbEsy). Now, here's how to build a feature!
@@ -66,7 +69,7 @@ Using `ScratchTools.Auth`, you can access the authentication info for the signed
 Using `ScratchTools.Scratch.blockly` and `ScratchTools.Scratch.vm`, you can access the Blockly and Virtual Machine from inside the editor (or on the project page with vm). Blockly must wait for the editor to load, but the virtual machine is ready instantly.
 ##### Blockly Context Menus
 If you want to control what appears in a context menu, you easily can with the `ScratchTools.Scratch.waitForContextMenu()` API. The only input you need is JSON, which must include the block ID for the context menu, the ID you want to set for the context menu option (lets you change the context menu option, so don't use the same ID as another feature), and the callback for when the context menu is opened. The callback function will also have an input, which is the context menu itself. That way, you can add the context menu option when the context menu is opened.
-##### Sound , GUI and Paint-Mode
+##### Sound, GUI and Paint-Mode
 Using `ScratchTools.Scratch.scratchSound`and `ScratchTools.Scratch.scratchGui`, you can return sound from the editor as well as access Graphical User Interface inside the editor. `ScratchTools.Scratch.scratchPaint` can be used in selecting the paint editor mode.
 
 #### Logging
