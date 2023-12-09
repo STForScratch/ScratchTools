@@ -80,6 +80,6 @@ Not only do you have to be a developer to code for ScratchTools (technically, we
 - **Beta testing.** You can search for bugs and then report them [here](https://scratchtools.app/bugs/). Just [download](https://github.com/STForScratch/ScratchTools/zipball/master) the newest changes from GitHub, and add them to your browser! [Here's how to add Chrome Extensions without the Chrome Webstore.](https://www.labnol.org/internet/install-chrome-extensions/25817/)
 - **Website.** If you know HTML or CSS, we could really use your help on our website! We aren't looking for big changes, but we'd love your help with it anyways! Let us know by creating an issue or contacting a developer!
 - **Graphic Designer.** If you're an artist or designer, you can help us! We need banners, cool art, and more! We love all kinds of styles, you can contact us by creating an issue or contacting a developer!
-- **Brainstorming.** If you have ideas, you can suggest them on our [feedback page](https://scratchtools.app/feedback/) or [Community Discord](https://server.scratchtools.app/)!
+- **Brainstorming.** If you have ideas, you can suggest them on our [feedback page](https://scratchtools.app/feedback/), [Community Discord](https://server.scratchtools.app/) or [create an issue suggesting it](https://github.com/STForScratch/ScratchTools/issues/new?assignees=&labels=new+feature&projects=&template=--feature.yml)!
 - **Posting.** Feel free to post about us on social media! We'd love to help as many Scratchers as possible, so every post helps!
 
