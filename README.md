@@ -13,7 +13,7 @@
     <br />
     <a href="https://youtu.be/xXuZAWTmXng">Feature Showcase</a>
     ·
-    <a href="https://github.com/STForScratch/ScratchTools/issues/new?assignees=&labels=feature&template=bug_report.md&title=">Report a Bug</a>
+    <a href="https://github.com/STForScratch/ScratchTools/issues/new?assignees=&labels=bug&projects=&template=--bug.yml">Report a Bug</a>
     ·
     <a href="https://github.com/STForScratch/ScratchTools/issues/new?assignees=&labels=feature&template=feature_request.md&title=">Request feature</a>
   </p>
@@ -77,7 +77,7 @@ Logging can be very important, especially when testing. You can use `ScratchTool
 
 ### How to Support without Code
 Not only do you have to be a developer to code for ScratchTools (technically, we would teach you if you wanted help), but you can also be a beta tester, suggest ideas, design our website, create art, and more! Here are some common things people like to help with:
-- **Beta testing.** You can search for bugs and then report them [here](https://scratchtools.app/bugs/). Just [download](https://github.com/STForScratch/ScratchTools/zipball/master) the newest changes from GitHub, and add them to your browser! [Here's how to add Chrome Extensions without the Chrome Webstore.](https://www.labnol.org/internet/install-chrome-extensions/25817/)
+- **Beta testing.** You can search for bugs and then report them [here](https://www.scratchtools.app/feedback/). Just [download](https://github.com/STForScratch/ScratchTools/zipball/master) the newest changes from GitHub, and add them to your browser! [Here's how to add Chrome Extensions without the Chrome Webstore.](https://www.labnol.org/internet/install-chrome-extensions/25817/)
 - **Website.** If you know HTML or CSS, we could really use your help on our website! We aren't looking for big changes, but we'd love your help with it anyways! Let us know by creating an issue or contacting a developer!
 - **Graphic Designer.** If you're an artist or designer, you can help us! We need banners, cool art, and more! We love all kinds of styles, you can contact us by creating an issue or contacting a developer!
 - **Brainstorming.** If you have ideas, you can suggest them on our [feedback page](https://scratchtools.app/feedback/), [Community Discord](https://server.scratchtools.app/) or [create an issue suggesting it](https://github.com/STForScratch/ScratchTools/issues/new?assignees=&labels=new+feature&projects=&template=--feature.yml)!
