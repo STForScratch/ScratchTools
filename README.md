@@ -69,7 +69,7 @@ Using `ScratchTools.Auth`, you can access the authentication info for the signed
 Using `ScratchTools.Scratch.blockly` and `ScratchTools.Scratch.vm`, you can access the Blockly and Virtual Machine from inside the editor (or on the project page with vm). Blockly must wait for the editor to load, but the virtual machine is ready instantly.
 ##### Blockly Context Menus
 If you want to control what appears in a context menu, you easily can with the `ScratchTools.Scratch.waitForContextMenu()` API. The only input you need is JSON, which must include the block ID for the context menu, the ID you want to set for the context menu option (lets you change the context menu option, so don't use the same ID as another feature), and the callback for when the context menu is opened. The callback function will also have an input, which is the context menu itself. That way, you can add the context menu option when the context menu is opened.
-##### Sound, GUI and Paint-Mode
+##### Sound , GUI and Paint-Mode
 Using `ScratchTools.Scratch.scratchSound`and `ScratchTools.Scratch.scratchGui`, you can return sound from the editor as well as access Graphical User Interface inside the editor. `ScratchTools.Scratch.scratchPaint` can be used in selecting the paint editor mode.
 
 #### Logging
