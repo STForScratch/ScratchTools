@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "flag-on-profile",
+    "versionAdded": "v3.5.0"
+  },
+  {
+    "version": 2,
     "id": "follow-on-projects",
     "versionAdded": "v3.5.0"
   },
