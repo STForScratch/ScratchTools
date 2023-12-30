@@ -6,6 +6,7 @@
     if (locationElement) {
         const locationText = locationElement.textContent.trim();
         const countryFlag = getCountryFlag(locationText);
+        if (!countryFlag) return;
         const flagElement = document.createElement('span');
         flagElement.textContent = countryFlag;
         flagElement.style.marginRight = '4px';
