@@ -16,13 +16,17 @@
         const flags = {
             'Afghanistan': '🇦🇫',
             'Albania': '🇦🇱',
+            'Aland Islands':'🇦🇽',
             'Algeria': '🇩🇿',
             'American Somoa': '🇦🇸',
             'Andorra': '🇦🇩',
             'Angola': '🇦🇴',
+            'Anguilla': '🇦🇮',
             'Antigua and Barbuda': '🇦🇬',
             'Argentina': '🇦🇷',
             'Armenia': '🇦🇲',
+            'Aruba': '🇦🇼',
+            'Azerbaijan': '🇦🇿'
             'Australia': '🇦🇺',
             'Austria': '🇦🇹',
             'Azerbaijan': '🇦🇿',
