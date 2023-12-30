@@ -18,7 +18,7 @@
             'Albania': '🇦🇱',
             'Aland Islands':'🇦🇽',
             'Algeria': '🇩🇿',
-            'American Somoa': '🇦🇸',
+            'American Samoa': '🇦🇸',
             'Andorra': '🇦🇩',
             'Angola': '🇦🇴',
             'Anguilla': '🇦🇮',
