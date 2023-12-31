@@ -17,7 +17,7 @@ function addFonts() {
       span2.style.fontFamily = font;
       span.appendChild(span2);
       span.onclick = function () {
-        ScratchTools.Scratch.scratchPaint().selectedItems[0].setFont(font);
+        ScratchTools.Scratch.scratchPaint().selectedItems[0]?.setFont(font);
         document
           .querySelector(
             "#react-tabs-3 > div > div.asset-panel_detail-area_2KQhH.box_box_2jjDp > div > div.paint-editor_editor-container-top_2wxS3 > div:nth-child(2) > div.paint-editor_mod-mode-tools_2Ihob.input-group_input-group_plJaJ > div > div > div"

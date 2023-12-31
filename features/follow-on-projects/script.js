@@ -3,7 +3,7 @@ export default async function ({ feature, console }) {
   let auth = await feature.auth.fetch();
   let username = feature.redux.getState().preview.projectInfo.author.username;
   let data = await (
-    await fetch(`https://scratch.mit.edu/users/${username}/`)
+    await fetch(`https://scratch.mit.edu/users/${username}/?ste=${Date.now().toString()}`)
   ).text();
 
   let html = document.createElement("html");
