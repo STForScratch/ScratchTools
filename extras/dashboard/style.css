@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+html {
+  height: 100%;
+  --radius: 0.5rem;
+}
+
+body {
+  margin: 0em;
+  font-family: "Inter", sans-serif;
+  background-color: var(--background);
+  text-align: center;
+  padding-top: 5rem;
+  font-size: 1rem;
+  color:var(--primary-color)
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+a {
+  color:var(--primary-color);
+  text-decoration: none;
+}
+
+.navbar {
+  display: block;
+  position: fixed;
+  background: var(--navbar-gradient);
+  top: 0;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-left: 0.5em;
+  z-index: 2;
+  border: 0px solid black;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  margin: 0px;
+  padding-left: 2rem;
+}
+
+.sticon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-image: url("/extras/icons/icontrans128.png");
+  background-position: 50% 50%;
+  background-size: 2.5rem 2.5rem;
+  background-repeat: no-repeat;
+  display: inline-block;
+  float: left;
+}
+
+button {
+  background-color: var(--theme);
+  color: white;
+  padding: 0.85rem;
+  border-radius: 0.5rem;
+  outline: 0px;
+  border: 0px;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  min-width: 7rem;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+td {
+    background-color: var(--feature-bg);
+    padding: 1rem;
+    border-radius: .5rem;
+    margin: 1rem;
+    overflow: visible;
+    position: relative;
+    width: 50%;
+}
+
+input {
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+    width: 12rem;
+    border: none;
+    background: var(--searchbar-bg);
+    outline: none;
+    margin-bottom: 2.75em;
+    color: var(--primary-color);
+    font-family: "Inter", sans-serif;
+}
+
+.update {
+    padding-top: 1rem;
+    text-align: center;
+}
+
+input.emoji {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+table {
+    display: inline-block;
+    border-spacing: 1rem;
+}
+
+tr {
+    width: 100%;
+}

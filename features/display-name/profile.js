@@ -33,31 +33,7 @@ if (
     span.textContent = "Set Display Name";
     span.className = "ste-set-display-name";
     span.addEventListener("click", function () {
-      alert("Due to issues with Scratch's cloud data system, the ability to set your display name is temporarily unavailable at this time.")
-      return;
-      var newDisplayName = prompt(
-        "Please enter in your desired display name.\n\nPlease make sure that it's appropriate, other users will see it too. Leave this blank if you wish to change your mind. Set the display name to your username if you want to delete your display name."
-      );
-      if (newDisplayName) {
-        ScratchTools.verifyUser(async function (token) {
-          var data = await (
-            await fetch("https://data.scratchtools.app/setdisplay/", {
-              method: "POST",
-              headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ name: newDisplayName, token: token }),
-            })
-          ).json();
-          if (data.success) {
-            alert("Set display name!");
-            window.location.href = window.location.href
-          } else {
-            alert("An error occurred while trying to set your display name.");
-          }
-        });
-      }
+        window.location.href = "https://auth.itinerary.eu.org/auth/?redirect="+ btoa("https://scratch.mit.edu/ste/dashboard/verify/?system=dashboard")+"&name=ScratchTools"
     });
     document.querySelector(".header-text h2").appendChild(span);
   }
