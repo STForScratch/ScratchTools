@@ -40,6 +40,6 @@ document
 
 document.querySelector(".option[data-option=chat]").onclick = function () {
   chrome.tabs.create({
-    url: "https://scratch.mit.edu/scratchtools/support/auth/",
+    url: "https://auth.itinerary.eu.org/auth/?redirect="+ btoa("https://scratch.mit.edu/ste/dashboard/verify/?system=support")+"&name=ScratchTools",
   });
 };

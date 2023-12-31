@@ -289,7 +289,7 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
       window.location.href = url;
     }
   } else if (
-    tab.url?.startsWith("https://scratch.mit.edu/scratchtools/support/auth/")
+    tab.url?.startsWith("https://scratch.mit.edu/ste/dashboard/verify/")
   ) {
     if (info.status === "loading") {
       await chrome.scripting.executeScript({
@@ -303,7 +303,7 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
       }
       await chrome.scripting.executeScript({
         target: { tabId: tabId },
-        files: [`/extras/support/page.js`],
+        files: [`/extras/page.js`],
         world: "MAIN",
       });
     }
@@ -665,13 +665,19 @@ chrome.runtime.onMessageExternal.addListener(async function (
 ) {
   if (msg.msg === "openSupportChat") {
     await chrome.tabs.create({
-      url: "/extras/support/chat/index.html?code=" + msg.code,
+      url: "/extras/support/chat/index.html?code=" + msg.token,
+    });
+    chrome.tabs.remove(sender.tab.id, function () {});
+  }
+  if (msg.msg === "openDashboardPage") {
+    await chrome.tabs.create({
+      url: "/extras/dashboard/index.html?code=" + msg.token + "&username=" + msg.username,
     });
     chrome.tabs.remove(sender.tab.id, function () {});
   }
   if (msg.msg === "openFeedbackPage") {
     await chrome.tabs.create({
-      url: "/extras/feedback/index.html?code=" + msg.code,
+      url: "/extras/feedback/index.html?code=" + msg.token,
     });
     chrome.tabs.remove(sender.tab.id, function () {});
   }

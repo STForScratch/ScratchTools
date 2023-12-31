@@ -161,7 +161,7 @@ if (document.querySelector(".feedback-btn")) {
     .querySelector(".feedback-btn")
     .addEventListener("click", function () {
       chrome.tabs.create({
-        url: "https://scratch.mit.edu/scratchtools/feedback/auth/",
+        url: "https://auth.itinerary.eu.org/auth/?redirect="+ btoa("https://scratch.mit.edu/ste/dashboard/verify/?system=feedback")+"&name=ScratchTools",
       });
     });
 }

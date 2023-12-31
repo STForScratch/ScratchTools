@@ -16,31 +16,7 @@ async function getStatus() {
     Scratch.INIT_DATA.PROFILE.model.username === ScratchTools.Auth.user.username
   ) {
     span.addEventListener("click", async function () {
-      alert("Due to issues with Scratch's cloud data system, the ability to set your emoji status is temporarily unavailable at this time.")
-      return;
-      if (confirm("Would you like to set your emoji status?")) {
-        var status = prompt(
-          "What would you like your status to be?\n\nIt must be one single emoji."
-        );
-        ScratchTools.verifyUser(async function (token) {
-          var data = await (
-            await fetch("https://data.scratchtools.app/setstatus/", {
-              method: "POST",
-              headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ status: status, token: token }),
-            })
-          ).json();
-          if (data.success) {
-            alert("Set emoji status!");
-            window.location.href = window.location.href;
-          } else if (data.error) {
-            alert(data.error);
-          }
-        });
-      }
+      window.location.href = "https://auth.itinerary.eu.org/auth/?redirect="+ btoa("https://scratch.mit.edu/ste/dashboard/verify/?system=dashboard")+"&name=ScratchTools"
     });
   }
   document.querySelector(".profile-details").prepend(span);
