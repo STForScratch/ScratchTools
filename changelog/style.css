@@ -232,3 +232,16 @@ div.feature {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.important {
+  background-color: #ff9f00;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 2rem;
+  border-radius: .5rem;
+  margin-bottom: 2rem;
+}
+
+.important p {
+  font-size: 1rem;
+}
