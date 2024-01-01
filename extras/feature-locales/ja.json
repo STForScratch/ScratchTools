@@ -1,11 +1,25 @@
 {
+  "profile-flag/title": { "message": "プロフィールに旗を置く" },
+  "profile-flag/description": {
+    "message": "プロフィールページで、選択した場所に旗の絵文字を追加します。"
+  },
+  "follow-on-projects/title": { "message": "プロジェクトページでフォローする" },
+  "follow-on-projects/description": {
+    "message": "プロフィールにアクセスしなくても、プロジェクトページから直接プロジェクトの作者をフォローできます。"
+  },
+  "dark-paint-editor/title": {
+    "message": "ペイントエディターの背景の色を切り替える"
+  },
+  "dark-paint-editor/description": {
+    "message": "ペイントエディターのズームボタンの横に、ペイントエディターの背景をライトモードとダークモードに切り替えられるボタンを追加します。"
+  },
   "specific-replies/title": { "message": "メッセージで返信先を表示" },
   "specific-replies/description": {
     "message": "コメントに関するメッセージで、そのコメントが誰に返信したものかを表示する。"
   },
   "better-trending-thumbnails/title": { "message": "より大きいサムネイル" },
   "better-trending-thumbnails/description": {
-    "message": "傾向と検索したときに表示されるプロジェクトのサムネイルを大きくし、プロジェクトの枠によりぴったりになるようにします。"
+    "message": "傾向と検索したときに表示されるプロジェクトのサムネイルを大きくし、プロジェクトとスタジオの枠によりぴったりになるようにします。"
   },
   "relevant-forum-posts/title": { "message": "似ているトピックを表示" },
   "relevant-forum-posts/description": {
@@ -101,7 +115,7 @@
   },
   "preview-textboxes/title": { "message": "テキストボックスのプレビュー表示" },
   "preview-textboxes/description": {
-    "message": "プロフィールの「私について」と「私が取り組んでいること」、そしてプロジェクトの「使い方」と「メモとクレジット」をプレビュー表示して、他のユーザーにどのように見えるかを確認できます。\n "
+    "message": "プロフィールの「私について」と「私が取り組んでいること」、そしてプロジェクトの「使い方」と「メモとクレジット」をプレビュー表示して、他のユーザーにどのように見えるかを確認できます。\n "
   },
   "more-tutorials/title": { "message": "チュートリアルの追加" },
   "more-tutorials/description": {
@@ -139,7 +153,7 @@
   "live-character-counts/description": {
     "message": "フォーラム、スタジオ、プロジェクトページで、テキストボックスの現在の文字数を表示します。"
   },
-  "advanced-search/title": { "message": "プロフィール検索" },
+  "advanced-search/title": { "message": "ユーザー検索" },
   "advanced-search/description": {
     "message": "ユーザーを検索すると、そのプロフィールへのリンクがページの上部に表示されます。"
   },

@@ -1,4 +1,16 @@
 {
+  "profile-flag/title": { "message": "Profilde Bayrak" },
+  "profile-flag/description": {
+    "message": "Profil sayfalarında seçilen konumların yakınına bayrak emojileri ekler."
+  },
+  "follow-on-projects/title": { "message": "Proje Sayfasını Takip Et" },
+  "follow-on-projects/description": {
+    "message": "Profiline gitmek yerine, kullanıcıları doğrudan proje sayfasından takip et."
+  },
+  "dark-paint-editor/title": { "message": "Boya Arka Planını Değiştir" },
+  "dark-paint-editor/description": {
+    "message": "Boyama editöründe yakınlaştırma kontrollerinin yanına bir düğme ekler. Bu düğme, boyama editörünün arka plan rengini açık ve koyu arasında değiştirmenize olanak sağlar."
+  },
   "specific-replies/title": { "message": "Özel Yanıt Mesajları" },
   "specific-replies/description": {
     "message": "Yorumlara ilişkin iletilerde, bir yorumun hangi kişiye yanıt olduğunu belirtir."
@@ -7,7 +19,7 @@
     "message": "Daha büyük resim önizlemeleri"
   },
   "better-trending-thumbnails/description": {
-    "message": "Trend ve arama sayfalarındaki resim önizlemelerini büyüterek ve projeyi kutuya daha iyi uyacak şekilde günceller."
+    "message": "Trend ve arama sayfalarındaki küçük resimleri güncelleyerek, proje/stüdyo kutusuna daha büyük ve daha iyi uyacak şekilde düzenler."
   },
   "relevant-forum-posts/title": {
     "message": "İlgili forum gönderilerini görüntüle."
