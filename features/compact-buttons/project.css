@@ -1,11 +1,11 @@
 /* remix button */
-.preview .ste-follow-btn.button.following {
+.preview .ste-follow-btn.button {
     padding: 11px !important;
 }
-.preview .ste-follow-btn.button.following:before {
+.preview .ste-follow-btn.button:before {
     margin-right: 0 !important;
 }
-.preview .ste-follow-btn.button.following span {
+.preview .ste-follow-btn.button span {
     display: none;
 }
 
