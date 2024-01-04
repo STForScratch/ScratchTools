@@ -18,13 +18,15 @@ export default async function ({ feature, console }) {
     let button = document.createElement("button");
     button.className =
       "ste-follow-btn button " + (following ? "following" : "notfollowing");
-    button.textContent = (following ? "Unfollow" : "Follow") + " " + username;
+    let span = document.createElement("span");
+    span.textContent = (following ? "Unfollow" : "Follow") + " " + username;
+    button.append(span)
     button.addEventListener("click", async function () {
       if (following) {
         following = false;
         button.className =
       "ste-follow-btn button " + (following ? "following" : "notfollowing");
-        button.textContent =
+        span.textContent =
           (following ? "Unfollow" : "Follow") + " " + username;
         let data = await (
           await fetch(
@@ -47,7 +49,7 @@ export default async function ({ feature, console }) {
         following = true;
         button.className =
       "ste-follow-btn button " + (following ? "following" : "notfollowing");
-        button.textContent =
+        span.textContent =
           (following ? "Unfollow" : "Follow") + " " + username;
         let data = await (
           await fetch(

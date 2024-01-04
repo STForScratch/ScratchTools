@@ -1,4 +1,15 @@
 /* remix button */
+.preview .ste-follow-btn.button.following {
+    padding: 11px !important;
+}
+.preview .ste-follow-btn.button.following:before {
+    margin-right: 0 !important;
+}
+.preview .ste-follow-btn.button.following span {
+    display: none;
+}
+
+/* remix button */
 .preview .remix-button {
     padding: 11px !important;
 }
