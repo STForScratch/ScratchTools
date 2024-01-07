@@ -8,11 +8,5 @@
   "tags": ["New", "Featured"],
   "styles": [{ "file": "style.css", "runOn": "/users/*" }],
   "scripts": [{ "file": "script.js", "runOn": "/users/*" }],
-  "similar": ["isonline", "display-name"],
-  "components": [
-    {
-      "type": "warning",
-      "content": "Due to issues with Scratch's cloud data system, the ability to change your emoji status is temporarily unavailable."
-    }
-  ]
+  "similar": ["isonline", "display-name"]
 }
