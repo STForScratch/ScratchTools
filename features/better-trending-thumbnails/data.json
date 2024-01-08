@@ -9,9 +9,7 @@
     "dynamic": true,
     {
   "styles": [
-    {"file": "style.css", "runOn": "/explore/projects/*"},
-    {"file": "style.css", "runOn": "/search/projects*"},
-    {"file": "style.css", "runOn": "/explore/studios/*"}
+    {"file": "style.css", "runOn": "/explore/projects/*||/search/projects/*||/explore/studios/*"},
   ]
 }
   }
