@@ -1,13 +1,13 @@
 {
   "NOTE": "THERE IS NO NEED TO UPDATE THIS YOURSELF, IT WILL BE UPDATED WHEN RELEASED.",
-  "version": "3.5.0",
+  "version": "3.5.1",
   "enhanced": [
-    "Add full size thumbnails for trending studios.",
-    "Minor improvements to follow button on projects."
+    "Removed old warnings.",
+    "Add the ScratchTools Awards."
 ],
   "fixed": [
-    "Fix scrollbar on settings page.",
-    "Fix display names and emoji statuses.",
-    "Bring back chat support and feedback center."
+    "Fix duplicating Most Popular Project box.",
+    "Fix Larger Thumbnails for studios.",
+    "Fix follow button on project pages with compact buttons."
   ]
 }
