@@ -1,11 +1,16 @@
 {
-    "title": "Larger Thumbnails",
-    "description": "Updates thumbnails on the trending and search pages to be larger and better fit the project/studio box.",
-    "credits": [
-      { "username": "MaterArc", "url": "https://scratch.mit.edu/users/MaterArc/" }
-    ],
-    "type": ["Website"],
-    "tags": ["New"],
-    "dynamic": true,
-    "styles": [{ "file": "style.css", "runOn": "/explore/projects/*" },{ "file": "style.css", "runOn": "/search/projects*" }]
-  }
+  "title": "Larger Thumbnails",
+  "description": "Updates thumbnails on the trending and search pages to be larger and better fit the project/studio box.",
+  "credits": [
+    { "username": "MaterArc", "url": "https://scratch.mit.edu/users/MaterArc/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New"],
+  "dynamic": true,
+  "styles": [
+    {
+      "file": "style.css",
+      "runOn": "/explore/projects/*||/search/projects/*||/explore/studios/*"
+    }
+  ]
+}
