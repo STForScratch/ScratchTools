@@ -1,30 +1,29 @@
+const updateProjectDescription = () => {
+    const projectDescriptions = document.querySelectorAll('.project-description');
+    let found = false;
 
-const TargetSearchProjectsLinksFeature = {
-    targetAndRemoveDuplicates: async () => {
-        const projectDescriptions = await ScratchTools.waitForElements('.project-description', function (element) {
-            TargetSearchProjectsLinksFeature.handleProjectDescription(element);
-        });
-    },
+    projectDescriptions.forEach((projectDescription) => {
+        const descriptionText = projectDescription.innerHTML;
 
-    handleProjectDescription: (projectDescription) => {
-        const links = Array.from(projectDescription.querySelectorAll('a[href*="/search/projects?q="]'));
+        if (descriptionText.trim() !== '') {
+            const tagRegex = /<a\s+href="[^"]*"[^>]*>[^<]*<\/a>/g;
+            const tags = descriptionText.match(tagRegex);
 
-        if (links.length > 1) {
-            const uniqueLinks = new Set();
+            if (tags) {
+                const uniqueTags = new Set();
+                const updatedDescription = descriptionText.replace(tagRegex, (match) => {
+                    if (!uniqueTags.has(match)) {
+                        uniqueTags.add(match);
+                        return match;
+                    } else {
+                        return '';
+                    }
+                });
+                projectDescription.innerHTML = updatedDescription;
+            }
 
-            links.forEach(link => {
-                const linkHref = link.getAttribute('href');
-
-                if (!uniqueLinks.has(linkHref)) {
-                    uniqueLinks.add(linkHref);
-                } else {
-                   
-                    link.style.display = 'none';
-                }
-            });
+            found = true;
         }
-    }
+    });
 };
-
-TargetSearchProjectsLinksFeature.targetAndRemoveDuplicates();
-
+window.addEventListener('load', updateProjectDescription);
