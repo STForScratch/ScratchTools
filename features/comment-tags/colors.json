@@ -1,0 +1,106 @@
+{
+  "a": {
+    "text": "black",
+    "bg": "#ff7575"
+  },
+  "b": {
+    "text": "black",
+    "bg": "#ff9c75"
+  },
+  "c": {
+    "text": "black",
+    "bg": "#ffbc75"
+  },
+  "d": {
+    "text": "black",
+    "bg": "#ffe675"
+  },
+  "e": {
+    "text": "black",
+    "bg": "#c6ff75"
+  },
+  "f": {
+    "text": "black",
+    "bg": "#75ff78"
+  },
+  "g": {
+    "text": "black",
+    "bg": "#75ffca"
+  },
+  "h": {
+    "text": "black",
+    "bg": "#75daff"
+  },
+  "i": {
+    "text": "black",
+    "bg": "#75acff"
+  },
+  "j": {
+    "text": "black",
+    "bg": "#7a75ff"
+  },
+  "k": {
+    "text": "black",
+    "bg": "#b375ff"
+  },
+  "l": {
+    "text": "black",
+    "bg": "#e875ff"
+  },
+  "m": {
+    "text": "black",
+    "bg": "#ff75dd"
+  },
+  "n": {
+    "text": "white",
+    "bg": "#ff3030"
+  },
+  "o": {
+    "text": "white",
+    "bg": "#ff7c30"
+  },
+  "p": {
+    "text": "white",
+    "bg": "#ffc830"
+  },
+  "q": {
+    "text": "white",
+    "bg": "#088c53"
+  },
+  "r": {
+    "text": "white",
+    "bg": "#08588c"
+  },
+  "s": {
+    "text": "white",
+    "bg": "#46de23"
+  },
+  "t": {
+    "text": "white",
+    "bg": "#494cfc"
+  },
+  "u": {
+    "text": "white",
+    "bg": "#a923de"
+  },
+  "v": {
+    "text": "white",
+    "bg": "#5f23de"
+  },
+  "w": {
+    "text": "white",
+    "bg": "#de23de"
+  },
+  "x": {
+    "text": "white",
+    "bg": "#de2384"
+  },
+  "y": {
+    "text": "white",
+    "bg": "#23de7e"
+  },
+  "z": {
+    "text": "white",
+    "bg": "#23acde"
+  }
+}

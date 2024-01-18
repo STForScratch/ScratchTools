@@ -1,0 +1,35 @@
+.ste-comment-tags {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 1rem;
+}
+
+.ste-comment-tags span {
+    padding: .5rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    margin: .25rem;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.ste-clear-search {
+    padding: 0.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background: hsla(260, 60%, 60%, 1);
+    color: white;
+    border-radius: 0.5rem;
+    margin-left: 1rem;
+    font-size: .7rem;
+    float: right;
+    position: absolute;
+    right: 0px;
+    top: 0.6rem;
+    cursor: pointer;
+}
+
+.blocklyWorkspace > * > .ste-hide-search {
+    opacity: .25;
+}
