@@ -1,0 +1,14 @@
+{
+  "title": "More Key Inputs",
+  "description": "Adds support for more keys on \"key pressed\" blocks.",
+  "credits": [
+    {
+      "username": "o0blackbat0o",
+      "url": "https://scratch.mit.edu/users/o0blackbat0o/"
+    },
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Editor"],
+  "tags": ["New", "Featured"],
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }]
+}
