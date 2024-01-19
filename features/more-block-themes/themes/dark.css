@@ -1,0 +1,38 @@
+:root {
+  --motion-fill: #0f1e33;
+  --motion-stroke: #4c97ff;
+
+  --looks-fill: #1e1433;
+  --looks-stroke: #9966ff;
+
+  --sound-fill: #291329;
+  --sound-stroke: #cf63cf;
+
+  --event-fill: #332600;
+  --event-stroke: #ffbf00;
+
+  --control-fill: #332205;
+  --control-stroke: #ffab19;
+
+  --sensing-fill: #12232a;
+  --sensing-stroke: #5cb1d6;
+
+  --operators-fill: #112611;
+  --operators-stroke: #59c059;
+
+  --data-fill: #331c05;
+  --data-stroke: #ff8c1a;
+  --data-lists-fill: #331405;
+  --data-lists-stroke: #ff661a;
+
+  --custom-fill: #331419;
+  --custom-stroke: #ff6680;
+
+  --other-fill: #03251c;
+  --other-stroke: #0fbd8c;
+
+  --text-light: #e5e5e5;
+  --text-normal: rgba(255, 255, 255, 0.7);
+
+  --arg-border: #4c4c4c;
+}
