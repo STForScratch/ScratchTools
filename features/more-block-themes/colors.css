@@ -9,7 +9,10 @@ g > g[data-argument-type="variable"] > rect,
 g > g[data-argument-type="text"] > path.blocklyBlockBackground,
 g
   > g[data-argument-type="text"][data-shapes="argument round"]
-  > .blocklyBlockBackground.blocklyPath {
+  > .blocklyBlockBackground.blocklyPath,
+g
+  > g[data-shapes="argument round"][data-argument-type="text number"]
+  > .blocklyBlockBackground {
   fill: var(--arg-border);
   stroke: var(--custom-stroke);
 }
@@ -40,7 +43,10 @@ g[data-category="motion"] > g[data-argument-type="dropdown"] > rect,
 g[data-category="motion"] > g[data-argument-type="variable"] > rect,
 g[data-category="motion"]
   > g[data-argument-type="text"]
-  > path.blocklyBlockBackground {
+  > path.blocklyBlockBackground,
+g[data-category="motion"]
+  > g[data-shapes="argument round"][data-argument-type="text number"]
+  > .blocklyBlockBackground {
   fill: var(--arg-border);
   stroke: var(--motion-stroke);
 }
@@ -70,7 +76,10 @@ g[data-category="looks"]
   > path.blocklyBlockBackground,
 g[data-category="looks"]
   > g[data-argument-type="text"][data-shapes="argument round"]
-  > path.blocklyBlockBackground {
+  > path.blocklyBlockBackground,
+g[data-category="looks"]
+  > g[data-shapes="argument round"][data-argument-type="text number"]
+  > .blocklyBlockBackground {
   fill: var(--arg-border);
   stroke: var(--looks-stroke);
 }
@@ -97,7 +106,10 @@ g[data-category="sounds"] > g[data-argument-type="dropdown"] > rect,
 g[data-category="sounds"] > g[data-argument-type="variable"] > rect,
 g[data-category="sounds"]
   > g[data-argument-type="text"]
-  > path.blocklyBlockBackground {
+  > path.blocklyBlockBackground,
+g[data-category="sounds"]
+  > g[data-shapes="argument round"][data-argument-type="text number"]
+  > .blocklyBlockBackground {
   fill: var(--arg-border);
   stroke: var(--sound-stroke);
 }
@@ -124,7 +136,10 @@ g[data-category="events"] > g[data-argument-type="dropdown"] > rect,
 g[data-category="events"] > g[data-argument-type="variable"] > rect,
 g[data-category="events"]
   > g[data-argument-type="text"]
-  > path.blocklyBlockBackground {
+  > path.blocklyBlockBackground,
+g[data-category="events"]
+  > g[data-shapes="argument round"][data-argument-type="text number"]
+  > .blocklyBlockBackground {
   fill: var(--arg-border);
   stroke: var(--event-stroke);
 }
@@ -151,7 +166,10 @@ g[data-category="control"] > g[data-argument-type="dropdown"] > rect,
 g[data-category="control"] > g[data-argument-type="variable"] > rect,
 g[data-category="control"]
   > g[data-argument-type="text"]
-  > path.blocklyBlockBackground {
+  > path.blocklyBlockBackground,
+g[data-category="control"]
+  > g[data-shapes="argument round"][data-argument-type="text number"]
+  > .blocklyBlockBackground {
   fill: var(--arg-border);
   stroke: var(--control-stroke);
 }
@@ -192,7 +210,10 @@ g[data-category="sensing"]
   > path.blocklyBlockBackground,
 g[data-category="sensing"]
   > g[data-argument-type="text"][data-shapes="argument round"]
-  > path.blocklyBlockBackground {
+  > path.blocklyBlockBackground,
+g[data-category="sensing"]
+  > g[data-shapes="argument round"][data-argument-type="text number"]
+  > .blocklyBlockBackground {
   fill: var(--arg-border);
   stroke: var(--sensing-stroke);
 }
@@ -250,7 +271,10 @@ g[data-category="data"] > g[data-argument-type="dropdown"] > rect,
 g[data-category="data"] > g[data-argument-type="variable"] > rect,
 g[data-category="data"]
   > g[data-argument-type="text"]
-  > path.blocklyBlockBackground {
+  > path.blocklyBlockBackground,
+g[data-category="data"]
+  > g[data-shapes="argument round"][data-argument-type="text number"]
+  > .blocklyBlockBackground {
   fill: var(--arg-border);
   stroke: var(--data-stroke);
 }
@@ -277,7 +301,10 @@ g[data-category="data-lists"] > g[data-argument-type="dropdown"] > rect,
 g[data-category="data-lists"] > g[data-argument-type="variable"] > rect,
 g[data-category="data-lists"]
   > g[data-argument-type="text"]
-  > path.blocklyBlockBackground {
+  > path.blocklyBlockBackground,
+g[data-category="data-lists"]
+  > g[data-shapes="argument round"][data-argument-type="text number"]
+  > .blocklyBlockBackground {
   fill: var(--arg-border);
   stroke: var(--data-lists-stroke);
 }
@@ -302,7 +329,10 @@ g[data-category="other"] > g[data-argument-type="dropdown"] > rect,
 g[data-category="other"] > g[data-argument-type="variable"] > rect,
 g[data-category="other"]
   > g[data-argument-type="text"]
-  > path.blocklyBlockBackground {
+  > path.blocklyBlockBackground,
+g[data-category="other"]
+  > g[data-shapes="argument round"][data-argument-type="text number"]
+  > .blocklyBlockBackground {
   fill: var(--arg-border);
   stroke: var(--other-stroke);
 }
@@ -333,7 +363,8 @@ g[data-category="micro:bit"] > path[data-argument-type="boolean"],
 g[data-category="LEGO MINDSTORMS EV3"] > path[data-argument-type="boolean"],
 g[data-category="LEGO BOOST"] > path[data-argument-type="boolean"],
 g[data-category="LEGO Education WeDo 2.0"] > path[data-argument-type="boolean"],
-g[data-category="Go Direct Force & Acceleration"] > path[data-argument-type="boolean"] {
+g[data-category="Go Direct Force & Acceleration"]
+  > path[data-argument-type="boolean"] {
   stroke: var(--other-stroke) !important;
 }
 
