@@ -33,6 +33,8 @@
 
   --text-light: #000000;
   --text-normal: #000000;
+  --text-light: var(--editorDarkMode-primary-text);
+  --text-normal: var(--editorDarkMode-primary-text);
 
   --arg-border: transparent;
 }
