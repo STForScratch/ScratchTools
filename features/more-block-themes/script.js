@@ -5,7 +5,10 @@ export default async function ({ feature, console }) {
   COLORS.rel = "stylesheet"
   COLORS.href = feature.self.getResource("colors")
   COLORS.disabled = true
-  document.head.appendChild(COLORS)
+
+  ScratchTools.waitForElements("head", function() {
+    document.head.appendChild(COLORS)
+  })
 
   let THEMES = [
     {
