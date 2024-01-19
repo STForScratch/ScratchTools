@@ -1,0 +1,21 @@
+{
+  "title": "More Block Themes",
+  "description": "Adds additional themes for blocks in the code editor.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Editor"],
+  "tags": ["New", "Featured"],
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+  "styles": [
+    { "file": "main.css", "runOn": "/projects/*" }
+  ],
+  "resources": [
+    { "name": "check", "path": "/check.svg" },
+    { "name": "circle", "path": "/circle.svg" },
+    { "name": "colors", "path": "/colors.css" },
+    { "name": "dark", "path": "/themes/dark.css" },
+    { "name": "transparent", "path": "/themes/transparent.css" },
+    { "name": "ultradark", "path": "/themes/ultradark.css" }
+  ]
+}

@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "more-block-themes",
+    "versionAdded": "v3.7.0"
+  },
+  {
+    "version": 2,
     "id": "more-key-inputs",
     "versionAdded": "v3.7.0"
   },
