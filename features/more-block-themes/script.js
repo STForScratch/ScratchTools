@@ -12,15 +12,15 @@ export default async function ({ feature, console }) {
 
   let THEMES = [
     {
-      name: "Dark",
+      name: feature.msg("theme-dark"),
       id: "dark",
     },
     {
-      name: "Transparent",
+      name: feature.msg("theme-transparent"),
       id: "transparent",
     },
     {
-      name: "Ultradark",
+      name: feature.msg("theme-ultradark"),
       id: "ultradark",
     },
   ];
