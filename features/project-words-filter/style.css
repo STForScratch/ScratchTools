@@ -1,0 +1,13 @@
+.filter-hide {
+    display: none;
+}
+.filter-blur {
+    transition: 0.3s;
+    filter: blur(5px);
+    opacity: 0.6;
+}
+.filter-blur:hover {
+    transition: 0.3s; 
+    filter: none;
+    opacity: 1;
+}

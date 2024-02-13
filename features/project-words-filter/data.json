@@ -1,0 +1,22 @@
+{
+    "title": "Project Words Filter",
+    "description": "Hide projects that contain certain words on the search page.",
+    "credits": [
+        { "username": "Masaabu-YT", "url": "https://scratch.mit.edu/users/Masaabu-YT/" }
+    ],
+    "type": ["Website"],
+    "tags": ["New", "Featured"],
+    "dynamic": true,
+    "options": [
+        { "id": "blur", "name": "Blur thumbnails without erasing the project.", "type": 1 },
+        { "id": "filter-words", "name": "filter words (Split by comma)", "type": 0 }
+    ],
+    "scripts": [
+        { "file": "script.js", "runOn": "/explore/projects/*" },
+        { "file": "script.js", "runOn": "/search/projects/*" }
+    ],
+    "styles": [
+        { "file": "style.css", "runOn": "/explore/projects/*" },
+        { "file": "style.css", "runOn": "/search/projects*" }
+    ]
+}
