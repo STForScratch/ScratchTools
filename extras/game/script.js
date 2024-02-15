@@ -30,14 +30,19 @@ const reset = async () => {
         console.error("Error during storage removal:", error);
     }
 }
+
 // JavaScript
 var clickElement = document.getElementById('click');
 
-clickElement.addEventListener('click', function() {
-    // Remove the pop class and force a reflow to allow the animation to be restarted mid-animation
-    this.classList.remove('pop');
-    void this.offsetWidth;
-    this.classList.add('pop');
+clickElement.addEventListener('mousedown', function() {
+    this.classList.add('scale-down');
+});
+
+clickElement.addEventListener('mouseup', function() {
+    this.classList.remove('scale-down');
+});
+clickElement.addEventListener('mouseleave', function() {
+    this.classList.remove('scale-down');
 });
 
 run();
