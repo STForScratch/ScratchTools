@@ -2,9 +2,6 @@ let filterWords;
 let wordList;
 let filterType;
 
-if (document.querySelector('div.filter-controls') === null)
-    filterControl(wordList)
-
 function filterControl(wordList) {
     let newElement = document.createElement('div');
     newElement.classList.add("filter-controls")
