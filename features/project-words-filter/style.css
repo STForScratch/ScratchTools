@@ -11,3 +11,14 @@
     filter: none;
     opacity: 1;
 }
+.filter-controls {
+    display: flex;
+    margin: 0 auto;
+    border-bottom: 1px solid #d9d9d9;
+    padding: 8px 0;
+    width: 58.75rem;
+    justify-content: space-between;
+}
+.filter-word-tag.add-word{
+    border-radius: 5px;
+}
