@@ -369,6 +369,10 @@
     "file": "upload-img-directly",
     "type": ["Forums"],
     "tags": ["New", "Recommended"]
+    "components": [{
+    "type": "warning",
+    "content": "Due to a recent Scratch update, this feature is no longer supported and does not work anymore."
+  }]
   },
   {
     "title": "Leave Studio Button",
