@@ -23,13 +23,16 @@ a {
   color: var(--primary-color);
   opacity: 0.75;
   cursor: pointer;
+  z-index: 999;
 }
 
-.more-settings-btn svg, .feedback-btn svg, .support-btn svg {
+.more-settings-btn svg,
+.feedback-btn svg,
+.support-btn svg {
   height: 1rem;
   position: relative;
   top: 0.2rem;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   width: 1rem;
 }
 
@@ -44,6 +47,7 @@ a {
   color: var(--primary-color);
   opacity: 0.75;
   cursor: pointer;
+  z-index: 999;
 }
 
 .feedback-btn img {
@@ -61,6 +65,7 @@ a {
   color: var(--primary-color);
   opacity: 0.75;
   cursor: pointer;
+  z-index: 999;
 }
 
 .support-btn img {
@@ -83,7 +88,7 @@ a {
   padding-left: 1.5rem !important;
   padding-right: 1.5rem !important;
   color: var(--primary-color);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   padding: 1rem;
   padding-top: 5px;
   margin-bottom: 0px;
@@ -92,6 +97,7 @@ a {
   flex-shrink: 0;
   flex-grow: 0;
   position: relative;
+  border-bottom: 3px solid var(--feature-input-bg);
 }
 
 .settings {
@@ -147,9 +153,9 @@ a {
 }
 
 .feature h3 {
-  font-size: 1.25rem !important;
-  margin-bottom: -0.5rem;
-  width: 80%;
+  font-size: 1.2rem !important;
+  margin-bottom: 0rem;
+  max-width: calc(90% - 5rem);
 }
 
 .feature h3[style="font-size: 1.5em;"] {
@@ -203,8 +209,8 @@ a {
 }
 .section2 {
   border: 0px solid black;
-  min-height: 100% !important;
-  height: 100vh;
+  min-height: calc(100% - 2.5rem - 0.5em - 0.5em) !important;
+  height: calc(100vh - 2.5rem - 0.5em - 0.5em);
   width: 70%;
   margin-left: 0em;
   overflow: auto;
@@ -269,6 +275,13 @@ a {
   padding-left: 2rem;
   height: 2.5rem;
 }
+
+.main-page {
+  height: 2.5rem;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
 .settings-title {
   font-size: 1.2rem;
   margin-left: 0.8rem;
@@ -291,10 +304,8 @@ a {
   margin-bottom: 2.75em;
   color: var(--primary-color);
   margin-bottom: 0px;
-  margin-top: 4rem;
   margin-left: 2rem;
   position: relative;
-  bottom: -1rem;
 }
 
 .searchbarbutton {
@@ -309,9 +320,10 @@ a {
   background-position: 47% 46%;
   background-size: 20px 20px;
   background-repeat: no-repeat;
-  top: 4.175rem;
+  bottom: 0px;
   position: relative;
   left: 0px;
+  margin-bottom: 0px;
 }
 
 .sectionwrap {
@@ -321,7 +333,7 @@ a {
 .section1 .note {
   color: rgba(0, 0, 0, 0.8);
   padding: 2em;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   margin-top: 1rem;
 }
 .section1 .note.yellow {
@@ -430,6 +442,7 @@ button.secondary-btn {
   transition: outline 0.2s;
   cursor: pointer;
   flex-shrink: 0;
+  border-bottom: 3px solid var(--feature-input-bg);
 }
 
 .feature-suggestion:hover {
@@ -487,9 +500,8 @@ button.secondary-btn {
 .buttons {
   display: inline-block;
   position: relative;
-  top: 3.1rem;
   border-left: 2px solid var(--searchbar-bg);
-    margin-left: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .buttons button {
@@ -541,6 +553,18 @@ body[data-filter="Forums"] .feature {
 
 body[data-filter="Forums"] .feature[data-type*="Forums"] {
   display: inline-block;
+}
+
+.ste-easter-egg {
+  display: none !important;
+}
+
+body[data-filter="Egg"] .feature {
+  display: none;
+}
+
+body[data-filter="Egg"] .feature[data-type*="Egg"] {
+  display: inline-block !important;
 }
 
 .end {
@@ -604,36 +628,37 @@ body[data-filter="Forums"] .feature[data-type*="Forums"] {
   }
 
   .feedback-btn,
-  .more-settings-btn, .support-btn {
+  .more-settings-btn,
+  .support-btn {
     right: 1rem;
     left: inherit;
+    margin-right: 15px;
   }
 }
 
-
-.themes-div .dropdown{
+.themes-div .dropdown {
   position: relative;
-    display: inline-block;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    height: max-content;
-    width: 12.5rem;
-    box-sizing: border-box;
-    background: var(--theme);
-    float: right;
-    margin-top: 3.8em;
-    right: -4.5em;
-    border-radius: 0 0 var(--radius) var(--radius);
-    overflow: hidden;
-    border: 1.5px solid rgba(0,0,0,0.1);
-    border-top: none;
-    box-shadow: 0px 10px 20px -15px rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  height: max-content;
+  width: 12.5rem;
+  box-sizing: border-box;
+  background: var(--theme);
+  float: right;
+  margin-top: 3.8em;
+  right: -4.5em;
+  border-radius: 0 0 var(--radius) var(--radius);
+  overflow: hidden;
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  border-top: none;
+  box-shadow: 0px 10px 20px -15px rgba(0, 0, 0, 0.5);
 }
 
-.themes-div .dropdown .item{
+.themes-div .dropdown .item {
   height: 2.5rem;
   width: 12.5rem;
-  color:white;
+  color: white;
   font-size: 1rem;
   background: var(--theme);
   padding: 0.5rem;
@@ -644,7 +669,7 @@ body[data-filter="Forums"] .feature[data-type*="Forums"] {
   align-items: center;
   padding: 0.5em;
 }
-.themes-div .dropdown .item .circle{
+.themes-div .dropdown .item .circle {
   height: 1.5rem;
   width: 1.5rem;
   border-radius: 50%;
@@ -655,12 +680,12 @@ body[data-filter="Forums"] .feature[data-type*="Forums"] {
   margin-left: 0.5rem; */
 }
 
-.themes-div .dropdown .item#text{
+.themes-div .dropdown .item#text {
   float: left;
   margin-top: 0.5rem;
 }
-.themes-div .dropdown .item:hover{
-  background:color-mix(in srgb, var(--theme) 95%, black);
+.themes-div .dropdown .item:hover {
+  background: color-mix(in srgb, var(--theme) 95%, black);
 }
 
 .feedback-btn .notification {
@@ -674,4 +699,142 @@ body[data-filter="Forums"] .feature[data-type*="Forums"] {
   padding-right: 0.75rem;
   transform: scale(80%);
   display: inline-block;
+}
+
+.feature span.new-feature-tag {
+  background-color: var(--theme);
+  color: white;
+  padding: 0.25rem;
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 0.75rem;
+  position: relative;
+  top: -0.15rem;
+  line-height: normal;
+  user-select: none;
+  transition: opacity 0.3s, transform 0.3s;
+  opacity: 1;
+  transform: none;
+}
+
+.feature span.new-feature-tag:hover {
+  opacity: 0.75;
+  transform: scale(105%);
+}
+
+.feature > h3 {
+  display: inline-block;
+}
+
+span.new-feature-tag.beta {
+  background-color: #fc8c4f;
+  cursor: pointer !important;
+}
+
+.warning-component {
+  background-color: #fc8c4f20;
+  border: 1.5px solid #fc8c4f;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  border-bottom-width: 3px;
+  line-height: 1.2rem;
+  color: var(--primary-color);
+}
+
+.warning-component img {
+  height: 1rem;
+  margin-right: 0.5rem;
+  margin-inline-end: 10px;
+  transform: scale(1.15);
+}
+
+.info-component {
+  background-color: #fcd44f20;
+  border: 1.5px solid #fcd44f;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  border-bottom-width: 3px;
+  line-height: 1.2rem;
+  color: var(--primary-color);
+}
+
+.info-component img {
+  height: 1rem;
+  margin-right: 0.5rem;
+  margin-inline-end: 10px;
+  transform: scale(1.15);
+}
+
+.feature h3 .icon svg {
+  height: 1rem;
+  width: 1rem;
+  margin-right: 1.5rem;
+  position: relative;
+  left: 0.6rem;
+  transform: scale(1.5);
+  top: 0.1rem;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.feature h3 .icon svg:hover {
+  opacity: 0.75;
+  transform: scale(1.8);
+  cursor: pointer;
+}
+
+.special-switch {
+  position: relative;
+  width: 55px;
+  height: 28px;
+  margin: 0px;
+  transform: scale(80%);
+  float: right;
+  position: relative;
+  top: -0.25rem;
+}
+
+.feature table,
+.feature table tr {
+  width: 100%;
+}
+
+.special-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.feature table {
+  margin-top: .5rem;
+}
+
+.btn-bg {
+  background: linear-gradient(45deg, var(--background), transparent);
+  height: 10rem;
+  width: 15rem;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  border-top-right-radius: 50%;
+  filter: blur(1rem);
+}
+
+.section1 .sectionwrap {
+  height: calc(100vh - 6rem);
+  overflow-y: auto;
+}
+
+body {
+  overflow-y: hidden;
 }
