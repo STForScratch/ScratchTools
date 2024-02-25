@@ -1,0 +1,11 @@
+{
+  "title": "Tab Message Count",
+  "description": "Displays your message count in the tab favicon, the Scratch icon at the top of your tab.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "scripts": [{ "file": "script.js", "runOn": "/*" }],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "dynamic": true
+}
