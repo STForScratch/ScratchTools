@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "favicon-messages",
+    "versionAdded": "v3.7.0"
+  },
+  {
+    "version": 2,
     "id": "show-emoji-names",
     "versionAdded": "v3.7.0"
   },
