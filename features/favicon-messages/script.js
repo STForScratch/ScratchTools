@@ -13,7 +13,7 @@ export default async function ({ feature, console }) {
       ctx.fill();
 
       ctx.fillStyle = "white";
-      ctx.font = "bold " + 10 / (text.length * .4) + "px Arial";
+      ctx.font = "bold " + 10 / (text.length * 0.4) + "px Arial";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.fillText(text, canvas.width - 10, 14);
@@ -22,24 +22,27 @@ export default async function ({ feature, console }) {
       var link = document.createElement("link");
       link.type = "image/x-icon";
       link.rel = "shortcut icon";
+      link.dataset.ste = "favicon-messages";
       link.href = newFavicon;
       document.head.appendChild(link);
     };
   }
 
-  window.setFaviconCount = setFaviconCount
-  async function setFaviconCount(count) {
+  window.setFaviconCount = setFaviconCount;
+  async function setFaviconCount() {
     var canvas = document.createElement("canvas");
     canvas.width = 20;
     canvas.height = 20;
 
+    let username = (await feature.auth.fetch())?.user?.username;
+
     let data = await (
       await fetch(
-        "https://scratch.mit.edu/messages/ajax/get-message-count/?scratchtools=" +
-          Date.now().toString()
+        `https://api.scratch.mit.edu/users/${username}/messages/count?really-no-cache=${Date.now().toString()}`
       )
     ).json();
-    drawNotification(canvas, count?.toString() || data.msg_count.toString());
+    document.querySelector("link[rel='shortcut icon']")?.remove();
+    drawNotification(canvas, data.count.toString());
   }
 
   let interval = setInterval(setFaviconCount, 60000);
@@ -57,6 +60,6 @@ export default async function ({ feature, console }) {
 
   feature.addEventListener("enabled", function () {
     interval = setInterval(setFaviconCount, 60000);
-    setFaviconCount()
+    setFaviconCount();
   });
 }
