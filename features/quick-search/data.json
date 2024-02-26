@@ -1,0 +1,31 @@
+{
+  "title": "Quick Search",
+  "description": "Easily jump between pages on the Scratch website with just the click of Control + K.",
+  "credits": [
+    {
+      "username": "rgantzos",
+      "url": "https://scratch.mit.edu/users/rgantzos/"
+    }
+  ],
+  "dynamic": true,
+  "styles": [{ "file": "style.css", "runOn": "/*" }],
+  "scripts": [{ "file": "script.js", "runOn": "/*" }],
+  "tags": ["New"],
+  "type": ["Website"],
+  "components": [
+    {
+      "type": "info",
+      "content": "For Mac users, use Command + K to open quick search.",
+      "if": {
+        "type": "all",
+        "conditions": [
+          {
+            "type": "os",
+            "value": "Macintosh"
+          }
+        ]
+      }
+    }
+  ],
+  "resources": [{ "name": "scatt", "path": "/scatt.png" }]
+}
