@@ -101,7 +101,7 @@ export default async function ({ feature, console }) {
       document.querySelector(".qs-escape-instructions").style.display = "none";
       let span = document.createElement("span");
       span.className = "qs-ai-instructions";
-      span.innerHTML = `<span class='qs-key'>AI</span> mode entered.`;
+      span.innerHTML = `<span class='qs-key'>Beta</span> Scatt AI`;
       span.firstChild.style.borderColor = "#4fb1fc";
       span.style.color = "#4fb1fc";
       search.div.firstChild.appendChild(span);
