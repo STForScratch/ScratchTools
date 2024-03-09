@@ -1,0 +1,12 @@
+{
+  "title": "Download Projects",
+  "description": "Adds a button to project pages that allows you to download the project as an .sb3 file.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
+  "resources": [{ "name": "download-btn", "path": "/download.svg" }]
+}

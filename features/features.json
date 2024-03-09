@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "download-project",
+    "versionAdded": "v3.7.0"
+  },
+  {
+    "version": 2,
     "id": "blur-modal",
     "versionAdded": "v3.7.0"
   },
