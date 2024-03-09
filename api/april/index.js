@@ -1,5 +1,5 @@
 export default async function () {
-    if (!(new Date().getMonth() === 3 && new Date().getDate() === 1));
+    if (!(new Date().getMonth() === 3 && new Date().getDate() === 1)) return;
 
     if (window.location.pathname.toLowerCase().startsWith("/users/")) {
         let pong = await import("./pong/profile.js")
