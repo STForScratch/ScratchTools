@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "blur-modal",
+    "versionAdded": "v3.7.0"
+  },
+  {
+    "version": 2,
     "id": "quick-search",
     "versionAdded": "v3.7.0"
   },
