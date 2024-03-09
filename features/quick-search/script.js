@@ -29,6 +29,8 @@ export default async function ({ feature, console }) {
       search.input.value = "";
       search.div.dataset.mode = "normal";
       search.setResults(getDefaultResults());
+      document.querySelector(".qs-ai-instructions")?.remove()
+      document.querySelector(".qs-escape-instructions").style.display = null
       getAdditionalResults(search.input);
     }
     if (
