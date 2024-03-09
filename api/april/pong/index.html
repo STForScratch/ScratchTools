@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pong | ScratchTools</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+      body {
+        margin: 0em;
+        font-family: "Inter", sans-serif;
+        background-color: var(--background);
+      }
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      #gameCanvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      #paddle {
+        background-color: white;
+        width: 8%;
+        height: 1%;
+        position: absolute;
+        bottom: 0;
+        left: 46%;
+        border-radius: 0.5rem;
+      }
+
+      #ball {
+        display: none;
+      }
+
+      h1.score {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        font-size: 8rem;
+        color: black;
+        margin: 0px;
+        opacity: 0.4;
+      }
+
+      .hi-score {
+        display: none;
+        position: fixed;
+        right: 2rem;
+        top: 2rem;
+        color: black;
+        opacity: 0.8;
+        margin: 0px;
+        font-size: 1.4rem;
+      }
+
+      .final-score {
+        background-color: rgba(255, 255, 255, 0.7);
+        width: 20rem;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        border-radius: 1rem;
+        text-align: center;
+        padding: .5rem;
+      }
+
+      .final-score h1 {
+        font-size: 7rem;
+        margin: 0px;
+      }
+
+      .final-score h2 {
+        font-size: 1.4rem;
+        margin-top: .2rem;
+        margin-bottom: 2rem;
+      }
+
+      .final-score button {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 0.8rem;
+        background: black;
+        color: #ffd663;
+        font-family: "Inter", sans-serif;
+        font-weight: 500 !important;
+        border-radius: .75rem;
+        border: 0px;
+        cursor: pointer;
+        transform: none;
+        transition: transform .3s;
+      }
+
+      .final-score button:hover {
+        transform: scale(.9);
+      }
+    </style>
+  </head>
+  <body>
+    <img class="avatar" style="display: none" />
+
+    <canvas id="gameCanvas"></canvas>
+    <h1 class="score"></h1>
+    <h2 class="hi-score">HI</h2>
+
+    <div class="final-score" style="display: none">
+      <h1></h1>
+      <h2>Final Score</h2>
+      <button class="play-again">Play Again</button>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

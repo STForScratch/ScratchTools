@@ -669,6 +669,11 @@ chrome.runtime.onMessageExternal.addListener(async function (
     });
     chrome.tabs.remove(sender.tab.id, function () {});
   }
+  if (msg.msg === "openPong") {
+    await chrome.tabs.create({
+      url: "/api/april/pong/index.html?username=" + msg.username + "&id=" + msg.id,
+    });
+  }
   if (msg.msg === "openDashboardPage") {
     await chrome.tabs.create({
       url: "/extras/dashboard/index.html?code=" + msg.token + "&username=" + msg.username,
