@@ -6,14 +6,13 @@ export default async function ({ feature, console }) {
   });
 
   ScratchTools.waitForElements("span.emoji-text img.emoji", function (img) {
-    console.log(img);
     img.title = capitalize(
       img.src.split("/")[5].split(".")[0].replaceAll("-", " ")
     );
   });
 
   function capitalize(string) {
-    string
+    return string
       .split(" ")
       .map((word) => {
         return word[0].toUpperCase() + word.substring(1);
