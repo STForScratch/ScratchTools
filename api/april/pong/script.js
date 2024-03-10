@@ -53,7 +53,7 @@ async function fetchAndProcessImage(url) {
 }
 
 fetchAndProcessImage(
-  `http://localhost:3000/pfp/${new URLSearchParams(window.location.search).get(
+  `https://data.scratchtools.app/pfp/${new URLSearchParams(window.location.search).get(
     "id"
   )}/`
 );
