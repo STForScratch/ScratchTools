@@ -1,4 +1,36 @@
 {
+  "download-project/title": { "message": "Projeleri İndir" },
+  "download-project/description": {
+    "message": "Proje sayfalarına, projeyi .sb3 dosyası olarak indirmenize olanak tanıyan bir buton ekler."
+  },
+  "blur-modal/title": { "message": "Modal Arka Planları Bulanıklaştır" },
+  "blur-modal/description": {
+    "message": "Modalların renkli bir örtü yerine arka planlarını bulanıklaştırır."
+  },
+  "quick-search/title": { "message": "Hızlı Arama" },
+  "quick-search/description": {
+    "message": "Scratch web sitesinde Control + K tuşlarına basarak sayfalar arasında kolayca geçiş yapın."
+  },
+  "favicon-messages/title": { "message": "Sekme Mesaj Sayısı" },
+  "favicon-messages/description": {
+    "message": "Tab favicon'da mesaj sayınızı, sekmenizin üstündeki Scratch simgesini görüntüler."
+  },
+  "show-emoji-names/title": { "message": "Emoji İsmini Göster" },
+  "show-emoji-names/description": {
+    "message": "Yorumlardaki Scratch emojilerinin üzerine gelerek isimlerini görmenizi sağlar."
+  },
+  "more-block-themes/title": { "message": "Daha Fazla Blok Teması" },
+  "more-block-themes/description": {
+    "message": "Kod düzenleyicisindeki bloklar için ek temalar ekler."
+  },
+  "more-key-inputs/title": { "message": "Daha Fazla Anahtar Girişi" },
+  "more-key-inputs/description": {
+    "message": "\"Tuşa basıldı\" bloklarında daha fazla tuş desteği ekler."
+  },
+  "comment-tags/title": { "message": "Editör Yorum Etiketleri" },
+  "comment-tags/description": {
+    "message": "Editör yorumlarına etiket ekleyerek onları kolayca düzenleyin."
+  },
   "profile-flag/title": { "message": "Profilde Bayrak" },
   "profile-flag/description": {
     "message": "Profil sayfalarında seçilen konumların yakınına bayrak emojileri ekler."

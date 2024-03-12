@@ -1,0 +1,676 @@
+{
+  "download-project/title": { "message": "Descargar Proyectos" },
+  "download-project/description": {
+    "message": "Agrega un botón en los proyectos que te permite descargar el proyecto como un archivo sb3."
+  },
+  "blur-modal/title": { "message": "Borronear fondos modales" },
+  "blur-modal/description": {
+    "message": "Borronea los fondos de los modales en lugar de tener una superposición de color."
+  },
+  "quick-search/title": { "message": "Búsqueda rápida" },
+  "quick-search/description": {
+    "message": "Salta entre páginas fácilmente en la página web de Scratch con Control + K."
+  },
+  "favicon-messages/title": { "message": "Contador de mensajes" },
+  "favicon-messages/description": {
+    "message": "Muestra el contador de mensajes en el logo de Scratch en la esquina superior izquierda del menú principal."
+  },
+  "show-emoji-names/title": { "message": "Mostrar los nombres de los emojis" },
+  "show-emoji-names/description": {
+    "message": "Te permite ver los nombres de los emojis en los comentarios cuando pases el cursor por encima de ellos."
+  },
+  "more-block-themes/title": { "message": "Más temáticas para bloques" },
+  "more-block-themes/description": {
+    "message": "Agrega temáticas adicionales en el editor de bloques."
+  },
+  "more-key-inputs/title": { "message": "Más entradas de teclas" },
+  "more-key-inputs/description": {
+    "message": "Agrega soporte para más teclas en los bloques de \"tecla presionada\"."
+  },
+  "comment-tags/title": { "message": "Etiquetas para comentarios del editor" },
+  "comment-tags/description": {
+    "message": "Agrega etiquetas a los comentarios del editor para organizarlos fácilmente."
+  },
+  "profile-flag/title": { "message": "Bandera en el perfil" },
+  "profile-flag/description": {
+    "message": "Agrega emojis de banderas cerca de ubicaciones seleccionadas en las páginas de perfil."
+  },
+  "follow-on-projects/title": {
+    "message": "Seguir desde la página de proyecto"
+  },
+  "follow-on-projects/description": {
+    "message": "Sigue a usuarios directamente desde la página de un proyecto en vez de yendo hacia su perfil."
+  },
+  "dark-paint-editor/title": { "message": "Cambiar tono del fondo del editor" },
+  "dark-paint-editor/description": {
+    "message": "Agrega un botón al lado de los controles de zoom en el editor de sprites que te permite cambiar el tono de su fondo entre claro y oscuro."
+  },
+  "specific-replies/title": {
+    "message": "Respuestas de comentarios especificas"
+  },
+  "specific-replies/description": {
+    "message": "En los mensajes relacionados a comentarios, se especifica a quién un comentario estaba respondiendo."
+  },
+  "better-trending-thumbnails/title": { "message": "Miniaturas más grandes" },
+  "better-trending-thumbnails/description": {
+    "message": "Actualiza las miniaturas en la página de tendencias y búsqueda para que sean más grandes y encajen mejor en el cuadro del proyecto."
+  },
+  "relevant-forum-posts/title": {
+    "message": "Mostrar publicaciones del foro relevantes"
+  },
+  "relevant-forum-posts/description": {
+    "message": "Al crear un nuevo tema en el foro, muestra otros temas que pueden ser similares al tuyo."
+  },
+  "anti-generic/title": { "message": "Anti-genérico" },
+  "anti-generic/description": {
+    "message": "En las páginas de explorar y tendencia, esta función beta automácitamente esconde proyectos repetitivos, junto con proyectos que parecen genéricos. Esto incluye proyectos con muchas etiquetas, nombres comúnes, y proyectos duplicados."
+  },
+  "wrap-lists/title": { "message": "Romper ítems en las listas" },
+  "wrap-lists/description": {
+    "message": "Muestra el texto en los ítems de las listas normalmente sin cortarlos si son demasiado largos."
+  },
+  "live-stats/title": { "message": "Estadísticas en tiempo real" },
+  "live-stats/description": {
+    "message": "Actualiza en tiempo real los corazones, favoritos, remixes y vistas en un proyecto, sin tener que refrescar la página para actualizarlo."
+  },
+  "hide-scratch-news/title": { "message": "Esconder las Noticias de Scratch" },
+  "hide-scratch-news/description": {
+    "message": "Esconde la sección de \"Noticias de Scratch\" en la página principal de Scratch."
+  },
+  "watch-later/title": { "message": "Guardar para ver más tarde" },
+  "watch-later/description": {
+    "message": "Te permite guardar proyectos que quieras ver luego, y aparecerán en una página Ver más tarde."
+  },
+  "remove-project-button/title": { "message": "Botón para eliminar proyecto" },
+  "remove-project-button/description": {
+    "message": "Agrega un botón a los proyectos en los Estudios, que te permite fácilmente eliminarlos de ellos sin tener que abrir el menú."
+  },
+  "right-side-flag/title": { "message": "Bandera verde en la derecha" },
+  "right-side-flag/description": {
+    "message": "Mueve la bandera verde y el ícono de detener hacia el lado derecho del escenario."
+  },
+  "love-fave-animate/title": { "message": "Animaciones a los corazones" },
+  "love-fave-animate/description": {
+    "message": "Al hacer clic en el corazón y el favorito en los proyectos, estos serán animados."
+  },
+  "default-to-local/title": { "message": "Local por defecto" },
+  "default-to-local/description": {
+    "message": "Al crear una nueva variable, establece el modo predeterminado de ella como \"Sólo para este sprite\", en vez de \"Para todos los sprites\"."
+  },
+  "start-stop-hotkeys/title": { "message": "Atajos para la bandera verde" },
+  "start-stop-hotkeys/description": {
+    "message": "Presiona Control + G para comenzar o detener un proyecto, dependiendo de si este está en curso o no."
+  },
+  "opacity-slider/title": { "message": "Barra de opacidad" },
+  "opacity-slider/description": {
+    "message": "Agrega una barra deslizante en el editor de sprites que te permite cambiar la opacidad de ellos."
+  },
+  "more-studios/title": { "message": "Más estudios" },
+  "more-studios/description": {
+    "message": "Te permite agregar proyectos a más estudios en lugar de 20."
+  },
+  "localized-explore/title": { "message": "Proyectos de tu país" },
+  "localized-explore/description": {
+    "message": "En la página de Explorar, hace menos visibles a los proyectos que provienen de otros países. Esto es para sólo mostrar proyectos que tú entiendas."
+  },
+  "project-bar/title": { "message": "Barra de proyecto" },
+  "project-bar/description": {
+    "message": "Continúa viendo la información de un proyecto, incluso luego de que hayas deslizado tras las notas y créditos."
+  },
+  "more-news/title": { "message": "Más Noticias de Scratch" },
+  "more-news/description": {
+    "message": "En la página principal, podrás deslizar por la sección de Noticias de Scratch y cargar más resultados."
+  },
+  "dumpster-fire/title": { "message": "Basurero en llamas" },
+  "dumpster-fire/description": {
+    "message": "La página principal de Scratch es mentirosa con su sección de \"Proyectos destacados\". Esto le cambia su nombre a uno mucho más adecuado."
+  },
+  "steal-game/title": { "message": "Robar juego" },
+  "steal-game/description": {
+    "message": "Cambia el texto del botón de Remix a \"Robar juego\"."
+  },
+  "statistics/title": { "message": "Estadísticas" },
+  "statistics/description": {
+    "message": "Añade un botón de estadísticas en la página de \"Mis Cosas\" que enlaza a tu perfil de ScratchStats."
+  },
+  "echo-effect/title": { "message": "Efecto de eco" },
+  "echo-effect/description": {
+    "message": "Añade el efecto de eco de vuelta al editor de sonido de Scratch."
+  },
+  "compact-buttons/title": { "message": "Botones compactos" },
+  "compact-buttons/description": {
+    "message": "El texto de los botones es eliminado y recibe un nuevo icono si no lo tiene."
+  },
+  "message-count/title": { "message": "Contador de mensajes" },
+  "message-count/description": {
+    "message": "Muestra el contador de mensajes de el usuario al lado de su país."
+  },
+  "move-share-button/title": { "message": "Mover botón de compartir" },
+  "move-share-button/description": {
+    "message": "En la página del proyecto, mueve el botón de compartir al lado de el botón de \"Ver dentro\""
+  },
+  "preview-textboxes/title": { "message": "Vista previa de cuadros de texto" },
+  "preview-textboxes/description": {
+    "message": "Tenga una vista previa de tus apartados de \"Acerca de mí\" y \"En qué estoy trabajando\" y las Instrucciones y Notas y Créditos de tus proyectos para ver como se ve para otros usuarios."
+  },
+  "more-tutorials/title": { "message": "Más tutoriales" },
+  "more-tutorials/description": {
+    "message": "En la página de Ideas, añade tutoriales adicionales de otros Scratchers."
+  },
+  "simplify-action-buttons/title": {
+    "message": "Simplificar botones de acción"
+  },
+  "simplify-action-buttons/description": {
+    "message": "Muestra los botones de acción debajo de Notas y Créditos como sus iconos."
+  },
+  "slash-to-search/title": { "message": "Barra para buscar" },
+  "slash-to-search/description": {
+    "message": "Pulse la tecla de barra (/) para seleccionar la barra de búsqueda."
+  },
+  "shared-clipboard/title": { "message": "Portapapeles compartido" },
+  "shared-clipboard/description": {
+    "message": "Permite copiar y pegar entre editores de disfraces de distintos proyectos."
+  },
+  "important-messages/title": { "message": "Mensajes importantes" },
+  "important-messages/description": {
+    "message": "Separa mensajes importantes en la página de mensajes."
+  },
+  "hide-footer/title": { "message": "Ocultar pie de página" },
+  "hide-footer/description": {
+    "message": "El pie de página ocupa mucho espacio innecesario, !así que ocúltalo!"
+  },
+  "original-colors/title": { "message": "Revertir a azul" },
+  "original-colors/description": {
+    "message": "Cambia todos los colores de la página web de Scratch de vuelta a el color original de 3.0, previo al morado."
+  },
+  "simplify-editor-tabs/title": {
+    "message": "Simplificar ventanas del editor"
+  },
+  "simplify-editor-tabs/description": {
+    "message": "Cambia las ventanas del editor a un icono en un circulo."
+  },
+  "live-character-counts/title": { "message": "Contador de caracteres" },
+  "live-character-counts/description": {
+    "message": "En foros, estudios y paginas de proyecto, muestra el contador de caracteres en los cuadros de texto."
+  },
+  "advanced-search/title": { "message": "Buscar perfiles" },
+  "advanced-search/description": {
+    "message": "Cuando busques un usuario, un link a su perfil estará al principio de la página."
+  },
+  "studio-links/title": { "message": "Enlaces de estudio como títulos" },
+  "studio-links/description": {
+    "message": "Reemplaza enlaces de estudio con sus títulos,"
+  },
+  "block-studios/title": {
+    "message": "Bloquear actividad de estudios individuales"
+  },
+  "block-studios/description": {
+    "message": "Desactiva los mensajes de actividad de estudios especificos."
+  },
+  "block-messages/title": { "message": "Bloquear usuarios" },
+  "block-messages/description": {
+    "message": "Esconde mensajes de otros usuarios que has bloqueado. Otros usuarios no sabrán que los has bloqueado."
+  },
+  "two-colors/title": { "message": "Colores 2.0 para bloques" },
+  "two-colors/description": {
+    "message": "Reemplaza los colores de los bloques en el editor con los de la versión 2.0"
+  },
+  "project-links/title": { "message": "Enlaces de proyecto como títulos" },
+  "project-links/description": {
+    "message": "Reemplaza enlaces de proyecto con sus títulos"
+  },
+  "emoji-status/title": { "message": "Estados de emoji" },
+  "emoji-status/description": {
+    "message": "Pon un emoji como estado de tu perfil. Otros usuarios de ScratchTools podrán ver este estado-"
+  },
+  "display-name/title": { "message": "Nombres de muestra" },
+  "display-name/description": {
+    "message": "Muestra nombres de muestra para Scratchers y permite ponerte tu propio nombre de muestra. Los nombres de muestra están al lado de tu nombre de usuario y no están limitados como este."
+  },
+  "isonline/title": { "message": "Mostrar si el usuario esta en línea" },
+  "isonline/description": {
+    "message": "En las páginas de perfiles, muestra si un usuario está en línea. También mostrara a otros usuarios si tú estás en línea. "
+  },
+  "plain-background/title": { "message": "Fondo plano" },
+  "plain-background/description": {
+    "message": "Oculta los puntos del fondo de el editor de código."
+  },
+  "hide-advertisements/title": { "message": "Ocultar anuncios en comentarios" },
+  "hide-advertisements/description": {
+    "message": "Esconde los anuncios en los comentarios de perfiles, proyectos y estudios. Pueden llegar a ocupar un gran espacio en los comentarios."
+  },
+  "hide-block-category-names/title": {
+    "message": "Ocultar nombres de categorías"
+  },
+  "hide-block-category-names/description": {
+    "message": "Cambia las categorías de bloques en el editor para solo mostrar los colores de las categorias."
+  },
+  "unlisted-projects/title": { "message": "Proyectos ocultos" },
+  "unlisted-projects/description": {
+    "message": "Le permite generar enlaces para compartir proyectos no compartidos en el editor."
+  },
+  "stats-percentages/title": {
+    "message": "Mostrar porcentajes para estadísticas de proyecto"
+  },
+  "stats-percentages/description": {
+    "message": "En la página de \"Mis Cosas\", pon el ratón sobre el número de favoritos y número de corazones para ver el porcentaje de visitantes que hicieron la acción."
+  },
+  "clone-counter/title": { "message": "Contador de clones" },
+  "clone-counter/description": {
+    "message": "Muestra el número total de clones encima del proyecto, en el encabezado de el escenario."
+  },
+  "colored-shadows/title": { "message": "Sombras coloreadas" },
+  "colored-shadows/description": {
+    "message": "Reemplaza la sombra creada cuando arrastras un bloque cerca de otro bloque con el color del bloque que está siendo movido."
+  },
+  "creator-badge/title": { "message": "Insignia de autor" },
+  "creator-badge/description": {
+    "message": "Añade una insignia al lado de los comentarios escritos por el autor del proyecto"
+  },
+  "original-buttons/title": { "message": "Botones originales" },
+  "original-buttons/description": {
+    "message": "Trae devuelta los íconos originales de Me Gusta, Favorito, Reinventar y Vistas en las páginas de proyectos de Scratch."
+  },
+  "box-shadows/title": { "message": "Sombras en los recuadros de contenido" },
+  "box-shadows/description": {
+    "message": "Agrega un sombreado a los contornos de todos los recuadros de contenido. El sombreado se hará más oscuro cuando pases el cursor por ellos."
+  },
+  "admin-notifications/title": {
+    "message": "Mensajes de administradores en rojo"
+  },
+  "admin-notifications/description": {
+    "message": "Si tienes una notificación por parte del Equipo de Scratch, el indicador de mensajes será rojo en vez de naranja."
+  },
+  "nicknames/title": { "message": "Apodos" },
+  "nicknames/description": {
+    "message": "Ponle apodos a otros Scratchers. Solo tú puedes ver los apodos, que reemplazarán el nombre del usuario apodado."
+  },
+  "load-more-forum-posts/title": { "message": "Cargar más entradas" },
+  "load-more-forum-posts/description": {
+    "message": "Cargue más publicaciones en el foro sin tener que cambiar de página."
+  },
+  "scroll-project-titles/title": {
+    "message": "Desplazar los títulos de los proyectos"
+  },
+  "scroll-project-titles/description": {
+    "message": "Permite ver el nombre entero de los proyectos que no son tuyos."
+  },
+  "search-context-menus/title": { "message": "Buscar en menús contextuales" },
+  "search-context-menus/description": {
+    "message": "Escribe y busca menus de contexto para seleccionar una opción eficientemente. También puedes pulsar \"enter\" para seleccionar la opción superior."
+  },
+  "hover-user-cards/title": { "message": "Tarjetas de usuarios" },
+  "hover-user-cards/description": {
+    "message": "Mantén el ratón sobre cualquier nombre de usuario para mostrar la foto de perfil. nombre de usuario y número de seguidores."
+  },
+  "exact-join-date/title": { "message": "Fecha exacta de ingreso" },
+  "exact-join-date/description": {
+    "message": "Muestra en su perfil el momento exacto en el que un usuario se unió."
+  },
+  "upload-img-directly/title": { "message": "Subida de imágenes directa" },
+  "upload-img-directly/description": {
+    "message": "Te permite subir imagenes en los foros de Scratch para publicaciones y firmas sin tener que usar ningún servicio de subida de imágenes de terceros."
+  },
+  "leave-studio/title": { "message": "Botón de salir de estudio" },
+  "leave-studio/description": {
+    "message": "Añade un botón en la página de curadores de cualquier estudio que estés curando o administrando que te permite salir de dicho estudio fácilmente. Primero se mostrará una confirmación."
+  },
+  "user-stats/title": { "message": "Mostrar estadísticas de usuario" },
+  "user-stats/description": {
+    "message": "Reemplaza la sección de \"En qué estoy trabajando\" en una página de perfil con las estadísticas del usuario."
+  },
+  "frontpage-curator/title": {
+    "message": "Nombre de curador de la página principal como enlace"
+  },
+  "frontpage-curator/description": {
+    "message": "Permite hacer click en el nombre de el curador de la página principal para enlazar a su perfil."
+  },
+  "minimized-remix-credits/title": {
+    "message": "Créditos de reinvención minimizados"
+  },
+  "minimized-remix-credits/description": {
+    "message": "Los cuadros de créditos de reinvención en los proyectos ocupa espacio de las Instrucciones del proyecto, entonces esto hace las cajas más pequeñas."
+  },
+  "follows-you/title": { "message": "Mostrar si te siguen en perfil" },
+  "follows-you/description": {
+    "message": "Si un usuario te sigue, se mostrará al lado de su nombre de usuario cuando visites su perfil."
+  },
+  "custom-studio/title": { "message": "Sección de estudio personalizada" },
+  "custom-studio/description": {
+    "message": "En la página principal, los proyectos más recientes de el estudio de tu elección se mostraran encima de Proyectos Destacados."
+  },
+  "highlight-unanswered/title": {
+    "message": "Destacar temas sin respuestas en el foro"
+  },
+  "highlight-unanswered/description": {
+    "message": "Agrega un marcador azul a los temas sin respuestas en los foros."
+  },
+  "hide-project-tags/title": { "message": "Ocultar etiquetas de proyecto" },
+  "hide-project-tags/description": {
+    "message": "Oculta todas las etiquetas de las Instrucciones/Notas y Créditos de los proyectos."
+  },
+  "search-assets/title": { "message": "Buscar archivos" },
+  "search-assets/description": {
+    "message": "Busca disfraces y sonidos en el editor."
+  },
+  "block-count-in-mystuff/title": {
+    "message": "Contador de bloques en \"Mis Cosas\""
+  },
+  "block-count-in-mystuff/description": {
+    "message": "Muestra el número de bloques de los proyectos en la página de \"Mis Cosas\""
+  },
+  "pause-audio/title": { "message": "Pausar audio" },
+  "pause-audio/description": {
+    "message": "Permite pausar y reanudar audio en el editor de audio de Scratch."
+  },
+  "display-message-count-in-icon/title": {
+    "message": "Mostrar contador de mensajes"
+  },
+  "display-message-count-in-icon/description": {
+    "message": "Muestra tu número de mensajes en el icono de extensión de ScratchTools."
+  },
+  "colored-context-menus/title": { "message": "Menús de contexto coloridos" },
+  "colored-context-menus/description": {
+    "message": "Como en Scratch 2.0, se colorea el menú contextual (el del clic derecho) en base al color del bloque correspondiente."
+  },
+  "left-side-stage/title": { "message": "Escenario en la izquierda" },
+  "left-side-stage/description": {
+    "message": "Como en Scratch 2.0, mueve el escenario a el lado izquierdo del editor en vez del derecho."
+  },
+  "move-project-title-input/title": {
+    "message": "Título del proyecto sobre escenario"
+  },
+  "move-project-title-input/description": {
+    "message": "Como en Scratch 2.0, pone el título del proyecto encima del escenario, en vez de que esté en la barra de navegación. Esto solo se aplica en el editor."
+  },
+  "hide-disabled-menu-options/title": {
+    "message": "Ocultar opciones deshabilitadas del menús de contexto"
+  },
+  "hide-disabled-menu-options/description": {
+    "message": "Las opciones de menús contextuales en el editor se muestran aunque estén deshabilitadas y no se puedan usar,  esta función las esconderá si lo están."
+  },
+  "follower-count/title": { "message": "Contador de seguidores en proyectos" },
+  "follower-count/description": {
+    "message": "Muestra el número de seguidores del creador del proyecto."
+  },
+  "hide-studio-borders/title": { "message": "Esconder marcos de estudios" },
+  "hide-studio-borders/description": {
+    "message": "Elimina los marcos extraños alrededor de las imágenes de los estudios en las páginas 2.0."
+  },
+  "hide-textarea-labels/title": {
+    "message": "Esconder pestañas de \"Instrucciones\" y \"Notas y créditos\" en los proyectos"
+  },
+  "hide-textarea-labels/description": {
+    "message": "Las pestañas de \"instrucciones\" y \"notas y créditos\" ocupan bastante espacio en el que podría haber información general. Este complemento las elimina."
+  },
+  "default-to-trending/title": {
+    "message": "Buscar en Tendencias por defecto"
+  },
+  "default-to-trending/description": {
+    "message": "Actualmente, al buscar proyectos en el menú principal, Scratch establece el filtro a \"Popular\" en vez de \"Tendencia\". Este complemento cambia eso."
+  },
+  "infinite-backpack-scrolling/title": {
+    "message": "Deslizamiento infinito en la mochila"
+  },
+  "infinite-backpack-scrolling/description": {
+    "message": "Podrás seguir deslizando en la mochila sin molestias hasta que llegues al final de ella (tarda un tiempo en cargar, pero carga automáticamente)."
+  },
+  "hide-studio-messages/title": {
+    "message": "Esconder mensajes de actividad de estudios"
+  },
+  "hide-studio-messages/description": {
+    "message": "Esconde los mensajes sobre la actividad de estudios en el correo – Se apilan rápido y pueden ser una molestia."
+  },
+  "special-editor-fonts/title": { "message": "Más fuentes en el editor" },
+  "special-editor-fonts/description": {
+    "message": "Agrega más fuentes de texto para escoger en el editor de sprites. Se ven más agradables y modernos."
+  },
+  "get-project-tags/title": { "message": "Mostrar etiquetas de proyectos" },
+  "get-project-tags/description": {
+    "message": "Cataloga todas las etiquetas usadas en la descripción de los proyectos justo debajo de las notas y créditos."
+  },
+  "link-to-propose/title": {
+    "message": "Enlazar proyectos destacados a Estudio"
+  },
+  "link-to-propose/description": {
+    "message": "Enlaza la caja de Proyectos destacados en la página principal al estudio de Proponer proyectos para ser destacados."
+  },
+  "add-last-option-list/title": {
+    "message": "Establecer ítem de lista a lo último"
+  },
+  "add-last-option-list/description": {
+    "message": "Haz clic derecho en un bloque reportero de \"elemento [#] de [Lista]\" para hacer que seleccione el último elemento en la lista seleccionada."
+  },
+  "cloud-scratchers/title": {
+    "message": "Usuarios en línea en juegos multijugador"
+  },
+  "cloud-scratchers/description": {
+    "message": "En los proyectos multijugador, se mostrarán todos los usuarios que actualmente lo juegan."
+  },
+  "editor-in-two/title": { "message": "Editor 2.0" },
+  "editor-in-two/description": {
+    "message": "Reemplaza el editor 3.0 de Scratch con el editor de la versión 2.0. Es nostálgico, en serio."
+  },
+  "comment-on-closed-profile/title": {
+    "message": "Comentar en perfil con comentarios cerrados"
+  },
+  "comment-on-closed-profile/description": {
+    "message": "Si tus comentarios de perfil están cerrados, podrás comentar en tu propio perfil de todos modos. Sólo tú podrás comentar en el perfil."
+  },
+  "turbowarp-button-in-editor/title": {
+    "message": "Abrir en TurboWarp desde el editor"
+  },
+  "turbowarp-button-in-editor/description": {
+    "message": "Añade un botón al editor para que puedas abrir instantáneamente un proyecto en TurboWarp."
+  },
+  "sprite-clones/title": { "message": "Contador de clones de sprites" },
+  "sprite-clones/description": {
+    "message": "Muestra el contador de clones por cada sprite individual."
+  },
+  "block-log/title": { "message": "Registro de bloques" },
+  "block-log/description": {
+    "message": "Registra y muestra toda la información de deshacer en el editor cuando presiones Control + Shift + L."
+  },
+  "scrollable-list-items/title": { "message": "Lista desplazable de valores" },
+  "scrollable-list-items/description": {
+    "message": "Los valores de una lista que sean más largos que ella serán parcialmente mostrados. Ahora puedes desplazarte por la lista horizontalmente."
+  },
+  "custom-fonts/title": {
+    "message": "Fuente de texto personalizada en la Web"
+  },
+  "custom-fonts/description": {
+    "message": "En la web de Scratch, podrás poner la fuente que quieras, siempre y cuando esté en la pagina de Google Fonts. Esto distingue entre mayúsculas y minúsculas."
+  },
+  "project-timer/title": { "message": "Cronómetro del proyecto" },
+  "project-timer/description": {
+    "message": "Muestra la cantidad de tiempo (en segundos) en la que el proyecto ha estado funcionando."
+  },
+  "colored-comments/title": { "message": "Comentarios coloridos en el editor" },
+  "colored-comments/description": {
+    "message": "Colorea los comentarios en el editor basado en el color del bloque que comentan."
+  },
+  "recently-viewed-projects/title": {
+    "message": "Proyectos recientemente vistos"
+  },
+  "recently-viewed-projects/description": {
+    "message": "Añade una pestaña a la pagina de Mis Cosas donde puedes ver una lista de los últimos proyectos que viste."
+  },
+  "collapse-blocks/title": { "message": "Colapsar bloques" },
+  "collapse-blocks/description": {
+    "message": "En el menú de clic derecho del editor ahora habrá un botón que te permite colapsar el bloque seleccionado."
+  },
+  "set-featured-project/title": { "message": "Establecer proyecto destacado" },
+  "set-featured-project/description": {
+    "message": "En cualquier página de proyecto, podrás establecer el proyecto destacado de tu perfil con sólo presionar un botón – incluso los proyectos no compartidos."
+  },
+  "scratchformat/title": { "message": "ScratchFormat" },
+  "scratchformat/description": {
+    "message": "Formatea tus comentarios con negrita, itálico y más. Esto lo podrán ver todos los usuarios que usen ScratchTools."
+  },
+  "expand-editor/title": { "message": "Expandir el editor" },
+  "expand-editor/description": {
+    "message": "Presiona Control + E para esconder o mostrar el escenario en el editor."
+  },
+  "list-sprites/title": { "message": "Lista de objetos" },
+  "list-sprites/description": {
+    "message": "Reemplaza la cuadrícula de objetos en el editor por una lista que incluye un contador de bloques del objeto y su posición."
+  },
+  "check-if-trending/title": { "message": "¿Está en tendencia?" },
+  "check-if-trending/description": {
+    "message": "Si el proyecto que estás viendo está en la sección de tendencia, su puesto numérico en tendencia se mostrará al lado de la fecha de compartir."
+  },
+  "link-forum-activity/title": {
+    "message": "Enlace al usuario en la actividad de foros"
+  },
+  "link-forum-activity/description": {
+    "message": "En la sección de última publicación en los foros, hace que los nombres de usuario se vincule al perfil de este."
+  },
+  "remove-topic-and-post/title": {
+    "message": "Esconder contadores de categorías de foros"
+  },
+  "remove-topic-and-post/description": {
+    "message": "Esconde los cuadros de \"Temas\" y \"Mensajes\" en la página principal de los foros."
+  },
+  "forum-homepage-emojis/title": {
+    "message": "Emojis para categorías de foros"
+  },
+  "forum-homepage-emojis/description": {
+    "message": "Agrega emojis coloridos en las categorías de la  página principal en base a sus temas."
+  },
+  "remove-collapse-buttons/title": {
+    "message": "Esconder botones de colapsar foros"
+  },
+  "remove-collapse-buttons/description": {
+    "message": "Esconde los botones de colapsar en la página principal de los foros."
+  },
+  "pin-projects/title": { "message": "Fijar proyectos a Mis Cosas" },
+  "pin-projects/description": {
+    "message": "Fija uno de tus proyectos a la parte de arriba de tu página de Mis Cosas con el clic de un botón. También lo podrás desfijar o intercambiar por otro."
+  },
+  "last-key-pressed/title": { "message": "Última tecla presionada" },
+  "last-key-pressed/description": {
+    "message": "En cualquier proyecto y en el editor, podrás ver la última tecla que has presionado mientras el proyecto está en curso, según el proyecto en sí. Esto es genial para los juegos de plataformas."
+  },
+  "hide-signatures/title": { "message": "Esconder signaturas de foros" },
+  "hide-signatures/description": {
+    "message": "Esconde todas las signaturas y divisores de los foros."
+  },
+  "twemoji-in-forums/title": { "message": "Mejores emojis en los foros" },
+  "twemoji-in-forums/description": {
+    "message": "Reemplaza los emojis de baja calidad actuales con Twemojis de alta calidad."
+  },
+  "go-to-parent/title": { "message": "Botón de ir a original" },
+  "go-to-parent/description": {
+    "message": "En el editor de cualquier proyecto que sea un remix, podrás hacer clic en un botón para ir al editor del proyecto original."
+  },
+  "most-popular-project/title": { "message": "Proyecto más popular" },
+  "most-popular-project/description": {
+    "message": "Muestra el proyecto más popular (por vistas) del usuario en los perfiles. Puedes hacer clic en el proyecto para verlo."
+  },
+  "editor-dark-mode/title": { "message": "Tema oscuro para el editor" },
+  "editor-dark-mode/description": {
+    "message": "Intercambia el tono claro del editor por un tono más oscuro."
+  },
+  "hide-studio-group-icon/title": {
+    "message": "Esconder ícono de grupo del estudio"
+  },
+  "hide-studio-group-icon/description": {
+    "message": "Esconde el ícono de grupo del estudio, y sólo muestra la miniatura del estudio."
+  },
+  "colored-messages/title": { "message": "Mensajes coloreados" },
+  "colored-messages/description": {
+    "message": "Colorea tus mensajes en base al tipo de mensaje, como los corazones, favoritos, e invitaciones a estudios."
+  },
+  "full-title/title": { "message": "Título entero del proyecto" },
+  "full-title/description": {
+    "message": "En las páginas de perfiles, pasa el cursor por encima de cualquier título de un proyecto para mostrar el título completo."
+  },
+  "fixed-box/title": { "message": "Arreglas cuadros de contenido" },
+  "fixed-box/description": {
+    "message": "Hace que todas las puntas de los cuadros sean circulares, en vez de solo las de arriba."
+  },
+  "user-bio/title": { "message": "Biografía de usuarios" },
+  "user-bio/description": {
+    "message": "En los comentarios de perfiles, pasa el cursos por encima de cualquier nombre de usuario para mostrar su biografía."
+  },
+  "nfe-project-checker/title": { "message": "Detectos de proyectos NFE" },
+  "nfe-project-checker/description": {
+    "message": "En los proyectos, muestra si el proyecto es Seguro, No Revisado, o NSFE (No Seguro para Todos)"
+  },
+  "sprite-data/title": { "message": "Mostrar información del sprite" },
+  "sprite-data/description": {
+    "message": "En las pestañas de Código, Disfraces y Sonidos de cada sprite, se mostrarán la cantidad de bloques, disfraces y sonidos respectivamente del sprite seleccionado."
+  },
+  "aviate/title": { "message": "Estados de Aviate" },
+  "aviate/description": {
+    "message": "Muestra estados de Aviate en los perfiles. Puedes establecer tu propio estado en aviate.scratchers.tech."
+  },
+  "idea-generator/title": { "message": "Generador de ideas para proyectos" },
+  "idea-generator/description": {
+    "message": "En la página de \"Ideas\" en Scratch, habrá una sección donde podrás generar ideas para tu proyecto si necesitas algunas."
+  },
+  "hide-stickies/title": { "message": "Esconder firmas de foros" },
+  "hide-stickies/description": {
+    "message": "Esconde las firmas básicas que se encuentran encima de cada tema de foro."
+  },
+  "nfe-search/title": { "message": "Búsqueda NFE" },
+  "nfe-search/description": {
+    "message": "Usa un botón para buscar todos los proyectos, incluidos los NFE (No Para Todos)."
+  },
+  "open-in-new-tab/title": { "message": "Abrir en nueva pestaña" },
+  "open-in-new-tab/description": {
+    "message": "Los enlaces en un proyecto serán abiertos en una nueva pestaña automáticamente."
+  },
+  "unbold-site-text/title": { "message": "Texto sin negrita" },
+  "unbold-site-text/description": {
+    "message": "Hace que todo el texto en la página de Scratch no sea en negrita, y que sólo sea texto normal."
+  },
+  "compact-navbar/title": { "message": "Barra de navegación compacta" },
+  "compact-navbar/description": {
+    "message": "Hace mas espacio en la barra de navigación cerca de tu perfil."
+  },
+  "delete-all/title": { "message": "Borrar todos los sprites" },
+  "delete-all/description": {
+    "message": "Agrega una opción en el menú de clic derecho para borrar todos los sprites (luego de confirmación para asegurar de que no fue un accidente)."
+  },
+  "round-profile-pictures/title": { "message": "Redondear fotos de perfil" },
+  "round-profile-pictures/description": {
+    "message": "Todas las fotos de perfil en la página de Scratch serán redondas."
+  },
+  "sidebar/title": { "message": "Barra lateral" },
+  "sidebar/description": {
+    "message": "Agrega una barra lateral a la página de Scratch, en vez de sólo la barra de navegación en la parte superior de la pantalla."
+  },
+  "ocular-link/title": { "message": "Enlaces de ocular en foros" },
+  "ocular-link/description": {
+    "message": "Agrega un enlace a la página Ocular de cualquier usuario justo debajo de su nombre de usuario en una publicación."
+  },
+  "forum-scratch-team/title": {
+    "message": "Símbolo de Equipo de Scratch en foros"
+  },
+  "forum-scratch-team/description": {
+    "message": "Al lado del nombre de usuario de cualquier miembro del Equipo de Scratch en los foros, se le pondrá un asterisco. (*)"
+  },
+  "remove-editor-icons/title": { "message": "Eliminar íconos del editor" },
+  "remove-editor-icons/description": {
+    "message": "Elimina los íconos de cada pestaña del editor."
+  },
+  "sprite-watermark/title": { "message": "Eliminar marca de agua del sprite" },
+  "sprite-watermark/description": {
+    "message": "Elimina la marca de agua que aparece en el editor de sprites."
+  },
+  "compact-editor/title": { "message": "Editor compacto" },
+  "compact-editor/description": {
+    "message": "Hace la información de los objetos y fondo más compacta."
+  },
+  "my-recent-projects/title": {
+    "message": "Reemplazar Noticias de Scratch con Proyectos Recientes"
+  },
+  "my-recent-projects/description": {
+    "message": "Reemplaza la sección de Noticias de Scratch en la página principal con tus proyectos compartidos recientemente."
+  },
+  "focus-mode/title": { "message": "Modo de enfoque" },
+  "focus-mode/description": {
+    "message": "Agrega un botón en los proyectos que elimina los comentarios, las columnas de estudios y remixes, el encabezado y el pie de la página."
+  }
+}
