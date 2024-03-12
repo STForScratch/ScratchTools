@@ -1,7 +1,39 @@
 {
-  "profile-flag/title": { "message": "プロフィールに旗を置く" },
+  "download-project/title": { "message": "プロジェクトをダウンロード" },
+  "download-project/description": {
+    "message": "プロジェクトページに、プロジェクトを.sb3ファイルとしてダウンロードできるボタンを追加します。"
+  },
+  "blur-modal/title": { "message": "モーダル背景をぼかす" },
+  "blur-modal/description": {
+    "message": "カラーオーバーレイを持たせる代わりに、モーダルの背景をぼかします。"
+  },
+  "quick-search/title": { "message": "クイック検索" },
+  "quick-search/description": {
+    "message": "Ctrl + Kで、Scratch上のページ間を簡単に切り替えられます。"
+  },
+  "favicon-messages/title": { "message": "ブラウザのタブにメッセージ数を表示" },
+  "favicon-messages/description": {
+    "message": "ファビコン（ブラウザのタブにあるScratchアイコン）にメッセージ数を表示します。"
+  },
+  "show-emoji-names/title": { "message": "絵文字の名前を表示" },
+  "show-emoji-names/description": {
+    "message": "コメント内のScratch絵文字にカーソルを合わせると、その絵文字の名前が表示されます。"
+  },
+  "more-block-themes/title": { "message": "ブロックのテーマの追加" },
+  "more-block-themes/description": {
+    "message": "コードエディターのブロックのテーマを追加します。"
+  },
+  "more-key-inputs/title": { "message": "より多くのキー入力の追加" },
+  "more-key-inputs/description": {
+    "message": "「○○キーが押された」ブロックに、より多くのキーを追加します。"
+  },
+  "comment-tags/title": { "message": "エディターのコメントにタグを追加" },
+  "comment-tags/description": {
+    "message": "エディターのコメントにタグを追加して、簡単に整理することができます。"
+  },
+  "profile-flag/title": { "message": "プロフィールに国旗を表示" },
   "profile-flag/description": {
-    "message": "プロフィールページで、選択した場所に旗の絵文字を追加します。"
+    "message": "プロフィールに設定されている国名の横に、その国の国旗の絵文字を追加します。"
   },
   "follow-on-projects/title": { "message": "プロジェクトページでフォローする" },
   "follow-on-projects/description": {
@@ -115,7 +147,7 @@
   },
   "preview-textboxes/title": { "message": "テキストボックスのプレビュー表示" },
   "preview-textboxes/description": {
-    "message": "プロフィールの「私について」と「私が取り組んでいること」、そしてプロジェクトの「使い方」と「メモとクレジット」をプレビュー表示して、他のユーザーにどのように見えるかを確認できます。\n "
+    "message": "プロフィールの「私について」と「私が取り組んでいること」、そしてプロジェクトの「使い方」と「メモとクレジット」をプレビュー表示して、他のユーザーにどのように見えるかを確認できます。\n "
   },
   "more-tutorials/title": { "message": "チュートリアルの追加" },
   "more-tutorials/description": {
