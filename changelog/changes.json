@@ -1,13 +1,12 @@
 {
   "NOTE": "THERE IS NO NEED TO UPDATE THIS YOURSELF, IT WILL BE UPDATED WHEN RELEASED.",
-  "version": "3.5.0",
+  "version": "3.7.0",
   "enhanced": [
-    "Add full size thumbnails for trending studios.",
-    "Minor improvements to follow button on projects."
+    "Improve code quality.",
+    "Remove ScratchTools Awards ads.",
+    "Added Spanish as a language."
 ],
   "fixed": [
-    "Fix scrollbar on settings page.",
-    "Fix display names and emoji statuses.",
-    "Bring back chat support and feedback center."
+    "Fix Flag on Profile feature."
   ]
 }
