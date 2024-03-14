@@ -1,7 +1,6 @@
 export default async function ({ feature, console }) {
   ScratchTools.waitForElements("div.share-date", function (shareDateDiv) {
     const shareDateSpan = shareDateDiv.querySelector("span");
-    console.log(shareDateSpan)
 
     if (shareDateSpan) {
       const shareDate = shareDateSpan.textContent.trim();
