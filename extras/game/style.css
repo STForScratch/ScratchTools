@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
+
+body {
+    background-color: #FF9F00;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    margin:0em;
+}
+
+.clicker-layer{
+    position:absolute;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100%; 
+    width: 100%; 
+    z-index: 3;
+}
+.clicker-layer #click{
+    /*aloow image to go smaller on smaller window*/
+    height: auto;
+    width: auto;
+    max-height: 207px;
+    max-width: 207px;
+    cursor: pointer;
+    height: auto;
+    width: auto;
+    transition: all 0.1s ease-in-out;
+}
+
+.text-layer{
+    margin-top: calc(100vh / 6);
+    position:relative;
+    user-select: none;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh; 
+    width: 100%; 
+}
+.text-layer h1{
+
+    font-size: 5em;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-family: 'Readex Pro', sans-serif;
+    font-weight: 400;
+}
+
+/* CSS */
+.scale-down {
+    transform: scale(0.8);
+}
