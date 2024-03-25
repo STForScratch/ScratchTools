@@ -44,7 +44,7 @@ There are multiple ways of installing.
 > [!NOTE]
 > The Firefox version of Scratchtools is behind compared to the chrome version of Scratchtools due to technical difficulties. Until a solution is found, the Firefox version will remain behind.
 
-- Microsoft edge: You can download from Edge's addon webstore [here](https://microsoftedge.microsoft.com/addons/detail/scratchtools/aaidjeidbnhpjhblbianjeghjopbimmk). You can then just add it to Edge, and then you have ScratchTools!
+- Microsoft Edge: You can download from Edge's addon webstore [here](https://microsoftedge.microsoft.com/addons/detail/scratchtools/aaidjeidbnhpjhblbianjeghjopbimmk). You can then just add it to Edge, and then you have ScratchTools!
 - Safari (macOS, iPadOS and iOS): You can build the extension by typing `make` for macOS, and `make ios` for the iOS app (you will have to sign it on Xcode), make sure you have enabled Developer mode and allowed unsigned extensions.
 - GitHub (Chrome/Chromium): Download from GitHub [here](https://github.com/STForScratch/ScratchTools/zipball/master). If it downloads a `.zip` file, unpack it. Then, with the folder, go to `chrome://extensions` (On Chromium forks, you will have to replace "chrome" with your browser's name. (eg. `vivaldi://extensions`)), make sure you have developer mode enabled (switch in the top right corner), and drag the downloaded folder onto the page. Make sure you've disabled other versions of ScratchTools.
 - GitHub (Firefox & Firefox Forks): Download from GitHub [here](https://github.com/STForScratch/ScratchTools/zipball/master). If it downloads a `.zip` file, unpack it. Then, with the folder, go to `about:debugging`, click "This Firefox" and click "Load temporary extension".
