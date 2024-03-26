@@ -40,7 +40,7 @@ There are multiple ways of installing.
 - Chrome: You can download from Chrome's Extension Webstore [here](https://chrome.google.com/webstore/detail/scratchtools/jjnpbalpllpfdpgplpbcbadkgdmleopm). Then just press the Add to Chrome button, and you've downloaded ScratchTools!
 
 > [!NOTE]
-> If you are using a browser based on Chromium (eg. Vivaldi), then this is your way of installing unless your browser has it's own extension store.
+> If you are using a browser based on Chromium (eg. Brave), then this is your way of installing unless your browser has it's own extension store.
 
 - Firefox/Mozilla: You can download from Firefox Addons (Works on Firefox forks) [here](https://addons.mozilla.org/en-US/firefox/addon/scratchtools/). You can then just add it to Firefox, and then you have ScratchTools!
 
@@ -50,12 +50,12 @@ There are multiple ways of installing.
 - Microsoft Edge: You can download from Edge's addon webstore [here](https://microsoftedge.microsoft.com/addons/detail/scratchtools/aaidjeidbnhpjhblbianjeghjopbimmk). You can then just add it to Edge, and then you have ScratchTools!
 - Safari (macOS, iPadOS and iOS): You can build the extension by typing `make` for macOS, and `make ios` for the iOS app (you will have to sign it on Xcode), make sure you have enabled Developer mode and allowed unsigned extensions.
 
-- GitHub (For Chrome/Chromium): Download the zipball from the GitHub repository [here](https://github.com/STForScratch/ScratchTools/zipball/master). After the `.zip` file is downloaded, unpack it. Then, with the folder, go to `chrome://extensions` (On Chromium forks, you will have to replace "chrome" with your browser's name. (eg. `vivaldi://extensions`)), make sure you have developer mode enabled (switch in the top right corner), and drag the downloaded folder onto the page. Make sure you've disabled other versions of ScratchTools.
+- GitHub (For Chrome/Chromium): Download the zipball from the GitHub repository [here](https://github.com/STForScratch/ScratchTools/zipball/master). After the `.zip` file is downloaded, unpack it. Then, with the folder, go to `chrome://extensions` (On Chromium forks, you will often need to replace "chrome" with your browser's name. (eg. `brave://extensions`)), make sure you have developer mode enabled (switch in the top right corner), and drag the downloaded folder onto the page. Make sure you've disabled other versions of ScratchTools.
 
 - GitHub (For Firefox & Firefox Forks): Download from the GitHub repository [here](https://github.com/STForScratch/ScratchTools/zipball/master). After the `.zip` file is downloaded, unpack it. Then, with the folder, go to `about:debugging`, click "This Firefox" and click "Load temporary extension", go into the extension folder and select the `manifest.json`.
 
 > [!WARNING]
-> Extensions loaded this way are indeed temporal, once you close the window, it will be gone - ScratchTools is still outdated on Firefox at the time of writing this, this tutorial was only added ahead of time, once ScratchTools is up-to-date on Firefox just like on other browsers, this part of the warning will be removed.
+> Extensions loaded this way onto Safari indeed temporary. Once you close the window, it will be gone. In addition, ScratchTools is still outdated on Firefox at the time of writing this.
 
 - Installing with Git: Open the code dropdown on the extension's repository, copy the HTTPS url and then execute `git clone  https://github.com/STForScratch/ScratchTools.git -b main` in Git, and you have installed ScratchTools! To pull changes instead of cloning the repository, enter the folder and execute `git remote add upstream https://github.com/STForScratch/ScratchTools.git -b main`. When a commit is made to the repository, you can just run `git pull upstream master` to pull the changes, note that sometimes you may need to refresh ScratchTools.
 
