@@ -8,6 +8,7 @@
     "tags": ["New", "Featured"],
     "dynamic": true,
     "options": [
+        { "id": "disabled", "name": "Initially, the filter will be disabled.", "type": 1 },
         { "id": "blur", "name": "Blur thumbnails without erasing the project.", "type": 1 },
         { "id": "filter-words", "name": "filter words (Split by comma)", "type": 0 }
     ],

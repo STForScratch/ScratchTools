@@ -107,7 +107,7 @@ async function filter(element) {
 export default async function ({ feature, console }) {
     filterWords = feature.settings.get("filter-words");
     wordList = filterWords.split(',').filter(item => item !== "");
-    filterType = feature.settings.get("blur")===true?2:1
+    filterType = feature.settings.get("disabled")===true?0:feature.settings.get("blur")===true?2:1;
     
     filterControl(wordList)
 
