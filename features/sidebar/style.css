@@ -1,0 +1,132 @@
+.links > li {
+    position: relative;
+}
+
+.sidebar {
+    background-color: #1A1A1A;
+    color: white;
+    width: 18%;
+    height: 100vh;
+    position: fixed;
+    z-index: 10;
+}
+
+.open {
+    top: 65%;
+    right: -18vw;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.createText {
+    color: white;
+    transition: all .3s;
+    font-size: 17px;
+    background-color: transparent;
+    user-select: none;
+    position: relative;
+    text-decoration: bold;
+}
+
+.create {
+    list-style: none;
+    font-size: 1.5vw;
+    background-color: transparent;
+    width: 15vw;
+    color: rgb(255, 255, 255);
+    transition: all .3s;
+    border-radius: 5px;
+    height: 4vh;
+}
+
+.create > a {
+    width: 15vw;
+    height: 4vh;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    gap: 8px;
+    padding-left: 5px;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    gap: 8px;
+}
+
+.create:hover {
+    background-color: #2C2C2C;
+}
+
+.miniCreate {
+    width: 35px;
+    height: 35px;
+    background-color: #2C2C2C;
+    list-style: none;
+    transition: all .3s;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    padding-left: 0px !important;
+}
+
+.miniCreate:hover {
+    filter: brightness(1.1);
+}
+
+
+.SLogo {
+    width: 93px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.img {
+    width: 25px;
+    height: 20px;
+}
+
+.img2 {
+    width: 25px;
+    height: 17px;
+}
+
+input.input {
+    height: 40px;
+    font-size: 14px;
+    background-image: var(--scratchtoolsresource-search);
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-left: 10px;
+    appearance: none;
+}
+
+.input {
+    height: 4vh;
+    width: 12.5vw;
+    font-size: 17px;
+    background-color: #2C2C2C;
+    color: lightslategray;
+    padding: 0 2rem;
+    margin: 0
+}
+
+.createIcon {
+    height: 28px;
+    width: 28px;
+    position: relative;
+    left: 2%;
+}
+
+@media screen and (max-width: 1219px) {
+    .links {
+        padding-left: 10px
+    }
+}
