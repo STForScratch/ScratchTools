@@ -1,0 +1,24 @@
+{
+    "title": "Sidebar",
+    "description": "Adds a sidebar to the Scratch website, rather than just the normal navigation bar at the top of the screen.",
+    "credits": [
+        {"username": "Scratchfangs", "url": "https://scratch.mit.edu/users/scratchfangs/"},
+        {"username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/"},
+        {"username": "callumjt", "url": "https://scratch.mit.edu/users/callumjt/"}
+    ],
+    "type": ["Website", "Theme"],
+    "dynamic": false,
+    "scripts": [{"file": "./script.js", "runOn": "/"}],
+    "styles": [{"file": "./style.css", "runOn": "/"}],
+    "resources": [
+        {"name": "search", "path": "/resources/search.svg"},
+        {"name": "home", "path": "/resources/home.svg"},
+        {"name": "create", "path": "/resources/create.svg"},
+        {"name": "explore", "path": "/resources/explore.svg"},
+        {"name": "ideas", "path": "/resources/ideas.svg"},
+        {"name": "about", "path": "/resources/about.svg"},
+        {"name": "logout", "path": "/resources/logout.svg"},
+        {"name": "settings", "path": "/resources/settings.svg"},
+        {"name": "signIn", "path": "/resources/signin.svg"}
+    ]
+}
