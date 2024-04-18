@@ -1213,9 +1213,8 @@
     "description": "Get ideas for projects with ChatGPT",
     "credits": ["justablock"],
     "urls": ["https://scratch.mit.edu/users/justablock"],
-    "file": "gpt-ideass",
+    "file": "gpt-ideas",
     "type": ["Website"],
-    "tags": ["New"],
-    "dynamic": false
-  },
+    "tags": ["New"]
+  }
 ]
