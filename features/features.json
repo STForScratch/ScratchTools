@@ -332,10 +332,6 @@
     "id": "admin-notifications"
   },
   {
-    "version": 2,
-    "id": "gpt-ideas",
-  },
-  {
     "title": "Nicknames",
     "description": "Set nicknames for other Scratchers. Only you can see the nicknames, and their username will be replaced with the nickname when you see their name.",
     "credits": ["rgantzos"],
