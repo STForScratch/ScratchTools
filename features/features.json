@@ -1210,9 +1210,12 @@
   },
     {
     "title": "ChatGPT Ideas",
-    "description": "Get ideas for projects with ChatGPT",
-    "credits": ["justablock"],
-    "urls": ["https://scratch.mit.edu/users/justablock"],
+    "description": "Get ideas for projects with ChatGPT on /ideas page!",
+    "credits": ["justablock", "MubiLop"],
+    "urls": [
+      "https://scratch.mit.edu/users/justablock",
+      "https://scratch.mit.edu/users/mubilop/"
+    ],
     "file": "gpt-ideas",
     "type": ["Website"],
     "tags": ["New"]
