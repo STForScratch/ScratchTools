@@ -4,7 +4,7 @@ if (window.location.href.includes("https://scratch.mit.edu/ideas")) {
   var div = document.createElement("div");
   div.className = "tips-getting-started scratchtools gpt generator";
   div.innerHTML =
-    '<div class="inner"><section class="flex-row tips-info-section tips-left"><div class="ideas-image"></div><div><h2><span>GPT Idea Generator</span></h2><p><span>If you need project ideas, use the ScratchTools idea generator!</span></p><a><button class="button ideas-button"><span>Generate</span></button></a></div></section></div>';
+    '<div class="inner"><section class="flex-row tips-info-section tips-left"><div class="ideas-image"></div><div><h2><span>GPT Idea Generator</span></h2><p><span>Dont know what to make? Use our ChatGPT idea generator!</span></p><a><button class="button ideas-button"><span>Generate!</span></button></a></div></section></div>';
   if (document.querySelector("div.scratchtools.generator") === null) {
     document.querySelector("main#view").firstChild.prepend(div);
     document
@@ -17,7 +17,7 @@ if (window.location.href.includes("https://scratch.mit.edu/ideas")) {
 }
 
 function generategpt() {
-  const prompt = "make me 1 idea for scratch game... WITHOUT ANY CONTEXT! JUST IDEA AND NOTHING ELSE";
+  const prompt = "make me 1 idea for scratch game... WITHOUT ANY CONTEXT! JUST IDEA AND NOTHING ELSE. AND DO NOT USE SWEAR WORDS OR BAD THEMES!";
   const api_url = "https://reverse.mubi.tech/v1/chat/completions"
 
   let loading;
