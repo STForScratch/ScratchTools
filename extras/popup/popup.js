@@ -1385,3 +1385,15 @@ async function getCommit() {
     )})`;
   } catch (err) {}
 }
+
+
+var iconsclicks = 0;
+
+document.querySelector(".searchbaricon")?.addEventListener("click", function () {
+  iconsclicks += 1;
+  if (iconsclicks > 9) {
+    chrome.tabs.create({
+      url: "chrome-extension://" + chrome.runtime.id + "/extras/game/index.html",
+    });
+  }
+})
