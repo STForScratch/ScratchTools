@@ -1,0 +1,16 @@
+{
+  "title": "Project Version Detector",
+  "description": "Checks when a project was shared and adds a label next to the share date to indicate which version of Scratch was in use at that time.",
+  "credits": [
+    { "username": "MaterArc", "url": "https://scratch.mit.edu/users/MaterArc/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New"],
+  "dynamic": true,
+  "scripts": [
+    {
+      "file": "script.js",
+      "runOn": "/projects/*"
+    }
+  ]
+}

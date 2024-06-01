@@ -11,4 +11,4 @@ We only support security issues from versions currently hosted on either Chrome,
 
 ## Reporting a Vulnerability
 
-Please do not report any vulnerabilities publicly. Please only report them at https://scratchtools.app/bugs - our official bugs site. There are links to bug and security bug forms.
+Please do not report any vulnerabilities publicly. Please only report them at https://scratchtools.app/feedback - our official bugs site. There are links to bug and security bug forms.

@@ -13,7 +13,7 @@
     <br />
     <a href="https://youtu.be/xXuZAWTmXng">Feature Showcase</a>
     ·
-    <a href="https://github.com/STForScratch/ScratchTools/issues/new?assignees=&labels=feature&template=bug_report.md&title=">Report a Bug</a>
+    <a href="https://github.com/STForScratch/ScratchTools/issues/new?assignees=&labels=bug&projects=&template=--bug.yml">Report a Bug</a>
     ·
     <a href="https://github.com/STForScratch/ScratchTools/issues/new?assignees=&labels=feature&template=feature_request.md&title=">Request feature</a>
   </p>
@@ -28,7 +28,7 @@
   - [Scratch APIs](#scratch-apis)
     - [Basics](#basics)
     - [Blockly Context Menus](#blockly-context-menus)
-    - [Sound , GUI and Paint-Mode](#sound-gui-and-paint-mode)
+    - [Sound, GUI and Paint-Mode](#sound--gui-and-paint-mode)
   - [Logging](#logging)
 - [How to Support without Code](#how-to-support-without-code)
 
@@ -37,14 +37,27 @@ We're a browser extension for the Scratch website that makes Scratch look, work,
 
 ### Installing
 There are multiple ways of installing.
-- Chrome: You can download from Chrome [here](https://chrome.google.com/webstore/detail/scratchtools/jjnpbalpllpfdpgplpbcbadkgdmleopm). Then just press the Add to Chrome button, and you've downloaded ScratchTools!
-- Firefox/Mozilla: You can download for Firefox [here](https://addons.mozilla.org/en-US/firefox/addon/scratchtools/). You can then just add it to Firefox, and then you have ScratchTools!
+- Chrome: You can download from Chrome's Extension Webstore [here](https://chrome.google.com/webstore/detail/scratchtools/jjnpbalpllpfdpgplpbcbadkgdmleopm). Then just press the Add to Chrome button, and you've downloaded ScratchTools!
+
+> [!NOTE]
+> If you are using a browser based on Chromium (eg. Brave), then this is your way of installing unless your browser has it's own extension store.
+
+- Firefox/Mozilla: You can download from Firefox Addons (Works on Firefox forks) [here](https://addons.mozilla.org/en-US/firefox/addon/scratchtools/). You can then just add it to Firefox, and then you have ScratchTools!
+
 > [!NOTE]
 > The Firefox version of Scratchtools is behind compared to the chrome version of Scratchtools due to technical difficulties. Until a solution is found, the Firefox version will remain behind.
 
-- Microsoft edge: You can download for Edge [here](https://microsoftedge.microsoft.com/addons/detail/scratchtools/aaidjeidbnhpjhblbianjeghjopbimmk). You can then just add it to Edge, and then you have ScratchTools!
-- Safari (macOS, iPadOS and iOS): You can build the extension by typing `make` for macOS, and `make ios` for the iOS app (you will have to sign it on  Xcode), make sure you have enabled Developer mode and allowed unsigned extensions.
-- GitHub: Download from GitHub [here](https://github.com/STForScratch/ScratchTools/zipball/master). If it downloads a `.zip` file, unpack it. Then, with the folder, go to `chrome://extensions`, make sure you have developer mode enabled (switch in the top right corner), and drag the downloaded folder onto the page. Make sure you've disabled other versions of ScratchTools.
+- Microsoft Edge: You can download from Edge's addon webstore [here](https://microsoftedge.microsoft.com/addons/detail/scratchtools/aaidjeidbnhpjhblbianjeghjopbimmk). You can then just add it to Edge, and then you have ScratchTools!
+- Safari (macOS, iPadOS and iOS): You can build the extension by typing `make` for macOS, and `make ios` for the iOS app (you will have to sign it on Xcode), make sure you have enabled Developer mode and allowed unsigned extensions.
+
+- GitHub (For Chrome/Chromium): Download the zipball from the GitHub repository [here](https://github.com/STForScratch/ScratchTools/zipball/master). After the `.zip` file is downloaded, unpack it. Then, with the folder, go to `chrome://extensions` (On Chromium forks, you will often need to replace "chrome" with your browser's name. (eg. `brave://extensions`)), make sure you have developer mode enabled (switch in the top right corner), and drag the downloaded folder onto the page. Make sure you've disabled other versions of ScratchTools.
+
+- GitHub (For Firefox & Firefox Forks): Download from the GitHub repository [here](https://github.com/STForScratch/ScratchTools/zipball/master). After the `.zip` file is downloaded, unpack it. Then, with the folder, go to `about:debugging`, click "This Firefox" and click "Load temporary extension", go into the extension folder and select the `manifest.json`.
+
+> [!WARNING]
+> Extensions loaded this way onto Safari indeed temporary. Once you close the window, it will be gone. In addition, ScratchTools is still outdated on Firefox at the time of writing this.
+
+- Installing with Git: Open the code dropdown on the extension's repository, copy the HTTPS url and then execute `git clone  https://github.com/STForScratch/ScratchTools.git -b main` in Git, and you have installed ScratchTools! To pull changes instead of cloning the repository, enter the folder and execute `git remote add upstream https://github.com/STForScratch/ScratchTools.git -b main`. When a commit is made to the repository, you can just run `git pull upstream master` to pull the changes, note that sometimes you may need to refresh ScratchTools.
 
 ### Building a Feature
 It's not very hard to build a feature, and if you're ever having trouble, our developers are always here to help you! For ideas, code help, beta testing for your features, and more, you can [join our Discord server](https://discord.gg/5AkUsCbEsy). Now, here's how to build a feature!
@@ -72,9 +85,9 @@ Logging can be very important, especially when testing. You can use `ScratchTool
 
 ### How to Support without Code
 Not only do you have to be a developer to code for ScratchTools (technically, we would teach you if you wanted help), but you can also be a beta tester, suggest ideas, design our website, create art, and more! Here are some common things people like to help with:
-- **Beta testing.** You can search for bugs and then report them [here](https://scratchtools.app/bugs/). Just [download](https://github.com/STForScratch/ScratchTools/zipball/master) the newest changes from GitHub, and add them to your browser! [Here's how to add Chrome Extensions without the Chrome Webstore.](https://www.labnol.org/internet/install-chrome-extensions/25817/)
+- **Beta testing.** You can search for bugs and then report them [here](https://www.scratchtools.app/feedback/). Just [download](https://github.com/STForScratch/ScratchTools/zipball/master) the newest changes from GitHub, and add them to your browser! [Here's how to add Chrome Extensions without the Chrome Webstore.](https://www.labnol.org/internet/install-chrome-extensions/25817/)
 - **Website.** If you know HTML or CSS, we could really use your help on our website! We aren't looking for big changes, but we'd love your help with it anyways! Let us know by creating an issue or contacting a developer!
 - **Graphic Designer.** If you're an artist or designer, you can help us! We need banners, cool art, and more! We love all kinds of styles, you can contact us by creating an issue or contacting a developer!
-- **Brainstorming.** If you have ideas, you can suggest them on our [feedback section](https://scratchtools.app/feedback/)!
+- **Brainstorming.** If you have ideas, you can suggest them on our [feedback page](https://scratchtools.app/feedback/), [Community Discord](https://server.scratchtools.app/) or [create an issue suggesting it](https://github.com/STForScratch/ScratchTools/issues/new?assignees=&labels=new+feature&projects=&template=--feature.yml)!
 - **Posting.** Feel free to post about us on social media! We'd love to help as many Scratchers as possible, so every post helps!
 
