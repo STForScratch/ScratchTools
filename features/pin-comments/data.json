@@ -1,0 +1,34 @@
+{
+    "title": "Pin Project Comments",
+    "description": "Allows you to pin comments on your own projects and see what comments are pinned on other projects.",
+    "credits": [
+        {
+            "username": "NewYearsFan",
+            "url": "https://scratch.mit.edu/users/NewYearsFan/"
+        },
+        {
+            "username": "rgantzos",
+            "url": "https://scratch.mit.edu/users/rgantzos/"
+        }
+    ],
+    "scripts": [
+        {
+            "file": "script.js",
+            "runOn": "/projects/*"
+        }
+    ],
+    "styles": [
+        {
+            "file": "style.css",
+            "runOn": "/projects/*"
+        }
+    ],
+    "tags": [
+        "New"
+    ],
+    "type": [
+        "Website"
+    ],
+    "dynamic": true,
+    "resources": [{ "name": "pin", "path": "/pin.svg" }]
+}
