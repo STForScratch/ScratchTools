@@ -1,0 +1,19 @@
+{
+    "title": "Summarized Descriptions",
+    "description": "Uses artificial intelligence to summarize project descriptions when you choose to, and shortens long descriptions down to important information, such as gameplay instructions.",
+    "credits": [
+      {
+        "username": "rgantzos",
+        "url": "https://scratch.mit.edu/users/rgantzos/"
+      }
+    ],
+    "dynamic": true,
+    "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
+    "scripts": [
+      { "file": "script.js", "runOn": "/projects/*" }
+    ],
+    "tags": ["New"],
+    "type": ["Website"],
+    "resources": [{ "name": "ai-star", "path": "/star.svg" }]
+  }
+  
