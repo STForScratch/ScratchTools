@@ -1,0 +1,9 @@
+.ste-project-miniplayer {
+    position: fixed;
+    z-index: 100;
+    background-color: #000000aa;
+    padding: 5px;
+    border-radius: 10px;
+    max-width: 485px;
+    display: none;
+}
