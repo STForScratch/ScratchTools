@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "fullscreen-explorer",
+    "versionAdded": "v3.8.0"
+  },
+  {
+    "version": 2,
     "id": "project-miniplayer",
     "versionAdded": "v3.8.0"
   },
