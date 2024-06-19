@@ -1,0 +1,33 @@
+{
+    "title": "Total User Stats",
+    "description": "Next to shared projects on a user's profile, displays the total loves, favorites and views that the user has received across all of their shared projects.",
+    "credits": [
+        {
+            "username": "RowanMoonBoy",
+            "url": "https://scratch.mit.edu/users/RowanMoonBoy/"
+        },
+        {
+            "username": "rgantzos",
+            "url": "https://scratch.mit.edu/users/rgantzos/"
+        }
+    ],
+    "dynamic": true,
+    "styles": [
+        {
+            "file": "style.css",
+            "runOn": "/users/*"
+        }
+    ],
+    "scripts": [
+        {
+            "file": "script.js",
+            "runOn": "/users/*"
+        }
+    ],
+    "tags": [
+        "New"
+    ],
+    "type": [
+        "Website"
+    ]
+}
