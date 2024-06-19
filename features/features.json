@@ -6,6 +6,11 @@
   },
   {
     "version": 2,
+    "id": "project-miniplayer",
+    "versionAdded": "v3.8.0"
+  },
+  {
+    "version": 2,
     "id": "project-descriptions",
     "versionAdded": "v3.8.0"
   },
