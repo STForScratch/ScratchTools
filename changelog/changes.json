@@ -1,12 +1,12 @@
 {
   "NOTE": "THERE IS NO NEED TO UPDATE THIS YOURSELF, IT WILL BE UPDATED WHEN RELEASED.",
-  "version": "3.7.0",
+  "version": "3.8.0",
   "enhanced": [
-    "Improve code quality.",
-    "Remove ScratchTools Awards ads.",
-    "Added Spanish as a language."
+    "Update contributor names.",
+    "Add clicker game."
 ],
   "fixed": [
-    "Fix Flag on Profile feature."
+    "Fix protect mention text.",
+    "Fix search bar."
   ]
 }

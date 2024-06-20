@@ -6,7 +6,22 @@
   },
   {
     "version": 2,
+    "id": "sidebar",
+    "versionAdded": "v3.8.0"
+  },
+  {
+    "version": 2,
+    "id": "project-version-detector",
+    "versionAdded": "v3.8.0"
+  },
+  {
+    "version": 2,
     "id": "fullscreen-explorer",
+    "versionAdded": "v3.8.0"
+  },
+  {
+    "version": 2,
+    "id": "project-descriptions",
     "versionAdded": "v3.8.0"
   },
   {
@@ -21,22 +36,7 @@
   },
   {
     "version": 2,
-    "id": "project-descriptions",
-    "versionAdded": "v3.8.0"
-  },
-  {
-    "version": 2,
     "id": "pin-comments",
-    "versionAdded": "v3.8.0"
-  },
-  {
-    "version": 2,
-    "id": "sidebar",
-    "versionAdded": "v3.8.0"
-  },
-  {
-    "version": 2,
-    "id": "project-version-detector",
     "versionAdded": "v3.8.0"
   },
   {
