@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "select-self",
+    "versionAdded": "v4.0.0"
+  },
+  {
+    "version": 2,
     "id": "sidebar",
     "versionAdded": "v3.8.0"
   },
