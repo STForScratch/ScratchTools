@@ -1,0 +1,12 @@
+.container {
+    display: inline-block;
+    margin: 0;
+}
+
+#content {
+    width: 100%;
+}
+
+#topnav .container {
+    margin: auto;
+}
