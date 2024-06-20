@@ -1,49 +1,115 @@
 {
-  "download-project/title": { "message": "Projeleri İndir" },
+  "fullscreen-explorer/title": {
+    "message": "Tam Ekran Proje Izgaraları"
+  },
+  "fullscreen-explorer/description": {
+    "message": "Trendler, Arama, Remix sayfalarında sol ve sağdaki boşlukları kaldırarak projeleri büyük ekranda bulun."
+  },
+  "total-stats/title": {
+    "message": "Toplam Kullanıcı İstatistikleri"
+  },
+  "total-stats/description": {
+    "message": "Kullanıcının profilindeki paylaşılan projelerin yanında, kullanıcının tüm paylaşılan projelerinde aldığı toplam beğeniler, favoriler ve görüntülemeler görüntülenir."
+  },
+  "project-miniplayer/title": {
+    "message": "Proje Mini Ekranı"
+  },
+  "project-miniplayer/description": {
+    "message": "Proje sayfasını aşağı kaydırdığınızda otomatik olarak proje mini ekranını göreceksiniz."
+  },
+  "project-descriptions/title": {
+    "message": "Özetlenmiş Talimatlar"
+  },
+  "project-descriptions/description": {
+    "message": "İstediğiniz zaman proje talimatlarını özetlemek için yapay zekayı kullanır ve uzun açıklamaları oyun talimatları gibi önemli bilgilere kadar kısaltır."
+  },
+  "pin-comments/title": {
+    "message": "Proje Yorumlarını İğnele"
+  },
+  "pin-comments/description": {
+    "message": "Yorumları kendi projelerinize sabitlemenize ve diğer projelere hangi yorumların sabitlendiğini görmenize olanak tanır."
+  },
+  "sidebar/title": {
+    "message": "Kenar çubuğu"
+  },
+  "sidebar/description": {
+    "message": "Ekranın üst kısmındaki normal gezinme çubuğu yerine Scratch web sitesine bir kenar çubuğu ekler."
+  },
+  "project-version-detector/title": {
+    "message": "Proje Sürümü Dedektörü"
+  },
+  "project-version-detector/description": {
+    "message": "Bir projenin ne zaman paylaşıldığını kontrol eder ve o sırada Scratch'in hangi sürümünün kullanıldığını belirtmek için paylaşım tarihinin yanına bir etiket ekler."
+  },
+  "download-project/title": {
+    "message": "Projeleri İndir"
+  },
   "download-project/description": {
     "message": "Proje sayfalarına, projeyi .sb3 dosyası olarak indirmenize olanak tanıyan bir buton ekler."
   },
-  "blur-modal/title": { "message": "Modal Arka Planları Bulanıklaştır" },
+  "blur-modal/title": {
+    "message": "Modal Arka Planları Bulanıklaştır"
+  },
   "blur-modal/description": {
     "message": "Modalların renkli bir örtü yerine arka planlarını bulanıklaştırır."
   },
-  "quick-search/title": { "message": "Hızlı Arama" },
+  "quick-search/title": {
+    "message": "Hızlı Arama"
+  },
   "quick-search/description": {
     "message": "Scratch web sitesinde Control + K tuşlarına basarak sayfalar arasında kolayca geçiş yapın."
   },
-  "favicon-messages/title": { "message": "Sekme Mesaj Sayısı" },
+  "favicon-messages/title": {
+    "message": "Sekme Mesaj Sayısı"
+  },
   "favicon-messages/description": {
     "message": "Tab favicon'da mesaj sayınızı, sekmenizin üstündeki Scratch simgesini görüntüler."
   },
-  "show-emoji-names/title": { "message": "Emoji İsmini Göster" },
+  "show-emoji-names/title": {
+    "message": "Emoji İsmini Göster"
+  },
   "show-emoji-names/description": {
     "message": "Yorumlardaki Scratch emojilerinin üzerine gelerek isimlerini görmenizi sağlar."
   },
-  "more-block-themes/title": { "message": "Daha Fazla Blok Teması" },
+  "more-block-themes/title": {
+    "message": "Daha Fazla Blok Teması"
+  },
   "more-block-themes/description": {
     "message": "Kod düzenleyicisindeki bloklar için ek temalar ekler."
   },
-  "more-key-inputs/title": { "message": "Daha Fazla Anahtar Girişi" },
+  "more-key-inputs/title": {
+    "message": "Daha Fazla Anahtar Girişi"
+  },
   "more-key-inputs/description": {
     "message": "\"Tuşa basıldı\" bloklarında daha fazla tuş desteği ekler."
   },
-  "comment-tags/title": { "message": "Editör Yorum Etiketleri" },
+  "comment-tags/title": {
+    "message": "Editör Yorum Etiketleri"
+  },
   "comment-tags/description": {
     "message": "Editör yorumlarına etiket ekleyerek onları kolayca düzenleyin."
   },
-  "profile-flag/title": { "message": "Profilde Bayrak" },
+  "profile-flag/title": {
+    "message": "Profilde Bayrak"
+  },
   "profile-flag/description": {
     "message": "Profil sayfalarında seçilen konumların yakınına bayrak emojileri ekler."
   },
-  "follow-on-projects/title": { "message": "Proje Sayfasını Takip Et" },
+  "follow-on-projects/title": {
+    "message": "Proje Sayfasını Takip Et"
+  },
   "follow-on-projects/description": {
     "message": "Profiline gitmek yerine, kullanıcıları doğrudan proje sayfasından takip et."
   },
-  "dark-paint-editor/title": { "message": "Boya Arka Planını Değiştir" },
+  "dark-paint-editor/title": {
+    "message": "Boya Arka Planını Değiştir"
+  },
   "dark-paint-editor/description": {
     "message": "Boyama editöründe yakınlaştırma kontrollerinin yanına bir düğme ekler. Bu düğme, boyama editörünün arka plan rengini açık ve koyu arasında değiştirmenize olanak sağlar."
   },
-  "specific-replies/title": { "message": "Özel Yanıt Mesajları" },
+  "specific-replies/title": {
+    "message": "Özel Yanıt Mesajları"
+  },
   "specific-replies/description": {
     "message": "Yorumlara ilişkin iletilerde, bir yorumun hangi kişiye yanıt olduğunu belirtir."
   },
@@ -59,51 +125,75 @@
   "relevant-forum-posts/description": {
     "message": "Yeni bir forum konusu oluştururken, oluşturduğunuz konuyla benzer olabilecek diğer konuları gösterir."
   },
-  "anti-generic/title": { "message": "Anti Jenerik" },
+  "anti-generic/title": {
+    "message": "Anti Jenerik"
+  },
   "anti-generic/description": {
     "message": "Keşfet ve trend sayfalarında, bu beta özelliği, genel olmasını beklediği projelerle birlikte tekrarlayan projeleri otomatik olarak gizler. Bu, çok sayıda etiket, ortak ad ve proje kopyası içeren projeleri içerir."
   },
-  "wrap-lists/title": { "message": "Kaydırılabilen Liste Öğeleri" },
+  "wrap-lists/title": {
+    "message": "Kaydırılabilen Liste Öğeleri"
+  },
   "wrap-lists/description": {
     "message": "Liste öğelerinde metni normal olarak görüntüler eğer çok uzunlarsa kesmeden gösterir."
   },
-  "live-stats/title": { "message": "Canlı istatistikler" },
+  "live-stats/title": {
+    "message": "Canlı istatistikler"
+  },
   "live-stats/description": {
     "message": "Bir projedeki beğenileri, favorileri, remixleri ve görüntülemeleri yeniden yüklemeye gerek duymadan canlı olarak günceller."
   },
-  "hide-scratch-news/title": { "message": "Scratch Haberlerini Gizle" },
+  "hide-scratch-news/title": {
+    "message": "Scratch Haberlerini Gizle"
+  },
   "hide-scratch-news/description": {
     "message": "Scratch web sitesinin ana sayfasındaki Scratch Haberler bölümünü gizler."
   },
-  "watch-later/title": { "message": "Kaydedip Sonra İzle" },
+  "watch-later/title": {
+    "message": "Kaydedip Sonra İzle"
+  },
   "watch-later/description": {
     "message": "Sonradan tekrar izlemek istediğiniz projeleri kaydedin ve sonra ise bunları daha sonra izlemek için bir \"İzlemek İçin Kaydet\" adlı bir sayfadan tekrar izleyebilirsiniz."
   },
-  "remove-project-button/title": { "message": "Proje Düğmesini Kaldır" },
+  "remove-project-button/title": {
+    "message": "Proje Düğmesini Kaldır"
+  },
   "remove-project-button/description": {
     "message": "Stüdyolardaki projelere kolayca erişim sağlayan ve projeyi menüyü açmadan stüdyodan çıkartmanıza izin veren bir düğme ekler."
   },
-  "right-side-flag/title": { "message": "Bayrak Sağ Tarafta" },
+  "right-side-flag/title": {
+    "message": "Bayrak Sağ Tarafta"
+  },
   "right-side-flag/description": {
     "message": "Yeşil bayrağı ve kırmızı dur işaretini sahne'nin sağ tarafına taşır."
   },
-  "love-fave-animate/title": { "message": "Animasyonlu Butonlar." },
+  "love-fave-animate/title": {
+    "message": "Animasyonlu Butonlar."
+  },
   "love-fave-animate/description": {
     "message": "Projelerin sayfalarındaki \"Kalp\" ve \"Yıldız\" düğmelerinin tıklanmasını animasyonlaştırır."
   },
-  "default-to-local/title": { "message": "Varsayılan olarak Yerel" },
+  "default-to-local/title": {
+    "message": "Varsayılan olarak Yerel"
+  },
   "default-to-local/description": {
     "message": "Bir değişken oluştururken, varsayılanı Tüm Hareketli Grafikler için değil, Yalnızca Bu Hareketli Grafik için ayarlar."
   },
-  "start-stop-hotkeys/title": { "message": "Yeşil Bayrak Kısayolları" },
+  "start-stop-hotkeys/title": {
+    "message": "Yeşil Bayrak Kısayolları"
+  },
   "start-stop-hotkeys/description": {
     "message": "Bir projeyi başlatmak veya durdurmak için Ctrl ve G Tuşlarına aynı anda basın. "
   },
-  "opacity-slider/title": { "message": "Düzenleyici Saydamlık Ayarı" },
+  "opacity-slider/title": {
+    "message": "Düzenleyici Saydamlık Ayarı"
+  },
   "opacity-slider/description": {
     "message": "Resim düzenleyicide nesnelerin şeffaflığını değiştirmeye yarayan bir kısım ekler."
   },
-  "more-studios/title": { "message": "Daha Fazla Stüdyo" },
+  "more-studios/title": {
+    "message": "Daha Fazla Stüdyo"
+  },
   "more-studios/description": {
     "message": "Projenizi en fazla 20 Stüdyo'ya koyabilme kapasitesini artırır."
   },
@@ -113,35 +203,51 @@
   "localized-explore/description": {
     "message": "Keşfet sayfasında, diğer ülkelerden gelen projeleri %10 Şeffaf hale getirir. Bu, yalnızca kendi dilinizdeki projeleri göstermek içindir."
   },
-  "project-bar/title": { "message": "Proje Bilgi Çubuğu" },
+  "project-bar/title": {
+    "message": "Proje Bilgi Çubuğu"
+  },
   "project-bar/description": {
     "message": "Proje bilgilerini, notlar ve kredilerin altına kaydırdıktan sonra bile görüntülemeye devam etmesini sağlar."
   },
-  "more-news/title": { "message": "Daha Fazla Scratch Haberi" },
+  "more-news/title": {
+    "message": "Daha Fazla Scratch Haberi"
+  },
   "more-news/description": {
     "message": "Ana sayfada Scratch Haberleri kısmına aşağı kaydırıp eski haberleri görmek için bir buton ekler."
   },
-  "dumpster-fire/title": { "message": "Çöplük Ateşi" },
+  "dumpster-fire/title": {
+    "message": "Çöplük Ateşi"
+  },
   "dumpster-fire/description": {
     "message": "Scratch ana sayfası, \"Öne Çıkan Projeler\" bölümüyle bir yanlıştır. Bu, adı \"Çöplük Ateşi\" olan uygun forma değiştirir."
   },
-  "steal-game/title": { "message": "Oyunları Çal." },
+  "steal-game/title": {
+    "message": "Oyunları Çal."
+  },
   "steal-game/description": {
     "message": "Remix düğmesinin metnini 'Oyun Çal' olarak değiştirir."
   },
-  "statistics/title": { "message": "Kullanıcı istatistikleri" },
+  "statistics/title": {
+    "message": "Kullanıcı istatistikleri"
+  },
   "statistics/description": {
     "message": "Scratch'te \"Kendiminkiler sayfasına ScratchStats (Scratch istatistikleri) profilinize yönlendiren bir istatistik düğmesi ekler."
   },
-  "echo-effect/title": { "message": "Yankı Efekti" },
+  "echo-effect/title": {
+    "message": "Yankı Efekti"
+  },
   "echo-effect/description": {
     "message": "Scratch'te ses düzenleyicisi kısmına Yankı butonunu ekler."
   },
-  "compact-buttons/title": { "message": "Yazıları simgeye çevir." },
+  "compact-buttons/title": {
+    "message": "Yazıları simgeye çevir."
+  },
   "compact-buttons/description": {
     "message": "Scratch'teki butonlardaki metin kaldırılır, sadece simgesi görünür. Eğer bir simgesi yoksa yeni bir simge eklenir"
   },
-  "message-count/title": { "message": "Kullanıcı Mesaj Sayısı" },
+  "message-count/title": {
+    "message": "Kullanıcı Mesaj Sayısı"
+  },
   "message-count/description": {
     "message": "Kullanıcıların profil kısmında kullanıcı bilgilerindeki kişinin ülke bilgisinin yanında kullanıcının bakılmamış mesaj sayısı gözükür."
   },
@@ -151,11 +257,15 @@
   "move-share-button/description": {
     "message": "Projelerin sayfasında, Paylaş düğmesini \"İçine Bak\" düğmesinin yanına taşır."
   },
-  "preview-textboxes/title": { "message": "Metin kutularını önizleme" },
+  "preview-textboxes/title": {
+    "message": "Metin kutularını önizleme"
+  },
   "preview-textboxes/description": {
     "message": "Scratch profilinizde \"Hakkımda\" ve \"Üzerinde Çalıştığım Proje\" veya \nScratch projelerinizde \"Notlar\" ve \"Talimatları\", sanki başka bir hesaptan\nbakıyormuş gibi ön izlemenizi sağlar."
   },
-  "more-tutorials/title": { "message": "Daha Fazla Öğretici" },
+  "more-tutorials/title": {
+    "message": "Daha Fazla Öğretici"
+  },
   "more-tutorials/description": {
     "message": "Fikirler sayfasında, diğer Scratch kullanıcılarından ekstra rehberleri görebilirsiniz."
   },
@@ -165,23 +275,33 @@
   "simplify-action-buttons/description": {
     "message": "Proje eylem düğmelerini, notlar ve kredilerin altında simgeleri olarak gösterir."
   },
-  "slash-to-search/title": { "message": "Arama Kısayolları" },
+  "slash-to-search/title": {
+    "message": "Arama Kısayolları"
+  },
   "slash-to-search/description": {
     "message": "Arama çubuğunu seçmek ve yazmaya başlamak için \" / \" tuşuna tıklayın."
   },
-  "shared-clipboard/title": { "message": "Paylaşılan resim panosu" },
+  "shared-clipboard/title": {
+    "message": "Paylaşılan resim panosu"
+  },
   "shared-clipboard/description": {
     "message": "Farklı projelerdeki resim düzenleyicileri arasında öğeleri kopyalamanıza ve yapıştırmanıza izin verir."
   },
-  "important-messages/title": { "message": "Önemli Mesajlar" },
+  "important-messages/title": {
+    "message": "Önemli Mesajlar"
+  },
   "important-messages/description": {
     "message": "Mesajlar sayfasında önemli mesajları ayırır."
   },
-  "hide-footer/title": { "message": "Alt bilgiyi Gizle" },
+  "hide-footer/title": {
+    "message": "Alt bilgiyi Gizle"
+  },
   "hide-footer/description": {
     "message": "Altbilgi gereksiz fazla alan kaplıyor, bu yüzden gizleyelim!"
   },
-  "original-colors/title": { "message": "Mavi'ye Geri Dön" },
+  "original-colors/title": {
+    "message": "Mavi'ye Geri Dön"
+  },
   "original-colors/description": {
     "message": "Scratch'in tüm web sitesini mor renkten, Scratch 3.0'daki gibi maviye çevirir."
   },
@@ -191,51 +311,75 @@
   "simplify-editor-tabs/description": {
     "message": "Editör'deki butonları yalnızca simge halinde gösterir ve onları bir daire olarak gösterir."
   },
-  "live-character-counts/title": { "message": "Canlı Karakter Sayısı" },
+  "live-character-counts/title": {
+    "message": "Canlı Karakter Sayısı"
+  },
   "live-character-counts/description": {
     "message": "Forum, stüdyo ve proje sayfalarında metin kutuları için canlı karakter sayısını gösterir."
   },
-  "advanced-search/title": { "message": "Profilleri Ara" },
+  "advanced-search/title": {
+    "message": "Profilleri Ara"
+  },
   "advanced-search/description": {
     "message": "Scratch'te Arama bölümünde kullanıcıyı aradığınızda, aradığınız kullanıcının profilinize giden bir bağlantı butonu ekler."
   },
-  "studio-links/title": { "message": "İsimli stüdyo bağlantıları" },
+  "studio-links/title": {
+    "message": "İsimli stüdyo bağlantıları"
+  },
   "studio-links/description": {
     "message": "Scratch web sitesindeki tüm stüdyo bağlantılarını stüdyo ismiyle değiştirir."
   },
-  "block-studios/title": { "message": "Bireysel Stüdyo Etkinliğini Engelle" },
+  "block-studios/title": {
+    "message": "Bireysel Stüdyo Etkinliğini Engelle"
+  },
   "block-studios/description": {
     "message": "Belirli stüdyolardan stüdyo etkinliği mesajlarını devre dışı bırakın."
   },
-  "block-messages/title": { "message": "Kullanıcıları Engelle" },
+  "block-messages/title": {
+    "message": "Kullanıcıları Engelle"
+  },
   "block-messages/description": {
     "message": "Engellediğiniz kullanıcılardan gelen mesajları gizler. \nDiğer kullanıcılar sizi engellediğinizi görmeyecek."
   },
-  "two-colors/title": { "message": "2.0 Blok Renkleri" },
+  "two-colors/title": {
+    "message": "2.0 Blok Renkleri"
+  },
   "two-colors/description": {
     "message": "Düzenleyicideki blokların renklerini, kod düzenleyicisinin 2.0 sürümündeki bloklarla değiştirir."
   },
-  "project-links/title": { "message": "İsimli proje bağlantıları" },
+  "project-links/title": {
+    "message": "İsimli proje bağlantıları"
+  },
   "project-links/description": {
     "message": "Scratch web sitesindeki tüm proje bağlantılarını proje ismiyle değiştirir."
   },
-  "emoji-status/title": { "message": "Emoji Durumu" },
+  "emoji-status/title": {
+    "message": "Emoji Durumu"
+  },
   "emoji-status/description": {
     "message": "Profilinizdeki durumu bir emoji olarak ayarlar. \nDiğer ScratchTools kullanıcıları bu durumu görebilir."
   },
-  "display-name/title": { "message": "Görünen İsimler" },
+  "display-name/title": {
+    "message": "Görünen İsimler"
+  },
   "display-name/description": {
     "message": "Scratch kullanıcıları için görünen adlarınızı gösterir ve kendi görünen adınızı ayarlamanıza olanak sağlar. Görünen adlar, kullanıcı adlarınız gibi sınırlı değildir ve kullanıcı adınızın yanında görüntülenir."
   },
-  "isonline/title": { "message": "Kullanıcının aktifliği" },
+  "isonline/title": {
+    "message": "Kullanıcının aktifliği"
+  },
   "isonline/description": {
     "message": "Profil sayfalarında kullanıcının çevrimiçi olup olmadığını gösterir. Bu aynı zamanda diğer kullanıcıların sizi çevrimiçi olup olmadığını görmelerini sağlar."
   },
-  "plain-background/title": { "message": "Noktasız editör arka planı" },
+  "plain-background/title": {
+    "message": "Noktasız editör arka planı"
+  },
   "plain-background/description": {
     "message": "Kod düzenleyicisinin arka planındaki noktaları kaldırır."
   },
-  "hide-advertisements/title": { "message": "Mesajlardaki Reklamları Kaldır" },
+  "hide-advertisements/title": {
+    "message": "Mesajlardaki Reklamları Kaldır"
+  },
   "hide-advertisements/description": {
     "message": "Profillerin, projelerin ve stüdyoların yorumlarındaki reklamları gizler. Yorumlarda çok yer kaplayabilirler."
   },
@@ -245,7 +389,9 @@
   "hide-block-category-names/description": {
     "message": "Düzenleyicideki blok kategorilerini yalnızca kategorilerin renklerini gösterecek şekilde değiştirir."
   },
-  "unlisted-projects/title": { "message": "Liste Dışı Projeler" },
+  "unlisted-projects/title": {
+    "message": "Liste Dışı Projeler"
+  },
   "unlisted-projects/description": {
     "message": "Düzenleyicide paylaşılmayan projeler için paylaşım bağlantıları oluşturmanıza olanak tanır."
   },
@@ -255,23 +401,33 @@
   "stats-percentages/description": {
     "message": "Kendiminkiler sayfasında, beğenilerin, favorilerin veya remixlerin üzerine gelerek, bu eylemi gerçekleştiren izleyicilerin yüzdesini görüntüleyebilirsiniz."
   },
-  "clone-counter/title": { "message": "Klon Sayacı" },
+  "clone-counter/title": {
+    "message": "Klon Sayacı"
+  },
   "clone-counter/description": {
     "message": "Projedeki kopya sayısını sahne başlığının üzerinde görüntüler."
   },
-  "colored-shadows/title": { "message": "Renkli Gölgeler" },
+  "colored-shadows/title": {
+    "message": "Renkli Gölgeler"
+  },
   "colored-shadows/description": {
     "message": "Bir bloğu diğer bir bloğa yaklaştırdığınızda oluşan gölgeyi taşınan bloğun rengi ile değiştirir."
   },
-  "creator-badge/title": { "message": "Proje Sahibi Rozeti" },
+  "creator-badge/title": {
+    "message": "Proje Sahibi Rozeti"
+  },
   "creator-badge/description": {
     "message": "Projeyi oluşturan kişinin yazdığı yorumların yanına bir rozet ekler."
   },
-  "original-buttons/title": { "message": "Orijinal Butonlar" },
+  "original-buttons/title": {
+    "message": "Orijinal Butonlar"
+  },
   "original-buttons/description": {
     "message": "Orijinal kalp, favori, remix ve görünüm düğmelerini Scratch projesi sayfalarına döndürür."
   },
-  "box-shadows/title": { "message": "İçerik Kutusu Gölgeleri" },
+  "box-shadows/title": {
+    "message": "İçerik Kutusu Gölgeleri"
+  },
   "box-shadows/description": {
     "message": "Tüm içerik kutularına gölgeler ekler. Birinin üzerine gelindiğinde gölge koyulaşır."
   },
@@ -281,39 +437,57 @@
   "admin-notifications/description": {
     "message": "Scratch Ekibinden bir yönetici bildiriminiz varsa, gezinme çubuğundaki mesaj göstergesi turuncu yerine kırmızı renkte görüntülenir."
   },
-  "nicknames/title": { "message": "Takma Adlar" },
+  "nicknames/title": {
+    "message": "Takma Adlar"
+  },
   "nicknames/description": {
     "message": "Diğer Scratch'çiler için takma adlar belirleyin. Takma adları yalnızca siz görebilirsiniz ve adlarını gördüğünüzde kullanıcı adları takma adla değiştirilecektir."
   },
-  "load-more-forum-posts/title": { "message": "Daha fazla gönderi yükle" },
+  "load-more-forum-posts/title": {
+    "message": "Daha fazla gönderi yükle"
+  },
   "load-more-forum-posts/description": {
     "message": "Sayfaları değiştirmek zorunda kalmadan forumda daha fazla gönderi yükleyin."
   },
-  "scroll-project-titles/title": { "message": "Proje Başlıklarını Kaydır" },
+  "scroll-project-titles/title": {
+    "message": "Proje Başlıklarını Kaydır"
+  },
   "scroll-project-titles/description": {
     "message": "Sahip olmadığınız projelerin başlığının tamamını kaydırmanıza ve görüntülemenize olanak tanır."
   },
-  "search-context-menus/title": { "message": "Arama Bağlam Menüleri" },
+  "search-context-menus/title": {
+    "message": "Arama Bağlam Menüleri"
+  },
   "search-context-menus/description": {
     "message": "Seçeneği hızlı bir şekilde seçmek için tür ve arama bağlam menülerini kullanabilirsiniz. Ayrıca en üst seçeneği seçmek için \"enter\" tuşunu da kullanabilirsiniz."
   },
-  "hover-user-cards/title": { "message": "Kullanıcı Vurgulu Kartları" },
+  "hover-user-cards/title": {
+    "message": "Kullanıcı Vurgulu Kartları"
+  },
   "hover-user-cards/description": {
     "message": "Profil resmini, kullanıcı adını ve takipçi sayısını görüntülemek için web sitesindeki herhangi bir kullanıcı adının üzerine gelin."
   },
-  "exact-join-date/title": { "message": "Tam Katılım Tarihi" },
+  "exact-join-date/title": {
+    "message": "Tam Katılım Tarihi"
+  },
   "exact-join-date/description": {
     "message": "Bir kullanıcının katıldığı tam zamanı profilinde gösterir."
   },
-  "upload-img-directly/title": { "message": "Doğrudan Resim Yüklemeleri" },
+  "upload-img-directly/title": {
+    "message": "Doğrudan Resim Yüklemeleri"
+  },
   "upload-img-directly/description": {
     "message": "Scratch forumları için iletiler ve imzalar için resim yüklemenize olanak tanır, üçüncü taraf resim yükleme hizmetlerini kullanmanıza gerek kalmaz."
   },
-  "leave-studio/title": { "message": "Stüdyodan Ayrıl Düğmesi" },
+  "leave-studio/title": {
+    "message": "Stüdyodan Ayrıl Düğmesi"
+  },
   "leave-studio/description": {
     "message": "Yönettiğiniz veya katkıda bulunduğunuz stüdyoların küratörler sayfasına stüdyodan ayrılmanızı sağlayan bir düğme ekler. İlk olarak bir onay gösterilir."
   },
-  "user-stats/title": { "message": "Kullanıcı İstatistiklerini Göster" },
+  "user-stats/title": {
+    "message": "Kullanıcı İstatistiklerini Göster"
+  },
   "user-stats/description": {
     "message": "Bir profil sayfasındaki 'Ne yapıyorum' bölümünü kullanıcının istatistikleriyle değiştirir."
   },
@@ -323,7 +497,9 @@
   "frontpage-curator/description": {
     "message": "Ön sayfa İdarecinin adını profiline tıklanabilir bir bağlantıya dönüştürür."
   },
-  "minimized-remix-credits/title": { "message": "Küçültülmüş Remix Kredileri" },
+  "minimized-remix-credits/title": {
+    "message": "Küçültülmüş Remix Kredileri"
+  },
   "minimized-remix-credits/description": {
     "message": "Projeler için remix kredi kutuları proje Talimatlarından yer kaplar, bu nedenle bu kutuyu küçültür."
   },
@@ -333,7 +509,9 @@
   "follows-you/description": {
     "message": "Bir kullanıcı sizi takip ediyorsa, profilini ziyaret ettiğinizde kullanıcı adının yanında gösterilir."
   },
-  "custom-studio/title": { "message": "Özel Stüdyo Bölümü" },
+  "custom-studio/title": {
+    "message": "Özel Stüdyo Bölümü"
+  },
   "custom-studio/description": {
     "message": "Scratch web sitesinin ana sayfasında, seçtiğiniz stüdyodan en yeni projeler Öne Çıkan Projelerin üzerinde görüntülenir."
   },
@@ -343,11 +521,15 @@
   "highlight-unanswered/description": {
     "message": "Forumlarda yanıtı olmayan konulara mavi bir vurgu ekler."
   },
-  "hide-project-tags/title": { "message": "Proje Etiketlerini Gizle" },
+  "hide-project-tags/title": {
+    "message": "Proje Etiketlerini Gizle"
+  },
   "hide-project-tags/description": {
     "message": "Projelerin Talimatlarında / Notlarında ve Kredilerinde bağlantılı tüm etiketleri gizler."
   },
-  "search-assets/title": { "message": "Aranabilir Kuklalar" },
+  "search-assets/title": {
+    "message": "Aranabilir Kuklalar"
+  },
   "search-assets/description": {
     "message": "Editörde kostüm ve ses kuklalarını aramak için bir kısım ekler."
   },
@@ -357,23 +539,33 @@
   "block-count-in-mystuff/description": {
     "message": "Eşyalarım sayfasında projelerin blok sayısını görüntüler."
   },
-  "pause-audio/title": { "message": "Sesi Duraklat" },
+  "pause-audio/title": {
+    "message": "Sesi Duraklat"
+  },
   "pause-audio/description": {
     "message": "Scratch projelerinin ses düzenleyicisinde sesi duraklatmanıza ve devam ettirmenize olanak tanır."
   },
-  "display-message-count-in-icon/title": { "message": "Mesaj Sayısını Göster" },
+  "display-message-count-in-icon/title": {
+    "message": "Mesaj Sayısını Göster"
+  },
   "display-message-count-in-icon/description": {
     "message": "Mevcut mesaj sayınızı ScratchTools için uzantı simgesinde görüntüler."
   },
-  "colored-context-menus/title": { "message": "Renkli İçerik Menüleri" },
+  "colored-context-menus/title": {
+    "message": "Renkli İçerik Menüleri"
+  },
   "colored-context-menus/description": {
     "message": "Scratch 2.0'da olduğu gibi, bağlam menülerini, amaçlandıkları bloğun rengine göre renklendirir."
   },
-  "left-side-stage/title": { "message": "Sol Tarafta Sahne" },
+  "left-side-stage/title": {
+    "message": "Sol Tarafta Sahne"
+  },
   "left-side-stage/description": {
     "message": "Scratch 2.0'da olduğu gibi, sahneyi sağda tutmak yerine editörün sol tarafına taşır."
   },
-  "move-project-title-input/title": { "message": "Aşama Üstü Proje Başlığı" },
+  "move-project-title-input/title": {
+    "message": "Aşama Üstü Proje Başlığı"
+  },
   "move-project-title-input/description": {
     "message": "Scratch 2.0'da olduğu gibi, proje başlığı giriş kutusunu gezinme çubuğundan ziyade sahne alanının üzerine taşır. Bu sadece editör için geçerlidir."
   },
@@ -383,11 +575,15 @@
   "hide-disabled-menu-options/description": {
     "message": "Düzenleyicideki içerik menüsü seçenekleri, devre dışı bırakılmış ve kullanılamıyor olsalar bile gösterilir, bu nedenle bu özellik, devre dışı bırakılmışlarsa bunları gizler."
   },
-  "follower-count/title": { "message": "Projelere Takipçi Sayısı" },
+  "follower-count/title": {
+    "message": "Projelere Takipçi Sayısı"
+  },
   "follower-count/description": {
     "message": "Proje oluşturucunun takipçi sayısını projelerinde görüntüler."
   },
-  "hide-studio-borders/title": { "message": "Stüdyo Çerçevelerini Gizle" },
+  "hide-studio-borders/title": {
+    "message": "Stüdyo Çerçevelerini Gizle"
+  },
   "hide-studio-borders/description": {
     "message": "2.0 sayfalarındaki stüdyo görüntülerinin etrafındaki tek kareleri kaldırır."
   },
@@ -397,7 +593,9 @@
   "hide-textarea-labels/description": {
     "message": "Talimatlar, notlar ve kredi etiketleri, olağan bilgilerin olabileceği oldukça fazla yer kaplar. Bu onları ortadan kaldırır."
   },
-  "default-to-trending/title": { "message": "Varsayılan Olarak Trend Ara" },
+  "default-to-trending/title": {
+    "message": "Varsayılan Olarak Trend Ara"
+  },
   "default-to-trending/description": {
     "message": "Şu anda, Scratch web sitesinde projeler aradığınızda, trend olmak yerine otomatik olarak popüler filtreyle arama yaparsınız."
   },
@@ -419,7 +617,9 @@
   "special-editor-fonts/description": {
     "message": "Kostüm Editörüne Daha Fazla Yazı Tipi Ekler. Daha güzel görünüyorlar ve daha modernler."
   },
-  "get-project-tags/title": { "message": "Proje Etiketlerini Görüntüleme" },
+  "get-project-tags/title": {
+    "message": "Proje Etiketlerini Görüntüleme"
+  },
   "get-project-tags/description": {
     "message": "Proje açıklamasında kullanılan tüm etiketleri proje notlarının ve kredilerinin hemen altında listeler."
   },
@@ -441,7 +641,9 @@
   "cloud-scratchers/description": {
     "message": "Proje sayfalarında, o anda o çok oyunculu oyunda bulunan tüm Scratch'çileri görüntüler."
   },
-  "editor-in-two/title": { "message": "2.0 Düzenleyici" },
+  "editor-in-two/title": {
+    "message": "2.0 Düzenleyici"
+  },
   "editor-in-two/description": {
     "message": "Varsayılan 3.0 çevrimiçi proje düzenleyicisini 2.0 düzenleyicisiyle değiştirir. Gerçekten nostaljik."
   },
@@ -457,51 +659,75 @@
   "turbowarp-button-in-editor/description": {
     "message": "Geçerli projeyi turbowarp'ta anında açabilmeniz için editöre bir düğme ekler."
   },
-  "sprite-clones/title": { "message": "Hareketli Grafik Klon Sayacı" },
+  "sprite-clones/title": {
+    "message": "Hareketli Grafik Klon Sayacı"
+  },
   "sprite-clones/description": {
     "message": "Her bir hareketli grafik için klon sayısını görüntüler."
   },
-  "block-log/title": { "message": "Günlüğü Engelle" },
+  "block-log/title": {
+    "message": "Günlüğü Engelle"
+  },
   "block-log/description": {
     "message": "Ctrl+shift+l tuşlarına bastığınızda blok düzenleyicinin tüm geri alma bilgilerini günlüğe kaydeder ve görüntüler."
   },
-  "scrollable-list-items/title": { "message": "Kaydırılabilir Liste Öğeleri" },
+  "scrollable-list-items/title": {
+    "message": "Kaydırılabilir Liste Öğeleri"
+  },
   "scrollable-list-items/description": {
     "message": "Listenin genişliğinden daha uzun bir değere sahip liste öğeleri kesilir. Artık liste öğesinde sola ve sağa kaydırabilirsiniz."
   },
-  "custom-fonts/title": { "message": "Özel Web Sitesi Yazı Tipi" },
+  "custom-fonts/title": {
+    "message": "Özel Web Sitesi Yazı Tipi"
+  },
   "custom-fonts/description": {
     "message": "Scratch web sitesinde, yazı tipini Google Fonts web sitesinde olduğu sürece istediğiniz yazı tipine ayarlayabilirsiniz. Bu büyük / küçük harfe duyarlıdır."
   },
-  "project-timer/title": { "message": "Proje Zamanlayıcısı" },
+  "project-timer/title": {
+    "message": "Proje Zamanlayıcısı"
+  },
   "project-timer/description": {
     "message": "Projenin çalıştığı süreyi (saniye cinsinden) görüntüler."
   },
-  "colored-comments/title": { "message": "Renkli Editör Yorumları" },
+  "colored-comments/title": {
+    "message": "Renkli Editör Yorumları"
+  },
   "colored-comments/description": {
     "message": "Düzenleyicideki yorumları üst bloğunun rengine göre renklendirir."
   },
-  "recently-viewed-projects/title": { "message": "Son Görüntülenen Projeler" },
+  "recently-viewed-projects/title": {
+    "message": "Son Görüntülenen Projeler"
+  },
   "recently-viewed-projects/description": {
     "message": "Son görüntülediğiniz projelerin listesini görebileceğiniz Kendiminkiler sayfasına bir sekme ekler."
   },
-  "collapse-blocks/title": { "message": "Blokları Daralt" },
+  "collapse-blocks/title": {
+    "message": "Blokları Daralt"
+  },
   "collapse-blocks/description": {
     "message": "Düzenleyicideki blok menülerine sağ tıkla, seçilen bloğu daraltmanıza izin verecek bir düğme içerir."
   },
-  "set-featured-project/title": { "message": "Öne Çıkan Projeyi Ayarla" },
+  "set-featured-project/title": {
+    "message": "Öne Çıkan Projeyi Ayarla"
+  },
   "set-featured-project/description": {
     "message": "Herhangi bir proje sayfasında bir düğmeye tıklayarak profilinizin öne çıkan projesini ayarlayabilirsiniz, hatta paylaşılmamış projeleri bile."
   },
-  "scratchformat/title": { "message": "Scratch Formatı" },
+  "scratchformat/title": {
+    "message": "Scratch Formatı"
+  },
   "scratchformat/description": {
     "message": "Yorumlarınızı kalın, italik ve daha fazlası ile biçimlendirebilirsiniz. Yorumlar, ScratchTools kullanan herkes için stil kazanır."
   },
-  "expand-editor/title": { "message": "Düzenleyiciyi Genişlet" },
+  "expand-editor/title": {
+    "message": "Düzenleyiciyi Genişlet"
+  },
   "expand-editor/description": {
     "message": "Ctrl+E tuş kombinasyonunu kullanarak varsayılan blok düzenleyici görünümü ile sahneyi gizleyerek düzenleyiciyi genişleten görünüm arasında geçiş yapabilirsiniz."
   },
-  "list-sprites/title": { "message": "Kukla Listesi" },
+  "list-sprites/title": {
+    "message": "Kukla Listesi"
+  },
   "list-sprites/description": {
     "message": "Düzenleyicideki kukla ızgarasını, kuklanın blok sayısını ve konumunu içeren bir listeyle değiştirir."
   },
@@ -523,7 +749,9 @@
   "remove-topic-and-post/description": {
     "message": "Forum ana sayfası konusunu ve gönderi kutularını gizler."
   },
-  "forum-homepage-emojis/title": { "message": "Forum Kategorisi Emojileri" },
+  "forum-homepage-emojis/title": {
+    "message": "Forum Kategorisi Emojileri"
+  },
   "forum-homepage-emojis/description": {
     "message": "Forum ana sayfası kategorilerine konularına göre renkli emojiler ekler."
   },
@@ -533,119 +761,171 @@
   "remove-collapse-buttons/description": {
     "message": "Forum ana sayfasındaki daralt düğmelerini gizler."
   },
-  "pin-projects/title": { "message": "Projeleri Kendiminkilere Sabitle" },
+  "pin-projects/title": {
+    "message": "Projeleri Kendiminkilere Sabitle"
+  },
   "pin-projects/description": {
     "message": "Kendiminkiler sayfanızın üstüne bir projeyi bir düğmeye tıklayarak sabitleyebilirsiniz. Sabitlenmiş projenizi sabitlemeyi kaldırabilir veya başka bir projeyi sabitlenmiş projenizle değiştirebilirsiniz."
   },
-  "last-key-pressed/title": { "message": "Basılan Son Tuş" },
+  "last-key-pressed/title": {
+    "message": "Basılan Son Tuş"
+  },
   "last-key-pressed/description": {
     "message": "Herhangi bir proje sayfasında ve editörde, projeye göre o projede son bastığınız tuşu görebilirsiniz. Bu, platform tarzı oyunlar gibi oyunlar için faydalı olabilir."
   },
-  "hide-signatures/title": { "message": "Forum İmzalarını Gizle" },
+  "hide-signatures/title": {
+    "message": "Forum İmzalarını Gizle"
+  },
   "hide-signatures/description": {
     "message": "Tüm forum imzalarını ve imza bölücülerini gizler."
   },
-  "twemoji-in-forums/title": { "message": "Daha iyi Forum Emojileri" },
+  "twemoji-in-forums/title": {
+    "message": "Daha iyi Forum Emojileri"
+  },
   "twemoji-in-forums/description": {
     "message": "Mevcut düşük çözünürlüklü forum emojilerini yüksek kaliteli Twemoji ile değiştirir."
   },
-  "go-to-parent/title": { "message": "Ana Düğmeye Git" },
+  "go-to-parent/title": {
+    "message": "Ana Düğmeye Git"
+  },
   "go-to-parent/description": {
     "message": "Remix olan herhangi bir projenin düzenleyicisinde, üst projedeki düzenleyiciye gitmek için bir düğmeyi tıklatabilirsiniz."
   },
-  "most-popular-project/title": { "message": "En Popüler Proje" },
+  "most-popular-project/title": {
+    "message": "En Popüler Proje"
+  },
   "most-popular-project/description": {
     "message": "Kullanıcının en popüler projesini (görünümlere göre) profil sayfalarında görüntüler. Görüntülemek için projeye tıklayabilirsiniz."
   },
-  "editor-dark-mode/title": { "message": "Editör Karanlık Modu" },
+  "editor-dark-mode/title": {
+    "message": "Editör Karanlık Modu"
+  },
   "editor-dark-mode/description": {
     "message": "Editörün açık renk düzenini daha koyu bir düzene geçirir."
   },
-  "hide-studio-group-icon/title": { "message": "Stüdyo Grubu Simgesini Gizle" },
+  "hide-studio-group-icon/title": {
+    "message": "Stüdyo Grubu Simgesini Gizle"
+  },
   "hide-studio-group-icon/description": {
     "message": "Stüdyo grubu simgesini gizler ve yalnızca stüdyo küçük resmini gösterir."
   },
-  "colored-messages/title": { "message": "Renkli Mesajlar" },
+  "colored-messages/title": {
+    "message": "Renkli Mesajlar"
+  },
   "colored-messages/description": {
     "message": "Mesajlarınızı türüne göre renklendirir, örneğin beğeniler, favoriler ve stüdyo davetiyeleri gibi."
   },
-  "full-title/title": { "message": "Projenin Tam Adı" },
+  "full-title/title": {
+    "message": "Projenin Tam Adı"
+  },
   "full-title/description": {
     "message": "Profil sayfalarında, başlığın tamamını göstermek için herhangi bir proje başlığının üzerine gelin."
   },
-  "fixed-box/title": { "message": "İçerik Kutularını Düzeltin" },
+  "fixed-box/title": {
+    "message": "İçerik Kutularını Düzeltin"
+  },
   "fixed-box/description": {
     "message": "Sayfalardaki kutuların tüm kenarlarını yalnızca üst kısımlar yerine yuvarlatılmış hale getirir."
   },
-  "user-bio/title": { "message": "Vurgulu Kullanıcı Biyografisi" },
+  "user-bio/title": {
+    "message": "Vurgulu Kullanıcı Biyografisi"
+  },
   "user-bio/description": {
     "message": "Profil yorumlarında, kullanıcının biyografisini görüntülemek için herhangi bir kullanıcı adının üzerine gelin."
   },
-  "nfe-project-checker/title": { "message": "NFE Proje Denetleyicisi" },
+  "nfe-project-checker/title": {
+    "message": "NFE Proje Denetleyicisi"
+  },
   "nfe-project-checker/description": {
     "message": "Proje sayfalarında, projenin Güvenli, Görüntülenmemiş veya NSFE (Herkes için Güvenli Değil) olup olmadığını görüntüler."
   },
-  "sprite-data/title": { "message": "Hareketli Grafik Verilerini Görüntüleme" },
+  "sprite-data/title": {
+    "message": "Hareketli Grafik Verilerini Görüntüleme"
+  },
   "sprite-data/description": {
     "message": "Her hareketli grafik için Kod, Kostümler ve Sesler sekmesinde geçerli hareketli grafik için blok, kostüm ve ses sayısı görüntülenir."
   },
-  "aviate/title": { "message": "Havacılık Durumları" },
+  "aviate/title": {
+    "message": "Havacılık Durumları"
+  },
   "aviate/description": {
     "message": "Profil sayfalarında Aviate durumlarını görüntüler. Durumunuzu aviate.scratchers.tech adresinde ayarlayabilirsiniz."
   },
-  "idea-generator/title": { "message": "Proje Fikir Üreteci" },
+  "idea-generator/title": {
+    "message": "Proje Fikir Üreteci"
+  },
   "idea-generator/description": {
     "message": "Scratch Fikirler sayfasında, ihtiyacınız varsa proje fikirleri oluşturabileceğiniz bir bölüm olacak."
   },
-  "hide-stickies/title": { "message": "Forum Yapışkanlarını Gizle" },
+  "hide-stickies/title": {
+    "message": "Forum Yapışkanlarını Gizle"
+  },
   "hide-stickies/description": {
     "message": "Her forum konusunun üst kısmındaki temel yapışkanları gizler."
   },
-  "nfe-search/title": { "message": "NFE Araması" },
+  "nfe-search/title": {
+    "message": "NFE Araması"
+  },
   "nfe-search/description": {
     "message": "NFE projeleri de dahil olmak üzere tüm projeleri aramak için bir düğme kullanın."
   },
-  "open-in-new-tab/title": { "message": "Yeni Sekmede Aç" },
+  "open-in-new-tab/title": {
+    "message": "Yeni Sekmede Aç"
+  },
   "open-in-new-tab/description": {
     "message": "Proje sayfalarındaki bağlantıları otomatik olarak yeni bir sekmede açar."
   },
-  "unbold-site-text/title": { "message": "Site Metninin Kalınlığını Kaldır" },
+  "unbold-site-text/title": {
+    "message": "Site Metninin Kalınlığını Kaldır"
+  },
   "unbold-site-text/description": {
     "message": "Tüm Scratch üzerindeki metinlerin kalın olmayan, yani normal metin olarak görüntülenmesini sağlar."
   },
-  "compact-navbar/title": { "message": "Kompakt Gezinme Çubuğu" },
+  "compact-navbar/title": {
+    "message": "Kompakt Gezinme Çubuğu"
+  },
   "compact-navbar/description": {
     "message": "Profil açılır listenizin bulunduğu yere yakın gezinme çubuğunda daha fazla yer açar."
   },
-  "delete-all/title": { "message": "Tüm Kuklaları Sil" },
+  "delete-all/title": {
+    "message": "Tüm Kuklaları Sil"
+  },
   "delete-all/description": {
     "message": "Kuklalar için sağ tıklama bağlam menüsüne bir seçenek ekler. Tüm kuklaları silecektir (bir kaza olmadığından emin olmak için onaylandıktan sonra)."
   },
-  "round-profile-pictures/title": { "message": "Yuvarlak Profil Resimleri" },
+  "round-profile-pictures/title": {
+    "message": "Yuvarlak Profil Resimleri"
+  },
   "round-profile-pictures/description": {
     "message": "Scratch web sitesindeki tüm profil resimleri yuvarlatılacaktır."
   },
-  "sidebar/title": { "message": "Kenar çubuğu" },
-  "sidebar/description": {
-    "message": "Ekranın üst kısmındaki normal gezinme çubuğu yerine Scratch web sitesine bir kenar çubuğu ekler."
+  "ocular-link/title": {
+    "message": "Forumlardaki Oküler Bağlantılar"
   },
-  "ocular-link/title": { "message": "Forumlardaki Oküler Bağlantılar" },
   "ocular-link/description": {
     "message": "Herhangi bir kullanıcının Oküler sayfasına, bir gönderideki kullanıcı adının hemen altına bir bağlantı ekler."
   },
-  "forum-scratch-team/title": { "message": "Forumlarda Scratch Ekibi Sembolü" },
+  "forum-scratch-team/title": {
+    "message": "Forumlarda Scratch Ekibi Sembolü"
+  },
   "forum-scratch-team/description": {
     "message": "Forumlardaki herhangi bir Scratch Ekibi üyesinin kullanıcı adının yanında, kullanıcı adının sonuna bir yıldız işareti (*) yerleştirilir."
   },
-  "remove-editor-icons/title": { "message": "Düzenleyici Simgelerini Kaldır" },
+  "remove-editor-icons/title": {
+    "message": "Düzenleyici Simgelerini Kaldır"
+  },
   "remove-editor-icons/description": {
     "message": "Simgeleri düzenleyicideki sekmelerden kaldırır."
   },
-  "sprite-watermark/title": { "message": "Kukla Filigranını Kaldır" },
+  "sprite-watermark/title": {
+    "message": "Kukla Filigranını Kaldır"
+  },
   "sprite-watermark/description": {
     "message": "Düzenleyicide gösterilen kukla filigranını kaldırır."
   },
-  "compact-editor/title": { "message": "Kompakt Düzenleyici" },
+  "compact-editor/title": {
+    "message": "Kompakt Düzenleyici"
+  },
   "compact-editor/description": {
     "message": "Kukla ve arka plan bilgilerini daha kompakt hale getirir."
   },
@@ -655,7 +935,9 @@
   "my-recent-projects/description": {
     "message": "Ana sayfadaki Scratch Haberleri bölümünü son paylaşılan projelerinizle değiştirir."
   },
-  "focus-mode/title": { "message": "Odak Modu" },
+  "focus-mode/title": {
+    "message": "Odak Modu"
+  },
   "focus-mode/description": {
     "message": "Düğme tıklatıldığında proje sayfalarındaki yorumları, stüdyo ve remix sütununu, üstbilgiyi ve altbilgiyi kaldırır."
   }
