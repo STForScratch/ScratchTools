@@ -74,7 +74,7 @@ export default async function ({ feature, console }) {
 
                 let goToLink = document.createElement("a")
                 goToLink.href = `https://scratch.mit.edu/projects/${pinned.projectId}/#comments-${pinned.commentId}`
-                goToLink.textContent = "view full comment"
+                goToLink.textContent = "view context"
                 goTo.appendChild(goToLink)
 
                 list.parentElement.insertBefore(box, list)
