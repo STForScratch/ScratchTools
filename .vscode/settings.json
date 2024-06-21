@@ -3,6 +3,10 @@
     {
       "fileMatch": ["/features/*/data.json"],
       "url": "https://raw.githubusercontent.com/STForScratch/schema/main/feature.json"
+    },
+    {
+      "fileMatch": ["/manifest.json"],
+      "url": "https://json.schemastore.org/chrome-manifest.json"
     }
   ]
 }
