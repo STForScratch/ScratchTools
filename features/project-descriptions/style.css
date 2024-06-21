@@ -7,6 +7,10 @@
     left: 6rem;
 }
 
+.project-textlabel {
+    position: relative;
+}
+
 .ai-star:hover {
     transform: scale(1.1);
 }
