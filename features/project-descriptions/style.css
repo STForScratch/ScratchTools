@@ -1,9 +1,10 @@
 .ai-star {
     height: 1.4rem;
-    margin-left: .3rem;
+    position: absolute;
     cursor: pointer;
     transform: none;
     transition: transform .3s;
+    left: 6rem;
 }
 
 .ai-star:hover {
