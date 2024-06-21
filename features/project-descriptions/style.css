@@ -1,8 +1,7 @@
 .ai-star {
     height: 1.4rem;
-    position: relative;
-    top: .4rem;
-    margin-left: .3rem;
+    position: absolute;
+    left: 6rem;
     cursor: pointer;
     transform: none;
     transition: transform .3s;
@@ -28,4 +27,8 @@
     text-align: right;
     margin-top: .2rem;
     opacity: .6;
+}
+
+div.project-textlabel {
+    position: relative;
 }
