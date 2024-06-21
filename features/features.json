@@ -2,12 +2,12 @@
   {
     "version": 2,
     "id": "snap-to-grid",
-    "versionAdded": "v4.0.0"
+    "versionAdded": "v3.9.0"
   },
   {
     "version": 2,
     "id": "select-self",
-    "versionAdded": "v4.0.0"
+    "versionAdded": "v3.9.0"
   },
   {
     "version": 2,
