@@ -1,0 +1,22 @@
+{
+    "title": "Snap Scripts to Grid",
+    "description": "Automatically aligns scripts to the dotted grid in the editor when placed.",
+    "credits": [
+        {
+            "username": "rgantzos",
+            "url": "https://scratch.mit.edu/users/rgantzos/"
+        }
+    ],
+    "type": [
+        "Editor"
+    ],
+    "tags": [
+        "New"
+    ],
+    "scripts": [
+        {
+            "file": "script.js",
+            "runOn": "/projects/*"
+        }
+    ]
+}
