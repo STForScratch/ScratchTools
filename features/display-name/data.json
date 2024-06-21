@@ -12,11 +12,5 @@
   "styles": [
     { "file": "profile.css", "runOn": "/users/*" }
   ],
-  "similar": ["isonline", "emoji-status"],
-  "components": [
-    {
-      "type": "warning",
-      "content": "Due to issues with Scratch's cloud data system, the ability to change your display name is temporarily unavailable."
-    }
-  ]
+  "similar": ["isonline", "emoji-status"]
 }

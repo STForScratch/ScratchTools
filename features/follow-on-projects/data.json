@@ -1,0 +1,13 @@
+{
+  "title": "Follow on Project Page",
+  "description": "Follow users directly from the project page instead of going to their profile.",
+  "credits": [
+    { "username": "green_thing_game2", "url": "https://scratch.mit.edu/users/green_thing_game2/" },
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": [],
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
+  "resources": [{ "name": "project-follow-icon", "path": "/follow.svg" }]
+}

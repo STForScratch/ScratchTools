@@ -73,6 +73,7 @@ ScratchTools.managedElements = [];
 ScratchTools.Storage = {};
 ScratchTools.Resources = {};
 ste.console.log("ScratchTools API Created", "ste-main");
+
 if (
   window.location.href.startsWith("https://scratch.mit.edu/projects/") &&
   window.location.href.includes("/editor")
@@ -154,6 +155,7 @@ function enableScratchToolsSelectorsMutationObserver() {
     { attributes: true, childList: true, subtree: true }
   );
 }
+
 enableScratchToolsSelectorsMutationObserver();
 
 function returnScratchToolsSelectorsMutationObserverCallbacks() {

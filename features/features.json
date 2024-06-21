@@ -6,6 +6,101 @@
   },
   {
     "version": 2,
+    "id": "snap-to-grid",
+    "versionAdded": "v3.9.0"
+  },
+  {
+    "version": 2,
+    "id": "select-self",
+    "versionAdded": "v3.9.0"
+  },
+  {
+    "version": 2,
+    "id": "sidebar",
+    "versionAdded": "v3.8.0"
+  },
+  {
+    "version": 2,
+    "id": "project-version-detector",
+    "versionAdded": "v3.8.0"
+  },
+  {
+    "version": 2,
+    "id": "fullscreen-explorer",
+    "versionAdded": "v3.8.0"
+  },
+  {
+    "version": 2,
+    "id": "project-descriptions",
+    "versionAdded": "v3.8.0"
+  },
+  {
+    "version": 2,
+    "id": "total-stats",
+    "versionAdded": "v3.8.0"
+  },
+  {
+    "version": 2,
+    "id": "project-miniplayer",
+    "versionAdded": "v3.8.0"
+  },
+  {
+    "version": 2,
+    "id": "pin-comments",
+    "versionAdded": "v3.8.0"
+  },
+  {
+    "version": 2,
+    "id": "download-project",
+    "versionAdded": "v3.7.0"
+  },
+  {
+    "version": 2,
+    "id": "blur-modal",
+    "versionAdded": "v3.7.0"
+  },
+  {
+    "version": 2,
+    "id": "quick-search",
+    "versionAdded": "v3.7.0"
+  },
+  {
+    "version": 2,
+    "id": "favicon-messages",
+    "versionAdded": "v3.7.0"
+  },
+  {
+    "version": 2,
+    "id": "show-emoji-names",
+    "versionAdded": "v3.7.0"
+  },
+  {
+    "version": 2,
+    "id": "more-block-themes",
+    "versionAdded": "v3.7.0"
+  },
+  {
+    "version": 2,
+    "id": "more-key-inputs",
+    "versionAdded": "v3.7.0"
+  },
+  {
+    "version": 2,
+    "id": "comment-tags",
+    "versionAdded": "v3.7.0"
+  },
+  {
+    "version": 2,
+    "id": "profile-flag",
+    "versionAdded": "v3.5.0"
+  },
+  {
+    "version": 2,
+    "id": "follow-on-projects",
+    "versionAdded": "v3.5.0"
+  },
+  {
+    "version": 2,
     "id": "dark-paint-editor",
     "versionAdded": "v3.5.0"
   },
@@ -971,10 +1066,9 @@
   {
     "title": "NFE Project Checker",
     "description": "On project pages, displays whether the project is Safe, Unreviewed, or NSFE (Not Safe for Everyone).",
-    "credits": ["Scratchfangs", "Jeffalo", "rgantzos"],
+    "credits": ["Scratchfangs", "rgantzos"],
     "urls": [
       "https://scratch.mit.edu/users/scratchfangs/",
-      "https://scratch.mit.edu/users/jeffalo/",
       "https://scratch.mit.edu/users/rgantzos/"
     ],
     "file": "nfe-project-checker",
@@ -1080,18 +1174,6 @@
       "https://scratch.mit.edu/users/rgantzos/"
     ],
     "file": "round-profile-pictures",
-    "type": ["Website", "Theme"]
-  },
-  {
-    "title": "Sidebar",
-    "description": "Adds a sidebar to the Scratch website, rather than just the normal navigation bar at the top of the screen.",
-    "credits": ["Scratchfangs", "rgantzos", "callumjt"],
-    "urls": [
-      "https://scratch.mit.edu/users/scratchfangs/",
-      "https://scratch.mit.edu/users/rgantzos/",
-      "https://scratch.mit.edu/users/callumjt/"
-    ],
-    "file": "sidebar",
     "type": ["Website", "Theme"]
   },
   {

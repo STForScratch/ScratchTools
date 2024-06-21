@@ -1,17 +1,12 @@
 {
   "NOTE": "THERE IS NO NEED TO UPDATE THIS YOURSELF, IT WILL BE UPDATED WHEN RELEASED.",
-  "version": "3.4.0",
+  "version": "3.8.0",
   "enhanced": [
-    "Shorter unlisted project links.",
-    "Update Aviate URL.",
-    "Port Anti Generic to v2.",
-    "Improve feature API.",
-    "Add cloud data warnings."
+    "Update contributor names.",
+    "Add clicker game."
 ],
   "fixed": [
-    "Fix caching URLs.",
-    "Remove beta alerts.",
-    "Fix the save button appearing in the report modal.",
-    "Fix issues with Hide Project Tags and Display Project Tags."
+    "Fix protect mention text.",
+    "Fix search bar."
   ]
 }

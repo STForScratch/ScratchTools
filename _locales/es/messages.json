@@ -1,0 +1,47 @@
+{
+  "extName": {
+    "message": "ScratchTools para Scratch"
+  },
+  "extDescription": {
+    "message": "ScratchTools es completamente personalizable con muchas funciones, ¡todo para hacer el sitio web de Scratch mejor y más fácil de utilizar!"
+  },
+  "supportButton": {
+    "message": "Soporte"
+  },
+  "feedbackButton": {
+    "message": "Danos tu opinión"
+  },
+  "settingsButton": {
+    "message": "Ajustes adicionales"
+  },
+  "featuresFilterAll": {
+    "message": "Todos"
+  },
+  "featuresFilterWebsite": {
+    "message": "Sitio Web"
+  },
+  "featuresFilterEditor": {
+    "message": "Editor"
+  },
+  "featuresFilterForums": {
+    "message": "Foros"
+  },
+  "allFeaturesHeader": {
+    "message": "Todas las funciones"
+  },
+  "forYouHeader": {
+    "message": "Para tí"
+  },
+  "searchPlaceholder": {
+    "message": "Buscar"
+  },
+  "creditsText": {
+    "message": "Créditos"
+  },
+  "viewFeature": {
+    "message": "Haga click para ver la función."
+  },
+  "themeStore": {
+    "message": "Tienda de temas"
+  }
+}

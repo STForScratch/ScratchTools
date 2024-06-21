@@ -1,0 +1,13 @@
+.ste-download::before {
+    background-image: var(--scratchtoolsresource-download-btn);
+    display: inline-block;
+    margin-right: .25rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: .875rem;
+    height: .875rem;
+    vertical-align: bottom;
+    content: "";
+    transform: scale(1.3);
+}

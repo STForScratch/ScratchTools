@@ -1,0 +1,40 @@
+:root {
+  --motion-fill: transparent;
+  --motion-stroke: #3373CC;
+
+  --looks-fill: transparent;
+  --looks-stroke: #774DCB;
+
+  --sound-fill: transparent;
+  --sound-stroke: #BD42BD;
+
+  --event-fill: transparent;
+  --event-stroke: #CC9900;
+
+  --control-fill: transparent;
+  --control-stroke: #CF8B17;
+
+  --sensing-fill: transparent;
+  --sensing-stroke: #2E8EB8;
+
+  --operators-fill: transparent;
+  --operators-stroke: #389438;
+
+  --data-fill: transparent;
+  --data-stroke: #DB6E00;
+  --data-lists-fill: transparent;
+  --data-lists-stroke: #E64D00;
+
+  --custom-fill: transparent;
+  --custom-stroke: #FF3355;
+
+  --other-fill: transparent;
+  --other-stroke: #0B8E69;
+
+  --text-light: #000000;
+  --text-normal: #000000;
+  --text-light: var(--editorDarkMode-primary-text);
+  --text-normal: var(--editorDarkMode-primary-text);
+
+  --arg-border: transparent;
+}

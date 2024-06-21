@@ -81,3 +81,9 @@ ScratchTools.injectModule = async function (script) {
     }
   }
 };
+
+async function loadApril() {
+  let april = await import("./april/index.js")
+  april.default()
+}
+loadApril()

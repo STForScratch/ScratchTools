@@ -7,7 +7,7 @@
   position: fixed;
   left: 0px;
   top: 0px;
-  z-index: 999999999999999;
+  z-index: 2147483646;
 }
 
 .st-modal {
@@ -19,7 +19,7 @@
   background-color: #fafafa;
   border-radius: 0.5rem;
   padding-top: 3rem;
-  z-index: 999999999999999999999;
+  z-index: 2147483647;
 }
 
 .st-modal h1 {

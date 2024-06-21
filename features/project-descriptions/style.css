@@ -1,0 +1,34 @@
+.ai-star {
+    height: 1.4rem;
+    position: absolute;
+    left: 6rem;
+    cursor: pointer;
+    transform: none;
+    transition: transform .3s;
+}
+
+.ai-star:hover {
+    transform: scale(1.1);
+}
+
+.ai-description div {
+    background-color: rgb(112 0 255 / 20%) !important;
+    flex: none !important;
+    height: fit-content;
+    font-weight: 500;
+    color: rgb(82, 35, 118);
+}
+
+.ai-description p {
+    margin: 0px;
+    font-size: .8rem;
+    font-weight: 500;
+    width: 100%;
+    text-align: right;
+    margin-top: .2rem;
+    opacity: .6;
+}
+
+div.project-textlabel {
+    position: relative;
+}

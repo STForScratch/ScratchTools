@@ -18,6 +18,7 @@ Version 1.8.
   --secondary-bg: #151515;
   --accent: #202020;
   --text: #bfbfbf;
+  --editorDarkMode-primary-text: #ffffff;
 }
 
 /*Main UI bar, similar bars, and dropdown menu*/

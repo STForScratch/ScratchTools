@@ -3,7 +3,8 @@ document.querySelector("title").textContent = "What's New in v" + version;
 document.querySelector("h1").textContent = "What's New in v" + version;
 
 async function getChanges() {
-  var newFeatures = await (await fetch("/features/features.json")).json();
+  var newFeatures = (await (await fetch("/features/features.json")).json()).reverse();
+  let soFarI = 0
   for (var i in newFeatures) {
     var feature = newFeatures[i];
     if (feature.versionAdded === "v" + version || feature.versionUpdated === "v" + version) {
@@ -24,13 +25,14 @@ async function getChanges() {
       var design = document.createElement("div");
       design.className = "colorful-design";
       div.prepend(design);
-      if (i > 2) {
+      if (soFarI > 2) {
         div.className = "wide-feature feature";
         document.querySelector(".new-features-full").prepend(div);
       } else {
         div.className = "feature";
         document.querySelector(".new-features").prepend(div);
       }
+      soFarI += 1
     }
   }
   const changes = await (await fetch("./changes.json")).json();

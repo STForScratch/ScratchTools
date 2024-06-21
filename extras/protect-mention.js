@@ -10,7 +10,7 @@ function warnUser(el) {
         document.scratchtoolsMentioned = true;
         ScratchTools.createModal(
           "Warning",
-          "Mentioning ScratchTools on Scratch can get you in trouble due to their browser extension policy. If you have feedback to leave, you can do it at https://scratchtools.app/feedback - just remember, this, and be careful if you do choose to post this comment anyways.",
+          "Mentioning ScratchTools on Scratch can get you in trouble due to their browser extension policy. If you have feedback to leave, you can do it at https://scratchtools.app/feedback - just remember this and be careful if you do choose to post this comment anyways.",
           [
             {
               label: "Feedback",

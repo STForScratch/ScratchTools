@@ -46,10 +46,11 @@ function maximumViews(numArray) {
 }
 
 function addBox(title, id, views, instructions) {
+  if (document.querySelector(".ste-most-popular")) return;
   var a = document.createElement("a");
   a.href = `https://scratch.mit.edu/projects/${id}/`;
   var box = document.createElement("div");
-  box.className = "box";
+  box.className = "box ste-most-popular";
   var boxHead = document.createElement("div");
   boxHead.className = "box-head";
   var boxTitle = document.createElement("h4");

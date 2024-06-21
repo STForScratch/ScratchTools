@@ -1,0 +1,26 @@
+{
+  "title": "Editor Comment Tags",
+  "description": "Add tags to editor comments to easily organize them.",
+  "credits": [
+    {
+      "username": "rgantzos",
+      "url": "https://scratch.mit.edu/users/rgantzos/"
+    }
+  ],
+  "type": ["Editor"],
+  "tags": ["New", "Featured"],
+  "dynamic": true,
+  "scripts": [
+    {
+      "file": "script.js",
+      "runOn": "/projects/*"
+    }
+  ],
+  "styles": [
+    {
+      "file": "editor.css",
+      "runOn": "/projects/*"
+    }
+  ],
+  "resources": [{ "name": "tag-colors", "path": "/colors.json" }]
+}

@@ -1,0 +1,140 @@
+.ste-quick-search {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: brightness(.95) blur(.5rem);
+    z-index: 99999999;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.285);
+}
+
+.ste-quick-search > div {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 40rem;
+    background-color: white;
+    color: black;
+    padding: 0px;
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+.ste-quick-search input {
+    width: calc(100% - 2rem);
+    padding: 1rem;
+    border: 0px;
+    outline: none;
+    box-shadow: none;
+    font-size: 1rem;
+    margin: 0px;
+}
+
+.ste-quick-search > div a {
+    width: calc(100% - 2rem);
+    display: block;
+    padding: 1rem;
+    font-weight: normal;
+    color: black;
+    margin: 0px;
+    position: relative;
+}
+
+.ste-quick-search > div a:first-child {
+    background-color: #ff9f0050;
+}
+
+.ste-quick-search > div > div:hover a:first-child {
+    background-color: transparent;
+}
+
+.ste-quick-search > div > div > a:hover {
+    background-color: #ff9f0050 !important;
+    text-decoration: none;
+}
+
+.ste-quick-search > div > span {
+    position: absolute;
+    right: 1rem;
+    top: 1.1rem;
+    font-size: .9rem;
+    opacity: .5;
+}
+
+span.qs-key {
+    padding: .2rem;
+    border: 1px solid #818181;
+    border-radius: .2rem;
+}
+
+span.qs-type {
+    position: absolute;
+    right: 1rem;
+    top: .8rem;
+    padding: .2rem;
+    border: 1px solid #818181;
+    border-radius: .2rem;
+    font-size: .8rem;
+    opacity: .5;
+    margin: 0px;
+}
+
+.ai-response {
+    padding: 1rem;
+    line-height: 1.4rem;
+    max-height: 18rem;
+    overflow-y: auto;
+    white-space: pre-line;
+}
+
+.ai-response b {
+    display: block;
+    color: #4fb1fc;
+    margin-bottom: .5rem;
+}
+
+.ai-response a {
+    border: 1px solid #4fb1fc;
+    width: calc(100% - calc(1rem + 2px)) !important;
+    padding: .5rem !important;
+    border-radius: .5rem;
+    background-color: transparent !important;
+    margin-bottom: .5rem !important;
+    transition: background-color .3s, color .3s;
+}
+
+.ai-response a:hover {
+    background-color: #4fb1fc !important;
+    color: white;
+}
+
+.ai-response img {
+    height: 2rem;
+    border: 2px solid lightblue;
+    border-radius: 1.5rem;
+}
+
+.ai-response > div:first-child {
+    width: fit-content;
+    display: inline-flex;
+}
+
+.ai-response > div:last-child {
+    display: inline-flex;
+    width: calc(calc(100% - 3rem) - 4px);
+    margin-left: 1rem;
+    position: relative;
+    top: -1.25rem;
+}
+
+.ai-response div div {
+    width: 100%;
+}
+
+.ste-quick-search[data-mode="ai"] input {
+    color: #4fb1fc;
+}

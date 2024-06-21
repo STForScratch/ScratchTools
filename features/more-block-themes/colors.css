@@ -1,0 +1,397 @@
+g .blocklyBlockBackground {
+  fill: var(--custom-fill);
+  stroke: var(--custom-stroke);
+}
+
+g g[data-shapes="argument round"] > .blocklyBlockBackground,
+g > g[data-argument-type="dropdown"] > rect,
+g > g[data-argument-type="variable"] > rect,
+g > g[data-argument-type="text"] > path.blocklyBlockBackground,
+g
+  > g[data-argument-type="text"][data-shapes="argument round"]
+  > .blocklyBlockBackground.blocklyPath,
+g
+  > g[data-shapes="argument round"][data-argument-type="text number"]
+  > .blocklyBlockBackground {
+  fill: var(--arg-border);
+  stroke: var(--custom-stroke);
+}
+
+g > path[data-argument-type="boolean"] {
+  stroke: var(--custom-stroke);
+}
+
+.blocklyDropDownDiv {
+  background-color: var(--custom-fill) !important;
+  border-color: var(--custom-stroke) !important;
+  color: var(--text-normal);
+}
+
+g[data-category="motion"] > .blocklyBlockBackground {
+  fill: var(--motion-fill);
+  stroke: var(--motion-stroke);
+}
+
+g[data-category="motion"] > path[data-argument-type="boolean"] {
+  stroke: var(--motion-stroke);
+}
+
+g[data-category="motion"]
+  g[data-shapes="argument round"]
+  > .blocklyBlockBackground,
+g[data-category="motion"] > g[data-argument-type="dropdown"] > rect,
+g[data-category="motion"] > g[data-argument-type="variable"] > rect,
+g[data-category="motion"]
+  > g[data-argument-type="text"]
+  > path.blocklyBlockBackground,
+g[data-category="motion"]
+  > g[data-shapes="argument round"][data-argument-type="text number"]
+  > .blocklyBlockBackground {
+  fill: var(--arg-border);
+  stroke: var(--motion-stroke);
+}
+
+.blocklyDropDownDiv[data-category="motion"] {
+  background-color: var(--motion-fill) !important;
+  border-color: var(--motion-stroke) !important;
+  color: var(--text-normal);
+}
+
+g[data-category="looks"] > .blocklyBlockBackground {
+  fill: var(--looks-fill);
+  stroke: var(--looks-stroke);
+}
+
+g[data-category="looks"] > path[data-argument-type="boolean"] {
+  stroke: var(--looks-stroke);
+}
+
+g[data-category="looks"]
+  g[data-shapes="argument round"]
+  > .blocklyBlockBackground,
+g[data-category="looks"] > g[data-argument-type="dropdown"] > rect,
+g[data-category="looks"] > g[data-argument-type="variable"] > rect,
+g[data-category="looks"]
+  > g[data-argument-type="text"]
+  > path.blocklyBlockBackground,
+g[data-category="looks"]
+  > g[data-argument-type="text"][data-shapes="argument round"]
+  > path.blocklyBlockBackground,
+g[data-category="looks"]
+  > g[data-shapes="argument round"][data-argument-type="text number"]
+  > .blocklyBlockBackground {
+  fill: var(--arg-border);
+  stroke: var(--looks-stroke);
+}
+
+.blocklyDropDownDiv[data-category="looks"] {
+  background-color: var(--looks-fill) !important;
+  border-color: var(--looks-stroke) !important;
+  color: var(--text-normal);
+}
+
+g[data-category="sounds"] > .blocklyBlockBackground {
+  fill: var(--sound-fill);
+  stroke: var(--sound-stroke);
+}
+
+g[data-category="sounds"] > path[data-argument-type="boolean"] {
+  stroke: var(--sound-stroke);
+}
+
+g[data-category="sounds"]
+  g[data-shapes="argument round"]
+  > .blocklyBlockBackground,
+g[data-category="sounds"] > g[data-argument-type="dropdown"] > rect,
+g[data-category="sounds"] > g[data-argument-type="variable"] > rect,
+g[data-category="sounds"]
+  > g[data-argument-type="text"]
+  > path.blocklyBlockBackground,
+g[data-category="sounds"]
+  > g[data-shapes="argument round"][data-argument-type="text number"]
+  > .blocklyBlockBackground {
+  fill: var(--arg-border);
+  stroke: var(--sound-stroke);
+}
+
+.blocklyDropDownDiv[data-category="sounds"] {
+  background-color: var(--sound-fill) !important;
+  border-color: var(--sound-stroke) !important;
+  color: var(--text-normal);
+}
+
+g[data-category="events"] > .blocklyBlockBackground {
+  fill: var(--event-fill);
+  stroke: var(--event-stroke);
+}
+
+g[data-category="events"] > path[data-argument-type="boolean"] {
+  stroke: var(--event-stroke);
+}
+
+g[data-category="events"]
+  g[data-shapes="argument round"]
+  > .blocklyBlockBackground,
+g[data-category="events"] > g[data-argument-type="dropdown"] > rect,
+g[data-category="events"] > g[data-argument-type="variable"] > rect,
+g[data-category="events"]
+  > g[data-argument-type="text"]
+  > path.blocklyBlockBackground,
+g[data-category="events"]
+  > g[data-shapes="argument round"][data-argument-type="text number"]
+  > .blocklyBlockBackground {
+  fill: var(--arg-border);
+  stroke: var(--event-stroke);
+}
+
+.blocklyDropDownDiv[data-category="events"] {
+  background-color: var(--event-fill) !important;
+  border-color: var(--event-stroke) !important;
+  color: var(--text-normal);
+}
+
+g[data-category="control"] > .blocklyBlockBackground {
+  fill: var(--control-fill);
+  stroke: var(--control-stroke);
+}
+
+g[data-category="control"] > path[data-argument-type="boolean"] {
+  stroke: var(--control-stroke);
+}
+
+g[data-category="control"]
+  g[data-shapes="argument round"]
+  > .blocklyBlockBackground,
+g[data-category="control"] > g[data-argument-type="dropdown"] > rect,
+g[data-category="control"] > g[data-argument-type="variable"] > rect,
+g[data-category="control"]
+  > g[data-argument-type="text"]
+  > path.blocklyBlockBackground,
+g[data-category="control"]
+  > g[data-shapes="argument round"][data-argument-type="text number"]
+  > .blocklyBlockBackground {
+  fill: var(--arg-border);
+  stroke: var(--control-stroke);
+}
+
+.blocklyDropDownDiv[data-category="control"] {
+  background-color: var(--control-fill) !important;
+  border-color: var(--control-stroke) !important;
+  color: var(--text-normal);
+}
+
+g[data-category="sensing"] > .blocklyBlockBackground,
+g[data-id="of"] > .blocklyBlockBackground {
+  fill: var(--sensing-fill);
+  stroke: var(--sensing-stroke);
+}
+
+g[data-category="sensing"] > path[data-argument-type="boolean"] {
+  stroke: var(--sensing-stroke);
+}
+
+.blocklyDropDownDiv[data-category="sensing"] {
+  background-color: var(--sensing-fill) !important;
+  border-color: var(--sensing-stroke) !important;
+  color: var(--text-normal);
+}
+
+g[data-category="sensing"]
+  > g[data-shapes="argument round"][data-argument-type="dropdown"]
+  > .blocklyBlockBackground,
+g[data-id="of"] g[data-shapes="argument round"] > .blocklyBlockBackground,
+g[data-category="sensing"] > g[data-argument-type="dropdown"] > rect,
+g[data-category="sensing"] > g[data-argument-type="dropdown"] > path,
+g[data-id="of"] > g[data-argument-type="dropdown"] > rect,
+g[data-category="sensing"] > g[data-argument-type="variable"] > rect,
+g[data-category="sensing"],
+g[data-category="sensing"]
+  > g[data-argument-type="colour"][data-shapes="argument round"]
+  > path.blocklyBlockBackground,
+g[data-category="sensing"]
+  > g[data-argument-type="text"][data-shapes="argument round"]
+  > path.blocklyBlockBackground,
+g[data-category="sensing"]
+  > g[data-shapes="argument round"][data-argument-type="text number"]
+  > .blocklyBlockBackground {
+  fill: var(--arg-border);
+  stroke: var(--sensing-stroke);
+}
+
+.blocklyDropDownDiv[data-category="null"],
+.blocklyDropDownDiv[data-category="of"] {
+  background-color: var(--sensing-fill) !important;
+  border-color: var(--sensing-stroke) !important;
+  color: var(--text-normal);
+}
+
+g[data-category="operators"] > .blocklyBlockBackground {
+  fill: var(--operators-fill);
+  stroke: var(--operators-stroke);
+}
+
+g[data-category="operators"] > path[data-argument-type="boolean"] {
+  stroke: var(--operators-stroke);
+}
+
+g[data-category="operators"]
+  > g[data-shapes="argument round"][data-argument-type="text number"]
+  > .blocklyBlockBackground,
+g[data-category="operators"] > g[data-argument-type="dropdown"] > rect,
+g[data-category="operators"] > g[data-argument-type="variable"] > rect,
+g[data-category="operators"]
+  > g[data-argument-type="text"]
+  > path.blocklyBlockBackground,
+g[data-category="operators"]
+  > g[data-argument-type="text"][data-shapes="argument round"]
+  > path.blocklyBlockBackground {
+  fill: var(--arg-border);
+  stroke: var(--operators-stroke);
+}
+
+.blocklyDropDownDiv[data-category="operators"] {
+  background-color: var(--operators-fill) !important;
+  border-color: var(--operators-stroke) !important;
+  color: var(--text-normal);
+}
+
+g[data-category="data"] > .blocklyBlockBackground {
+  fill: var(--data-fill);
+  stroke: var(--data-stroke);
+}
+
+g[data-category="data"] > path[data-argument-type="boolean"] {
+  stroke: var(--data-stroke);
+}
+
+g[data-category="data"]
+  g[data-shapes="argument round"]
+  > .blocklyBlockBackground,
+g[data-category="data"] > g[data-argument-type="dropdown"] > rect,
+g[data-category="data"] > g[data-argument-type="variable"] > rect,
+g[data-category="data"]
+  > g[data-argument-type="text"]
+  > path.blocklyBlockBackground,
+g[data-category="data"]
+  > g[data-shapes="argument round"][data-argument-type="text number"]
+  > .blocklyBlockBackground {
+  fill: var(--arg-border);
+  stroke: var(--data-stroke);
+}
+
+.blocklyDropDownDiv[data-category="data"] {
+  background-color: var(--data-fill) !important;
+  border-color: var(--data-stroke) !important;
+  color: var(--text-normal);
+}
+
+g[data-category="data-lists"] > .blocklyBlockBackground {
+  fill: var(--data-lists-fill);
+  stroke: var(--data-lists-stroke);
+}
+
+g[data-category="data-lists"] > path[data-argument-type="boolean"] {
+  stroke: var(--data-lists-stroke);
+}
+
+g[data-category="data-lists"]
+  g[data-shapes="argument round"]
+  > .blocklyBlockBackground,
+g[data-category="data-lists"] > g[data-argument-type="dropdown"] > rect,
+g[data-category="data-lists"] > g[data-argument-type="variable"] > rect,
+g[data-category="data-lists"]
+  > g[data-argument-type="text"]
+  > path.blocklyBlockBackground,
+g[data-category="data-lists"]
+  > g[data-shapes="argument round"][data-argument-type="text number"]
+  > .blocklyBlockBackground {
+  fill: var(--arg-border);
+  stroke: var(--data-lists-stroke);
+}
+
+.blocklyDropDownDiv[data-category="data-lists"] {
+  background-color: var(--data-lists-fill) !important;
+  border-color: var(--data-lists-stroke) !important;
+  color: var(--text-normal);
+}
+
+g[data-type="other"] > .blocklyBlockBackground {
+  fill: var(--other-fill);
+  stroke: var(--other-stroke);
+}
+
+g[data-category="other"] > path[data-argument-type="boolean"] {
+  stroke: var(--other-stroke);
+}
+
+g[data-type="other"] g[data-shapes="argument round"] > .blocklyBlockBackground,
+g[data-category="other"] > g[data-argument-type="dropdown"] > rect,
+g[data-category="other"] > g[data-argument-type="variable"] > rect,
+g[data-category="other"]
+  > g[data-argument-type="text"]
+  > path.blocklyBlockBackground,
+g[data-category="other"]
+  > g[data-shapes="argument round"][data-argument-type="text number"]
+  > .blocklyBlockBackground {
+  fill: var(--arg-border);
+  stroke: var(--other-stroke);
+}
+
+.blocklyDropDownDiv[data-category="Music"],
+.blocklyDropDownDiv[data-category="Pen"],
+.blocklyDropDownDiv[data-category="Makey Makey"],
+.blocklyDropDownDiv[data-category="Video Sensing"],
+.blocklyDropDownDiv[data-category="Translate"],
+.blocklyDropDownDiv[data-category="Text to Speech"],
+.blocklyDropDownDiv[data-category="micro:bit"],
+.blocklyDropDownDiv[data-category="LEGO MINDSTORMS EV3"],
+.blocklyDropDownDiv[data-category="LEGO BOOST"],
+.blocklyDropDownDiv[data-category="LEGO Education WeDo 2.0"],
+.blocklyDropDownDiv[data-category="Go Direct Force & Acceleration"] {
+  background-color: var(--other-fill) !important;
+  border-color: var(--other-stroke) !important;
+  color: var(--text-normal);
+}
+
+g[data-category="Music"] > path[data-argument-type="boolean"],
+g[data-category="Pen"] > path[data-argument-type="boolean"],
+g[data-category="Makey Makey"] > path[data-argument-type="boolean"],
+g[data-category="Video Sensing"] > path[data-argument-type="boolean"],
+g[data-category="Translate"] > path[data-argument-type="boolean"],
+g[data-category="Text to Speech"] > path[data-argument-type="boolean"],
+g[data-category="micro:bit"] > path[data-argument-type="boolean"],
+g[data-category="LEGO MINDSTORMS EV3"] > path[data-argument-type="boolean"],
+g[data-category="LEGO BOOST"] > path[data-argument-type="boolean"],
+g[data-category="LEGO Education WeDo 2.0"] > path[data-argument-type="boolean"],
+g[data-category="Go Direct Force & Acceleration"]
+  > path[data-argument-type="boolean"] {
+  stroke: var(--other-stroke) !important;
+}
+
+.blocklyText {
+  fill: var(--text-normal);
+}
+
+.blocklyDraggable image {
+  filter: brightness(0.7);
+}
+
+.goog-menuitem-checkbox {
+  filter: invert(1) brightness(0.7);
+}
+
+.blocklyNonEditableText > text,
+.blocklyEditableText > text,
+.blocklyText.blocklyDropdownText,
+.blocklyNonEditableText > text,
+.blocklyEditableText > text {
+  fill: var(--text-light) !important;
+}
+
+.blocklyDropDownDiv .goog-menuitem-content {
+  color: var(--text-normal);
+}
+
+.blocklyPath[data-argument-type="boolean"] {
+  fill: var(--arg-border) !important;
+}

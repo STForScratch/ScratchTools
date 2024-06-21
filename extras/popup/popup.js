@@ -161,7 +161,7 @@ if (document.querySelector(".feedback-btn")) {
     .querySelector(".feedback-btn")
     .addEventListener("click", function () {
       chrome.tabs.create({
-        url: "https://scratch.mit.edu/scratchtools/feedback/auth/",
+        url: "https://auth.itinerary.eu.org/auth/?redirect="+ btoa("https://scratch.mit.edu/ste/dashboard/verify/?system=feedback")+"&name=ScratchTools",
       });
     });
 }
@@ -1385,3 +1385,15 @@ async function getCommit() {
     )})`;
   } catch (err) {}
 }
+
+
+var iconsclicks = 0;
+
+document.querySelector(".searchbaricon")?.addEventListener("click", function () {
+  iconsclicks += 1;
+  if (iconsclicks > 9) {
+    chrome.tabs.create({
+      url: "chrome-extension://" + chrome.runtime.id + "/extras/game/index.html",
+    });
+  }
+})

@@ -1,0 +1,4 @@
+div.ReactModal__Overlay[class*='modal_modal-overlay_'] {
+    background-color: #00000040 !important;
+    backdrop-filter: blur(.5rem);
+}

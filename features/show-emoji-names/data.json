@@ -1,0 +1,13 @@
+{
+  "title": "Show Emoji Name",
+  "description": "Allows you to hover over Scratch emojis in the comments and view their names.",
+  "credits": [
+    { "username": "IQBit", "url": "https://iqnite.github.io/" },
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New"],
+  "scripts": [
+    { "file": "script.js", "runOn": "/users/*||/projects/*||/studios/*" }
+  ]
+}

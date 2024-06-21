@@ -1,0 +1,14 @@
+{
+  "title": "Blur Modal Backgrounds",
+  "description": "Blurs the backgrounds of modals instead of having a colored overlay.",
+  "credits": [
+    {
+      "username": "rgantzos",
+      "url": "https://scratch.mit.edu/users/rgantzos/"
+    }
+  ],
+  "tags": [],
+  "styles": [{ "file": "style.css", "runOn": "/*" }],
+  "dynamic": true,
+  "type": ["Editor"]
+}
