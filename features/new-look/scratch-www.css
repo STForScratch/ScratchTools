@@ -12,6 +12,12 @@
   padding: 14px 20px;
   border-radius: 24px 24px 0 0;
 }
+.box-header > h4{
+  color: black !important;
+}
+.box-header > a > p{
+  color: black !Important
+}
 .carousel .slick-slide.project{
   padding: 0px 12px;
   padding-top:12px;
