@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "hide-project-tags",
+    "versionAdded": "v3.9.0"
+  },
+  {
+    "version": 2,
     "id": "snap-to-grid",
     "versionAdded": "v3.9.0"
   },
@@ -515,16 +520,6 @@
     "file": "highlight-unanswered",
     "type": ["Forums"],
     "tags": ["New", "Recommended"],
-    "dynamic": true
-  },
-  {
-    "title": "Hide Project Tags",
-    "description": "Hides all linked tags in the Instructions/Notes and Credits of projects.",
-    "credits": ["rgantzos"],
-    "urls": ["https://scratch.mit.edu/users/rgantzos/"],
-    "file": "hide-project-tags",
-    "type": ["Website"],
-    "tags": ["New"],
     "dynamic": true
   },
   {
