@@ -1,0 +1,31 @@
+:root {
+  --ste-blue: #4e97fe;
+  --explore-orange: #ffbf00;
+  --explore-green: #338553;
+  --ste-green: #0fbd8c;
+  --scratchr2-blue: #278bbfff;
+}
+
+.splash-activity .box.activity .box-header{
+  background-color: var(--explore-orange);
+  border-top: none;
+  padding: 14px 20px;
+}
+.splash-activity .box.activity .box-content{
+  background-color: var(--explore-orange);
+  border-top: none;
+  padding: 14px 20px;
+}
+.splash-activity .box.activity {
+  background-color: var(--explore-orange);
+  border-top: none;
+  border-radius: 24px 24px 0 0
+}
+.activity-li:hover {
+  background: #f2f2f2;
+  padding: 8px;
+  border-radius: 8px;
+}
+.news li:nth-child(even) {
+  border:none !important
+}

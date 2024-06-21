@@ -1,0 +1,13 @@
+{
+    "title": "New Look",
+    "description": "Makes a newer look to the Scratch site",
+    "credits": [
+      { "username": "LifeCoderBoy", "url": "https://scratch.mit.edu/users/LifeCoderBoy/" }
+    ],
+    "styles": [{ "file": "scratch-www.css", "runOn": "/*" }],
+    "tags": ["Theme", "New"],
+    "type": ["Website", "Editor"],
+    "dynamic": true,
+    "resources": []
+  }
+  
