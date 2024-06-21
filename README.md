@@ -57,7 +57,7 @@ There are multiple ways of installing.
 > [!WARNING]
 > Extensions loaded this way onto Safari indeed temporary. Once you close the window, it will be gone. In addition, ScratchTools is still outdated on Firefox at the time of writing this.
 
-- Installing with Git: Open the code dropdown on the extension's repository, copy the HTTPS url and then execute `git clone  https://github.com/STForScratch/ScratchTools.git -b main` in Git, and you have installed ScratchTools! To pull changes instead of cloning the repository, enter the folder and execute `git remote add upstream https://github.com/STForScratch/ScratchTools.git -b main`. When a commit is made to the repository, you can just run `git pull upstream master` to pull the changes, note that sometimes you may need to refresh ScratchTools.
+- Installing with Git: Open the code dropdown on the extension's repository, copy the HTTPS url and then execute `git clone https://github.com/STForScratch/ScratchTools.git -b main` in Git, and you have installed ScratchTools! To pull changes instead of cloning the repository, enter the folder and execute `git remote add upstream https://github.com/STForScratch/ScratchTools.git`. When a commit is made to the repository, you can just run `git pull upstream main` to pull the changes, note that sometimes you may need to refresh ScratchTools.
 
 ### Building a Feature
 It's not very hard to build a feature, and if you're ever having trouble, our developers are always here to help you! For ideas, code help, beta testing for your features, and more, you can [join our Discord server](https://discord.gg/5AkUsCbEsy). Now, here's how to build a feature!
