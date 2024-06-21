@@ -1,0 +1,29 @@
+{
+    "title": "Hide Project Tags",
+    "description": "Hides all linked tags in the Instructions/Notes and Credits of projects.",
+    "credits": [
+        {
+            "username": "MaterArc",
+            "url": "https://scratch.mit.edu/users/MaterArc/"
+        },
+        {
+            "username": "rgantzos",
+            "url": "https://scratch.mit.edu/users/rgantzos/"
+        }
+    ],
+    "type": [
+        "Website"
+    ],
+    "tags": [
+        "New",
+        "Featured"
+    ],
+    "scripts": [
+        {
+            "file": "script.js",
+            "runOn": "/projects/*"
+        }
+    ],
+    "dynamic": true,
+    "options": [{ "id": "remove-dupes", "name": "Hide Duplicate Tags", "type": 1 }]
+}
