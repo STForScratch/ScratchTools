@@ -1,0 +1,32 @@
+{
+    "title": "View Sprite Layers",
+    "description": "Allows you to hover over the show/hide toggle in the sprite properties panel of the editor to view the sprite layers.",
+    "credits": [
+        {
+            "username": "-Brass_Glass-",
+            "url": "https://scratch.mit.edu/users/-Brass_Glass-/"
+        },
+        {
+            "username": "rgantzos",
+            "url": "https://scratch.mit.edu/users/rgantzos/"
+        }
+    ],
+    "type": [
+        "Editor"
+    ],
+    "tags": [
+        "New"
+    ],
+    "scripts": [
+        {
+            "file": "script.js",
+            "runOn": "/projects/*"
+        }
+    ],
+    "styles": [
+        {
+            "file": "style.css",
+            "runOn": "/projects/*"
+        }
+    ]
+}

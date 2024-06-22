@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "sprite-layers",
+    "versionAdded": "v3.9.0"
+  },
+  {
+    "version": 2,
     "id": "hide-project-tags",
     "versionAdded": "v3.9.0"
   },
