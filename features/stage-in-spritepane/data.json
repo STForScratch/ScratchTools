@@ -1,0 +1,11 @@
+{
+    "title": "Stage In SpritePane",
+    "description": "Move the stage button into the sprite pane.",
+    "credits": [
+      { "username": "Masaabu-YT", "url": "https://scratch.mit.edu/users/Masaabu-YT/" }
+    ],
+    "type": ["Editor"],
+    "tags": ["New", "Featured"],
+    "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+    "styles": [{ "file": "style.css", "runOn": "/projects/*" }]
+}

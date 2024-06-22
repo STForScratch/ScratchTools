@@ -1,0 +1,39 @@
+.sprite-info_sprite-info_3EyZh {
+    height: auto;
+}
+
+.ste-stage_in_spritepane .stage-selector_stage-selector_3oWOr {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: initial;
+    border: 1.333px solid #00000026;
+    border-radius: 0.5rem;
+}
+
+.ste-stage_in_spritepane .stage-selector_header_2GVr1 {
+    border: none;
+    background: none;
+    width: auto;
+    margin-right: 8px;
+}
+
+.stage-selector_stage-selector_3oWOr.stage-selector_is-selected_2x2r_ .stage-selector_header_2GVr1 {
+    background: none;
+}
+
+.ste-stage_in_spritepane .stage-selector_header_2GVr1 span {
+    color: #575e75;
+}
+
+.ste-stage_in_spritepane .stage-selector_costume-canvas_2L_6h {
+    margin: 2px;
+}
+
+.ste-stage_in_spritepane .stage-selector_label_1MCfr {
+    margin: 0;
+}
+
+.ste-stage_in_spritepane .action-menu_menu-container_3a6da {
+    right: 0;
+    bottom: 7%;
+}
