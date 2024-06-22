@@ -45,7 +45,7 @@ export default async function ({ feature, console }) {
     function updateMenu(blockId) {
         let SPRITES = []
 
-        let targets = feature.traps.vm.runtime.targets.filter((target) => !target.isStage)
+        let targets = feature.traps.vm.runtime.targets.filter((target) => !target.isStage && target.isOriginal)
 
         for (var i in targets) {
             SPRITES.push(targets[i].sprite.name)
