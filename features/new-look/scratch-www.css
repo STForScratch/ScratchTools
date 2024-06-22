@@ -12,6 +12,13 @@
   padding: 14px 20px;
   border-radius: 24px 24px 0 0;
 }
+.box.activity .box-header{
+  background-color: var(--ste-green);
+}
+.box.news .box-header{
+  background-color: var(--ste-green);
+}
+
 .box-header > h4{
   color: black !important;
 }
