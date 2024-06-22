@@ -1,9 +1,9 @@
 :root {
   --ste-blue: #4e97fe;
-  --explore-orange: #ffbf00;
+  --explore-orange: #ffbb00;
   --explore-green: #338553;
   --ste-green: #0fbd8c;
-  --scratchr2-blue: #278bbfff;
+  --scratchr2-blue: #407fff;
 }
 .form-group.row.search-wrapper.no-label input{
   border-radius: 20px;
@@ -13,6 +13,9 @@
   border-top: none;
   padding: 14px 20px;
   border-radius: 20px 20px 0 0;
+}
+.box .box-content{
+  background-color: #ffbb0066;
 }
 .link.messages a {
 	border-radius: 25px;
@@ -26,10 +29,25 @@
   border-radius: 0px 0px 20px 20px;
 }
 .box.activity .box-header{
-  background-color: var(--ste-green);
+  background-color: var(--scratchr2-blue);
+
+}
+.box.activity .box-header > h4{
+  color: white !important;
+}
+.box.news .box-header > h4{
+  color: white !important;
 }
 .box.news .box-header{
-  background-color: var(--ste-green);
+  background-color: var(--scratchr2-blue);
+}
+
+.box.activity .box-content {
+	height: 277px;
+	background-color: #d9e5ff;
+}
+.box.news .box-header{
+  background-color: #d9e5ff;
 }
 
 .box-header > h4{
