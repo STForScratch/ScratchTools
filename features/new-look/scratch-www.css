@@ -5,12 +5,22 @@
   --ste-green: #0fbd8c;
   --scratchr2-blue: #278bbfff;
 }
-
+.form-group.row.search-wrapper.no-label input{
+  border-radius: 20px;
+}
 .box .box-header{
   background-color: var(--explore-orange);
   border-top: none;
   padding: 14px 20px;
   border-radius: 20px 20px 0 0;
+}
+.link.messages a {
+	border-radius: 25px;
+	transform: scale(0.9);
+}
+.link.mystuff a {
+	border-radius: 25px;
+	transform: scale(0.9);
 }
 .box .box-content{
   border-radius: 0px 0px 20px 20px;
