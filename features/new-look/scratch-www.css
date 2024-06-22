@@ -10,7 +10,10 @@
   background-color: var(--explore-orange);
   border-top: none;
   padding: 14px 20px;
-  border-radius: 24px 24px 0 0;
+  border-radius: 20px 20px 0 0;
+}
+.box .box-content{
+  border-radius: 0px 0px 20px 20px;
 }
 .box.activity .box-header{
   background-color: var(--ste-green);
@@ -34,12 +37,12 @@
   background: #e3e3e3
 }
 .box{
-  border-radius: 24px;
+  border-radius: 20px;
 }
 .splash-activity .box.activity {
   background-color: var(--explore-orange);
   border-top: none;
-  border-radius: 24px 24px 0 0
+  border-radius: 20px 20px 0 0
 }
 .activity-li:hover {
   background: #f2f2f2;
