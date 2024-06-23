@@ -1,0 +1,33 @@
+{
+    "title": "Better Cloud History",
+    "description": "Updates the cloud monitor page to a more modern version with more details. You can click on variable names to sort by that variable.",
+    "credits": [
+        {
+            "username": "-Brass_Glass-",
+            "url": "https://scratch.mit.edu/users/-Brass_Glass-/"
+        },
+        {
+            "username": "rgantzos",
+            "url": "https://scratch.mit.edu/users/rgantzos/"
+        }
+    ],
+    "type": [
+        "Website"
+    ],
+    "tags": [
+        "New"
+    ],
+    "dynamic": true,
+    "scripts": [
+        {
+            "file": "script.js",
+            "runOn": "/cloudmonitor/*"
+        }
+    ],
+    "styles": [
+        {
+            "file": "style.css",
+            "runOn": "/cloudmonitor/*"
+        }
+    ]
+}

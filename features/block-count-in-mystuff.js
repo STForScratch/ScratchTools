@@ -2,8 +2,18 @@ if (window.location.href.startsWith("https://scratch.mit.edu/mystuff")) {
   var stillLookingForBlockCount = true;
 
   async function getBlockCount(projectId) {
+    let { project_token } = await (await fetch("https://api.scratch.mit.edu/projects/" + projectId, {
+      "headers": {
+        "accept": "*/*",
+        "x-token": (await ScratchTools.Session()).user.token,
+      },
+      "referrer": "https://scratch.mit.edu/",
+      "referrerPolicy": "strict-origin-when-cross-origin",
+      "body": null,
+      "method": "GET",
+    })).json()
     var response = await fetch(
-      "https://projects.scratch.mit.edu/" + projectId + "/"
+      "https://projects.scratch.mit.edu/" + projectId + "/?token=" + project_token
     );
     if (response.ok) {
       var data = await response.json();
