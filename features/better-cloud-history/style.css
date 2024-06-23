@@ -1,0 +1,74 @@
+div#table-container {
+    display: none;
+}
+
+.ste-cloud-table {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.ste-cloud-table img {
+    height: 2rem;
+    width: 2rem;
+    border-radius: .25rem;
+}
+
+.ste-cloud-table td {
+    padding: 1rem;
+}
+
+.ste-cloud-table a span {
+    position: relative;
+    top: -.5rem;
+    margin-left: .5rem;
+    font-weight: 500;
+}
+
+.ste-cloud-table a:hover {
+    text-decoration: none;
+}
+
+.ste-cloud-table tr td {
+    text-align: center;
+}
+
+.ste-cloud-variable {
+    padding: .5rem;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    border-radius: 1.2rem;
+    background-color: rgb(255, 140, 26);
+    color: white;
+    text-shadow: none;
+    opacity: .7;
+    transition: opacity .3s, transform .3s;
+    transform: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.ste-cloud-variable:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.ste-cloud-table.sort .ste-cloud-variable {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.ste-cloud-table tr td.ste-cloud-content {
+    width: 40%;
+    word-break: break-all;
+    text-align: left;
+    height: 2rem;
+    overflow-y: auto;
+}
+
+th {
+    padding: .5rem;
+}
+
+tr:not(.ste-cloud-dontshow):nth-child(odd) {
+    background-color: rgba(77,151,255,.1);
+}
