@@ -201,8 +201,6 @@ a {
   background-position: 47% 46%;
   background-size: 20px 20px;
   background-repeat: no-repeat;
-  position: relative;
-  top: -18px;
 }
 .searchbaricon {
   border-radius: var(--radius) 0px 0px var(--radius);
@@ -217,8 +215,6 @@ a {
   background-position: 80% 50%;
   background-size: 30px 30px;
   background-repeat: no-repeat;
-  position: relative;
-  top: -18px;
 }
 .settingsButton {
   padding: 12px;
