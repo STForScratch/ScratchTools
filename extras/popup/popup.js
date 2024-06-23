@@ -686,42 +686,33 @@ async function getFeatures() {
       for (var optionPlace in feature.options) {
         var option = feature.options[optionPlace];
         var input = document.createElement("input");
+        input.type = ["text", "checkbox", "number", "color"][option.type || 0];
         input.dataset.id = option.id;
         input.dataset.feature = feature.id;
-        input.placeholder = option.name;
-        input.type = ["text", "checkbox", "number", "color"][option.type || 0];
         var optionData = (await chrome.storage.sync.get(option.id))[option.id];
         input.value = optionData || "";
+        input.placeholder = `Enter ${input.type}`;
+        var optionDiv = document.createElement("div")
+        optionDiv.className = "option";
+        var label = document.createElement("label");
+        label.textContent = option.name;
+        optionDiv.appendChild(label)
+
         if (input.type === "checkbox") {
+          input.checked = optionData || false;
           var specialLabel = document.createElement("label");
           specialLabel.className = "special-switch";
-          input.className = "checkbox"
+          input.classList.add = "checkbox"
           var span = document.createElement("span");
           span.className = "slider round";
           specialLabel.appendChild(input);
           specialLabel.appendChild(span);
+          optionDiv.appendChild(specialLabel)
         } else {
-        div.appendChild(input);
+          optionDiv.appendChild(input)
         }
-        if (input.type === "checkbox") {
-          let table = document.createElement("table")
-          let tr = document.createElement("tr")
-          table.appendChild(tr)
+        div.appendChild(optionDiv)
 
-          let td1 = document.createElement("td")
-          tr.appendChild(td1)
-          let td2 = document.createElement("td")
-          tr.appendChild(td2)
-
-          div.appendChild(table)
-
-          var label = document.createElement("label");
-          label.textContent = option.name;
-          label.style.marginLeft = "0px"
-          td1.appendChild(label);
-          td2.appendChild(specialLabel)
-          input.checked = optionData || false;
-        }
         input.dataset.validation = btoa(
           JSON.stringify(option.validation || [])
         );
