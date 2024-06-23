@@ -248,7 +248,8 @@ a {
   cursor: pointer;
 }
 .feature input[type="color"] {
-  padding-left: 0.1vw !important;
+  padding: 0.1vw !important;
+  border-radius: 0.4rem;
 }
 
 /*Switch*/

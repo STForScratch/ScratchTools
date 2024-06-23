@@ -148,7 +148,8 @@ a {
   cursor: pointer;
 }
 .feature input[type="color"] {
-  padding-left: 0.1vw;
+  padding: 0.1vw;
+  border-radius: 0.4rem;
 }
 
 .feature > input {
