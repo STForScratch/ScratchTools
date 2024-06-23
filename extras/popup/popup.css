@@ -68,15 +68,6 @@ a {
 
 .feature label {
   color: var(--primary-color);
-  position: relative;
-  top: -0.7rem;
-  margin-left: 0.5rem;
-}
-
-.feature input[type="checkbox"] {
-  display: inline-block;
-  width: 1.25rem;
-  cursor: pointer;
 }
 
 .feature > span {
@@ -108,9 +99,10 @@ a {
   margin-bottom: 0rem;
 }
 .feature p {
-  color: var(--secondary-color);
+  margin: 5px 0;
   opacity: 0.5;
   padding-right: 4rem;
+  color: var(--secondary-color);
 }
 
 .feature > input {
@@ -121,11 +113,11 @@ a {
 .feature input {
   padding: 0.1vw;
   height: 2rem;
-  margin-left: 0.5vw;
-  background-color: var(--theme);
+  margin-left: auto;
   border-radius: 1rem;
   outline: none;
   border: 0px;
+  background-color: var(--theme);
   color: white;
 }
 
@@ -133,7 +125,6 @@ a {
   color: var(--color);
   background-color: var(--feature-input-bg);
   padding-left: 1rem !important;
-  margin-bottom: 0.5rem;
 }
 .feature button {
   cursor: pointer;
@@ -238,12 +229,23 @@ a {
 .feature input {
   padding: 0.1vw;
   height: 2rem;
-  margin-left: 0.5vw;
+  margin-left: auto;
   border-radius: 1rem;
   outline: none;
   border: 0px;
   color: white;
   background-color: var(--feature-input-bg);
+}
+
+.feature input[type="checkbox"] {
+  display: inline-block;
+  width: 1.25rem;
+  min-width: 55px;
+  cursor: pointer;
+}
+.feature input[type="color"] {
+  padding: 0.1vw !important;
+  border-radius: 0.4rem;
 }
 
 /*Switch*/
@@ -431,14 +433,17 @@ span.new-feature-tag.beta {
 }
 
 .special-switch {
-  position: relative;
   width: 55px;
   height: 28px;
+  margin-left: auto;
   transform: scale(80%);
-  float: right;
   position: relative;
-  top: -0.25rem;
-  margin: 0px;
+}
+
+.feature .option {
+  display: flex;
+  margin: 5px 0;
+  align-items: center;
 }
 
 .feature table,
