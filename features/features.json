@@ -126,11 +126,6 @@
   },
   {
     "version": 2,
-    "id": "relevant-forum-posts",
-    "versionAdded": "v3.4.0"
-  },
-  {
-    "version": 2,
     "id": "anti-generic",
     "versionUpdated": "v3.4.0"
   },
@@ -262,11 +257,6 @@
   {
     "version": 2,
     "id": "shared-clipboard",
-    "versionAdded": "v3.0.0"
-  },
-  {
-    "version": 2,
-    "id": "important-messages",
     "versionAdded": "v3.0.0"
   },
   {
@@ -466,15 +456,6 @@
     "file": "leave-studio",
     "tags": ["New"],
     "type": ["Website"]
-  },
-  {
-    "title": "Show User Statistics",
-    "description": "Replaces the 'What I've been doing' section on a profile page with the user's statistics.",
-    "credits": ["Dr_Lego"],
-    "urls": ["https://scratch.mit.edu/users/Dr_Lego/"],
-    "file": "user-stats",
-    "type": ["Website"],
-    "tags": ["New"]
   },
   {
     "title": "Frontpage Curator Name as Link",
