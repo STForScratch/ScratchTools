@@ -1,0 +1,12 @@
+{
+    "title": "Stage In Sprite Pane",
+    "description": "Move the stage button to the sprite pane to widen the sprite field.",
+    "credits": [
+      { "username": "Masaabu-YT", "url": "https://scratch.mit.edu/users/Masaabu-YT/" }
+    ],
+    "type": ["Editor"],
+    "tags": ["New", "Featured"],
+    "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+    "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
+    "dynamic": true
+}

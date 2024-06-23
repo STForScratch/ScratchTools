@@ -1,0 +1,61 @@
+[class*='sprite-info_sprite-info_'] {
+    height: auto;
+}
+
+.ste-stage_in_spritepane [class*='stage-selector_stage-selector_'] {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: initial;
+    border: 1.333px solid #00000026;
+    border-radius: 0.5rem;
+}
+
+.ste-stage_in_spritepane [class*='stage-selector_header_'] {
+    border: none;
+    background: none;
+    width: auto;
+    margin-right: 8px;
+}
+
+[class*='stage-selector_stage-selector_'][class*='stage-selector_is-selected_'] [class*='stage-selector_header_'] {
+    background: none;
+}
+
+.ste-stage_in_spritepane [class*='stage-selector_header_'] span {
+    color: #575e75;
+}
+
+.ste-stage_in_spritepane [class*='stage-selector_costume-canvas_'] {
+    margin: 2px;
+}
+
+.ste-stage_in_spritepane [class*='stage-selector_label_'] {
+    margin: 0;
+}
+
+.ste-stage_in_spritepane [class*='action-menu_menu-container_'] {
+    right: 0;
+    bottom: 7%;
+}
+
+div[class^='stage-selector_stage-selector_'] > div[class^='action-menu_menu-container_'] {
+    transform: scale(.8) rotate(-90deg);
+    margin-right: .3rem;
+}
+
+div[class^='stage-selector_stage-selector_'] > div[class^='action-menu_menu-container_'] img {
+    transform: rotate(90deg);
+}
+
+div[class^='stage-selector_stage-selector_'] > div[class^='action-menu_menu-container_'] div[class^='__react_component_tooltip'] {
+    display: none;
+}
+
+div[class^='stage-selector_header-title_'] {
+    display: none;
+}
+
+body div[class^='target-pane_stage-selector-wrapper_'] {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}

@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "stage-in-spritepane",
+    "versionAdded": "v3.9.0"
+  },
+  {
+    "version": 2,
     "id": "better-cloud-history",
     "versionAdded": "v3.9.0"
   },
