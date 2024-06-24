@@ -2,9 +2,10 @@
     "title": "New Look",
     "description": "Changes the look of the Scratch Site to a more modern, fresh look.",
     "credits": [
-      { "username": "LifeCoderBoy", "url": "https://scratch.mit.edu/users/LifeCoderBoy/" }
+      { "username": "LifeCoderBoy", "url": "https://scratch.mit.edu/users/LifeCoderBoy/" },
+      { "username": "_nix", "url": "https://scratch.mit.edu/users/_nix/" }
     ],
-    "styles": [{ "file": "scratch-www.css", "runOn": "/*" }],
+    "styles": [{ "file": "scratch-www.css", "runOn": "/*" }{ "file": "scratch-editor.css", "runOn": "/projects/*" }],
     "tags": ["Theme", "New"],
     "type": ["Website", "Editor"],
     "dynamic": true,
