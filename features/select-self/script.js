@@ -36,7 +36,7 @@ export default async function ({ feature, console }) {
         }
     })
 
-    feature.addEventListener("reenabled", function () {
+    feature.addEventListener("enabled", function () {
         for (var i in blocks) {
             updateMenu(blocks[i])
         }
