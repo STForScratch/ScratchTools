@@ -17,10 +17,10 @@
 }
 
 .box.activity .box-header > h4{
-  color: white !important;
+  color: #fff !important;
 }
 .box.news .box-header > h4{
-  color: white !important;
+  color: #fff !important;
 }
 
 .box.activity .box-content {
@@ -87,4 +87,8 @@
 }
 .news li:nth-child(even) {
   border:none !important
+}
+
+.news .box-header a {
+    color: #fff;
 }
