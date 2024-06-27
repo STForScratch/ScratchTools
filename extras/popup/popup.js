@@ -161,7 +161,12 @@ if (document.querySelector(".feedback-btn")) {
     .querySelector(".feedback-btn")
     .addEventListener("click", function () {
       chrome.tabs.create({
-        url: "https://auth.itinerary.eu.org/auth/?redirect="+ btoa("https://scratch.mit.edu/ste/dashboard/verify/?system=feedback")+"&name=ScratchTools",
+        url:
+          "https://auth.itinerary.eu.org/auth/?redirect=" +
+          btoa(
+            "https://scratch.mit.edu/ste/dashboard/verify/?system=feedback"
+          ) +
+          "&name=ScratchTools",
       });
     });
 }
@@ -685,104 +690,183 @@ async function getFeatures() {
     if (feature.options) {
       for (var optionPlace in feature.options) {
         var option = feature.options[optionPlace];
-        var input = document.createElement("input");
-        input.type = ["text", "checkbox", "number", "color"][option.type || 0];
-        input.dataset.id = option.id;
-        input.dataset.feature = feature.id;
-        var optionData = (await chrome.storage.sync.get(option.id))[option.id];
-        input.value = optionData || "";
-        input.placeholder = `Enter ${input.type}`;
-        var optionDiv = document.createElement("div")
-        optionDiv.className = "option";
-        var label = document.createElement("label");
-        label.textContent = option.name;
-        optionDiv.appendChild(label)
+        if (option.type === 4) {
+          var optionDiv = document.createElement("div");
+          optionDiv.className = "option";
+          var label = document.createElement("label");
+          label.textContent = option.name;
+          optionDiv.appendChild(label);
 
-        if (input.type === "checkbox") {
-          input.checked = optionData || false;
-          var specialLabel = document.createElement("label");
-          specialLabel.className = "special-switch";
-          input.classList.add = "checkbox"
-          var span = document.createElement("span");
-          span.className = "slider round";
-          specialLabel.appendChild(input);
-          specialLabel.appendChild(span);
-          optionDiv.appendChild(specialLabel)
-        } else {
-          optionDiv.appendChild(input)
-        }
-        div.appendChild(optionDiv)
+          let options = document.createElement("div");
+          options.className = "option-selection";
+          options.dataset.id = option.id;
+          var optionData = (await chrome.storage.sync.get(option.id))[
+            option.id
+          ];
+          for (var i in option.options) {
+            let oData = option.options[i];
 
-        input.dataset.validation = btoa(
-          JSON.stringify(option.validation || [])
-        );
-        input.addEventListener("input", async function () {
-          var validation = JSON.parse(atob(this.dataset.validation));
-          var ready = true;
-          var input = this;
-          validation.forEach(function (validate) {
-            if (ready) {
-              input.style.outline = "none";
-              if (
-                input.nextSibling?.className?.includes("validation-explanation")
-              ) {
-                input.nextSibling.remove();
-              }
-              if (!new RegExp(validate.regex).test(input.value)) {
-                ready = false;
-                input.style.outline = "2px solid #f72f4a";
-                var explanation = document.createElement("span");
-                explanation.className = "validation-explanation";
-                explanation.textContent = validate.explanation;
-                explanation.style.color = "#f72f4a";
-                explanation.style.marginBottom = "1rem";
-                input.insertAdjacentElement("afterend", explanation);
-              }
-            }
-          });
-          if (ready) {
-            if (this.type !== "checkbox") {
-              finalValue = this.value;
-            } else {
-              var data = await chrome.storage.sync.get(this.dataset.id);
-              if (data[this.dataset.id]) {
-                this.checked = false;
-                finalValue = false;
-              } else {
-                this.checked = true;
-                finalValue = true;
-              }
-            }
-            var saveData = {};
-            saveData[this.dataset.id] = finalValue;
-            await chrome.storage.sync.set(saveData);
-            var featureToUpdate = this;
-            chrome.tabs.query({}, function (tabs) {
-              for (var i = 0; i < tabs.length; i++) {
-                try {
-                  chrome.scripting.executeScript({
-                    args: [
-                      featureToUpdate.dataset.feature,
-                      featureToUpdate.dataset.id,
-                      finalValue,
-                    ],
-                    target: { tabId: tabs[i].id },
-                    func: updateSettingsFunction,
-                    world: "MAIN",
-                  });
-                  function updateSettingsFunction(feature, name, value) {
-                    ScratchTools.Storage[name] = value;
-                    if (allSettingChangeFunctions[feature]) {
-                      allSettingChangeFunctions[feature]({ key: name, value });
+            let span = document.createElement("span");
+            span.textContent = oData.name;
+            span.dataset.id = oData.value;
+
+            span.addEventListener("click", async function () {
+              let id = this.dataset.id;
+
+              let feature = this.closest(".feature");
+              let featureId = feature.dataset.id;
+
+              let optionId = this.parentElement.dataset.id;
+
+              this.parentElement
+                .querySelector(".option-selected")
+                .classList.remove("option-selected");
+              this.classList.add("option-selected");
+
+              await chrome.storage.sync.set({
+                [optionId]: id,
+              });
+              chrome.tabs.query({}, function (tabs) {
+                for (var i = 0; i < tabs.length; i++) {
+                  try {
+                    chrome.scripting.executeScript({
+                      args: [featureId, optionId, id],
+                      target: { tabId: tabs[i].id },
+                      func: updateSettingsFunction,
+                      world: "MAIN",
+                    });
+                    function updateSettingsFunction(feature, name, value) {
+                      ScratchTools.Storage[name] = value;
+                      if (allSettingChangeFunctions[feature]) {
+                        allSettingChangeFunctions[feature]({
+                          key: name,
+                          value,
+                        });
+                      }
                     }
+                  } catch (err) {
+                    console.log(err);
                   }
-                } catch (err) {
-                  console.log(err);
+                }
+              });
+            });
+            if (optionData === span.dataset.id || (!optionData && i < 1)) {
+              span.classList.add("option-selected");
+            }
+            options.appendChild(span);
+          }
+          optionDiv.appendChild(options);
+        } else {
+          var input = document.createElement("input");
+          input.type = ["text", "checkbox", "number", "color"][
+            option.type || 0
+          ];
+          input.dataset.id = option.id;
+          input.dataset.feature = feature.id;
+          var optionData = (await chrome.storage.sync.get(option.id))[
+            option.id
+          ];
+          input.value = optionData || "";
+          input.placeholder = `Enter ${input.type}`;
+          var optionDiv = document.createElement("div");
+          optionDiv.className = "option";
+          var label = document.createElement("label");
+          label.textContent = option.name;
+          optionDiv.appendChild(label);
+
+          if (input.type === "checkbox") {
+            input.checked = optionData || false;
+            var specialLabel = document.createElement("label");
+            specialLabel.className = "special-switch";
+            input.classList.add = "checkbox";
+            var span = document.createElement("span");
+            span.className = "slider round";
+            specialLabel.appendChild(input);
+            specialLabel.appendChild(span);
+            optionDiv.appendChild(specialLabel);
+          } else {
+            optionDiv.appendChild(input);
+          }
+        }
+        div.appendChild(optionDiv);
+
+        if (option.type === 4) {
+          input.dataset.validation = btoa(
+            JSON.stringify(option.validation || [])
+          );
+          input.addEventListener("input", async function () {
+            var validation = JSON.parse(atob(this.dataset.validation));
+            var ready = true;
+            var input = this;
+            validation.forEach(function (validate) {
+              if (ready) {
+                input.style.outline = "none";
+                if (
+                  input.nextSibling?.className?.includes(
+                    "validation-explanation"
+                  )
+                ) {
+                  input.nextSibling.remove();
+                }
+                if (!new RegExp(validate.regex).test(input.value)) {
+                  ready = false;
+                  input.style.outline = "2px solid #f72f4a";
+                  var explanation = document.createElement("span");
+                  explanation.className = "validation-explanation";
+                  explanation.textContent = validate.explanation;
+                  explanation.style.color = "#f72f4a";
+                  explanation.style.marginBottom = "1rem";
+                  input.insertAdjacentElement("afterend", explanation);
                 }
               }
             });
-          }
-        });
+            if (ready) {
+              if (this.type !== "checkbox") {
+                finalValue = this.value;
+              } else {
+                var data = await chrome.storage.sync.get(this.dataset.id);
+                if (data[this.dataset.id]) {
+                  this.checked = false;
+                  finalValue = false;
+                } else {
+                  this.checked = true;
+                  finalValue = true;
+                }
+              }
+              var saveData = {};
+              saveData[this.dataset.id] = finalValue;
+              await chrome.storage.sync.set(saveData);
+              var featureToUpdate = this;
+              chrome.tabs.query({}, function (tabs) {
+                for (var i = 0; i < tabs.length; i++) {
+                  try {
+                    chrome.scripting.executeScript({
+                      args: [
+                        featureToUpdate.dataset.feature,
+                        featureToUpdate.dataset.id,
+                        finalValue,
+                      ],
+                      target: { tabId: tabs[i].id },
+                      func: updateSettingsFunction,
+                      world: "MAIN",
+                    });
+                    function updateSettingsFunction(feature, name, value) {
+                      ScratchTools.Storage[name] = value;
+                      if (allSettingChangeFunctions[feature]) {
+                        allSettingChangeFunctions[feature]({
+                          key: name,
+                          value,
+                        });
+                      }
+                    }
+                  } catch (err) {
+                    console.log(err);
+                  }
+                }
+              });
+            }
+          });
+        }
       }
     }
 
@@ -859,7 +943,7 @@ async function getFeatures() {
       document.querySelector(".settings").appendChild(div);
     }
   }
-  getTrending()
+  getTrending();
 }
 getFeatures();
 
@@ -1328,11 +1412,11 @@ function generateComponents(components) {
 
       if (el.if.type === "any") {
         if (!conditions.find((cond) => cond)) {
-          div.style.display = "none"
+          div.style.display = "none";
         }
       } else if (el.if.type === "all") {
         if (conditions.find((cond) => !cond) !== undefined) {
-          div.style.display = "none"
+          div.style.display = "none";
         }
       }
     }
@@ -1343,14 +1427,17 @@ function generateComponents(components) {
 }
 
 async function getTrending() {
-  let data = await (await fetch("https://data.scratchtools.app/trending/")).json()
+  let data = await (
+    await fetch("https://data.scratchtools.app/trending/")
+  ).json();
 
-  data.forEach(function(el) {
+  data.forEach(function (el) {
     if (!document.querySelector(`div.feature[data-id='${el}']`)) return;
 
-    let icon = document.createElement("span")
-    icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="m122-218-67-67 321-319 167 167 203-205H628v-95h278v278h-94v-115L542-303 375-470 122-218Z" fill="var(--theme)"/></svg>'
-    icon.className = "icon"
+    let icon = document.createElement("span");
+    icon.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="m122-218-67-67 321-319 167 167 203-205H628v-95h278v278h-94v-115L542-303 375-470 122-218Z" fill="var(--theme)"/></svg>';
+    icon.className = "icon";
 
     icon.addEventListener("click", function () {
       ScratchTools.modals.create({
@@ -1360,8 +1447,8 @@ async function getTrending() {
       });
     });
 
-    document.querySelector(`div.feature[data-id='${el}'] > h3`).prepend(icon)
-  })
+    document.querySelector(`div.feature[data-id='${el}'] > h3`).prepend(icon);
+  });
 }
 
 async function getCommit() {
@@ -1377,14 +1464,16 @@ async function getCommit() {
   } catch (err) {}
 }
 
-
 var iconsclicks = 0;
 
-document.querySelector(".searchbaricon")?.addEventListener("click", function () {
-  iconsclicks += 1;
-  if (iconsclicks > 9) {
-    chrome.tabs.create({
-      url: "chrome-extension://" + chrome.runtime.id + "/extras/game/index.html",
-    });
-  }
-})
+document
+  .querySelector(".searchbaricon")
+  ?.addEventListener("click", function () {
+    iconsclicks += 1;
+    if (iconsclicks > 9) {
+      chrome.tabs.create({
+        url:
+          "chrome-extension://" + chrome.runtime.id + "/extras/game/index.html",
+      });
+    }
+  });
