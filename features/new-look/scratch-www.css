@@ -54,10 +54,6 @@
   border-radius: 0px 0px 20px 20px;
 }
 
-
-
-
-
 .box-header > h4{
   color: black !important;
 }
@@ -92,3 +88,8 @@
 .news .box-header a {
     color: #fff;
 }
+
+.splash .splash-header .box {
+    background-color:#d9e5ff !important;
+}
+
