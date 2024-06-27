@@ -860,7 +860,8 @@ body {
   user-select: none;
   cursor: pointer;
   background-color: transparent;
-  transition: background-color .3s, border .3s;
+  color: var(--secondary-color);
+  transition: background-color .3s, border .3s, color .3s;
 }
 
 .option-selection span.option-selected {
