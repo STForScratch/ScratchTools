@@ -79,9 +79,24 @@
 #featured .arrow-left, #featured .arrow-right {
     background-color: transparent !important;
 }
+
 #favorites .arrow-left, #favorites .arrow-right {
     background-color: transparent !important;
 }
+
 #shared .arrow-left, #shared .arrow-left {
     background-color: transparent !important;
+}
+#profile-data {
+    border:none !important;
+    box-shadow: none !important;
+ 
+}
+.box {
+    border:none !important;
+    box-shadow: none !important;
+}
+.slider-carousel-container {
+    border:none !important;
+    box-shadow: none !important;
 }
