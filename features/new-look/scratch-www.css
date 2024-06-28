@@ -97,9 +97,9 @@
 }
 
 .inner > .box {
-    border:none;
+    border:none !important;
 }
 .splash .box {
-    border:none;
+    border:none !important;
 }
 
