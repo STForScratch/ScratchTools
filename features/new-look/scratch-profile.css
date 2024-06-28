@@ -74,3 +74,14 @@
 	padding-bottom: 10px;
 	position: relative;
 }
+
+
+#featured .arrow-left, #featured .arrow-right {
+    background-color: transparent !important;
+}
+#favorites .arrow-left, #favorites .arrow-right {
+    background-color: transparent !important;
+}
+#shared .arrow-left, #shared .arrow-left {
+    background-color: transparent !important;
+}
