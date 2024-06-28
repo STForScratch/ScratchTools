@@ -1,0 +1,45 @@
+:root {
+    --ste-blue: #4e97fe;
+    --explore-orange: #ffbb00;
+    --explore-green: #338553;
+    --ste-green: #0fbd8c;
+    --scratchr2-blue: #407fff;
+  }
+  .player {
+	display: block;
+	float: right;
+	text-align: center;
+	border: 1px solid #e2e2e2;
+	padding: 16px;
+	border-radius: 16px;
+}
+#profile-data .box-head {
+	height: 400px;
+}
+#profile-data .box-head .header-text .profile-details h2 {
+	font-size: 42px;
+	text-align: center;
+}
+#profile-data .box-head .profile-details p {
+	color: #666;
+	text-align: center;
+	margin-top: 24px;
+}
+.box .box-head .header-text {
+	margin-left: 65px;
+	margin-top: 80px;
+}
+.box .box-head .avatar img {
+	border-radius: 50%;
+	transform: scale(3) translate(16px,34px);
+}
+.follow-button{
+        background-color: var(--ste-blue);
+        height: 38px;
+        width: 84px;
+        border-radius: 100px;
+}
+.follow-button.follow.text  {
+	padding: 8px 9px;
+	/* height: 72px; */
+}

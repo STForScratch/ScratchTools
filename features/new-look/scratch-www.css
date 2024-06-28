@@ -5,6 +5,9 @@
   --ste-green: #0fbd8c;
   --scratchr2-blue: #407fff;
 }
+.view {
+	background: black !important;
+}
 .form-group.row.search-wrapper.no-label input{
   border-radius: 20px;
 }
