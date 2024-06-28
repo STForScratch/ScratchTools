@@ -43,3 +43,34 @@
 	padding: 8px 9px;
 	/* height: 72px; */
 }
+#bio, #status{
+	width: 400px;
+}
+.doing{
+	width:450px;
+	background: white;
+	border: none;
+}
+.doing h3 {
+	text-align: center;
+	background: #417eff;
+	color: white;
+	padding: 8px;
+	border-radius: 16px 16px 0 0;
+	font-weight: normal;
+}
+
+.activity-stream {
+	margin: 0 10px;
+	margin-bottom: 27px;
+}
+.activity-feed {
+	background: #d9e5ff;
+	border-radius: 0 0 16px 16px;
+}
+#profile-box .about {
+	width: 430px;
+	padding-left: 20px;
+	padding-bottom: 10px;
+	position: relative;
+}
