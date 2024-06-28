@@ -10,7 +10,7 @@ export default async function ({ feature }) {
     feature.addEventListener("disabled", function () {
       box.querySelector("h4").textContent = oldContent;
     });
-  
+
     feature.addEventListener("enabled", function () {
       box.querySelector("h4").textContent = "Dumpster Fire";
     });
