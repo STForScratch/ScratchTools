@@ -1,0 +1,10 @@
+.location-holder {
+  display: flex;
+}
+
+.location-holder img {
+  width: 15px;
+  height: auto;
+  margin-left: 0.4rem;
+  margin-top: 1px;
+}
