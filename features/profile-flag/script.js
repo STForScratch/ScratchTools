@@ -1,4 +1,5 @@
 export default async function ({ feature, console }) {
+  window.feature = feature
   const locationElement = await ScratchTools.waitForElement(
     "p.profile-details > span.location"
   );

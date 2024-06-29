@@ -7,5 +7,10 @@ export default function (data) {
   feature.self = self(data.id);
   feature.traps = traps()
   feature.auth = auth()
+  feature.page = {
+    appendToSharedSpace: ScratchTools.appendToSharedSpace,
+    waitForElement: ScratchTools.waitForElement,
+    waitForElements: ScratchTools.waitForElements,
+  }
   return feature;
 }
