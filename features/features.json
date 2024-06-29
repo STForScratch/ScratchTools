@@ -107,7 +107,8 @@
   {
     "version": 2,
     "id": "profile-flag",
-    "versionAdded": "v3.5.0"
+    "versionAdded": "v3.5.0",
+    "versionUpdated": "v3.10.0"
   },
   {
     "version": 2,

@@ -1,0 +1,8 @@
+.location img {
+  width: 15px;
+  height: auto;
+  margin-top: -1rem;
+  position: relative;
+  bottom: -.25rem;
+  margin-left: .4rem;
+}
