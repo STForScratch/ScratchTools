@@ -1,22 +1,22 @@
-name: New Feature
-description: Suggest a new feature for ScratchTools, or an enhancement for a feature.
-labels: ["new feature"]
+name: 🎉 New Feature
+description: Suggest an entirely new feature for ScratchTools.
+labels: ["new feature", "status: needs review"]
 body:
 
   - type: textarea
     id: describe
     attributes:
-      label: How does the feature work?
-      description: Describe what you're suggesting.
+      label: Why would this be helpful?
+      description: We'd like to know in what cases something like this might be helpful.
       placeholder: Type here
     validations:
       required: true
   
   - type: textarea
-    id: why
+    id: how
     attributes:
-      label: What situations would make this helpful?
-      description: Who would find this helpful, and when?
+      label: How would this work?
+      description: We aren't asking for code specifics, but we'd like to know your vision for it.
       placeholder: Type here
     validations:
       required: true
