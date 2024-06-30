@@ -8,7 +8,7 @@
   "tags": ["New", "Featured"],
   "dynamic": true,
   "options": [
-    { "id": "position-right", "name": "Move the player to the right.", "type": 1 },
+    { "id": "position-right", "name": "Move the project player to the right.", "type": 1 },
     { "id": "position-bottom", "name": "Move the project player to the bottom.", "type": 1 },
     { "id": "opacity", "name": "Player Transparency (0% - 90%)", "type": 2 }
   ],
