@@ -1,12 +1,25 @@
 {
   "NOTE": "THERE IS NO NEED TO UPDATE THIS YOURSELF, IT WILL BE UPDATED WHEN RELEASED.",
-  "version": "3.8.0",
+  "version": "3.9.0",
   "enhanced": [
-    "Update contributor names.",
-    "Add clicker game."
+    "Better feature options.",
+    "Add a selection option for feature settings.",
+    "Use images for Flag on Profile feature.",
+    "Improved wording for Summarized Descriptions comment text.",
+    "Improved wording for Project Miniplayer options.",
+    "Technical: Add manifest schema to VSCode settings.",
+    "Technical: update README instructions.",
+    "Technical: update issue templates.",
+    "Technical: add feature.page API."
 ],
   "fixed": [
-    "Fix protect mention text.",
-    "Fix search bar."
+    "Fix Summarized Descriptions button placement.",
+    "Fix Select Self adding clones to dropdown.",
+    "Fix Summarized Descriptions overlapping with text.",
+    "Fix Block Count in My Stuff not working.",
+    "Fix popup search bar.",
+    "Remove a few features that reply on Scratch DB.",
+    "Fix Select Self when reenabled.",
+    "Minor selection option fixes."
   ]
 }
