@@ -1,0 +1,28 @@
+name: ✨ Enhancement
+description: Report a bug for ScratchTools, or something that doesn't work properly.
+labels: ["status: needs review", "type: enhancement"]
+body:
+
+  - type: textarea
+    id: describe
+    attributes:
+      label: Why would this be helpful?
+      description: We'd like to know in what cases something like this might be helpful.
+      placeholder: Type here
+    validations:
+      required: true
+  
+  - type: textarea
+    id: how
+    attributes:
+      label: How would this work?
+      description: We aren't asking for code specifics, but we'd like to know your vision for it.
+      placeholder: Type here
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: You can put more info here if you have any.
