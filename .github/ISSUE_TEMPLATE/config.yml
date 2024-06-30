@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Send Feedback
+    url: https://scratchtools.app/feedback
+    about: Submit feedback for ScratchTools developers to review.
+  - name: 🔒 Report a Vulnerability
+    url: mailto:security@scratchtools.app?subject=Reporting%20a%20Security%20Vulnerability&body=(Please%20put%20the%20details%20below)
+    about: Please report security vulnerabilities here.
+  - name: 👥 Community Discord Server
+    url: https://discord.gg/EByJKZR2AE
+    about: Join the Discord server to submit suggestions/bugs and talk to other users.
+  - name: 🧑‍💻 Development Discord Server
+    url: https://discord.gg/6Ecds4pTKT
+    about: Join the development server to chat with other developers.

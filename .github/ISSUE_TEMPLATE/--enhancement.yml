@@ -1,6 +1,6 @@
-name: 🎉 New Feature
-description: Suggest an entirely new feature for ScratchTools.
-labels: ["new feature", "status: needs review"]
+name: ✨ Enhancement
+description: Suggest an enhancement for ScratchTools to improve a certain feature or other part of the extension.
+labels: ["status: needs review", "type: enhancement"]
 body:
 
   - type: textarea

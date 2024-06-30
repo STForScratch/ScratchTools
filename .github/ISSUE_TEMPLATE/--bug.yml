@@ -1,6 +1,6 @@
-name: Bug Report
-description: Report a bug for ScratchTools, or something that doesn't work properly.
-labels: ["bug"]
+name: 🐛 Bug
+description: Report a bug for ScratchTool.
+labels: ["type: bug", "status: needs review"]
 body:
 
   - type: textarea
@@ -16,8 +16,8 @@ body:
     id: why
     attributes:
       label: What is causing the bug?
-      description: Are there any actions that you take that could be causing a bug? For example, does it happen when you enter the editor or share a project?
-      placeholder: Type here
+      description: We aren't asking for code, we just want to know when and where this code is happening.
+      placeholder: For example- "When I go to my own profile and close the comments."
     validations:
       required: true
 
