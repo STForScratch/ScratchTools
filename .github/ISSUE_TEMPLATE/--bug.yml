@@ -17,7 +17,7 @@ body:
     attributes:
       label: What is causing the bug?
       description: We aren't asking for code, we just want to know when and where this code is happening.
-      placeholder: Example: when I go to my own profile and close the comments.
+      placeholder: Example\: when I go to my own profile and close the comments.
     validations:
       required: true
 
