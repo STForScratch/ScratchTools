@@ -557,3 +557,11 @@ input[class^="input_input-form_"]:focus {
 .scratchtoolsTag {
   background-color: var(--ste-blue) !important;
 }
+
+.studio-info .studio-info-footer-report button:hover {
+     background-color: var(--ste-blue) !important;
+}
+
+.studio-status-icon-unselected {
+    background-color: var(--ste-blue) !important;
+}
