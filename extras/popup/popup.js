@@ -690,7 +690,8 @@ async function getFeatures() {
     if (feature.options) {
       for (var optionPlace in feature.options) {
         var option = feature.options[optionPlace];
-        if (option.type === 4) {
+        let type = option.type
+        if (type === 4) {
           var optionDiv = document.createElement("div");
           optionDiv.className = "option";
           var label = document.createElement("label");
@@ -790,7 +791,7 @@ async function getFeatures() {
         }
         div.appendChild(optionDiv);
 
-        if (option.type === 4) {
+        if (type !== 4) {
           input.dataset.validation = btoa(
             JSON.stringify(option.validation || [])
           );
