@@ -175,9 +175,7 @@ a {
   border: none;
   background: var(--searchbar-bg);
   outline: none;
-  vertical-align: middle;
   position: initial;
-  margin-bottom: 2.9em;
   color: var(--primary-color);
 }
 .searchbarbutton {
@@ -220,7 +218,6 @@ a {
   background-repeat: no-repeat;
   cursor: pointer;
   float: right;
-  margin-top: -6.5em;
   margin-left: 2.3em;
   position: relative;
   right: -1rem;
