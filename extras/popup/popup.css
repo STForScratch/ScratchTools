@@ -164,6 +164,7 @@ a {
 .wrap {
   position: relative;
   height: 45px;
+  top: 15px;
 }
 
 .searchbar {
@@ -176,6 +177,7 @@ a {
   background: var(--searchbar-bg);
   outline: none;
   position: initial;
+  margin-bottom: 2.9em;
   color: var(--primary-color);
 }
 .searchbarbutton {
