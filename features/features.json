@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "custom-explore",
+    "versionAdded": "v4.0.0"
+  },
+  {
+    "version": 2,
     "id": "stage-in-spritepane",
     "versionAdded": "v3.9.0"
   },

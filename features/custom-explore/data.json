@@ -1,0 +1,65 @@
+{
+    "title": "Custom Explore Redirect",
+    "description": "Automatically redirect to a specific tab on the Explore page.",
+    "credits": [
+        {
+            "username": "ItsThatKittyDragon",
+            "url": "https://scratch.mit.edu/users/ItsThatKittyDragon/"
+        },
+        {
+            "username": "MaterArc",
+            "url": "https://scratch.mit.edu/users/MaterArc/"
+        },
+         {
+            "username": "rgantzos",
+            "url": "https://scratch.mit.edu/users/rgantzos/"
+        }
+    ],
+    "type": [
+        "Website"
+    ],
+    "tags": [
+        "New",
+        "Featured"
+    ],
+    "scripts": [
+        {
+            "file": "script.js",
+            "runOn": "/*"
+        }
+    ],
+    "dynamic": true,
+    "options": [
+        {
+            "id": "custom-explore-tab",
+            "name": "Tab",
+            "type": 4,
+            "options": [
+                {
+                    "name": "Animations",
+                    "value": "animations"
+                },
+                {
+                    "name": "Art",
+                    "value": "art"
+                },
+                {
+                    "name": "Games",
+                    "value": "games"
+                },
+                {
+                    "name": "Music",
+                    "value": "music"
+                },
+                 {
+                    "name": "Stories",
+                    "value": "stories"
+                },
+                {
+                    "name": "Tutorials",
+                    "value": "tutorials"
+                }
+            ]
+        }
+    ]
+}

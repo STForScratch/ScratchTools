@@ -849,11 +849,16 @@ body {
 
 .option-selection {
   text-align: right;
-  width: 100%;
+  width: calc(100% - 1rem);
+  display: flex;
+  overflow-wrap: break-word;
+  flex-wrap: wrap;
+  border: 1.5px solid var(--feature-input-bg);
+  border-radius: .25rem;
+  overflow: hidden;
 }
 
 .option-selection span {
-  border: 1.5px solid var(--feature-input-bg);
   padding: .25rem;
   padding-left: .5rem;
   padding-right: .5rem;
@@ -862,20 +867,24 @@ body {
   background-color: transparent;
   color: var(--secondary-color);
   transition: background-color .3s, border .3s, color .3s;
+  display: inline-block;
+    word-break: break-word;
+    white-space: nowrap;
+    flex: 1 0 auto;
+    text-align: center;
+    border-inline-end: 1.5px solid var(--feature-input-bg);
+}
+
+.option label {
+  margin-right: 1rem;
 }
 
 .option-selection span.option-selected {
   background-color: var(--theme);
   color: white;
-  border: 1.5px solid var(--theme);
-}
-
-.option-selection span:first-child {
-  border-top-left-radius: .25rem;
-  border-bottom-left-radius: .25rem;
+  border-inline-end: 1.5px solid transparent;
 }
 
 .option-selection span:last-child {
-  border-top-right-radius: .25rem;
-  border-bottom-right-radius: .25rem;
+  border-inline-end: none;
 }
