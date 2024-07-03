@@ -1,21 +1,24 @@
 export default async function({ feature, console }) {
-    let tabName = ScratchTools.Storage["customtab"];
+    let ELEMENTS = []
+    let type = feature.settings.get("custom-explore-tab") || "Animations"
+
+    ScratchTools.waitForElements("a[href='/explore/projects/'], a[href='/explore/projects'], a[href='/explore/projects/all'], a[href='/explore/projects/all/']", function(a) {
+        if (a.parentElement.className.includes("sub-nav categories")) return;
+        ELEMENTS.push(a)
+
+        a.href = feature.self.enabled ? `/explore/projects/${type.toLowerCase()}/` : "/explore/projects/"
+    })
     
-    function updateRedirect() {
-        const exploreLink = document.querySelector('li.link.explore > a');
-        if (exploreLink && window.location.href === 'https://scratch.mit.edu/explore/projects/all') {
-            exploreLink.href = `https://scratch.mit.edu/explore/projects/${tabName}`;
-            window.location.href = exploreLink.href;
+    function updateRedirects() {
+        for (var i in ELEMENTS) {
+            ELEMENTS[i].href = feature.self.enabled ? `/explore/projects/${type.toLowerCase()}/` : "/explore/projects/"
         }
     }
 
-    await ScratchTools.waitForElement('li.link.explore > a');
-    updateRedirect();
-
-    feature.options.addEventListener('changed', async ({ key, value }) => {
-        if (key === 'customtab') {
-            tabName = value;
-            updateRedirect();
-        }
-    });
+    feature.addEventListener("disabled", updateRedirects)
+    feature.addEventListener("enabled", updateRedirects)
+    feature.settings.addEventListener("changed", function({ value }) {
+        type = value
+        updateRedirects()
+    })
 }

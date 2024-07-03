@@ -470,7 +470,10 @@ span.new-feature-tag.beta {
 
 .option-selection {
   text-align: right;
-  width: 100%;
+  width: calc(100% - 1rem);
+  display: flex;
+  overflow-wrap: break-word;
+  flex-wrap: wrap;
 }
 
 .option-selection span {
@@ -483,6 +486,15 @@ span.new-feature-tag.beta {
   background-color: transparent;
   color: var(--secondary-color);
   transition: background-color .3s, border .3s, color .3s;
+  display: inline-block;
+    word-break: break-word;
+    white-space: nowrap;
+    flex: 1 0 auto;
+    text-align: center;
+}
+
+.option label {
+  margin-right: 1rem;
 }
 
 .option-selection span.option-selected {

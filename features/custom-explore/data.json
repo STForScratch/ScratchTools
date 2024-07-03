@@ -21,14 +21,14 @@
     "scripts": [
         {
             "file": "script.js",
-            "runOn": "/explore/projects/*||/"
+            "runOn": "/*"
         }
     ],
     "dynamic": true,
     "options": [
         {
-            "id": "custom-tab",
-            "name": "",
+            "id": "custom-explore-tab",
+            "name": "Tab",
             "type": 4,
             "options": [
                 {
