@@ -1,0 +1,46 @@
+{
+  "title": "Project Reactions",
+  "description": "Checks when a project was shared and adds a label next to the share date to indicate which version of Scratch was in use at that time.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New"],
+  "dynamic": true,
+  "scripts": [
+    {
+      "file": "script.js",
+      "runOn": "/projects/*"
+    }
+  ],
+  "styles": [
+    {
+      "file": "style.css",
+      "runOn": "/projects/*"
+    }
+  ],
+  "components": [
+    {
+      "type": "info",
+      "content": "Users will not receive a notification when you react to their projects."
+    }
+  ],
+  "resources": [
+    { "name": "project-reactions-beaming", "path": "/emojis/beaming.svg" },
+    { "name": "project-reactions-crying", "path": "/emojis/crying.svg" },
+    { "name": "project-reactions-fire", "path": "/emojis/fire.svg" },
+    { "name": "project-reactions-hands", "path": "/emojis/hands.svg" },
+    {
+      "name": "project-reactions-heart-eyes",
+      "path": "/emojis/heart-eyes.svg"
+    },
+    {
+      "name": "project-reactions-heart-face",
+      "path": "/emojis/heart-face.svg"
+    },
+    { "name": "project-reactions-hearts", "path": "/emojis/hearts.svg" },
+    { "name": "project-reactions-laughing", "path": "/emojis/laughing.svg" },
+    { "name": "project-reactions-popper", "path": "/emojis/popper.svg" },
+    { "name": "project-reactions-thumbsup", "path": "/emojis/thumbsup.svg" }
+  ]
+}
