@@ -474,10 +474,12 @@ span.new-feature-tag.beta {
   display: flex;
   overflow-wrap: break-word;
   flex-wrap: wrap;
+  border: 1.5px solid var(--feature-input-bg);
+  border-radius: .25rem;
+  overflow: hidden;
 }
 
 .option-selection span {
-  border: 1.5px solid var(--feature-input-bg);
   padding: .25rem;
   padding-left: .5rem;
   padding-right: .5rem;
@@ -491,6 +493,7 @@ span.new-feature-tag.beta {
     white-space: nowrap;
     flex: 1 0 auto;
     text-align: center;
+    border-inline-end: 1.5px solid var(--feature-input-bg);
 }
 
 .option label {
@@ -500,15 +503,9 @@ span.new-feature-tag.beta {
 .option-selection span.option-selected {
   background-color: var(--theme);
   color: white;
-  border: 1.5px solid var(--theme);
-}
-
-.option-selection span:first-child {
-  border-top-left-radius: .25rem;
-  border-bottom-left-radius: .25rem;
+  border-inline-end: 1.5px solid transparent;
 }
 
 .option-selection span:last-child {
-  border-top-right-radius: .25rem;
-  border-bottom-right-radius: .25rem;
+  border-inline-end: none;
 }
