@@ -12,7 +12,6 @@ export default async function ({ feature, console }) {
       });
       row.appendChild(button)
 
-      window.feature = feature;
       var saveBlob = (function () {
         var a = document.createElement("a");
         document.body.appendChild(a);
