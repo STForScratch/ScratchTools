@@ -1,0 +1,13 @@
+{
+  "title": "Align Objects in Paint Editor",
+  "description": "Change the opacity of objects in the paint editor.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Editor"],
+  "tags": ["New"],
+  "dynamic": true,
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
+  "resources": [{ "name": "paint-align", "path": "/align.svg" }]
+}
