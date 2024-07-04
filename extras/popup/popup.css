@@ -122,7 +122,7 @@ a {
 }
 
 .feature input {
-  color: var(--color);
+  color: var(--primary-color);
   background-color: var(--feature-input-bg);
   padding-left: 1rem !important;
 }
@@ -233,7 +233,7 @@ a {
   border-radius: 1rem;
   outline: none;
   border: 0px;
-  color: white;
+  color: var(--primary-color);
   background-color: var(--feature-input-bg);
 }
 

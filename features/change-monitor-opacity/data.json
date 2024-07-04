@@ -1,0 +1,22 @@
+{
+  "title": "Custom Monitor Opacity",
+  "description": "Set the opacity of variables and lists on the stage to a custom number.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "tags": [],
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+  "dynamic": true,
+  "options": [
+    {
+      "id": "monitor-opacity",
+      "name": "Monitor Opacity (0% - 100%)",
+      "type": 2,
+      "validators": {
+        "min": 0,
+        "max": 100
+      }
+    }
+  ],
+  "type": ["Website", "Editor"]
+}
