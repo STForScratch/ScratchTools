@@ -1,6 +1,4 @@
 export default async function ({ feature, console }) {
-    window.feature = feature
-
     let pinned = await (await fetch(`https://data.scratchtools.app/pinned/${feature.redux.getState().preview.projectInfo.id}/`)).json()
     let { username: author } = feature.redux.getState().preview.projectInfo.author
     let { id } = feature.redux.getState().preview.projectInfo

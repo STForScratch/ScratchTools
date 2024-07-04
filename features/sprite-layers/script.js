@@ -1,6 +1,4 @@
 export default async function ({ feature, console }) {
-    window.feature = feature
-
     ScratchTools.waitForElements("div[class*='sprite-info_row_']:nth-child(2) > div[class*='sprite-info_group_']:nth-child(1)", function (button) {
         button.addEventListener("mouseover", function () {
             if (feature.traps.vm.editingTarget.isStage || button.querySelector(".ste-layers")) return;

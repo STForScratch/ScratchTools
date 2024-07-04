@@ -1,7 +1,6 @@
 export default function ({ feature, console }) {
   ScratchTools.waitForElements(".ReactModalPortal", function (modal) {
     console.log(modal)
-    window.feature = feature
     if (!feature.self.enabled) return;
     console.log("passed enabled")
     if (modal.querySelector(".sa-swap-local-global-hint")) return;
