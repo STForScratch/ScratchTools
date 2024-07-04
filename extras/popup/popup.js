@@ -769,6 +769,7 @@ async function getFeatures() {
           ];
           input.value = optionData || "";
           input.placeholder = `Enter ${input.type}`;
+          input.dataset.validators = JSON.stringify(option.validators || {})
           var optionDiv = document.createElement("div");
           optionDiv.className = "option";
           var label = document.createElement("label");
@@ -799,6 +800,7 @@ async function getFeatures() {
             var validation = JSON.parse(atob(this.dataset.validation));
             var ready = true;
             var input = this;
+            let validators = JSON.parse(this.dataset.validators)
             validation.forEach(function (validate) {
               if (ready) {
                 input.style.outline = "none";
@@ -822,6 +824,16 @@ async function getFeatures() {
               }
             });
             if (ready) {
+              if (validators.min) {
+                if (this.value < validators.min) {
+                  this.value = validators.min
+                }
+              }
+              if (validators.max) {
+                if (this.value > validators.max) {
+                  this.value = validators.max
+                }
+              }
               if (this.type !== "checkbox") {
                 finalValue = this.value;
               } else {
