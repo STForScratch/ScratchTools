@@ -1,0 +1,27 @@
+.ste-direction-slider {
+  padding-top: 0.2rem;
+  margin-bottom: 20px;
+}
+
+.ste-direction-slider-checkered {
+  background-color: #f6f6f6;
+  background-image: linear-gradient(
+    to right,
+    #c5ccd6,
+    #c5ccd6 1px,
+    transparent 1px,
+    transparent 1.5px
+  );
+  background-size: 3px 100%;
+  background-position: 0 0, 10px 10px;
+}
+
+.ste-direction-background {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 11px;
+}

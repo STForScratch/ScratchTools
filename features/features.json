@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "rotate-gradient",
+    "versionAdded": "v4.0.0"
+  },
+  {
+    "version": 2,
     "id": "change-monitor-opacity",
     "versionAdded": "v4.0.0"
   },
