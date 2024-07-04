@@ -45,10 +45,7 @@ export default async function ({ feature, console }) {
       let handle = document.createElement("div");
       handleSlider(handle, value);
       handle.className = "ste-direction-handle slider_handle_3f0xk";
-      handle.style.left = "124px";
-      if (feature.traps.paint().selectedItems[0]?.opacity) {
-        handle.style.left = "0px";
-      }
+      handle.style.left = "0px";
       slider.appendChild(handle);
 
       body.firstChild.insertBefore(div, body.querySelector("div[class^='color-picker_row-header_']").parentElement);
