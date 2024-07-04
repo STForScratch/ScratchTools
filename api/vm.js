@@ -183,7 +183,7 @@ ScratchTools.Scratch.scratchPaint = function () {
         Object.keys(app).find((key) =>
           key.startsWith("__reactInternalInstance")
         )
-      ].child.stateNode.store.getState()?.scratchPaint || null
+      ].child.stateNode.store?.getState()?.scratchPaint || null
     );
   } else {
     return null;
