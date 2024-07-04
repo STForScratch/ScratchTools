@@ -1,6 +1,6 @@
 {
   "title": "Project Reactions",
-  "description": "Checks when a project was shared and adds a label next to the share date to indicate which version of Scratch was in use at that time.",
+  "description": "Allows you to react to projects with different emojis.",
   "credits": [
     { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
   ],
