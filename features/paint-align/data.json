@@ -9,5 +9,9 @@
   "dynamic": true,
   "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
   "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
-  "resources": [{ "name": "paint-align", "path": "/align.svg" }]
+  "resources": [{ "name": "paint-align", "path": "/align.svg" }],
+  "components": [{
+    "type": "info",
+    "content": "Holding the shift key while clicking the align items button will center all selected items on the item in the furthest-back layer."
+  }]
 }
