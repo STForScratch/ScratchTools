@@ -6,6 +6,11 @@
   },
   {
     "version": 2,
+    "id": "chomp-blocks",
+    "versionAdded": "v4.0.0"
+  },
+  {
+    "version": 2,
     "id": "custom-explore",
     "versionAdded": "v4.0.0"
   },
