@@ -690,6 +690,18 @@ async function getFeatures() {
     if (feature.options) {
       for (var optionPlace in feature.options) {
         var option = feature.options[optionPlace];
+
+        if (typeof option.type === "string") {
+          let OPTION_TYPES = {
+            "string": 0,
+            "boolean": 1,
+            "number": 2,
+            "color": 3,
+            "select": 4,
+          }
+          option.type = OPTION_TYPES[option.type]
+        }
+
         let type = option.type
         if (type === 4) {
           var optionDiv = document.createElement("div");
