@@ -32,9 +32,9 @@ export default async function ({ feature }) {
         let span = document.querySelector(".ste-align-items")
 
         if (feature.traps.paint().format === "BITMAP" || feature.traps.paint().selectedItems?.length < 2) {
-            span.classList.add("disabled")
+            span.classList.add("button_mod-disabled_1rf31")
         } else {
-            span.classList.remove("disabled")
+            span.classList.remove("button_mod-disabled_1rf31")
         }
     }
   })
