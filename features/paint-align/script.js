@@ -1,45 +1,52 @@
 export default async function ({ feature }) {
-  ScratchTools.waitForElements("div[class^='mode-tools_mod-labeled-icon-height_']", function(row) {
-    if (row.querySelector(".ste-align-items")) return;
+  ScratchTools.waitForElements(
+    "div[class^='mode-tools_mod-labeled-icon-height_']",
+    function (row) {
+      if (row.querySelector(".ste-align-items")) return;
 
-    let span = document.createElement("span")
-    span.className = "button_button_u6SE2 labeled-icon-button_mod-edit-field_1bXYC ste-align-items"
-    span.role = "button"
+      let span = document.createElement("span");
+      span.className =
+        "button_button_u6SE2 labeled-icon-button_mod-edit-field_1bXYC ste-align-items";
+      span.role = "button";
 
-    let img = document.createElement("img")
-    img.src = feature.self.getResource("paint-align")
-    img.className = "labeled-icon-button_edit-field-icon_3j-Pf"
-    img.alt = feature.msg("align")
-    img.title = feature.msg("align")
-    img.draggable = false
-    span.appendChild(img)
+      let img = document.createElement("img");
+      img.src = feature.self.getResource("paint-align");
+      img.className = "labeled-icon-button_edit-field-icon_3j-Pf";
+      img.alt = feature.msg("align");
+      img.title = feature.msg("align");
+      img.draggable = false;
+      span.appendChild(img);
 
-    let label = document.createElement("span")
-    label.textContent = feature.msg("align")
-    label.className = "labeled-icon-button_edit-field-title_1ZoEV"
-    span.appendChild(label)
+      let label = document.createElement("span");
+      label.textContent = feature.msg("align");
+      label.className = "labeled-icon-button_edit-field-title_1ZoEV";
+      span.appendChild(label);
 
-    span.addEventListener("click", function() {
+      span.addEventListener("click", function (e) {
         if (span.className.includes("disabled")) return;
-        centerObjects()
-    })
+        centerObjects(e.shiftKey);
+      });
 
-    row.appendChild(span)
-  })
-
-  feature.redux.subscribe(function() {
-    if (document.querySelector(".ste-align-items")) {
-        let span = document.querySelector(".ste-align-items")
-
-        if (feature.traps.paint().format === "BITMAP" || feature.traps.paint().selectedItems?.length < 2) {
-            span.classList.add("button_mod-disabled_1rf31")
-        } else {
-            span.classList.remove("button_mod-disabled_1rf31")
-        }
+      row.appendChild(span);
     }
-  })
+  );
 
-  function centerObjects() {
+  feature.redux.subscribe(function () {
+    if (document.querySelector(".ste-align-items")) {
+      let span = document.querySelector(".ste-align-items");
+
+      if (
+        feature.traps.paint().format === "BITMAP" ||
+        feature.traps.paint().selectedItems?.length < 2
+      ) {
+        span.classList.add("button_mod-disabled_1rf31");
+      } else {
+        span.classList.remove("button_mod-disabled_1rf31");
+      }
+    }
+  });
+
+  function centerObjects(stay) {
     let items = feature.traps.paint().selectedItems;
 
     let allX = [];
@@ -51,7 +58,12 @@ export default async function ({ feature }) {
       allY.push(getMidPoint(items[i].segments).y);
     }
 
-    let trueMidpoint = { x: average(allX), y: average(allY) };
+    let trueMidpoint = stay
+      ? {
+          x: getMidPoint(items[0].segments).x,
+          y: getMidPoint(items[0].segments).y,
+        }
+      : { x: average(allX), y: average(allY) };
 
     for (var i in items) {
       let selfMidpoint = getMidPoint(items[i].segments);
@@ -61,6 +73,11 @@ export default async function ({ feature }) {
       for (var seg in items[i].segments) {
         items[i].segments[seg]._point._x += adjustX;
         items[i].segments[seg]._point._y += adjustY;
+      }
+
+      for (var comp in (items[i].fillColor?._components || [])) {
+        items[i].fillColor._components[comp].x += adjustX;
+        items[i].fillColor._components[comp].y += adjustY;
       }
     }
 
