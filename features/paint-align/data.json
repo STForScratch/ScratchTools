@@ -1,6 +1,6 @@
 {
   "title": "Align Objects in Paint Editor",
-  "description": "Change the opacity of objects in the paint editor.",
+  "description": "Adds a button to the paint editor that allows you to align selected items.",
   "credits": [
     { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
   ],
