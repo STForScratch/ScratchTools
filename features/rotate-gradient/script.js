@@ -21,11 +21,11 @@ export default async function ({ feature, console }) {
 
       let name = document.createElement("span");
       name.className = "color-picker_label-name_17igY";
-      name.textContent = "Direction";
+      name.textContent = feature.msg("direction");
 
       let value = document.createElement("span");
       value.className = "color-picker_label-readout_9vjb2";
-      value.textContent = "0deg";
+      value.textContent = "0";
 
       data.appendChild(name);
       data.appendChild(value);
@@ -150,7 +150,7 @@ export default async function ({ feature, console }) {
           lastRotation = Math.floor((newLeft / 124) * 360)
 
           value.textContent =
-            Math.floor((newLeft / 124) * 360).toString() + "deg";
+            Math.floor((newLeft / 124) * 360).toString()
 
           handle.style.left = newLeft + "px";
         }
@@ -183,7 +183,7 @@ export default async function ({ feature, console }) {
           lastRotation = Math.floor((newLeft / 124) * 360)
 
           value.textContent =
-            Math.floor((newLeft / 124) * 360).toString() + "deg";
+            Math.floor((newLeft / 124) * 360).toString()
 
           handle.style.left = newLeft + "px";
         }
