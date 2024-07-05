@@ -1,0 +1,17 @@
+{
+  "title": "Set Thumbnail",
+  "description": "Allows you to upload an image or GIF as a project thumbnail, or set the thumbnail to the current stage.",
+  "credits": [
+    {
+      "username": "Sanjang_Beta",
+      "url": "https://scratch.mit.edu/users/Sanjang_Beta/"
+    },
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Recommended"],
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
+  "resources": [{ "name": "thumbnail-btn", "path": "/thumbnail-btn.svg" }],
+  "dynamic": true
+}
