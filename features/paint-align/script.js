@@ -75,9 +75,11 @@ export default async function ({ feature }) {
         items[i].segments[seg]._point._y += adjustY;
       }
 
-      for (var comp in (items[i].fillColor?._components || [])) {
-        items[i].fillColor._components[comp].x += adjustX;
-        items[i].fillColor._components[comp].y += adjustY;
+      if (items[i].fillColor._type === "gradient") {
+        for (var comp in items[i].fillColor?._components || []) {
+          items[i].fillColor._components[comp].x += adjustX;
+          items[i].fillColor._components[comp].y += adjustY;
+        }
       }
     }
 
