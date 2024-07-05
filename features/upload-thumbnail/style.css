@@ -1,0 +1,24 @@
+.ste-thumbnail::before {
+  background-image: var(--scratchtoolsresource-thumbnail-btn);
+  display: inline-block;
+  margin-right: 0.25rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  width: 0.875rem;
+  height: 0.875rem;
+  vertical-align: bottom;
+  content: "";
+  transform: scale(1.3);
+}
+
+
+.ste-thumbnail-stage:disabled {
+    opacity: .5;
+    cursor: not-allowed !important;
+    background: #b5b5b5 !important;
+}
+
+.ste-thumbnail-stage:disabled:hover {
+    top: 0px !important;
+}

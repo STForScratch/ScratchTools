@@ -32,6 +32,8 @@ ScratchTools.modals = {
         var code = document.createElement("code");
         code.textContent = component.content;
         modal.appendChild(code);
+      } else if (component.type === "html") {
+        modal.appendChild(component.content);
       }
     });
 
@@ -45,5 +47,11 @@ ScratchTools.modals = {
     div.appendChild(modal);
     modal.prepend(orangeBar);
     document.body.appendChild(div);
+
+    return {
+      close: function () {
+        div.remove();
+      },
+    };
   },
 };
