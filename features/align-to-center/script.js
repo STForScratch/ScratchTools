@@ -23,6 +23,14 @@ export default async function ({ feature, console }) {
     return textWidth;
   }
 
+  function clearCenterAlignment(textarea) {
+    const lines = textarea.value.split("\n");
+    const uncenteredLines = lines.map((line) => {
+      return line.replace(/^\s+/, "");
+    });
+    textarea.value = uncenteredLines.join("\n");
+  }
+
   function centerAlignText() {
     const form = document.querySelector(".project-description-form");
     if (form) {
@@ -31,6 +39,8 @@ export default async function ({ feature, console }) {
         activeElement.tagName === "TEXTAREA" &&
         form.contains(activeElement)
       ) {
+        clearCenterAlignment(activeElement);
+
         const spaceWidth = getSpaceWidth();
         const lines = activeElement.value.split("\n");
         const centeredLines = lines.map((line) => {
@@ -61,3 +71,4 @@ export default async function ({ feature, console }) {
     }
   );
 }
+
