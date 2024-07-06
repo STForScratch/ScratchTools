@@ -1,0 +1,18 @@
+{
+  "title": "Align to Center",
+  "description": "Use Control + U / Command + U to center text within the instruction box on projects",
+  "credits": [
+    {
+      "username": "Brass_Glass",
+      "url": "https://scratch.mit.edu/users/Brass_Glass/"
+    },
+    {
+      "username": "MaterArc",
+      "url": "https://scratch.mit.edu/users/MaterArc/"
+    }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Recommended"],
+  "dynamic": true,
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }]
+}
