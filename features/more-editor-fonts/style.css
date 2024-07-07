@@ -1,0 +1,35 @@
+[data-for*="Add Font"]:hover + .__react_component_tooltip {
+  visibility: visible;
+}
+
+.ste-more-fonts-btn + .__react_component_tooltip {
+  left: auto;
+}
+
+span.ste-font-option:nth-child(even) {
+    background-color: #e9e9e9;
+}
+
+span.ste-font-option {
+    display: block;
+    padding-left: .5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+span.ste-font-option:hover {
+    background-color: #ff9f00;
+}
+
+span.ste-font-option:hover img {
+    filter: invert(1);
+}
+
+span.ste-font-option img {
+    height: 3rem;
+}
+
+.ste-font-options {
+    height: 11rem;
+    overflow: auto;
+}

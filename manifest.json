@@ -43,6 +43,7 @@
         "features/*",
         "/extras/feature/index.html",
         "/api/*",
+        "/libraries/*",
         "/extras/icons/*"
       ],
       "matches": [
