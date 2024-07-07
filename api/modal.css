@@ -76,3 +76,16 @@
 .st-modal button:hover {
   top: .4rem !important;
 }
+
+.st-modal button.ste-modal-cancel-btn {
+  background-color: #c9c9c9 !important;
+}
+
+.st-modal input {
+  padding: 0.5rem !important;
+  outline: none !important;
+  border-radius: 0.25rem !important;
+  border: 0px !important;
+  background-color: #e3e3e3;
+  margin-right: .5rem;
+}

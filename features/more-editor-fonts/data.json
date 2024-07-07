@@ -1,0 +1,16 @@
+{
+  "title": "More Paint Editor Fonts",
+  "description": "Allows you to use dozens of extra fonts in the paint editor.",
+  "credits": [
+    {
+      "username": "Sanjang_Beta",
+      "url": "https://scratch.mit.edu/users/Sanjang_Beta/"
+    },
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Editor"],
+  "tags": ["New", "Featured"],
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
+  "resources": [{ "name": "more-text-icon", "path": "/text.svg" }]
+}

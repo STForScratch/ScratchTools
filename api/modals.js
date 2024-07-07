@@ -38,7 +38,8 @@ ScratchTools.modals = {
     });
 
     var closeButton = document.createElement("button");
-    closeButton.textContent = "Close";
+    closeButton.textContent = data.cancel ? "Cancel" : "Close";
+    closeButton.className = data.cancel ? "ste-modal-cancel-btn" : ""
     closeButton.onclick = function () {
       div.remove();
     };

@@ -875,7 +875,7 @@ body {
     border-inline-end: 1.5px solid var(--feature-input-bg);
 }
 
-.option label {
+.option label:not(.special-switch) {
   margin-right: 1rem;
 }
 
