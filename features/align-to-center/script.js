@@ -39,7 +39,7 @@ export default async function ({ feature, console }) {
         activeElement.tagName === "TEXTAREA" &&
         form.contains(activeElement)
       ) {
-        clearCenterAlignment(activeElement); // Clear any existing center alignment
+        clearCenterAlignment(activeElement);
 
         const spaceWidth = getSpaceWidth();
         const lines = activeElement.value.split("\n");
