@@ -15,6 +15,9 @@ span.ste-font-option {
     padding-left: .5rem;
     border-radius: .5rem;
     cursor: pointer;
+    height: 3rem;
+    margin-bottom: .25rem;
+    margin-top: .25rem;
 }
 
 span.ste-font-option:hover {
