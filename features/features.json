@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "more-editor-fonts",
+    "versionAdded": "v4.0.0"
+  },
+  {
+    "version": 2,
     "id": "upload-thumbnail",
     "versionAdded": "v4.0.0"
   },
@@ -705,18 +710,6 @@
     "tags": [],
     "type": ["Website"],
     "dynamic": true
-  },
-  {
-    "title": "More Editor Fonts",
-    "description": "Adds more fonts to choose from in the paint editor. They look nicer and are more modern.",
-    "credits": ["rgantzos", "Lasted10"],
-    "urls": [
-      "https://scratch.mit.edu/users/rgantzos/",
-      "https://scratch.mit.edu/users/Lasted10_Forever/"
-    ],
-    "file": "special-editor-fonts",
-    "tags": ["Recommended", "Beta"],
-    "type": ["Editor"]
   },
   {
     "title": "Display Project Tags",
