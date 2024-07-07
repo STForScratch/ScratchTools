@@ -32,7 +32,7 @@ export default async function ({ feature, console }) {
   }
 
   function centerAlignText() {
-    const form = document.querySelector(".project-description-form");
+    const form = document.querySelector(".project-notes");
     if (form) {
       const activeElement = document.activeElement;
       if (
