@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "align-to-center",
+    "versionAdded": "v4.0.0"
+  },
+  {
+    "version": 2,
     "id": "more-editor-fonts",
     "versionAdded": "v4.0.0"
   },

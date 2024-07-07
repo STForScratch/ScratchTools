@@ -1,0 +1,17 @@
+.project-notes .project-textlabel {
+    position: relative;
+    width: 100%;
+}
+
+.ste-align-center {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    cursor: pointer;
+    display: none;
+}
+
+.ste-align-center.show {
+    display: block;
+}

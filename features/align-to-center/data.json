@@ -1,0 +1,36 @@
+{
+  "title": "Align to Center",
+  "description": "Allows you to align text in Instructions and Notes & Credits boxes to the center of the input.",
+  "credits": [
+    {
+      "username": "Brass_Glass",
+      "url": "https://scratch.mit.edu/users/Brass_Glass/"
+    },
+    {
+      "username": "MaterArc",
+      "url": "https://scratch.mit.edu/users/MaterArc/"
+    }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Recommended"],
+  "dynamic": true,
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
+  "resources": [{ "name": "center-align", "path": "/icon.svg" }],
+  "options": [{ "id": "use-align-hotkey", "name": "Use Hotkey (Ctrl + U)", "type": "boolean" }],
+  "components": [
+    {
+      "type": "info",
+      "content": "For Mac users, use Command + U when the hotkey option is enabled to center text.",
+      "if": {
+        "type": "all",
+        "conditions": [
+          {
+            "type": "os",
+            "value": "Macintosh"
+          }
+        ]
+      }
+    }
+  ]
+}
