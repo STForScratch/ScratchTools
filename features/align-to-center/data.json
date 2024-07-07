@@ -1,6 +1,6 @@
 {
   "title": "Align to Center",
-  "description": "Use Control + U / Command + U to center text within the instruction box on projects",
+  "description": "Allows you to align text in Instructions and Notes & Credits boxes to the center of the input.",
   "credits": [
     {
       "username": "Brass_Glass",
@@ -14,5 +14,23 @@
   "type": ["Website"],
   "tags": ["New", "Recommended"],
   "dynamic": true,
-  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }]
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
+  "resources": [{ "name": "center-align", "path": "/icon.svg" }],
+  "options": [{ "id": "use-align-hotkey", "name": "Use Hotkey (Ctrl + U)", "type": "boolean" }],
+  "components": [
+    {
+      "type": "info",
+      "content": "For Mac users, use Command + U when the hotkey option is enabled to center text.",
+      "if": {
+        "type": "all",
+        "conditions": [
+          {
+            "type": "os",
+            "value": "Macintosh"
+          }
+        ]
+      }
+    }
+  ]
 }

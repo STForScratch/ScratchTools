@@ -31,10 +31,12 @@ export default async function ({ feature, console }) {
     textarea.value = uncenteredLines.join("\n");
   }
 
-  function centerAlignText() {
+  function centerAlignText(textarea) {
+    if (!feature.self.enabled) return;
+
     const form = document.querySelector(".project-notes");
     if (form) {
-      const activeElement = document.activeElement;
+      const activeElement = textarea || document.activeElement;
       if (
         activeElement.tagName === "TEXTAREA" &&
         form.contains(activeElement)
@@ -46,7 +48,8 @@ export default async function ({ feature, console }) {
         const centeredLines = lines.map((line) => {
           const textWidth = getTextWidth(line);
           const totalSpaces = (availableWidth - textWidth) / spaceWidth / 2;
-          const spaces = " ".repeat(Math.floor(totalSpaces));
+          const spaces =
+            totalSpaces > 0 ? " ".repeat(Math.floor(totalSpaces)) : "";
           return spaces + line;
         });
         activeElement.value = centeredLines.join("\n");
@@ -56,7 +59,38 @@ export default async function ({ feature, console }) {
 
   window.addEventListener("keydown", (event) => {
     if ((event.ctrlKey || event.metaKey) && event.key === "u") {
-      centerAlignText();
+      if (feature.settings.get("use-align-hotkey")) {
+        centerAlignText();
+      }
     }
   });
+
+  console.log("hey");
+
+  ScratchTools.waitForElements(
+    ".project-notes .project-textlabel",
+    function (div) {
+      if (div.querySelector(".ste-align-center")) return;
+
+      let textarea = div.parentElement.querySelector("textarea");
+
+      let img = document.createElement("img");
+      img.src = feature.self.getResource("center-align");
+      img.className = "ste-align-center";
+      img.addEventListener("click", function () {
+        centerAlignText(textarea);
+      });
+      feature.self.hideOnDisable(img);
+
+      div.appendChild(img);
+
+      textarea.addEventListener("focusin", function () {
+        img.classList.add("show");
+      });
+
+      textarea.addEventListener("focusout", function () {
+        img.classList.remove("show");
+      });
+    }
+  );
 }
