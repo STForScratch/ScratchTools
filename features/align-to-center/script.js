@@ -77,7 +77,7 @@ export default async function ({ feature, console }) {
       let img = document.createElement("img");
       img.src = feature.self.getResource("center-align");
       img.className = "ste-align-center";
-      img.addEventListener("click", function () {
+      img.addEventListener("mousedown", function () {
         centerAlignText(textarea);
       });
       feature.self.hideOnDisable(img);
