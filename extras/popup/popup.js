@@ -501,23 +501,6 @@ function getWords(text, search) {
   return matchedPercentage > 0.5;
 }
 
-document.querySelector(".searchbar").addEventListener("input", function () {
-  if (document.querySelector(".welcome")) {
-    if (document.querySelector(".searchbar").value) {
-      document.querySelector(".welcome").style.display = "none";
-    } else {
-      document.querySelector(".welcome").style.display = null;
-    }
-  }
-  document.querySelectorAll(".feature").forEach(function (el) {
-    if (getWords(el.innerText, document.querySelector(".searchbar").value)) {
-      el.style.display = null;
-    } else {
-      el.style.display = "none";
-    }
-  });
-});
-
 if (document.querySelector(".settingsButton")) {
   document
     .querySelector(".settingsButton")
@@ -562,6 +545,8 @@ async function returnFeatureCode() {
   }
 }
 
+let FEATURES = [];
+
 async function getFeatures() {
   var languageData = await getFeatureLanguageData();
   const settings = (await chrome.storage.sync.get("features")).features || "";
@@ -586,6 +571,13 @@ async function getFeatures() {
       feature = featureData;
     }
     div.dataset.type = feature.type.join("");
+
+    FEATURES.push({
+      title: feature.title,
+      description: feature.description,
+      id: feature.id,
+      new: feature.versionAdded === "v" + chrome.runtime.getManifest().version,
+    });
 
     var h3 = document.createElement("h3");
     h3.textContent =
@@ -693,16 +685,16 @@ async function getFeatures() {
 
         if (typeof option.type === "string") {
           let OPTION_TYPES = {
-            "string": 0,
-            "boolean": 1,
-            "number": 2,
-            "color": 3,
-            "select": 4,
-          }
-          option.type = OPTION_TYPES[option.type]
+            string: 0,
+            boolean: 1,
+            number: 2,
+            color: 3,
+            select: 4,
+          };
+          option.type = OPTION_TYPES[option.type];
         }
 
-        let type = option.type
+        let type = option.type;
         if (type === 4) {
           var optionDiv = document.createElement("div");
           optionDiv.className = "option";
@@ -781,7 +773,7 @@ async function getFeatures() {
           ];
           input.value = optionData || "";
           input.placeholder = `Enter ${input.type}`;
-          input.dataset.validators = JSON.stringify(option.validators || {})
+          input.dataset.validators = JSON.stringify(option.validators || {});
           var optionDiv = document.createElement("div");
           optionDiv.className = "option";
           var label = document.createElement("label");
@@ -812,7 +804,7 @@ async function getFeatures() {
             var validation = JSON.parse(atob(this.dataset.validation));
             var ready = true;
             var input = this;
-            let validators = JSON.parse(this.dataset.validators)
+            let validators = JSON.parse(this.dataset.validators);
             validation.forEach(function (validate) {
               if (ready) {
                 input.style.outline = "none";
@@ -838,12 +830,12 @@ async function getFeatures() {
             if (ready) {
               if (validators.min) {
                 if (this.value < validators.min) {
-                  this.value = validators.min
+                  this.value = validators.min;
                 }
               }
               if (validators.max) {
                 if (this.value > validators.max) {
-                  this.value = validators.max
+                  this.value = validators.max;
                 }
               }
               if (this.type !== "checkbox") {
@@ -1502,3 +1494,103 @@ document
       });
     }
   });
+
+function searchAndSort(query) {
+  const lowerCaseQuery = query.toLowerCase();
+
+  const scoredData = FEATURES.map((item) => {
+    const nameMatches = item.title.toLowerCase().includes(lowerCaseQuery)
+      ? 1
+      : 0;
+    const descriptionMatches = item.description
+      .toLowerCase()
+      .includes(lowerCaseQuery)
+      ? 1
+      : 0;
+    const totalMatches = nameMatches + descriptionMatches;
+
+    return {
+      ...item,
+      relevance: totalMatches,
+    };
+  });
+
+  scoredData.sort((a, b) => b.relevance - a.relevance);
+
+  const filteredData = scoredData.filter((item) => item.relevance > 0);
+
+  return filteredData;
+}
+
+let searchbar = document.querySelector(".searchbar");
+searchbar.addEventListener("input", function () {
+  if (document.querySelector(".welcome")) {
+    if (searchbar.value) {
+      document.querySelector(".welcome").style.display = "none";
+    } else {
+      document.querySelector(".welcome").style.display = null;
+    }
+  }
+  if (!searchbar.value) {
+    if (document.querySelector('h1[data-id="all-features-text"]')) {
+      document.querySelector('h1[data-id="all-features-text"]').textContent =
+        "All features";
+
+      document.querySelector(".suggested h1").style.display = null;
+      document.querySelector(".suggested-features").style.display = null;
+    }
+
+    document.querySelectorAll(".feature").forEach(function (el) {
+      el.style.display = null;
+    });
+
+    for (var i in FEATURES) {
+      document
+        .querySelector(".settings")
+        .appendChild(
+          document.querySelector(
+            `div.settings .feature[data-id=${FEATURES[i].id}]`
+          )
+        );
+    }
+
+    for (var i in FEATURES.filter((el) => el.new)) {
+      document
+        .querySelector(".settings")
+        .prepend(
+          document.querySelector(
+            `div.settings .feature[data-id=${
+              FEATURES.filter((el) => el.new)[i].id
+            }]`
+          )
+        );
+    }
+  } else {
+    if (document.querySelector('h1[data-id="all-features-text"]')) {
+      document.querySelector('h1[data-id="all-features-text"]').textContent =
+        "Results";
+
+      document.querySelector(".suggested h1").style.display = "none";
+      document.querySelector(".suggested-features").style.display = "none";
+    }
+
+    let results = searchAndSort(searchbar.value);
+    document.querySelectorAll(".feature").forEach(function (el) {
+      if (results.find((result) => result.id === el.dataset.id)) {
+        el.style.display = null;
+      } else {
+        el.style.display = "none";
+      }
+    });
+
+    for (var i in results) {
+      document
+        .querySelector(".settings")
+        .appendChild(
+          document.querySelector(
+            `div.settings .feature[data-id=${results[i].id}]`
+          )
+        );
+    }
+  }
+});
