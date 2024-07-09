@@ -1,0 +1,38 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+canvas {
+  border: 0px;
+  display: block;
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+body.colorful {
+  animation: gradientFlash 5s infinite;
+  background: linear-gradient(to right, #ffc700, #ff0000);
+}
+
+@keyframes gradientFlash {
+  0%,
+  100% {
+    background-position: 0%;
+  }
+  25% {
+    background-position: 100%;
+  }
+  50% {
+    background-position: 100%;
+  }
+  75% {
+    background-position: 0%;
+  }
+}
