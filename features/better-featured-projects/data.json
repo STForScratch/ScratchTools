@@ -1,0 +1,13 @@
+{
+  "title": "Better Featured Projects",
+  "description": "Replaces the Featured Projects section with featured projects curated by ScratchTools users. You can submit your own projects to be featured as well.",
+  "credits": [
+    {
+      "username": "rgantzos",
+      "url": "https://scratch.mit.edu/users/rgantzos/"
+    }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Recommended"],
+  "scripts": [{ "file": "script.js", "runOn": "/*" }]
+}
