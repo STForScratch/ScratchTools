@@ -195,9 +195,14 @@ export default async function ({ feature, console }) {
                         return tagText !== text;
                     });
                     tag.remove()
+                    if (filterData[id][type].length == 0) {
+                        delete filterData[id][type]
+                    }
+                    if (Object.keys(filterData[id]).length == 0) {
+                        if (button.classList.contains('active')) button.classList.remove('active')
+                    }
+                    console.log(filterData)
                     filter();
-                    if (filterData[id][type].length==0) delete filterData[id][type]
-                    if (Object.keys(filterData[id]).length == 0) { if (button.classList.contains('active')) button.classList.remove('active') }
                 })
                 tags.appendChild(tag)
             }
@@ -300,8 +305,8 @@ export default async function ({ feature, console }) {
                     resetButton.addEventListener("click", function () {
                         input.value = ''
                         if (filterData.period[id]) delete filterData.period[id];
-                        filter()
                         if (Object.keys(filterData["period"]).length == 0) { if (button.classList.contains('active')) button.classList.remove('active') }
+                        filter()
                     });
                     content.appendChild(input);
                     content.appendChild(resetButton);
