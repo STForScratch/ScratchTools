@@ -6,7 +6,7 @@
     border: 1px solid #d9d9d9;
     border-radius: 5px;
 }
-.ste-filter-button p {
+.ste-filter-button p:not(.ste-reset) {
     margin: auto;
     margin-left: 5px;
     cursor: pointer;
