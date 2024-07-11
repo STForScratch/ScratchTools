@@ -11,6 +11,10 @@
     margin-left: 5px;
     cursor: pointer;
 }
+.ste-reset {
+    margin: auto;
+    cursor: pointer;
+}
 .ste-filter-button img {
     width: 1.2rem;
 }
