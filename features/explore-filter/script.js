@@ -287,13 +287,24 @@ export default async function ({ feature, console }) {
                     input.type = "date";
                     input.style.margin = "0 10px";
                     if (filterData.period[id]) input.value = filterData.period[id];
-                    const button = document.createElement("button");
-                    button.textContent = feature.msg("reset");
-                    button.addEventListener("click", function () {
+                    input.addEventListener("change", function () {
+                        if (input.value) {
+                            filterData["period"][id] = input.value;
+                            button.classList.add('active');
+                        }
+                        else if (filterData.period[id]) delete filterData.period[id];
+                        filter()
+                    });
+                    const resetButton = document.createElement("button");
+                    resetButton.textContent = feature.msg("reset");
+                    resetButton.addEventListener("click", function () {
                         input.value = ''
+                        if (filterData.period[id]) delete filterData.period[id];
+                        filter()
+                        if (Object.keys(filterData["period"]).length == 0) { if (button.classList.contains('active')) button.classList.remove('active') }
                     });
                     content.appendChild(input);
-                    content.appendChild(button);
+                    content.appendChild(resetButton);
                     return content;
                 }
 
@@ -310,11 +321,7 @@ export default async function ({ feature, console }) {
                 updateDetails.appendChild(updateStart);
                 updateDetails.appendChild(updateEnd);
     
-                const saveButton = document.createElement("button");
-                saveButton.textContent = feature.msg("save");
-                saveButton.style.marginRight = "100%";
-    
-                let modal = ScratchTools.modals.create({
+                ScratchTools.modals.create({
                     title: `${feature.msg("period")}`,
                     components: [
                         {
@@ -324,29 +331,9 @@ export default async function ({ feature, console }) {
                         {
                             type: "html",
                             content: updateDetails,
-                        },
-                        {
-                            type: "html",
-                            content: saveButton,
                         }
                     ]
                 });
-                saveButton.addEventListener("click", function () {
-                    function checkInput(id, element) {
-                        const input = element.querySelector("input");
-                        if (input.value) filterData["period"][id] = input.value;
-                        else if (filterData.period[id]) delete filterData.period[id];
-                    }
-                    checkInput("shareStart", shareStart);
-                    checkInput("shareEnd", shareEnd);
-                    checkInput("updateStart", updateStart);
-                    checkInput("updateEnd", updateEnd);
-                    modal.close();
-                    
-                    filter()
-                    if (Object.keys(filterData[id]).length == 0) { if (button.classList.contains('active')) button.classList.remove('active') }
-                    else button.classList.add('active');
-                })
                 break;
             }
     
@@ -361,7 +348,7 @@ export default async function ({ feature, console }) {
     else filterButton.classList.add('active');
     const filterSettings = document.createElement("div");
     filterSettings.classList.add('ste-filter-settings');
-    options.map((option) => {
+    options.forEach(option => {
         const icon = document.createElement("img");
         icon.src = feature.self.getResource(option.icon);
 
