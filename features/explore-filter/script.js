@@ -376,6 +376,7 @@ export default async function ({ feature, console }) {
     resetButton.classList.add('ste-filter-button');
     const resetButtonText = document.createElement("p");
     resetButtonText.textContent = feature.msg("reset");
+    resetButtonText.classList.add('ste-reset');
     resetButton.appendChild(resetButtonText);
     resetButton.addEventListener("click", function() {
         optionButtonClick("reset", resetButton);
