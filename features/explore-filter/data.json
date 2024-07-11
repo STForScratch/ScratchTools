@@ -1,0 +1,48 @@
+{
+    "title": "Explore Filter",
+    "description": "Customize project and studio search results with filters on the Search, Explore, and Studio pages.",
+    "credits": [
+        { "username": "Masaabu-YT", "url": "https://scratch.mit.edu/users/Masaabu-YT/" }
+    ],
+    "type": ["Website"],
+    "tags": ["New", "Featured"],
+    "dynamic": true,
+    "options": [
+        {
+            "id": "filter-operation",
+            "name": "Filter operation",
+            "type": 4,
+            "options": [
+                {
+                    "name": "Hide",
+                    "value": "hide"
+                },
+                {
+                    "name": "Blur",
+                    "value": "blur"
+                }
+            ]
+        },
+        {
+            "id": "keep-settings",
+            "name": "Keep filter setting even if you change pages",
+            "type": 1
+        }
+    ],
+    "scripts": [
+        { "file": "script.js", "runOn": "/explore/*" },
+        { "file": "script.js", "runOn": "/search/*" },
+        { "file": "script.js", "runOn": "/studios/*" }
+    ],
+    "styles": [
+        { "file": "style.css", "runOn": "/explore/*" },
+        { "file": "style.css", "runOn": "/search/*" },
+        { "file": "style.css", "runOn": "/studios/*" }
+    ],
+    "resources": [
+        { "name": "filter-icon", "path": "/resources/filter.svg" },
+        { "name": "title-icon", "path": "/resources/title.svg" },
+        { "name": "user-icon", "path": "/resources/user.svg" },
+        { "name": "calendar-icon", "path": "/resources/calendar.svg" }
+    ]
+}

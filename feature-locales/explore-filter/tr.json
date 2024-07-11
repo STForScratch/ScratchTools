@@ -1,0 +1,14 @@
+{
+    "filter": "Filtre",
+    "title": "Başlık",
+    "author": "Yazar",
+    "period": "Dönem",
+    "reset": "Sıfırla",
+    "save": "Kaydet",
+    "sharedDate": "Paylaşım Tarihi",
+    "updateDate": "Güncelleme Tarihi",
+    "startDate": "Başlangıç tarihi",
+    "endDate": "Bitiş tarihi",
+    "including": "dahil",
+    "excluding": "hariç"
+}

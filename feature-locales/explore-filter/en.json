@@ -1,0 +1,14 @@
+{
+    "filter": "filter",
+    "title": "Title",
+    "author": "Author",
+    "period": "Period",
+    "reset": "Reset",
+    "save": "Save",
+    "sharedDate": "Shared Date",
+    "updateDate": "Update Date",
+    "startDate": "Start date",
+    "endDate": "End date",
+    "including": "including",
+    "excluding": "excluding"
+}
