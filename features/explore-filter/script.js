@@ -201,7 +201,6 @@ export default async function ({ feature, console }) {
                     if (Object.keys(filterData[id]).length == 0) {
                         if (button.classList.contains('active')) button.classList.remove('active')
                     }
-                    console.log(filterData)
                     filter();
                 })
                 tags.appendChild(tag)
