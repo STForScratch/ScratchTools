@@ -49,16 +49,23 @@ export default async function ({ feature, console }) {
     updateSetting('position-bottom', await feature.settings.get("position-bottom"));
     updateSetting('opacity', await feature.settings.get("opacity"));
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 700) {
-            miniplayerElement.style.display = 'block';
-            miniplayerElement.appendChild(guiPlayer);
-        } else {
-            miniplayerElement.style.display = 'none';
-            title.insertAdjacentElement('beforebegin', guiPlayer);
-
-        }
-    });
+    const observerOptions = {
+        root: document
+    };
+    const callback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                miniplayerElement.style.display = 'none';
+                title.insertAdjacentElement('beforebegin', guiPlayer);
+            } else {
+                miniplayerElement.style.display = 'block';
+                miniplayerElement.appendChild(guiPlayer);
+            }
+        });
+    };
+    const observerObject = new IntersectionObserver(callback, observerOptions);
+    const targetArea = document.querySelector("div.preview .inner .project-notes")
+    observerObject.observe(targetArea);
 
     feature.settings.addEventListener("changed", function({ key, value }) {
         updateSetting(key, value)
