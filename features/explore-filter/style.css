@@ -1,0 +1,110 @@
+.ste-filter-button {
+    margin: 5px 0;
+    padding: 1px 15px;
+    white-space: nowrap;
+    display: flex;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+}
+.ste-filter-button p:not(.ste-reset) {
+    margin: auto;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.ste-reset {
+    margin: auto;
+    cursor: pointer;
+}
+.ste-filter-button img {
+    width: 1.2rem;
+}
+
+.ste-filter-bar {
+    display: flex;
+    margin: 0 auto;
+    border-bottom: 1px solid #d9d9d9;
+    padding: 8px 0;
+    max-width: 58.75rem;
+    justify-content: space-between;
+}
+.ste-filter-bar img {
+    width: 1.5rem;
+    transform: scale(.6);
+    margin-left: -.35rem;
+}
+.ste-filter-bar .sort-mode {
+    margin: auto 0;
+    height: 32px;
+}
+.ste-filter-bar .control-label {
+    display: none;
+}
+
+.ste-filter-settings {
+    display: flex;
+}
+.ste-filter-bar .ste-filter-button {
+    margin: 5px;
+}
+
+.ste-filter-button.active {
+    border-color: #855cd6;
+    background-color: #855cd6;
+}
+.ste-filter-button.active p {
+    color: white;
+}
+.ste-filter-button.active img {
+    filter: brightness(0) invert(1);
+}
+
+.ste-project-filter-details {
+    margin: 5px 0;
+    border-radius: 5px;
+    background-color: #79797929;
+}
+.ste-project-filter-details summary {
+    display: list-item;
+    padding: 6px;
+    background-color: #ffce7f;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.ste-project-filter-details button {
+    background-color: white;
+    margin-top: 5px !important;
+}
+.ste-project-filter-details div {
+    margin-left: 20px;
+    padding-bottom: 5px;
+
+}
+.ste-project-filter-details input {
+    background-color: white;
+    margin-bottom: 0;
+}
+
+.ste-filter-text {
+    display: inline-block;
+    margin: .9em .2em 0;
+    padding: .45em .7em;
+    border: 2px solid #d68b5c;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #d68b5c;
+    cursor: pointer;
+    transition: all 0.2s 0s ease;
+}
+.ste-filter-text:hover {
+    border: 2px solid #d13636;
+    color: #d13636;
+    background-color: #ffe1e1;
+}
+
+#app.ste-filter-mode-blur .project.ste-filter-hide {
+    filter: opacity(.3) blur(.15rem);
+}
+
+#app.ste-filter-mode-hide .project.ste-filter-hide {
+    display: none;
+}
