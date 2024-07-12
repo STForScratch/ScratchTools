@@ -2,7 +2,7 @@ export default function ({ feature }) {
   ScratchTools.waitForElements(
     ".studio-info-footer-stats",
     async function (footer) {
-      if (!footer) return;
+      if (document.querySelector(".ste-studio-created")) return;
 
       const studioId = window.location.href.match(/studios\/(\d+)/)[1];
       const apiUrl = `https://api.scratch.mit.edu/studios/${studioId}`;
@@ -31,6 +31,7 @@ export default function ({ feature }) {
 
       const creationDateDiv = document.createElement("div");
       creationDateDiv.classList.add("studio-creation-date");
+      creationDateDiv.classList.add("ste-studio-created")
 
       const creationDateImg = document.createElement("img");
       creationDateImg.src = feature.self.getResource("calendar");
