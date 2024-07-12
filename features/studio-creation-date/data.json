@@ -1,0 +1,15 @@
+{
+  "title": "Studio Creation Date",
+  "description": "Adds the creation date of the studio to the studio footer.",
+  "credits": [
+    {
+      "username": "MaterArc",
+      "url": "https://scratch.mit.edu/users/MaterArc/"
+    }
+  ],
+  "type": ["Website"],
+  "tags": ["New"],
+  "dynamic": true,
+  "scripts": [{ "file": "script.js", "runOn": "/studios/*" }],
+  "resources": [{ "name": "calendar", "path": "/calendar.svg" }]
+}
