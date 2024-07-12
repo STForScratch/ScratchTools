@@ -24,9 +24,6 @@ ScratchTools.modals = {
     p.textContent = data.description;
     modal.appendChild(p);
 
-    var orangeBar = document.createElement("div");
-    orangeBar.className = "st-modal-header";
-
     data.components?.forEach(function (component) {
       if (component.type === "code") {
         var code = document.createElement("code");
@@ -46,7 +43,6 @@ ScratchTools.modals = {
     modal.appendChild(closeButton);
 
     div.appendChild(modal);
-    modal.prepend(orangeBar);
     document.body.appendChild(div);
 
     return {
