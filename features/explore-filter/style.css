@@ -101,10 +101,10 @@
     background-color: #ffe1e1;
 }
 
-#app.ste-filter-mode-blur .project.ste-filter-hide {
+#app.ste-filter-mode-blur .ste-filter-hide {
     filter: opacity(.3) blur(.15rem);
 }
 
-#app.ste-filter-mode-hide .project.ste-filter-hide {
+#app.ste-filter-mode-hide .ste-filter-hide {
     display: none;
 }
