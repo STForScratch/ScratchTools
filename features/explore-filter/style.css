@@ -29,6 +29,8 @@
 }
 .ste-filter-bar img {
     width: 1.5rem;
+    transform: scale(.6);
+    margin-left: -.35rem;
 }
 .ste-filter-bar .sort-mode {
     margin: auto 0;
@@ -97,4 +99,12 @@
     border: 2px solid #d13636;
     color: #d13636;
     background-color: #ffe1e1;
+}
+
+#app.ste-filter-mode-blur .project.ste-filter-hide {
+    filter: opacity(.3) blur(.15rem);
+}
+
+#app.ste-filter-mode-hide .project.ste-filter-hide {
+    display: none;
 }

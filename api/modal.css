@@ -12,14 +12,16 @@
 
 .st-modal {
   position: fixed;
-  top: 15rem;
+  top: 50%;
   width: calc(40% - 4rem);
   padding: 2rem;
   left: 30%;
   background-color: #fafafa;
   border-radius: 0.5rem;
-  padding-top: 3rem;
+  padding-top: 1rem;
   z-index: 2147483647;
+  transform: translateY(-50%);
+  border-top: 1rem solid #ff9f00;
 }
 
 .st-modal h1 {
