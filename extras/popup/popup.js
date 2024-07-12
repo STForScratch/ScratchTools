@@ -1523,6 +1523,17 @@ function searchAndSort(query) {
 }
 
 let searchbar = document.querySelector(".searchbar");
+
+searchbar.addEventListener("keypress", function (e) {
+  if (e.which === 13) {
+    if (searchbar.value === "node tetris.js") {
+      searchbar.value = "";
+      searchbar.dispatchEvent(new Event("change", { bubbles: true }));
+      chrome.tabs.create({ url: "/extras/games/tetris/index.html" });
+    }
+  }
+});
+
 searchbar.addEventListener("input", function () {
   if (document.querySelector(".welcome")) {
     if (searchbar.value) {
