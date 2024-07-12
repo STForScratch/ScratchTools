@@ -65,8 +65,6 @@ export default async function ({ feature, console }) {
     }
   });
 
-  console.log("hey");
-
   ScratchTools.waitForElements(
     ".project-notes .project-textlabel",
     function (div) {
