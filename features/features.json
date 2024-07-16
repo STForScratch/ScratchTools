@@ -1129,19 +1129,6 @@
     "type": ["Editor"]
   },
   {
-    "title": "Aviate Statuses",
-    "description": "Displays Aviate statuses on profile pages. You can set your status at aviate.scratchers.tech.",
-    "credits": ["MystPi", "rgantzos"],
-    "urls": [
-      "https://github.com/MystPi/",
-      "https://scratch.mit.edu/users/rgantzos/"
-    ],
-    "file": "aviate",
-    "tags": [],
-    "type": ["Website"],
-    "dynamic": true
-  },
-  {
     "title": "Project Idea Generator",
     "description": "On the Scratch Ideas page, there will be a section where you can generate project ideas if you need some.",
     "credits": ["Lasted10"],
