@@ -12,5 +12,5 @@
     "options": [{ "id": "theme", "name": "Mode", "type": 0 }],
     "dynamic": true,
     "resources": []
-  }
+  } 
   
