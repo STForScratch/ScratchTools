@@ -5,9 +5,11 @@
       { "username": "LifeCoderBoy", "url": "https://scratch.mit.edu/users/LifeCoderBoy/" },
       { "username": "_nix", "url": "https://scratch.mit.edu/users/_nix/" }
     ],
-    "styles": [{ "file": "scratch-www.css", "runOn": "/" }, { "file": "scratch-editor.css", "runOn": "/projects/*" }, { "file": "scratch-profile.css", "runOn": "/users/*" }, { "file": "scratch-profile.js", "runOn": "/users/*" }],
+    "styles": [{ "file": "scratch-www.css", "runOn": "/" }, { "file": "scratch-editor.css", "runOn": "/projects/*" }, { "file": "scratch-profile.css", "runOn": "/users/*" }],
+    "scripts": [{"file": "scratch-www.js", "runOn": "/"}, { "file": "scratch-profile.js", "runOn": "/users/*" }],
     "tags": ["Theme", "New"],
     "type": ["Website", "Editor"],
+    "options": [{ "id": "theme", "name": "Mode", "type": 0 }],
     "dynamic": true,
     "resources": []
   }
