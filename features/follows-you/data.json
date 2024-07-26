@@ -1,0 +1,12 @@
+{
+  "title": "Show if Following on Profile",
+  "description": "If a user is following you, it will show next to their username when you visit their profile.",
+  "credits": [
+    { "username": "Bob the Potato with Drip", "url": "https://scratch.mit.edu/users/JefferyTheSuperKat/" },
+    { "username": "TimMcCool", "url": "https://scratch.mit.edu/users/TimMcCool/" }
+  ],
+  "type": ["Website"],
+  "tags": ["Featured"],
+  "styles": [{ "file": "style.css", "runOn": "/users/*" }],
+  "scripts": [{ "file": "script.js", "runOn": "/users/*" }]
+}
