@@ -1,0 +1,19 @@
+{
+  "title": "Uncapped Stroke Width",
+  "description": "Removes the cap on the stroke width in the Scratch editor, allowing users to set any stroke width they desire.",
+  "credits": [
+    {
+      "username": "MaterArc",
+      "url": "https://scratch.mit.edu/users/MaterArc/"
+    }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "scripts": [
+    {
+      "file": "uncapped-stroke-width.js",
+      "runOn": "/projects/*"
+    }
+  ],
+  "dynamic": true
+}
