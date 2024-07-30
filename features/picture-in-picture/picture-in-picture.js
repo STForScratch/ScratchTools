@@ -23,9 +23,9 @@ export default async function ({ feature, console }) {
 	let openPopup = document.createElement("button");
 
 	ScratchTools.waitForElements(".preview .inner .flex-row.action-buttons", async function (row) {
-		if (row.querySelector(".ste-video-recorder-open")) return;
+		if (row.querySelector(".ste-picture-in-picture")) return;
 		openPopup = document.createElement("button");
-		openPopup.className = "button action-button ste-video-recorder-open";
+		openPopup.className = "button action-button ste-picture-in-picture";
 		openPopup.textContent = "Picture in Picture";
 		row.insertAdjacentElement("afterbegin", openPopup);
 		openPopup.addEventListener('click', () => {
@@ -33,7 +33,7 @@ export default async function ({ feature, console }) {
 		})
 	})
 	ScratchTools.waitForElements(".menu-bar_account-info-group_MeJZP", async function (row) {
-		if (row.querySelector(".ste-video-recorder-open")) return;
+		if (row.querySelector(".ste-picture-in-picture")) return;
 		openPopup = document.createElement("div");
 		openPopup.className = "menu-bar_menu-bar-item_oLDa- menu-bar_hoverable_c6WFB";
 		let rem = document.createElement("div");
