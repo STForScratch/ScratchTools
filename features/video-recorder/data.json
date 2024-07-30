@@ -20,7 +20,16 @@
       "runOn": "/projects/*"
     }
   ],
+  "styles": [
+    {
+      "file": "style.css",
+      "runOn": "/projects/*"
+    }
+  ],
   "resources": [
-    { "name": "popup-html", "path": "/popup.html" }
+    {
+      "name": "popup-html",
+      "path": "/popup.html"
+    }
   ]
 }
