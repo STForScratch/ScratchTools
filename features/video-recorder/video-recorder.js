@@ -1,11 +1,7 @@
 export default async function ({ feature, console }) {
-	let openPopup = document.createElement("button");
-	openPopup.className = "button action-button ste-video-recorder-open";
-	openPopup.textContent = "Record Video";
-
 	await new Promise(async (resolve, reject) => {
 		(async () => {
-			const rem = await ScratchTools.waitForElement(".preview .inner .flex-row.action-buttons")			
+			const rem = await ScratchTools.waitForElement(".preview .inner .flex-row.action-buttons")
 			resolve(rem);
 		})();
 		(async () => {
@@ -13,16 +9,30 @@ export default async function ({ feature, console }) {
 			resolve(rem);
 		})();
 	})
+
+	let openPopup = document.createElement("button");
 	
 	ScratchTools.waitForElements(".preview .inner .flex-row.action-buttons", async function (row) {
 		if (row.querySelector(".ste-video-recorder-open")) return;
+		openPopup = document.createElement("button");
+		openPopup.className = "button action-button ste-video-recorder-open";
+		openPopup.textContent = "Record Video";
 		row.insertAdjacentElement("afterbegin", openPopup);
+		openPopup.addEventListener('click', () => {
+			document.body.append(popup)
+		})	
 	})
 	ScratchTools.waitForElements(".menu-bar_account-info-group_MeJZP", async function (row) {
 		if (row.querySelector(".ste-video-recorder-open")) return;
+		openPopup = document.createElement("div");
+		openPopup.className = "menu-bar_menu-bar-item_oLDa- menu-bar_hoverable_c6WFB";
+		openPopup.textContent = "Record Video";
 		row.insertAdjacentElement("afterbegin", openPopup);
+		openPopup.addEventListener('click', () => {
+			document.body.append(popup)
+		})	
 	})
-	
+
 	let popup = document.createElement("div");
 	popup.insertAdjacentHTML("afterbegin", await (await fetch(feature.self.getResource("popup-html"))).text())
 	popup = popup.querySelector("div.ReactModalPortal")
@@ -31,17 +41,10 @@ export default async function ({ feature, console }) {
 	let startButton = popup.querySelector(".startButton");
 	let closeButton = popup.querySelector(".close-button_close-button_lOp2G");
 	let downloadButton = popup.querySelector(".downloadButton");
-	let lastDownloadFunction = ()=>{}
+	let lastDownloadFunction = () => { }
 	let mimeType = popup.querySelector("select");
 
 
-	// console.log([stopButton, startButton])
-
-	openPopup.addEventListener('click', () => {
-		document.body.append(popup)
-	})
-
-	// console.log(closeButton)
 	closeButton.addEventListener('click', () => {
 		document.querySelector(".STE-ReactModalPortal").remove()
 	})
@@ -82,7 +85,7 @@ export default async function ({ feature, console }) {
 			preview.controls = true;
 			preview.download = `${projectTitle.value}.${mimeType.value}`
 			downloadButton.removeEventListener("click", lastDownloadFunction)
-			lastDownloadFunction =  async () => {
+			lastDownloadFunction = async () => {
 				const url = URL.createObjectURL(blob)
 				const a = document.createElement('a')
 				a.href = url
