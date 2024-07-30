@@ -36,14 +36,11 @@ export default async function ({ feature, console }) {
 
 	// console.log(closeButton)
 	closeButton.addEventListener('click', () => {
-		document.querySelector(".ReactModalPortal").remove()
-	})
-	popup.querySelector(".ReactModal__Overlay").addEventListener('click', () => {
-		document.querySelector(".ReactModalPortal").remove()
+		document.querySelector(".STE-ReactModalPortal").remove()
 	})
 	addEventListener("keydown", (e) => {
 		if (e.key === "Escape") {
-			document.querySelector(".ReactModalPortal").remove()
+			document.querySelector(".STE-ReactModalPortal").remove()
 		}
 	})
 
