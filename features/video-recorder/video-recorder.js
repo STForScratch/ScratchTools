@@ -1,8 +1,11 @@
 export default async function ({ feature, console }) {
+	let openPopup = document.createElement("button");
+	openPopup.className = "button action-button ste-video-recorder-open";
+	openPopup.textContent = "Record Video";
 
-	const row = await new Promise(async (resolve, reject) => {
+	await new Promise(async (resolve, reject) => {
 		(async () => {
-			const rem = await ScratchTools.waitForElement(".preview .inner .flex-row.action-buttons")
+			const rem = await ScratchTools.waitForElement(".preview .inner .flex-row.action-buttons")			
 			resolve(rem);
 		})();
 		(async () => {
@@ -10,12 +13,16 @@ export default async function ({ feature, console }) {
 			resolve(rem);
 		})();
 	})
-
-	let openPopup = document.createElement("button");
-	openPopup.className = "button action-button ste-video-recorder-open";
-	openPopup.textContent = "Record Video";
-	row.insertAdjacentElement("afterbegin", openPopup);
-
+	
+	ScratchTools.waitForElements(".preview .inner .flex-row.action-buttons", async function (row) {
+		if (row.querySelector(".ste-video-recorder-open")) return;
+		row.insertAdjacentElement("afterbegin", openPopup);
+	})
+	ScratchTools.waitForElements(".menu-bar_account-info-group_MeJZP", async function (row) {
+		if (row.querySelector(".ste-video-recorder-open")) return;
+		row.insertAdjacentElement("afterbegin", openPopup);
+	})
+	
 	let popup = document.createElement("div");
 	popup.insertAdjacentHTML("afterbegin", await (await fetch(feature.self.getResource("popup-html"))).text())
 	popup = popup.querySelector("div.ReactModalPortal")
