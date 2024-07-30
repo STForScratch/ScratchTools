@@ -3,12 +3,12 @@
   "description": "Record videos of Scratch projects.",
   "credits": [
     {
-      "username": "stio_studio",
-      "url": "https://stio.studio/"
-    },
-    {
       "username": "blob2763",
       "url": "https://blob2763.is-a.dev/"
+    },
+    {
+      "username": "stio_studio",
+      "url": "https://stio.studio/"
     }
   ],
   "type": ["Editor"],
