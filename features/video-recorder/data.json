@@ -1,0 +1,26 @@
+{
+  "title": "Video Recorder",
+  "description": "Record videos of Scratch projects.",
+  "credits": [
+    {
+      "username": "stio_studio",
+      "url": "https://stio.studio/"
+    },
+    {
+      "username": "blob2763",
+      "url": "https://blob2763.is-a.dev/"
+    }
+  ],
+  "type": ["Editor"],
+  "tags": ["New", "Featured"],
+  "dynamic": true,
+  "scripts": [
+    {
+      "file": "video-recorder.js",
+      "runOn": "/projects/*"
+    }
+  ],
+  "resources": [
+    { "name": "popup-html", "path": "/popup.html" }
+  ]
+}
