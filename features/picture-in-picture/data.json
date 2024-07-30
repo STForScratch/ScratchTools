@@ -1,0 +1,23 @@
+{
+  "title": "Picture in Picture",
+  "description": "Adds a button for opening a picture in picture for projects.",
+  "credits": [
+    {
+      "username": "stio_studio",
+      "url": "https://stio.studio/"
+    }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "dynamic": true,
+  "scripts": [
+    {
+      "file": "picture-in-picture.js",
+      "runOn": "/projects/*"
+    }
+  ],
+  "components": [{
+    "type": "info",
+    "content": "Picture in Picture does NOT have inputs, of any kind. This means that it can mostly only be used for watching."
+  }]
+}
