@@ -1,6 +1,6 @@
 {
   "title": "Picture in Picture",
-  "description": "Adds a button for opening a picture in picture for projects.",
+  "description": "Adds a button to the project page that allows you to open the stage up and continue to view it while using other tabs or apps.",
   "credits": [
     {
       "username": "stio_studio",
@@ -18,6 +18,6 @@
   ],
   "components": [{
     "type": "info",
-    "content": "Picture in Picture does NOT have inputs, of any kind. This means that it can mostly only be used for watching."
+    "content": "Picture in Picture will not allow you to interact with the project. You must be on the project page to interact with it."
   }]
 }
