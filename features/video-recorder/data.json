@@ -1,6 +1,6 @@
 {
-  "title": "Video Recorder",
-  "description": "Record videos of Scratch projects.",
+  "title": "Record Stage",
+  "description": "Allows you to record the stage for projects while in the editor.",
   "credits": [
     {
       "username": "blob2763",
@@ -13,7 +13,6 @@
   ],
   "type": ["Editor"],
   "tags": ["New", "Featured"],
-  "dynamic": true,
   "scripts": [
     {
       "file": "video-recorder.js",

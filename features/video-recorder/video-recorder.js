@@ -27,6 +27,7 @@ export default async function ({ feature, console }) {
 		if (row.querySelector(".ste-video-recorder-open")) return;
 		openPopup = document.createElement("div");
 		openPopup.className = "menu-bar_menu-bar-item_oLDa- menu-bar_hoverable_c6WFB";
+		openPopup.style.padding = "0 0.75rem"
 		let rem = document.createElement("div");
 		rem.textContent = "Record Video";
 		openPopup.append(rem);
