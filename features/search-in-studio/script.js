@@ -70,33 +70,33 @@ export default async function ({ feature, console }) {
     if (!url.match(/^https:\/\/scratch\.mit\.edu\/studios\/\d+$/)) {
       return;
     }
-    ScratchTools.waitForElements(".studio-header-container", () => {
-      const headerContainer = document.querySelector(
-        ".studio-header-container"
-      );
-      if (!headerContainer) return;
+    ScratchTools.waitForElements(
+      ".studio-header-container",
+      (headerContainer) => {
+        if (!headerContainer) return;
 
-      const searchContainer = document.createElement("div");
-      searchContainer.className = "search-container";
+        const searchContainer = document.createElement("div");
+        searchContainer.className = "search-container";
 
-      const searchInput = document.createElement("input");
-      searchInput.type = "text";
-      searchInput.className = "search-bar";
-      searchInput.id = "projectSearch";
-      searchInput.placeholder = "Search projects...";
+        const searchInput = document.createElement("input");
+        searchInput.type = "text";
+        searchInput.className = "search-bar";
+        searchInput.id = "projectSearch";
+        searchInput.placeholder = "Search projects...";
 
-      searchContainer.appendChild(searchInput);
-      headerContainer.appendChild(searchContainer);
+        searchContainer.appendChild(searchInput);
+        headerContainer.appendChild(searchContainer);
 
-      searchInput.addEventListener("input", () => {
-        const searchText = searchInput.value;
-        if (searchText.trim() === "") {
-          updateProjectContainer(projects);
-        } else {
-          searchProject(searchText);
-        }
-      });
-    });
+        searchInput.addEventListener("input", () => {
+          const searchText = searchInput.value;
+          if (searchText.trim() === "") {
+            updateProjectContainer(projects);
+          } else {
+            searchProject(searchText);
+          }
+        });
+      }
+    );
   }
 
   async function fetchAllStudioProjects(studioId) {
