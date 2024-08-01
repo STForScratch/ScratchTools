@@ -1,0 +1,10 @@
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+.search-bar {
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

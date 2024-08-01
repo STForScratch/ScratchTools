@@ -1,0 +1,28 @@
+{
+  "title": "Search in Studio",
+  "description": "Allows users to search for projects in studios.",
+  "credits": [
+    { "username": "MaterArc", "url": "https://scratch.mit.edu/users/MaterArc/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New"],
+  "dynamic": true,
+  "scripts": [
+    {
+      "file": "script.js",
+      "runOn": "/studios/*"
+    }
+  ],
+  "styles": [
+    {
+      "file": "style.css",
+      "runOn": "/studios/*"
+    }
+  ],
+  "components": [
+    {
+      "type": "info",
+      "content": "Searching can take a while to load depending on the studio size."
+    }
+  ]
+}
