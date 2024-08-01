@@ -65,6 +65,11 @@ export default async function ({ feature, console }) {
   }
 
   function injectSearchBar() {
+    const url = window.location.href;
+
+    if (!url.match(/^https:\/\/scratch\.mit\.edu\/studios\/\d+$/)) {
+      return;
+    }
     ScratchTools.waitForElements(".studio-header-container", () => {
       const headerContainer = document.querySelector(
         ".studio-header-container"
