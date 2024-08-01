@@ -7,8 +7,13 @@
       "url": "https://stio.studio/"
     }
   ],
-  "type": ["Website"],
-  "tags": ["New", "Featured"],
+  "type": [
+    "Website"
+  ],
+  "tags": [
+    "New",
+    "Featured"
+  ],
   "dynamic": true,
   "scripts": [
     {
@@ -16,8 +21,12 @@
       "runOn": "/projects/*"
     }
   ],
-  "components": [{
-    "type": "info",
-    "content": "Picture in Picture will not allow you to interact with the project. You must be on the project page to interact with it."
-  }]
+  "resources": [{ "name": "popup-html", "path": "/popup.html" }],
+  "options": [
+    {
+      "id": "interactivity-PiP",
+      "name": "Make the project in picture popup interactive. (Experimental)",
+      "type": 1
+    }
+  ]
 }
