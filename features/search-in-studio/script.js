@@ -127,8 +127,7 @@ export default async function ({ feature, console }) {
   }
 
   async function updateProjectContainer(filteredProjects) {
-    ScratchTools.waitForElements(".studio-projects-grid", async () => {
-      const container = document.querySelector(".studio-projects-grid");
+    ScratchTools.waitForElements(".studio-projects-grid", async (container) => {
       if (!container) return;
 
       container.innerHTML = "";
