@@ -2,10 +2,21 @@
   "title": "Search in Studio",
   "description": "Allows users to search for projects in studios.",
   "credits": [
-    { "username": "MaterArc", "url": "https://scratch.mit.edu/users/MaterArc/" }
+    {
+      "username": "LoganMSM",
+      "url": "https://scratch.mit.edu/users/LoganMSM/"
+    },
+    {
+      "username": "MaterArc",
+      "url": "https://scratch.mit.edu/users/MaterArc/"
+    }
   ],
-  "type": ["Website"],
-  "tags": ["New"],
+  "type": [
+    "Website"
+  ],
+  "tags": [
+    "New"
+  ],
   "dynamic": true,
   "scripts": [
     {
