@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "video-recorder",
+    "versionAdded": "v4.0.0"
+  },
+  {
+    "version": 2,
     "id": "studio-creation-date",
     "versionAdded": "v4.0.0"
   },
