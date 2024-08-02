@@ -691,6 +691,9 @@ chrome.runtime.onMessageExternal.addListener(async function (
       url: "/extras/index.html",
     });
   }
+  if (msg === "returnToTab") {
+    await chrome.tabs.update(sender.tab.id, {active: true})
+  }
   if (typeof msg === "object") {
     if (msg.message === "storageSet") {
       await chrome.storage.sync.set({ [msg.key]: msg.value });
