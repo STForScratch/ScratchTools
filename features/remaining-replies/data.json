@@ -1,0 +1,14 @@
+{
+    "title": "Remaining Replies",
+    "description": "Shows how many more replies are allowed in a thread of studio comments.",
+    "credits": [
+      {
+        "url": "https://scratch.mit.edu/users/rgantzos/",
+        "username": "rgantzos"
+      }
+    ],
+    "type": ["Website"],
+    "dynamic": true,
+    "scripts": [{ "file": "script.js", "runOn": "/studios/*" }]
+  }
+  
