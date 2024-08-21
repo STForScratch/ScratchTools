@@ -1,0 +1,32 @@
+{
+  "title": "Picture in Picture",
+  "description": "Adds a button to the project page that allows you to open the stage up and continue to view it while using other tabs or apps.",
+  "credits": [
+    {
+      "username": "stio_studio",
+      "url": "https://stio.studio/"
+    }
+  ],
+  "type": [
+    "Website"
+  ],
+  "tags": [
+    "New",
+    "Featured"
+  ],
+  "dynamic": true,
+  "scripts": [
+    {
+      "file": "picture-in-picture.js",
+      "runOn": "/projects/*"
+    }
+  ],
+  "resources": [{ "name": "popup-html", "path": "/popup.html" }],
+  "options": [
+    {
+      "id": "interactivity-PiP",
+      "name": "Make the project in picture popup interactive. (Experimental)",
+      "type": 1
+    }
+  ]
+}
