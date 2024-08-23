@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "webp-uploads",
+    "versionAdded": "v4.0.0"
+  },
+  {
+    "version": 2,
     "id": "explore-filter",
     "versionAdded": "v4.0.0"
   },

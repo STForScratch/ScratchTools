@@ -1,0 +1,10 @@
+{
+  "title": "WEBP Uploads",
+  "description": "Allows you to upload webp images in the editor for new sprites, costumes and stage backdrops.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Editor"],
+  "tags": ["New", "Featured"],
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }]
+}
