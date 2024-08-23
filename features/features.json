@@ -6,6 +6,21 @@
   },
   {
     "version": 2,
+    "id": "remaining-replies",
+    "versionAdded": "v4.0.0"
+  },
+  {
+    "version": 2,
+    "id": "video-recorder",
+    "versionAdded": "v4.0.0"
+  },
+  {
+    "version": 2,
+    "id": "studio-creation-date",
+    "versionAdded": "v4.0.0"
+  },
+  {
+    "version": 2,
     "id": "explore-filter",
     "versionAdded": "v4.0.0"
   },
@@ -1127,19 +1142,6 @@
     "file": "sprite-data",
     "tags": [],
     "type": ["Editor"]
-  },
-  {
-    "title": "Aviate Statuses",
-    "description": "Displays Aviate statuses on profile pages. You can set your status at aviate.scratchers.tech.",
-    "credits": ["MystPi", "rgantzos"],
-    "urls": [
-      "https://github.com/MystPi/",
-      "https://scratch.mit.edu/users/rgantzos/"
-    ],
-    "file": "aviate",
-    "tags": [],
-    "type": ["Website"],
-    "dynamic": true
   },
   {
     "title": "Project Idea Generator",
