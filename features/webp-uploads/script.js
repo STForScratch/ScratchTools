@@ -11,6 +11,8 @@ export default async function ({ feature, console }) {
       fileInput.costume = input;
 
       fileInput.costume.parentElement.addEventListener("click", function (e) {
+        if (!feature.self.enabled) return;
+
         e.preventDefault();
         e.stopImmediatePropagation();
 
@@ -57,6 +59,8 @@ export default async function ({ feature, console }) {
       fileInput.sprite = input;
 
       fileInput.sprite.parentElement.addEventListener("click", function (e) {
+        if (!feature.self.enabled) return;
+        
         e.preventDefault();
         e.stopImmediatePropagation();
 
@@ -103,6 +107,8 @@ export default async function ({ feature, console }) {
       fileInput.stage = input;
 
       fileInput.stage.parentElement.addEventListener("click", function (e) {
+        if (!feature.self.enabled) return;
+        
         e.preventDefault();
         e.stopImmediatePropagation();
 
