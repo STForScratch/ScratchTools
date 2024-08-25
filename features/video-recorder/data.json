@@ -1,0 +1,34 @@
+{
+  "title": "Record Stage",
+  "description": "Allows you to record the stage for projects while in the editor or on the project page.",
+  "credits": [
+    {
+      "username": "blob2763",
+      "url": "https://blob2763.is-a.dev/"
+    },
+    {
+      "username": "stio_studio",
+      "url": "https://stio.studio/"
+    }
+  ],
+  "type": ["Editor"],
+  "tags": ["New", "Featured"],
+  "scripts": [
+    {
+      "file": "video-recorder.js",
+      "runOn": "/projects/*"
+    }
+  ],
+  "styles": [
+    {
+      "file": "style.css",
+      "runOn": "/projects/*"
+    }
+  ],
+  "resources": [
+    {
+      "name": "popup-html",
+      "path": "/popup.html"
+    }
+  ]
+}
