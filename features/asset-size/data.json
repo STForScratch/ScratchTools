@@ -1,0 +1,13 @@
+{
+    "title": "Asset Size",
+    "description": "Allows you to hover over any asset (costumes and sounds) in the editor to view the file size.",
+    "credits": [
+      {
+        "url": "https://scratch.mit.edu/users/rgantzos/",
+        "username": "rgantzos"
+      }
+    ],
+    "type": ["Editor"],
+    "scripts": [{ "file": "script.js", "runOn": "/projects/*" }]
+  }
+  

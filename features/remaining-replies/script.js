@@ -1,6 +1,4 @@
 export default async function ({ feature, console }) {
-    window.feature = feature
-
   ScratchTools.waitForElements(".flex-row.comment", function (comment) {
     let data = feature.redux
       .getState()

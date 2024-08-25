@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "asset-size",
+    "versionAdded": "v4.0.0"
+  },
+  {
+    "version": 2,
     "id": "disable-cloud",
     "versionAdded": "v4.0.0"
   },
