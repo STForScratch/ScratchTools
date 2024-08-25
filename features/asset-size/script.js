@@ -10,6 +10,8 @@ export default async function ({ feature, console }) {
       );
 
       asset.firstChild.addEventListener("mouseover", function () {
+        if (!feature.self.enabled) return;
+        
         let scratchAsset = ScratchTools.Scratch.vm.editingTarget;
         let targetAssets =
           feature.traps.gui().editorTab?.activeTabIndex === 1
