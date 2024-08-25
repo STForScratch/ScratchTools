@@ -8,6 +8,7 @@
       }
     ],
     "type": ["Editor"],
+    "dynamic": true,
     "scripts": [{ "file": "script.js", "runOn": "/projects/*" }]
   }
   
