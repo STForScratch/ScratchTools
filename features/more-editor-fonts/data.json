@@ -12,5 +12,8 @@
   "tags": ["New", "Featured"],
   "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
   "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
-  "resources": [{ "name": "more-text-icon", "path": "/text.svg" }]
+  "resources": [{ "name": "more-text-icon", "path": "/text.svg" }],
+  "support": {
+    "yt": "https://youtu.be/zh3zsjBcz_M"
+  }
 }

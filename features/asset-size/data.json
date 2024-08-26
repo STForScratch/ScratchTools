@@ -9,6 +9,9 @@
     ],
     "type": ["Editor"],
     "dynamic": true,
-    "scripts": [{ "file": "script.js", "runOn": "/projects/*" }]
+    "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+    "support": {
+      "yt": "https://youtu.be/gpH3VJvDTkc"
+    }
   }
   
