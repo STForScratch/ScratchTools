@@ -1,0 +1,7 @@
+div[class*='mode-tools_mode-tools_'] > div[class*='mode-tools_mod-dashed-border_']:nth-child(1), div[class*='mode-tools_mode-tools_'] > div[class*='mode-tools_mod-dashed-border_']:nth-child(2) {
+    display: none;
+}
+
+div[class*='mode-tools_mode-tools_'] > div[class*='mode-tools_mod-labeled-icon-height_']:nth-child(3) {
+    margin-left: 0px !important;
+}

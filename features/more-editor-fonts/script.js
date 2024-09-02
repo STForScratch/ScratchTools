@@ -9,6 +9,7 @@ export default async function ({ feature, console }) {
   feature.page.waitForElements(
     "div[class^='asset-panel_wrapper_'] div[class^='action-menu_more-buttons_']",
     function (menu) {
+      if (feature.traps.gui().editorTab.activeTabIndex !== 1) return;
       if (menu.querySelector(".ste-more-fonts")) return;
 
       let div = document.createElement("div");
