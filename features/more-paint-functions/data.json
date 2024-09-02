@@ -1,0 +1,22 @@
+{
+  "title": "More Paint Functions",
+  "description": "Adds new functions to the paint editor. The new functions include unite (combining them into one), subtract (removing one shape from another), exclude (removing the overlap of 2 items), and intersect (removing everything but the overlap of 2 items). Each function only works with 2 items.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Editor"],
+  "tags": ["New", "Featured"],
+  "dynamic": true,
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
+  "resources": [
+    { "name": "function-exclude", "path": "/icons/exclude.svg" },
+    { "name": "function-intersect", "path": "/icons/intersect.svg" },
+    { "name": "function-subtract", "path": "/icons/subtract.svg" },
+    { "name": "function-unite", "path": "/icons/unite.svg" }
+  ],
+  "components": [{
+    "type": "warning",
+    "content": "In order to avoid clutter in the paint editor, this feature replaces the Copy, Paste and Delete buttons. However, hotkeys still work."
+  }]
+}
