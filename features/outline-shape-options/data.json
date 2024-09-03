@@ -1,0 +1,25 @@
+{
+  "title": "Outline Shape Options",
+  "description": "Change the shape of the corners of the object's outline in the Paint Editor..",
+  "credits": [
+    {
+      "username": "Masaabu-YT",
+      "url": "https://scratch.mit.edu/users/Masaabu-YT/"
+    }
+  ],
+  "type": ["Editor"],
+  "tags": ["New", "Featured"],
+  "dynamic": true,
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
+  "resources": [
+    { "name": "Join-miter", "path": "/resources/join-miter.svg" },
+    { "name": "Join-round", "path": "/resources/join-round.svg" },
+    { "name": "Join-bevel", "path": "/resources/join-bevel.svg" },
+    { "name": "Join-arcs", "path": "/resources/join-arcs.svg" },
+    { "name": "Join-miter-clip", "path": "/resources/join-miter-clip.svg" },
+    { "name": "Cap-butt", "path": "/resources/cap-butt.svg" },
+    { "name": "Cap-round", "path": "/resources/cap-round.svg" },
+    { "name": "Cap-square", "path": "/resources/cap-square.svg" }
+  ]
+}
