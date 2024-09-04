@@ -1,6 +1,6 @@
 {
-  "title": "Outline Shape Options",
-  "description": "Change the shape of the corners of the object's outline in the Paint Editor.",
+  "title": "Customizable Shape Outlines",
+  "description": "Adds more options in the outline dropdown to allow you to customize the shape of the outline, such as making corners round.",
   "credits": [
     {
       "username": "Masaabu-YT",
