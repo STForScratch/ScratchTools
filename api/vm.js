@@ -176,7 +176,7 @@ ScratchTools.Scratch.waitForContextMenu = function (info) {
 };
 
 ScratchTools.Scratch.scratchPaint = function () {
-  var app = document.querySelector(".paint-editor_mode-selector_28iiQ");
+  var app = document.querySelector(".paint-editor_mode-selector_28iiQ")||document.querySelector(".paint-editor_mode-selector_O2uhP");
   if (app !== null) {
     return (
       app[
