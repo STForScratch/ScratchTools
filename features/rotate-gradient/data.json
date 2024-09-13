@@ -10,5 +10,8 @@
   "type": ["Editor"],
   "dynamic": true,
   "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
-  "styles": [{ "file": "style.css", "runOn": "/projects/*" }]
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
+  "support": {
+    "yt": "https://youtu.be/5S032vWPvd0"
+  }
 }

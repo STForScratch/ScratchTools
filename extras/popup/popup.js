@@ -679,6 +679,23 @@ async function getFeatures() {
       languageData[feature.id + "/description"]?.message || feature.description;
     div.appendChild(p);
 
+    if (feature.support?.yt) {
+      let span = document.createElement("span")
+      span.textContent = "How-To Video"
+      span.className = "support-vid"
+      span.dataset.url = feature.support.yt
+      span.addEventListener("click", function() {
+        let url = this.dataset.url
+        chrome.tabs.create({
+          url,
+        })
+      })
+      span.appendChild(Object.assign(document.createElement("img"), {
+        src: "/extras/icons/external.svg"
+      }))
+      div.appendChild(span)
+    }
+
     if (feature.options) {
       for (var optionPlace in feature.options) {
         var option = feature.options[optionPlace];
