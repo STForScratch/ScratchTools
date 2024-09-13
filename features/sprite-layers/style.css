@@ -51,3 +51,7 @@
     position: relative;
     top: .5rem;
 }
+
+[class^="sprite-info_sprite-info_"]:hover {
+  overflow: visible !important; 
+}
