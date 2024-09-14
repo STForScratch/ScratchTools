@@ -18,6 +18,7 @@
     font-size: 1.1rem;
     margin-bottom: .5rem;
     margin-left: .15rem;
+    color: #575e75 !important;
 }
 
 .ste-layers>div>div {
@@ -44,6 +45,7 @@
     line-height: .95rem;
     padding-left: .05rem;
     padding-right: .05rem;
+    color: #c8cad2 !important;
 }
 
 .ste-long-layers>div>div:nth-child(even) {
