@@ -1,4 +1,4 @@
-export default async function ({ feature, console }) {
+export default async function ({ feature, console, scratchClass }) {
   let isDark;
 
   const BACKGROUND_LIGHT = "#FFFFFF";
@@ -18,10 +18,10 @@ export default async function ({ feature, console }) {
         if (document.querySelector(".ste-dark-paint-btn")) return;
         
         let button = document.createElement("div")
-        button.className = "button-group_button-group_2_h4y ste-dark-paint-btn"
+        button.className = `${scratchClass("button-group_button-group_2_")} ste-dark-paint-btn`
 
         let span = document.createElement("span")
-        span.className = "button_button_u6SE2 paint-editor_button-group-button_1I1tm"
+        span.className = `${scratchClass("button_button_")} ${scratchClass("paint-editor_button-group-button_")}`
         span.role = "button"
         button.appendChild(span)
 

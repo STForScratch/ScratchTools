@@ -15,7 +15,7 @@ function addKeyPressed() {
 
 function addKeyPressedEditor() {
   var div = document.createElement("div");
-  div.className = "menu-bar_file-group_1_CHX scratchtools navlastkey";
+  div.className = `${scratchClass("menu-bar_file-group_1_")} scratchtools navlastkey`;
   div.innerHTML = `
 <span>No Key Pressed</span>
 `;

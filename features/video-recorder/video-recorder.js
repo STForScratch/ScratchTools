@@ -1,4 +1,4 @@
-export default async function ({ feature, console }) {
+export default async function ({ feature, console, scratchClass }) {
 	await new Promise(async (resolve, reject) => {
 		(async () => {
 			const rem = await ScratchTools.waitForElement(".preview .inner .flex-row.action-buttons")
@@ -26,7 +26,7 @@ export default async function ({ feature, console }) {
 	ScratchTools.waitForElements(".menu-bar_account-info-group_MeJZP", async function (row) {
 		if (row.querySelector(".ste-video-recorder-open")) return;
 		openPopup = document.createElement("div");
-		openPopup.className = "menu-bar_menu-bar-item_oLDa- menu-bar_hoverable_c6WFB";
+		openPopup.className = `${scratchClass("menu-bar_menu-bar-item_")} ${scratchClass("menu-bar_hoverable_")}`;
 		openPopup.style.padding = "0 0.75rem"
 		let rem = document.createElement("div");
 		rem.textContent = "Record Video";
