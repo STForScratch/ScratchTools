@@ -88,7 +88,9 @@ export default async function ({ feature, console }) {
           feature.self.enabled ||
           feature.traps.vm.runtime._editingTarget?.sprite?.name !== SPRITES[i]
         ) {
-          data.push([SPRITES[i], SPRITES[i]]);
+          if (!data.find((el) => el[0] === SPRITES[i])) {
+            data.push([SPRITES[i], SPRITES[i]]);
+          }
         }
       }
 
