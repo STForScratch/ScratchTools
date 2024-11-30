@@ -1,11 +1,6 @@
 [
   {
     "version": 2,
-    "id": "fix-gifs",
-    "versionAdded": "v4.0.0"
-  },
-  {
-    "version": 2,
     "id": "outline-shape-options",
     "versionAdded": "v4.0.0"
   },
