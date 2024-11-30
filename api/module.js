@@ -14,7 +14,7 @@ function scratchClass(name) {
     }
 
     text = text.join("\n\n")
-    let classes = getClassNamesFromCSSText(text)
+    let classes = ScratchTools.getClassNamesFromCSSText(text)
 
     let relClass = classes.find((el) => el.includes(name))
     return relClass
