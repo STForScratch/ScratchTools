@@ -1,4 +1,4 @@
-export default async function ({ feature, console }) {
+export default async function ({ feature, console, scratchClass }) {
   function unite() {
     let paper = feature.traps.getPaper();
     let items = paper.project.selectedItems;
@@ -133,12 +133,12 @@ export default async function ({ feature, console }) {
   function makeButton({ name, icon, callback }) {
     let span = document.createElement("span");
     span.className =
-      "button_button_u6SE2 labeled-icon-button_mod-edit-field_1bXYC ste-more-functions";
+      `${scratchClass("button_button_")} ${scratchClass("labeled-icon-button_mod-edit-field_")} ste-more-functions`;
     span.role = "button";
 
     let img = document.createElement("img");
     img.src = feature.self.getResource(icon);
-    img.className = "labeled-icon-button_edit-field-icon_3j-Pf";
+    img.className = scratchClass("labeled-icon-button_edit-field-icon_");
     img.alt = name;
     img.title = name;
     img.draggable = false;
@@ -146,7 +146,7 @@ export default async function ({ feature, console }) {
 
     let label = document.createElement("span");
     label.textContent = name;
-    label.className = "labeled-icon-button_edit-field-title_1ZoEV";
+    label.className = scratchClass("labeled-icon-button_edit-field-title_");
     span.appendChild(label);
 
     span.addEventListener("click", function (e) {

@@ -5,7 +5,7 @@ if (document.querySelector('[class^="asset-panel_wrapper_"]')) {
     var input = document.createElement("input");
     var assetBox = document.querySelector('[class^="asset-panel_wrapper_"]');
     var assetRow = assetBox.firstChild.firstChild;
-    input.className = "scratchtoolsAssetSearch input_input-form_l9eYg";
+    input.className = "scratchtoolsAssetSearch " + scratchClass("input_input-form_l9eYg");
     input.placeholder = "Search";
     input.type = "search";
     input.autocomplete = "off";
@@ -40,7 +40,7 @@ ScratchTools.waitForElements(
     if (!document.querySelector(".scratchtoolsAssetSearch") && showSearchBar) {
       var input = document.createElement("input");
       var assetRow = assetBox.firstChild.firstChild;
-      input.className = "scratchtoolsAssetSearch input_input-form_l9eYg";
+      input.className = "scratchtoolsAssetSearch " + scratchClass("input_input-form_");
       input.placeholder = "Search";
       input.type = "search";
       input.autocomplete = "off";

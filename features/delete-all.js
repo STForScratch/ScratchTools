@@ -7,7 +7,7 @@ function checkForContextMenu() {
   ) {
     var div = document.createElement("div");
     div.className =
-      "react-contextmenu-item context-menu_menu-item_3cioN context-menu_menu-item-bordered_29CJG context-menu_menu-item-danger_1tJg0 scratchtools deleteall";
+      `react-contextmenu-item ${scratchClass("context-menu_menu-item_")} ${scratchClass("context-menu_menu-item-bordered_")} ${scratchClass("context-menu_menu-item-danger_")} scratchtools deleteall`;
     div.role = "menuitem";
     div.tabindex = "-1";
     div.arialDisabled = "false";
