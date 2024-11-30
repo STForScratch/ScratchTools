@@ -81,6 +81,12 @@ class Feature {
       path: window.location.pathname,
       scratch: document.querySelector("#app") ? 3 : 2,
     }
+    this.getInternals = function(element) {
+      let reactKey = Object.keys(element).find((key) => key.startsWith("__reactInternalInstance"))
+      if (!reactKey) return null;
+
+      return element[reactKey]
+    }
     this.redux = document.querySelector("#app")?.[
         Object.keys(app).find((key) => key.startsWith("__reactContainer"))
       ].child.stateNode.store
