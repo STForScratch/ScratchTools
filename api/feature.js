@@ -6,6 +6,9 @@ class Feature {
         finalFeature = el;
       }
     });
+    this.requestPermissions = async function(...permissions) {
+      return await ScratchTools.sendMessage("request-perms", permissions)
+    }
     this.data = finalFeature;
     this.msg = function (string) {
       return this.data.localesData[`${this.data.id}/`+string] || `ScratchTools.${this.data.id}.${string}`;
