@@ -1,0 +1,13 @@
+{
+    "title": "Remove Delete Confirmation",
+    "description": "Removes the delete confirmation prompt when deleting sprites in the Scratch editor.",
+    "credits": [
+      { "username": "MaterArc", "url": "https://scratch.mit.edu/users/MaterArc/" }
+    ],
+    "type": ["Editor"],
+    "tags": ["New", "Featured"],
+    "dynamic": true,
+    "styles": [{ "file": "style.css", "runOn": "/editor/*" }],
+    "scripts": [{ "file": "script.js", "runOn": "/editor/*" }]
+  }
+  
