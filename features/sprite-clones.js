@@ -19,7 +19,7 @@ if (
             if (el.className.startsWith("sprite-info_row_")) {
               foundIt = true;
               var div = document.createElement("div");
-              div.className = "sprite-info_group_14-B_";
+              div.className = scratchClass("sprite-info_group_");
               div.innerHTML = `<label class="label_input-group_2vTky"><span style="font-size: 0.625rem; font-weight: bold;" class="scratchtoolsSpriteCloneCounter">${(
                 ScratchTools.Scratch.vm.editingTarget.sprite.clones.length - 1
               ).toString()} clones</span></label>`;

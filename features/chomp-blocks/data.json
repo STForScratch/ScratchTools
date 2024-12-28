@@ -1,5 +1,5 @@
 {
-  "title": "Extend Wrapped C Blocks",
+  "title": "Extend C Blocks",
   "description": "Automatically extends C blocks to wrap around blocks that it is being placed over when dragging.",
   "credits": [
     {

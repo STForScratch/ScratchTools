@@ -1,5 +1,5 @@
 name: 🐛 Bug
-description: Report a bug for ScratchTool.
+description: Report a bug in ScratchTools.
 labels: ["type: bug", "status: needs review"]
 body:
 

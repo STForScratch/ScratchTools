@@ -54,7 +54,7 @@ if (
     if (data.remix !== undefined) {
       if (data.remix.parent !== null) {
         var div = document.createElement("div");
-        div.className = "menu-bar_menu-bar-item_oLDa- scratchtools remix";
+        div.className = `${scratchClass("menu-bar_menu-bar-item_")} scratchtools remix`;
         div.innerHTML = `<a href="https://scratch.mit.edu/projects/${data.remix.parent}/editor" style="color: white;"><span class="button_outlined-button_1bS__ menu-bar_menu-bar-button_3IDN0 community-button_community-button_2Lo_g" role="button"><div class="button_content_3jdgj"><span>Go to Parent</span></div></span></a>`;
         document.querySelectorAll("div").forEach(function (el) {
           if (el.className.includes("menu-bar_main-menu_")) {

@@ -1,4 +1,4 @@
-export default async function ({ feature, console }) {
+export default async function ({ feature, console, scratchClass }) {
   let lastRotation = 0
 
   feature.page.waitForElements(
@@ -16,15 +16,15 @@ export default async function ({ feature, console }) {
       feature.self.hideOnDisable(div);
 
       let data = document.createElement("div");
-      data.className = "color-picker_row-header_173LQ";
+      data.className = scratchClass("color-picker_row-header_");
       div.appendChild(data);
 
       let name = document.createElement("span");
-      name.className = "color-picker_label-name_17igY";
+      name.className = scratchClass("color-picker_label-name_");
       name.textContent = feature.msg("direction");
 
       let value = document.createElement("span");
-      value.className = "color-picker_label-readout_9vjb2";
+      value.className = scratchClass("color-picker_label-readout_");
       value.textContent = "0";
 
       data.appendChild(name);
@@ -32,7 +32,7 @@ export default async function ({ feature, console }) {
 
       let slider = document.createElement("div");
       slider.className =
-        "ste-direction-slider-checkered slider_container_o2aIb slider_last_10jvO";
+        "ste-direction-slider-checkered " + scratchClass("slider_container_") + " " + scratchClass("slider_last_Ik11I");
       div.appendChild(slider);
 
       let sliderBg = document.createElement("div");
@@ -44,7 +44,7 @@ export default async function ({ feature, console }) {
 
       let handle = document.createElement("div");
       handleSlider(handle, value);
-      handle.className = "ste-direction-handle slider_handle_3f0xk";
+      handle.className = "ste-direction-handle " + scratchClass("slider_handle_ubeAr");
       handle.style.left = "0px";
       slider.appendChild(handle);
 

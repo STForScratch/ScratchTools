@@ -6,7 +6,7 @@ export default async function ({ feature, console }) {
       asset.dataset.ste = "ste-file-size";
 
       let content = asset.querySelector(
-        "div[class*='sprite-selector-item_sprite-info_-'] div[class*='sprite-selector-item_sprite-details_']"
+        "div[class*='sprite-selector-item_sprite-info_'] div[class*='sprite-selector-item_sprite-details_']"
       );
 
       asset.firstChild.addEventListener("mouseover", function () {

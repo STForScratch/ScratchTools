@@ -74,6 +74,24 @@ ScratchTools.Storage = {};
 ScratchTools.Resources = {};
 ste.console.log("ScratchTools API Created", "ste-main");
 
+ScratchTools.cssFiles = [];
+async function updateCSSFiles() {
+  let activeCSSFiles = Array.from(document.styleSheets)
+    .filter((sheet) => sheet.href)
+    .map((sheet) => sheet.href)
+    .filter((el) => new URL(el).host === "scratch.mit.edu");
+  activeCSSFiles = activeCSSFiles.filter(
+    (el) => !ScratchTools.cssFiles.find((e) => e.url === el)
+  );
+
+  for (var i in activeCSSFiles) {
+   ScratchTools.cssFiles.push({
+      url: activeCSSFiles[i],
+      data: await (await fetch(activeCSSFiles[i])).text(),
+    });
+  }
+}
+
 if (
   window.location.href.startsWith("https://scratch.mit.edu/projects/") &&
   window.location.href.includes("/editor")
@@ -159,6 +177,7 @@ function enableScratchToolsSelectorsMutationObserver() {
 enableScratchToolsSelectorsMutationObserver();
 
 function returnScratchToolsSelectorsMutationObserverCallbacks() {
+  updateCSSFiles()
   Object.keys(allWaitInstances).forEach(function (key) {
     var waitInstance = allWaitInstances[key];
     if (!waitInstance.removed) {
@@ -340,6 +359,39 @@ ScratchTools.styles = {
   },
 };
 
+function scratchClass(name) {
+  let element = document.querySelector(`[class*='${name}']`);
+  if (element) {
+    let classes = [...element.classList];
+    return classes.find((el) => el.includes(name));
+  } else {
+    let text = []
+
+    for (var i in ScratchTools.cssFiles) {
+      text.push(ScratchTools.cssFiles[i].data)
+    }
+
+    text = text.join("\n\n")
+    let classes = ScratchTools.getClassNamesFromCSSText(text)
+
+    let relClass = classes.find((el) => el.includes(name))
+    return relClass
+  }
+}
+
+ScratchTools.getClassNamesFromCSSText = function(cssText) {
+  const classNames = new Set();
+
+  const classRegex = /\.([a-zA-Z0-9_-]+)\b/g;
+
+  let match;
+  while ((match = classRegex.exec(cssText)) !== null) {
+    classNames.add(match[1]);
+  }
+
+  return Array.from(classNames);
+}
+
 ScratchTools.waitForElements(
   "ul[class*='menu_menu_'][class*='menu_right_']",
   function (ul) {
@@ -351,7 +403,10 @@ ScratchTools.waitForElements(
       if (!ul.querySelector(".ste-menu-full-settings")) {
         var li = document.createElement("li");
         li.className =
-          "ste-menu-full-settings menu_menu-item_3EwYA menu_hoverable_3u9dt";
+          "ste-menu-full-settings " +
+          scratchClass("menu_menu-item_") +
+          " " +
+          scratchClass("menu_hoverable_");
 
         var div = document.createElement("div");
         div.className = "settings-menu_option_3rMur";
@@ -391,6 +446,8 @@ async function blockliveDetection() {
       Object.keys(app).find((key) => key.startsWith("__reactContainer"))
     ].child.stateNode.store.getState()?.scratchGui;
   if (!gui?.projectState) return;
-  let detectBlocklive = await import("./blocklive-detection/blocklive-detect.js");
+  let detectBlocklive = await import(
+    "./blocklive-detection/blocklive-detect.js"
+  );
   detectBlocklive.default();
 }

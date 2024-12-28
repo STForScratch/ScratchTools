@@ -6,6 +6,10 @@ if (ScratchTools.Storage.colorComment) {
   document.body.classList.add("hideComment");
 }
 
+if (ScratchTools.Storage.dontHideStudioComments) {
+  document.body.classList.add("dontHideStudioComments")
+}
+
 var hideAds = new Feature({ id: "hide-advertisements" });
 hideAds.settings.addEventListener("changed", function ({key: name, value}) {
   if (name === "colorComment") {
@@ -15,6 +19,12 @@ hideAds.settings.addEventListener("changed", function ({key: name, value}) {
     } else {
       document.body.classList.remove("colorComment");
       document.body.classList.add("hideComment");
+    }
+  } else if (name === "dontHideStudioComments") {
+    if (value) {
+      document.body.classList.add("dontHideStudioComments")
+    } else {
+      document.body.classList.remove("dontHideStudioComments")
     }
   }
 });
