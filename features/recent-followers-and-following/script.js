@@ -34,7 +34,7 @@ export default async function ({ feature, console }) {
           profileImage: follow.profile.images['90x90'] || follow.profile.images['50x50'] || '',
         }));
   
-      ScratchTools.waitForElements("#featured", function (allFeaturedElements) {
+      const allFeaturedElements = document.querySelectorAll("#featured");
         if (allFeaturedElements.length === 0) return;
   
         const lastFeaturedElement = allFeaturedElements[allFeaturedElements.length - 1];
