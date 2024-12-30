@@ -1,0 +1,12 @@
+{
+    "title": "Default to Bitmap",
+    "description": "Automatically switches to bitmap mode in the costume editor when opened.",
+    "credits": [
+      { "username": "MaterArc", "url": "https://scratch.mit.edu/users/MaterArc/" }
+    ],
+    "type": ["Editor"],
+    "tags": ["New", "Featured"],
+    "dynamic": true,
+    "scripts": [{ "file": "script.js", "runOn": "/editor/*" }]
+  }
+  
