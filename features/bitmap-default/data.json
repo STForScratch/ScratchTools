@@ -1,0 +1,14 @@
+{
+  "title": "Default to Bitmap",
+  "description": "Sets the default mode to bitmap in the costume editor.",
+  "credits": [
+    { "username": "medians", "url": "https://scratch.mit.edu/users/medians/" },
+    { "username": "MaterArc", "url": "https://scratch.mit.edu/users/MaterArc/" }
+  ],
+  "type": ["Editor"],
+  "tags": ["New", "Featured"],
+  "dynamic": true,
+  "scripts": [{ "file": "script.js", "runOn": "/editor/*" }]
+}
+
+  
