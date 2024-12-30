@@ -1,6 +1,6 @@
 {
   "title": "Default to Bitmap",
-  "description": "Automatically switches to bitmap mode in the costume editor when opened.",
+  "description": "Makes bitmap the default mode in the costume editor",
   "credits": [
     { "username": "Medians", "url": "https://scratch.mit.edu/users/Medians/" },
     { "username": "MaterArc", "url": "https://scratch.mit.edu/users/MaterArc/" }
