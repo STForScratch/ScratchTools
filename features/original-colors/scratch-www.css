@@ -565,3 +565,7 @@ input[class^="input_input-form_"]:focus {
 .studio-status-icon-unselected {
     background-color: var(--ste-blue) !important;
 }
+
+.banner-wrapper .banner-description p a {
+ color: #fff;
+}
