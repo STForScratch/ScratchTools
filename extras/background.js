@@ -692,7 +692,28 @@ chrome.runtime.onMessageExternal.addListener(async function (
     });
   }
   if (msg === "returnToTab") {
-    await chrome.tabs.update(sender.tab.id, {active: true})
+    await chrome.tabs.update(sender.tab.id, { active: true });
+  }
+  if (msg.source === "message-api") {
+    if (msg.message?.startsWith("request-perms")) {
+      let perms = msg.content;
+
+      chrome.permissions.request({ permissions: perms }, async (granted) => {
+        let isComplete = !!granted;
+
+        await chrome.scripting.executeScript({
+          args: [isComplete, msg.uuid],
+          target: { tabId: sender.tab.id },
+          func: sendPermsResponse,
+          world: "MAIN",
+        });
+        function sendPermsResponse(completed, uuid) {
+          ScratchTools.MESSAGES.find((el) => el.uuid === uuid).resolve(
+            completed
+          );
+        }
+      });
+    }
   }
   if (typeof msg === "object") {
     if (msg.message === "storageSet") {

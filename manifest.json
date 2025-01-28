@@ -32,7 +32,11 @@
       ],
       "run_at": "document_start",
       "js": [
-        "extras/inject-styles.js"
+        "extras/inject-styles.js",
+        "api/update/index.js"
+      ],
+      "css": [
+        "api/update/style.css"
       ],
       "all_frames": true
     }
