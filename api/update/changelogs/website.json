@@ -1,0 +1,28 @@
+{
+    "active": true,
+    "title": "Website Changes for {{ version }}",
+    "description": "ScratchTools is introducing many new features for the Scratch website. You can enable them on the settings page.",
+    "changes": [
+      {
+        "icon": "change.svg",
+        "slogan": "Customize what tag is used by default on the explore page"
+      },
+      {
+        "icon": "gift.svg",
+        "slogan": "A ScratchTools selection of featured projects"
+      },
+      {
+        "icon": "filter.svg",
+        "slogan": "Filter through studio, explore, and searched projects"
+      },
+      {
+        "icon": "date.svg",
+        "slogan": "See when a studio was created"
+      },
+      {
+        "icon": "countdown.svg",
+        "slogan": "View how many replies are left in a thread"
+      }
+    ]
+  }
+  
