@@ -4,7 +4,7 @@ if (
 ) {
   function checkForNavForTurbowarp() {
     if (document.querySelector("div.scratchtoolsTurbowarp") === null) {
-      if (document.querySelector(".menu-bar_main-menu_3wjWH") !== null) {
+      if (document.querySelector("[class^='menu-bar_main-menu_']") !== null) {
         waitForNavForTurbowarp.disconnect();
         var outerDiv = document.createElement("div");
         outerDiv.className =
@@ -54,7 +54,7 @@ if (
         a.appendChild(outerSpan);
         outerDiv.appendChild(a);
         document
-          .querySelector(".menu-bar_main-menu_3wjWH")
+          .querySelector("[class^='menu-bar_main-menu_']")
           .appendChild(outerDiv);
       }
     }
