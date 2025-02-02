@@ -1,31 +1,31 @@
 export default async function ({ feature }) {
-  const locationElement = await ScratchTools.waitForElement(
-    "p.profile-details > span.location"
-  );
+  const locationHolder = await ScratchTools.waitForElement("p.profile-details > span.location");
+  if (!locationHolder) return;
 
-  const locationText = locationElement.textContent.trim();
-  const countryFlag = getCountryFlag(locationText);
-  if (!countryFlag) return;
+  const locationText = locationHolder.childNodes[0]?.nodeValue?.trim();
+  if (!locationText) return;
+
+  const flagUrl = getFlagUrl(locationText);
+  if (!flagUrl) return;
 
   const imgElement = new Image();
-  imgElement.src = countryFlag;
+  imgElement.src = flagUrl;
 
   ScratchTools.appendToSharedSpace({
     space: "afterProfileCountry",
     element: imgElement,
-    order: -1,
+    order: -1
   });
 
   feature.self.hideOnDisable(locationHolder);
 
-  function getCountryFlag(locationText) {
+  function getFlagUrl(locationText) {
     const GithubUrl = "https://raw.githubusercontent.com/STForScratch/data/main/flags/";
-    const countryName = locationText.toLowerCase()
+    return GithubUrl + locationText.toLowerCase()
       .replaceAll(" ", "-")
       .replaceAll("(", "")
       .replaceAll(")", "")
       .replaceAll(",", "")
       .replaceAll(".", "") + ".svg";
-    return GithubUrl + countryName;
   }
 }
