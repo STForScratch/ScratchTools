@@ -36,7 +36,7 @@ export default async function ({ feature, console }) {
       .map((project) => ({
         project,
         score: computeExactPhraseScore(
-          projectDetailsMap[project.id].title.toLowerCase(),
+          projectDetailsMap[project.id]?.title?.toLowerCase() || "",
           searchTokens
         ),
       }))
@@ -49,7 +49,7 @@ export default async function ({ feature, console }) {
         .map((project) => ({
           project,
           score: computeSingleWordScore(
-            projectDetailsMap[project.id].title.toLowerCase(),
+            projectDetailsMap[project.id]?.title?.toLowerCase() || "",
             searchTokens[0]
           ),
         }))
@@ -57,10 +57,10 @@ export default async function ({ feature, console }) {
         .sort((a, b) => b.score - a.score)
         .map(({ project }) => project);
 
-      const combinedResults = [...exactMatchProjects, ...singleWordProjects];
+      const combinedResults = [...new Set([...exactMatchProjects, ...singleWordProjects])];
       updateProjectContainer(combinedResults);
     } else {
-      updateProjectContainer(exactMatchProjects);
+      updateProjectContainer([...new Set(exactMatchProjects)]);
     }
   }
 
@@ -70,37 +70,38 @@ export default async function ({ feature, console }) {
     if (!url.match(/^https:\/\/scratch\.mit\.edu\/studios\/\d+$/)) {
       return;
     }
-    ScratchTools.waitForElements(
-      ".studio-header-container",
-      (headerContainer) => {
-        if (!headerContainer) return;
 
-        const searchContainer = document.createElement("div");
-        searchContainer.className = "search-container";
+    ScratchTools.waitForElements(".studio-header-container", (headerContainer) => {
+      if (!headerContainer) return;
 
-        const searchInput = document.createElement("input");
-        searchInput.type = "text";
-        searchInput.className = "search-bar";
-        searchInput.id = "projectSearch";
-        searchInput.placeholder = "Search projects...";
+      if (document.querySelector(".search-container")) return;
 
-        searchContainer.appendChild(searchInput);
-        headerContainer.appendChild(searchContainer);
+      const searchContainer = document.createElement("div");
+      searchContainer.className = "search-container";
 
-        searchInput.addEventListener("input", () => {
-          const searchText = searchInput.value;
-          if (searchText.trim() === "") {
-            updateProjectContainer(projects);
-          } else {
-            searchProject(searchText);
-          }
-        });
-      }
-    );
+      const searchInput = document.createElement("input");
+      searchInput.type = "text";
+      searchInput.className = "search-bar";
+      searchInput.id = "projectSearch";
+      searchInput.placeholder = "Search projects...";
+
+      searchContainer.appendChild(searchInput);
+      headerContainer.appendChild(searchContainer);
+
+      searchInput.addEventListener("input", () => {
+        const searchText = searchInput.value;
+        if (searchText.trim() === "") {
+          updateProjectContainer(projects);
+        } else {
+          searchProject(searchText);
+        }
+      });
+    });
   }
 
   async function fetchAllStudioProjects(studioId) {
-    let projects = [];
+    let fetchedProjects = [];
+    let projectIds = new Set();
     let offset = 0;
     const limit = 40;
 
@@ -112,11 +113,17 @@ export default async function ({ feature, console }) {
 
       if (data.length === 0) break;
 
-      projects = projects.concat(data);
+      for (const project of data) {
+        if (!projectIds.has(project.id)) {
+          projectIds.add(project.id);
+          fetchedProjects.push(project);
+        }
+      }
+
       offset += limit;
     }
 
-    return projects;
+    return fetchedProjects;
   }
 
   async function getProjectDetails(projectId) {
@@ -132,10 +139,21 @@ export default async function ({ feature, console }) {
 
       container.innerHTML = "";
 
-      if (filteredProjects.length === 0) return;
+      const uniqueProjects = [];
+      const projectIds = new Set();
 
       for (const project of filteredProjects) {
-        const projectDetails = await getProjectDetails(project.id);
+        if (!projectIds.has(project.id)) {
+          projectIds.add(project.id);
+          uniqueProjects.push(project);
+        }
+      }
+
+      if (uniqueProjects.length === 0) return;
+
+      for (const project of uniqueProjects) {
+        const projectDetails = projectDetailsMap[project.id] || await getProjectDetails(project.id);
+        projectDetailsMap[project.id] = projectDetails;
 
         const projectTile = document.createElement("div");
         projectTile.className = "studio-project-tile";
@@ -188,6 +206,8 @@ export default async function ({ feature, console }) {
     const studioId = getStudioIdFromUrl();
     if (!studioId) return;
 
+    injectSearchBar();
+
     projects = await fetchAllStudioProjects(studioId);
 
     projectDetailsMap = {};
@@ -195,7 +215,6 @@ export default async function ({ feature, console }) {
       projectDetailsMap[project.id] = await getProjectDetails(project.id);
     }
 
-    injectSearchBar();
     updateProjectContainer(projects);
   }
 
