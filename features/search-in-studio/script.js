@@ -66,38 +66,40 @@ export default async function ({ feature, console }) {
 
   function injectSearchBar() {
     const url = window.location.href;
+    if (!url.match(/^https:\/\/scratch\.mit\.edu\/studios\/\d+$/)) return;
 
-    if (!url.match(/^https:\/\/scratch\.mit\.edu\/studios\/\d+$/)) {
-      return;
+    const insertSearchBar = (headerContainer) => {
+        if (!headerContainer || document.querySelector(".search-container")) return;
+
+        const searchContainer = document.createElement("div");
+        searchContainer.className = "search-container";
+
+        const searchInput = document.createElement("input");
+        searchInput.type = "text";
+        searchInput.className = "search-bar";
+        searchInput.id = "projectSearch";
+        searchInput.placeholder = "Search projects...";
+
+        searchContainer.appendChild(searchInput);
+        headerContainer.appendChild(searchContainer);
+
+        searchInput.addEventListener("input", () => {
+            const searchText = searchInput.value;
+            if (searchText.trim() === "") {
+                updateProjectContainer(projects);
+            } else {
+                searchProject(searchText);
+            }
+        });
+    };
+    const headerContainer = document.querySelector(".studio-header-container");
+    if (headerContainer) {
+        insertSearchBar(headerContainer);
+    } else {
+        ScratchTools.waitForElements(".studio-header-container", insertSearchBar);
     }
+}
 
-    ScratchTools.waitForElements(".studio-header-container", (headerContainer) => {
-      if (!headerContainer) return;
-
-      if (document.querySelector(".search-container")) return;
-
-      const searchContainer = document.createElement("div");
-      searchContainer.className = "search-container";
-
-      const searchInput = document.createElement("input");
-      searchInput.type = "text";
-      searchInput.className = "search-bar";
-      searchInput.id = "projectSearch";
-      searchInput.placeholder = "Search projects...";
-
-      searchContainer.appendChild(searchInput);
-      headerContainer.appendChild(searchContainer);
-
-      searchInput.addEventListener("input", () => {
-        const searchText = searchInput.value;
-        if (searchText.trim() === "") {
-          updateProjectContainer(projects);
-        } else {
-          searchProject(searchText);
-        }
-      });
-    });
-  }
 
   async function fetchAllStudioProjects(studioId) {
     let fetchedProjects = [];
