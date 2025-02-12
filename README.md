@@ -55,7 +55,7 @@ There are multiple ways of installing.
 - GitHub (For Firefox & Firefox Forks): Download from the GitHub repository [here](https://github.com/STForScratch/ScratchTools/zipball/master). After the `.zip` file is downloaded, unpack it. Then, with the folder, go to `about:debugging`, click "This Firefox" and click "Load temporary extension", go into the extension folder and select the `manifest.json`.
 
 > [!WARNING]
-> Extensions loaded this way onto Safari indeed temporary. Once you close the window, it will be gone. In addition, ScratchTools is still outdated on Firefox at the time of writing this.
+> Extensions loaded this way onto Safari are temporary. Once you close the window, it will be gone.
 
 - Installing with Git: Open the code dropdown on the extension's repository, copy the HTTPS url and then execute `git clone https://github.com/STForScratch/ScratchTools.git -b main` in Git, and you have installed ScratchTools! To pull changes instead of cloning the repository, enter the folder and execute `git remote add upstream https://github.com/STForScratch/ScratchTools.git`. When a commit is made to the repository, you can just run `git pull upstream main` to pull the changes, note that sometimes you may need to refresh ScratchTools.
 
