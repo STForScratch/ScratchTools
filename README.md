@@ -40,12 +40,12 @@ There are multiple ways of installing.
 - Chrome: You can download from Chrome's Extension Webstore [here](https://chrome.google.com/webstore/detail/scratchtools/jjnpbalpllpfdpgplpbcbadkgdmleopm). Then just press the Add to Chrome button, and you've downloaded ScratchTools!
 
 > [!NOTE]
-> If you are using a browser based on Chromium (eg. Brave), then this is your way of installing unless your browser has it's own extension store.
+> If you are using a browser based on Chromium (eg. Brave), then this is your way of installing unless your browser has its own extension store.
 
 - Firefox/Mozilla: You can download from Firefox Addons (Works on Firefox forks) [here](https://addons.mozilla.org/en-US/firefox/addon/scratchtools/). You can then just add it to Firefox, and then you have ScratchTools!
 
 > [!NOTE]
-> The Firefox version of Scratchtools is behind compared to the chrome version of Scratchtools due to technical difficulties. Until a solution is found, the Firefox version will remain behind.
+> The Firefox version of ScratchTools is behind compared to the Chrome version of ScratchTools due to technical difficulties. Until a solution is found, the Firefox version will remain behind.
 
 - Microsoft Edge: You can download from Edge's addon webstore [here](https://microsoftedge.microsoft.com/addons/detail/scratchtools/aaidjeidbnhpjhblbianjeghjopbimmk). You can then just add it to Edge, and then you have ScratchTools!
 - Safari (macOS, iPadOS and iOS): You can build the extension by typing `make` for macOS, and `make ios` for the iOS app (you will have to sign it on Xcode), make sure you have enabled Developer mode and allowed unsigned extensions.
@@ -55,7 +55,7 @@ There are multiple ways of installing.
 - GitHub (For Firefox & Firefox Forks): Download from the GitHub repository [here](https://github.com/STForScratch/ScratchTools/zipball/master). After the `.zip` file is downloaded, unpack it. Then, with the folder, go to `about:debugging`, click "This Firefox" and click "Load temporary extension", go into the extension folder and select the `manifest.json`.
 
 > [!WARNING]
-> Extensions loaded this way onto Safari indeed temporary. Once you close the window, it will be gone. In addition, ScratchTools is still outdated on Firefox at the time of writing this.
+> Extensions loaded this way onto Safari are temporary. Once you close the window, it will be gone.
 
 - Installing with Git: Open the code dropdown on the extension's repository, copy the HTTPS url and then execute `git clone https://github.com/STForScratch/ScratchTools.git -b main` in Git, and you have installed ScratchTools! To pull changes instead of cloning the repository, enter the folder and execute `git remote add upstream https://github.com/STForScratch/ScratchTools.git`. When a commit is made to the repository, you can just run `git pull upstream main` to pull the changes, note that sometimes you may need to refresh ScratchTools.
 
@@ -77,7 +77,7 @@ Using `ScratchTools.Auth`, you can access the authentication info for the signed
 Using `ScratchTools.Scratch.blockly` and `ScratchTools.Scratch.vm`, you can access the Blockly and Virtual Machine from inside the editor (or on the project page with vm). Blockly must wait for the editor to load, but the virtual machine is ready instantly.
 ##### Blockly Context Menus
 If you want to control what appears in a context menu, you easily can with the `ScratchTools.Scratch.waitForContextMenu()` API. The only input you need is JSON, which must include the block ID for the context menu, the ID you want to set for the context menu option (lets you change the context menu option, so don't use the same ID as another feature), and the callback for when the context menu is opened. The callback function will also have an input, which is the context menu itself. That way, you can add the context menu option when the context menu is opened.
-##### Sound , GUI and Paint-Mode
+##### Sound, GUI and Paint-Mode
 Using `ScratchTools.Scratch.scratchSound`and `ScratchTools.Scratch.scratchGui`, you can return sound from the editor as well as access Graphical User Interface inside the editor. `ScratchTools.Scratch.scratchPaint` can be used in selecting the paint editor mode.
 
 #### Logging
