@@ -129,10 +129,10 @@
     position: absolute;
     left: 50%;
     top: calc(50% + calc(3 * 16px));
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-150%);
     font-size: calc(1 * 16px);
     font-weight: 600;
     color: black;
-    opacity: .6;
+    opacity: .65;
     cursor: pointer;
 }
