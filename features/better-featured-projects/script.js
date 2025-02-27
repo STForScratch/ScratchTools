@@ -14,30 +14,30 @@ export default async function ({ feature, console }) {
 
   if (box) {
     // Add class to select using waitForElements API
-    box.classList.add("featured-projects")
+    box.classList.add("featured-projects");
 
     // Change box title and link to studio
-    box.querySelector("h4").textContent = "ScratchTools Featured Projects"
-    box.querySelector("a").href = "/studios/32047713/comments"
-    box.querySelector("a").textContent = "Submit a project"
+    box.querySelector("h4").textContent = "ScratchTools Featured Projects";
+    box.querySelector("a").href = "/studios/32047713/comments";
+    box.querySelector("a").textContent = "Submit a project";
 
     ScratchTools.waitForElements(".featured-projects .thumbnail-info", function(info) {
-        let project = info.closest(".project")
-        let indexOfProject = project[Object.keys(project).find((key) => key.startsWith("__reactInternalInstance"))].return.index
-
+        let project = info.closest(".project");
+        let indexOfProject = [...document.querySelectorAll(".featured-projects .thumbnail-info")].indexOf(info);
+        
         if (data[indexOfProject]) {
-            let thumbnail = project.querySelector("a.thumbnail-image")
-            thumbnail.href = `/projects/${data[indexOfProject].id}/`
-            thumbnail.firstChild.src = data[indexOfProject].thumbnail
+            let thumbnail = project.querySelector("a.thumbnail-image");
+            thumbnail.href = `/projects/${data[indexOfProject].id}/`;
+            thumbnail.firstChild.src = data[indexOfProject].thumbnail;
 
-            info.querySelector(".thumbnail-creator a").href = `/users/${data[indexOfProject].author}/`
-            info.querySelector(".thumbnail-creator a").textContent = data[indexOfProject].author
+            info.querySelector(".thumbnail-creator a").href = `/users/${data[indexOfProject].author}/`;
+            info.querySelector(".thumbnail-creator a").textContent = data[indexOfProject].author;
 
-            info.querySelector("a").href = `/projects/${data[indexOfProject].id}/`
-            info.querySelector("a").title = data[indexOfProject].title
-            info.querySelector("a").textContent = data[indexOfProject].title
+            info.querySelector("a").href = `/projects/${data[indexOfProject].id}/`;
+            info.querySelector("a").title = data[indexOfProject].title;
+            info.querySelector("a").textContent = data[indexOfProject].title;
         }
-    })
+    });
   }
 
   async function getFeatured() {
@@ -60,6 +60,6 @@ export default async function ({ feature, console }) {
       } catch (err) {}
     }
 
-    return FEATURED
+    return FEATURED;
   }
 }
