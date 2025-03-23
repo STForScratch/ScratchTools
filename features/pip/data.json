@@ -1,0 +1,24 @@
+{
+    "title": "Picture in picture",
+    "description": "Picture in picture aka PiP, allows you to view your project in a separate small window.",
+    "credits": [
+        {
+            "username": "stio_studio",
+            "url": "https://stio.studio"
+        }
+    ],
+    "scripts": [
+        {
+            "file": "feature.js",
+            "runOn": "/projects/*"
+        }
+    ],
+    "tags": [
+        "New"
+    ],
+    "type": [
+        "Website"
+    ],
+    "dynamic": true,
+    "resources": [{ "name": "pip-css", "path": "/style.css" }]
+}
