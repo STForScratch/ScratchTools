@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "random-block-colors",
+    "versionAdded": "v4.1.0"
+  },
+  {
+    "version": 2,
     "id": "remove-confirmation",
     "versionAdded": "v4.0.0"
   },

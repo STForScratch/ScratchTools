@@ -49,8 +49,7 @@ async function checkBetaUpdates() {
       ).json();
       if (
         data.version !== chrome.runtime.getManifest().version_name ||
-        (await (await fetch("/changelog/beta.json")).json()).beta !==
-          data.beta
+        (await (await fetch("/changelog/beta.json")).json()).beta !== data.beta
       ) {
         // chrome.tabs.create({
         //   url: "/extras/beta/index.html",
@@ -64,6 +63,7 @@ if (chrome.runtime.getManifest().version_name.endsWith("-beta")) {
 }
 
 chrome.runtime.onInstalled.addListener(async function (object) {
+  checkApril();
   try {
     var featureData = await (await fetch("/features/features.json")).json();
   } catch (err) {
@@ -671,12 +671,17 @@ chrome.runtime.onMessageExternal.addListener(async function (
   }
   if (msg.msg === "openPong") {
     await chrome.tabs.create({
-      url: "/api/april/pong/index.html?username=" + msg.username + "&id=" + msg.id,
+      url:
+        "/api/april/pong/index.html?username=" + msg.username + "&id=" + msg.id,
     });
   }
   if (msg.msg === "openDashboardPage") {
     await chrome.tabs.create({
-      url: "/extras/dashboard/index.html?code=" + msg.token + "&username=" + msg.username,
+      url:
+        "/extras/dashboard/index.html?code=" +
+        msg.token +
+        "&username=" +
+        msg.username,
     });
     chrome.tabs.remove(sender.tab.id, function () {});
   }
@@ -821,7 +826,32 @@ chrome.runtime.onMessage.addListener(async function (
   }
 });
 
+async function checkApril() {
+  if (new Date().getMonth() === 3 && new Date().getDate() === 1) {
+    let features = (await chrome.storage.sync.get("features"))?.features || "";
+    if (!features.includes("random-block-colors")) {
+      await chrome.storage.sync.set({ aprilAutomatic2025: true });
+      features = features + ".random-block-colors";
+      await chrome.storage.sync.set({ features });
+    }
+  } else {
+    let aprilAutomatic = (await chrome.storage.sync.get("aprilAutomatic2025"))
+      ?.aprilAutomatic2025;
+
+    if (aprilAutomatic) {
+      let features =
+        (await chrome.storage.sync.get("features"))?.features || "";
+      if (features.includes("random-block-colors")) {
+        features = features.replaceAll("random-block-colors", "");
+        await chrome.storage.sync.set({ features });
+        await chrome.storage.sync.set({ aprilAutomatic2025: false });
+      }
+    }
+  }
+}
+
 chrome.alarms.onAlarm.addListener(async function () {
+  checkApril();
   chrome.alarms.clearAll();
   chrome.alarms.create("test", {
     delayInMinutes: 0.5,

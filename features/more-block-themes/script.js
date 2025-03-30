@@ -1,4 +1,7 @@
 export default async function ({ feature, console, scratchClass }) {
+  let randomBlockColorsEnabled = !!ScratchTools.modules.find((el) => el.feature.id === "random-block-colors")
+  if (randomBlockColorsEnabled) return;
+  
   let CIRCLE = await (await fetch(feature.self.getResource("circle"))).text();
 
   let COLORS = document.createElement("link")

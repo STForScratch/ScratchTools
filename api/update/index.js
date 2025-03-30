@@ -40,12 +40,13 @@ async function checkUpdate() {
         forum: "0",
       },
     });
-    checkUpdate()
+    // checkUpdate()
   }
 }
-checkUpdate();
+// checkUpdate();
 
 function makeScreen(update) {
+  return
   console.log(update);
   if (document.querySelector(".ste-update-bg")) return;
   let background = Object.assign(document.createElement("div"), {
