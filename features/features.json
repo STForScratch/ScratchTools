@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "copy-paste-lists",
+    "versionAdded": "v4.2.0"
+  },
+  {
+    "version": 2,
     "id": "random-block-colors",
     "versionAdded": "v4.1.0"
   },
