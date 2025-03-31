@@ -1,0 +1,15 @@
+{
+  "title": "Copy and Paste Lists",
+  "description": "Allows you to right-click on lists on the stage to copy and paste large amounts of items.",
+  "credits": [
+    {
+      "username": "Brass_Glass",
+      "url": "https://scratch.mit.edu/users/Brass_Glass/"
+    },
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Editor"],
+  "tags": ["New", "Featured"],
+  "dynamic": true,
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }]
+}

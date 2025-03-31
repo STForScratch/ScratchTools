@@ -90,6 +90,9 @@ class Feature {
 
       return element[reactKey]
     }
+    this.getInternalKey = function(element) {
+      return Object.keys(element).find((key) => key.startsWith("__reactInternalInstance")) || null
+    }
     this.redux = document.querySelector("#app")?.[
         Object.keys(app).find((key) => key.startsWith("__reactContainer"))
       ].child.stateNode.store
