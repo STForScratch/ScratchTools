@@ -1,10 +1,4 @@
-export default async function ({ feature, console }) {
-  filterStyleSheet(feature.settings.get("filter-operation") || "blur");
-  const filterDefault = `{
-    "title": {},
-    "author": {},
-    "period": {}
-}`;
+export default async function ({ feature }) {
   let options = [
     {
       icon: "title-icon",
@@ -19,110 +13,137 @@ export default async function ({ feature, console }) {
       id: "period",
     },
   ];
-  let page;
+  let page = window.location.pathname.split("/");;
   let filterData;
   let apiCache = {};
 
-  async function filterProject(url, element) {
-    let data = apiCache[url];
-    if (!data) {
-      data = await (
-        await fetch(`${url.replace("scratch.mit.edu", "api.scratch.mit.edu")}`)
-      ).json();
-      apiCache[url] = data;
-    }
-    if (data.code === "NotFound") {
-      element.classList.add("ste-filter-hide");
-      return;
-    }
-    if (
-      (filterData.period.shareStart &&
-        filterData.period.shareStart > data.history.shared.split("T")[0]) ||
-      (filterData.period.shareEnd &&
-        filterData.period.shareEnd < data.history.shared.split("T")[0]) ||
-      (filterData.period.updateStart &&
-        filterData.period.updateStart > data.history.modified.split("T")[0]) ||
-      (filterData.period.updateEnd &&
-        filterData.period.updateEnd < data.history.modified.split("T")[0]) ||
-      (filterData.title.including &&
-        !filterData.title.including.every((text) =>
-          data.title.includes(text)
-        )) ||
-      (filterData.title.excluding &&
-        filterData.title.excluding.some((text) => data.title.includes(text))) ||
-      (filterData.author.including &&
-        !filterData.author.including.some((text) =>
-          data.author.username.includes(text)
-        )) ||
-      (filterData.author.excluding &&
-        filterData.author.excluding.some((text) =>
-          data.author.username.includes(text)
-        ))
-    )
-      element.classList.add("ste-filter-hide");
-    else if (element.classList.contains("ste-filter-hide"))
-      element.classList.remove("ste-filter-hide");
+  function checkProject(data) {
+    return (
+      filterData !== null &&
+      (
+        filterData.period && (
+          (
+            filterData.period.shareStart &&
+            filterData.period.shareStart > data.history.shared.split("T")[0]
+          )||(
+            filterData.period.shareEnd &&
+            filterData.period.shareEnd < data.history.shared.split("T")[0]
+          )||(
+            filterData.period.updateStart &&
+            filterData.period.updateStart > data.history.modified.split("T")[0]
+          )||(
+            filterData.period.updateEnd &&
+            filterData.period.updateEnd < data.history.modified.split("T")[0]
+          )
+        )
+      )||(
+        filterData.title && (
+          (
+            filterData.title.including &&
+            !filterData.title.including.every((text) => data.title.toLowerCase().includes(text.toLowerCase()))
+          )||(
+            filterData.title.excluding &&
+            filterData.title.excluding.some((text) => data.title.toLowerCase().includes(text.toLowerCase()))
+          )
+        )
+      )||(
+        filterData.author && (
+          (
+            filterData.author.including &&
+            !filterData.author.including.includes(data.author.username.toLowerCase())
+          )||(
+            filterData.author.excluding &&
+            filterData.author.excluding.includes(data.author.username.toLowerCase())
+          )
+        )
+      )
+    );
   }
 
-  async function filterStudio(url, element) {
-    let data = apiCache[url];
-    if (!data) {
-      data = await (
-        await fetch(`${url.replace("scratch.mit.edu", "api.scratch.mit.edu")}`)
-      ).json();
-      apiCache[url] = data;
-    }
-    if (
-      (filterData.period.shareStart &&
-        filterData.period.shareStart > data.history.created.split("T")[0]) ||
-      (filterData.period.shareEnd &&
-        filterData.period.shareEnd < data.history.created.split("T")[0]) ||
-      (filterData.period.updateStart &&
-        filterData.period.updateStart > data.history.modified.split("T")[0]) ||
-      (filterData.period.updateEnd &&
-        filterData.period.updateEnd < data.history.modified.split("T")[0]) ||
-      (filterData.title.including &&
-        !filterData.title.including.every((text) =>
-          data.title.includes(text)
-        )) ||
-      (filterData.title.excluding &&
-        filterData.title.excluding.some((text) => data.title.includes(text)))
-    )
-      element.classList.add("ste-filter-hide");
-    else if (element.classList.contains("ste-filter-hide"))
-      element.classList.remove("ste-filter-hide");
+  function checkStudio(data) {
+    return (
+      filterData !== null &&
+      (
+        filterData.period && (
+          (
+            filterData.period.shareStart &&
+            filterData.period.shareStart > data.history.shared.split("T")[0]
+          )||(
+            filterData.period.shareEnd &&
+            filterData.period.shareEnd < data.history.shared.split("T")[0]
+          )||(
+            filterData.period.updateStart &&
+            filterData.period.updateStart > data.history.modified.split("T")[0]
+          )||(
+            filterData.period.updateEnd &&
+            filterData.period.updateEnd < data.history.modified.split("T")[0]
+          )
+        )
+      )||(
+        filterData.author && (
+          (
+            filterData.author.including &&
+            !filterData.author.including.includes(data.author.username.toLowerCase())
+          )||(
+            filterData.author.excluding &&
+            filterData.author.excluding.includes(data.author.username.toLowerCase())
+          )
+        )
+      )
+    );
   }
+
 
   async function filter() {
+    console.log(filterData)
+    if (!filterData) {
+      return document.querySelectorAll(".ste-filter-hide").forEach((element) => {
+        element.classList.remove("ste-filter-hide");
+      });
+    }
     switch (page[1]) {
       case "search":
       case "explore": {
         if (page[2] === "projects")
           document.querySelectorAll(".thumbnail.project").forEach((element) => {
-            let link = element.querySelector("a.thumbnail-image");
-            filterProject(link.href, element);
+            filterItem("project", element);
           });
         else if (page[2] === "studios")
           document.querySelectorAll(".thumbnail.gallery").forEach((element) => {
-            let link = element.querySelector("a.thumbnail-image");
-            filterStudio(link.href, element);
+            filterItem("studio", element);
           });
         break;
       }
       case "studios": {
         document.querySelectorAll(".studio-project-tile").forEach((element) => {
-          let link = element.querySelector("a.studio-project-title");
-          filterProject(link.href, element);
+          filterItem("project", element);
         });
         break;
       }
-      default:
-        break;
     }
   }
+
+  async function filterItem(type, element) {
+    if (!filterData) return;
+    let href = element.querySelector("a").href;
+    let data = apiCache[href];
+    if (!data) {
+      data = await (await fetch(`${href.replace("scratch.mit.edu", "api.scratch.mit.edu")}`)).json();
+      apiCache[href] = data;
+    }
+    if (data.code === "NotFound") return element.classList.add("ste-filter-hide");
+    if (type === "project" && await checkProject(data) || type === "studio" && await checkStudio(data))
+      element.classList.add("ste-filter-hide");
+    else if (element.classList.contains("ste-filter-hide"))
+      element.classList.remove("ste-filter-hide");
+  }
+
+  filterStyleSheet(feature.settings.get("filter-operation") || "blur");
+  feature.settings.addEventListener("changed", function ({ key, value }) {
+    if (key == "filter-operation") filterStyleSheet(value);
+  });
   async function filterStyleSheet(filterType) {
     let app = await ScratchTools.waitForElement("#app");
-
     if (filterType === "hide") {
       app.classList.add("ste-filter-mode-hide");
       app.classList.remove("ste-filter-mode-blur");
@@ -132,62 +153,106 @@ export default async function ({ feature, console }) {
     }
   }
 
-  feature.settings.addEventListener("changed", function ({ key, value }) {
-    if (key == "filter-operation") filterStyleSheet(value);
-  });
 
-  page = window.location.pathname.split("/");
-  if (feature.settings.get("keep-settings") === true)
-    filterData = await ScratchTools.storage.get("project-filter");
-  if (!filterData) filterData = JSON.parse(filterDefault);
-  else
-    switch (page[1]) {
-      case "search":
-      case "explore": {
-        if (page[2] === "projects")
-          ScratchTools.waitForElements(".thumbnail.project", (element) => {
-            let link = element.querySelector("a.thumbnail-image");
-            filterProject(link.href, element);
-          });
-        else if (page[2] === "studios") {
-          ScratchTools.waitForElements(".thumbnail.gallery", (element) => {
-            let link = element.querySelector("a.thumbnail-image");
-            filterStudio(link.href, element);
-          });
-          options = [
-            {
-              icon: "title-icon",
-              id: "title",
-            },
-            {
-              icon: "calendar-icon",
-              id: "period",
-            },
-          ];
-        }
-        break;
-      }
-
-      case "studios": {
-        ScratchTools.waitForElements(".studio-project-tile", (element) => {
-          let link = element.querySelector("a.studio-project-title");
-          filterProject(link.href, element);
+  if (feature.settings.get("keep-settings") === true) filterData = await ScratchTools.storage.get("project-filter");
+  switch (page[1]) {
+    case "search":
+    case "explore": {
+      if (page[2] === "projects")
+        ScratchTools.waitForElements(".thumbnail.project", (element) => {
+          filterItem("project", element);
         });
-        break;
+      else if (page[2] === "studios") {
+        ScratchTools.waitForElements(".thumbnail.gallery", (element) => {
+          filterItem("studio", element);
+        });
+        options = [
+          {
+            icon: "title-icon",
+            id: "title",
+          },
+          {
+            icon: "calendar-icon",
+            id: "period",
+          },
+        ];
       }
-
-      default:
-        break;
+      break;
     }
+
+    case "studios": {
+      ScratchTools.waitForElements(".studio-project-tile", (element) => {
+        filterItem("project", element);
+      });
+      break;
+    }
+  }
+
 
   const filterButton = document.createElement("div");
   filterButton.classList.add("ste-filter-button");
   const filterIcon = document.createElement("img");
   filterIcon.src = feature.self.getResource("filter-icon");
+  filterButton.appendChild(filterIcon);
   const filterText = document.createElement("p");
   filterText.textContent = feature.msg("filter");
-  filterButton.appendChild(filterIcon);
   filterButton.appendChild(filterText);
+  feature.self.hideOnDisable(filterButton)
+
+  const controlBar = document.createElement("div");
+  controlBar.classList.add("ste-filter-bar");
+  if (!filterData) controlBar.style.display = "none";
+  else filterButton.classList.add("active");
+
+  filterButton.addEventListener("click", () => {
+    if (controlBar.style.display == "none") {
+      controlBar.style.display = "flex";
+      filterButton.classList.add("active");
+    } else {
+      controlBar.style.display = "none";
+      if (filterButton.classList.contains("active"))
+        filterButton.classList.remove("active");
+    }
+  });
+
+  const filterSettings = document.createElement("div");
+  filterSettings.classList.add("ste-filter-settings");
+  options.forEach((option) => {
+    const button = document.createElement("div");
+    button.classList.add("ste-filter-button");
+    if (filterData)
+      if (filterData[option.id])
+        if (Object.keys(filterData[option.id]).length !== 0)
+          button.classList.add("active");
+
+    const icon = document.createElement("img");
+    icon.src = feature.self.getResource(option.icon);
+    button.appendChild(icon);
+    const text = document.createElement("p");
+    text.textContent = feature.msg(option.id);
+    button.appendChild(text);
+
+    button.addEventListener("click", function () {
+      optionButtonClick(option.id, button);
+    });
+    filterSettings.appendChild(button);
+  });
+
+  const resetButton = document.createElement("div");
+  resetButton.style.marginLeft = "20px"
+  resetButton.classList.add('ste-filter-button');
+  const resetButtonText = document.createElement("p");
+  resetButtonText.classList.add('ste-reset');
+  resetButtonText.textContent = feature.msg("reset");
+  resetButton.appendChild(resetButtonText);
+  resetButton.addEventListener("click", function () {
+    optionButtonClick("reset", resetButton);
+  })
+
+  filterSettings.appendChild(resetButton);
+  controlBar.appendChild(filterSettings);
+  feature.self.hideOnDisable(controlBar)
+
 
   function optionButtonClick(id, button) {
     function createDetails(label) {
@@ -226,7 +291,7 @@ export default async function ({ feature, console }) {
         });
         tags.appendChild(tag);
       }
-      if (filterData[id][type]?.length >= 0)
+      if (filterData?.[id]?.[type])
         filterData[id][type].forEach(addTag);
 
       const addButton = document.createElement("button");
@@ -234,8 +299,11 @@ export default async function ({ feature, console }) {
       addButton.textContent = "+";
       addButton.addEventListener("click", function () {
         if (!input.value) return;
-        if (!filterData[id][type]) filterData[id][type] = [];
-        filterData[id][type].push(input.value);
+        
+        filterData = filterData ?? {};
+        filterData[id] = filterData[id] ?? {};
+        filterData[id][type] = filterData[id][type] ?? [];
+        filterData[id][type].push(input.value.toLowerCase());
         addTag(input.value);
         input.value = "";
         filter();
@@ -251,7 +319,7 @@ export default async function ({ feature, console }) {
 
     switch (id) {
       case "reset": {
-        filterData = JSON.parse(filterDefault);
+        filterData = null;
         document
           .querySelectorAll(".ste-filter-bar .ste-filter-button.active")
           .forEach((element) => {
@@ -314,20 +382,23 @@ export default async function ({ feature, console }) {
           const input = document.createElement("input");
           input.type = "date";
           input.style.margin = "0 10px";
-          if (filterData.period[id]) input.value = filterData.period[id];
-          input.addEventListener("change", function () {
+          if (filterData?.period?.[id]) input.value = filterData.period[id];
+          input.addEventListener("change", () => {
             if (input.value) {
-              filterData["period"][id] = input.value;
+              filterData = filterData ?? {};
+              filterData.period = filterData.period ?? {};
+              filterData.period[id] = input.value;
               button.classList.add("active");
             } else if (filterData.period[id]) delete filterData.period[id];
             filter();
           });
           const resetButton = document.createElement("button");
           resetButton.textContent = feature.msg("reset");
-          resetButton.addEventListener("click", function () {
+          resetButton.addEventListener("click", () => {
             input.value = "";
             if (filterData.period[id]) delete filterData.period[id];
             if (Object.keys(filterData["period"]).length == 0) {
+              delete filterData.period
               if (button.classList.contains("active"))
                 button.classList.remove("active");
             }
@@ -366,64 +437,9 @@ export default async function ({ feature, console }) {
         });
         break;
       }
-
-      default:
-        break;
     }
   }
 
-  const controlBar = document.createElement("div");
-  controlBar.classList.add("ste-filter-bar");
-  if (JSON.stringify(filterData) === filterDefault)
-    controlBar.style.display = "none";
-  else filterButton.classList.add("active");
-  const filterSettings = document.createElement("div");
-  filterSettings.classList.add("ste-filter-settings");
-  options.forEach((option) => {
-    const icon = document.createElement("img");
-    icon.src = feature.self.getResource(option.icon);
-
-    const text = document.createElement("p");
-    text.textContent = feature.msg(option.id);
-
-    const button = document.createElement("div");
-    button.classList.add("ste-filter-button");
-    if (filterData[option.id])
-      if (Object.keys(filterData[option.id]).length !== 0)
-        button.classList.add("active");
-    button.appendChild(icon);
-    button.appendChild(text);
-
-    button.addEventListener("click", function () {
-      optionButtonClick(option.id, button);
-    });
-
-        filterSettings.appendChild(button);
-    });
-    const resetButton = document.createElement("div");
-    resetButton.style.marginLeft = "20px"
-    resetButton.classList.add('ste-filter-button');
-    const resetButtonText = document.createElement("p");
-    resetButtonText.textContent = feature.msg("reset");
-    resetButtonText.classList.add('ste-reset');
-    resetButton.appendChild(resetButtonText);
-    resetButton.addEventListener("click", function() {
-        optionButtonClick("reset", resetButton);
-    })
-    filterSettings.appendChild(resetButton);
-
-  controlBar.appendChild(filterSettings);
-
-  filterButton.addEventListener("click", function () {
-    if (controlBar.style.display == "none") {
-      controlBar.style.display = "flex";
-      filterButton.classList.add("active");
-    } else {
-      controlBar.style.display = "none";
-      if (filterButton.classList.contains("active"))
-        filterButton.classList.remove("active");
-    }
-  });
 
   switch (page[1]) {
     case "search":
@@ -469,16 +485,12 @@ export default async function ({ feature, console }) {
       });
       break;
     }
-
-    default:
-      break;
   }
 
   window.addEventListener("beforeunload", async function (event) {
     if (
       feature.settings.get("keep-settings") === true &&
-      JSON.stringify(filterData) !==
-        JSON.stringify(await ScratchTools.storage.get("project-filter"))
+      JSON.stringify(filterData) !== JSON.stringify(await ScratchTools.storage.get("project-filter"))
     )
       await ScratchTools.storage.set({
         key: "project-filter",
