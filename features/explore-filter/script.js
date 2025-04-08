@@ -95,7 +95,6 @@ export default async function ({ feature }) {
 
 
   async function filter() {
-    console.log(filterData)
     if (!filterData) {
       return document.querySelectorAll(".ste-filter-hide").forEach((element) => {
         element.classList.remove("ste-filter-hide");
