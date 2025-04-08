@@ -80,13 +80,13 @@ export default async function ({ feature }) {
           )
         )
       )||(
-        filterData.author && (
+        filterData.title && (
           (
-            filterData.author.including &&
-            !filterData.author.including.includes(data.author.username.toLowerCase())
+            filterData.title.including &&
+            !filterData.title.including.every((text) => data.title.toLowerCase().includes(text.toLowerCase()))
           )||(
-            filterData.author.excluding &&
-            filterData.author.excluding.includes(data.author.username.toLowerCase())
+            filterData.title.excluding &&
+            filterData.title.excluding.some((text) => data.title.toLowerCase().includes(text.toLowerCase()))
           )
         )
       )
@@ -131,6 +131,7 @@ export default async function ({ feature }) {
       apiCache[href] = data;
     }
     if (data.code === "NotFound") return element.classList.add("ste-filter-hide");
+    console.log(await checkStudio(data))
     if (type === "project" && await checkProject(data) || type === "studio" && await checkStudio(data))
       element.classList.add("ste-filter-hide");
     else if (element.classList.contains("ste-filter-hide"))
