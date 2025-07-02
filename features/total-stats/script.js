@@ -1,51 +1,77 @@
-export default async function ({ feature, console }) {
-    let div = await ScratchTools.waitForElement("div.box.slider-carousel-container")
-    if (!document.querySelector("#profile-data")) return;
+export default async function ({ feature }) {
+  await ScratchTools.waitForElement(".box-head");
 
-    let stats = await getStats(Scratch.INIT_DATA.PROFILE.model.username)
-    
-    let span = document.createElement("span")
-    span.textContent = stats.loves.toLocaleString() + " loves • " + stats.favorites.toLocaleString() + " favorites • " + stats.views.toLocaleString() + " views"
-    span.className = "ste-total-stats"
-    feature.self.hideOnDisable(span)
-    div.querySelector(".box-head").insertBefore(span, div.querySelector("a"))
+  const username = window.location.pathname.split("/")[2];
+  const res = await fetch(
+    `https://scratchdata.vercel.app/api/user-stats/${username}`
+  );
+  if (!res.ok) return;
 
-    async function getProjects(user) {
-        let projects = []
-        let offset = 0
-        let keepGoing = true
+  const data = await res.json();
+  const format = (n) => n.toLocaleString();
 
-        while (keepGoing) {
-            let data = await (await fetch(`https://api.scratch.mit.edu/users/${user}/projects?limit=40&offset=${offset.toString()}`)).json()
+  const box = document.createElement("div");
+  box.className = "ste-box ste-prevent-select";
 
-            projects.push(...data)
+  const boxHead = document.createElement("div");
+  boxHead.className = "ste-box-head";
 
-            if (data.length === 40) {
-                offset += 40
-            } else {
-                keepGoing = false
-            }
-        }
+  const heading = document.createElement("h4");
+  heading.textContent = "Total Project Stats";
 
-        return projects
-    }
+  boxHead.appendChild(heading);
+  box.appendChild(boxHead);
 
-    async function getStats(user) {
-        let projects = await getProjects(user)
-        let stats = {
-            loves: 0,
-            favorites: 0,
-            remixes: 0,
-            views: 0,
-        }
+  const boxContent = document.createElement("div");
+  boxContent.className = "ste-box-content ste-tps-content";
 
-        for (var i in projects) {
-            stats.loves += projects[i].stats.loves
-            stats.favorites += projects[i].stats.favorites
-            stats.remixes += projects[i].stats.remixes
-            stats.views += projects[i].stats.views
-        }
+  const stats = [
+    {
+      src: "https://scratch.mit.edu/svgs/project/love-red.svg",
+      alt: "Loves",
+      value: data.totalLoves,
+    },
+    {
+      src: "https://scratch.mit.edu/svgs/project/fav-yellow.svg",
+      alt: "Favorites",
+      value: data.totalFavorites,
+    },
+    {
+      src: "https://scratch.mit.edu/svgs/project/views-gray.svg",
+      alt: "Views",
+      value: data.totalViews,
+    },
+    {
+      src: "https://raw.githubusercontent.com/scratchfoundation/scratch-www/a9cf52cd7fbec834897587dd9e17d648ba0a38b2/static/svgs/messages/remix.svg",
+      alt: "Remixes",
+      value: data.totalRemixes,
+    },
+  ];
 
-        return stats
-    }
+  for (const stat of stats) {
+    const statDiv = document.createElement("div");
+    statDiv.className = "ste-tps-stat";
+
+    const img = document.createElement("img");
+    img.src = stat.src;
+    img.width = 32;
+    img.height = 32;
+    img.alt = stat.alt;
+
+    const valueDiv = document.createElement("div");
+    valueDiv.textContent = format(stat.value);
+    valueDiv.className = "ste-tps-value";
+
+    statDiv.appendChild(img);
+    statDiv.appendChild(valueDiv);
+    boxContent.appendChild(statDiv);
+  }
+
+  box.appendChild(boxContent);
+
+  const boxHeads = document.querySelectorAll(".box-head");
+  if (boxHeads.length >= 5) {
+    const targetBox = boxHeads[4].parentNode;
+    targetBox.parentNode.insertBefore(box, targetBox.nextSibling);
+  }
 }
