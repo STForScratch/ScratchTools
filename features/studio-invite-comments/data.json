@@ -1,0 +1,17 @@
+{
+  "title": "Invite to Studio from Comments",
+  "description": "Adds an invite option next to report on studio comments.",
+  "credits": [
+    {
+      "username": "Masaabu-YT",
+      "url": "https://scratch.mit.edu/users/Masaabu-YT/"
+    },
+    { "username": "MaterArc", "url": "https://scratch.mit.edu/users/MaterArc/" }
+  ],
+  "type": ["Website"],
+  "tags": ["Studio", "Invite", "Curators"],
+  "dynamic": true,
+  "styles": [{ "file": "style.css", "runOn": "/studios/*" }],
+  "scripts": [{ "file": "script.js", "runOn": "/studios/*" }],
+  "resources": [{ "name": "invite", "path": "/invite.svg" }]
+}
