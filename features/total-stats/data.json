@@ -3,10 +3,6 @@
   "description": "Displays a box on user profiles showing the total loves, favorites, views, and remixes across all their shared projects.",
   "credits": [
     {
-      "username": "RowanMoonBoy",
-      "url": "https://scratch.mit.edu/users/RowanMoonBoy/"
-    },
-    {
       "username": "MaterArc",
       "url": "https://scratch.mit.edu/users/MaterArc/"
     }
@@ -14,6 +10,12 @@
   "type": ["Website"],
   "tags": ["New", "Featured"],
   "dynamic": true,
+  "styles": [
+    {
+      "file": "style.css",
+      "runOn": "/users/*"
+    }
+  ],
   "scripts": [
     {
       "file": "script.js",
