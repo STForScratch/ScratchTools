@@ -1,0 +1,43 @@
+.ste-box {
+  background: var(--profile-box-background, #fff);
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgb(0 0 0 / 0.1);
+  margin-top: 12px;
+  user-select: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.ste-box-head {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--profile-box-border, #ddd);
+}
+
+.ste-box-head h4 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--profile-box-title-color, #333);
+}
+
+.ste-box-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 15px 8px;
+}
+
+.ste-tps-stat {
+  text-align: center;
+}
+
+.ste-tps-stat img {
+  width: 32px;
+  height: 32px;
+}
+
+.ste-tps-value {
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 6px;
+  color: var(--profile-box-text-color, #222);
+}
