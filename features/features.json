@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "total-stats",
+    "versionAdded": "v4.2.0"
+  },
+  {
+    "version": 2,
     "id": "copy-paste-lists",
     "versionAdded": "v4.2.0"
   },
@@ -157,11 +162,6 @@
   {
     "version": 2,
     "id": "project-descriptions",
-    "versionAdded": "v3.8.0"
-  },
-  {
-    "version": 2,
-    "id": "total-stats",
     "versionAdded": "v3.8.0"
   },
   {
