@@ -9,7 +9,7 @@
     { "username": "MaterArc", "url": "https://scratch.mit.edu/users/MaterArc/" }
   ],
   "type": ["Website"],
-  "tags": ["Studio", "Invite", "Curators"],
+  "tags": ["New", "Featured"],
   "dynamic": true,
   "styles": [{ "file": "style.css", "runOn": "/studios/*" }],
   "scripts": [{ "file": "script.js", "runOn": "/studios/*" }],
