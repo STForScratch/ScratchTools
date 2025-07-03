@@ -1,7 +1,22 @@
-.ste-total-stats {
-    font-weight: 500;
-    opacity: .6;
-    margin-left: 1rem;
-    font-style: italic;
-    font-size: .9rem;
+.ste-tps-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 99.5px;
+}
+
+.ste-tps-stat {
+  text-align: center;
+  display: flex;
+}
+
+.ste-tps-stat img {
+  display: block;
+}
+
+.ste-tps-value {
+  font-size: 21px;
+  font-weight: 600;
+  margin-top: 5px;
+  margin-left: 10px;
 }
