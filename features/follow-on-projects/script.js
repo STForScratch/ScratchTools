@@ -30,11 +30,11 @@ export default async function ({ feature, console }) {
           (following ? "Unfollow" : "Follow") + " " + username;
         let data = await (
           await fetch(
-            "https://scratch.mit.edu/site-api/users/followers/rgantzosTEST/remove/?usernames=" +
+            "https://scratch.mit.edu/site-api/users/followers/" + username + "/remove/?usernames=" +
               auth.user.username,
             {
               headers: {
-                "x-csrftoken": "VZ0lgYGuLZzG5nD4nNirmbbze7CulCmP",
+                "x-csrftoken": document.cookie.match(/scratchcsrftoken=([^;]+)/)?.[1],
                 "x-requested-with": "XMLHttpRequest",
               },
               referrer: "https://scratch.mit.edu/users/" + username + "/",
@@ -53,15 +53,14 @@ export default async function ({ feature, console }) {
           (following ? "Unfollow" : "Follow") + " " + username;
         let data = await (
           await fetch(
-            "https://scratch.mit.edu/site-api/users/followers/rgantzosTEST/add/?usernames=" +
+            "https://scratch.mit.edu/site-api/users/followers/" + username + "/add/?usernames=" +
               auth.user.username,
             {
               headers: {
-                "x-csrftoken": "VZ0lgYGuLZzG5nD4nNirmbbze7CulCmP",
+                "x-csrftoken": document.cookie.match(/scratchcsrftoken=([^;]+)/)?.[1],
                 "x-requested-with": "XMLHttpRequest",
               },
               referrer: "https://scratch.mit.edu/users/" + username + "/",
-              body: '{"id":"' + username + '"}',
               method: "PUT",
               mode: "cors",
               credentials: "include",
