@@ -426,7 +426,7 @@ ScratchTools.waitForElements(
           scratchClass("menu_hoverable_");
 
         var div = document.createElement("div");
-        div.className = "settings-menu_option_3rMur";
+        div.className = "settings-menu_option_GGukG";
 
         var icon = document.createElement("img");
         icon.src = ScratchTools.icons.main;
