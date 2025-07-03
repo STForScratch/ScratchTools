@@ -8,6 +8,7 @@
 
 .ste-tps-stat {
   text-align: center;
+  display: flex;
 }
 
 .ste-tps-stat img {
@@ -15,7 +16,8 @@
 }
 
 .ste-tps-value {
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 600;
-  margin-top: 6px;
+  margin-top: 5px;
+  margin-left: 10px;
 }
