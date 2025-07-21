@@ -575,7 +575,7 @@
   },
   {
     "title": "Frontpage Curator Name as Link",
-    "description": "Makes the name of the Frontpage Curator to a clickable link to his profile.",
+    "description": "Turns the Front Page Curator's name into a clickable link to their profile.",
     "credits": ["Dr_Lego"],
     "urls": ["https://scratch.mit.edu/users/Dr_Lego/"],
     "file": "frontpage-curator",
