@@ -9,9 +9,27 @@ export default async function ({ feature, console }) {
     ).json()
   ).profile.country;
 
-  ScratchTools.waitForElements("div.thumbnail.project", detectCountry);
+  async function getLanguage(country) {
+    try {
+      const res = await fetch(
+        `https://data.scratchtools.app/language/${encodeURIComponent(country)}?fullText=true`
+      );
+      if (!res.ok) return null;
+      const data = await res.json();
+      if (data && data[0] && data[0].languages) {
+        return Object.values(data[0].languages)[0];
+      }
+      return null;
+    } catch {
+      return null;
+    }
+  }
 
-  async function detectCountry(element) {
+  const myLanguage = await getLanguage(myCountry);
+
+  ScratchTools.waitForElements("div.thumbnail.project", detectLanguage);
+
+  async function detectLanguage(element) {
     let author = element.querySelector(".thumbnail-creator a");
 
     let data = await (
@@ -23,7 +41,9 @@ export default async function ({ feature, console }) {
       )
     ).json();
 
-    if (data.profile.country !== myCountry) {
+    const authorLanguage = await getLanguage(data.profile.country);
+
+    if (authorLanguage !== myLanguage) {
       element.classList.add("ste-outside-country");
       if (feature.settings.get("hide-completely")) {
         element.classList.add("ste-country-hide");
@@ -35,7 +55,6 @@ export default async function ({ feature, console }) {
 
   feature.settings.addEventListener("changed", function ({ key, value }) {
     if (key === "hide-completely") {
-      console.log(value);
       if (value) {
         document
           .querySelectorAll(".ste-outside-country")
@@ -51,6 +70,6 @@ export default async function ({ feature, console }) {
   });
 
   feature.addEventListener("enabled", function() {
-    ScratchTools.waitForElements("div.thumbnail.project", detectCountry);
+    ScratchTools.waitForElements("div.thumbnail.project", detectLanguage);
   })
 }
