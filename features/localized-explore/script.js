@@ -12,7 +12,7 @@ export default async function ({ feature, console }) {
   async function getLanguage(country) {
     try {
       const res = await fetch(
-        `https://restcountries.com/v3.1/name/${encodeURIComponent(country)}?fullText=true`
+        `https://data.scratchtools.app/language/${encodeURIComponent(country)}?fullText=true`
       );
       if (!res.ok) return null;
       const data = await res.json();
