@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "className": "ste-search-user",
+    "features": [
+      "advanced-search"
+    ]
+  },
+  {
+    "className": "ste-search-user-pfp",
+    "features": [
+      "advanced-search"
+    ]
+  },
+  {
+    "className": "ste-search-user-data",
+    "features": [
+      "advanced-search"
+    ]
+  },
+  {
+    "className": "ste-search-user-username",
+    "features": [
+      "advanced-search"
+    ]
+  },
+  {
+    "className": "ste-search-user-bio",
+    "features": [
+      "advanced-search"
+    ]
+  },
+  {
+    "className": "ste-search-user-btn",
+    "features": [
+      "advanced-search"
+    ]
+  },
+  {
+    "className": "ste-search-border-top",
+    "features": [
+      "advanced-search"
+    ]
+  }
+]
