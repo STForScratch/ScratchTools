@@ -19,7 +19,12 @@ function traverseDir(dir) {
       const regex = /className\(["'`](.*?)["'`]\)/g;
       let match;
       while ((match = regex.exec(content)) !== null) {
-        collected.add("ste-" + match[1].replaceAll(" ", "-"));
+        collected.add({
+          className: "ste-" + match[1].replaceAll(" ", "-"),
+          features: [
+            dir.split("/features/")[1].split("/")[0].replaceAll(".js", ""),
+          ],
+        });
       }
     }
   }
@@ -27,6 +32,14 @@ function traverseDir(dir) {
 
 traverseDir(rootDir);
 
-// Write results
-fs.writeFileSync(outputFile, JSON.stringify([...collected], null, 2));
-console.log(`✅ Extracted ${collected.size} class names to ${outputFile}`);
+const mergedFeatures = Object.values(
+    [...collected].reduce((acc, item) => {
+      if (!acc[item.className]) {
+        acc[item.className] = { className: item.className, features: new Set() };
+      }
+      item.features.forEach(f => acc[item.className].features.add(f));
+      return acc;
+    }, {})
+  ).map(obj => ({ className: obj.className, features: [...obj.features] }));
+
+fs.writeFileSync(outputFile, JSON.stringify(mergedFeatures, null, 2));

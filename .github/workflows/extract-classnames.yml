@@ -8,6 +8,7 @@ on:
 
 jobs:
   extract:
+    if: github.repository == 'STForScratch/ScratchTools'
     runs-on: ubuntu-latest
 
     steps:
