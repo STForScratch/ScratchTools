@@ -6,9 +6,7 @@ on:
       - "features/**.js"
   workflow_dispatch:
 
-permissions:
-  contents: write
-  pull-requests: write
+permissions: {}
 
 jobs:
   extract:
@@ -26,7 +24,7 @@ jobs:
       - name: Run extraction script
         run: node .github/scripts/extract-classnames.js
 
-      - name: Check for changes in class-names.json
+      - name: Check for changes
         id: check_changes
         run: |
           if git diff --quiet --exit-code class-names.json; then
@@ -39,9 +37,10 @@ jobs:
         if: steps.check_changes.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
+          token: ${{ secrets.BOT_TOKEN }}
           commit-message: "Update class-names.json"
           branch: update-class-names
           title: "Update class names"
-          body: "Automated update of class-names.json"
+          body: "Automated update of class-names.json to keep track of ScratchTools class names across all features."
           labels: automated
           delete-branch: true
