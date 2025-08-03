@@ -6,7 +6,9 @@ on:
       - "features/**.js"
   workflow_dispatch:
 
-permissions: {}
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
   extract:
@@ -24,8 +26,8 @@ jobs:
       - name: Run extraction script
         run: node .github/scripts/extract-classnames.js
 
-      - name: Check for changes in class-names.json
-        id: check_changes
+      - name: Check for changes
+        id: git-diff
         run: |
           if git diff --quiet --exit-code class-names.json; then
             echo "changed=false" >> $GITHUB_OUTPUT
@@ -33,54 +35,14 @@ jobs:
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
-      - name: Configure Git to use bot token
-        if: steps.check_changes.outputs.changed == 'true'
-        env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-        run: |
-          git config user.name "your-bot-username"
-          git config user.email "bot@example.com"
-          git remote set-url origin https://x-access-token:${BOT_TOKEN}@github.com/${{ github.repository }}
-          git fetch origin main
-          git checkout -B update-class-names origin/main
-
-      - name: Commit changes
-        if: steps.check_changes.outputs.changed == 'true'
-        run: |
-          git add class-names.json
-          git commit -m "Update class-names.json" || echo "No changes to commit"
-
-      - name: Push update-class-names branch
-        if: steps.check_changes.outputs.changed == 'true'
-        env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-        run: |
-          git push origin update-class-names --force
-
-      - name: Create or update pull request
-        if: steps.check_changes.outputs.changed == 'true'
-        env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          REPO: ${{ github.repository }}
-        run: |
-          PR_EXISTS=$(curl -s -H "Authorization: token ${BOT_TOKEN}" \
-            -H "Accept: application/vnd.github.v3+json" \
-            "https://api.github.com/repos/${REPO}/pulls?head=${{ github.repository_owner }}:update-class-names" | jq 'length')
-
-          if [ "$PR_EXISTS" -eq 0 ]; then
-            # Create PR if none exists
-            curl -s -X POST \
-              -H "Authorization: token ${BOT_TOKEN}" \
-              -H "Accept: application/vnd.github.v3+json" \
-              "https://api.github.com/repos/${REPO}/pulls" \
-              -d @- <<EOF
-{
-  "title": "Update class-names.json",
-  "head": "update-class-names",
-  "base": "main",
-  "body": "Automated update of class-names.json"
-}
-EOF
-          else
-            echo "PR already exists, no need to create."
-          fi
+      - name: Create or Update Pull Request
+        if: steps.git-diff.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Update class-names.json"
+          branch: update-class-names
+          title: "Update class names"
+          body: "Automated update of class-names.json"
+          labels: automated
+          assignees: rgantzos
+          delete-branch: true
