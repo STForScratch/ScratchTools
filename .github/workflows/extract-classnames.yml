@@ -6,6 +6,9 @@ on:
       - "features/**.js"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   extract:
     if: github.repository == 'STForScratch/ScratchTools'
