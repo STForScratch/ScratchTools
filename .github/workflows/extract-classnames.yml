@@ -26,8 +26,8 @@ jobs:
       - name: Run extraction script
         run: node .github/scripts/extract-classnames.js
 
-      - name: Check for changes
-        id: git-diff
+      - name: Check for changes in class-names.json
+        id: check_changes
         run: |
           if git diff --quiet --exit-code class-names.json; then
             echo "changed=false" >> $GITHUB_OUTPUT
@@ -36,13 +36,12 @@ jobs:
           fi
 
       - name: Create or Update Pull Request
-        if: steps.git-diff.outputs.changed == 'true'
+        if: steps.check_changes.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
-          commit-message: "Update class names file"
+          commit-message: "Update class-names.json"
           branch: update-class-names
-          title: "Update class-names.json"
+          title: "Update class names"
           body: "Automated update of class-names.json"
           labels: automated
-          assignees: rgantzos
           delete-branch: true
