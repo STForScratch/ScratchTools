@@ -1,0 +1,23 @@
+{
+  "title": "Picture in Picture",
+  "description": "Adds a button to the project page that allows you to open the stage up and continue to view it while using other tabs or apps.",
+  "credits": [
+    {
+      "username": "stio_studio",
+      "url": "https://stio.studio/"
+    }
+  ],
+  "type": [
+    "Website"
+  ],
+  "tags": [
+    "New",
+    "Featured"
+  ],
+  "scripts": [
+    {
+      "file": "picture-in-picture.js",
+      "runOn": "/projects/*"
+    }
+  ]
+}

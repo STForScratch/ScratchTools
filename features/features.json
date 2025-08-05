@@ -1,6 +1,21 @@
 [
   {
     "version": 2,
+    "id": "picture-in-picture",
+    "versionAdded": "v5.0.0"
+  },
+  {
+    "version": 2,
+    "id": "mutual-following",
+    "versionAdded": "v5.0.0"
+  },
+  {
+    "version": 2,
+    "id": "studio-invite-comments",
+    "versionAdded": "v4.2.0"
+  },
+  {
+    "version": 2,
     "id": "copy-paste-lists",
     "versionAdded": "v5.0.0"
   },
@@ -578,7 +593,7 @@
   },
   {
     "title": "Frontpage Curator Name as Link",
-    "description": "Makes the name of the Frontpage Curator to a clickable link to his profile.",
+    "description": "Turns the Front Page Curator's name into a clickable link to their profile.",
     "credits": ["Dr_Lego"],
     "urls": ["https://scratch.mit.edu/users/Dr_Lego/"],
     "file": "frontpage-curator",
