@@ -1,6 +1,4 @@
 export default async function ({ feature, console, className }) {
-    window.feature = feature
-
     let auth = await feature.auth.fetch()
     if (!auth?.user?.username) return console.log("User not logged in.");
 
