@@ -1,0 +1,50 @@
+.ste-mutual-following-container {
+    margin-left: .5rem;
+    display: inline-block;
+}
+
+.ste-mutual-following-container img {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: .35rem;
+    margin-right: -.25rem;
+    position: relative;
+    top: .25rem;
+    position: relative;
+    z-index: calc(30 - var(--i));
+}
+
+.ste-mutual-following-container span {
+    margin-left: .75rem;
+    opacity: .5;
+    font-style: italic;
+    position: relative;
+    top: -.1rem;
+    font-weight: 500;
+}
+
+
+.ste-mutual-followers-container {
+    margin-left: .5rem;
+    display: inline-block;
+}
+
+.ste-mutual-followers-container img {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: .35rem;
+    margin-right: -.25rem;
+    position: relative;
+    top: .25rem;
+    position: relative;
+    z-index: calc(30 - var(--i));
+}
+
+.ste-mutual-followers-container span {
+    margin-left: .75rem;
+    opacity: .5;
+    font-style: italic;
+    position: relative;
+    top: -.1rem;
+    font-weight: 500;
+}
