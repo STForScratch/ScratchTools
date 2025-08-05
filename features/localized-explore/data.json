@@ -1,8 +1,9 @@
 {
   "title": "Projects from Country",
-  "description": "On the explore page, makes projects from other countries less visible. This is to only show projects in languages that you understand.",
+  "description": "On the explore page, makes projects from countries that speak other languages less visible.",
   "credits": [
-    { "username": "EiramC", "url": "https://scratch.mit.edu/users/EiramC/" },
+    { "username": "MaterArc", "url": "https://scratch.mit.edu/users/MaterArc/" },
+    { "username": "KitsunLilly", "url": "https://scratch.mit.edu/users/KitsunLilly/" },
     { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
   ],
   "type": ["Website"],

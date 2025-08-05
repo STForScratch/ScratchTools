@@ -509,3 +509,26 @@ span.new-feature-tag.beta {
 .option-selection span:last-child {
   border-inline-end: none;
 }
+
+/* Support */
+
+.support-vid {
+  color: #ff9f00 !important;
+  opacity: .5;
+  cursor: pointer;
+  position: relative;
+    top: -.25rem;
+    margin-bottom: .25rem;
+    display: block;
+}
+
+.support-vid:hover {
+  opacity: 1;
+}
+
+.support-vid img {
+  height: 1rem;
+  margin-left: .25rem;
+  position: relative;
+  top: .3rem;
+}

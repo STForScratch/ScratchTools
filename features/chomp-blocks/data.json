@@ -1,5 +1,5 @@
 {
-  "title": "Extend Wrapped C Blocks",
+  "title": "Extend C Blocks",
   "description": "Automatically extends C blocks to wrap around blocks that it is being placed over when dragging.",
   "credits": [
     {
@@ -10,5 +10,8 @@
   "tags": [],
   "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
   "dynamic": true,
-  "type": ["Editor"]
+  "type": ["Editor"],
+  "support": {
+    "yt": "https://youtu.be/6sl-Q0ZYYyQ"
+  }
 }

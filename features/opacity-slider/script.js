@@ -1,4 +1,4 @@
-export default function ({ feature, console }) {
+export default function ({ feature, console, scratchClass }) {
   ScratchTools.waitForElements(".Popover-body", function (body) {
     if (!feature.traps.paint().modals.fillColor) return;
     if (!feature.traps.paint().selectedItems[0]) return;
@@ -11,15 +11,15 @@ export default function ({ feature, console }) {
     feature.self.hideOnDisable(div);
 
     let data = document.createElement("div");
-    data.className = "color-picker_row-header_173LQ";
+    data.className = scratchClass("color-picker_row-header_");
     div.appendChild(data);
 
     let name = document.createElement("span");
-    name.className = "color-picker_label-name_17igY";
+    name.className = scratchClass("color-picker_label-name_");
     name.textContent = "Opacity";
 
     let value = document.createElement("span");
-    value.className = "color-picker_label-readout_9vjb2";
+    value.className = scratchClass("color-picker_label-readout_");
     value.textContent = Math.floor(
       (feature.traps.paint().selectedItems[0]?.opacity || 1) * 100
     )?.toString();
@@ -29,7 +29,7 @@ export default function ({ feature, console }) {
 
     let slider = document.createElement("div");
     slider.className =
-      "ste-opacity-slider-checkered slider_container_o2aIb slider_last_10jvO";
+      `ste-opacity-slider-checkered ${scratchClass("slider_container_")} ${scratchClass("slider_last_")}`;
     div.appendChild(slider);
 
     let sliderBg = document.createElement("div");
@@ -41,7 +41,7 @@ export default function ({ feature, console }) {
 
     let handle = document.createElement("div");
     handleSlider(handle, value);
-    handle.className = "ste-opacity-handle slider_handle_3f0xk";
+    handle.className = `ste-opacity-handle ${scratchClass("slider_handle_")}`;
     handle.style.left = "124px";
     if (feature.traps.paint().selectedItems[0]?.opacity) {
       handle.style.left =

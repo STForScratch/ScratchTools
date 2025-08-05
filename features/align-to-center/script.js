@@ -1,11 +1,12 @@
 export default async function ({ feature, console }) {
   const availableWidth = 405;
+  const blankChar = "\u2800";
 
   function getSpaceWidth() {
     const span = document.createElement("span");
     span.style.visibility = "hidden";
     span.style.whiteSpace = "pre";
-    span.textContent = " ";
+    span.textContent = blankChar;
     document.body.appendChild(span);
     const spaceWidth = span.getBoundingClientRect().width;
     document.body.removeChild(span);
@@ -26,7 +27,7 @@ export default async function ({ feature, console }) {
   function clearCenterAlignment(textarea) {
     const lines = textarea.value.split("\n");
     const uncenteredLines = lines.map((line) => {
-      return line.replace(/^\s+/, "");
+      return line.replace(/^[\s\u2800]+/, "");
     });
     textarea.value = uncenteredLines.join("\n");
   }
@@ -49,7 +50,7 @@ export default async function ({ feature, console }) {
           const textWidth = getTextWidth(line);
           const totalSpaces = (availableWidth - textWidth) / spaceWidth / 2;
           const spaces =
-            totalSpaces > 0 ? " ".repeat(Math.floor(totalSpaces)) : "";
+            totalSpaces > 0 ? blankChar.repeat(Math.floor(totalSpaces)) : "";
           return spaces + line;
         });
         activeElement.value = centeredLines.join("\n");

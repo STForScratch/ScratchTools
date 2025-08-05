@@ -1,4 +1,4 @@
-export default async function ({ feature }) {
+export default async function ({ feature, scratchClass }) {
   ScratchTools.waitForElements(
     "div[class^='mode-tools_mod-labeled-icon-height_']",
     function (row) {
@@ -6,12 +6,12 @@ export default async function ({ feature }) {
 
       let span = document.createElement("span");
       span.className =
-        "button_button_u6SE2 labeled-icon-button_mod-edit-field_1bXYC ste-align-items";
+        `${scratchClass("button_button_")} ${scratchClass("labeled-icon-button_mod-edit-field_")} ste-align-items`;
       span.role = "button";
 
       let img = document.createElement("img");
       img.src = feature.self.getResource("paint-align");
-      img.className = "labeled-icon-button_edit-field-icon_3j-Pf";
+      img.className = scratchClass("labeled-icon-button_edit-field-icon_");
       img.alt = feature.msg("align");
       img.title = feature.msg("align");
       img.draggable = false;
@@ -19,7 +19,7 @@ export default async function ({ feature }) {
 
       let label = document.createElement("span");
       label.textContent = feature.msg("align");
-      label.className = "labeled-icon-button_edit-field-title_1ZoEV";
+      label.className = scratchClass("labeled-icon-button_edit-field-title_");
       span.appendChild(label);
 
       span.addEventListener("click", function (e) {

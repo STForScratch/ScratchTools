@@ -1,0 +1,63 @@
+{
+  "active": true,
+  "title": "Project Page Changes for {{ version }}",
+  "description": "ScratchTools is introducing many new project page and editor features that will revolutionize the way that you use Scratch. You can enable them on the settings page.",
+  "changes": [
+    {
+      "icon": "gradient.svg",
+      "slogan": "Rotate gradient colors in the paint editor"
+    },
+    {
+      "icon": "align.svg",
+      "slogan": "Align shapes and objects in the paint editor"
+    },
+    {
+      "icon": "align.svg",
+      "slogan": "Quickly center text in your project instructions"
+    },
+    {
+      "icon": "extend.svg",
+      "slogan": "Extend C-blocks around code when dragging them"
+    },
+    {
+      "icon": "filesize.svg",
+      "slogan": "View file sizes for any asset"
+    },
+    {
+      "icon": "font.svg",
+      "slogan": "Use dozens of extra fonts in the paint editor"
+    },
+    {
+      "icon": "nocloud.svg",
+      "slogan": "Temporarily disable cloud variables in projects"
+    },
+    {
+      "icon": "opacity.svg",
+      "slogan": "Customize the opacity of stage variable monitors"
+    },
+    {
+      "icon": "outline.svg",
+      "slogan": "Customize and round lines and shape outlines"
+    },
+    {
+      "icon": "reaction.svg",
+      "slogan": "Add and view emoji reactions on any project"
+    },
+    {
+      "icon": "record.svg",
+      "slogan": "Record and save videos of your project stage"
+    },
+    {
+      "icon": "shapes.svg",
+      "slogan": "Unite, subtract, intersect, and exclude shapes"
+    },
+    {
+      "icon": "thumbnail.svg",
+      "slogan": "Upload custom project thumbnails"
+    },
+    {
+      "icon": "upload.svg",
+      "slogan": "Upload WEBP images as costumes and sprites"
+    }
+  ]
+}

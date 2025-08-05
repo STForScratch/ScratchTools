@@ -6,6 +6,9 @@ class Feature {
         finalFeature = el;
       }
     });
+    this.requestPermissions = async function(...permissions) {
+      return await ScratchTools.sendMessage("request-perms", permissions)
+    }
     this.data = finalFeature;
     this.msg = function (string) {
       return this.data.localesData[`${this.data.id}/`+string] || `ScratchTools.${this.data.id}.${string}`;
@@ -80,6 +83,15 @@ class Feature {
     this.tab = {
       path: window.location.pathname,
       scratch: document.querySelector("#app") ? 3 : 2,
+    }
+    this.getInternals = function(element) {
+      let reactKey = Object.keys(element).find((key) => key.startsWith("__reactInternalInstance"))
+      if (!reactKey) return null;
+
+      return element[reactKey]
+    }
+    this.getInternalKey = function(element) {
+      return Object.keys(element).find((key) => key.startsWith("__reactInternalInstance")) || null
     }
     this.redux = document.querySelector("#app")?.[
         Object.keys(app).find((key) => key.startsWith("__reactContainer"))

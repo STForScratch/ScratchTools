@@ -1,4 +1,7 @@
-export default async function ({ feature, console }) {
+export default async function ({ feature, console, scratchClass }) {
+  let randomBlockColorsEnabled = !!ScratchTools.modules.find((el) => el.feature.id === "random-block-colors")
+  if (randomBlockColorsEnabled) return;
+  
   let CIRCLE = await (await fetch(feature.self.getResource("circle"))).text();
 
   let COLORS = document.createElement("link")
@@ -118,18 +121,18 @@ export default async function ({ feature, console }) {
 
           let li = document.createElement("li");
           li.dataset.id = THEMES[i].id;
-          li.className = "menu_menu-item_3EwYA menu_hoverable_3u9dt ste-custom";
+          li.className = `${scratchClass("menu_menu-item_")} ${scratchClass("menu_hoverable_")} ste-custom`;
 
           let div = document.createElement("div");
-          div.className = "settings-menu_option_3rMur";
+          div.className = scratchClass("settings-menu_option_");
 
           let check = document.createElement("img");
-          check.className = "settings-menu_check_3ssaq";
+          check.className = scratchClass("settings-menu_check_");
           check.src = feature.self.getResource("check");
 
           let img = document.createElement("span");
           img.innerHTML = CIRCLE.replaceAll("-fill", "-circle-fill" + THEMES[i].id).replaceAll("-stroke", "-circle-stroke-" + THEMES[i].id);
-          img.className = "settings-menu_icon_3QaRk";
+          img.className = scratchClass("settings-menu_icon_");
 
           let circleCSS = document.createElement("style");
           circleCSS.textContent = css.replaceAll("-fill", "-circle-fill" + THEMES[i].id).replaceAll("-stroke", "-circle-stroke-" + THEMES[i].id)

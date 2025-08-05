@@ -1,4 +1,4 @@
-export default async function ({ feature, console }) {
+export default async function ({ feature, console, scratchClass }) {
   let { default: openTypeDefault } = await import(
     "../../libraries/opentype.js"
   );
@@ -9,6 +9,7 @@ export default async function ({ feature, console }) {
   feature.page.waitForElements(
     "div[class^='asset-panel_wrapper_'] div[class^='action-menu_more-buttons_']",
     function (menu) {
+      if (feature.traps.gui().editorTab.activeTabIndex !== 1) return;
       if (menu.querySelector(".ste-more-fonts")) return;
 
       let div = document.createElement("div");
@@ -25,20 +26,20 @@ export default async function ({ feature, console }) {
       button.currentitem = false;
       button.ariaLabel = "Add Font";
       button.className =
-        "action-menu_button_1qbot action-menu_more-button_1fMGZ ste-more-fonts-btn";
+        `${scratchClass("action-menu_button_")} ${scratchClass("action-menu_more-button_")} ste-more-fonts-btn`;
       div.appendChild(button);
 
       let img = Object.assign(document.createElement("img"), {
         src: feature.self.getResource("more-text-icon"),
         draggable: false,
-        className: "action-menu_more-icon_TJUQ7",
+        className: scratchClass("action-menu_more-icon_"),
         width: 10,
       });
       button.appendChild(img);
 
       let tooltip = Object.assign(document.createElement("div"), {
         className:
-          "__react_component_tooltip place-right type-dark action-menu_tooltip_3Bkh5",
+          `__react_component_tooltip place-right type-dark ${scratchClass("action-menu_tooltip_")}`,
         id: `ste-${id}-Add Font`,
         textContent: "Add Font",
       });

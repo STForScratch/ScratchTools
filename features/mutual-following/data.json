@@ -1,0 +1,12 @@
+{
+  "title": "Mutual Following",
+  "description": "See your mutual following with other users on their profiles.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "dynamic": true,
+  "scripts": [{ "file": "script.js", "runOn": "/users/*", "module": true }],
+  "styles": [{ "file": "style.css", "runOn": "/users/*" }]
+}

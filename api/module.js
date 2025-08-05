@@ -1,6 +1,30 @@
 let allFeatures = []
 let alreadyInjected = [];
 
+function scratchClass(name) {
+  let element = document.querySelector(`[class*='${name}']`);
+  if (element) {
+    let classes = [...element.classList];
+    return classes.find((el) => el.includes(name));
+  } else {
+    let text = []
+
+    for (var i in ScratchTools.cssFiles) {
+      text.push(ScratchTools.cssFiles[i].data)
+    }
+
+    text = text.join("\n\n")
+    let classes = ScratchTools.getClassNamesFromCSSText(text)
+
+    let relClass = classes.find((el) => el.includes(name))
+    return relClass
+  }
+}
+
+function className(name) {
+  return "ste-" + name.toLowerCase().replaceAll(" ", "-")
+}
+
 ScratchTools.modules.forEach(async function (script) {
   var feature = await import(ScratchTools.dir + "/api/feature/index.js");
   var shouldBeRun = true;
@@ -20,6 +44,8 @@ ScratchTools.modules.forEach(async function (script) {
         allFeatures.push(featureGenerated)
         fun.default({
           feature: featureGenerated,
+          scratchClass,
+          className,
           console: {
             log: function (content) {
               ste.console.log(content, script.feature.id);
@@ -56,6 +82,8 @@ ScratchTools.injectModule = async function (script) {
         allFeatures.push(featureGenerated)
         fun.default({
           feature: featureGenerated,
+          scratchClass,
+          className,
           console: {
             log: function (content) {
               ste.console.log(content, script.feature.id);

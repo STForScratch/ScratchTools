@@ -17,6 +17,13 @@
     { "file": "three.js", "runOn": "/studios/*" },
     { "file": "two.js", "runOn": "/users/*" }
   ],
-  "options": [{ "id": "colorComment", "name": "Highlight Comments", "type": 1 }],
+  "options": [
+    { "id": "colorComment", "name": "Highlight Comments", "type": 1 },
+    {
+      "id": "dontHideStudioComments",
+      "name": "Don't Hide Studio Comments",
+      "type": 1
+    }
+  ],
   "similar": ["important-messages", "block-messages"]
 }

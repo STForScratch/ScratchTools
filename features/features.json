@@ -2,7 +2,58 @@
   {
     "version": 2,
     "id": "picture-in-picture",
+    "versionAdded": "v5.0.0"
+  },
+  {
+    "version": 2,
+    "id": "mutual-following",
+    "versionAdded": "v5.0.0"
+  },
+  {
+    "version": 2,
+    "id": "studio-invite-comments",
+    "versionAdded": "v4.2.0"
+  },
+  {
+    "version": 2,
+    "id": "copy-paste-lists",
+    "versionAdded": "v4.2.0"
+  },
+  {
+    "version": 2,
+    "id": "random-block-colors",
+    "versionAdded": "v4.1.0"
+  },
+  {
+    "version": 2,
+    "id": "remove-confirmation",
     "versionAdded": "v4.0.0"
+  },
+  {
+    "version": 2,
+    "id": "outline-shape-options",
+    "versionAdded": "v4.0.0"
+  },
+  {
+    "version": 2,
+    "id": "more-paint-functions",
+    "versionAdded": "v4.0.0"
+  },
+  {
+    "version": 2,
+    "id": "asset-size",
+    "versionAdded": "v4.0.0"
+  },
+  {
+    "version": 2,
+    "id": "disable-cloud",
+    "versionAdded": "v4.0.0"
+  },
+  {
+    "version": 2,
+    "id": "webp-uploads",
+    "versionAdded": "v4.0.0"
+  },
   {
     "version": 2,
     "id": "remaining-replies",
@@ -539,7 +590,7 @@
   },
   {
     "title": "Frontpage Curator Name as Link",
-    "description": "Makes the name of the Frontpage Curator to a clickable link to his profile.",
+    "description": "Turns the Front Page Curator's name into a clickable link to their profile.",
     "credits": ["Dr_Lego"],
     "urls": ["https://scratch.mit.edu/users/Dr_Lego/"],
     "file": "frontpage-curator",

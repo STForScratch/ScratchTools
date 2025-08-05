@@ -13,7 +13,7 @@ ScratchTools.waitForElements(
     if (!document.querySelector(".st-new-title-input") && !document.querySelector("span[class*='menu-bar_remix-button_']")) {
       var input = document.createElement("input");
       input.className =
-        "input_input-form_l9eYg project-title-input_title-field_en5Gd menu-bar_title-field-growable_3qr4G";
+        `${scratchClass("input_input-form_")} ${scratchClass("project-title-input_title-field_")} ${scratchClass("menu-bar_title-field-growable_")}`;
       input.value = window.newTitle || ScratchTools.Scratch.scratchGui().projectTitle;
       input.placeholder = "Title";
       input.style.width = "100%";

@@ -1,0 +1,13 @@
+{
+    "title": "Disable Cloud",
+    "description": "Allows you to disable cloud data on any project. This will still receive cloud data information, but will not send any.",
+    "credits": [
+      { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+    ],
+    "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+    "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
+    "type": ["Editor"],
+    "tags": ["New", "Featured"],
+    "dynamic": true
+  }
+  
