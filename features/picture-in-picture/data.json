@@ -14,19 +14,10 @@
     "New",
     "Featured"
   ],
-  "dynamic": true,
   "scripts": [
     {
       "file": "picture-in-picture.js",
       "runOn": "/projects/*"
-    }
-  ],
-  "resources": [{ "name": "popup-html", "path": "/popup.html" }],
-  "options": [
-    {
-      "id": "interactivity-PiP",
-      "name": "Make the project in picture popup interactive. (Experimental)",
-      "type": 1
     }
   ]
 }
