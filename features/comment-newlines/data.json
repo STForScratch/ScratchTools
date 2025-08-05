@@ -1,0 +1,12 @@
+{
+  "title": "Comment Newlines",
+  "description": "Allows you to view and use multiple lines in comments, rather than just one row of text.",
+  "credits": [
+    { "username": "rgantzos", "url": "https://scratch.mit.edu/users/rgantzos/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New"],
+  "dynamic": true,
+  "scripts": [{ "file": "script.js", "runOn": "/users/*", "module": true }],
+  "styles": [{ "file": "style.css", "runOn": "/*" }]
+}
