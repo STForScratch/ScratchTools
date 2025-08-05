@@ -40,5 +40,17 @@
     "features": [
       "advanced-search"
     ]
+  },
+  {
+    "className": "ste-mutual-following-container",
+    "features": [
+      "mutual-following"
+    ]
+  },
+  {
+    "className": "ste-mutual-followers-container",
+    "features": [
+      "mutual-following"
+    ]
   }
 ]
