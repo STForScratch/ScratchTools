@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "mutual-following",
+    "versionAdded": "v5.0.0"
+  },
+  {
+    "version": 2,
     "id": "studio-invite-comments",
     "versionAdded": "v4.2.0"
   },
