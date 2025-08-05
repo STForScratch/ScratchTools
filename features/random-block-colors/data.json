@@ -1,0 +1,28 @@
+{
+  "title": "Random Block Colors",
+  "description": "Swaps around the colors of all the blocks each time you press the green flag!",
+  "credits": [
+    {
+      "username": "Alan",
+      "url": "https://www.youtube.com/watch?v=z54AmH9Yi78&feature=youtu.be"
+    }
+  ],
+  "type": ["Editor", "Egg"],
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }],
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+  "resources": [
+    { "name": "check", "path": "/check.svg" },
+    { "name": "circle", "path": "/circle.svg" },
+    { "name": "colors", "path": "/colors.css" }
+  ],
+  "components": [
+    {
+      "type": "info",
+      "content": "This is an April Fool's Day feature. It was likely enabled automatically on April 1st, but you may disable it if you'd like."
+    },
+    {
+      "type": "warning",
+      "content": "This feature is not compatible with the \"More Block Themes\" feature. You will not be able to use other block themes while this feature is enabled."
+    }
+  ]
+}

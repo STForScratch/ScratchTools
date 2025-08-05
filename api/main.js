@@ -101,6 +101,23 @@ if (
   ScratchTools.type = "Website";
 }
 
+ScratchTools.MESSAGES = []
+ScratchTools.sendMessage = function(id, content) {
+  let uuid = UUID()
+  chrome.runtime.sendMessage(ScratchTools.id, { message: id, content, source: "message-api", uuid });
+  return new Promise((resolve, reject) => {
+    ScratchTools.MESSAGES.push({ message: id, source: "message-api", uuid, resolve });
+  });
+}
+
+function UUID() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (char) {
+      const random = Math.random() * 16 | 0;
+      const value = char === 'x' ? random : (random & 0x3 | 0x8);
+      return value.toString(16);
+  });
+}
+
 var storagePromises = [];
 ScratchTools.storage = {
   get: async function (key) {
@@ -409,7 +426,7 @@ ScratchTools.waitForElements(
           scratchClass("menu_hoverable_");
 
         var div = document.createElement("div");
-        div.className = "settings-menu_option_3rMur";
+        div.className = "settings-menu_option_GGukG";
 
         var icon = document.createElement("img");
         icon.src = ScratchTools.icons.main;

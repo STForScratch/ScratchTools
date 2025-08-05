@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+.ste-update-bg {
+    display: block;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 2147483646;
+    width: 100vw;
+    height: 100vh;
+    background: #00000080;
+}
+
+.ste-update-box {
+    all: unset; /* Reset inherited styles */
+  box-sizing: border-box;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: white;
+    padding: 32px;
+    border-radius: 12.8px;
+    z-index: 2147483647;
+    width: calc(40 * 16px);
+    max-width: calc(100% - calc(8 * 16px));
+    max-height: calc(100% - calc(8 * 16px));
+    overflow-y: auto;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.ste-update-box > div:first-child img {
+    height: calc(2 * 16px);
+    float: right;
+}
+
+.ste-update-box * {
+    font-family: "Inter", sans-serif !important;
+    text-shadow: none !important;
+}
+
+.ste-update-box h2 {
+    position: relative;
+    top: calc(.4 * -16px);
+    margin-bottom: 20px;
+    color: black;
+    font-size: calc(2 * 16px);
+}
+
+.ste-update-box .rows div {
+    display: flex;
+        vertical-align: middle;
+        margin-bottom: calc(2 * 16px);
+        align-items: center;
+        break-inside: avoid
+}
+
+.ste-update-box h2 span.color {
+    background: -webkit-linear-gradient(#ff8c2d, #ffb740);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ste-update-box .rows div p {
+    color: black;
+    margin: 0px;
+    font-weight: 600;
+    font-size: calc(1 * 16px);
+    margin-left: calc(.8 * 16px);
+}
+
+.ste-update-box > p {
+    color: black;
+    opacity: .6;
+    margin-top: 0px;
+    margin-bottom: calc(1 * 16px);
+    position: relative;
+    top: calc(1 * -16px);
+}
+
+.ste-update-box > p > b {
+    font-weight: 600;
+}
+
+.ste-update-box .rows img {
+    height: calc(2 * 16px);
+}
+
+.ste-update-box .rows {
+    column-count: 2;
+    column-gap: calc(2 * 16px);
+    margin-bottom: calc(2 * 16px);
+    max-height: calc(14 * 16px);
+    overflow-y: hidden;
+}
+
+.ste-update-box > button {
+    background: linear-gradient(0.25turn, #ff8c2d, #ffb740);
+    color: white;
+    width: 100%;
+    outline: none;
+    border: 0px;
+    padding: calc(.8 * 16px);
+    border-radius: calc(.5 * 16px);
+    cursor: pointer;
+    font-weight: 600;
+    transition: background .3s, opacity .3s;
+    line-height: 24px;
+    height: 48px;
+    font-size: 16px;
+}
+
+.ste-update-box > button:hover {
+    background: linear-gradient(0.25turn, #ffb740, #ff8c2d);
+    opacity: .7;
+}
+
+.ste-update-box .view-more {
+    height: calc(5 * 16px);
+    width: 100%;
+    background: linear-gradient(360deg, white, transparent);
+    position: relative;
+    top: calc(-8 * 16px);
+    margin-bottom: calc(-4 * 16px);
+}
+
+.ste-update-box .view-more span {
+    position: absolute;
+    left: 50%;
+    top: calc(50% + calc(3 * 16px));
+    transform: translateX(-50%) translateY(-150%);
+    font-size: calc(1 * 16px);
+    font-weight: 600;
+    color: black;
+    opacity: .65;
+    cursor: pointer;
+}

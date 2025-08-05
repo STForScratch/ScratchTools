@@ -1,24 +1,24 @@
-async function checkIfUser() {
+export default async function ({ feature, console, className }) {
   var search = new URLSearchParams(window.location.search).get("q");
   var user = await (
     await fetch(`https://api.scratch.mit.edu/users/${search}/`)
   ).json();
   if (user.username) {
     var div = document.createElement("div");
-    div.className = "ste-search-user";
+    div.className = className("search user");
     var pfp = document.createElement("img");
     pfp.src = user.profile.images["90x90"];
-    pfp.className = "ste-search-user-pfp";
+    pfp.className = className("search user pfp");
 
     var data = document.createElement("div");
-    data.className = "ste-search-user-data";
+    data.className = className("search user data");
 
     var span = document.createElement("span");
-    span.className = "ste-search-user-username";
+    span.className = className("search user username");
     span.textContent = `@${user.username}`;
     var p = document.createElement("p");
     p.textContent = user.profile.bio;
-    p.className = "ste-search-user-bio";
+    p.className = className("search user bio");
 
     div.appendChild(pfp);
     data.appendChild(span);
@@ -26,7 +26,7 @@ async function checkIfUser() {
     div.appendChild(data);
 
     var a = document.createElement("a");
-    a.className = "ste-search-user-btn";
+    a.className = className("search user btn");
     a.href = `/users/${user.username}/`;
     var button = document.createElement("button");
     button.className = "button";
@@ -35,10 +35,10 @@ async function checkIfUser() {
     div.appendChild(a);
 
     var outerDiv = document.createElement("div");
-    outerDiv.className = "ste-search-border-top";
+    outerDiv.className = className("search border top");
     outerDiv.appendChild(div);
 
-    ScratchTools.waitForElements(
+    feature.page.waitForElements(
       "div.sort-controls",
       function (box) {
         if (!box.querySelector(".ste-search-user")) {
@@ -50,4 +50,3 @@ async function checkIfUser() {
     );
   }
 }
-checkIfUser();

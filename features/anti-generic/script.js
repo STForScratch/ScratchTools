@@ -37,6 +37,12 @@ export default async function ({ feature, console }) {
         title.includes("singing") ||
         title.includes("scratched out") ||
         title.includes("ost") ||
+        title.includes("sprunki") ||
+        title.includes("incredibox") ||
+        title.includes("skibidi") ||
+        title.includes("phase ") ||
+        title.includes("+)") ||
+        (title.includes("digital") && title.includes("circus")) ||
         (title.includes("dark") && title.includes("platformer")) ||
         (title.includes("generic") && title.includes("platformer")) ||
         (title.includes("jungle") && title.includes("platformer")) ||
