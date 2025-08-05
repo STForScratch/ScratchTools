@@ -1,0 +1,11 @@
+ul.comments .comment .info .content:not(.ste-formatted-newline-comment) {
+    display: none !important;
+}
+
+.ste-formatted-newline-comment {
+    white-space: pre-wrap !important;
+}
+
+.flex-row.comments-list .comment .comment-content, .comment .comment-body .comment-content {
+    white-space: pre-wrap !important;
+}

@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "comment-newlines",
+    "versionAdded": "v5.0.0"
+  },
+  {
+    "version": 2,
     "id": "recent-followers-and-following",
     "versionAdded": "v5.0.0"
   },
@@ -22,7 +27,7 @@
   {
     "version": 2,
     "id": "copy-paste-lists",
-    "versionAdded": "v4.2.0"
+    "versionAdded": "v5.0.0"
   },
   {
     "version": 2,
@@ -87,7 +92,8 @@
   {
     "version": 2,
     "id": "align-to-center",
-    "versionAdded": "v4.0.0"
+    "versionAdded": "v4.0.0",
+    "versionUpdated": "v5.0.0"
   },
   {
     "version": 2,
@@ -243,7 +249,8 @@
   {
     "version": 2,
     "id": "follow-on-projects",
-    "versionAdded": "v3.5.0"
+    "versionAdded": "v3.5.0",
+    "versionUpdated": "v5.0.0"
   },
   {
     "version": 2,
@@ -323,7 +330,8 @@
   {
     "version": 2,
     "id": "localized-explore",
-    "versionAdded": "v3.2.0"
+    "versionAdded": "v3.2.0",
+    "versionUpdated": "v5.0.0"
   },
   {
     "version": 2,
