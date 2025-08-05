@@ -593,7 +593,7 @@ async function getFeatures() {
       span.textContent = "New";
       span.className = "new-feature-tag";
       div.classList.add("new-feature");
-      div.appendChild(span);
+      h3.appendChild(span);
     } else if (
       feature.versionUpdated?.replace("v", "") ===
       chrome.runtime.getManifest().version.toString()
@@ -601,7 +601,7 @@ async function getFeatures() {
       var span = document.createElement("span");
       span.textContent = "Updated";
       span.className = "new-feature-tag updated";
-      div.appendChild(span);
+      h3.appendChild(span);
     }
     if (feature.tags?.includes("Beta")) {
       var span = document.createElement("span");
