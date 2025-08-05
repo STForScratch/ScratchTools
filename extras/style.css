@@ -706,18 +706,22 @@ body[data-filter="Egg"] .feature[data-type*="Egg"] {
   background-color: var(--theme);
   color: white;
   padding: 0.25rem;
-  display: inline-block;
-  margin-left: 0.5rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  border-radius: 0.75rem;
+  display: inline;
+  font-size: .7rem;
+  border-radius: .4rem;
   position: relative;
-  top: -0.15rem;
-  line-height: normal;
+  top: -.15rem;
+  margin-left: .35rem;
   user-select: none;
   transition: opacity 0.3s, transform 0.3s;
   opacity: 1;
   transform: none;
+  text-transform: uppercase;
+}
+
+.feature span.new-feature-tag.updated {
+  filter: brightness(2.5);
+  color: black;
 }
 
 .feature span.new-feature-tag:hover {
