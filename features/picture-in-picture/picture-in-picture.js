@@ -1,4 +1,6 @@
 export default async function ({ feature, console }) {
+	const ALLOW_INTERACTIVITY = false
+
 	await new Promise(async (resolve, reject) => {
 		(async () => {
 			const rem = await ScratchTools.waitForElement(".preview .inner .flex-row.action-buttons")
@@ -38,7 +40,8 @@ export default async function ({ feature, console }) {
 
 	let popup;
 
-	if (feature.settings.get("interactivity-PiP")) {
+	// Code for allowing interactivity (not yet ready)
+	if (ALLOW_INTERACTIVITY) {
 		if (!"documentPictureInPicture" in window) console.error("Picture in Picture not supported")
 
 		let pipWindow
