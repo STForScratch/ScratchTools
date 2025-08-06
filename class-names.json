@@ -58,5 +58,17 @@
     "features": [
       "mutual-following"
     ]
+  },
+  {
+    "className": "ste-real-profile-date",
+    "features": [
+      "real-date"
+    ]
+  },
+  {
+    "className": "ste-hide-ago-real-date",
+    "features": [
+      "real-date"
+    ]
   }
 ]
