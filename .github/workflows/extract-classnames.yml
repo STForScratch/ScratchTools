@@ -17,6 +17,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false  # disable GITHUB_TOKEN so we can use BOT_TOKEN
 
       - name: Set up Git user for bot
         run: |
