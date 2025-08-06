@@ -1,0 +1,15 @@
+{
+  "title": "Real Profile Join Dates",
+  "description": "Displays the real join date on profiles instead of the relative times.",
+  "credits": [
+    {
+      "username": "rgantzos",
+      "url": "https://scratch.mit.edu/users/rgantzos/"
+    }
+  ],
+  "dynamic": true,
+  "scripts": [{ "file": "script.js", "runOn": "/users/*" }],
+  "styles": [{ "file": "style.css", "runOn": "/users/*" }],
+  "tags": ["New"],
+  "type": ["Website"]
+}
