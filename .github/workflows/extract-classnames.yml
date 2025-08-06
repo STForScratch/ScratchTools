@@ -18,17 +18,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          persist-credentials: false  # disable GITHUB_TOKEN so we can use BOT_TOKEN
-
-      - name: Set up Git user for bot
-        run: |
-          git config --global user.name "scratchtools-bot"
-          git config --global user.email "scratchtools-bot@users.noreply.github.com"
+          persist-credentials: false
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
+
+      - name: Generate GitHub App token
+        id: generate_token
+        uses: tibdex/github-app-token@v2
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+          installation_id: ${{ secrets.INSTALLATION_ID }}
 
       - name: Run extraction script
         run: node .github/scripts/extract-classnames.js
@@ -46,7 +50,7 @@ jobs:
         if: steps.git-diff.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
-          token: ${{ secrets.BOT_TOKEN }}
+          token: ${{ steps.generate_token.outputs.token }}
           commit-message: "Update class-names.json"
           branch: update-class-names
           title: "Update feature class names"
