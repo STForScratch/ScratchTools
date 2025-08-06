@@ -42,6 +42,12 @@
     ]
   },
   {
+    "className": "ste-formatted-newline-comment",
+    "features": [
+      "comment-newlines"
+    ]
+  },
+  {
     "className": "ste-mutual-following-container",
     "features": [
       "mutual-following"
