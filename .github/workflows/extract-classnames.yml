@@ -18,6 +18,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set up Git user for bot
+        run: |
+          git config --global user.name "scratchtools-bot"
+          git config --global user.email "scratchtools-bot@users.noreply.github.com"
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -39,10 +44,11 @@ jobs:
         if: steps.git-diff.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
+          token: ${{ secrets.BOT_TOKEN }}
           commit-message: "Update class-names.json"
           branch: update-class-names
-          title: "Update class names"
-          body: "Automated update of class-names.json"
+          title: "Update feature class names"
+          body: "Automated update of class-names.json to keep track of class names used across all features."
           labels: automated
           assignees: rgantzos
           delete-branch: true
