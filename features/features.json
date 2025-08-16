@@ -1281,15 +1281,8 @@
     "type": ["Editor"]
   },
   {
-    "title": "Round Profile Pictures",
-    "description": "All profile pictures on the Scratch website will be rounded.",
-    "credits": ["Scratchfangs", "rgantzos"],
-    "urls": [
-      "https://scratch.mit.edu/users/scratchfangs/",
-      "https://scratch.mit.edu/users/rgantzos/"
-    ],
-    "file": "round-profile-pictures",
-    "type": ["Website", "Theme"]
+    "id": "round-profile-pictures",
+    "version": 2
   },
   {
     "title": "Ocular Links in Forums",
