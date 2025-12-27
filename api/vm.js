@@ -3,14 +3,7 @@ ScratchTools.Scratch = {
   blockly: null,
 };
 try {
-  ScratchTools.Scratch.vm =
-    window.vm ||
-    (() => {
-      const app = document.querySelector("#app");
-      return app[
-        Object.keys(app).find((key) => key.startsWith("__reactContainer"))
-      ].child.stateNode.store.getState().scratchGui.vm;
-    })();
+  ScratchTools.Scratch.vm = window.vm || window.__steTraps._onceMap.vm;
   ste.console.log("Able to load Virtual Machine.", "ste-traps");
 } catch (err) {
   ste.console.warn("Unable to load Virtual Machine.", "ste-traps");
@@ -28,11 +21,16 @@ try {
 
 ScratchTools.Scratch.scratchSound = function () {
   try {
-    return document.querySelector("div.sound-editor_editor-container_iUSW-")[
+    let rI = document.querySelector("[class^=sound-editor_editor-container]")[
       Object.keys(
-        document.querySelector("div.sound-editor_editor-container_iUSW-")
-      ).find((key) => key.startsWith("__reactInternalInstance"))
-    ].return.return.return.stateNode;
+        document.querySelector("[class^=sound-editor_editor-container]")
+      ).find((key) => key.startsWith("__reactFiber"))
+    ];
+
+    while (!rI.stateNode?.audioBufferPlayer) {
+      rI = rI.return;
+    }
+    return rI.stateNode;
   } catch (err) {
     return null;
   }
@@ -40,10 +38,7 @@ ScratchTools.Scratch.scratchSound = function () {
 
 ScratchTools.Scratch.scratchGui = function () {
   try {
-    const app = document.querySelector("#app");
-    return app[
-      Object.keys(app).find((key) => key.startsWith("__reactContainer"))
-    ].child.stateNode.store.getState().scratchGui;
+    return window.__steRedux.state.scratchGui;
   } catch (err) {
     return null;
   }
@@ -176,46 +171,42 @@ ScratchTools.Scratch.waitForContextMenu = function (info) {
 };
 
 ScratchTools.Scratch.scratchPaint = function () {
-  var app = document.querySelector(".paint-editor_mode-selector_28iiQ")||document.querySelector(".paint-editor_mode-selector_O2uhP")||document.querySelector("[class*='paint-editor_mode-selector_']");
-  if (app !== null) {
-    return (
-      app[
-        Object.keys(app).find((key) =>
-          key.startsWith("__reactInternalInstance")
-        )
-      ].child.stateNode.store?.getState()?.scratchPaint || null
-    );
-  } else {
+  try {
+    return __steRedux.state.scratchPaint;
+  } catch (err) {
     return null;
   }
 };
 
-ScratchTools.Scratch.getPaper = function () {
-  let paintElement = document.querySelector(
-    "[class*='paint-editor_mode-selector']"
-  );
-  let paintState =
-    paintElement[
-      Object.keys(paintElement).find((key) =>
-        key.startsWith("__reactInternalInstance")
-      )
-    ].child;
+window.__paperCache = null
+
+async function getPaper() {
+  const modeSelector = document.querySelector("[class*='paint-editor_mode-selector']");
+  const internalState = modeSelector[Object.keys(modeSelector).find((el) => el.startsWith("__reactFiber"))].child;
+  let toolState = internalState;
   let tool;
-  while (paintState) {
-    let paintIn = paintState.child?.stateNode;
-    if (paintIn?.tool) {
-      tool = paintIn.tool;
+  while (toolState) {
+    const toolInstance = toolState.child.child.stateNode;
+    if (toolInstance.tool) {
+      tool = toolInstance.tool;
       break;
     }
-    if (paintIn?.blob && paintIn?.blob.tool) {
-      tool = paintIn.blob.tool;
+    if (toolInstance.blob && toolInstance.blob.tool) {
+      tool = toolInstance.blob.tool;
       break;
     }
-    paintState = paintState.sibling;
+    toolState = toolState.sibling;
   }
   if (tool) {
-    return tool._scope;
+    const paperScope = tool._scope;
+    window.__paperCache = paperScope
+    return paperScope;
   }
+  return null
+}
+
+ScratchTools.Scratch.getPaper = async function () {
+  return await getPaper()
 };
 
 async function alertForUpdates() {

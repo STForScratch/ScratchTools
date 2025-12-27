@@ -16,7 +16,7 @@ export default function ({ feature, console }) {
 
       button.style.display = !feature.redux.getState().preview.projectInfo.is_published ? "none" : null
 
-      feature.redux.subscribe(function() {
+      feature.redux.target.addEventListener("statechanged", function(e) {
         button.style.display = !feature.redux.getState().preview.projectInfo.is_published ? "none" : null
       })
 

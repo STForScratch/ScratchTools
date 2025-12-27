@@ -31,7 +31,8 @@ export default async function ({ feature, scratchClass }) {
     }
   );
 
-  feature.redux.subscribe(function () {
+  feature.redux.target.addEventListener("statechanged", function(e) {
+    if (e.detail.action.type.startsWith("scratch-paint/")) {
     if (document.querySelector(".ste-align-items")) {
       let span = document.querySelector(".ste-align-items");
 
@@ -44,9 +45,10 @@ export default async function ({ feature, scratchClass }) {
         span.classList.remove("button_mod-disabled_1rf31");
       }
     }
+  }
   });
 
-  function centerObjects(stay) {
+  async function centerObjects(stay) {
     let items = feature.traps.paint().selectedItems;
 
     let allX = [];
@@ -83,7 +85,7 @@ export default async function ({ feature, scratchClass }) {
       }
     }
 
-    feature.traps.getPaper().tool.onUpdateImage();
+    (await feature.traps.getPaper()).tool.onUpdateImage();
   }
 
   function getMidPoint(segments) {
