@@ -44,8 +44,8 @@ export default async function ({ feature, console, scratchClass }) {
     }
   );
 
-  function updateTheme(isDark) {
-    let paper = feature.traps.getPaper();
+  async function updateTheme(isDark) {
+    let paper = await feature.traps.getPaper();
 
     let backgroundLayer = paper.project.layers.find(
       (el) => el.data?.["isBackgroundGuideLayer"]

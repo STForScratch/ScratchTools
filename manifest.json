@@ -31,6 +31,14 @@
         "https://scratch.mit.edu/*"
       ],
       "run_at": "document_start",
+      "js": ["api/content/vm.js", "api/content/redux.js"],
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "https://scratch.mit.edu/*"
+      ],
+      "run_at": "document_start",
       "js": [
         "extras/inject-styles.js",
         "api/update/index.js"

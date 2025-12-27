@@ -53,13 +53,15 @@ export default async function ({ feature, console, scratchClass }) {
     }
   );
 
-  feature.redux.subscribe(function() {
-    if (!document.querySelector("div[class^='paint-editor_editor-container_']")) return;
+  feature.redux.target.addEventListener("statechanged", function(e) {
+    if (e.detail.action.type.startsWith("scratch-paint/")) {
+      if (!document.querySelector("div[class^='paint-editor_editor-container_']")) return;
 
-    if (!document.querySelector("div[class^='color-picker_gradient-picker-row_'][class*='color-picker_gradient-swatches-row_']") || feature.traps.paint().selectedItems[0]?.fillColor._components[0].radial || feature.traps.paint().selectedItems.length !== 1) {
-        document.querySelector(".ste-direction-slider")?.remove()
+      if (!document.querySelector("div[class^='color-picker_gradient-picker-row_'][class*='color-picker_gradient-swatches-row_']") || feature.traps.paint().selectedItems[0]?.fillColor._components[0].radial || feature.traps.paint().selectedItems.length !== 1) {
+          document.querySelector(".ste-direction-slider")?.remove()
+      }
     }
-})
+  })
 
   const rotateColor = function (amount) {
     let data = rotatePoints(
@@ -135,7 +137,7 @@ export default async function ({ feature, console, scratchClass }) {
       document.addEventListener("mousemove", onMouseMove);
       document.addEventListener("mouseup", onMouseUp);
 
-      function onMouseMove(e) {
+      async function onMouseMove(e) {
         if (isDragging) {
           const offsetX = e.clientX - initialX;
           let newLeft = handleLeft + offsetX;
@@ -143,7 +145,7 @@ export default async function ({ feature, console, scratchClass }) {
           newLeft = Math.max(0, Math.min(124, newLeft));
           
           rotateColor(Math.floor((newLeft / 124) * 360) - lastRotation)
-          update()
+          await update()
           lastRotation = Math.floor((newLeft / 124) * 360)
 
           value.textContent =
@@ -168,7 +170,7 @@ export default async function ({ feature, console, scratchClass }) {
       handle.addEventListener("touchmove", onTouchMove);
       handle.addEventListener("touchend", onTouchEnd);
 
-      function onTouchMove(e) {
+      async function onTouchMove(e) {
         if (isDragging) {
           const offsetX = e.touches[0].clientX - initialX;
           let newLeft = handleLeft + offsetX;
@@ -176,7 +178,7 @@ export default async function ({ feature, console, scratchClass }) {
           newLeft = Math.max(0, Math.min(124, newLeft));
 
           rotateColor(Math.floor((newLeft / 124) * 360) - lastRotation)
-          update()
+          await update()
           lastRotation = Math.floor((newLeft / 124) * 360)
 
           value.textContent =
@@ -194,7 +196,7 @@ export default async function ({ feature, console, scratchClass }) {
     });
   }
 
-  function update() {
-    feature.traps.getPaper().tool.onUpdateImage()
+  async function update() {
+    (await feature.traps.getPaper()).tool.onUpdateImage()
   }
 }

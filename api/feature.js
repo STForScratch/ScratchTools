@@ -93,9 +93,7 @@ class Feature {
     this.getInternalKey = function(element) {
       return Object.keys(element).find((key) => key.startsWith("__reactInternalInstance")) || null
     }
-    this.redux = document.querySelector("#app")?.[
-        Object.keys(app).find((key) => key.startsWith("__reactContainer"))
-      ].child.stateNode.store
+    this.redux = window.__steRedux
     if (finalFeature.version !== 2) {
       console.warn(
         `'${finalFeature.file}' does not use Feature v2. It is recommended that you use the newest version.`

@@ -1,6 +1,6 @@
 export default async function ({ feature, console, scratchClass }) {
-  function unite() {
-    let paper = feature.traps.getPaper();
+  async function unite() {
+    let paper = await feature.traps.getPaper();
     let items = paper.project.selectedItems;
 
     if (items.length !== 2) return;
@@ -18,8 +18,8 @@ export default async function ({ feature, console, scratchClass }) {
     paper.tool.onUpdateImage();
   }
 
-  function subtract() {
-    let paper = feature.traps.getPaper();
+  async function subtract() {
+    let paper = await feature.traps.getPaper();
     let items = paper.project.selectedItems;
 
     if (items.length !== 2) return;
@@ -37,8 +37,8 @@ export default async function ({ feature, console, scratchClass }) {
     paper.tool.onUpdateImage();
   }
 
-  function exclude() {
-    let paper = feature.traps.getPaper();
+  async function exclude() {
+    let paper = await feature.traps.getPaper();
     let items = paper.project.selectedItems;
 
     if (items.length !== 2) return;
@@ -56,8 +56,8 @@ export default async function ({ feature, console, scratchClass }) {
     paper.tool.onUpdateImage();
   }
 
-  function intersect() {
-    let paper = feature.traps.getPaper();
+  async function intersect() {
+    let paper = await feature.traps.getPaper();
     let items = paper.project.selectedItems;
 
     if (items.length !== 2) return;
@@ -112,23 +112,25 @@ export default async function ({ feature, console, scratchClass }) {
     }
   );
 
-  feature.redux.subscribe(function () {
-    if (document.querySelector(".ste-more-functions")) {
-      let span = document.querySelector(".ste-more-functions");
-      if (
-        feature.traps.paint().format === "BITMAP" ||
-        feature.traps.paint().selectedItems?.length < 2
-      ) {
-        document.querySelectorAll(".ste-more-functions").forEach(function (el) {
-          el.classList.add("button_mod-disabled_1rf31");
-        });
-      } else {
-        document.querySelectorAll(".ste-more-functions").forEach(function (el) {
-          el.classList.remove("button_mod-disabled_1rf31");
-        });
+  feature.redux.target.addEventListener("statechanged", function(e) {
+    if (e.detail.action.type.startsWith("scratch-paint/")) {
+      if (document.querySelector(".ste-more-functions")) {
+        let span = document.querySelector(".ste-more-functions");
+        if (
+          feature.traps.paint().format === "BITMAP" ||
+          feature.traps.paint().selectedItems?.length < 2
+        ) {
+          document.querySelectorAll(".ste-more-functions").forEach(function (el) {
+            el.classList.add("button_mod-disabled_1rf31");
+          });
+        } else {
+          document.querySelectorAll(".ste-more-functions").forEach(function (el) {
+            el.classList.remove("button_mod-disabled_1rf31");
+          });
+        }
       }
     }
-  });
+  })
 
   function makeButton({ name, icon, callback }) {
     let span = document.createElement("span");

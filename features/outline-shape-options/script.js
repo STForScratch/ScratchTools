@@ -4,8 +4,8 @@ export default async function ({ feature, console }) {
     Join: ["miter", "round", "bevel", "arcs", "miter-clip"],
   };
 
-  function createSection(type) {
-    const selectedItems = feature.traps.getPaper().project.selectedItems;
+  async function createSection(type) {
+    const selectedItems = (await feature.traps.getPaper()).project.selectedItems;
     const result = document.createElement("div");
     let strokeValue = undefined;
 
@@ -64,13 +64,13 @@ export default async function ({ feature, console }) {
 
   ScratchTools.waitForElements(
     "div[class*='color-picker_swatch-row_']",
-    function (element) {
+    async function (element) {
       if (feature.traps.paint().modals.fillColor) return;
-      if (feature.traps.getPaper().project.selectedItems.length < 1) return;
+      if ((await feature.traps.getPaper())?.project.selectedItems.length < 1) return;
       const dividerLine = document.createElement("div");
       dividerLine.classList.add("color-picker_divider_3a3qR");
-      const sectionCap = createSection("Cap");
-      const sectionJoin = createSection("Join");
+      const sectionCap = await createSection("Cap");
+      const sectionJoin = await createSection("Join");
 
       element.insertAdjacentElement("afterend", sectionJoin);
       element.insertAdjacentElement("afterend", sectionCap);

@@ -58,7 +58,8 @@ export default function ({ feature, console, scratchClass }) {
 
   let lastColor;
 
-  feature.redux.subscribe(function () {
+  feature.redux.target.addEventListener("statechanged", function(e) {
+    if (e.detail.action.type.startsWith("scratch-paint/")) {
     let slider = document.querySelector(".ste-opacity-background");
     let newColor =
       feature.traps.paint?.()?.selectedItems[0]?.fillColor?._canvasStyle;
@@ -66,6 +67,7 @@ export default function ({ feature, console, scratchClass }) {
     if (newColor === lastColor) return;
     lastColor = newColor;
     slider.style.background = `linear-gradient(270deg, ${lastColor} 0%, rgba(0, 0, 0, 0) 100%)`;
+    }
   });
 
   function handleSlider(handle, value) {
