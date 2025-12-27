@@ -32,7 +32,7 @@ export default async function ({ feature, console, scratchClass }) {
   if (firstTheme) {
     let css = await (await fetch(feature.self.getResource(firstTheme))).text();
 
-    feature.traps.gui().theme.theme = "default";
+    feature.traps.gui().settings.theme = "default";
     feature.traps.vm.emitWorkspaceUpdate();
 
     let style = document.createElement("style");
@@ -158,7 +158,7 @@ export default async function ({ feature, console, scratchClass }) {
               .classList?.remove(SELECTED_CLASS);
             this.querySelector("img").classList.add(SELECTED_CLASS);
 
-            feature.traps.gui().theme.theme = "default";
+            feature.traps.gui().settings.theme = "default";
             feature.traps.vm.emitWorkspaceUpdate();
             feature.traps.gui().menus.settingsMenu = false;
 

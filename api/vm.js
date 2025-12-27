@@ -231,19 +231,51 @@ async function alertForUpdates() {
   }
 }
 
-function getScratchBlocks() {
-  var blocksWrapper = document.querySelector(
-    'div[class^="gui_blocks-wrapper"]'
-  );
-  var key = Object.keys(blocksWrapper).find((key) =>
-    key.startsWith("__reactInternalInstance$")
-  );
-  const internal = blocksWrapper[key];
-  var recent = internal.child;
-  while (!recent.stateNode?.ScratchBlocks) {
-    recent = recent.child;
+window.__steScratchBlocks = null
+
+async function _getBlocksWrapperComponent() {
+  const BLOCKS_CLASS = '[class^="gui_blocks-wrapper"]';
+  let elem = document.querySelector(BLOCKS_CLASS);
+  if (!elem) {
+    elem = document.querySelector(BLOCKS_CLASS);
   }
-  return recent.stateNode.ScratchBlocks || null;
+  return _getBlocksComponent(elem);
+}
+
+function _getBlocksComponent(wrapper) {
+  const internal = wrapper[getInternalKey(wrapper)];
+  let childable = internal;
+  while (((childable = childable.child), !childable || !childable.stateNode || !childable.stateNode.ScratchBlocks)) {}
+  return childable;
+}
+
+function getInternalKey(elem) {
+  return Object.keys(elem).find((key) => key.startsWith("__react"))
+}
+
+function _getBlocksComponent(wrapper) {
+  const internal = wrapper[getInternalKey(wrapper)];
+  let childable = internal;
+  while (((childable = childable.child), !childable || !childable.stateNode || !childable.stateNode.ScratchBlocks)) {}
+  return childable;
+}
+
+async function getBlockly() {
+  const childable = await _getBlocksWrapperComponent();
+  return childable.stateNode.ScratchBlocks
+}
+
+window.__steRedux.target.addEventListener("statechanged", async function() {
+  try {
+    let blockly = await getBlockly()
+    if (blockly) {
+      window.__steScratchBlocks = blockly
+    }
+  } catch(err) {}
+})
+
+function getScratchBlocks() {
+  return window.__steScratchBlocks
 }
 
 ScratchTools.waitForElements(
