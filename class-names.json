@@ -42,6 +42,12 @@
     ]
   },
   {
+    "className": "ste-formatted-newline-comment",
+    "features": [
+      "comment-newlines"
+    ]
+  },
+  {
     "className": "ste-mutual-following-container",
     "features": [
       "mutual-following"
@@ -51,6 +57,18 @@
     "className": "ste-mutual-followers-container",
     "features": [
       "mutual-following"
+    ]
+  },
+  {
+    "className": "ste-real-profile-date",
+    "features": [
+      "real-date"
+    ]
+  },
+  {
+    "className": "ste-hide-ago-real-date",
+    "features": [
+      "real-date"
     ]
   }
 ]
