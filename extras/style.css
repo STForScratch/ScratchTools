@@ -677,6 +677,7 @@ body[data-filter="Egg"] .feature[data-type*="Egg"] {
   background: black;
   float: left;
   margin-right: 0.5rem;
+  border: 2px var(--primary-color) solid;
   /* margin-top: 0.5rem;
   margin-left: 0.5rem; */
 }
