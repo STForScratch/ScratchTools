@@ -2,8 +2,8 @@
   "name": "__MSG_extName__",
   "short_name": "ScratchTools",
   "manifest_version": 3,
-  "version": "4.2.0",
-  "version_name": "4.2.0",
+  "version": "4.3.0",
+  "version_name": "4.3.0-beta",
   "default_locale": "en",
   "description": "__MSG_extDescription__",
   "author": "rgantzos",
@@ -31,7 +31,10 @@
         "https://scratch.mit.edu/*"
       ],
       "run_at": "document_start",
-      "js": ["api/content/vm.js", "api/content/redux.js"],
+      "js": [
+        "api/content/vm.js",
+        "api/content/redux.js"
+      ],
       "all_frames": true
     },
     {
