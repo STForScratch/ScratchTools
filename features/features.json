@@ -2,27 +2,27 @@
   {
     "version": 2,
     "id": "real-date",
-    "versionAdded": "v5.0.0"
+    "versionAdded": "v4.2.0"
   },
   {
     "version": 2,
     "id": "comment-newlines",
-    "versionAdded": "v5.0.0"
+    "versionAdded": "v4.2.0"
   },
   {
     "version": 2,
     "id": "recent-followers-and-following",
-    "versionAdded": "v5.0.0"
+    "versionAdded": "v4.2.0"
   },
-  {   
+  {
     "version": 2,
     "id": "picture-in-picture",
-    "versionAdded": "v5.0.0"
+    "versionAdded": "v4.2.0"
   },
   {
     "version": 2,
     "id": "mutual-following",
-    "versionAdded": "v5.0.0"
+    "versionAdded": "v4.2.0"
   },
   {
     "version": 2,
@@ -32,7 +32,7 @@
   {
     "version": 2,
     "id": "copy-paste-lists",
-    "versionAdded": "v5.0.0"
+    "versionAdded": "v4.2.0"
   },
   {
     "version": 2,
