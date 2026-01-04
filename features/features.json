@@ -628,17 +628,8 @@
     "type": ["Website"]
   },
   {
-    "title": "Show if Following on Profile",
-    "description": "If a user is following you, it will show next to their username when you visit their profile.",
-    "credits": ["Bob the Potato with Drip", "TimMcCool"],
-    "urls": [
-      "https://scratch.mit.edu/users/JefferyTheSuperKat/",
-      "https://scratch.mit.edu/users/TimMcCool/"
-    ],
-    "file": "follows-you",
-    "type": ["Website"],
-    "tags": ["Featured"],
-    "dynamic": true
+    "version": 2,
+    "id": "follows-you"
   },
   {
     "title": "Custom Studio Section",

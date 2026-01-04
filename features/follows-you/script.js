@@ -20,12 +20,15 @@ async function getFollowing(user1, user2) {
               document.createElement("span"),
               document.querySelector(".profile-details")
             );
+			if (typeof scratchAddons !== 'undefined') {
+			for(var i = 0; i < scratchAddons.eventTargets.self.length; i++) {
+				if(scratchAddons.eventTargets.self[i].id == "better-featured-project"){
+				span.style.color = "white";
+				}
+			}}
             span.className = "scratchtoolsFollowsYou";
             span.textContent = "Follows You";
-            span.style.opacity = ".5";
-            span.style.fontSize = ".8rem";
-            element.querySelector("h2").style.display = "inline-block";
-          }
+		  }
         });
       }
     });
@@ -45,7 +48,6 @@ if (
       .split("/")[0]
   );
 }
-
 ScratchTools.setDisable("follows-you", function () {
   if (document.querySelector(".scratchtoolsFollowsYou")) {
     document.querySelector(".scratchtoolsFollowsYou").remove();
