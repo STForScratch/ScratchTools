@@ -1352,5 +1352,10 @@
     "file": "focus-mode",
     "tags": [],
     "type": ["Website", "Theme"]
-  }
+  },
+  {
+    "version": 2,
+    "id": "command-palette",
+    "versionAdded": "v4.2.0"
+  },
 ]

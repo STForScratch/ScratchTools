@@ -1,0 +1,100 @@
+/* Command Palette - Styles for the quick keyboard-driven command interface */
+
+.ste-command-palette {
+  position: fixed;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 560px;
+  max-width: calc(100% - 2rem);
+  background: var(--secondary-bg, #ffffff);
+  color: var(--text, #000000);
+  border-radius: 10px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  z-index: 99999;
+  padding: 8px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Main search input field */
+.ste-command-palette .ste-cp-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 14px;
+  outline: none;
+}
+
+/* Results container with scrollable area */
+.ste-command-palette .ste-cp-results {
+  margin-top: 8px;
+  max-height: 240px;
+  overflow: auto;
+  border-radius: 6px;
+}
+
+/* Individual result item row */
+.ste-command-palette .ste-cp-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* Left side of result item (swatch and title) */
+.ste-command-palette .ste-cp-item .ste-cp-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Category color swatch indicator */
+.ste-command-palette .ste-cp-item .ste-cp-swatch {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Result item title text */
+.ste-command-palette .ste-cp-item .ste-cp-title {
+  font-size: 14px;
+}
+
+/* Right side of result item (type label) */
+.ste-command-palette .ste-cp-item .ste-cp-right {
+  margin-left: 8px;
+}
+
+/* Subtle row tint when a category colour is present */
+.ste-command-palette .ste-cp-item[data-cat-color] {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.02) 100%);
+}
+
+.ste-command-palette .ste-cp-item[data-cat-color="transparent"] {
+  background: none;
+}
+
+/* Type label showing category of command/block */
+.ste-command-palette .ste-cp-item .ste-cp-type {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* Active/selected item highlighting */
+.ste-command-palette .ste-cp-item.ste-cp-active {
+  background: rgba(0, 0, 0, 0.15) !important;
+}
+
+.ste-command-palette .ste-cp-item.ste-cp-active .ste-cp-title {
+  font-weight: 600;
+}
+
+/* Hover state for result items */
+.ste-command-palette .ste-cp-item:hover {
+  background: rgba(0, 0, 0, 0.06);
+}

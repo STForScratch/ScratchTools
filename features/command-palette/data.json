@@ -1,0 +1,18 @@
+{
+  "title": "Command Palette",
+  "description": "Quick, keyboard-driven command palette for the editor. Press Shift+P to open (customizable).",
+  "credits": [
+    { "username": "finn0", "url": "https://scratch.mit.edu/users/finn0_/" }
+  ],
+  "type": ["Editor"],
+  "version": 2,
+  "dynamic": true,
+  "options": [
+    { "id": "key", "name": "Key", "type": 0 },
+    { "id": "shift", "name": "Require Shift", "type": 1 },
+    { "id": "ctrl", "name": "Require Ctrl/Cmd", "type": 1 },
+    { "id": "alt", "name": "Require Alt/Option", "type": 1 }
+  ],
+  "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
+  "styles": [{ "file": "style.css", "runOn": "/projects/*" }]
+}
