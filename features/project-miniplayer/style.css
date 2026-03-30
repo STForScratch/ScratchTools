@@ -6,4 +6,5 @@
     border-radius: 10px;
     max-width: 485px;
     display: none;
+    backdrop-filter: blur(5px);
 }

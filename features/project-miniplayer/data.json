@@ -8,8 +8,18 @@
   "tags": ["New", "Featured"],
   "dynamic": true,
   "options": [
-    { "id": "position-right", "name": "Move the project player to the right.", "type": 1 },
-    { "id": "position-bottom", "name": "Move the project player to the bottom.", "type": 1 },
+    {
+      "id": "position",
+      "name": "Player Position",
+      "type": 4,
+      "options": [
+        { "name": "Left Top", "value": "left-top" },
+        { "name": "Right Top", "value": "right-top" },
+        { "name": "Left Bottom", "value": "left-bottom" },
+        { "name": "Right Bottom", "value": "right-bottom" },
+        { "name": "Free Drag", "value": "drag" }
+      ]
+    },
     { "id": "opacity", "name": "Player Transparency (0% - 90%)", "type": 2 }
   ],
   "scripts": [{ "file": "script.js", "runOn": "/projects/*" }],
