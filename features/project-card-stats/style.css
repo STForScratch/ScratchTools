@@ -1,0 +1,38 @@
+.grid .thumbnail.project {
+	height: auto !important;
+	min-height: 208px;
+}
+
+#projectBox .grid .flex-row {
+	align-items: flex-start;
+}
+
+.ste-project-card-stats-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 4px 8px;
+	max-width: 100%;
+	margin-top: 2px;
+	font-size: 11px;
+	line-height: 1.3;
+	color: var(--color);
+}
+
+.ste-project-card-stat {
+	display: inline-flex;
+	align-items: center;
+	gap: 2px;
+	white-space: nowrap;
+	font-weight: 500;
+	line-height: normal;
+}
+
+.ste-project-card-stat-icon {
+	width: 0.82rem;
+	height: 0.82rem;
+	display: inline-block;
+	background-color: currentColor;
+	mask: var(--ste-project-card-icon-url) no-repeat center / contain;
+	flex-shrink: 0;
+}

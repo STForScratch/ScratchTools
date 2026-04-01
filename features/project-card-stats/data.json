@@ -1,0 +1,30 @@
+{
+  "title": "Project Card Stats",
+  "description": "Displays project statistics on project cards in Explore and Search.",
+  "credits": [
+    { "username": "Masaabu-YT", "url": "https://scratch.mit.edu/users/Masaabu-YT/" }
+  ],
+  "type": ["Website"],
+  "tags": ["New", "Featured"],
+  "dynamic": true,
+  "options": [
+    { "id": "show-love", "name": "Show love count", "type": 1 },
+    { "id": "show-fav", "name": "Show favorite count", "type": 1 },
+    { "id": "show-view", "name": "Show view count", "type": 1, "default": true },
+    { "id": "show-published", "name": "Show published date", "type": 1, "default": true }
+  ],
+  "scripts": [
+    { "file": "script.js", "runOn": "/explore/projects/*" },
+    { "file": "script.js", "runOn": "/search/projects/*" }
+  ],
+  "styles": [
+    { "file": "style.css", "runOn": "/explore/projects/*" },
+    { "file": "style.css", "runOn": "/search/projects/*" }
+  ],
+  "resources": [
+    { "name": "love-icon", "path": "/resources/love.svg" },
+    { "name": "fav-icon", "path": "/resources/fav.svg" },
+    { "name": "views-icon", "path": "/resources/views.svg" },
+    { "name": "published-icon", "path": "/resources/published.svg" }
+  ]
+}
