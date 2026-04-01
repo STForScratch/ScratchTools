@@ -1,6 +1,11 @@
 [
   {
     "version": 2,
+    "id": "project-card-stats",
+    "versionAdded": "v4.3.0"
+  },
+  {
+    "version": 2,
     "id": "real-date",
     "versionAdded": "v4.2.0"
   },
