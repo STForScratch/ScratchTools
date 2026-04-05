@@ -1,13 +1,46 @@
-let cachedStorage;
-let cachedStyles;
+let cachedStorage = "";
+let cachedStyles = [];
+let cachedFeatureDataById = {};
+let cachedScripts = [];
+let cacheReady = false;
+let cachePromise = null;
 
 async function cache() {
   cachedStorage = (await chrome.storage.sync.get("features"))?.features || "";
-  cachedStyles = await getEnabledStyles();
+  cachedFeatureDataById = {};
   cachedScripts = await getModules();
+  cachedStyles = await getEnabledStyles();
+  cacheReady = true;
   return true;
 }
-cache();
+
+function ensureCacheReady(forceRefresh = false) {
+  if (forceRefresh) {
+    cacheReady = false;
+  }
+
+  if (cacheReady) {
+    return Promise.resolve(true);
+  }
+
+  if (!cachePromise) {
+    cachePromise = cache()
+      .catch(function () {
+        cachedStorage = "";
+        cachedFeatureDataById = {};
+        cachedScripts = [];
+        cachedStyles = [];
+        return false;
+      })
+      .finally(function () {
+        cachePromise = null;
+      });
+  }
+
+  return cachePromise;
+}
+
+ensureCacheReady();
 
 async function checkBetaUpdates() {
   var loggedIn = await (
@@ -180,7 +213,7 @@ chrome.runtime.onInstalled.addListener(async function (object) {
 chrome.storage.onChanged.addListener(async function (changes, namespace) {
   for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
     if (key === "features") {
-      await cache();
+      await ensureCacheReady(true);
       let features = await getFeaturesCode();
       let username = await getUsername();
       let time =
@@ -216,6 +249,12 @@ chrome.storage.onChanged.addListener(async function (changes, namespace) {
 
 chrome.tabs.onUpdated.addListener(async function (tabId, info) {
   var tab = await chrome.tabs.get(tabId);
+  if (
+    info.status === "loading" &&
+    tab?.url?.startsWith("https://scratch.mit.edu/")
+  ) {
+    await ensureCacheReady();
+  }
   if (tab?.url?.startsWith("https://scratch.mit.edu/")) {
     var obj = await chrome.storage.sync.get("features");
     if (obj.features && obj.features.includes("isonline")) {
@@ -261,8 +300,8 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
     }
   }
   var listOfIds = [];
-  var features = await (await fetch("/features/features.json")).json();
-  features.forEach(function (feature) {
+  var allFeatures = await (await fetch("/features/features.json")).json();
+  allFeatures.forEach(function (feature) {
     listOfIds.push(feature.file || feature.id);
   });
   if (
@@ -357,10 +396,30 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
         ];
         console.log("%cScratchTools", styleArray.join(";"), text);
       };
-      async function getCurrentTab() {
+      async function getCurrentTab(data) {
         ScratchTools.console.log("STARTING.");
-        var response = await fetch("/features/features.json");
-        var data = await response.json();
+
+        // Prevent duplicate API bootstrap on the same document.
+        let bootstrapLock = await chrome.scripting.executeScript({
+          target: { tabId: tabId },
+          func: claimScratchToolsBootstrap,
+          world: "MAIN",
+        });
+
+        if (!bootstrapLock?.[0]?.result) {
+          ScratchTools.console.log("Skipped duplicate bootstrap for page.");
+          return;
+        }
+
+        function claimScratchToolsBootstrap() {
+          let bootstrapKey = "__scratchtools_bootstrap_lock_v1__";
+          if (window[bootstrapKey]) {
+            return false;
+          }
+          window[bootstrapKey] = true;
+          return true;
+        }
+
         var uiLanguage = chrome.i18n.getUILanguage() || "en";
         if (uiLanguage.includes("-")) {
           uiLanguage = uiLanguage.split("-")[0];
@@ -379,101 +438,182 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
         }
         await chrome.scripting.executeScript({
           target: { tabId: tabId },
-          files: [`/api/main.js`],
+          files: [
+            `/api/main.js`,
+            `/api/verify.js`,
+            `/api/modals.js`,
+            `/api/feature.js`,
+            `/api/auth.js`,
+            `/api/logging.js`,
+            `/api/vm.js`,
+            `/api/cookies.js`,
+            `/api/getScratch.js`,
+            `/api/spaces.js`,
+          ],
           world: "MAIN",
         });
-        await chrome.scripting.executeScript({
-          target: { tabId: tabId },
-          files: [`/api/verify.js`],
-          world: "MAIN",
-        });
-        ScratchTools.console.log("Injected main API.");
-        await chrome.scripting.executeScript({
-          target: { tabId: tabId },
-          files: [`/api/modals.js`],
-          world: "MAIN",
-        });
-        ScratchTools.console.log("Injected modals API.");
-        await chrome.scripting.executeScript({
-          target: { tabId: tabId },
-          files: [`/api/feature.js`],
-          world: "MAIN",
-        });
-        ScratchTools.console.log("Injected feature API.");
-        await chrome.scripting.executeScript({
-          target: { tabId: tabId },
-          files: [`/api/auth.js`],
-          world: "MAIN",
-        });
-        ScratchTools.console.log("Injected auth API.");
-        await chrome.scripting.executeScript({
-          target: { tabId: tabId },
-          files: [`/api/logging.js`],
-          world: "MAIN",
-        });
-        ScratchTools.console.log("Injected logging API.");
-        await chrome.scripting.executeScript({
-          target: { tabId: tabId },
-          files: [`/api/vm.js`],
-          world: "MAIN",
-        });
-        ScratchTools.console.log("Injected Scratch API.");
-        await chrome.scripting.executeScript({
-          target: { tabId: tabId },
-          files: [`/api/cookies.js`],
-          world: "MAIN",
-        });
-        ScratchTools.console.log("Injected cookies API.");
-        await chrome.scripting.executeScript({
-          target: { tabId: tabId },
-          files: [`/api/getScratch.js`],
-          world: "MAIN",
-        });
-        ScratchTools.console.log("Injected getScratch API.");
-        await chrome.scripting.executeScript({
-          target: { tabId: tabId },
-          files: [`/api/spaces.js`],
-          world: "MAIN",
-        });
-        ScratchTools.console.log("Injected spaces API.");
-        var newFullData = [];
-        for (var i in data) {
-          var feature = data[i];
-          if (feature.version === 2) {
-            var featureData = await (
-              await fetch(`/features/${feature.id}/data.json`)
-            ).json();
-            featureData.id = feature.id;
-            featureData.version = feature.version;
-            if (chrome.i18n.getUILanguage().includes("-")) {
-              var language = chrome.i18n.getUILanguage().split("-")[0];
-            } else {
-              var language = chrome.i18n.getUILanguage();
-            }
-            let localesData = {};
+        ScratchTools.console.log("Injected core APIs.");
+        var language = uiLanguage;
+        var featureDataById = {};
+        var featureLocalesById = {};
+        var enabledFeatureIds = new Set(
+          (cachedScripts || [])
+            .map(function (script) {
+              return script?.feature?.id || null;
+            })
+            .filter(function (id) {
+              return !!id;
+            })
+        );
+
+        async function getAllFeatureLocales(localeCode) {
+          async function readLocaleFile(targetLocale) {
             try {
-              localesData = await (
-                await fetch(
-                  `/feature-locales/${featureData.id}/${language}.json`
-                )
-              ).json();
-            } catch (err) {
+              let localeResponse = await fetch(
+                `/extras/feature-locales/${targetLocale}.json`
+              );
+              if (localeResponse.ok) {
+                return await localeResponse.json();
+              }
+            } catch (err) {}
+            return null;
+          }
+
+          let localized = await readLocaleFile(localeCode);
+          if (localized) {
+            return localized;
+          }
+
+          if (localeCode !== "en") {
+            let english = await readLocaleFile("en");
+            if (english) {
+              return english;
+            }
+          }
+
+          return {};
+        }
+
+        function normalizeLocaleMessage(value) {
+          if (typeof value === "string") {
+            return value;
+          }
+          if (value && typeof value === "object") {
+            return value.message || "";
+          }
+          return "";
+        }
+
+        let allFeatureLocales = await getAllFeatureLocales(language);
+        Object.keys(allFeatureLocales || {}).forEach(function (fullKey) {
+          let slashIndex = fullKey.indexOf("/");
+          if (slashIndex === -1) {
+            return;
+          }
+
+          let featureId = fullKey.slice(0, slashIndex);
+          if (!featureLocalesById[featureId]) {
+            featureLocalesById[featureId] = {};
+          }
+
+          featureLocalesById[featureId][fullKey] = normalizeLocaleMessage(
+            allFeatureLocales[fullKey]
+          );
+        });
+
+        async function getLocalesData(featureId) {
+          if (featureLocalesById[featureId]) {
+            return featureLocalesById[featureId];
+          }
+
+          try {
+            let localizedResponse = await fetch(
+              `/feature-locales/${featureId}/${language}.json`
+            );
+            if (localizedResponse.ok) {
+              return await localizedResponse.json();
+            }
+          } catch (err) {}
+
+          try {
+            let englishResponse = await fetch(
+              `/feature-locales/${featureId}/en.json`
+            );
+            if (englishResponse.ok) {
+              return await englishResponse.json();
+            }
+          } catch (err) {}
+
+          return {};
+        }
+
+        async function getFeatureRuntimeData(feature) {
+          // Keep base metadata from features.json, then fill runtime data if enabled.
+          let featureData = Object.assign({}, feature);
+          let isEnabledFeature =
+            enabledFeatureIds.has(feature.id) ||
+            (cachedStorage || "").includes(feature.id);
+
+          if (isEnabledFeature) {
+            let cachedFeatureData = cachedFeatureDataById[feature.id] || null;
+
+            if (!cachedFeatureData || !Object.keys(cachedFeatureData).length) {
               try {
-                localesData = await (
-                  await fetch(`/feature-locales/${featureData.id}/en.json`)
-                ).json();
+                let featureResponse = await fetch(
+                  `/features/${feature.id}/data.json`
+                );
+                if (featureResponse.ok) {
+                  cachedFeatureData = await featureResponse.json();
+                  cachedFeatureDataById[feature.id] = cachedFeatureData;
+                }
               } catch (err) {}
             }
-            let locales = {};
-            Object.keys(localesData).forEach(function (el) {
-              locales[`${featureData.id}/${el}`] = localesData[el];
-            });
-            featureData.localesData = locales;
-            newFullData.push(featureData);
-          } else {
-            newFullData.push(feature);
+
+            if (cachedFeatureData && Object.keys(cachedFeatureData).length) {
+              featureData = Object.assign(featureData, cachedFeatureData);
+            }
           }
+
+          featureData.id = feature.id;
+          featureData.version = feature.version;
+          featureData.resources = Array.isArray(featureData.resources)
+            ? featureData.resources
+            : [];
+          featureData.options = Array.isArray(featureData.options)
+            ? featureData.options
+            : [];
+
+          if (isEnabledFeature) {
+            let localesData = await getLocalesData(feature.id);
+            if (featureLocalesById[feature.id]) {
+              featureData.localesData = featureLocalesById[feature.id];
+            } else {
+              let locales = {};
+              Object.keys(localesData || {}).forEach(function (el) {
+                locales[`${feature.id}/${el}`] = normalizeLocaleMessage(
+                  localesData[el]
+                );
+              });
+              featureData.localesData = locales;
+            }
+          } else {
+            featureData.localesData = {};
+          }
+
+          return featureData;
         }
+
+        var newFullData = await Promise.all(
+          data.map(async function (feature) {
+            if (feature.version !== 2) {
+              return feature;
+            }
+
+            let featureData = await getFeatureRuntimeData(feature);
+            featureDataById[feature.id] = featureData;
+            return featureData;
+          })
+        );
         await chrome.scripting.executeScript({
           args: [
             newFullData,
@@ -527,34 +667,43 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
         }
         addData();
         injectStyles(tabId);
+        var resourcesToInject = [];
         for (var i in data) {
           var feature = data[i];
           if (feature.version === 2) {
-            var featureData = await (
-              await fetch(`/features/${feature.id}/data.json`)
-            ).json();
-            for (var resource in featureData.resources) {
-              await chrome.scripting.executeScript({
-                args: [
-                  featureData.resources[resource].name,
-                  chrome.runtime.getURL(
-                    `/features/${feature.id}${featureData.resources[resource].path}`
-                  ),
-                ],
-                target: { tabId: tabId },
-                func: injectResource,
-                world: "MAIN",
-              });
-              function injectResource(name, path) {
-                ScratchTools.Resources[name] = path;
-                var style = document.createElement("style");
-                style.textContent = `:root {
-                  --scratchtoolsresource-${name}: url(${path});
-                }`;
-                document.body.appendChild(style);
+            var featureData = featureDataById[feature.id];
+            var resources = featureData?.resources || [];
+            for (var resource in resources) {
+              if (!resources[resource]?.name || !resources[resource]?.path) {
+                continue;
               }
+              resourcesToInject.push({
+                name: resources[resource].name,
+                path: chrome.runtime.getURL(
+                  `/features/${feature.id}${resources[resource].path}`
+                ),
+              });
             }
           }
+        }
+
+        if (resourcesToInject.length > 0) {
+          await chrome.scripting.executeScript({
+            args: [resourcesToInject],
+            target: { tabId: tabId },
+            func: injectResources,
+            world: "MAIN",
+          });
+        }
+        function injectResources(resources) {
+          resources.forEach(function (resource) {
+            ScratchTools.Resources[resource.name] = resource.path;
+            var style = document.createElement("style");
+            style.textContent = `:root {
+              --scratchtoolsresource-${resource.name}: url(${resource.path});
+            }`;
+            document.body.appendChild(style);
+          });
         }
         var langData = {};
         try {
@@ -587,12 +736,9 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
           world: "MAIN",
         });
         async function addData() {
-          var allStorage = {};
           await data.forEach(async function (el) {
             if (el.version === 2) {
-              el.options = (
-                await (await fetch(`/features/${el.id}/data.json`)).json()
-              ).options;
+              el.options = (featureDataById[el.id] || {}).options || [];
             }
             if (el.options !== undefined) {
               await el.options.forEach(async function (option) {
@@ -653,7 +799,7 @@ chrome.tabs.onUpdated.addListener(async function (tabId, info) {
           }
         });
       }
-      getCurrentTab();
+      getCurrentTab(allFeatures);
     }
   }
 });
@@ -700,25 +846,36 @@ chrome.runtime.onMessageExternal.addListener(async function (
     await chrome.tabs.update(sender.tab.id, { active: true });
   }
   if (msg.source === "message-api") {
+    async function sendMessageApiResponse(content, uuid) {
+      await chrome.scripting.executeScript({
+        args: [content, uuid],
+        target: { tabId: sender.tab.id },
+        func: resolveMessageApiPromise,
+        world: "MAIN",
+      });
+      function resolveMessageApiPromise(response, responseUuid) {
+        let index = ScratchTools.MESSAGES.findIndex(
+          (el) => el.uuid === responseUuid
+        );
+        if (index === -1) {
+          return;
+        }
+        let message = ScratchTools.MESSAGES[index];
+        ScratchTools.MESSAGES.splice(index, 1);
+        message.resolve(response);
+      }
+    }
+
     if (msg.message?.startsWith("request-perms")) {
       let perms = msg.content;
 
       chrome.permissions.request({ permissions: perms }, async (granted) => {
         let isComplete = !!granted;
 
-        await chrome.scripting.executeScript({
-          args: [isComplete, msg.uuid],
-          target: { tabId: sender.tab.id },
-          func: sendPermsResponse,
-          world: "MAIN",
-        });
-        function sendPermsResponse(completed, uuid) {
-          ScratchTools.MESSAGES.find((el) => el.uuid === uuid).resolve(
-            completed
-          );
-        }
+        await sendMessageApiResponse(isComplete, msg.uuid);
       });
     }
+
   }
   if (typeof msg === "object") {
     if (msg.message === "storageSet") {
@@ -751,9 +908,20 @@ async function getEnabledStyles() {
   );
   for (var i in data) {
     var feature = data[i];
-    var styles = (
-      await (await fetch(`/features/${feature.id}/data.json`)).json()
-    ).styles;
+    var featureData = cachedFeatureDataById[feature.id];
+    if (!featureData) {
+      try {
+        var featureResponse = await fetch(`/features/${feature.id}/data.json`);
+        if (featureResponse.ok) {
+          featureData = await featureResponse.json();
+          cachedFeatureDataById[feature.id] = featureData;
+        }
+      } catch (err) {
+        featureData = {};
+      }
+    }
+
+    var styles = featureData?.styles;
     if (styles) {
       for (var i2 in styles) {
         styles[i2].feature = feature;
@@ -770,9 +938,20 @@ async function getModules() {
   );
   for (var i in data) {
     var feature = data[i];
-    var scripts =
-      (await (await fetch(`/features/${feature.id}/data.json`)).json())
-        .scripts || [];
+    var featureData = cachedFeatureDataById[feature.id];
+    if (!featureData) {
+      try {
+        var featureResponse = await fetch(`/features/${feature.id}/data.json`);
+        if (featureResponse.ok) {
+          featureData = await featureResponse.json();
+          cachedFeatureDataById[feature.id] = featureData;
+        }
+      } catch (err) {
+        featureData = {};
+      }
+    }
+
+    var scripts = featureData?.scripts || [];
     if (scripts) {
       for (var i2 in scripts) {
         scripts[i2].feature = feature;
@@ -785,44 +964,55 @@ async function getModules() {
   }
   return allScripts;
 }
-chrome.runtime.onMessage.addListener(async function (
-  msg,
-  sender,
-  sendResponse
-) {
+chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
   if (msg.msg === "openSupportAuth") {
     chrome.tabs.create({
       url: "https://scratch.mit.edu/scratchtools/support/auth/",
     });
   }
   if (msg.action === "getStyles") {
-    sendResponse({ data: cachedStyles });
+    if (cacheReady) {
+      sendResponse({ data: cachedStyles });
+      return false;
+    }
+
+    ensureCacheReady()
+      .then(function () {
+        sendResponse({ data: cachedStyles });
+      })
+      .catch(function () {
+        sendResponse({ data: [] });
+      });
+    return true;
   }
   if (msg?.text === "get-logged-in-user") {
     sendResponse(true);
-    const data = await (
-      await fetch("https://scratch.mit.edu/session/", {
-        headers: {
-          accept: "*/*",
-          "accept-language": "en, en;q=0.8",
-          "sec-ch-ua":
-            '"Google Chrome";v="111", "Not(A:Brand";v="8", "Chromium";v="111"',
-          "sec-ch-ua-mobile": "?0",
-          "sec-ch-ua-platform": '"macOS"',
-          "sec-fetch-dest": "empty",
-          "sec-fetch-mode": "cors",
-          "sec-fetch-site": "same-origin",
-          "x-requested-with": "XMLHttpRequest",
-        },
-        referrer: "https://scratch.mit.edu/",
-        referrerPolicy: "strict-origin-when-cross-origin",
-        body: null,
-        method: "GET",
-        mode: "cors",
-        credentials: "include",
-      })
-    ).json();
-    await chrome.tabs.sendMessage(sender.tab.id, data, function (response) {});
+    (async function () {
+      const data = await (
+        await fetch("https://scratch.mit.edu/session/", {
+          headers: {
+            accept: "*/*",
+            "accept-language": "en, en;q=0.8",
+            "sec-ch-ua":
+              '"Google Chrome";v="111", "Not(A:Brand";v="8", "Chromium";v="111"',
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": '"macOS"',
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "same-origin",
+            "x-requested-with": "XMLHttpRequest",
+          },
+          referrer: "https://scratch.mit.edu/",
+          referrerPolicy: "strict-origin-when-cross-origin",
+          body: null,
+          method: "GET",
+          mode: "cors",
+          credentials: "include",
+        })
+      ).json();
+      await chrome.tabs.sendMessage(sender.tab.id, data, function (response) {});
+    })();
+    return true;
   }
 });
 
