@@ -1,35 +1,79 @@
+function ensureStylesContainer() {
+  var existingContainer = document.querySelector(".scratchtools-styles-div");
+  if (existingContainer) {
+    return existingContainer;
+  }
+
+  var container = document.createElement("div");
+  container.className = "scratchtools-styles-div";
+  (document.head || document.documentElement).appendChild(container);
+  return container;
+}
+
 async function getAllUserstyles() {
-  var div = document.createElement("div");
-  div.className = "scratchtools-styles-div";
-  document.head.appendChild(div);
   var styles = await getStyles();
+  if (!Array.isArray(styles) || styles.length === 0) {
+    return;
+  }
+
+  var container = ensureStylesContainer();
+  var existingHrefs = new Set(
+    Array.from(container.querySelectorAll("link[rel='stylesheet']")).map(
+      function (link) {
+        return link.href;
+      }
+    )
+  );
+  var fragment = document.createDocumentFragment();
+
   styles.forEach(function (style) {
-    if (window.location.pathname.match(style.runOn)) {
-      var link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = chrome.runtime.getURL(`/features/${style.feature.id}/${style.file}`);
-      link.dataset.feature = style.feature.id;
-      document.querySelector(".scratchtools-styles-div").appendChild(link);
+    if (!style || !style.feature || !style.feature.id || !style.file || !style.runOn) {
+      return;
     }
+    if (!window.location.pathname.match(style.runOn)) {
+      return;
+    }
+
+    var href = chrome.runtime.getURL(`/features/${style.feature.id}/${style.file}`);
+    if (existingHrefs.has(href)) {
+      return;
+    }
+
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = href;
+    link.dataset.feature = style.feature.id;
+    fragment.appendChild(link);
+    existingHrefs.add(href);
   });
+
+  container.appendChild(fragment);
 }
 
 var injectStylesWaitForHead = new MutationObserver(injectStyles);
-injectStylesWaitForHead.observe(document.querySelector("html"), {
-  childList: true,
-});
+if (document.documentElement) {
+  injectStylesWaitForHead.observe(document.documentElement, {
+    childList: true,
+  });
+}
+injectStyles();
 
 async function injectStyles() {
   if (document.head) {
     injectStylesWaitForHead.disconnect();
+    ensureStylesContainer();
     getAllUserstyles();
   }
 }
 
 async function getStyles() {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     chrome.runtime.sendMessage({ action: "getStyles" }, function (response) {
-      resolve(response.data || "");
+      if (chrome.runtime.lastError) {
+        resolve([]);
+        return;
+      }
+      resolve(Array.isArray(response && response.data) ? response.data : []);
     });
   });
 }
