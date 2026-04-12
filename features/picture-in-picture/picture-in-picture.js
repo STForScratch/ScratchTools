@@ -1,39 +1,35 @@
 export default async function ({ feature, console }) {
 	const ALLOW_INTERACTIVITY = false
+	const pictureInPictureLabel = feature.msg("picture-in-picture")
+	const actionButtonsSelector = ".preview .inner .flex-row.action-buttons"
+	const accountMenuSelector = ".menu-bar_account-info-group_MeJZP"
 
-	await new Promise(async (resolve, reject) => {
-		(async () => {
-			const rem = await ScratchTools.waitForElement(".preview .inner .flex-row.action-buttons")
-			resolve(rem);
-		})();
-		(async () => {
-			const rem = await ScratchTools.waitForElement(".menu-bar_account-info-group_MeJZP")
-			resolve(rem);
-		})();
+	await new Promise((resolve) => {
+		ScratchTools.waitForElement(actionButtonsSelector).then(resolve)
+		ScratchTools.waitForElement(accountMenuSelector).then(resolve)
 	})
 
 	const canvas = feature.traps.vm.renderer.canvas;
-	let openPopup = document.createElement("button");
 
-	ScratchTools.waitForElements(".preview .inner .flex-row.action-buttons", async function (row) {
+	ScratchTools.waitForElements(actionButtonsSelector, function (row) {
 		if (row.querySelector(".ste-picture-in-picture")) return;
-		openPopup = document.createElement("button");
-		openPopup.className = "button action-button ste-picture-in-picture";
-		openPopup.textContent = "Picture in Picture";
-		row.insertAdjacentElement("afterbegin", openPopup);
-		openPopup.addEventListener('click', () => {
+		const projectButton = document.createElement("button");
+		projectButton.className = "button action-button ste-picture-in-picture";
+		projectButton.textContent = pictureInPictureLabel;
+		row.insertAdjacentElement("afterbegin", projectButton);
+		projectButton.addEventListener('click', () => {
 			popup()
 		})
 	})
-	ScratchTools.waitForElements(".menu-bar_account-info-group_MeJZP", async function (row) {
+	ScratchTools.waitForElements(accountMenuSelector, function (row) {
 		if (row.querySelector(".ste-picture-in-picture")) return;
-		openPopup = document.createElement("div");
-		openPopup.className = "menu-bar_menu-bar-item_oLDa- menu-bar_hoverable_c6WFB";
-		let rem = document.createElement("div");
-		rem.textContent = "Picture in Picture";
-		openPopup.append(rem);
-		row.insertAdjacentElement("afterbegin", openPopup);
-		openPopup.addEventListener('click', () => {
+		const menuButton = document.createElement("div");
+		menuButton.className = "menu-bar_menu-bar-item_oLDa- menu-bar_hoverable_c6WFB";
+		const label = document.createElement("div");
+		label.textContent = pictureInPictureLabel;
+		menuButton.append(label);
+		row.insertAdjacentElement("afterbegin", menuButton);
+		menuButton.addEventListener('click', () => {
 			popup()
 		})
 	})
@@ -42,7 +38,7 @@ export default async function ({ feature, console }) {
 
 	// Code for allowing interactivity (not yet ready)
 	if (ALLOW_INTERACTIVITY) {
-		if (!"documentPictureInPicture" in window) console.error("Picture in Picture not supported")
+		if (!("documentPictureInPicture" in window)) console.error("Picture in Picture not supported")
 
 		let pipWindow
 
@@ -94,13 +90,9 @@ export default async function ({ feature, console }) {
 			// Dispatch the new event
 			canvas.dispatchEvent(new_event);
 		}
-		video.addEventListener("mousedown", translateEvent_pointer)
-		video.addEventListener("mouseup", translateEvent_pointer)
-		video.addEventListener("mousemove", translateEvent_pointer)
-		video.addEventListener("wheel", translateEvent_pointer)
-		video.addEventListener("touchstart", translateEvent_pointer)
-		video.addEventListener("touchend", translateEvent_pointer)
-		video.addEventListener("touchmove", translateEvent_pointer)
+		["mousedown", "mouseup", "mousemove", "wheel", "touchstart", "touchend", "touchmove"].forEach((eventName) => {
+			video.addEventListener(eventName, translateEvent_pointer)
+		})
 
 		function translateEvent_key(old_event) {
 			let new_event = new KeyboardEvent(old_event.type, old_event)
@@ -109,6 +101,11 @@ export default async function ({ feature, console }) {
 
 		let buttonClickedTimes = 0
 		popup = async function () {
+			if (pipWindow && !pipWindow.closed) {
+				pipWindow.close()
+				return
+			}
+
 			if (buttonClickedTimes === 0) {
 				video.srcObject = canvas.captureStream()
 				buttonClickedTimes++
@@ -122,9 +119,9 @@ export default async function ({ feature, console }) {
 			// Move the player to the Picture-in-Picture window.
 			pipWindow.document.body.append(docPopup);
 
-			pipWindow.document.addEventListener("keydown", translateEvent_key)
-			pipWindow.document.addEventListener("keypress", translateEvent_key)
-			pipWindow.document.addEventListener("keyup", translateEvent_key)
+			["keydown", "keypress", "keyup"].forEach((eventName) => {
+				pipWindow.document.addEventListener(eventName, translateEvent_key)
+			})
 		}
 	}
 	else {
@@ -136,9 +133,20 @@ export default async function ({ feature, console }) {
 
 		video.srcObject = canvas.captureStream()
 
-		popup = function () {
+		popup = async function () {
 			try {
-				video.requestPictureInPicture()
+				const activePictureInPictureElement = document.pictureInPictureElement
+
+				if (activePictureInPictureElement === video) {
+					await document.exitPictureInPicture()
+					return
+				}
+
+				if (activePictureInPictureElement) {
+					await document.exitPictureInPicture()
+				}
+
+				await video.requestPictureInPicture()
 			}
 			catch {
 				console.log("Picture in Picture not supported or failed to request")
