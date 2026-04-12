@@ -19,5 +19,17 @@
       "file": "picture-in-picture.js",
       "runOn": "/projects/*"
     }
+  ],
+  "styles": [
+    {
+      "file": "style.css",
+      "runOn": "/projects/*"
+    }
+  ],
+  "resources": [
+    {
+      "name": "picture-in-picture-icon",
+      "path": "/picture-in-picture.svg"
+    }
   ]
 }
